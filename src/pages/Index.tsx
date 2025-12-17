@@ -104,9 +104,9 @@ export default function Index() {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <h1 className="headline-hero text-white mb-8">
-                Where tech founders
-                <span className="block text-gradient">build the future</span>
+            <h1 className="headline-hero text-white mb-8">
+                Your Venture's
+                <span className="block text-gradient">unfair advantage</span>
               </h1>
             </ScrollReveal>
 
