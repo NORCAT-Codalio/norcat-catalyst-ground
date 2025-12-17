@@ -161,9 +161,12 @@ export default function Index() {
       {/* Top Companies */}
       <section className="py-20 border-b border-border bg-secondary/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">
             Top NORCAT Innovation Companies
           </h2>
+          <p className="text-center text-muted-foreground mb-12">
+            Proudly funded by the Government of Ontario
+          </p>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
             {Array.from({ length: 24 }).map((_, i) => (
               <div
