@@ -8,90 +8,85 @@ import { TestimonialCard } from '@/components/TestimonialCard';
 import heroImage from '@/assets/hero-underground.jpg';
 import foundersImage from '@/assets/founders-collab.jpg';
 import miningTechImage from '@/assets/mining-tech.jpg';
-
-const services = [
-  {
-    icon: Rocket,
-    title: 'Venture Growth Services',
-    description: 'Structured mentorship and advisory to help you build, launch, and scale.',
-    features: ['1-on-1 mentorship', 'Growth strategy', 'Market validation'],
-  },
-  {
-    icon: DollarSign,
-    title: 'Capital Navigation',
-    description: 'Expert guidance through funding rounds, investor relations, and deal structuring.',
-    features: ['Investor readiness', 'Pitch coaching', 'Due diligence prep'],
-  },
-  {
-    icon: Target,
-    title: 'Non-Dilutive Funding',
-    description: 'Access IAP, RAII, and other programs that fund growth without equity dilution.',
-    features: ['Grant applications', 'Program matching', 'Compliance support'],
-  },
-  {
-    icon: TrendingUp,
-    title: 'Sudbury Catalyst Fund',
-    description: 'Our $5M fund investing in promising startups ready to scale.',
-    features: ['Seed investment', 'Follow-on funding', 'Strategic support'],
-  },
-  {
-    icon: Pickaxe,
-    title: 'Mining Innovation',
-    description: 'Test and validate mining technology in our operational underground facility.',
-    features: ['Real-world testing', 'Industry connections', 'Global partnerships'],
-  },
-  {
-    icon: Calendar,
-    title: 'Events & Programming',
-    description: 'Mining Transformed, Venture North PITCH, demo days, and networking events.',
-    features: ['Flagship conferences', 'Pitch competitions', 'Community events'],
-  },
-];
-
-const testimonials = [
-  {
-    quote: "NORCAT Innovation gave us the credibility and connections we needed to close our Series A. Their underground testing facility was a game-changer.",
-    author: "Sarah Chen",
-    role: "CEO",
-    company: "MineTech Robotics",
-  },
-  {
-    quote: "The mentorship here is world-class. They understand what it takes to build hardware companies and connected us with exactly the right investors.",
-    author: "Marcus Williams",
-    role: "Founder",
-    company: "CriticalMin Solutions",
-  },
-  {
-    quote: "From IAP funding to investor introductions, NORCAT Innovation accelerated our growth by at least 18 months.",
-    author: "Elena Rodriguez",
-    role: "CTO",
-    company: "SubSurface AI",
-  },
-];
-
-const stats = [
-  { value: 150, suffix: '+', label: 'Startups Supported' },
-  { value: 75, prefix: '$', suffix: 'M+', label: 'Capital Raised' },
-  { value: 2000, suffix: '+', label: 'Jobs Created' },
-  { value: 5, prefix: '$', suffix: 'M', label: 'Catalyst Fund' },
-];
-
+const services = [{
+  icon: Rocket,
+  title: 'Venture Growth Services',
+  description: 'Structured mentorship and advisory to help you build, launch, and scale.',
+  features: ['1-on-1 mentorship', 'Growth strategy', 'Market validation']
+}, {
+  icon: DollarSign,
+  title: 'Capital Navigation',
+  description: 'Expert guidance through funding rounds, investor relations, and deal structuring.',
+  features: ['Investor readiness', 'Pitch coaching', 'Due diligence prep']
+}, {
+  icon: Target,
+  title: 'Non-Dilutive Funding',
+  description: 'Access IAP, RAII, and other programs that fund growth without equity dilution.',
+  features: ['Grant applications', 'Program matching', 'Compliance support']
+}, {
+  icon: TrendingUp,
+  title: 'Sudbury Catalyst Fund',
+  description: 'Our $5M fund investing in promising startups ready to scale.',
+  features: ['Seed investment', 'Follow-on funding', 'Strategic support']
+}, {
+  icon: Pickaxe,
+  title: 'Mining Innovation',
+  description: 'Test and validate mining technology in our operational underground facility.',
+  features: ['Real-world testing', 'Industry connections', 'Global partnerships']
+}, {
+  icon: Calendar,
+  title: 'Events & Programming',
+  description: 'Mining Transformed, Venture North PITCH, demo days, and networking events.',
+  features: ['Flagship conferences', 'Pitch competitions', 'Community events']
+}];
+const testimonials = [{
+  quote: "NORCAT Innovation gave us the credibility and connections we needed to close our Series A. Their underground testing facility was a game-changer.",
+  author: "Sarah Chen",
+  role: "CEO",
+  company: "MineTech Robotics"
+}, {
+  quote: "The mentorship here is world-class. They understand what it takes to build hardware companies and connected us with exactly the right investors.",
+  author: "Marcus Williams",
+  role: "Founder",
+  company: "CriticalMin Solutions"
+}, {
+  quote: "From IAP funding to investor introductions, NORCAT Innovation accelerated our growth by at least 18 months.",
+  author: "Elena Rodriguez",
+  role: "CTO",
+  company: "SubSurface AI"
+}];
+const stats = [{
+  value: 150,
+  suffix: '+',
+  label: 'Startups Supported'
+}, {
+  value: 75,
+  prefix: '$',
+  suffix: 'M+',
+  label: 'Capital Raised'
+}, {
+  value: 2000,
+  suffix: '+',
+  label: 'Jobs Created'
+}, {
+  value: 5,
+  prefix: '$',
+  suffix: 'M',
+  label: 'Catalyst Fund'
+}];
 export default function Index() {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="NORCAT Underground Centre"
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="NORCAT Underground Centre" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-gray-950/95 via-gray-900/90 to-teal-950/80" />
           {/* Animated gradient orbs */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-400/10 rounded-full blur-3xl animate-pulse" style={{
+          animationDelay: '1s'
+        }} />
         </div>
 
         <div className="container mx-auto px-6 relative z-10 py-32">
@@ -133,14 +128,9 @@ export default function Index() {
             <ScrollReveal delay={400}>
               <div className="mt-16 flex items-center gap-8">
                 <div className="flex -space-x-3">
-                  {['S', 'M', 'E', 'J'].map((initial, i) => (
-                    <div 
-                      key={i}
-                      className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-2 border-gray-900 flex items-center justify-center text-white font-semibold text-sm"
-                    >
+                  {['S', 'M', 'E', 'J'].map((initial, i) => <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-2 border-gray-900 flex items-center justify-center text-white font-semibold text-sm">
                       {initial}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 <div className="text-gray-400">
                   <span className="text-white font-semibold">150+ founders</span> have scaled with us
@@ -168,12 +158,9 @@ export default function Index() {
             Proudly funded by the Government of Ontario
           </p>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-[3/2] rounded-xl bg-muted/50 border border-border hover:border-primary/30 hover:bg-muted transition-all duration-300"
-              />
-            ))}
+            {Array.from({
+            length: 24
+          }).map((_, i) => <div key={i} className="aspect-[3/2] rounded-xl bg-muted/50 border border-border hover:border-primary/30 hover:bg-muted transition-all duration-300" />)}
           </div>
         </div>
       </section>
@@ -202,13 +189,11 @@ export default function Index() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ScrollReveal key={service.title} delay={index * 80}>
+            {services.map((service, index) => <ScrollReveal key={service.title} delay={index * 80}>
                 <div className="card-glow h-full">
                   <ServiceCard {...service} className="h-full" />
                 </div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
         </div>
       </section>
@@ -240,19 +225,12 @@ export default function Index() {
                   gives your technology the credibility it needs.
                 </p>
                 <ul className="space-y-4 mb-10">
-                  {[
-                    'Test in real mining conditions',
-                    'Validate technology with industry partners',
-                    'Demonstrate to global customers',
-                    'Access OEM partnerships',
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-4 text-gray-200">
+                  {['Test in real mining conditions', 'Validate technology with industry partners', 'Demonstrate to global customers', 'Access OEM partnerships'].map((item, index) => <li key={index} className="flex items-center gap-4 text-gray-200">
                       <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center">
                         <Zap className="h-4 w-4 text-teal-400" />
                       </div>
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
                 <Link to="/mining-innovation" className="btn-primary-lg">
                   Explore the Underground Centre
@@ -264,13 +242,9 @@ export default function Index() {
             <ScrollReveal direction="right">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-teal-500/20 to-teal-600/20 rounded-3xl blur-2xl" />
-                <img
-                  src={miningTechImage}
-                  alt="Mining technology demonstration"
-                  className="relative rounded-3xl shadow-2xl"
-                />
+                <img src={miningTechImage} alt="Mining technology demonstration" className="relative rounded-3xl shadow-2xl" />
                 <div className="absolute -bottom-6 -left-6 glass-dark p-6 rounded-2xl">
-                  <div className="text-4xl font-black text-white mb-1">1.2km</div>
+                  <div className="text-4xl font-black text-white mb-1">3km</div>
                   <div className="text-sm text-gray-400">Underground Facility</div>
                 </div>
                 <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold text-sm shadow-glow">
@@ -287,16 +261,14 @@ export default function Index() {
         <div className="absolute inset-0 bg-glow" />
         <div className="container mx-auto px-6 relative">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <ScrollReveal key={stat.label} delay={index * 100}>
+            {stats.map((stat, index) => <ScrollReveal key={stat.label} delay={index * 100}>
                 <div className="text-center">
                   <div className="stat-number mb-2 text-white">
                     {stat.prefix}{stat.value.toLocaleString()}{stat.suffix}
                   </div>
                   <div className="font-semibold text-lg text-white">{stat.label}</div>
                 </div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
         </div>
       </section>
@@ -310,11 +282,7 @@ export default function Index() {
             <ScrollReveal direction="left">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/10 to-transparent rounded-3xl blur-2xl" />
-                <img
-                  src={foundersImage}
-                  alt="Startup founders collaborating"
-                  className="relative rounded-3xl shadow-2xl"
-                />
+                <img src={foundersImage} alt="Startup founders collaborating" className="relative rounded-3xl shadow-2xl" />
               </div>
             </ScrollReveal>
 
@@ -333,14 +301,9 @@ export default function Index() {
                   Whether you're building mining technology, cleantech, or industrial IoT.
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-10">
-                  {['Mining Technology', 'Cleantech & BEV', 'Industrial Tech', 'Critical Minerals'].map((label) => (
-                    <div
-                      key={label}
-                      className="px-5 py-4 rounded-2xl bg-secondary border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 font-medium"
-                    >
+                  {['Mining Technology', 'Cleantech & BEV', 'Industrial Tech', 'Critical Minerals'].map(label => <div key={label} className="px-5 py-4 rounded-2xl bg-secondary border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 font-medium">
                       {label}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 <Link to="/apply" className="btn-primary-lg">
                   See If You Qualify
@@ -375,24 +338,19 @@ export default function Index() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                number: '01',
-                title: 'Industry Access',
-                description: 'Direct connections to major mining companies, OEMs, and global industry leaders.',
-              },
-              {
-                number: '02',
-                title: 'Research Ecosystem',
-                description: 'World-class research institutions driving innovation in mining technology.',
-              },
-              {
-                number: '03',
-                title: 'Talent Pipeline',
-                description: 'Access to skilled engineers and technologists with deep mining expertise.',
-              },
-            ].map((item, index) => (
-              <ScrollReveal key={item.title} delay={index * 100}>
+            {[{
+            number: '01',
+            title: 'Industry Access',
+            description: 'Direct connections to major mining companies, OEMs, and global industry leaders.'
+          }, {
+            number: '02',
+            title: 'Research Ecosystem',
+            description: 'World-class research institutions driving innovation in mining technology.'
+          }, {
+            number: '03',
+            title: 'Talent Pipeline',
+            description: 'Access to skilled engineers and technologists with deep mining expertise.'
+          }].map((item, index) => <ScrollReveal key={item.title} delay={index * 100}>
                 <div className="card-modern p-8 h-full">
                   <span className="text-6xl font-black text-gradient opacity-50">
                     {item.number}
@@ -400,8 +358,7 @@ export default function Index() {
                   <h3 className="headline-sm mt-4 mb-3">{item.title}</h3>
                   <p className="body-md">{item.description}</p>
                 </div>
-              </ScrollReveal>
-            ))}
+              </ScrollReveal>)}
           </div>
         </div>
       </section>
@@ -425,15 +382,9 @@ export default function Index() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <ScrollReveal key={testimonial.author} delay={index * 100}>
-                <TestimonialCard
-                  {...testimonial}
-                  variant={index === 1 ? 'featured' : 'default'}
-                  className="h-full"
-                />
-              </ScrollReveal>
-            ))}
+            {testimonials.map((testimonial, index) => <ScrollReveal key={testimonial.author} delay={index * 100}>
+                <TestimonialCard {...testimonial} variant={index === 1 ? 'featured' : 'default'} className="h-full" />
+              </ScrollReveal>)}
           </div>
         </div>
       </section>
@@ -460,6 +411,5 @@ export default function Index() {
           </ScrollReveal>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 }
