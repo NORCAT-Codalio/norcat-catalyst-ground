@@ -120,7 +120,7 @@ export default function Index() {
             <ScrollReveal delay={300}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/apply" className="btn-primary-lg">
-                  Apply for Venture Growth
+                  Apply to NORCAT Innovation
                   <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link to="/mining-innovation" className="btn-outline-dark">
