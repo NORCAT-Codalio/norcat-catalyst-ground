@@ -72,7 +72,7 @@ const stats = [{
   value: 3,
   prefix: '$',
   suffix: 'M',
-  label: 'Catalyst Fund'
+  label: 'Invested by the SCF'
 }];
 export default function Index() {
   return <Layout>
