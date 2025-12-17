@@ -69,7 +69,7 @@ const stats = [{
   suffix: '+',
   label: 'Jobs Created'
 }, {
-  value: 5,
+  value: 3,
   prefix: '$',
   suffix: 'M',
   label: 'Catalyst Fund'
