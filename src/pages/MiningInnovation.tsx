@@ -1,45 +1,11 @@
+import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Pickaxe, Zap, Shield, Globe, CheckCircle2, Building2, Users, Target } from 'lucide-react';
-import { Layout } from '@/components/Layout';
-import { ScrollReveal } from '@/components/ScrollReveal';
+import { motion } from 'framer-motion';
+import { ArrowRight, Globe, Building2, CheckCircle2 } from 'lucide-react';
+import { TunnelEntrance } from '@/components/mining/TunnelEntrance';
+import { MineMap } from '@/components/mining/MineMap';
 import { StatCounter } from '@/components/StatCounter';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-underground.jpg';
-import miningTechImage from '@/assets/mining-tech.jpg';
-
-const capabilities = [
-  {
-    icon: Pickaxe,
-    title: 'Real-World Testing',
-    description: 'Test your technology in actual mining conditions—not a simulation. Our 1.2km underground facility provides authentic operational environments.',
-  },
-  {
-    icon: Shield,
-    title: 'Validation & Certification',
-    description: 'Gain the validation you need to sell to major mining companies. Our facility is recognized by industry leaders worldwide.',
-  },
-  {
-    icon: Globe,
-    title: 'Global Demonstration',
-    description: 'Host customers from around the world for live technology demonstrations. Show, don\'t just tell.',
-  },
-  {
-    icon: Users,
-    title: 'OEM Partnerships',
-    description: 'Connect with original equipment manufacturers looking for innovative technology to integrate into their solutions.',
-  },
-];
-
-const techAreas = [
-  'Autonomous vehicles and systems',
-  'Underground communications',
-  'Ventilation and air quality',
-  'Safety and rescue technology',
-  'Electrification and battery systems',
-  'AI and machine learning applications',
-  'Sensors and monitoring systems',
-  'Robotics and automation',
-];
 
 const stats = [
   { value: 1.2, suffix: 'km', label: 'Underground Facility' },
@@ -48,270 +14,233 @@ const stats = [
   { value: 100, suffix: '%', label: 'Operational Conditions' },
 ];
 
+const globalBenefits = [
+  'Direct introductions to mining company innovation teams',
+  'Participation in international mining conferences',
+  'Access to global OEM partnership opportunities',
+  'Visibility to mining-focused investors worldwide',
+];
+
+const processSteps = [
+  {
+    step: '01',
+    title: 'Apply',
+    description: 'Submit your application describing your technology and testing needs.',
+  },
+  {
+    step: '02',
+    title: 'Assessment',
+    description: 'Our team evaluates fit and develops a customized testing plan.',
+  },
+  {
+    step: '03',
+    title: 'Testing',
+    description: 'Execute your testing program in real underground conditions.',
+  },
+  {
+    step: '04',
+    title: 'Validation',
+    description: 'Receive documentation and support for commercialization.',
+  },
+];
+
 export default function MiningInnovation() {
+  const [showTunnel, setShowTunnel] = useState(true);
+  const [contentVisible, setContentVisible] = useState(false);
+
+  const handleTunnelComplete = useCallback(() => {
+    setShowTunnel(false);
+    setTimeout(() => setContentVisible(true), 100);
+  }, []);
+
   return (
-    <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center pt-20">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="NORCAT Underground Centre"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-transparent" />
-        </div>
+    <div className="min-h-screen bg-gray-950">
+      {/* Tunnel entrance animation */}
+      {showTunnel && <TunnelEntrance onComplete={handleTunnelComplete} />}
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20">
-          <div className="max-w-3xl">
-            <ScrollReveal>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 text-sm font-medium mb-6">
-                <Pickaxe className="h-4 w-4" />
-                Mining Innovation
-              </span>
-            </ScrollReveal>
+      {/* Main content */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: contentVisible ? 1 : 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Interactive Mine Map Section */}
+        <MineMap />
 
-            <ScrollReveal delay={100}>
-              <h1 className="headline-xl text-slate-50 mb-6">
-                The NORCAT{' '}
-                <span className="text-gradient-teal">Underground Centre</span>
-              </h1>
-            </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <p className="body-lg text-slate-300 mb-8">
-                A globally unique facility where mining technology startups can test, 
-                validate, and demonstrate their solutions in real operational conditions. 
-                This is where breakthrough technology becomes market-ready.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={300}>
-              <Button asChild className="btn-hero">
-                <Link to="/apply">
-                  Apply for Access
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="section-padding-sm bg-secondary border-y border-border">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <ScrollReveal key={stat.label} delay={index * 100}>
-                <StatCounter
-                  end={stat.value}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes It Unique */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="headline-lg mb-6">
-                Why the Underground Centre{' '}
-                <span className="text-gradient-teal">Matters</span>
-              </h2>
-              <p className="body-lg">
-                Mining companies won't buy technology that hasn't been proven underground. 
-                Our facility bridges the gap between prototype and market-ready product.
-              </p>
+        {/* Stats Section */}
+        <section className="relative py-16 bg-gray-900 border-y border-white/10">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <StatCounter end={stat.value} suffix={stat.suffix} label={stat.label} />
+                </motion.div>
+              ))}
             </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {capabilities.map((cap, index) => (
-              <ScrollReveal key={cap.title} delay={index * 100}>
-                <div className="p-8 bg-background rounded-2xl border border-border hover:border-teal-200 transition-colors h-full">
-                  <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-5">
-                    <cap.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <h3 className="headline-sm mb-3">{cap.title}</h3>
-                  <p className="body-md">{cap.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Technology Areas */}
-      <section className="section-padding bg-slate-900">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <ScrollReveal direction="left">
-              <div>
-                <span className="text-teal-400 font-semibold text-sm tracking-wider uppercase mb-4 block">
-                  Technology Focus Areas
+        {/* Process Section */}
+        <section className="py-24 bg-gray-950">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center max-w-3xl mx-auto mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                How It{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">
+                  Works
                 </span>
-                <h2 className="headline-lg text-slate-50 mb-6">
-                  What You Can Test
-                </h2>
-                <p className="body-lg text-slate-300 mb-8">
-                  Our facility supports a wide range of mining technology categories. 
-                  If you're building something that operates underground, we can help 
-                  you test it.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {techAreas.map((area) => (
-                    <div
-                      key={area}
-                      className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50"
-                    >
-                      <CheckCircle2 className="h-5 w-5 text-teal-400 flex-shrink-0" />
-                      <span className="text-slate-200 text-sm">{area}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div className="relative">
-                <img
-                  src={miningTechImage}
-                  alt="Mining technology testing"
-                  className="rounded-2xl shadow-2xl"
-                />
-                <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-xl">
-                  <Zap className="h-8 w-8 mb-2" />
-                  <div className="text-sm font-semibold">Fully Operational</div>
-                  <div className="text-xs opacity-90">24/7 Testing Available</div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* The Process */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="headline-lg mb-6">
-                How It <span className="text-gradient-teal">Works</span>
               </h2>
-              <p className="body-lg">
-                From application to validation, here's how startups work with the 
-                Underground Centre.
+              <p className="text-gray-400 text-lg">
+                From application to validation, here's how startups work with the Underground Centre.
               </p>
-            </div>
-          </ScrollReveal>
+            </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Apply',
-                description: 'Submit your application describing your technology and testing needs.',
-              },
-              {
-                step: '02',
-                title: 'Assessment',
-                description: 'Our team evaluates fit and develops a customized testing plan.',
-              },
-              {
-                step: '03',
-                title: 'Testing',
-                description: 'Execute your testing program in real underground conditions.',
-              },
-              {
-                step: '04',
-                title: 'Validation',
-                description: 'Receive documentation and support for commercialization.',
-              },
-            ].map((item, index) => (
-              <ScrollReveal key={item.step} delay={index * 100}>
-                <div className="text-center">
-                  <div className="text-5xl font-display font-bold text-primary/20 mb-4">
-                    {item.step}
+            <div className="grid md:grid-cols-4 gap-8">
+              {processSteps.map((item, index) => (
+                <motion.div
+                  key={item.step}
+                  className="relative text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  {/* Connection line */}
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-teal-500/50 to-transparent" />
+                  )}
+                  
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-500/20 border-2 border-teal-500/50">
+                    <span className="text-2xl font-bold text-teal-400">{item.step}</span>
                   </div>
-                  <h3 className="font-display font-bold text-xl mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Global Gateway */}
-      <section className="section-padding bg-gradient-subtle">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <ScrollReveal direction="left">
-              <div>
-                <h2 className="headline-lg mb-6">
+        {/* Global Gateway Section */}
+        <section className="py-24 bg-gradient-to-b from-gray-900 to-gray-950">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   Your Gateway to{' '}
-                  <span className="text-gradient-teal">Global Mining</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">
+                    Global Mining
+                  </span>
                 </h2>
-                <p className="body-lg mb-6">
-                  The NORCAT Underground Centre isn't just a testing facility—it's your 
-                  entry point to the global mining industry. Our connections span six 
-                  continents and include the world's largest mining companies.
+                <p className="text-gray-300 text-lg mb-8">
+                  The NORCAT Underground Centre isn't just a testing facility—it's your entry point
+                  to the global mining industry. Our connections span six continents and include the
+                  world's largest mining companies.
                 </p>
                 <ul className="space-y-4 mb-8">
-                  {[
-                    'Direct introductions to mining company innovation teams',
-                    'Participation in international mining conferences',
-                    'Access to global OEM partnership opportunities',
-                    'Visibility to mining-focused investors worldwide',
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <Building2 className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
+                  {globalBenefits.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-teal-400 mt-1 flex-shrink-0" />
+                      <span className="text-gray-300">{item}</span>
+                    </motion.li>
                   ))}
                 </ul>
-                <Button asChild className="btn-hero">
+                <Button asChild className="btn-primary-lg">
                   <Link to="/apply">
                     Start Your Journey
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-              </div>
-            </ScrollReveal>
+              </motion.div>
 
-            <ScrollReveal direction="right">
-              <div className="bg-slate-900 rounded-2xl p-8 lg:p-12">
-                <Globe className="h-16 w-16 text-teal-400 mb-6" />
-                <h3 className="headline-sm text-slate-50 mb-4">Global Reach</h3>
-                <p className="text-slate-300 mb-6">
-                  Our portfolio companies have gone on to work with mining operations 
-                  in Canada, Australia, Chile, South Africa, and beyond.
-                </p>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className="text-3xl font-display font-bold text-teal-400">6</div>
-                    <div className="text-xs text-slate-400">Continents</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-display font-bold text-teal-400">20+</div>
-                    <div className="text-xs text-slate-400">Countries</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-display font-bold text-teal-400">50+</div>
-                    <div className="text-xs text-slate-400">Partners</div>
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 lg:p-10 border border-white/10">
+                  <Globe className="h-16 w-16 text-teal-400 mb-6" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Global Reach</h3>
+                  <p className="text-gray-300 mb-8">
+                    Our portfolio companies have gone on to work with mining operations in Canada,
+                    Australia, Chile, South Africa, and beyond.
+                  </p>
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { value: '6', label: 'Continents' },
+                      { value: '20+', label: 'Countries' },
+                      { value: '50+', label: 'Partners' },
+                    ].map((stat) => (
+                      <div key={stat.label} className="text-center">
+                        <div className="text-3xl font-bold text-teal-400 mb-1">{stat.value}</div>
+                        <div className="text-xs text-gray-500">{stat.label}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-teal-500/20 rounded-full blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-teal-500/10 rounded-full blur-3xl" />
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+
+        {/* Footer CTA */}
+        <section className="py-20 bg-gray-950 border-t border-white/10">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <Building2 className="h-12 w-12 text-teal-400 mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Test Underground?
+              </h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                Join the companies that have validated their technology in the world's most
+                comprehensive underground testing facility.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild className="btn-primary-lg">
+                  <Link to="/apply">
+                    Apply for Access
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="btn-outline-dark">
+                  <Link to="/programs">Learn About Programs</Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </motion.div>
+    </div>
   );
 }
