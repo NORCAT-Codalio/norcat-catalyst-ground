@@ -125,7 +125,7 @@ export default function Index() {
                 </Link>
                 <Link to="/mining-innovation" className="btn-outline-dark">
                   <Play className="h-4 w-4" />
-                  Watch Our Story
+                  2025 Recap
                 </Link>
               </div>
             </ScrollReveal>
