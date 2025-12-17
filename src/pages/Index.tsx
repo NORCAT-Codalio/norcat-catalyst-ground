@@ -158,13 +158,18 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Logos / Social Proof */}
-      <section className="py-16 border-b border-border bg-secondary/50">
+      {/* Top Companies */}
+      <section className="py-20 border-b border-border bg-secondary/50">
         <div className="container mx-auto px-6">
-          <p className="text-center text-muted-foreground mb-8">Backed by the Government of Ontario • Supporting founders since 2009</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            {['Vale', 'Glencore', 'Epiroc', 'Sandvik', 'Laurentian'].map((name) => (
-              <span key={name} className="text-xl font-bold text-gray-400">{name}</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+            Top NORCAT Innovation Companies
+          </h2>
+          <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
+            {Array.from({ length: 24 }).map((_, i) => (
+              <div
+                key={i}
+                className="aspect-[3/2] rounded-xl bg-muted/50 border border-border hover:border-primary/30 hover:bg-muted transition-all duration-300"
+              />
             ))}
           </div>
         </div>
