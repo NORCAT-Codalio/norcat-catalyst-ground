@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Target, Heart, Globe, Award, Building } from 'lucide-react';
+import { ArrowRight, Users, Target, Heart, Globe } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 import foundersImage from '@/assets/founders-collab.jpg';
 
 const values = [
@@ -24,7 +23,7 @@ const values = [
   {
     icon: Globe,
     title: 'Globally Relevant',
-    description: 'We help startups build solutions that matter on a global scale, especially in mining and industrial tech.',
+    description: 'We help startups build solutions that matter on a global scale.',
   },
 ];
 
@@ -39,26 +38,23 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl">
+      <section className="pt-32 pb-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <span className="text-primary font-semibold text-sm tracking-wider uppercase mb-4 block">
+              <p className="text-muted-foreground text-[15px] mb-4">
                 About Us
-              </span>
+              </p>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="headline-xl mb-6">
-                Sudbury's Regional{' '}
-                <span className="text-gradient-teal">Innovation Centre</span>
+                Sudbury's Regional Innovation Centre
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="body-lg max-w-2xl">
-                NORCAT Innovation is a not-for-profit Regional Innovation Centre 
-                funded by the Government of Ontario. We're Ontario's hub for emerging 
-                mining technology and the catalyst for tech-enabled startup growth in 
-                Northern Ontario.
+              <p className="body-xl max-w-2xl mx-auto">
+                A not-for-profit Innovation Centre funded by the Government of Ontario. 
+                We're the catalyst for tech-enabled startup growth in Northern Ontario.
               </p>
             </ScrollReveal>
           </div>
@@ -66,14 +62,14 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section className="section-padding border-t border-border">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <ScrollReveal direction="left">
               <img
                 src={foundersImage}
                 alt="NORCAT Innovation team working with founders"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl"
               />
             </ScrollReveal>
 
@@ -85,20 +81,18 @@ export default function About() {
                   mentorship, capital access, and our unique underground testing facility, 
                   we provide everything ambitious entrepreneurs need to start, grow, and scale.
                 </p>
-                <p className="body-md mb-8">
-                  As part of Ontario's Regional Innovation Centre network, we focus on 
-                  tech-enabled, IP-driven startups with the potential for global impact. 
+                <p className="body-md mb-10">
                   Our specialization in mining technology makes us unique—offering founders 
                   access to a real operational mine for testing and validation.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-secondary">
-                    <div className="text-3xl font-display font-bold text-primary mb-1">15+</div>
-                    <div className="text-sm text-muted-foreground">Years of Impact</div>
+                <div className="flex gap-12">
+                  <div>
+                    <div className="text-[48px] font-semibold tracking-[-0.03em] text-foreground">15+</div>
+                    <div className="text-[14px] text-muted-foreground">Years of Impact</div>
                   </div>
-                  <div className="p-4 rounded-xl bg-secondary">
-                    <div className="text-3xl font-display font-bold text-primary mb-1">150+</div>
-                    <div className="text-sm text-muted-foreground">Startups Supported</div>
+                  <div>
+                    <div className="text-[48px] font-semibold tracking-[-0.03em] text-foreground">150+</div>
+                    <div className="text-[14px] text-muted-foreground">Startups Supported</div>
                   </div>
                 </div>
               </div>
@@ -108,27 +102,26 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-gradient-subtle">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="section-padding bg-secondary">
+        <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-16">
               <h2 className="headline-lg mb-6">Our Values</h2>
               <p className="body-lg">
-                These principles guide everything we do and how we support the founders 
-                in our ecosystem.
+                These principles guide everything we do and how we support founders.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <ScrollReveal key={value.title} delay={index * 100}>
-                <div className="p-6 bg-background rounded-2xl border border-border hover:border-teal-200 transition-colors h-full">
-                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
-                    <value.icon className="h-6 w-6 text-primary" />
+              <ScrollReveal key={value.title} delay={index * 50}>
+                <div className="p-6 bg-background rounded-2xl h-full">
+                  <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center mb-4">
+                    <value.icon className="h-5 w-5 text-foreground" />
                   </div>
-                  <h3 className="font-display font-bold text-lg mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <h3 className="font-semibold text-[17px] mb-2">{value.title}</h3>
+                  <p className="text-[15px] text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -136,48 +129,46 @@ export default function About() {
         </div>
       </section>
 
-      {/* Ecosystem Section */}
+      {/* Team Section */}
       <section className="section-padding">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <div>
                 <h2 className="headline-lg mb-6">Part of Ontario's Innovation Ecosystem</h2>
                 <p className="body-lg mb-6">
                   As one of Ontario's Regional Innovation Centres, we're part of a 
                   province-wide network dedicated to driving economic growth through 
-                  entrepreneurship and innovation.
+                  entrepreneurship.
                 </p>
                 <p className="body-md mb-8">
-                  We work closely with the Ontario Centre of Innovation, other RICs across 
-                  the province, and a network of universities, research institutions, and 
-                  industry partners to provide founders with unparalleled access and support.
+                  We work closely with the Ontario Centre of Innovation, other RICs, 
+                  universities, and research institutions to provide founders with 
+                  unparalleled access and support.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-full text-sm">
-                    <Award className="h-4 w-4 text-primary" />
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-4 py-2 bg-secondary rounded-full text-[14px] text-muted-foreground">
                     Government of Ontario Funded
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-secondary rounded-full text-sm">
-                    <Building className="h-4 w-4 text-primary" />
-                    Not-for-Profit Organization
-                  </div>
+                  </span>
+                  <span className="px-4 py-2 bg-secondary rounded-full text-[14px] text-muted-foreground">
+                    Not-for-Profit
+                  </span>
                 </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right">
               <div className="grid grid-cols-2 gap-4">
-                {team.map((member, index) => (
+                {team.map((member) => (
                   <div
                     key={member.name}
                     className="p-6 bg-secondary rounded-2xl text-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">
+                    <div className="w-14 h-14 rounded-full bg-foreground text-background flex items-center justify-center font-semibold text-[17px] mx-auto mb-4">
                       {member.initials}
                     </div>
-                    <div className="font-semibold">{member.name}</div>
-                    <div className="text-sm text-muted-foreground">{member.role}</div>
+                    <div className="font-medium text-[15px]">{member.name}</div>
+                    <div className="text-[13px] text-muted-foreground">{member.role}</div>
                   </div>
                 ))}
               </div>
@@ -187,22 +178,20 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-slate-900">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
+      <section className="section-padding bg-gray-950">
+        <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="headline-lg text-slate-50 mb-6">
-              Ready to Join Our Community?
+            <h2 className="headline-lg text-white mb-6">
+              Ready to join our community?
             </h2>
-            <p className="body-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="body-lg text-gray-400 mb-8 max-w-xl mx-auto">
               Whether you're just starting out or ready to scale, we're here to help 
               you build something extraordinary.
             </p>
-            <Button asChild className="btn-hero">
-              <Link to="/apply">
-                Apply for Venture Growth Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Link to="/apply" className="btn-teal inline-flex items-center gap-2">
+              Apply for Venture Growth Services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </ScrollReveal>
         </div>
       </section>
