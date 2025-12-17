@@ -106,7 +106,7 @@ export default function Index() {
             <ScrollReveal delay={100}>
             <h1 className="headline-hero text-white mb-8">
                 Your Venture's
-                <span className="block text-gradient">unfair advantage</span>
+                <span className="block text-gradient">Unfair Advantage</span>
               </h1>
             </ScrollReveal>
 
