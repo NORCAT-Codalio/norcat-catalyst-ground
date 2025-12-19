@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { PortalSidebar } from './PortalSidebar';
 import { useAuth } from '@/hooks/useAuth';
 
+// Demo mode flag - set to true to bypass authentication
+const DEMO_MODE = true;
+
 interface PortalLayoutProps {
   children: ReactNode;
 }
@@ -12,7 +15,7 @@ export function PortalLayout({ children }: PortalLayoutProps) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isLoading) {
+    if (!DEMO_MODE && !isLoading) {
       if (!user) {
         navigate('/portal/auth');
       } else if (!isApproved) {
@@ -21,7 +24,7 @@ export function PortalLayout({ children }: PortalLayoutProps) {
     }
   }, [user, isApproved, isLoading, navigate]);
 
-  if (isLoading) {
+  if (!DEMO_MODE && isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-4">
@@ -32,7 +35,7 @@ export function PortalLayout({ children }: PortalLayoutProps) {
     );
   }
 
-  if (!user || !isApproved) {
+  if (!DEMO_MODE && (!user || !isApproved)) {
     return null;
   }
 
