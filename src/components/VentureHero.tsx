@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Send, 
   Sparkles, 
@@ -18,7 +18,6 @@ import {
   TrendingUp,
   Shield
 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const supportItems = [
@@ -34,30 +33,66 @@ const supportItems = [
   { icon: Scale, label: 'Legal & IP strategy' },
   { icon: Briefcase, label: 'Connect with mentors' },
   { icon: TrendingUp, label: 'Scale my operations' },
-  { icon: Shield, label: 'Protect my IP' },
-  { icon: Rocket, label: 'Launch my MVP' },
+];
+
+const typingExamples = [
+  "How do I build a compelling pitch deck?",
+  "What grants are available for cleantech startups?",
+  "How do I find a technical co-founder?",
+  "What's the best way to validate my idea?",
+  "How do I protect my intellectual property?",
+  "What funding options exist for early-stage startups?",
+  "How do I hire my first employee?",
+  "What mentorship programs do you offer?",
 ];
 
 export function VentureHero() {
   const [chatInput, setChatInput] = useState('');
-  const [visibleItems, setVisibleItems] = useState<number[]>([0, 1, 2, 3, 4, 5]);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [displayText, setDisplayText] = useState('');
+  const [exampleIndex, setExampleIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [charIndex, setCharIndex] = useState(0);
 
-  // Rotate items continuously
+  // Typing animation effect
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisibleItems(prev => {
-        const nextStart = (prev[0] + 1) % supportItems.length;
-        return Array.from({ length: 6 }, (_, i) => (nextStart + i) % supportItems.length);
-      });
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+    const currentExample = typingExamples[exampleIndex];
+    
+    if (isTyping) {
+      if (charIndex < currentExample.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(currentExample.slice(0, charIndex + 1));
+          setCharIndex(prev => prev + 1);
+        }, 50 + Math.random() * 30); // Variable typing speed for realism
+        return () => clearTimeout(timeout);
+      } else {
+        // Pause at end of typing
+        const timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+        return () => clearTimeout(timeout);
+      }
+    } else {
+      // Deleting phase
+      if (charIndex > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayText(currentExample.slice(0, charIndex - 1));
+          setCharIndex(prev => prev - 1);
+        }, 25); // Faster deletion
+        return () => clearTimeout(timeout);
+      } else {
+        // Move to next example
+        const timeout = setTimeout(() => {
+          setExampleIndex((prev) => (prev + 1) % typingExamples.length);
+          setIsTyping(true);
+        }, 500);
+        return () => clearTimeout(timeout);
+      }
+    }
+  }, [charIndex, isTyping, exampleIndex]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (chatInput.trim()) {
-      // Placeholder for AI chat functionality
       console.log('Chat input:', chatInput);
       setChatInput('');
     }
@@ -65,6 +100,10 @@ export function VentureHero() {
 
   const handleItemClick = (label: string) => {
     setChatInput(`Help me ${label.toLowerCase()}`);
+  };
+
+  const handleInputFocus = () => {
+    // Stop the typing animation when user focuses
   };
 
   return (
@@ -120,48 +159,33 @@ export function VentureHero() {
           Access the resources you need to grow and scale
         </motion.p>
 
-        {/* Rotating Support Items */}
+        {/* Static Support Items */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-10"
         >
-          <div 
-            ref={scrollRef}
-            className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
-          >
-            <AnimatePresence mode="popLayout">
-              {visibleItems.map((itemIndex, i) => {
-                const item = supportItems[itemIndex];
-                const Icon = item.icon;
-                return (
-                  <motion.button
-                    key={`${itemIndex}-${i}`}
-                    layout
-                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.8, y: -20 }}
-                    transition={{ 
-                      duration: 0.4,
-                      delay: i * 0.05,
-                      layout: { duration: 0.3 }
-                    }}
-                    onClick={() => handleItemClick(item.label)}
-                    className="group flex items-center gap-2 px-4 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
-                  >
-                    <Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm text-foreground/80 group-hover:text-foreground whitespace-nowrap">
-                      {item.label}
-                    </span>
-                  </motion.button>
-                );
-              })}
-            </AnimatePresence>
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+            {supportItems.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={i}
+                  onClick={() => handleItemClick(item.label)}
+                  className="group flex items-center gap-2 px-4 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+                >
+                  <Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <span className="text-sm text-foreground/80 group-hover:text-foreground whitespace-nowrap">
+                    {item.label}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </motion.div>
 
-        {/* AI Chat Input */}
+        {/* AI Chat Input with Typing Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -170,13 +194,25 @@ export function VentureHero() {
         >
           <form onSubmit={handleSubmit} className="relative">
             <div className="relative rounded-2xl border-2 border-border bg-background/90 backdrop-blur-sm shadow-lg hover:border-primary/30 focus-within:border-primary/50 transition-all duration-300 overflow-hidden">
-              <Input
-                type="text"
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                placeholder="Ask about funding, mentorship, growth strategies..."
-                className="w-full py-6 px-5 pr-14 text-base border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
-              />
+              <div className="relative">
+                <input
+                  type="text"
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  onFocus={handleInputFocus}
+                  className="w-full py-6 px-5 pr-14 text-base border-0 bg-transparent focus:outline-none focus:ring-0"
+                  placeholder=""
+                />
+                {/* Typing animation overlay - only shows when input is empty */}
+                {!chatInput && (
+                  <div className="absolute inset-0 flex items-center px-5 pointer-events-none">
+                    <span className="text-muted-foreground/60 text-base">
+                      {displayText}
+                      <span className="inline-block w-0.5 h-5 bg-primary/60 ml-0.5 animate-pulse" />
+                    </span>
+                  </div>
+                )}
+              </div>
               
               {/* Bottom toolbar */}
               <div className="flex items-center justify-between px-4 py-3 border-t border-border/50 bg-secondary/30">
