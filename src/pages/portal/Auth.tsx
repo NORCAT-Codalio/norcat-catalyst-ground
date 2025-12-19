@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Eye, EyeOff, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
+import { Eye, EyeOff, ArrowRight, Sparkles, Shield, Zap, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
+
+// Demo mode flag - set to true to bypass authentication
+const DEMO_MODE = true;
 
 const loginSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -229,6 +232,17 @@ export default function Auth() {
                   : 'Join the NORCAT Innovation ecosystem'}
               </p>
             </div>
+
+            {DEMO_MODE && (
+              <Button
+                onClick={() => navigate('/portal')}
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                size="lg"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                Preview Portal (Demo Mode)
+              </Button>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {!isLogin && (
