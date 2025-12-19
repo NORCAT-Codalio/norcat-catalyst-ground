@@ -11,6 +11,7 @@ const navLinks = [
   { name: 'Ecosystem', href: '/ecosystem' },
   { name: 'Impact', href: '/impact' },
   { name: 'Events', href: '/events' },
+  { name: 'Client Portal', href: '/portal/auth' },
 ];
 
 export function Navigation() {
