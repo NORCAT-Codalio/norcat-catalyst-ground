@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, HelpCircle, Rocket, Users, Target, FileCheck } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { VentureHero } from '@/components/VentureHero';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/hooks/use-toast';
-
 const eligibilityCriteria = [
   'Tech-enabled startup with IP potential',
   'Canadian-incorporated or willing to incorporate',
@@ -97,31 +97,8 @@ export default function Apply() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl">
-            <ScrollReveal>
-              <span className="text-primary font-semibold text-sm tracking-wider uppercase mb-4 block">
-                Get Started
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="headline-xl mb-6">
-                Apply for{' '}
-                <span className="text-gradient-teal">Venture Growth Services</span>
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="body-lg max-w-2xl">
-                Ready to build something big? Apply to join Ontario's most ambitious 
-                founder community. It takes about 5 minutes, and there's no cost or 
-                obligation to apply.
-              </p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      {/* New Interactive Hero */}
+      <VentureHero />
 
       {/* Main Content */}
       <section className="section-padding">
