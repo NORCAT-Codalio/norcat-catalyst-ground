@@ -63,7 +63,8 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -77,91 +78,116 @@ export function Navigation() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+    setMobileAccordion(null);
   }, [location]);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const toggleDropdown = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  const handleMouseEnter = (dropdown: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setActiveDropdown(dropdown);
   };
 
-  // Liquid glass animation variants
-  const megaMenuVariants = {
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
+
+  const toggleMobileAccordion = (accordion: string) => {
+    setMobileAccordion(mobileAccordion === accordion ? null : accordion);
+  };
+
+  // Blob liquid animation - expands from center like a droplet
+  const blobVariants = {
     hidden: {
       opacity: 0,
-      y: -10,
-      scale: 0.98,
-      filter: 'blur(10px)',
+      scale: 0.3,
+      y: -20,
+      borderRadius: '50%',
     },
     visible: {
       opacity: 1,
-      y: 0,
       scale: 1,
-      filter: 'blur(0px)',
+      y: 0,
+      borderRadius: '1rem',
       transition: {
         type: 'spring',
-        stiffness: 300,
-        damping: 30,
-        staggerChildren: 0.05,
+        stiffness: 200,
+        damping: 20,
+        mass: 0.8,
+        staggerChildren: 0.03,
+        delayChildren: 0.05,
       },
     },
     exit: {
       opacity: 0,
+      scale: 0.5,
       y: -10,
-      scale: 0.98,
-      filter: 'blur(10px)',
+      borderRadius: '50%',
+      transition: {
+        duration: 0.25,
+        ease: [0.4, 0, 1, 1],
+      },
+    },
+  };
+
+  const smallBlobVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.2,
+      y: -15,
+      borderRadius: '50%',
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      borderRadius: '0.75rem',
+      transition: {
+        type: 'spring',
+        stiffness: 250,
+        damping: 22,
+        mass: 0.6,
+        staggerChildren: 0.02,
+        delayChildren: 0.03,
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.3,
+      y: -10,
+      borderRadius: '50%',
       transition: {
         duration: 0.2,
+        ease: [0.4, 0, 1, 1],
       },
     },
   };
 
   const columnVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         type: 'spring',
-        stiffness: 400,
+        stiffness: 300,
         damping: 25,
       },
     },
   };
 
-  const dropdownVariants = {
-    hidden: {
-      opacity: 0,
-      y: -5,
-      scale: 0.95,
-      filter: 'blur(8px)',
-    },
+  const itemVariants = {
+    hidden: { opacity: 0, x: -10 },
     visible: {
       opacity: 1,
-      y: 0,
-      scale: 1,
-      filter: 'blur(0px)',
+      x: 0,
       transition: {
         type: 'spring',
         stiffness: 400,
-        damping: 30,
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: -5,
-      scale: 0.95,
-      filter: 'blur(8px)',
-      transition: {
-        duration: 0.15,
+        damping: 25,
       },
     },
   };
@@ -176,7 +202,7 @@ export function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <nav className="flex items-center justify-between" ref={dropdownRef}>
+        <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-lg bg-gradient-teal flex items-center justify-center shadow-md">
@@ -208,9 +234,12 @@ export function Navigation() {
             </Link>
 
             {/* Programs Mega Menu */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('programs')}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={() => toggleDropdown('programs')}
                 className={cn(
                   'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                   activeDropdown === 'programs'
@@ -219,46 +248,74 @@ export function Navigation() {
                 )}
               >
                 Programs
-                <ChevronDown className={cn('w-4 h-4 transition-transform', activeDropdown === 'programs' && 'rotate-180')} />
+                <ChevronDown className={cn('w-4 h-4 transition-transform duration-300', activeDropdown === 'programs' && 'rotate-180')} />
               </button>
 
               <AnimatePresence>
                 {activeDropdown === 'programs' && (
                   <motion.div
-                    variants={megaMenuVariants}
+                    variants={blobVariants}
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] p-6 rounded-2xl border border-white/20 shadow-2xl"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] p-6 shadow-2xl overflow-hidden"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
-                      backdropFilter: 'blur(20px) saturate(180%)',
-                      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                      background: 'linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 50%, rgba(240,253,250,0.95) 100%)',
+                      backdropFilter: 'blur(24px) saturate(200%)',
+                      WebkitBackdropFilter: 'blur(24px) saturate(200%)',
+                      border: '1px solid rgba(255,255,255,0.6)',
+                      boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.5) inset, 0 -10px 40px -10px rgba(20,184,166,0.1) inset',
                     }}
                   >
-                    {/* Liquid glass overlay effect */}
-                    <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-                      <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
-                      <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
-                    </div>
+                    {/* Animated blob background elements */}
+                    <motion.div 
+                      className="absolute -top-32 -right-32 w-64 h-64 rounded-full pointer-events-none"
+                      style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 70%)' }}
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        x: [0, 10, 0],
+                        y: [0, -10, 0],
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <motion.div 
+                      className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full pointer-events-none"
+                      style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 70%)' }}
+                      animate={{ 
+                        scale: [1, 1.3, 1],
+                        x: [0, -5, 0],
+                        y: [0, 5, 0],
+                      }}
+                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    />
+                    <motion.div 
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+                      style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.05) 0%, transparent 60%)' }}
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                      }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                    />
 
                     <div className="relative grid grid-cols-4 gap-6">
                       {Object.entries(programsMenu).map(([key, section], i) => (
                         <motion.div key={key} variants={columnVariants}>
-                          <div className="flex items-center gap-2 mb-4 pb-2 border-b border-border/50">
-                            <section.icon className="w-4 h-4 text-primary" />
+                          <div className="flex items-center gap-2 mb-4 pb-2 border-b border-primary/10">
+                            <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
+                              <section.icon className="w-4 h-4 text-primary" />
+                            </div>
                             <span className="font-semibold text-sm text-foreground">{section.title}</span>
                           </div>
-                          <ul className="space-y-1">
-                            {section.items.map((item) => (
-                              <li key={item.name}>
+                          <ul className="space-y-0.5">
+                            {section.items.map((item, idx) => (
+                              <motion.li key={item.name} variants={itemVariants}>
                                 <Link
                                   to={item.href}
-                                  className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                                  className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 hover:translate-x-1"
                                 >
                                   {item.name}
                                 </Link>
-                              </li>
+                              </motion.li>
                             ))}
                           </ul>
                         </motion.div>
@@ -270,9 +327,12 @@ export function Navigation() {
             </div>
 
             {/* Ecosystem Dropdown */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('ecosystem')}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={() => toggleDropdown('ecosystem')}
                 className={cn(
                   'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                   activeDropdown === 'ecosystem'
@@ -281,29 +341,34 @@ export function Navigation() {
                 )}
               >
                 Ecosystem
-                <ChevronDown className={cn('w-4 h-4 transition-transform', activeDropdown === 'ecosystem' && 'rotate-180')} />
+                <ChevronDown className={cn('w-4 h-4 transition-transform duration-300', activeDropdown === 'ecosystem' && 'rotate-180')} />
               </button>
 
               <AnimatePresence>
                 {activeDropdown === 'ecosystem' && (
                   <motion.div
-                    variants={dropdownVariants}
+                    variants={smallBlobVariants}
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="absolute top-full left-0 mt-2 w-64 p-3 rounded-xl border border-white/20 shadow-xl"
+                    className="absolute top-full left-0 mt-2 w-64 p-3 shadow-xl overflow-hidden"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
-                      backdropFilter: 'blur(20px) saturate(180%)',
-                      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                      background: 'linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 50%, rgba(240,253,250,0.95) 100%)',
+                      backdropFilter: 'blur(24px) saturate(200%)',
+                      WebkitBackdropFilter: 'blur(24px) saturate(200%)',
+                      border: '1px solid rgba(255,255,255,0.6)',
+                      boxShadow: '0 20px 40px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.5) inset',
                     }}
                   >
-                    <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/20 rounded-full blur-2xl" />
-                    </div>
-                    <ul className="relative space-y-1">
-                      {ecosystemItems.map((item) => (
-                        <li key={item.name}>
+                    <motion.div 
+                      className="absolute -top-16 -right-16 w-32 h-32 rounded-full pointer-events-none"
+                      style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 70%)' }}
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <ul className="relative space-y-0.5">
+                      {ecosystemItems.map((item, idx) => (
+                        <motion.li key={item.name} variants={itemVariants}>
                           <Link
                             to={item.href}
                             className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
@@ -311,7 +376,7 @@ export function Navigation() {
                             <Globe className="w-4 h-4" />
                             {item.name}
                           </Link>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </motion.div>
@@ -320,9 +385,12 @@ export function Navigation() {
             </div>
 
             {/* Insights Dropdown */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('insights')}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
-                onClick={() => toggleDropdown('insights')}
                 className={cn(
                   'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                   activeDropdown === 'insights'
@@ -331,29 +399,34 @@ export function Navigation() {
                 )}
               >
                 Insights
-                <ChevronDown className={cn('w-4 h-4 transition-transform', activeDropdown === 'insights' && 'rotate-180')} />
+                <ChevronDown className={cn('w-4 h-4 transition-transform duration-300', activeDropdown === 'insights' && 'rotate-180')} />
               </button>
 
               <AnimatePresence>
                 {activeDropdown === 'insights' && (
                   <motion.div
-                    variants={dropdownVariants}
+                    variants={smallBlobVariants}
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="absolute top-full left-0 mt-2 w-56 p-3 rounded-xl border border-white/20 shadow-xl"
+                    className="absolute top-full left-0 mt-2 w-56 p-3 shadow-xl overflow-hidden"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
-                      backdropFilter: 'blur(20px) saturate(180%)',
-                      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                      background: 'linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 50%, rgba(240,253,250,0.95) 100%)',
+                      backdropFilter: 'blur(24px) saturate(200%)',
+                      WebkitBackdropFilter: 'blur(24px) saturate(200%)',
+                      border: '1px solid rgba(255,255,255,0.6)',
+                      boxShadow: '0 20px 40px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.5) inset',
                     }}
                   >
-                    <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/20 rounded-full blur-2xl" />
-                    </div>
-                    <ul className="relative space-y-1">
-                      {insightsItems.map((item) => (
-                        <li key={item.name}>
+                    <motion.div 
+                      className="absolute -top-16 -right-16 w-32 h-32 rounded-full pointer-events-none"
+                      style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 70%)' }}
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <ul className="relative space-y-0.5">
+                      {insightsItems.map((item, idx) => (
+                        <motion.li key={item.name} variants={itemVariants}>
                           <Link
                             to={item.href}
                             className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
@@ -361,7 +434,7 @@ export function Navigation() {
                             <Lightbulb className="w-4 h-4" />
                             {item.name}
                           </Link>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </motion.div>
@@ -437,14 +510,14 @@ export function Navigation() {
                 {/* Mobile Programs Accordion */}
                 <div>
                   <button
-                    onClick={() => toggleDropdown('mobile-programs')}
+                    onClick={() => toggleMobileAccordion('mobile-programs')}
                     className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
                   >
                     Programs
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', activeDropdown === 'mobile-programs' && 'rotate-180')} />
+                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-programs' && 'rotate-180')} />
                   </button>
                   <AnimatePresence>
-                    {activeDropdown === 'mobile-programs' && (
+                    {mobileAccordion === 'mobile-programs' && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
@@ -477,14 +550,14 @@ export function Navigation() {
                 {/* Mobile Ecosystem */}
                 <div>
                   <button
-                    onClick={() => toggleDropdown('mobile-ecosystem')}
+                    onClick={() => toggleMobileAccordion('mobile-ecosystem')}
                     className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
                   >
                     Ecosystem
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', activeDropdown === 'mobile-ecosystem' && 'rotate-180')} />
+                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-ecosystem' && 'rotate-180')} />
                   </button>
                   <AnimatePresence>
-                    {activeDropdown === 'mobile-ecosystem' && (
+                    {mobileAccordion === 'mobile-ecosystem' && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
@@ -510,14 +583,14 @@ export function Navigation() {
                 {/* Mobile Insights */}
                 <div>
                   <button
-                    onClick={() => toggleDropdown('mobile-insights')}
+                    onClick={() => toggleMobileAccordion('mobile-insights')}
                     className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
                   >
                     Insights
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', activeDropdown === 'mobile-insights' && 'rotate-180')} />
+                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-insights' && 'rotate-180')} />
                   </button>
                   <AnimatePresence>
-                    {activeDropdown === 'mobile-insights' && (
+                    {mobileAccordion === 'mobile-insights' && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
