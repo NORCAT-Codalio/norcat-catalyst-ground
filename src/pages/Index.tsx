@@ -1,33 +1,62 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Zap, Globe, Cpu, Leaf, Factory, ChevronRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Zap, Globe, Cpu, Leaf, Factory, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const pillars = [
+const portfolioCompanies = [
+  { name: 'Symboticware', logo: 'SW' },
+  { name: 'Maestro Digital Mine', logo: 'MDM' },
+  { name: 'Hard-Line', logo: 'HL' },
+  { name: 'Cognitive Systems', logo: 'CS' },
+  { name: 'SafeSight', logo: 'SS' },
+  { name: 'Drill Scan', logo: 'DS' },
+  { name: 'Agnico Eagle', logo: 'AE' },
+  { name: 'MineSense', logo: 'MS' },
+  { name: 'Newtrax', logo: 'NT' },
+  { name: 'Provix', logo: 'PV' },
+  { name: 'Motion Metrics', logo: 'MM' },
+  { name: 'Iamgold', logo: 'IG' },
+];
+
+const services = [
   {
     icon: Users,
     title: 'Mentorship',
-    description: 'Team-based mentoring from entrepreneurs and executives who have been there.',
+    description: 'Team-based mentoring from 12+ seasoned entrepreneurs and executives.',
     link: '/programs/mentorship-services',
-    color: 'from-violet-500 to-purple-600',
+    gradient: 'from-violet-500 to-purple-600',
   },
   {
     icon: DollarSign,
-    title: 'Capital',
-    description: 'Non-dilutive funding programs and our $5M Sudbury Catalyst Fund.',
+    title: 'Capital Access',
+    description: 'Non-dilutive funding and our $5M Sudbury Catalyst Fund.',
     link: '/funding/sudbury-catalyst-fund',
-    color: 'from-emerald-500 to-teal-600',
+    gradient: 'from-emerald-500 to-teal-600',
   },
   {
-    icon: Mountain,
-    title: 'Underground',
-    description: "The world's only underground facility for testing mining technology.",
-    link: '/mining/norcat-underground',
-    color: 'from-amber-500 to-orange-600',
+    icon: Lightbulb,
+    title: 'Venture Growth',
+    description: 'Strategic guidance from ideation to market traction.',
+    link: '/programs/venture-growth-services',
+    gradient: 'from-amber-500 to-orange-600',
   },
+  {
+    icon: Target,
+    title: 'Capital Navigation',
+    description: 'Expert help securing grants and investment readiness.',
+    link: '/programs/capital-navigation',
+    gradient: 'from-rose-500 to-pink-600',
+  },
+];
+
+const ecosystemPartners = [
+  { icon: Building2, name: 'Innovation Quarters', desc: 'Co-working space' },
+  { icon: GraduationCap, name: 'Cambrian College', desc: 'Talent pipeline' },
+  { icon: Handshake, name: 'MineConnect', desc: 'Industry network' },
+  { icon: Globe, name: 'MICA Network', desc: 'Partner ecosystem' },
 ];
 
 const sectors = [
@@ -60,7 +89,6 @@ export default function Index() {
     <Layout>
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Animated Background */}
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <img 
             src={heroImage} 
@@ -70,31 +98,22 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-950/90 to-teal-950/70" />
         </motion.div>
 
-        {/* Floating gradient orbs */}
+        {/* Animated orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div 
             className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full"
             style={{ background: 'radial-gradient(circle, hsl(173 83% 44% / 0.15) 0%, transparent 70%)' }}
-            animate={{ 
-              scale: [1, 1.2, 1],
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
+            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
           />
           <motion.div 
             className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full"
             style={{ background: 'radial-gradient(circle, hsl(270 60% 50% / 0.1) 0%, transparent 70%)' }}
-            animate={{ 
-              scale: [1.2, 1, 1.2],
-              x: [0, -40, 0],
-              y: [0, 40, 0],
-            }}
+            animate={{ scale: [1.2, 1, 1.2], x: [0, -40, 0], y: [0, 40, 0] }}
             transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
           />
         </div>
 
-        {/* Grid overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
           backgroundSize: '60px 60px',
@@ -123,7 +142,7 @@ export default function Index() {
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               Build the
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-300 animate-gradient" style={{ backgroundSize: '200% 200%' }}>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-300">
                 Future Here
               </span>
             </motion.h1>
@@ -134,12 +153,10 @@ export default function Index() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              World-class mentorship, capital access, and the only underground 
-              testing facility of its kind. For tech-enabled, IP-driven startups 
-              ready to scale.
+              World-class mentorship, capital access, and infrastructure 
+              for tech-enabled, IP-driven startups ready to scale.
             </motion.p>
 
-            {/* Sectors */}
             <motion.div 
               className="flex flex-wrap gap-2 mb-10"
               initial={{ opacity: 0, y: 20 }}
@@ -178,7 +195,6 @@ export default function Index() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div 
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           initial={{ opacity: 0 }}
@@ -199,79 +215,95 @@ export default function Index() {
         </motion.div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-12 bg-gray-950 border-y border-white/10">
+      {/* Portfolio Companies */}
+      <section className="py-20 bg-background border-b border-border overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div 
-                key={stat.label}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
-                  {stat.value}
+          <ScrollReveal>
+            <p className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-12">
+              Trusted by innovative companies worldwide
+            </p>
+          </ScrollReveal>
+          
+          <div className="relative">
+            {/* Gradient masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+            
+            {/* Scrolling logos */}
+            <motion.div 
+              className="flex gap-12"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div 
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-32 h-16 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 transition-colors group"
+                >
+                  <span className="text-xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                    {company.logo}
+                  </span>
                 </div>
-                <p className="text-gray-500 text-sm mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Three Pillars */}
+      {/* Services */}
       <section className="py-32 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         
         <div className="container mx-auto px-6 relative">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                What We Offer
+              </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Everything to <span className="text-gradient">Scale</span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                From early-stage mentorship to growth capital, we provide complete 
-                support for ambitious founders.
+                Comprehensive support designed for founders who want to move fast.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {pillars.map((pillar, i) => (
-              <ScrollReveal key={pillar.title} delay={i * 0.15}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, i) => (
+              <ScrollReveal key={service.title} delay={i * 0.1}>
                 <Link 
-                  to={pillar.link}
-                  className="group block relative rounded-3xl bg-secondary/50 border border-border p-10 h-full overflow-hidden hover:border-primary/30 transition-all duration-500"
+                  to={service.link}
+                  className="group block h-full"
                 >
-                  {/* Gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${pillar.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                  
-                  {/* Icon */}
                   <motion.div 
-                    className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${pillar.color} flex items-center justify-center mb-8 shadow-lg`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
+                    className="relative h-full rounded-3xl bg-secondary/50 border border-border p-8 overflow-hidden hover:border-primary/30 transition-all duration-500"
+                    whileHover={{ y: -8 }}
                   >
-                    <pillar.icon className="w-8 h-8 text-white" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                    
+                    <motion.div 
+                      className={`relative w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg`}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                    >
+                      <service.icon className="w-7 h-7 text-white" />
+                    </motion.div>
+
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    
+                    <span className="inline-flex items-center gap-2 text-primary text-sm font-semibold">
+                      Learn more
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                    </span>
+
+                    <div className={`absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-gradient-to-br ${service.gradient} opacity-10 blur-2xl group-hover:opacity-20 transition-opacity`} />
                   </motion.div>
-
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {pillar.description}
-                  </p>
-                  
-                  <span className="inline-flex items-center gap-2 text-primary font-semibold">
-                    Explore
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-                  </span>
-
-                  {/* Corner accent */}
-                  <div className={`absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-gradient-to-br ${pillar.color} opacity-10 blur-2xl group-hover:opacity-20 transition-opacity`} />
                 </Link>
               </ScrollReveal>
             ))}
@@ -279,7 +311,80 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Underground Feature */}
+      {/* Sudbury Ecosystem */}
+      <section className="py-32 bg-secondary/30 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal direction="left">
+              <div>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                  <Globe className="w-4 h-4" />
+                  The Sudbury Advantage
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  A Thriving <span className="text-gradient">Innovation Ecosystem</span>
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                  Greater Sudbury is home to the largest mining supply cluster in Canada, 
+                  world-class research institutions, and a community built on innovation. 
+                  Join an ecosystem where startups and industry connect.
+                </p>
+                <Link to="/ecosystem/sudbury" className="btn-primary group">
+                  Explore the Ecosystem
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="grid grid-cols-2 gap-4">
+                {ecosystemPartners.map((partner, i) => (
+                  <motion.div
+                    key={partner.name}
+                    className="p-6 rounded-2xl bg-background border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    whileHover={{ y: -4 }}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                      <partner.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold mb-1">{partner.name}</h3>
+                    <p className="text-sm text-muted-foreground">{partner.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="py-20 bg-gray-950">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {stats.map((stat, i) => (
+              <motion.div 
+                key={stat.label}
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400 mb-2">
+                  {stat.value}
+                </div>
+                <p className="text-gray-400 font-medium">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Underground Centre */}
       <section className="py-32 bg-gray-950 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" />
@@ -307,8 +412,23 @@ export default function Index() {
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed mb-8">
                   The only innovation centre in the world with an operational underground mine. 
-                  Test, validate, and demonstrate your technology in real conditions.
+                  Test, validate, and demonstrate your technology in real conditions—1.2km of active tunnels.
                 </p>
+                <ul className="space-y-3 mb-8">
+                  {['Live underground testing environment', 'Technology demonstration zones', 'Mining industry validation', 'Global client access'].map((item, i) => (
+                    <motion.li 
+                      key={item}
+                      className="flex items-center gap-3 text-gray-300"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-teal-400" />
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
                 <Link 
                   to="/mining/norcat-underground" 
                   className="btn-primary-lg group"
@@ -333,7 +453,6 @@ export default function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-transparent" />
                   
-                  {/* Floating stats */}
                   <motion.div 
                     className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/20"
                     initial={{ opacity: 0, x: -20 }}
@@ -368,12 +487,15 @@ export default function Index() {
         <div className="container mx-auto px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                Who We Support
+              </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 For <span className="text-gradient">Ambitious</span> Founders
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
-                We work with early-stage to scaling tech-enabled, IP-driven startups 
-                across multiple sectors.
+                Early-stage to scaling tech-enabled, IP-driven startups 
+                building solutions that matter.
               </p>
             </ScrollReveal>
 
@@ -383,6 +505,10 @@ export default function Index() {
                   <motion.div
                     key={sector.label}
                     className="flex items-center gap-3 p-5 rounded-2xl bg-secondary border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
                     whileHover={{ y: -4 }}
                   >
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -395,10 +521,16 @@ export default function Index() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <Link to="/apply" className="btn-primary-lg group">
-                See If You Qualify
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <div className="inline-flex flex-col sm:flex-row gap-4">
+                <Link to="/apply" className="btn-primary-lg group">
+                  Apply Now
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link to="/about" className="btn-secondary group">
+                  Learn About Us
+                  <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -410,43 +542,35 @@ export default function Index() {
           <motion.div 
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
             style={{ background: 'radial-gradient(circle, hsl(173 83% 44% / 0.15) 0%, transparent 60%)' }}
-            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 6, repeat: Infinity }}
           />
         </div>
-        
+
         <div className="container mx-auto px-6 relative text-center">
           <ScrollReveal>
-            <motion.h2 
-              className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Let's Build<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-300">
-                Something Big
-              </span>
-            </motion.h2>
-            <motion.p 
-              className="text-xl text-gray-400 mb-12 max-w-xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              Join the founders who are building the future. Get the mentorship, 
-              funding, and connections to scale.
-            </motion.p>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.6 }}
             >
-              <Link to="/apply" className="btn-primary-lg group text-lg px-10 py-5">
-                Apply Now
-                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6">
+                Ready to{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-teal-300">
+                  Build?
+                </span>
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Join the next generation of founders scaling breakthrough technology.
+              </p>
+              <Link 
+                to="/apply" 
+                className="btn-primary-xl group shadow-glow"
+              >
+                <Rocket className="h-5 w-5" />
+                Start Your Journey
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
           </ScrollReveal>
