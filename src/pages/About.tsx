@@ -321,75 +321,55 @@ export default function About() {
       </section>
 
       {/* RIC Network Section */}
-      <section className="section-padding bg-secondary relative overflow-hidden">
+      <section className="py-16 bg-secondary relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <div className="text-center mb-12">
-                <div className="badge mb-6 mx-auto inline-flex">
+          <ScrollReveal>
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              {/* Left Column - RIC Network */}
+              <div>
+                <div className="badge mb-4">
                   <Globe className="h-4 w-4" />
-                  Our Network
+                  Regional Innovation Centre Network
                 </div>
-                <h2 className="headline-xl mb-6">
-                  Part of Ontario's
-                  <span className="text-gradient"> Regional Innovation Centre Network</span>
-                </h2>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <div className="card-modern p-8 md:p-10">
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                  <div>
-                    <h3 className="headline-sm mb-4">What is the RIC Network?</h3>
-                    <p className="body-md mb-4">
-                      The Regional Innovation Centre (RIC) Network is a province-wide initiative 
-                      that connects entrepreneurs with the resources, mentorship, and funding 
-                      they need to start and scale their businesses across Ontario.
-                    </p>
-                    <p className="body-md">
-                      With 17 centres across the province, the RIC Network provides localized 
-                      support while connecting founders to a broader ecosystem of innovation, 
-                      talent, and capital.
-                    </p>
+                <p className="body-md mb-4">
+                  We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs 
+                  with resources, mentorship, and funding to start and scale businesses.
+                </p>
+                <div className="flex gap-4">
+                  <div className="text-center">
+                    <div className="stat-number text-3xl">17</div>
+                    <p className="text-muted-foreground text-xs">Centres</p>
                   </div>
-                  <div className="space-y-4">
-                    <div className="p-4 rounded-2xl bg-secondary">
-                      <div className="stat-number text-4xl mb-1">17</div>
-                      <p className="text-muted-foreground text-sm">Innovation Centres Across Ontario</p>
-                    </div>
-                    <div className="p-4 rounded-2xl bg-secondary">
-                      <div className="stat-number text-4xl mb-1">1000+</div>
-                      <p className="text-muted-foreground text-sm">Startups Supported Annually</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-border pt-8">
-                  <h3 className="headline-sm mb-4">Funded by the Government of Ontario</h3>
-                  <p className="body-md mb-6">
-                    NORCAT Innovation is proudly funded by the <strong>Ministry of Economic Development, 
-                    Job Creation and Trade</strong> through the Regional Innovation Centre program. This 
-                    support enables us to provide free and subsidized services to entrepreneurs, 
-                    helping drive economic growth and job creation in Northern Ontario.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="badge">
-                      Ministry of Economic Development
-                    </span>
-                    <span className="badge">
-                      Government of Ontario
-                    </span>
-                    <span className="badge">
-                      Not-for-Profit
-                    </span>
+                  <div className="text-center">
+                    <div className="stat-number text-3xl">1000+</div>
+                    <p className="text-muted-foreground text-xs">Startups/Year</p>
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
-          </div>
+
+              {/* Right Column - Government Funding */}
+              <div>
+                <div className="badge mb-4">
+                  <Target className="h-4 w-4" />
+                  Government of Ontario
+                </div>
+                <p className="body-md mb-4">
+                  Funded by the <strong>Ministry of Economic Development, Job Creation and Trade</strong>, 
+                  enabling free and subsidized services for Northern Ontario entrepreneurs.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                    Not-for-Profit
+                  </span>
+                  <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                    Ontario Funded
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
