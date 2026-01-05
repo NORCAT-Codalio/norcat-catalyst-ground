@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Target, Heart, Globe, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, Users, Target, Heart, Globe, Sparkles, Zap, Linkedin, X } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 
 const values = [
@@ -28,13 +30,130 @@ const values = [
 ];
 
 const team = [
-  { name: 'Don Duval', role: 'CEO, NORCAT', initials: 'DD' },
-  { name: 'Jennifer Mousseau', role: 'Director, Innovation', initials: 'JM' },
-  { name: 'Michael Chen', role: 'Director, Venture Services', initials: 'MC' },
-  { name: 'Sarah Thompson', role: 'Manager, Capital Programs', initials: 'ST' },
+  { 
+    name: 'Brendan Skiffington', 
+    role: 'Manager', 
+    initials: 'BS',
+    bio: 'Brendan leads the innovation team with a focus on helping startups navigate the early stages of growth. With extensive experience in venture development and ecosystem building, he connects founders with the resources they need to succeed.',
+    linkedin: 'https://linkedin.com/in/',
+  },
+  { 
+    name: 'Shashank Mehta', 
+    role: 'Coordinator', 
+    initials: 'SM',
+    bio: 'Shashank coordinates programs and events that bring together founders, mentors, and investors. His passion for community building helps create meaningful connections within the innovation ecosystem.',
+    linkedin: 'https://linkedin.com/in/',
+  },
+  { 
+    name: 'Bart Streppel', 
+    role: 'Content Specialist', 
+    initials: 'BS',
+    bio: 'Bart crafts compelling narratives that showcase the impact of NORCAT Innovation and its portfolio companies. He helps startups tell their stories effectively to customers, investors, and media.',
+    linkedin: 'https://linkedin.com/in/',
+  },
+  { 
+    name: 'Jie Chen', 
+    role: 'Associate', 
+    initials: 'JC',
+    bio: 'Jie supports founders through research, analysis, and program delivery. Her attention to detail and commitment to excellence ensures startups receive the highest quality support.',
+    linkedin: 'https://linkedin.com/in/',
+  },
 ];
 
+interface TeamMemberCardProps {
+  member: typeof team[0];
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+function TeamMemberCard({ member, isExpanded, onToggle }: TeamMemberCardProps) {
+  return (
+    <>
+      <motion.div
+        className="card-modern p-6 text-center cursor-pointer hover:shadow-glow transition-all duration-300"
+        onClick={onToggle}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-glow">
+          {member.initials}
+        </div>
+        <div className="font-semibold">{member.name}</div>
+        <div className="text-sm text-muted-foreground">{member.role}</div>
+      </motion.div>
+
+      {/* Expanded Modal */}
+      <AnimatePresence>
+        {isExpanded && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={onToggle}
+            />
+            
+            {/* Modal */}
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="bg-background rounded-3xl shadow-2xl max-w-md w-full p-8 relative"
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: 20 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close button */}
+                <button
+                  onClick={onToggle}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-secondary hover:bg-secondary/80 flex items-center justify-center transition-colors"
+                >
+                  <X className="w-5 h-5 text-muted-foreground" />
+                </button>
+
+                {/* Content */}
+                <div className="text-center">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-3xl mx-auto mb-6 shadow-glow-lg">
+                    {member.initials}
+                  </div>
+                  
+                  <h3 className="headline-sm mb-1">{member.name}</h3>
+                  <p className="text-primary font-medium mb-6">{member.role}</p>
+                  
+                  <p className="body-md text-left mb-8">
+                    {member.bio}
+                  </p>
+
+                  {/* LinkedIn Link */}
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0A66C2] text-white font-medium hover:bg-[#004182] transition-colors"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                    Connect on LinkedIn
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+
 export default function About() {
+  const [expandedMember, setExpandedMember] = useState<string | null>(null);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -166,21 +285,19 @@ export default function About() {
               <div>
                 <div className="badge mb-6">
                   <Users className="h-4 w-4" />
-                  Our Ecosystem
+                  Our Team
                 </div>
                 <h2 className="headline-xl mb-6">
-                  Part of Ontario's
-                  <span className="text-gradient"> Innovation Network</span>
+                  Meet the
+                  <span className="text-gradient"> Innovation Team</span>
                 </h2>
                 <p className="body-lg mb-6">
-                  As one of Ontario's Regional Innovation Centres, we're part of a 
-                  province-wide network dedicated to driving economic growth through 
-                  entrepreneurship.
+                  Our dedicated team works closely with founders to provide the support, 
+                  resources, and connections needed to build successful companies.
                 </p>
                 <p className="body-md mb-8">
-                  We work closely with the Ontario Centre of Innovation, other RICs, 
-                  universities, and research institutions to provide founders with 
-                  unparalleled access and support.
+                  Click on any team member to learn more about their background and 
+                  connect with them on LinkedIn.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <span className="badge">
@@ -195,17 +312,15 @@ export default function About() {
 
             <ScrollReveal direction="right">
               <div className="grid grid-cols-2 gap-4">
-                {team.map((member, index) => (
-                  <div
+                {team.map((member) => (
+                  <TeamMemberCard
                     key={member.name}
-                    className="card-modern p-6 text-center"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-glow">
-                      {member.initials}
-                    </div>
-                    <div className="font-semibold">{member.name}</div>
-                    <div className="text-sm text-muted-foreground">{member.role}</div>
-                  </div>
+                    member={member}
+                    isExpanded={expandedMember === member.name}
+                    onToggle={() => setExpandedMember(
+                      expandedMember === member.name ? null : member.name
+                    )}
+                  />
                 ))}
               </div>
             </ScrollReveal>
