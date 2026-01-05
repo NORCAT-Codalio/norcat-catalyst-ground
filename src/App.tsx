@@ -6,13 +6,44 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Programs from "./pages/Programs";
 import MiningInnovation from "./pages/MiningInnovation";
 import Ecosystem from "./pages/Ecosystem";
 import Impact from "./pages/Impact";
 import Events from "./pages/Events";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+
+// Programs pages
+import VentureGrowthServices from "./pages/programs/VentureGrowthServices";
+import MentorshipServices from "./pages/programs/MentorshipServices";
+import CapitalNavigation from "./pages/programs/CapitalNavigation";
+
+// Funding pages
+import SudburyCatalystFund from "./pages/funding/SudburyCatalystFund";
+import InnovationAccelerationProgram from "./pages/funding/InnovationAccelerationProgram";
+import RegionalAIProgram from "./pages/funding/RegionalAIProgram";
+import InvestorHub from "./pages/funding/InvestorHub";
+
+// Mining pages
+import NorcatUnderground from "./pages/mining/NorcatUnderground";
+import Core5 from "./pages/mining/Core5";
+import CriticalIndustrialTech from "./pages/mining/CriticalIndustrialTech";
+import Labs from "./pages/mining/Labs";
+
+// Partner pages
+import InnovationQuarters from "./pages/partners/InnovationQuarters";
+import MicaNetwork from "./pages/partners/MicaNetwork";
+import MineConnect from "./pages/partners/MineConnect";
+import RogersCybersecure from "./pages/partners/RogersCybersecure";
+
+// Ecosystem pages
+import SudburyEcosystem from "./pages/ecosystem/SudburyEcosystem";
+
+// Insights pages
+import News from "./pages/insights/News";
+import SuccessStories from "./pages/insights/SuccessStories";
+import InsightsReports from "./pages/insights/Reports";
+
 // Portal pages
 import Auth from "./pages/portal/Auth";
 import PendingApproval from "./pages/portal/PendingApproval";
@@ -36,12 +67,43 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
-            <Route path="/programs" element={<Programs />} />
             <Route path="/mining-innovation" element={<MiningInnovation />} />
             <Route path="/ecosystem" element={<Ecosystem />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/events" element={<Events />} />
             <Route path="/apply" element={<Apply />} />
+            
+            {/* Programs Routes */}
+            <Route path="/programs/venture-growth-services" element={<VentureGrowthServices />} />
+            <Route path="/programs/mentorship-services" element={<MentorshipServices />} />
+            <Route path="/programs/capital-navigation" element={<CapitalNavigation />} />
+            
+            {/* Funding Routes */}
+            <Route path="/funding/sudbury-catalyst-fund" element={<SudburyCatalystFund />} />
+            <Route path="/funding/innovation-acceleration-program" element={<InnovationAccelerationProgram />} />
+            <Route path="/funding/regional-ai-program" element={<RegionalAIProgram />} />
+            <Route path="/funding/investor-hub" element={<InvestorHub />} />
+            
+            {/* Mining Routes */}
+            <Route path="/mining/norcat-underground" element={<NorcatUnderground />} />
+            <Route path="/mining/core5" element={<Core5 />} />
+            <Route path="/mining/critical-industrial-tech" element={<CriticalIndustrialTech />} />
+            <Route path="/mining/labs" element={<Labs />} />
+            
+            {/* Partner Routes */}
+            <Route path="/partners/innovation-quarters" element={<InnovationQuarters />} />
+            <Route path="/partners/mica-network" element={<MicaNetwork />} />
+            <Route path="/partners/mineconnect" element={<MineConnect />} />
+            <Route path="/partners/rogers-cybersecure" element={<RogersCybersecure />} />
+            
+            {/* Ecosystem Routes */}
+            <Route path="/ecosystem/sudbury" element={<SudburyEcosystem />} />
+            
+            {/* Insights Routes */}
+            <Route path="/insights/news" element={<News />} />
+            <Route path="/insights/success-stories" element={<SuccessStories />} />
+            <Route path="/insights/reports" element={<InsightsReports />} />
+            
             {/* Portal Routes */}
             <Route path="/portal/auth" element={<Auth />} />
             <Route path="/portal/pending" element={<PendingApproval />} />
