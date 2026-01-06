@@ -4,10 +4,11 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { 
   Newspaper, Calendar, ArrowRight, TrendingUp, Rocket, 
   Building2, Users, DollarSign, Award, Zap, Globe, 
-  ExternalLink, ChevronRight, Clock
+  ExternalLink, Clock
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import autonomousMiningVehicle from '@/assets/autonomous-mining-vehicle.jpg';
 
 // Featured/Breaking news
 const featuredNews = {
@@ -163,7 +164,7 @@ const News = () => {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-800">
                   <img 
-                    src="https://images.unsplash.com/photo-1578496781379-7dcfb995293d?w=800&auto=format&fit=crop&q=80" 
+                    src={autonomousMiningVehicle} 
                     alt="Autonomous mining vehicle in underground tunnel"
                     className="w-full h-full object-cover"
                   />
