@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Users, DollarSign, Building2, Briefcase, Globe } from 'lucide-react';
+import { ArrowRight, TrendingUp, Play } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import EcosystemDashboard from '@/components/dashboard/EcosystemDashboard';
+import { StoryModal, storyData } from '@/components/StoryModal';
 
 const successStories = [
   {
@@ -27,6 +29,8 @@ const successStories = [
 ];
 
 export default function Impact() {
+  const [selectedStory, setSelectedStory] = useState<string | null>(null);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -70,7 +74,7 @@ export default function Impact() {
                 Recent <span className="text-gradient-teal">Wins</span>
               </h2>
               <p className="body-lg">
-                Celebrating the achievements of our portfolio companies.
+                Celebrating the achievements of our portfolio companies. Click to explore each story.
               </p>
             </div>
           </ScrollReveal>
@@ -78,7 +82,10 @@ export default function Impact() {
           <div className="grid md:grid-cols-3 gap-6">
             {successStories.map((story, index) => (
               <ScrollReveal key={story.company} delay={index * 100}>
-                <div className="p-6 bg-slate-900 rounded-2xl text-center h-full">
+                <button 
+                  onClick={() => setSelectedStory(story.company)}
+                  className="w-full p-6 bg-slate-900 rounded-2xl text-center h-full group cursor-pointer transition-all duration-300 hover:bg-slate-800 hover:scale-[1.02] hover:shadow-xl hover:shadow-teal-500/10 border border-transparent hover:border-teal-500/30"
+                >
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-sm font-medium mb-4">
                     <TrendingUp className="h-4 w-4" />
                     {story.outcome}
@@ -87,13 +94,28 @@ export default function Impact() {
                     {story.amount}
                   </div>
                   <div className="font-semibold text-slate-200 mb-2">{story.company}</div>
-                  <p className="text-sm text-slate-400">{story.description}</p>
-                </div>
+                  <p className="text-sm text-slate-400 mb-4">{story.description}</p>
+                  
+                  {/* Play indicator */}
+                  <div className="flex items-center justify-center gap-2 text-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center">
+                      <Play className="h-4 w-4 fill-current" />
+                    </div>
+                    <span className="text-sm font-medium">View Story</span>
+                  </div>
+                </button>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Story Modal */}
+      <StoryModal 
+        story={selectedStory ? storyData[selectedStory] : null}
+        open={!!selectedStory}
+        onClose={() => setSelectedStory(null)}
+      />
 
       {/* CTA */}
       <section className="section-padding bg-slate-900">
