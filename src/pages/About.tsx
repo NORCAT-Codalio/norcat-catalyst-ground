@@ -12,6 +12,9 @@ import shashankImage from '@/assets/team/shashank.png';
 import bartImage from '@/assets/team/bart.png';
 import jieImage from '@/assets/team/jie.png';
 
+// Logos
+import ontarioLogo from '@/assets/logos/ontario.png';
+
 const values = [
   {
     icon: Users,
@@ -377,9 +380,12 @@ export default function About() {
 
               {/* Right Column - Government Funding */}
               <div>
-                <div className="badge mb-4">
-                  <Target className="h-4 w-4" />
-                  Government of Ontario
+                <div className="mb-4">
+                  <img 
+                    src={ontarioLogo} 
+                    alt="Government of Ontario" 
+                    className="h-10 object-contain"
+                  />
                 </div>
                 <p className="body-md mb-4">
                   Funded by the <strong>Ministry of Economic Development, Job Creation and Trade</strong>, 
