@@ -68,9 +68,9 @@ const services = [{
   gradient: 'from-cyan-500 to-blue-600'
 }];
 const ecosystemPartners = [{
-  icon: Building2,
-  name: 'Innovation Quarters',
-  desc: 'Co-working space'
+  icon: Mountain,
+  name: 'Mining Hub',
+  desc: 'Nine operating mines, two mills, two smelters, a nickel refinery and over 300 mining supply and service companies'
 }, {
   icon: GraduationCap,
   name: 'Cambrian College',
