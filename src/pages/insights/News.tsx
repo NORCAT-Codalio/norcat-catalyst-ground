@@ -101,31 +101,31 @@ const News = () => {
 
   return (
     <Layout>
-      {/* Live Stats Ticker */}
-      <div className="bg-slate-900 border-b border-slate-800 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center py-3 gap-8 animate-marquee">
-            <span className="text-teal-400 text-xs font-bold tracking-wider uppercase flex items-center gap-2 shrink-0">
-              <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
-              Live Ecosystem Stats
-            </span>
-            {[...ecosystemStats, ...ecosystemStats].map((stat, i) => (
-              <div key={i} className="flex items-center gap-2 shrink-0">
-                <span className="text-slate-50 font-bold">{stat.value}</span>
-                <span className="text-slate-400 text-sm">{stat.label}</span>
-                <span className="text-slate-700 mx-4">|</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Hero with Featured Story */}
       <section className="relative bg-slate-900 overflow-hidden">
+        {/* Live Stats Ticker - now inside hero */}
+        <div className="bg-slate-950 border-b border-slate-800 overflow-hidden pt-20">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center py-3 gap-8 animate-marquee">
+              <span className="text-teal-400 text-xs font-bold tracking-wider uppercase flex items-center gap-2 shrink-0">
+                <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
+                Live Ecosystem Stats
+              </span>
+              {[...ecosystemStats, ...ecosystemStats].map((stat, i) => (
+                <div key={i} className="flex items-center gap-2 shrink-0">
+                  <span className="text-slate-50 font-bold">{stat.value}</span>
+                  <span className="text-slate-400 text-sm">{stat.label}</span>
+                  <span className="text-slate-700 mx-4">|</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-purple-500/10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.15),transparent_50%)]" />
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-16">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-12 pb-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Featured Article */}
             <ScrollReveal>
