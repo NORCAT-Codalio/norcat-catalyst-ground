@@ -21,6 +21,7 @@ interface StoryData {
   tagline: string;
   logo?: string;
   year: string;
+  accentColor: string;
   scenes: StoryScene[];
 }
 
@@ -42,28 +43,110 @@ const iconMap = {
   target: Target,
 };
 
+// Floating background shapes
+function BackgroundGraphics({ accentColor, scrollProgress }: { accentColor: string; scrollProgress: number }) {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Large gradient orb */}
+      <div 
+        className="absolute w-[600px] h-[600px] rounded-full opacity-20 blur-3xl transition-transform duration-1000"
+        style={{ 
+          background: `radial-gradient(circle, ${accentColor} 0%, transparent 70%)`,
+          top: `${20 + scrollProgress * 30}%`,
+          right: '-200px',
+          transform: `translateY(${scrollProgress * -100}px) scale(${1 + scrollProgress * 0.3})`,
+        }}
+      />
+      
+      {/* Secondary orb */}
+      <div 
+        className="absolute w-[400px] h-[400px] rounded-full opacity-10 blur-2xl transition-transform duration-1000"
+        style={{ 
+          background: `radial-gradient(circle, ${accentColor} 0%, transparent 70%)`,
+          bottom: `${10 + scrollProgress * 20}%`,
+          left: '-150px',
+          transform: `translateY(${scrollProgress * 50}px)`,
+        }}
+      />
+
+      {/* Geometric shapes */}
+      <div 
+        className="absolute w-32 h-32 border border-slate-200/50 rounded-2xl transition-all duration-700"
+        style={{ 
+          top: '15%',
+          left: '10%',
+          transform: `rotate(${45 + scrollProgress * 90}deg) scale(${0.8 + scrollProgress * 0.4})`,
+          opacity: 0.3,
+        }}
+      />
+      <div 
+        className="absolute w-20 h-20 border border-slate-200/30 rounded-full transition-all duration-700"
+        style={{ 
+          top: '60%',
+          right: '15%',
+          transform: `translateY(${scrollProgress * -80}px)`,
+          opacity: 0.4,
+        }}
+      />
+      <div 
+        className="absolute w-16 h-16 rounded-lg transition-all duration-700"
+        style={{ 
+          background: `${accentColor}10`,
+          bottom: '25%',
+          left: '20%',
+          transform: `rotate(${-15 + scrollProgress * 45}deg)`,
+        }}
+      />
+
+      {/* Dotted pattern */}
+      <div 
+        className="absolute w-48 h-48 opacity-20 transition-all duration-500"
+        style={{ 
+          top: '40%',
+          right: '5%',
+          backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)',
+          backgroundSize: '12px 12px',
+          transform: `translateX(${scrollProgress * 30}px)`,
+        }}
+      />
+
+      {/* Accent line */}
+      <div 
+        className="absolute h-[300px] w-px transition-all duration-700"
+        style={{ 
+          background: `linear-gradient(to bottom, transparent, ${accentColor}40, transparent)`,
+          left: '8%',
+          top: '30%',
+          transform: `scaleY(${0.5 + scrollProgress * 0.5})`,
+        }}
+      />
+    </div>
+  );
+}
+
 function AnimatedCounter({ 
   value, 
   prefix = '', 
   suffix = '', 
-  isVisible 
+  isVisible,
+  hasBeenVisible
 }: { 
   value: number; 
   prefix?: string; 
   suffix?: string; 
   isVisible: boolean;
+  hasBeenVisible: boolean;
 }) {
   const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
   
   useEffect(() => {
-    if (!isVisible) {
-      setCount(0);
-      return;
-    }
+    if (!isVisible || hasAnimated) return;
     
+    setHasAnimated(true);
     let startTime: number;
     let animationFrame: number;
-    const duration = 2500;
+    const duration = 2000;
     
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -78,7 +161,14 @@ function AnimatedCounter({
     
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [isVisible, value]);
+  }, [isVisible, value, hasAnimated]);
+
+  // If already animated, show final value
+  useEffect(() => {
+    if (hasBeenVisible && !isVisible) {
+      setCount(value);
+    }
+  }, [hasBeenVisible, isVisible, value]);
   
   return (
     <span className="font-display font-black text-7xl md:text-9xl text-slate-900 tracking-tight">
@@ -90,30 +180,39 @@ function AnimatedCounter({
 function StoryScene({ 
   scene, 
   isVisible, 
-  sceneIndex
+  hasBeenVisible,
+  accentColor
 }: { 
   scene: StoryScene; 
   isVisible: boolean; 
-  sceneIndex: number;
+  hasBeenVisible: boolean;
+  accentColor: string;
 }) {
   const Icon = scene.icon ? iconMap[scene.icon] : null;
+  const show = isVisible || hasBeenVisible;
   
   return (
     <div 
       className={cn(
-        "min-h-[70vh] flex flex-col items-center justify-center text-center px-8 md:px-16 transition-all duration-1000 ease-out",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+        "min-h-[80vh] flex flex-col items-center justify-center text-center px-8 md:px-16 transition-all duration-700 ease-out",
+        show ? "opacity-100" : "opacity-0"
       )}
+      style={{
+        transform: show ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.98)',
+      }}
     >
       {Icon && scene.type !== 'counter' && (
         <div 
           className={cn(
-            "w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center mb-8 transition-all duration-700",
-            isVisible ? "scale-100 rotate-0" : "scale-50 rotate-12"
+            "w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 shadow-lg",
+            show ? "scale-100 rotate-0" : "scale-50 rotate-12"
           )}
-          style={{ transitionDelay: '200ms' }}
+          style={{ 
+            background: `linear-gradient(135deg, ${accentColor}20, ${accentColor}10)`,
+            boxShadow: `0 10px 40px ${accentColor}20`,
+          }}
         >
-          <Icon className="w-10 h-10 text-slate-700" />
+          <Icon className="w-10 h-10" style={{ color: accentColor }} />
         </div>
       )}
       
@@ -121,21 +220,13 @@ function StoryScene({
         <>
           <h3 
             className={cn(
-              "text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 mb-6 leading-[1.1] tracking-tight max-w-4xl transition-all duration-700",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              "text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 mb-6 leading-[1.1] tracking-tight max-w-4xl transition-all duration-500",
             )}
-            style={{ transitionDelay: '100ms' }}
           >
             {scene.title}
           </h3>
           {scene.content && (
-            <p 
-              className={cn(
-                "text-xl md:text-2xl text-slate-500 max-w-2xl font-light transition-all duration-700",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              )}
-              style={{ transitionDelay: '300ms' }}
-            >
+            <p className="text-xl md:text-2xl text-slate-500 max-w-2xl font-light">
               {scene.content}
             </p>
           )}
@@ -150,33 +241,23 @@ function StoryScene({
               prefix={scene.prefix} 
               suffix={scene.suffix}
               isVisible={isVisible}
+              hasBeenVisible={hasBeenVisible}
             />
             {/* Decorative line */}
             <div 
-              className={cn(
-                "absolute -bottom-4 left-1/2 -translate-x-1/2 h-1 bg-teal-500 transition-all duration-1000",
-                isVisible ? "w-24" : "w-0"
-              )}
-              style={{ transitionDelay: '800ms' }}
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-1.5 rounded-full transition-all duration-700"
+              style={{ 
+                width: show ? '80px' : '0px',
+                background: accentColor,
+                boxShadow: `0 0 20px ${accentColor}60`,
+              }}
             />
           </div>
-          <p 
-            className={cn(
-              "text-2xl md:text-3xl text-slate-700 mt-10 font-semibold transition-all duration-700",
-              isVisible ? "opacity-100" : "opacity-0"
-            )}
-            style={{ transitionDelay: '600ms' }}
-          >
+          <p className="text-2xl md:text-3xl text-slate-700 mt-10 font-semibold">
             {scene.title}
           </p>
           {scene.content && (
-            <p 
-              className={cn(
-                "text-lg text-slate-400 mt-3 transition-all duration-700",
-                isVisible ? "opacity-100" : "opacity-0"
-              )}
-              style={{ transitionDelay: '800ms' }}
-            >
+            <p className="text-lg text-slate-400 mt-3 max-w-md">
               {scene.content}
             </p>
           )}
@@ -189,110 +270,120 @@ function StoryScene({
             {/* Animated rings */}
             <div 
               className={cn(
-                "w-48 h-48 md:w-64 md:h-64 rounded-full border-2 border-slate-200 flex items-center justify-center transition-all duration-1000",
-                isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"
+                "w-48 h-48 md:w-64 md:h-64 rounded-full border-2 flex items-center justify-center transition-all duration-700",
               )}
+              style={{ borderColor: `${accentColor}30` }}
             >
               <div 
                 className={cn(
-                  "absolute inset-4 rounded-full border-2 border-dashed border-teal-300 transition-all duration-1000",
-                  isVisible ? "animate-[spin_30s_linear_infinite]" : ""
+                  "absolute inset-4 rounded-full border-2 border-dashed transition-all duration-700",
+                  show ? "animate-[spin_20s_linear_infinite]" : ""
                 )}
+                style={{ borderColor: `${accentColor}40` }}
               />
-              <div className="absolute inset-10 rounded-full border border-slate-100" />
-              <div className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/30">
+              <div 
+                className="absolute inset-10 rounded-full"
+                style={{ background: `${accentColor}08` }}
+              />
+              <div 
+                className="w-16 h-16 rounded-full flex items-center justify-center shadow-xl"
+                style={{ 
+                  background: accentColor,
+                  boxShadow: `0 10px 40px ${accentColor}50`,
+                }}
+              >
                 <MapPin className="w-8 h-8 text-white" />
               </div>
             </div>
             {/* Ping indicators */}
-            {isVisible && (
+            {show && (
               <>
-                <div className="absolute top-4 right-4 w-3 h-3 bg-teal-400 rounded-full animate-ping" />
-                <div className="absolute bottom-8 left-0 w-2 h-2 bg-slate-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
-                <div className="absolute top-1/2 -right-4 w-2 h-2 bg-teal-500 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+                <div 
+                  className="absolute top-4 right-4 w-3 h-3 rounded-full animate-ping"
+                  style={{ background: accentColor }}
+                />
+                <div 
+                  className="absolute bottom-8 left-0 w-2 h-2 rounded-full animate-ping"
+                  style={{ background: `${accentColor}80`, animationDelay: '0.5s' }}
+                />
+                <div 
+                  className="absolute top-1/2 -right-4 w-2 h-2 rounded-full animate-ping"
+                  style={{ background: accentColor, animationDelay: '1s' }}
+                />
               </>
             )}
           </div>
-          <h3 
-            className={cn(
-              "text-3xl md:text-4xl font-display font-bold text-slate-900 mb-3 transition-all duration-700",
-              isVisible ? "opacity-100" : "opacity-0"
-            )}
-            style={{ transitionDelay: '400ms' }}
-          >
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-3">
             {scene.location}
           </h3>
-          <p 
-            className={cn(
-              "text-xl text-slate-500 transition-all duration-700",
-              isVisible ? "opacity-100" : "opacity-0"
-            )}
-            style={{ transitionDelay: '600ms' }}
-          >
+          <p className="text-xl text-slate-500">
             {scene.title}
           </p>
         </>
       )}
 
       {scene.type === 'quote' && (
-        <div className="max-w-3xl">
+        <div className="max-w-3xl relative">
+          {/* Large quote mark background */}
           <div 
-            className={cn(
-              "text-6xl text-teal-500 font-serif mb-4 transition-all duration-500",
-              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50"
-            )}
+            className="absolute -top-16 -left-8 text-[200px] font-serif leading-none opacity-10 select-none"
+            style={{ color: accentColor }}
           >
             "
           </div>
-          <blockquote 
-            className={cn(
-              "text-3xl md:text-4xl font-display font-medium text-slate-800 italic leading-relaxed transition-all duration-700",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-            style={{ transitionDelay: '200ms' }}
-          >
+          <blockquote className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-slate-800 italic leading-relaxed relative z-10">
             {scene.quote}
           </blockquote>
           {scene.author && (
-            <p 
-              className={cn(
-                "text-lg text-slate-500 mt-6 transition-all duration-700",
-                isVisible ? "opacity-100" : "opacity-0"
-              )}
-              style={{ transitionDelay: '500ms' }}
-            >
-              — {scene.author}
-            </p>
+            <div className="flex items-center justify-center gap-3 mt-8">
+              <div 
+                className="w-12 h-0.5 rounded-full"
+                style={{ background: accentColor }}
+              />
+              <p className="text-lg text-slate-500 font-medium">
+                {scene.author}
+              </p>
+            </div>
           )}
         </div>
       )}
       
       {scene.type === 'milestone' && (
         <div className="relative">
+          {/* Celebration particles */}
+          {show && (
+            <div className="absolute inset-0 -m-20">
+              {[...Array(8)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-2 h-2 rounded-full animate-ping"
+                  style={{
+                    background: accentColor,
+                    top: `${20 + Math.random() * 60}%`,
+                    left: `${10 + Math.random() * 80}%`,
+                    animationDelay: `${i * 0.2}s`,
+                    animationDuration: '2s',
+                  }}
+                />
+              ))}
+            </div>
+          )}
           <div 
             className={cn(
-              "w-28 h-28 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center mb-8 shadow-2xl shadow-teal-500/40 transition-all duration-1000",
-              isVisible ? "scale-100 rotate-0" : "scale-0 rotate-180"
+              "w-28 h-28 md:w-36 md:h-36 rounded-3xl flex items-center justify-center mb-8 shadow-2xl transition-all duration-700 relative",
+              show ? "scale-100 rotate-0" : "scale-0 rotate-180"
             )}
+            style={{ 
+              background: `linear-gradient(135deg, ${accentColor}, ${accentColor}cc)`,
+              boxShadow: `0 20px 60px ${accentColor}50`,
+            }}
           >
             <Award className="w-14 h-14 md:w-18 md:h-18 text-white" />
           </div>
-          <h3 
-            className={cn(
-              "text-4xl md:text-6xl font-display font-black text-slate-900 mb-4 transition-all duration-700",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-            style={{ transitionDelay: '300ms' }}
-          >
+          <h3 className="text-4xl md:text-6xl font-display font-black text-slate-900 mb-4">
             {scene.title}
           </h3>
-          <p 
-            className={cn(
-              "text-xl md:text-2xl text-slate-500 transition-all duration-700",
-              isVisible ? "opacity-100" : "opacity-0"
-            )}
-            style={{ transitionDelay: '500ms' }}
-          >
+          <p className="text-xl md:text-2xl text-slate-500">
             {scene.content}
           </p>
         </div>
@@ -305,11 +396,13 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeScene, setActiveScene] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [visitedScenes, setVisitedScenes] = useState<Set<number>>(new Set([0]));
   
   useEffect(() => {
     if (!open) {
       setActiveScene(0);
       setScrollProgress(0);
+      setVisitedScenes(new Set([0]));
     }
   }, [open]);
   
@@ -324,26 +417,38 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
     setScrollProgress(progress);
     
     const sceneCount = story.scenes.length;
+    // Load content earlier - use 0.8 multiplier to trigger sooner
     const sceneIndex = Math.min(
-      Math.floor(progress * sceneCount),
+      Math.floor(progress * sceneCount * 1.1),
       sceneCount - 1
     );
     setActiveScene(sceneIndex);
+    
+    // Track visited scenes
+    setVisitedScenes(prev => new Set([...prev, sceneIndex]));
   };
   
   if (!story) return null;
+
+  const accentColor = story.accentColor || '#14b8a6';
   
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
       <DialogContent 
-        className="max-w-5xl h-[90vh] p-0 border-0 overflow-hidden [&>button]:hidden rounded-2xl shadow-2xl" 
+        className="max-w-5xl h-[90vh] p-0 border-0 overflow-hidden [&>button]:hidden rounded-3xl shadow-2xl" 
         style={{ backgroundColor: '#ffffff' }}
       >
+        {/* Background graphics */}
+        <BackgroundGraphics accentColor={accentColor} scrollProgress={scrollProgress} />
+
         {/* Header */}
-        <div className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8 bg-gradient-to-b from-white via-white/95 to-transparent">
+        <div className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8 bg-gradient-to-b from-white via-white/98 to-transparent backdrop-blur-sm">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-teal-600 text-xs font-semibold tracking-widest uppercase mb-1">
+              <p 
+                className="text-xs font-bold tracking-widest uppercase mb-1"
+                style={{ color: accentColor }}
+              >
                 {story.year} • {story.tagline}
               </p>
               <h2 className="text-2xl md:text-3xl font-display font-black text-slate-900 tracking-tight">
@@ -352,18 +457,36 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
             </div>
             <button 
               onClick={onClose}
-              className="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
+              className="w-12 h-12 rounded-2xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-all hover:scale-105"
             >
               <X className="w-5 h-5 text-slate-600" />
             </button>
           </div>
           
           {/* Progress bar */}
-          <div className="mt-6 h-0.5 bg-slate-100 rounded-full overflow-hidden">
+          <div className="mt-6 h-1 bg-slate-100 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-teal-500 transition-all duration-300 ease-out"
-              style={{ width: `${scrollProgress * 100}%` }}
+              className="h-full rounded-full transition-all duration-300 ease-out"
+              style={{ 
+                width: `${scrollProgress * 100}%`,
+                background: `linear-gradient(90deg, ${accentColor}, ${accentColor}cc)`,
+                boxShadow: `0 0 10px ${accentColor}60`,
+              }}
             />
+          </div>
+
+          {/* Scene dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {story.scenes.map((_, index) => (
+              <div 
+                key={index}
+                className="w-2 h-2 rounded-full transition-all duration-300"
+                style={{
+                  background: index <= activeScene ? accentColor : '#e2e8f0',
+                  transform: index === activeScene ? 'scale(1.3)' : 'scale(1)',
+                }}
+              />
+            ))}
           </div>
         </div>
         
@@ -371,33 +494,41 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
         <div 
           ref={containerRef}
           onScroll={handleScroll}
-          className="h-full overflow-y-auto scroll-smooth pt-36 pb-32"
-          style={{ backgroundColor: '#ffffff' }}
+          className="h-full overflow-y-auto scroll-smooth pt-40 pb-32"
+          style={{ backgroundColor: 'transparent' }}
         >
           {story.scenes.map((scene, index) => (
             <StoryScene 
               key={index}
               scene={scene}
               isVisible={index === activeScene}
-              sceneIndex={index}
+              hasBeenVisible={visitedScenes.has(index)}
+              accentColor={accentColor}
             />
           ))}
           
-          {/* End spacer for last scene visibility */}
-          <div className="min-h-[40vh]" />
+          {/* End spacer */}
+          <div className="min-h-[50vh]" />
         </div>
 
-        {/* Scroll hint at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 p-6 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none">
+        {/* Scroll hint */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 p-6 bg-gradient-to-t from-white via-white/95 to-transparent pointer-events-none">
           <div className="flex flex-col items-center">
-            <p className="text-slate-400 text-sm mb-2">
-              {activeScene < (story.scenes.length - 1) ? 'Scroll to continue' : 'End of story'}
-            </p>
-            {activeScene < (story.scenes.length - 1) && (
-              <div className="flex gap-1">
-                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" />
-                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+            {activeScene < (story.scenes.length - 1) ? (
+              <>
+                <p className="text-slate-400 text-sm mb-2 font-medium">Scroll to continue</p>
+                <div className="flex gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background: accentColor }} />
+                  <span className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background: accentColor, animationDelay: '0.15s' }} />
+                  <span className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background: accentColor, animationDelay: '0.3s' }} />
+                </div>
+              </>
+            ) : (
+              <div 
+                className="px-4 py-2 rounded-full text-sm font-semibold text-white"
+                style={{ background: accentColor }}
+              >
+                End of story
               </div>
             )}
           </div>
@@ -413,6 +544,7 @@ export const storyData: Record<string, StoryData> = {
     company: 'MineTech Robotics',
     tagline: 'Series A Success',
     year: '2024',
+    accentColor: '#14b8a6', // teal
     scenes: [
       {
         type: 'text',
@@ -472,6 +604,7 @@ export const storyData: Record<string, StoryData> = {
     company: 'SubSurface AI',
     tagline: '$45M Acquisition',
     year: '2023',
+    accentColor: '#f59e0b', // amber
     scenes: [
       {
         type: 'text',
@@ -533,6 +666,7 @@ export const storyData: Record<string, StoryData> = {
     company: 'VentFlow Systems',
     tagline: 'Global OEM Partnership',
     year: '2024',
+    accentColor: '#8b5cf6', // purple
     scenes: [
       {
         type: 'text',
