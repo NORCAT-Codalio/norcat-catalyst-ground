@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { Trophy, Filter, ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -89,7 +89,6 @@ const allStories: SuccessStory[] = [
 // Filter options
 const sectors = ['All', 'Mining Tech', 'AI', 'Cleantech', 'Medtech'];
 const stages = ['All', 'Early', 'Growth', 'Scale', 'Exit'];
-const markets = ['All', 'Local', 'National', 'Global'];
 
 // Ecosystem stats
 const ecosystemStats = [
@@ -102,7 +101,6 @@ const ecosystemStats = [
 const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStage, setSelectedStage] = useState('All');
-  const [selectedMarket, setSelectedMarket] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
   const filteredStories = allStories.filter((story) => {
@@ -114,47 +112,31 @@ const SuccessStories = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-slate-950 overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
         {/* Background effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(20,184,166,0.15),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(139,92,246,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950" />
-        </div>
-
-        {/* Grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
+        <div className="absolute inset-0 bg-glow opacity-50" />
+        <div className="absolute inset-0 bg-mesh" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
           <div className="max-w-4xl">
             <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 rounded-full text-teal-400 text-sm font-semibold mb-8">
+              <div className="inline-flex items-center gap-2 badge-dark mb-8">
                 <Sparkles className="w-4 h-4" />
                 Portfolio Companies
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.95] mb-8">
+              <h1 className="headline-hero text-white mb-8">
                 Built in<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">
-                  Sudbury.
-                </span><br />
+                <span className="text-gradient">Sudbury.</span><br />
                 Scaling<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-200">
-                  Globally.
-                </span>
+                <span className="text-gradient">Globally.</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <p className="text-xl text-slate-400 max-w-2xl mb-12">
+              <p className="body-xl text-white/70 max-w-2xl mb-12">
                 These are the founders proving that world-changing mining and industrial technology 
                 can come from Northern Ontario. Real companies. Real impact. Real stories.
               </p>
@@ -162,13 +144,13 @@ const SuccessStories = () => {
 
             {/* Quick stats */}
             <ScrollReveal delay={300}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {ecosystemStats.map((stat, i) => (
-                  <div key={i} className="text-center md:text-left">
-                    <div className="text-3xl md:text-4xl font-display font-black text-white mb-1">
+                  <div key={i}>
+                    <div className="stat-number text-4xl md:text-5xl mb-1">
                       {stat.value}
                     </div>
-                    <p className="text-sm text-slate-500">{stat.label}</p>
+                    <p className="text-sm text-white/50">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -178,12 +160,12 @@ const SuccessStories = () => {
       </section>
 
       {/* Filter Bar */}
-      <section className="sticky top-16 z-30 bg-slate-900/95 backdrop-blur-xl border-b border-slate-800">
+      <section className="sticky top-16 z-30 glass-dark border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="py-4 flex flex-wrap items-center gap-6">
             {/* Sector filter */}
             <div className="flex items-center gap-2">
-              <span className="text-slate-500 text-sm font-medium">Sector:</span>
+              <span className="text-muted-foreground text-sm font-medium">Sector:</span>
               <div className="flex gap-1">
                 {sectors.map((sector) => (
                   <button
@@ -192,8 +174,8 @@ const SuccessStories = () => {
                     className={cn(
                       "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                       selectedSector === sector
-                        ? "bg-teal-500 text-white"
-                        : "text-slate-400 hover:text-white hover:bg-slate-800"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                     )}
                   >
                     {sector}
@@ -204,7 +186,7 @@ const SuccessStories = () => {
 
             {/* Stage filter */}
             <div className="flex items-center gap-2">
-              <span className="text-slate-500 text-sm font-medium">Stage:</span>
+              <span className="text-muted-foreground text-sm font-medium">Stage:</span>
               <div className="flex gap-1">
                 {stages.map((stage) => (
                   <button
@@ -213,8 +195,8 @@ const SuccessStories = () => {
                     className={cn(
                       "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                       selectedStage === stage
-                        ? "bg-teal-500 text-white"
-                        : "text-slate-400 hover:text-white hover:bg-slate-800"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                     )}
                   >
                     {stage}
@@ -224,7 +206,7 @@ const SuccessStories = () => {
             </div>
 
             {/* Results count */}
-            <div className="ml-auto text-sm text-slate-500">
+            <div className="ml-auto text-sm text-muted-foreground">
               {filteredStories.length} {filteredStories.length === 1 ? 'company' : 'companies'}
             </div>
           </div>
@@ -232,9 +214,9 @@ const SuccessStories = () => {
       </section>
 
       {/* Stories Grid */}
-      <section className="py-20 bg-slate-950">
+      <section className="section-padding bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredStories.map((story, i) => (
               <ScrollReveal key={story.id} delay={i * 50}>
                 <SuccessStoryCard 
@@ -247,10 +229,10 @@ const SuccessStories = () => {
 
           {filteredStories.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-slate-500 text-lg">No companies match your filters.</p>
+              <p className="body-lg">No companies match your filters.</p>
               <Button 
                 variant="ghost" 
-                className="mt-4 text-teal-400"
+                className="mt-4 text-primary"
                 onClick={() => {
                   setSelectedSector('All');
                   setSelectedStage('All');
@@ -271,19 +253,19 @@ const SuccessStories = () => {
       />
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(20,184,166,0.1),transparent_60%)]" />
+      <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-glow opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-8 leading-tight">
+              <h2 className="headline-hero text-white mb-8">
                 Your Company<br />Could Be Next
               </h2>
             </ScrollReveal>
             
             <ScrollReveal delay={100}>
-              <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto">
+              <p className="body-xl text-white/70 mb-12 max-w-2xl mx-auto">
                 These aren't outliers. This is what happens when the right founders 
                 meet the right ecosystem.
               </p>
@@ -291,17 +273,13 @@ const SuccessStories = () => {
 
             <ScrollReveal delay={200}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-10 py-6 text-lg">
-                  <Link to="/apply">
-                    Apply to NORCAT Innovation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-slate-700 text-slate-300 hover:bg-slate-800 rounded-full px-10 py-6 text-lg">
-                  <Link to="/programs/venture-growth-services">
-                    Explore Programs
-                  </Link>
-                </Button>
+                <Link to="/apply" className="btn-primary-lg">
+                  Apply to NORCAT Innovation
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link to="/programs/venture-growth-services" className="btn-outline-dark">
+                  Explore Programs
+                </Link>
               </div>
             </ScrollReveal>
           </div>
