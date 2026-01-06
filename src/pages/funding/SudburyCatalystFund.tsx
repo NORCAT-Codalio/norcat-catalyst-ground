@@ -85,22 +85,21 @@ const SudburyCatalystFund = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-30" />
-        <div className="orb orb-teal w-96 h-96 -bottom-48 -left-48" />
-        <div className="orb orb-teal w-64 h-64 top-20 right-20 opacity-50" />
+      <section className="relative min-h-[70vh] flex items-center bg-background overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-primary/10 blur-3xl -translate-x-1/2 translate-y-1/2" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 inline-block mb-8">
+              <div className="bg-slate-900 rounded-2xl p-6 inline-block mb-8">
                 <img 
                   src={scfLogo} 
                   alt="Sudbury Catalyst Fund" 
                   className="h-24 md:h-32 object-contain"
                 />
               </div>
-              <p className="body-xl text-white/80 max-w-xl mb-10">
+              <p className="body-xl text-muted-foreground max-w-xl mb-10">
                 Early-stage investment capital for innovative companies building 
                 transformative solutions in Northern Ontario.
               </p>
@@ -111,7 +110,7 @@ const SudburyCatalystFund = () => {
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl">
+                <Button asChild variant="outline" className="px-8 py-6 text-lg rounded-xl">
                   <Link to="#overview">
                     Learn More
                   </Link>
@@ -121,7 +120,7 @@ const SudburyCatalystFund = () => {
             <ScrollReveal delay={0.2}>
               <div className="relative">
                 {/* Stats card */}
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 text-white">
+                <div className="bg-slate-900 rounded-3xl p-10 text-white">
                   <div className="text-6xl font-bold text-primary mb-2">$5M</div>
                   <p className="text-xl text-white/70 mb-8">In Deployable Capital</p>
                   <div className="grid grid-cols-2 gap-6">
