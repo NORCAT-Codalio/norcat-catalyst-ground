@@ -18,6 +18,10 @@ import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 
+// Team headshots
+import jasonSullivanImage from '@/assets/team/jason-sullivan.png';
+import brendanScfImage from '@/assets/team/brendan-scf.png';
+
 const SudburyCatalystFund = () => {
   const portfolioCompanies = [
     { name: 'IRegained', logo: iregainedLogo },
@@ -58,10 +62,12 @@ const SudburyCatalystFund = () => {
         name: 'Brendan Skiffington',
         role: 'Co-Managing Director',
         title: 'Chair, Investment Committee',
+        image: brendanScfImage,
       },
       {
         name: 'Jason Sullivan',
         role: 'Co-Managing Director',
+        image: jasonSullivanImage,
       },
     ],
     committee: [
@@ -255,9 +261,17 @@ const SudburyCatalystFund = () => {
             {team.directors.map((director, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="text-center p-8 rounded-3xl bg-secondary/50 border border-border/50">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                    <Users className="w-12 h-12 text-primary" />
-                  </div>
+                  {director.image ? (
+                    <img 
+                      src={director.image} 
+                      alt={director.name} 
+                      className="w-24 h-24 mx-auto mb-6 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
+                      <Users className="w-12 h-12 text-primary" />
+                    </div>
+                  )}
                   <h3 className="text-xl font-bold mb-1">{director.name}</h3>
                   <p className="text-primary font-medium mb-1">{director.role}</p>
                   {director.title && (
