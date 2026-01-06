@@ -85,32 +85,33 @@ const SudburyCatalystFund = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-white overflow-hidden">
-        {/* Decorative elements using SCF brand colors */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1A4B5C]/5 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#7ABFBF]/10 blur-3xl -translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-[#C9A227]/10 blur-3xl" />
+      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+        <div className="absolute inset-0 bg-glow opacity-30" />
+        <div className="orb orb-teal w-96 h-96 -bottom-48 -left-48" />
+        <div className="orb orb-teal w-64 h-64 top-20 right-20 opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
-              <img 
-                src={scfLogo} 
-                alt="Sudbury Catalyst Fund" 
-                className="h-32 md:h-40 mb-8 object-contain"
-              />
-              <p className="body-xl text-[#1A4B5C] max-w-xl mb-10">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 inline-block mb-8">
+                <img 
+                  src={scfLogo} 
+                  alt="Sudbury Catalyst Fund" 
+                  className="h-24 md:h-32 object-contain"
+                />
+              </div>
+              <p className="body-xl text-white/80 max-w-xl mb-10">
                 Early-stage investment capital for innovative companies building 
                 transformative solutions in Northern Ontario.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild className="bg-[#1A4B5C] hover:bg-[#1A4B5C]/90 text-white px-8 py-6 text-lg rounded-xl">
+                <Button asChild className="px-8 py-6 text-lg rounded-xl">
                   <Link to="/apply">
                     Apply for Funding
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="border-[#1A4B5C] text-[#1A4B5C] hover:bg-[#1A4B5C]/5 px-8 py-6 text-lg rounded-xl">
+                <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl">
                   <Link to="#overview">
                     Learn More
                   </Link>
@@ -120,22 +121,22 @@ const SudburyCatalystFund = () => {
             <ScrollReveal delay={0.2}>
               <div className="relative">
                 {/* Stats card */}
-                <div className="bg-gradient-to-br from-[#1A4B5C] to-[#2D7A8C] rounded-3xl p-10 text-white shadow-2xl">
-                  <div className="text-6xl font-bold mb-2">$5M</div>
-                  <p className="text-xl text-white/80 mb-8">In Deployable Capital</p>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 text-white">
+                  <div className="text-6xl font-bold text-primary mb-2">$5M</div>
+                  <p className="text-xl text-white/70 mb-8">In Deployable Capital</p>
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-white/10 rounded-2xl p-4">
-                      <div className="text-3xl font-bold text-[#C9A227]">$3M</div>
-                      <p className="text-sm text-white/70">Deployed To Date</p>
+                    <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                      <div className="text-3xl font-bold text-primary">$3M</div>
+                      <p className="text-sm text-white/60">Deployed To Date</p>
                     </div>
-                    <div className="bg-white/10 rounded-2xl p-4">
-                      <div className="text-3xl font-bold text-[#C9A227]">60+</div>
-                      <p className="text-sm text-white/70">Jobs Created</p>
+                    <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                      <div className="text-3xl font-bold text-primary">60+</div>
+                      <p className="text-sm text-white/60">Jobs Created</p>
                     </div>
                   </div>
                 </div>
                 {/* Decorative accent */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#C9A227] rounded-2xl -z-10" />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-2xl -z-10" />
               </div>
             </ScrollReveal>
           </div>
