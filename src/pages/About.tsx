@@ -6,6 +6,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 
+// Team headshots
+import brendanImage from '@/assets/team/brendan.png';
+import shashankImage from '@/assets/team/shashank.png';
+import bartImage from '@/assets/team/bart.png';
+import jieImage from '@/assets/team/jie.png';
+
 const values = [
   {
     icon: Users,
@@ -34,6 +40,7 @@ const team = [
     name: 'Brendan Skiffington', 
     role: 'Manager', 
     initials: 'BS',
+    image: brendanImage,
     bio: 'Brendan leads the innovation team with a focus on helping startups navigate the early stages of growth. With extensive experience in venture development and ecosystem building, he connects founders with the resources they need to succeed.',
     linkedin: 'https://linkedin.com/in/',
   },
@@ -41,6 +48,7 @@ const team = [
     name: 'Shashank Mehta', 
     role: 'Coordinator', 
     initials: 'SM',
+    image: shashankImage,
     bio: 'Shashank coordinates programs and events that bring together founders, mentors, and investors. His passion for community building helps create meaningful connections within the innovation ecosystem.',
     linkedin: 'https://linkedin.com/in/',
   },
@@ -48,6 +56,7 @@ const team = [
     name: 'Bart Streppel', 
     role: 'Content Specialist', 
     initials: 'BS',
+    image: bartImage,
     bio: 'Bart crafts compelling narratives that showcase the impact of NORCAT Innovation and its portfolio companies. He helps startups tell their stories effectively to customers, investors, and media.',
     linkedin: 'https://linkedin.com/in/',
   },
@@ -55,6 +64,7 @@ const team = [
     name: 'Jie Chen', 
     role: 'Associate', 
     initials: 'JC',
+    image: jieImage,
     bio: 'Jie supports founders through research, analysis, and program delivery. Her attention to detail and commitment to excellence ensures startups receive the highest quality support.',
     linkedin: 'https://linkedin.com/in/',
   },
@@ -75,9 +85,17 @@ function TeamMemberCard({ member, isExpanded, onToggle }: TeamMemberCardProps) {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-glow">
-          {member.initials}
-        </div>
+        {member.image ? (
+          <img 
+            src={member.image} 
+            alt={member.name} 
+            className="w-16 h-16 rounded-full object-cover mx-auto mb-4 shadow-glow"
+          />
+        ) : (
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-glow">
+            {member.initials}
+          </div>
+        )}
         <div className="font-semibold">{member.name}</div>
         <div className="text-sm text-muted-foreground">{member.role}</div>
       </motion.div>
