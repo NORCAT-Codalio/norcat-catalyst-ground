@@ -139,19 +139,19 @@ const SudburyCatalystFund = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="space-y-4">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-12 text-center">
+              <div className="h-full flex flex-col justify-between space-y-4">
+                <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-12 text-center flex-1 flex flex-col justify-center">
                   <div className="stat-number mb-4">$5M</div>
-                  <p className="body-lg">in deployable capital</p>
+                  <p className="body-lg">In Deployable Capital</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-secondary/50 rounded-2xl p-6 text-center border border-border/50">
                     <div className="text-2xl font-bold text-primary mb-1">$3M</div>
-                    <p className="text-sm text-muted-foreground">deployed to date</p>
+                    <p className="text-sm text-muted-foreground">Deployed To Date</p>
                   </div>
                   <div className="bg-secondary/50 rounded-2xl p-6 text-center border border-border/50">
                     <div className="text-2xl font-bold text-primary mb-1">60+</div>
-                    <p className="text-sm text-muted-foreground">jobs created in Sudbury</p>
+                    <p className="text-sm text-muted-foreground">Jobs Created In Sudbury</p>
                   </div>
                 </div>
               </div>
