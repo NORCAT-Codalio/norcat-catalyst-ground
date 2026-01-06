@@ -76,13 +76,13 @@ const ecosystemPartners = [{
   name: 'A City Built to Scale',
   desc: "Population boom, major investments, housing growth, and one of Canada's most successful immigration pilot programs"
 }, {
-  icon: Handshake,
-  name: 'MineConnect',
-  desc: 'Industry network'
+  icon: GraduationCap,
+  name: 'Talent',
+  desc: 'Five post-secondary institutions and eight research and innovation centres fueling a skilled workforce'
 }, {
-  icon: Globe,
-  name: 'MICA Network',
-  desc: 'Partner ecosystem'
+  icon: Handshake,
+  name: 'The Sudbury Model',
+  desc: 'Innovation centres, industry, post-secondaries, and government working as one'
 }];
 const sectors = [{
   icon: Cpu,
