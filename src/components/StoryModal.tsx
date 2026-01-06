@@ -1,23 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { X, MapPin, Users, DollarSign, Building2, Rocket, Globe, Award } from 'lucide-react';
+import { X, MapPin, Users, DollarSign, Building2, Rocket, Globe, Award, Zap, Target } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface StoryScene {
-  type: 'text' | 'counter' | 'map' | 'milestone';
+  type: 'text' | 'counter' | 'map' | 'milestone' | 'quote';
   title?: string;
   content?: string;
   value?: number;
   prefix?: string;
   suffix?: string;
-  icon?: 'users' | 'dollar' | 'building' | 'rocket' | 'globe' | 'award' | 'map';
+  icon?: 'users' | 'dollar' | 'building' | 'rocket' | 'globe' | 'award' | 'map' | 'zap' | 'target';
   location?: string;
+  quote?: string;
+  author?: string;
 }
 
 interface StoryData {
   company: string;
   tagline: string;
-  color: string;
+  logo?: string;
+  year: string;
   scenes: StoryScene[];
 }
 
@@ -35,6 +38,8 @@ const iconMap = {
   globe: Globe,
   award: Award,
   map: MapPin,
+  zap: Zap,
+  target: Target,
 };
 
 function AnimatedCounter({ 
@@ -58,7 +63,7 @@ function AnimatedCounter({
     
     let startTime: number;
     let animationFrame: number;
-    const duration = 2000;
+    const duration = 2500;
     
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -76,7 +81,7 @@ function AnimatedCounter({
   }, [isVisible, value]);
   
   return (
-    <span className="font-display font-bold text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-teal-500">
+    <span className="font-display font-black text-7xl md:text-9xl text-slate-900 tracking-tight">
       {prefix}{count.toLocaleString()}{suffix}
     </span>
   );
@@ -85,96 +90,211 @@ function AnimatedCounter({
 function StoryScene({ 
   scene, 
   isVisible, 
-  progress 
+  sceneIndex
 }: { 
   scene: StoryScene; 
   isVisible: boolean; 
-  progress: number;
+  sceneIndex: number;
 }) {
   const Icon = scene.icon ? iconMap[scene.icon] : null;
   
   return (
     <div 
       className={cn(
-        "min-h-[60vh] flex flex-col items-center justify-center text-center px-6 transition-all duration-700",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        "min-h-[70vh] flex flex-col items-center justify-center text-center px-8 md:px-16 transition-all duration-1000 ease-out",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
       )}
     >
-      {Icon && (
+      {Icon && scene.type !== 'counter' && (
         <div 
           className={cn(
-            "w-16 h-16 rounded-full bg-teal-500/20 flex items-center justify-center mb-6 transition-all duration-500",
-            isVisible ? "scale-100" : "scale-50"
+            "w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center mb-8 transition-all duration-700",
+            isVisible ? "scale-100 rotate-0" : "scale-50 rotate-12"
           )}
           style={{ transitionDelay: '200ms' }}
         >
-          <Icon className="w-8 h-8 text-teal-400" />
+          <Icon className="w-10 h-10 text-slate-700" />
         </div>
       )}
       
       {scene.type === 'text' && (
         <>
-          <h3 className="text-3xl md:text-5xl font-display font-bold text-slate-50 mb-4 leading-tight">
+          <h3 
+            className={cn(
+              "text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 mb-6 leading-[1.1] tracking-tight max-w-4xl transition-all duration-700",
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+            style={{ transitionDelay: '100ms' }}
+          >
             {scene.title}
           </h3>
           {scene.content && (
-            <p className="text-xl text-slate-400 max-w-lg">{scene.content}</p>
+            <p 
+              className={cn(
+                "text-xl md:text-2xl text-slate-500 max-w-2xl font-light transition-all duration-700",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: '300ms' }}
+            >
+              {scene.content}
+            </p>
           )}
         </>
       )}
       
       {scene.type === 'counter' && (
         <>
-          <AnimatedCounter 
-            value={scene.value || 0} 
-            prefix={scene.prefix} 
-            suffix={scene.suffix}
-            isVisible={isVisible}
-          />
-          <p className="text-2xl text-slate-300 mt-4 font-medium">{scene.title}</p>
+          <div className="relative">
+            <AnimatedCounter 
+              value={scene.value || 0} 
+              prefix={scene.prefix} 
+              suffix={scene.suffix}
+              isVisible={isVisible}
+            />
+            {/* Decorative line */}
+            <div 
+              className={cn(
+                "absolute -bottom-4 left-1/2 -translate-x-1/2 h-1 bg-teal-500 transition-all duration-1000",
+                isVisible ? "w-24" : "w-0"
+              )}
+              style={{ transitionDelay: '800ms' }}
+            />
+          </div>
+          <p 
+            className={cn(
+              "text-2xl md:text-3xl text-slate-700 mt-10 font-semibold transition-all duration-700",
+              isVisible ? "opacity-100" : "opacity-0"
+            )}
+            style={{ transitionDelay: '600ms' }}
+          >
+            {scene.title}
+          </p>
           {scene.content && (
-            <p className="text-lg text-slate-500 mt-2">{scene.content}</p>
+            <p 
+              className={cn(
+                "text-lg text-slate-400 mt-3 transition-all duration-700",
+                isVisible ? "opacity-100" : "opacity-0"
+              )}
+              style={{ transitionDelay: '800ms' }}
+            >
+              {scene.content}
+            </p>
           )}
         </>
       )}
       
       {scene.type === 'map' && (
         <>
-          <div className="relative mb-8">
+          <div className="relative mb-10">
+            {/* Animated rings */}
             <div 
               className={cn(
-                "w-64 h-64 rounded-full bg-gradient-to-br from-teal-500/30 to-teal-600/10 flex items-center justify-center transition-all duration-1000",
+                "w-48 h-48 md:w-64 md:h-64 rounded-full border-2 border-slate-200 flex items-center justify-center transition-all duration-1000",
                 isVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"
               )}
             >
-              <div className="absolute inset-4 rounded-full border-2 border-dashed border-teal-500/30 animate-[spin_20s_linear_infinite]" />
-              <div className="absolute inset-8 rounded-full border border-teal-500/20" />
-              <MapPin className="w-12 h-12 text-teal-400 animate-bounce" />
+              <div 
+                className={cn(
+                  "absolute inset-4 rounded-full border-2 border-dashed border-teal-300 transition-all duration-1000",
+                  isVisible ? "animate-[spin_30s_linear_infinite]" : ""
+                )}
+              />
+              <div className="absolute inset-10 rounded-full border border-slate-100" />
+              <div className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center shadow-lg shadow-teal-500/30">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
             </div>
             {/* Ping indicators */}
-            <div className="absolute top-8 right-8 w-3 h-3 bg-teal-400 rounded-full animate-ping" />
-            <div className="absolute bottom-12 left-4 w-2 h-2 bg-teal-300 rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
-            <div className="absolute top-1/2 right-0 w-2 h-2 bg-teal-500 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+            {isVisible && (
+              <>
+                <div className="absolute top-4 right-4 w-3 h-3 bg-teal-400 rounded-full animate-ping" />
+                <div className="absolute bottom-8 left-0 w-2 h-2 bg-slate-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
+                <div className="absolute top-1/2 -right-4 w-2 h-2 bg-teal-500 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+              </>
+            )}
           </div>
-          <h3 className="text-2xl font-display font-bold text-slate-50 mb-2">{scene.location}</h3>
-          <p className="text-lg text-slate-400">{scene.title}</p>
+          <h3 
+            className={cn(
+              "text-3xl md:text-4xl font-display font-bold text-slate-900 mb-3 transition-all duration-700",
+              isVisible ? "opacity-100" : "opacity-0"
+            )}
+            style={{ transitionDelay: '400ms' }}
+          >
+            {scene.location}
+          </h3>
+          <p 
+            className={cn(
+              "text-xl text-slate-500 transition-all duration-700",
+              isVisible ? "opacity-100" : "opacity-0"
+            )}
+            style={{ transitionDelay: '600ms' }}
+          >
+            {scene.title}
+          </p>
         </>
+      )}
+
+      {scene.type === 'quote' && (
+        <div className="max-w-3xl">
+          <div 
+            className={cn(
+              "text-6xl text-teal-500 font-serif mb-4 transition-all duration-500",
+              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50"
+            )}
+          >
+            "
+          </div>
+          <blockquote 
+            className={cn(
+              "text-3xl md:text-4xl font-display font-medium text-slate-800 italic leading-relaxed transition-all duration-700",
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+            style={{ transitionDelay: '200ms' }}
+          >
+            {scene.quote}
+          </blockquote>
+          {scene.author && (
+            <p 
+              className={cn(
+                "text-lg text-slate-500 mt-6 transition-all duration-700",
+                isVisible ? "opacity-100" : "opacity-0"
+              )}
+              style={{ transitionDelay: '500ms' }}
+            >
+              — {scene.author}
+            </p>
+          )}
+        </div>
       )}
       
       {scene.type === 'milestone' && (
         <div className="relative">
           <div 
             className={cn(
-              "w-32 h-32 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 transition-all duration-700",
+              "w-28 h-28 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center mb-8 shadow-2xl shadow-teal-500/40 transition-all duration-1000",
               isVisible ? "scale-100 rotate-0" : "scale-0 rotate-180"
             )}
           >
-            <Award className="w-16 h-16 text-slate-900" />
+            <Award className="w-14 h-14 md:w-18 md:h-18 text-white" />
           </div>
-          <h3 className="text-4xl md:text-5xl font-display font-bold text-amber-400 mb-4">
+          <h3 
+            className={cn(
+              "text-4xl md:text-6xl font-display font-black text-slate-900 mb-4 transition-all duration-700",
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+            style={{ transitionDelay: '300ms' }}
+          >
             {scene.title}
           </h3>
-          <p className="text-xl text-slate-300">{scene.content}</p>
+          <p 
+            className={cn(
+              "text-xl md:text-2xl text-slate-500 transition-all duration-700",
+              isVisible ? "opacity-100" : "opacity-0"
+            )}
+            style={{ transitionDelay: '500ms' }}
+          >
+            {scene.content}
+          </p>
         </div>
       )}
     </div>
@@ -199,7 +319,7 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
     const container = containerRef.current;
     const scrollTop = container.scrollTop;
     const scrollHeight = container.scrollHeight - container.clientHeight;
-    const progress = scrollTop / scrollHeight;
+    const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
     
     setScrollProgress(progress);
     
@@ -215,45 +335,35 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
   
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-4xl h-[90vh] p-0 border-slate-800 overflow-hidden [&>button]:hidden" style={{ backgroundColor: '#020617' }}>
+      <DialogContent 
+        className="max-w-5xl h-[90vh] p-0 border-0 overflow-hidden [&>button]:hidden rounded-2xl shadow-2xl" 
+        style={{ backgroundColor: '#ffffff' }}
+      >
         {/* Header */}
-        <div className="absolute top-0 left-0 right-0 z-20 p-6 bg-gradient-to-b from-slate-950 via-slate-950/90 to-transparent">
+        <div className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8 bg-gradient-to-b from-white via-white/95 to-transparent">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-teal-400 text-sm font-medium tracking-wider uppercase">
-                {story.tagline}
+              <p className="text-teal-600 text-xs font-semibold tracking-widest uppercase mb-1">
+                {story.year} • {story.tagline}
               </p>
-              <h2 className="text-2xl font-display font-bold text-slate-50">
+              <h2 className="text-2xl md:text-3xl font-display font-black text-slate-900 tracking-tight">
                 {story.company}
               </h2>
             </div>
             <button 
               onClick={onClose}
-              className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors"
+              className="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
             >
-              <X className="w-5 h-5 text-slate-300" />
+              <X className="w-5 h-5 text-slate-600" />
             </button>
           </div>
           
           {/* Progress bar */}
-          <div className="mt-4 h-1 bg-slate-800 rounded-full overflow-hidden">
+          <div className="mt-6 h-0.5 bg-slate-100 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all duration-300"
+              className="h-full bg-teal-500 transition-all duration-300 ease-out"
               style={{ width: `${scrollProgress * 100}%` }}
             />
-          </div>
-          
-          {/* Scene indicators */}
-          <div className="flex gap-2 mt-3">
-            {story.scenes.map((_, index) => (
-              <div 
-                key={index}
-                className={cn(
-                  "h-1 flex-1 rounded-full transition-all duration-300",
-                  index <= activeScene ? "bg-teal-400" : "bg-slate-700"
-                )}
-              />
-            ))}
           </div>
         </div>
         
@@ -261,25 +371,35 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
         <div 
           ref={containerRef}
           onScroll={handleScroll}
-          className="h-full overflow-y-auto scroll-smooth pt-32 pb-20"
+          className="h-full overflow-y-auto scroll-smooth pt-36 pb-32"
+          style={{ backgroundColor: '#ffffff' }}
         >
           {story.scenes.map((scene, index) => (
             <StoryScene 
               key={index}
               scene={scene}
               isVisible={index === activeScene}
-              progress={scrollProgress}
+              sceneIndex={index}
             />
           ))}
           
-          {/* End indicator */}
-          <div className="min-h-[30vh] flex flex-col items-center justify-center text-center px-6">
-            <p className="text-slate-500 text-lg">Scroll to explore the full story</p>
-            <div className="mt-4 flex gap-1">
-              <span className="w-2 h-2 bg-slate-600 rounded-full animate-bounce" />
-              <span className="w-2 h-2 bg-slate-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-              <span className="w-2 h-2 bg-slate-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
-            </div>
+          {/* End spacer for last scene visibility */}
+          <div className="min-h-[40vh]" />
+        </div>
+
+        {/* Scroll hint at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 p-6 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none">
+          <div className="flex flex-col items-center">
+            <p className="text-slate-400 text-sm mb-2">
+              {activeScene < (story.scenes.length - 1) ? 'Scroll to continue' : 'End of story'}
+            </p>
+            {activeScene < (story.scenes.length - 1) && (
+              <div className="flex gap-1">
+                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" />
+                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
+                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>
@@ -287,38 +407,49 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
   );
 }
 
-// Story data for each company
+// Fake company stories for preview
 export const storyData: Record<string, StoryData> = {
   'MineTech Robotics': {
     company: 'MineTech Robotics',
-    tagline: 'Series A Success Story',
-    color: 'teal',
+    tagline: 'Series A Success',
+    year: '2024',
     scenes: [
       {
         type: 'text',
-        title: 'It started with 2 founders and a bold vision',
-        content: 'Autonomous vehicles that could navigate the deepest mines.',
+        title: 'Two engineers walked into a mine.',
+        content: 'They walked out with a vision to make every underground operation autonomous.',
         icon: 'rocket',
       },
       {
+        type: 'quote',
+        quote: 'We knew the future of mining wasn\'t just safer—it was smarter.',
+        author: 'Sarah Chen, Co-founder',
+      },
+      {
         type: 'counter',
-        value: 42,
-        suffix: '',
-        title: 'Employees Today',
-        content: 'Growing from a garage startup to a full engineering team',
+        value: 2,
+        title: 'Founders',
+        content: 'Started in a Sudbury garage, 2019',
+        icon: 'users',
+      },
+      {
+        type: 'counter',
+        value: 47,
+        title: 'Team Members Today',
+        content: 'Engineers, operators, and dreamers',
         icon: 'users',
       },
       {
         type: 'map',
-        title: 'First deployment at Creighton Mine',
-        location: 'Sudbury, Ontario',
+        title: 'First autonomous deployment',
+        location: 'Creighton Mine, Sudbury',
         icon: 'map',
       },
       {
         type: 'counter',
         value: 5,
         title: 'Global Mine Sites',
-        content: 'Now operating across 3 continents',
+        content: 'Operating across Canada, Australia, and Chile',
         icon: 'globe',
       },
       {
@@ -327,49 +458,60 @@ export const storyData: Record<string, StoryData> = {
         value: 12,
         suffix: 'M',
         title: 'Series A Raised',
-        content: 'Led by top mining-focused VC firms',
+        content: 'Led by Northvolt Ventures & Mining Capital Partners',
         icon: 'dollar',
       },
       {
         type: 'milestone',
-        title: 'The Future is Autonomous',
-        content: 'Proving that Sudbury-born innovation can change mining worldwide.',
+        title: 'The Future is Underground',
+        content: 'Proving that Northern Ontario can build world-class robotics.',
       },
     ],
   },
   'SubSurface AI': {
     company: 'SubSurface AI',
-    tagline: 'Acquisition Success',
-    color: 'amber',
+    tagline: '$45M Acquisition',
+    year: '2023',
     scenes: [
       {
         type: 'text',
-        title: 'A geologist with a machine learning dream',
-        content: 'What if AI could see what humans couldn\'t underground?',
-        icon: 'rocket',
+        title: 'What if AI could see through rock?',
+        content: 'A geologist\'s question that became a $45M answer.',
+        icon: 'target',
+      },
+      {
+        type: 'quote',
+        quote: 'Every core sample tells a story. We taught machines to read them.',
+        author: 'Dr. Michael Torres, Founder',
       },
       {
         type: 'counter',
-        value: 10000,
+        value: 127000,
         suffix: '+',
         title: 'Core Samples Analyzed',
-        content: 'Training the most comprehensive geological AI model',
+        content: 'The largest geological AI training dataset ever built',
         icon: 'building',
       },
       {
         type: 'counter',
-        value: 60,
+        value: 62,
         suffix: '%',
         title: 'Cost Reduction',
-        content: 'Exploration costs slashed for mining companies',
+        content: 'Average exploration savings for mining clients',
         icon: 'dollar',
       },
       {
         type: 'counter',
-        value: 8,
-        title: 'Patents Filed',
-        content: 'Protecting breakthrough AI algorithms',
+        value: 11,
+        title: 'Patents Granted',
+        content: 'Breakthrough algorithms for subsurface prediction',
         icon: 'award',
+      },
+      {
+        type: 'map',
+        title: 'Deployed at Ring of Fire exploration sites',
+        location: 'Northern Ontario',
+        icon: 'map',
       },
       {
         type: 'counter',
@@ -377,59 +519,71 @@ export const storyData: Record<string, StoryData> = {
         value: 45,
         suffix: 'M',
         title: 'Acquisition Value',
-        content: 'Acquired by leading mining software company',
+        content: 'Acquired by Dassault Systèmes GEOVIA',
         icon: 'dollar',
       },
       {
         type: 'milestone',
-        title: 'Northern Innovation, Global Impact',
-        content: 'From NORCAT to worldwide deployment.',
+        title: 'From Startup to Global Standard',
+        content: 'Northern ingenuity meets worldwide impact.',
       },
     ],
   },
   'VentFlow Systems': {
     company: 'VentFlow Systems',
-    tagline: 'Global Partnership',
-    color: 'emerald',
+    tagline: 'Global OEM Partnership',
+    year: '2024',
     scenes: [
       {
         type: 'text',
-        title: 'Mining ventilation was broken',
-        content: 'Wasting energy while failing to protect workers.',
-        icon: 'rocket',
+        title: 'Mining ventilation was stuck in 1970.',
+        content: 'Wasting energy. Missing threats. Ignoring data.',
+        icon: 'zap',
+      },
+      {
+        type: 'quote',
+        quote: 'Fresh air underground shouldn\'t be a luxury—it should be intelligent.',
+        author: 'James Whitehorse, CEO',
       },
       {
         type: 'counter',
-        value: 35,
+        value: 38,
         suffix: '%',
         title: 'Energy Savings',
-        content: 'Smart ventilation that adapts in real-time',
-        icon: 'building',
+        content: 'Smart ventilation that adapts in real-time to conditions',
+        icon: 'zap',
       },
       {
         type: 'map',
-        title: 'Piloted at Vale\'s Sudbury Operations',
+        title: 'Pilot program with Vale\'s Sudbury operations',
         location: 'Copper Cliff, Ontario',
         icon: 'map',
       },
       {
         type: 'counter',
-        value: 500,
+        value: 2400,
         suffix: '+',
         title: 'Workers Protected Daily',
-        content: 'Improved air quality monitoring underground',
+        content: 'Real-time air quality monitoring and alerts',
         icon: 'users',
       },
       {
-        type: 'text',
-        title: 'Global OEM Partnership Secured',
-        content: 'Licensed by the world\'s largest mining equipment manufacturer.',
+        type: 'counter',
+        value: 14,
+        title: 'Mines Now Live',
+        content: 'Across North America and South Africa',
         icon: 'globe',
       },
       {
+        type: 'text',
+        title: 'Epiroc Partnership Secured',
+        content: 'Technology licensed by the world\'s largest underground mining OEM.',
+        icon: 'award',
+      },
+      {
         type: 'milestone',
-        title: 'Safety Meets Sustainability',
-        content: 'Proving clean tech and worker safety go hand in hand.',
+        title: 'Clean Air. Smart Mines.',
+        content: 'Sustainability and safety, powered by Sudbury innovation.',
       },
     ],
   },
