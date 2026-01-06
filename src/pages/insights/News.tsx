@@ -158,32 +158,24 @@ const News = () => {
               </div>
             </ScrollReveal>
 
-            {/* Right: Activity Feed */}
+            {/* Right: Featured Image */}
             <ScrollReveal delay={200}>
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden">
-                <div className="p-4 border-b border-slate-700/50 flex items-center justify-between">
-                  <h3 className="font-semibold text-slate-200 flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-teal-400" />
-                    Live Activity
-                  </h3>
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-800">
+                  <img 
+                    src="https://images.unsplash.com/photo-1578496781379-7dcfb995293d?w=800&auto=format&fit=crop&q=80" 
+                    alt="Autonomous mining vehicle in underground tunnel"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                 </div>
-                <div className="divide-y divide-slate-700/30 max-h-[400px] overflow-y-auto">
-                  {activityFeed.map((item, i) => (
-                    <div 
-                      key={i} 
-                      className="p-4 hover:bg-slate-700/30 transition-colors cursor-pointer group"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <p className="text-slate-300 text-sm group-hover:text-slate-100 transition-colors">
-                          {item.text}
-                        </p>
-                        <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-teal-400 transition-colors shrink-0" />
-                      </div>
-                      <span className="text-slate-500 text-xs mt-1 block">{item.time}</span>
-                    </div>
-                  ))}
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -left-4 bg-teal-500 text-white px-4 py-2 rounded-xl shadow-lg shadow-teal-500/30">
+                  <span className="text-sm font-bold">$12M Raised</span>
                 </div>
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-teal-500/30 rounded-2xl" />
               </div>
             </ScrollReveal>
           </div>
