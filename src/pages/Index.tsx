@@ -61,11 +61,11 @@ const services = [{
   link: '/programs/venture-growth-services',
   gradient: 'from-amber-500 to-orange-600'
 }, {
-  icon: Target,
-  title: 'Capital Navigation',
-  description: 'Expert help securing grants and investment readiness.',
-  link: '/programs/capital-navigation',
-  gradient: 'from-rose-500 to-pink-600'
+  icon: Mountain,
+  title: 'Labs',
+  description: 'State-of-the-art underground testing and R&D facilities at the NORCAT Underground Centre.',
+  link: '/mining/norcat-underground',
+  gradient: 'from-cyan-500 to-blue-600'
 }];
 const ecosystemPartners = [{
   icon: Building2,
