@@ -6,43 +6,31 @@ import heroImage from '@/assets/hero-underground.jpg';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-const portfolioCompanies = [{
-  name: 'Symboticware',
-  logo: 'SW'
-}, {
-  name: 'Maestro Digital Mine',
-  logo: 'MDM'
-}, {
-  name: 'Hard-Line',
-  logo: 'HL'
-}, {
-  name: 'Cognitive Systems',
-  logo: 'CS'
-}, {
-  name: 'SafeSight',
-  logo: 'SS'
-}, {
-  name: 'Drill Scan',
-  logo: 'DS'
-}, {
-  name: 'Agnico Eagle',
-  logo: 'AE'
-}, {
-  name: 'MineSense',
-  logo: 'MS'
-}, {
-  name: 'Newtrax',
-  logo: 'NT'
-}, {
-  name: 'Provix',
-  logo: 'PV'
-}, {
-  name: 'Motion Metrics',
-  logo: 'MM'
-}, {
-  name: 'Iamgold',
-  logo: 'IG'
-}];
+
+// Portfolio company logos
+import turnkeyLogo from '@/assets/logos/turnkey.png';
+import rogersLogo from '@/assets/logos/rogers.png';
+import hardlineLogo from '@/assets/logos/hardline.png';
+import waiveLogo from '@/assets/logos/waive.png';
+import symxLogo from '@/assets/logos/symx.png';
+import codalioLogo from '@/assets/logos/codalio.png';
+import flosonicsLogo from '@/assets/logos/flosonics.png';
+import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
+import loopxLogo from '@/assets/logos/loopx.png';
+import circuitiqLogo from '@/assets/logos/circuitiq.webp';
+
+const portfolioCompanies = [
+  { name: 'Turnkey', logo: turnkeyLogo },
+  { name: 'Rogers', logo: rogersLogo },
+  { name: 'Hard-Line', logo: hardlineLogo },
+  { name: 'Waive', logo: waiveLogo },
+  { name: 'Symx AI', logo: symxLogo },
+  { name: 'Codalio', logo: codalioLogo },
+  { name: 'Flosonics Medical', logo: flosonicsLogo },
+  { name: 'Kinmetrix', logo: kinmetrixLogo },
+  { name: 'LoopX', logo: loopxLogo },
+  { name: 'Circuit IQ', logo: circuitiqLogo },
+];
 const services = [{
   icon: Users,
   title: 'Mentorship',
@@ -491,11 +479,15 @@ export default function Index() {
             repeat: Infinity,
             ease: 'linear'
           }}>
-              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => <div key={`${company.name}-${i}`} className="flex-shrink-0 flex items-center justify-center w-32 h-16 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 transition-colors group">
-                  <span className="text-xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                    {company.logo}
-                  </span>
-                </div>)}
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div key={`${company.name}-${i}`} className="flex-shrink-0 flex items-center justify-center w-40 h-20 rounded-xl bg-white border border-border hover:border-primary/30 transition-colors group px-4">
+                  <img 
+                    src={company.logo} 
+                    alt={company.name} 
+                    className="max-h-12 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>
