@@ -115,7 +115,7 @@ const SudburyCatalystFund = () => {
       {/* Fund Overview */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-end">
             <ScrollReveal>
               <h2 className="headline-lg mb-6">Fund Overview</h2>
               <p className="body-lg mb-8">
@@ -139,8 +139,8 @@ const SudburyCatalystFund = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="h-full flex flex-col justify-between space-y-4">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-12 text-center flex-1 flex flex-col justify-center">
+              <div className="flex flex-col justify-end space-y-4">
+                <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-12 text-center flex flex-col justify-center">
                   <div className="stat-number mb-4">$5M</div>
                   <p className="body-lg">In Deployable Capital</p>
                 </div>
