@@ -118,54 +118,107 @@ const SuccessStories = () => {
         <div className="absolute inset-0 bg-mesh" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <div className="max-w-4xl">
-            <ScrollReveal>
-              <div className="inline-flex items-center gap-2 badge-dark mb-8">
-                <Sparkles className="w-4 h-4" />
-                Portfolio Companies
-              </div>
-            </ScrollReveal>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left content */}
+            <div>
+              <ScrollReveal>
+                <div className="inline-flex items-center gap-2 badge-dark mb-8">
+                  <Sparkles className="w-4 h-4" />
+                  Portfolio Companies
+                </div>
+              </ScrollReveal>
 
-            <ScrollReveal delay={100}>
-              <h1 className="headline-hero text-white mb-8">
-                Built in<br />
-                <span className="text-gradient">Sudbury.</span><br />
-                Scaling<br />
-                <span className="text-gradient">Globally.</span>
-              </h1>
-            </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="headline-hero text-white mb-8">
+                  Built in<br />
+                  <span className="text-gradient">Sudbury.</span><br />
+                  Scaling<br />
+                  <span className="text-gradient">Globally.</span>
+                </h1>
+              </ScrollReveal>
 
-            <ScrollReveal delay={200}>
-              <p className="body-xl text-white/70 max-w-2xl mb-12">
-                These are the founders proving that world-changing mining and industrial technology 
-                can come from Northern Ontario. Real companies. Real impact. Real stories.
-              </p>
-            </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="body-xl text-white/70 max-w-2xl mb-12">
+                  These are the founders proving that world-changing mining and industrial technology 
+                  can come from Northern Ontario. Real companies. Real impact. Real stories.
+                </p>
+              </ScrollReveal>
 
-            {/* Quick stats */}
-            <ScrollReveal delay={300}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {ecosystemStats.map((stat, i) => (
-                  <div key={i}>
-                    <div className="stat-number text-4xl md:text-5xl mb-1">
-                      {stat.value}
+              {/* Quick stats */}
+              <ScrollReveal delay={300}>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                  {ecosystemStats.map((stat, i) => (
+                    <div key={i}>
+                      <div className="stat-number text-4xl md:text-5xl mb-1">
+                        {stat.value}
+                      </div>
+                      <p className="text-sm text-white/50">{stat.label}</p>
                     </div>
-                    <p className="text-sm text-white/50">{stat.label}</p>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Right graphics */}
+            <div className="hidden lg:block relative">
+              <ScrollReveal delay={200}>
+                <div className="relative">
+                  {/* Main graphic container */}
+                  <div className="relative w-full aspect-square max-w-lg mx-auto">
+                    {/* Floating cards representing companies */}
+                    <div className="absolute top-0 right-0 w-48 h-32 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm border border-primary/20 p-4 animate-float">
+                      <div className="text-primary text-2xl font-bold">$180M+</div>
+                      <div className="text-white/60 text-sm">Capital Raised</div>
+                    </div>
+                    
+                    <div className="absolute top-1/4 left-0 w-44 h-28 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-sm border border-accent/20 p-4 animate-float" style={{ animationDelay: '0.5s' }}>
+                      <div className="text-accent text-2xl font-bold">450+</div>
+                      <div className="text-white/60 text-sm">Jobs Created</div>
+                    </div>
+                    
+                    <div className="absolute bottom-1/4 right-8 w-40 h-24 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 p-4 animate-float" style={{ animationDelay: '1s' }}>
+                      <div className="text-white text-xl font-bold">23</div>
+                      <div className="text-white/60 text-sm">Countries</div>
+                    </div>
+                    
+                    <div className="absolute bottom-0 left-1/4 w-36 h-24 rounded-xl bg-gradient-to-br from-primary/15 to-accent/10 backdrop-blur-sm border border-primary/15 p-4 animate-float" style={{ animationDelay: '1.5s' }}>
+                      <div className="text-primary text-xl font-bold">89%</div>
+                      <div className="text-white/60 text-sm">Survival Rate</div>
+                    </div>
+
+                    {/* Center glow */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 rounded-full bg-primary/20 blur-3xl" />
+                    </div>
+                    
+                    {/* Connection lines */}
+                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
+                      <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
+                          <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.1" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M200,200 L350,50" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
+                      <path d="M200,200 L50,120" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
+                      <path d="M200,200 L320,250" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
+                      <path d="M200,200 L130,350" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
+                    </svg>
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Filter Bar */}
-      <section className="sticky top-16 z-30 glass-dark border-b border-white/10">
+      <section className="sticky top-16 z-30 bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="py-4 flex flex-wrap items-center gap-6">
             {/* Sector filter */}
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground text-sm font-medium">Sector:</span>
+              <span className="text-gray-600 text-sm font-medium">Sector:</span>
               <div className="flex gap-1">
                 {sectors.map((sector) => (
                   <button
@@ -174,8 +227,8 @@ const SuccessStories = () => {
                     className={cn(
                       "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                       selectedSector === sector
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                     )}
                   >
                     {sector}
@@ -186,7 +239,7 @@ const SuccessStories = () => {
 
             {/* Stage filter */}
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground text-sm font-medium">Stage:</span>
+              <span className="text-gray-600 text-sm font-medium">Stage:</span>
               <div className="flex gap-1">
                 {stages.map((stage) => (
                   <button
@@ -195,8 +248,8 @@ const SuccessStories = () => {
                     className={cn(
                       "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                       selectedStage === stage
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                     )}
                   >
                     {stage}
@@ -206,7 +259,7 @@ const SuccessStories = () => {
             </div>
 
             {/* Results count */}
-            <div className="ml-auto text-sm text-muted-foreground">
+            <div className="ml-auto text-sm text-gray-500">
               {filteredStories.length} {filteredStories.length === 1 ? 'company' : 'companies'}
             </div>
           </div>
