@@ -31,28 +31,6 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-100">
-      {/* CTA Section */}
-      <div className="border-b border-slate-800">
-        <div className="container mx-auto px-4 lg:px-8 py-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="headline-lg text-slate-50 mb-4">
-              Ready to Build Something Big?
-            </h2>
-            <p className="body-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-              Join Ontario's most ambitious founders. Get the mentorship, funding, and connections 
-              you need to scale your tech startup.
-            </p>
-            <Link
-              to="/apply"
-              className="inline-flex items-center gap-2 btn-hero bg-primary hover:bg-teal-600"
-            >
-              Apply for Venture Growth Services
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
