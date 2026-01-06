@@ -72,9 +72,9 @@ const ecosystemPartners = [{
   name: 'Mining Hub',
   desc: 'Nine operating mines, two mills, two smelters, a nickel refinery and over 300 mining supply and service companies'
 }, {
-  icon: GraduationCap,
-  name: 'Cambrian College',
-  desc: 'Talent pipeline'
+  icon: Rocket,
+  name: 'Fastest Growing City',
+  desc: "Population boom, major investments, housing growth, and one of Canada's most successful immigration pilot programs"
 }, {
   icon: Handshake,
   name: 'MineConnect',
