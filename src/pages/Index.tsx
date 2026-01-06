@@ -501,6 +501,9 @@ export default function Index() {
         </div>
       </section>
 
+      {/* AI Chatbot Section */}
+      <AIChatSection />
+
       {/* Services */}
       <section className="py-32 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
@@ -558,8 +561,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* AI Chatbot Section */}
-      <AIChatSection />
 
       {/* Sudbury Ecosystem */}
       <section className="py-32 bg-secondary/30 relative overflow-hidden">
