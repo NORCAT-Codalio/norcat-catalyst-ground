@@ -67,6 +67,7 @@ const SudburyCatalystFund = () => {
       {
         name: 'Jason Sullivan',
         role: 'Co-Managing Director',
+        title: 'NBFDC',
         image: jasonSullivanImage,
       },
     ],
