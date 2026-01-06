@@ -138,9 +138,17 @@ function TeamMemberCard({ member, isExpanded, onToggle }: TeamMemberCardProps) {
 
                 {/* Content */}
                 <div className="text-center">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-3xl mx-auto mb-6 shadow-glow-lg">
-                    {member.initials}
-                  </div>
+                  {member.image ? (
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-24 h-24 rounded-full object-cover mx-auto mb-6 shadow-glow-lg"
+                    />
+                  ) : (
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-3xl mx-auto mb-6 shadow-glow-lg">
+                      {member.initials}
+                    </div>
+                  )}
                   
                   <h3 className="headline-sm mb-1">{member.name}</h3>
                   <p className="text-primary font-medium mb-6">{member.role}</p>
