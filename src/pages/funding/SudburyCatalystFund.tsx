@@ -17,6 +17,7 @@ import codalioLogo from '@/assets/logos/codalio.png';
 import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
+import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
 
 // Team headshots
 import jasonSullivanImage from '@/assets/team/jason-sullivan.png';
@@ -90,14 +91,11 @@ const SudburyCatalystFund = () => {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-2 badge-dark mb-8">
-              <Zap className="w-4 h-4" />
-              Funding & Capital
-            </div>
-            <h1 className="headline-hero text-white mb-6 max-w-4xl">
-              Sudbury<br />
-              <span className="text-gradient">Catalyst Fund</span>
-            </h1>
+            <img 
+              src={scfLogo} 
+              alt="Sudbury Catalyst Fund" 
+              className="h-24 mb-8 object-contain"
+            />
             <p className="body-xl text-white/70 max-w-2xl mb-10">
               Early-stage investment capital for innovative companies building 
               transformative solutions in Northern Ontario.
