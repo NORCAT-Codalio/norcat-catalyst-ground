@@ -328,7 +328,8 @@ export default function Index() {
               <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 What We Offer
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Everything You Need to Scale<span className="text-gradient">Scale</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Everything You Need to <span className="text-gradient">Scale</span>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Comprehensive support designed for founders who want to move fast.
