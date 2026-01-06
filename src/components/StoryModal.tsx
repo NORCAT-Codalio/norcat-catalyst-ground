@@ -215,7 +215,7 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
   
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-4xl h-[90vh] p-0 bg-slate-950 border-slate-800 overflow-hidden">
+      <DialogContent className="max-w-4xl h-[90vh] p-0 border-slate-800 overflow-hidden [&>button]:hidden" style={{ backgroundColor: '#020617' }}>
         {/* Header */}
         <div className="absolute top-0 left-0 right-0 z-20 p-6 bg-gradient-to-b from-slate-950 via-slate-950/90 to-transparent">
           <div className="flex items-center justify-between">
