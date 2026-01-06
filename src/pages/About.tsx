@@ -14,6 +14,7 @@ import jieImage from '@/assets/team/jie.png';
 
 // Logos
 import ontarioLogo from '@/assets/logos/ontario.png';
+import innovateonLogo from '@/assets/logos/innovateon.png';
 
 const values = [
   {
@@ -358,9 +359,12 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               {/* Left Column - RIC Network */}
               <div>
-                <div className="badge mb-4">
-                  <Globe className="h-4 w-4" />
-                  Regional Innovation Centre Network
+                <div className="mb-4">
+                  <img 
+                    src={innovateonLogo} 
+                    alt="InnovateON - Regional Innovation Centre Network" 
+                    className="h-8 object-contain"
+                  />
                 </div>
                 <p className="body-md mb-4">
                   We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs 
