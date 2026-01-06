@@ -127,7 +127,7 @@ const SudburyCatalystFund = () => {
                 {[
                   { icon: DollarSign, label: 'Investment Size', value: '$25K - $250K' },
                   { icon: Target, label: 'Focus', value: 'Seed Stage' },
-                  { icon: BarChart3, label: 'Portfolio', value: '20+ Companies' },
+                  { icon: BarChart3, label: 'Portfolio', value: '7 Companies' },
                   { icon: Zap, label: 'Decision Time', value: '4-6 Weeks' },
                 ].map((item, i) => (
                   <div key={i} className="p-4 rounded-2xl bg-secondary/50">
@@ -139,9 +139,21 @@ const SudburyCatalystFund = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-12 text-center">
-                <div className="stat-number mb-4">$5M+</div>
-                <p className="body-lg">Deployed to Northern Ontario Startups</p>
+              <div className="space-y-4">
+                <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-12 text-center">
+                  <div className="stat-number mb-4">$5M</div>
+                  <p className="body-lg">in deployable capital</p>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-secondary/50 rounded-2xl p-6 text-center border border-border/50">
+                    <div className="text-2xl font-bold text-primary mb-1">$3M</div>
+                    <p className="text-sm text-muted-foreground">deployed to date</p>
+                  </div>
+                  <div className="bg-secondary/50 rounded-2xl p-6 text-center border border-border/50">
+                    <div className="text-2xl font-bold text-primary mb-1">60+</div>
+                    <p className="text-sm text-muted-foreground">jobs created in Sudbury</p>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
