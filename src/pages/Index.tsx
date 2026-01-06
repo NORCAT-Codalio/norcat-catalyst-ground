@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Zap, Globe, Cpu, Leaf, Factory, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Zap, Globe, Cpu, Leaf, Factory, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake, Send, PresentationIcon, UserPlus, Scale, Briefcase, TrendingUp } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 const portfolioCompanies = [{
   name: 'Symboticware',
   logo: 'SW'
@@ -116,6 +117,188 @@ const stats = [{
   value: '50+',
   label: 'Countries Reached'
 }];
+
+const chatSupportItems = [
+  { icon: PresentationIcon, label: 'Build my pitch deck' },
+  { icon: Users, label: 'Find a co-founder' },
+  { icon: UserPlus, label: 'Hire my first employee' },
+  { icon: Building2, label: 'Register my business' },
+  { icon: DollarSign, label: 'Raise funding' },
+  { icon: Target, label: 'Find product-market fit' },
+  { icon: Globe, label: 'Expand internationally' },
+  { icon: Lightbulb, label: 'Validate my idea' },
+  { icon: Scale, label: 'Legal & IP strategy' },
+  { icon: Briefcase, label: 'Connect with mentors' },
+  { icon: TrendingUp, label: 'Scale my operations' },
+];
+
+const typingExamples = [
+  "How do I build a compelling pitch deck?",
+  "What grants are available for cleantech startups?",
+  "How do I find a technical co-founder?",
+  "What's the best way to validate my idea?",
+  "How do I protect my intellectual property?",
+  "What funding options exist for early-stage startups?",
+];
+
+function AIChatSection() {
+  const [chatInput, setChatInput] = useState('');
+  const [displayText, setDisplayText] = useState('');
+  const [exampleIndex, setExampleIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    const currentExample = typingExamples[exampleIndex];
+    
+    if (isTyping) {
+      if (charIndex < currentExample.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(currentExample.slice(0, charIndex + 1));
+          setCharIndex(prev => prev + 1);
+        }, 50 + Math.random() * 30);
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+        return () => clearTimeout(timeout);
+      }
+    } else {
+      if (charIndex > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayText(currentExample.slice(0, charIndex - 1));
+          setCharIndex(prev => prev - 1);
+        }, 25);
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => {
+          setExampleIndex((prev) => (prev + 1) % typingExamples.length);
+          setIsTyping(true);
+        }, 500);
+        return () => clearTimeout(timeout);
+      }
+    }
+  }, [charIndex, isTyping, exampleIndex]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (chatInput.trim()) {
+      console.log('Chat input:', chatInput);
+      setChatInput('');
+    }
+  };
+
+  const handleItemClick = (label: string) => {
+    setChatInput(`Help me ${label.toLowerCase()}`);
+  };
+
+  return (
+    <section className="py-24 bg-gradient-to-b from-secondary/30 via-background to-background relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <ScrollReveal>
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <Sparkles className="w-4 h-4" />
+              AI-Powered Guidance
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              How can we help you <span className="text-gradient">scale?</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Get personalized guidance for your startup journey
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Scrolling Carousel */}
+        <ScrollReveal delay={100}>
+          <div className="mb-8 overflow-hidden">
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+              
+              <div className="flex animate-marquee gap-4">
+                {[...chatSupportItems, ...chatSupportItems].map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => handleItemClick(item.label)}
+                      className="group flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+                    >
+                      <Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                      <span className="text-sm text-foreground/80 group-hover:text-foreground whitespace-nowrap">
+                        {item.label}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* AI Chat Input */}
+        <ScrollReveal delay={200}>
+          <div className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubmit} className="relative">
+              <div className="relative rounded-2xl border-2 border-border bg-background/90 backdrop-blur-sm shadow-lg hover:border-primary/30 focus-within:border-primary/50 transition-all duration-300 overflow-hidden">
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={chatInput}
+                    onChange={(e) => setChatInput(e.target.value)}
+                    className="w-full py-6 px-5 pr-14 text-base border-0 bg-transparent focus:outline-none focus:ring-0"
+                    placeholder=""
+                  />
+                  {!chatInput && (
+                    <div className="absolute inset-0 flex items-center px-5 pointer-events-none">
+                      <span className="text-muted-foreground/60 text-base">
+                        {displayText}
+                        <span className="inline-block w-0.5 h-5 bg-primary/60 ml-0.5 animate-pulse" />
+                      </span>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="flex items-center justify-between px-4 py-3 border-t border-border/50 bg-secondary/30">
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      className="p-2 rounded-lg hover:bg-primary/10 transition-colors text-muted-foreground hover:text-primary"
+                      title="AI Suggestions"
+                    >
+                      <Sparkles className="h-4 w-4" />
+                    </button>
+                    <span className="text-xs text-muted-foreground">
+                      Powered by AI
+                    </span>
+                  </div>
+                  
+                  <Button
+                    type="submit"
+                    size="sm"
+                    className="rounded-full h-9 w-9 p-0 bg-primary hover:bg-primary/90"
+                    disabled={!chatInput.trim()}
+                  >
+                    <Send className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
 export default function Index() {
   const heroRef = useRef<HTMLDivElement>(null);
   const {
@@ -374,6 +557,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* AI Chatbot Section */}
+      <AIChatSection />
 
       {/* Sudbury Ecosystem */}
       <section className="py-32 bg-secondary/30 relative overflow-hidden">
