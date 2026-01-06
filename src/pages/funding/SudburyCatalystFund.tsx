@@ -282,19 +282,12 @@ const SudburyCatalystFund = () => {
                 If you're building transformative technology and are committed to growing 
                 in Northern Ontario, we want to hear from you.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-full transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40">
-                  <Link to="/apply">
-                    Apply for Funding
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                  <Link to="/programs/capital-navigation">
-                    Learn About Our Process
-                  </Link>
-                </Button>
-              </div>
+              <Button asChild className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-full transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40">
+                <Link to="/apply">
+                  Apply for Investment
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
             </div>
           </ScrollReveal>
         </div>
