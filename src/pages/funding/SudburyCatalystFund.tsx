@@ -13,6 +13,11 @@ import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import myomarLogo from '@/assets/logos/myomar.png';
 import codalioLogo from '@/assets/logos/codalio.png';
 
+// Fund partner logos
+import fednorLogo from '@/assets/logos/fednor.png';
+import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
+import sudburyLogo from '@/assets/logos/sudbury.png';
+
 const SudburyCatalystFund = () => {
   const portfolioCompanies = [
     { name: 'IRegained', logo: iregainedLogo },
@@ -185,15 +190,20 @@ const SudburyCatalystFund = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="grid grid-cols-2 gap-4">
-                {['City of Greater Sudbury', 'FedNor', 'NORCAT', 'Nickel Basin FDC'].map((partner, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-secondary/50 border border-border/50 text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Users className="w-6 h-6 text-primary" />
-                    </div>
-                    <p className="font-medium text-sm">{partner}</p>
+              <div className="space-y-4">
+                {/* Top row - 2 boxes */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-6 rounded-2xl bg-white border border-border/50 flex items-center justify-center min-h-[100px]">
+                    <img src={nickelBasinLogo} alt="Nickel Basin Federal Development Corporation" className="max-h-16 max-w-full object-contain" />
                   </div>
-                ))}
+                  <div className="p-6 rounded-2xl bg-white border border-border/50 flex items-center justify-center min-h-[100px]">
+                    <img src={sudburyLogo} alt="City of Greater Sudbury" className="max-h-16 max-w-full object-contain" />
+                  </div>
+                </div>
+                {/* Bottom row - full width */}
+                <div className="p-6 rounded-2xl bg-white border border-border/50 flex items-center justify-center min-h-[100px]">
+                  <img src={fednorLogo} alt="Federal Economic Development Agency for Northern Ontario" className="max-h-12 max-w-full object-contain" />
+                </div>
               </div>
             </ScrollReveal>
           </div>
