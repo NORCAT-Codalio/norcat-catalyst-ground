@@ -645,7 +645,7 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
                 Join the next generation of founders scaling breakthrough technology.
               </p>
-              <Link to="/apply" className="btn-primary-xl group shadow-glow">
+              <Link to="/apply" className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-full transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 group">
                 <Rocket className="h-5 w-5" />
                 Start Your Journey
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
