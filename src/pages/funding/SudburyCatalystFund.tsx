@@ -260,12 +260,8 @@ const SudburyCatalystFund = () => {
       </section>
 
       {/* Investment Criteria */}
-      <section className="section-padding bg-gradient-to-br from-[#1A4B5C] to-[#2D7A8C] relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#C9A227]/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#7ABFBF]/20 blur-3xl" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <section className="section-padding bg-slate-900">
+        <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="headline-lg text-white mb-4">Investment Criteria</h2>
@@ -278,12 +274,12 @@ const SudburyCatalystFund = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {investmentCriteria.map((criteria, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group p-8 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#C9A227]/50 hover:bg-white/15 transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-[#C9A227] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <criteria.icon className="w-7 h-7 text-white" />
+                <div className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <criteria.icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{criteria.title}</h3>
-                  <p className="text-white/70">{criteria.description}</p>
+                  <p className="text-white/60">{criteria.description}</p>
                 </div>
               </ScrollReveal>
             ))}
