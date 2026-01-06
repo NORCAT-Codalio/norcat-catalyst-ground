@@ -4,14 +4,24 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, DollarSign, Target, BarChart3, MapPin, TrendingUp, Users, Briefcase, Building2, Coins, Globe, Rocket } from 'lucide-react';
 
+// Portfolio company logos
+import iregainedLogo from '@/assets/logos/iregained.png';
+import vervLogo from '@/assets/logos/verv.png';
+import rephealthLogo from '@/assets/logos/rephealth.png';
+import circuitiqLogo from '@/assets/logos/circuitiq.webp';
+import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
+import myomarLogo from '@/assets/logos/myomar.png';
+import codalioLogo from '@/assets/logos/codalio.png';
+
 const SudburyCatalystFund = () => {
   const portfolioCompanies = [
-    { name: 'Company 1', sector: 'Mining Tech' },
-    { name: 'Company 2', sector: 'CleanTech' },
-    { name: 'Company 3', sector: 'AI/ML' },
-    { name: 'Company 4', sector: 'HealthTech' },
-    { name: 'Company 5', sector: 'SaaS' },
-    { name: 'Company 6', sector: 'Industrial' },
+    { name: 'IRegained', logo: iregainedLogo },
+    { name: 'Verv', logo: vervLogo },
+    { name: 'Rep Health', logo: rephealthLogo },
+    { name: 'Circuit IQ', logo: circuitiqLogo },
+    { name: 'Kinmetrix', logo: kinmetrixLogo },
+    { name: 'Myomar', logo: myomarLogo },
+    { name: 'Codalio', logo: codalioLogo },
   ];
 
   const investmentCriteria = [
@@ -138,15 +148,15 @@ const SudburyCatalystFund = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
             {portfolioCompanies.map((company, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group relative bg-background rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 border border-border/50 hover:border-primary/30">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Building2 className="w-8 h-8 text-primary" />
-                  </div>
-                  <p className="font-medium text-foreground">{company.name}</p>
-                  <p className="text-sm text-muted-foreground">{company.sector}</p>
+                <div className="group relative bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 border border-border/50 hover:border-primary/30 flex items-center justify-center min-h-[120px]">
+                  <img 
+                    src={company.logo} 
+                    alt={company.name} 
+                    className="max-h-16 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
                 </div>
               </ScrollReveal>
             ))}
