@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { X, MapPin, Users, DollarSign, Building2, Rocket, Globe, Award, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { X, MapPin, Users, DollarSign, Building2, Globe, Award, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
 
@@ -99,12 +97,12 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
       <DialogContent 
         className="max-w-5xl h-[95vh] p-0 border-0 overflow-hidden [&>button]:hidden rounded-3xl shadow-2xl"
-        style={{ backgroundColor: '#ffffff' }}
+        style={{ backgroundColor: 'hsl(var(--background))' }}
       >
         {/* Progress bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100 z-50">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-secondary z-50">
           <div 
-            className="h-full bg-teal-500 transition-all duration-150"
+            className="h-full bg-primary transition-all duration-150"
             style={{ width: `${scrollProgress * 100}%` }}
           />
         </div>
@@ -112,9 +110,9 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
         {/* Close button */}
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:bg-white flex items-center justify-center transition-all hover:scale-105"
+          className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm shadow-lg hover:bg-background flex items-center justify-center transition-all hover:scale-105 border border-border"
         >
-          <X className="w-5 h-5 text-slate-600" />
+          <X className="w-5 h-5 text-foreground" />
         </button>
 
         {/* Scrollable content */}
@@ -130,44 +128,44 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
               alt={story.company}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
             
             <div className="absolute bottom-0 left-0 right-0 p-12">
-              <span className="inline-block px-3 py-1 bg-teal-500 text-white text-xs font-bold rounded-full mb-4">
+              <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full mb-4">
                 {story.sector}
               </span>
-              <h1 className="text-5xl md:text-7xl font-display font-black text-white mb-4">
+              <h1 className="headline-hero text-white mb-4">
                 {story.company}
               </h1>
-              <p className="text-xl text-slate-300 max-w-2xl">
+              <p className="body-xl text-white/80 max-w-2xl">
                 {story.tagline}
               </p>
             </div>
           </div>
 
           {/* Section 1: The Problem */}
-          <section className="py-24 px-8 md:px-16 bg-slate-900">
+          <section className="py-24 px-8 md:px-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
             <div className="max-w-4xl mx-auto">
-              <span className="text-teal-400 text-sm font-bold tracking-widest uppercase mb-6 block">
+              <span className="text-primary text-sm font-bold tracking-widest uppercase mb-6 block">
                 The Problem
               </span>
-              <p className="text-4xl md:text-6xl font-display font-black text-white leading-tight">
+              <p className="headline-lg text-white leading-tight">
                 {story.problem}
               </p>
             </div>
           </section>
 
           {/* Section 2: The Breakthrough */}
-          <section className="py-24 px-8 md:px-16 bg-white">
+          <section className="section-padding bg-background">
             <div className="max-w-4xl mx-auto">
-              <span className="text-teal-600 text-sm font-bold tracking-widest uppercase mb-6 block">
+              <span className="text-primary text-sm font-bold tracking-widest uppercase mb-6 block">
                 The Breakthrough
               </span>
-              <p className="text-2xl md:text-3xl text-slate-700 leading-relaxed mb-12">
+              <p className="body-xl text-foreground mb-12">
                 {story.breakthrough.text}
               </p>
               {story.breakthrough.image && (
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <div className="rounded-3xl overflow-hidden shadow-xl">
                   <img 
                     src={story.breakthrough.image} 
                     alt="Product" 
@@ -179,30 +177,30 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
           </section>
 
           {/* Section 3: The NORCAT Advantage - Timeline */}
-          <section className="py-24 px-8 md:px-16 bg-slate-50">
+          <section className="section-padding bg-secondary/30">
             <div className="max-w-4xl mx-auto">
-              <span className="text-teal-600 text-sm font-bold tracking-widest uppercase mb-6 block">
+              <span className="text-primary text-sm font-bold tracking-widest uppercase mb-6 block">
                 The NORCAT Advantage
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-black text-slate-900 mb-16">
+              <h2 className="headline-lg mb-16">
                 Their Journey With Us
               </h2>
 
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-teal-200" />
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/20" />
 
                 {story.timeline.map((item, index) => (
                   <div 
                     key={index}
                     className="relative flex items-start gap-8 mb-12 last:mb-0"
                   >
-                    <div className="relative z-10 w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center shrink-0 shadow-lg shadow-teal-500/30">
-                      <CheckCircle className="w-6 h-6 text-white" />
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-primary/30">
+                      <CheckCircle className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div className="pt-2">
-                      <span className="text-teal-600 text-sm font-bold">{item.year}</span>
-                      <p className="text-xl text-slate-800 font-semibold mt-1">{item.event}</p>
+                      <span className="text-primary text-sm font-bold">{item.year}</span>
+                      <p className="headline-sm mt-1">{item.event}</p>
                     </div>
                   </div>
                 ))}
@@ -211,12 +209,12 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
           </section>
 
           {/* Section 4: Impact Metrics */}
-          <section className="py-24 px-8 md:px-16 bg-slate-900">
+          <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
             <div className="max-w-5xl mx-auto">
-              <span className="text-teal-400 text-sm font-bold tracking-widest uppercase mb-6 block text-center">
+              <span className="text-primary text-sm font-bold tracking-widest uppercase mb-6 block text-center">
                 Impact
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-black text-white mb-16 text-center">
+              <h2 className="headline-lg text-white mb-16 text-center">
                 By The Numbers
               </h2>
 
@@ -225,10 +223,10 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                   <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-blue-400" />
                   </div>
-                  <div className="text-4xl md:text-5xl font-display font-black text-white mb-2">
+                  <div className="stat-number text-4xl mb-2">
                     <AnimatedCounter value={story.impactMetrics.jobs} />
                   </div>
-                  <p className="text-slate-400 text-sm">Jobs Created</p>
+                  <p className="text-white/60 text-sm">Jobs Created</p>
                 </div>
 
                 {story.impactMetrics.revenue && (
@@ -236,10 +234,10 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                     <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
                       <TrendingUp className="w-8 h-8 text-emerald-400" />
                     </div>
-                    <div className="text-4xl md:text-5xl font-display font-black text-white mb-2">
+                    <div className="stat-number text-4xl mb-2">
                       {story.impactMetrics.revenue}
                     </div>
-                    <p className="text-slate-400 text-sm">Revenue</p>
+                    <p className="text-white/60 text-sm">Revenue</p>
                   </div>
                 )}
 
@@ -247,59 +245,59 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                   <div className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center mx-auto mb-4">
                     <DollarSign className="w-8 h-8 text-amber-400" />
                   </div>
-                  <div className="text-4xl md:text-5xl font-display font-black text-white mb-2">
+                  <div className="stat-number text-4xl mb-2">
                     {story.impactMetrics.capital}
                   </div>
-                  <p className="text-slate-400 text-sm">Capital Raised</p>
+                  <p className="text-white/60 text-sm">Capital Raised</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
                     <Building2 className="w-8 h-8 text-purple-400" />
                   </div>
-                  <div className="text-4xl md:text-5xl font-display font-black text-white mb-2">
+                  <div className="stat-number text-4xl mb-2">
                     <AnimatedCounter value={story.impactMetrics.pilots} />
                   </div>
-                  <p className="text-slate-400 text-sm">Pilots Completed</p>
+                  <p className="text-white/60 text-sm">Pilots Completed</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-teal-500/20 flex items-center justify-center mx-auto mb-4">
                     <Globe className="w-8 h-8 text-teal-400" />
                   </div>
-                  <div className="text-4xl md:text-5xl font-display font-black text-white mb-2">
+                  <div className="stat-number text-4xl mb-2">
                     <AnimatedCounter value={story.impactMetrics.markets} />
                   </div>
-                  <p className="text-slate-400 text-sm">Markets Entered</p>
+                  <p className="text-white/60 text-sm">Markets Entered</p>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Section 5: Founder Quote */}
-          <section className="py-24 px-8 md:px-16 bg-white">
+          <section className="section-padding bg-background">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="text-8xl text-teal-500 font-serif leading-none mb-8">"</div>
-              <blockquote className="text-3xl md:text-4xl font-display font-medium text-slate-800 italic leading-relaxed mb-8">
+              <div className="text-8xl text-primary font-serif leading-none mb-8">"</div>
+              <blockquote className="headline-md italic text-foreground leading-relaxed mb-8">
                 {story.founderQuote.text}
               </blockquote>
               <div>
-                <p className="text-lg font-semibold text-slate-900">{story.founderQuote.author}</p>
-                <p className="text-slate-500">{story.founderQuote.role}</p>
+                <p className="font-semibold text-foreground">{story.founderQuote.author}</p>
+                <p className="text-muted-foreground">{story.founderQuote.role}</p>
               </div>
             </div>
           </section>
 
           {/* Section 6: Where They Are Now */}
-          <section className="py-24 px-8 md:px-16 bg-gradient-to-br from-teal-600 to-teal-700">
+          <section className="section-padding-sm bg-primary">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="text-teal-200 text-sm font-bold tracking-widest uppercase mb-6 block">
+              <span className="text-primary-foreground/70 text-sm font-bold tracking-widest uppercase mb-6 block">
                 Where They Are Now
               </span>
-              <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6">
+              <h2 className="headline-lg text-primary-foreground mb-6">
                 {story.currentStage}
               </h2>
-              <p className="text-xl text-teal-100 mb-12">
+              <p className="body-lg text-primary-foreground/80 mb-12">
                 {story.whatsNext}
               </p>
 
@@ -308,7 +306,7 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                   {story.globalPresence.map((location) => (
                     <span 
                       key={location}
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-primary-foreground text-sm"
                     >
                       <MapPin className="w-4 h-4" />
                       {location}
@@ -320,26 +318,22 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
           </section>
 
           {/* CTA */}
-          <section className="py-24 px-8 md:px-16 bg-slate-900">
+          <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6">
+              <h2 className="headline-lg text-white mb-6">
                 Your Company Could Be Next
               </h2>
-              <p className="text-xl text-slate-400 mb-10">
+              <p className="body-lg text-white/70 mb-10">
                 These aren't outliers. This is what happens when the right founders meet the right ecosystem.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-8">
-                  <Link to="/apply">
-                    Apply to NORCAT Innovation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-slate-600 text-slate-300 hover:bg-slate-800 rounded-full px-8">
-                  <Link to="/programs/venture-growth-services">
-                    Explore Programs
-                  </Link>
-                </Button>
+                <Link to="/apply" className="btn-primary-lg">
+                  Apply to NORCAT Innovation
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link to="/programs/venture-growth-services" className="btn-outline-dark">
+                  Explore Programs
+                </Link>
               </div>
             </div>
           </section>
@@ -429,9 +423,9 @@ export const detailedStories: Record<string, StoryDetails> = {
     programs: ['UG Centre', 'Core5', 'Mentorship'],
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&auto=format&fit=crop&q=80',
     founded: '2020',
-    problem: 'Underground ventilation wastes 40% of a mine\'s energy while often failing to protect workers from hazardous air quality.',
+    problem: "Underground ventilation wastes 40% of a mine's energy while often failing to protect workers from hazardous air quality.",
     breakthrough: {
-      text: 'VentFlow\'s smart ventilation system uses IoT sensors, AI prediction, and automated fan controls to deliver air exactly where it\'s needed, when it\'s needed. The system reduces energy consumption by 38% while improving worker safety through real-time air quality monitoring.',
+      text: "VentFlow's smart ventilation system uses IoT sensors, AI prediction, and automated fan controls to deliver air exactly where it's needed, when it's needed. The system reduces energy consumption by 38% while improving worker safety through real-time air quality monitoring.",
     },
     timeline: [
       { year: '2020', event: 'Joined NORCAT Innovation' },
@@ -442,7 +436,7 @@ export const detailedStories: Record<string, StoryDetails> = {
     ],
     impactMetrics: { jobs: 35, revenue: '$2.8M', capital: '$6.5M', pilots: 6, markets: 3 },
     founderQuote: {
-      text: 'Fresh air underground shouldn\'t be a luxury. NORCAT helped us prove that sustainability and worker safety aren\'t competing priorities—they\'re the same thing.',
+      text: "Fresh air underground shouldn't be a luxury. NORCAT helped us prove that sustainability and worker safety aren't competing priorities—they're the same thing.",
       author: 'James Whitehorse',
       role: 'CEO, VentFlow Systems',
     },
@@ -472,7 +466,7 @@ export const detailedStories: Record<string, StoryDetails> = {
     ],
     impactMetrics: { jobs: 8, capital: '$1.2M', pilots: 2, markets: 1 },
     founderQuote: {
-      text: 'The Underground Centre isn\'t just a testing facility—it\'s where we learned what miners actually need, not what we thought they needed.',
+      text: "The Underground Centre isn't just a testing facility—it's where we learned what miners actually need, not what we thought they needed.",
       author: 'Elena Kowalski',
       role: 'Co-founder, RockSense Analytics',
     },
