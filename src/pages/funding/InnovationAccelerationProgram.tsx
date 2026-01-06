@@ -150,27 +150,15 @@ const InnovationAccelerationProgram = () => {
                 through targeted grant programs that fuel innovation, accelerate commercialization, and drive 
                 regional economic growth.
               </p>
-              <p className="body-lg text-muted-foreground mb-8">
+              <p className="body-lg text-muted-foreground">
                 Through the IAP program, eligible businesses can access matching funds of up to $20,000 per 
                 project on a 1:1 basis. These initiatives help local innovators bring bold, forward-thinking 
                 solutions to market with greater speed, efficiency, and impact — strengthening the future of 
                 Northern Ontario's innovation ecosystem.
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-secondary/50 text-center">
-                  <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <p className="text-2xl font-bold">$20K</p>
-                  <p className="text-sm text-muted-foreground">Max Grant</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-secondary/50 text-center">
-                  <Target className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <p className="text-2xl font-bold">50%</p>
-                  <p className="text-sm text-muted-foreground">Matching Funds</p>
-                </div>
-              </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-10">
+              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-10 mb-6">
                 <h3 className="text-xl font-bold mb-6">Contribution Requirements</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -186,6 +174,18 @@ const InnovationAccelerationProgram = () => {
                     <span>1:1 matching basis with your investment</span>
                   </li>
                 </ul>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-2xl bg-secondary/50 text-center">
+                  <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-2xl font-bold">$20K</p>
+                  <p className="text-sm text-muted-foreground">Max Grant</p>
+                </div>
+                <div className="p-4 rounded-2xl bg-secondary/50 text-center">
+                  <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-2xl font-bold">50%</p>
+                  <p className="text-sm text-muted-foreground">Matching Funds</p>
+                </div>
               </div>
             </ScrollReveal>
           </div>
