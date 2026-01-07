@@ -21,6 +21,8 @@ import {
   BarChart3,
   ChevronDown,
   ChevronUp,
+  Banknote,
+  Factory,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -74,6 +76,21 @@ const mockData = {
       recommendation: "Consider bringing on a co-founder or early hire with B2B enterprise sales experience, particularly in industrial/mining sectors. Long sales cycles will require dedicated attention.",
     },
   },
+  
+  appropriateFunding: [
+    { name: "Innovation Acceleration Program (IAP)", provider: "NORCAT", fit: "High", description: "Non-dilutive funding for tech validation and market entry" },
+    { name: "IRAP", provider: "NRC", fit: "High", description: "R&D funding for innovative technology development" },
+    { name: "Ontario Together Fund", provider: "Government of Ontario", fit: "Medium", description: "Support for critical technology manufacturing" },
+    { name: "Sudbury Catalyst Fund", provider: "NORCAT", fit: "Medium", description: "Equity investment for scaling operations" },
+  ],
+  
+  idealCustomers: [
+    { name: "Vale", industry: "Mining", reason: "Major Sudbury presence, active innovation programs" },
+    { name: "Glencore", industry: "Mining", reason: "Large underground operations, digital transformation focus" },
+    { name: "Newmont", industry: "Mining", reason: "Sustainability mandates driving tech adoption" },
+    { name: "Agnico Eagle", industry: "Mining", reason: "Canadian HQ, proven early adopter of mining tech" },
+    { name: "Teck Resources", industry: "Mining", reason: "Innovation-forward, investing in predictive tech" },
+  ],
   
   keywordTrends: [
     { month: "Jan", volume: 45 },
@@ -205,6 +222,8 @@ export function IdeaValidationDashboard() {
     customer: true,
     comparables: true,
     founder: true,
+    funding: true,
+    idealCustomers: true,
   });
   
   const toggleSection = (section: string) => {
@@ -492,6 +511,63 @@ export function IdeaValidationDashboard() {
                         Gap to Address: {mockData.founderReadiness.gap.area}
                       </div>
                       <p className="text-sm text-foreground">{mockData.founderReadiness.gap.recommendation}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Appropriate Funding */}
+              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
+                <SectionHeader id="funding" icon={Banknote} title="Appropriate Funding" subtitle="Matched funding opportunities" />
+                {expandedSections.funding && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    className="p-6 pt-0 space-y-3"
+                  >
+                    {mockData.appropriateFunding.map((fund, i) => (
+                      <div key={i} className="p-3 rounded-lg bg-muted/30 border border-border">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-medium text-sm text-foreground">{fund.name}</span>
+                          <span className={cn(
+                            "text-xs font-medium px-2 py-0.5 rounded-full",
+                            fund.fit === "High" ? "bg-green-500/10 text-green-600" : "bg-primary/10 text-primary"
+                          )}>
+                            {fund.fit} Fit
+                          </span>
+                        </div>
+                        <div className="text-xs text-primary mb-1">{fund.provider}</div>
+                        <p className="text-xs text-muted-foreground">{fund.description}</p>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Ideal Customers */}
+              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
+                <SectionHeader id="idealCustomers" icon={Factory} title="Ideal Customers" subtitle="Target companies to pursue" />
+                {expandedSections.idealCustomers && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    className="p-6 pt-0"
+                  >
+                    <div className="space-y-2">
+                      {mockData.idealCustomers.map((customer, i) => (
+                        <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <Building2 className="w-4 h-4 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-sm text-foreground">{customer.name}</span>
+                              <span className="text-xs text-muted-foreground">• {customer.industry}</span>
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-0.5">{customer.reason}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </motion.div>
                 )}
