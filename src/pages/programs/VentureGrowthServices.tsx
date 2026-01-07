@@ -65,25 +65,21 @@ const programStructure = [
   {
     phase: '01',
     title: 'Onboarding',
-    duration: 'Week 1-2',
     description: 'Deep dive into your business, assign your advisor, and create a tailored growth plan.'
   },
   {
     phase: '02',
     title: 'Build & Validate',
-    duration: 'Months 1-3',
     description: 'Intensive work on product-market fit, customer discovery, and early traction.'
   },
   {
     phase: '03',
     title: 'Scale & Raise',
-    duration: 'Months 4-6',
     description: 'Focus on growth metrics, team building, and fundraising preparation.'
   },
   {
     phase: '04',
     title: 'Ongoing Support',
-    duration: 'Continuous',
     description: 'Continued access to network, resources, and advisor support as you scale.'
   }
 ];
@@ -235,8 +231,7 @@ const VentureGrowthServices = () => {
                   )}
                   <div className="bg-background rounded-2xl p-6 border border-border h-full">
                     <div className="text-4xl font-bold text-primary/20 mb-2">{phase.phase}</div>
-                    <h3 className="headline-sm mb-1">{phase.title}</h3>
-                    <p className="text-sm text-primary font-medium mb-3">{phase.duration}</p>
+                    <h3 className="headline-sm mb-3">{phase.title}</h3>
                     <p className="body-sm text-muted-foreground">{phase.description}</p>
                   </div>
                 </div>
