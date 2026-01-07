@@ -29,21 +29,29 @@ import judyGougeonImg from '@/assets/mentors/judy-gougeon.jpg';
 import jeffFullerImg from '@/assets/mentors/jeff-fuller.jpg';
 import dennisReichImg from '@/assets/mentors/dennis-reich.jpg';
 import donDuvalImg from '@/assets/mentors/don-duval.jpg';
+import ianLaneImg from '@/assets/mentors/ian-lane.jpg';
+import ehsanMirdamadiImg from '@/assets/mentors/ehsan-mirdamadi.jpg';
+import emilyMantleImg from '@/assets/mentors/emily-mantle.jpg';
+import sheriTomchickImg from '@/assets/mentors/sheri-tomchick.jpg';
+import chadPallopsonImg from '@/assets/mentors/chad-pallopson.jpg';
+import michaelDolinarImg from '@/assets/mentors/michael-dolinar.jpg';
 
 const mentors = [
+  // EIR - First position
   {
-    name: 'Tom Fortin',
-    image: tomFortinImg,
-    tags: ['Electronics', 'Manufacturing'],
-    bio: 'Tom is the owner of a Sudbury-based electronics design and manufacturing company, Ontrak Control Systems. Ontrak specializes in the design and manufacture of serial data acquisition interface devices used in industrial, medical and retail automation applications. After graduating from Cambrian in 1984, Tom started his career installing process control systems for paper machines. He is passionate about manufacturing in Canada and has helped start many technology companies producing medical devices, lasers, and automation products.',
-    expertfile: 'http://expertfile.com/experts/tom.fortin',
+    name: 'Don Duval',
+    image: donDuvalImg,
+    tags: ['Entrepreneur in Residence', 'Leadership'],
+    bio: 'Don is the CEO of NORCAT and serves as Entrepreneur in Residence. He is an expert in turnaround strategies, entrepreneurship, innovation strategy, and leadership. Don has led NORCAT\'s transformation into a world-class innovation hub and brings deep experience in organizational leadership and strategic planning.',
+    expertfile: 'http://expertfile.com/experts/don.duval',
   },
+  // Alphabetical by last name
   {
-    name: 'Cathy Nadjiwon',
-    image: cathyNadjiwonImg,
-    tags: ['Mining', 'Business Development'],
-    bio: 'Cathy is a surveyor and geomatics professional specializing in the mineral exploration and mining sectors. She is the president of UnderCover Innovations Inc., a product innovation and development company. She has consulted in business start-ups, financing, I.T., and strategic planning. Cathy was recognized as Entrepreneur of the Year by the Greater Sudbury Chamber of Commerce and as an Influential Woman of Northern Ontario.',
-    expertfile: 'http://expertfile.com/experts/cathy.nadjiwon',
+    name: 'Bernie Aho',
+    image: bernieAhoImg,
+    tags: ['Entrepreneurship', 'UI/UX'],
+    bio: 'Bernie is the CEO and Co-Founder of TimeHero. He is a seasoned entrepreneur and UI/UX expert with extensive experience in venture capital and product management. Bernie brings deep expertise in building software products, user experience design, and scaling technology startups.',
+    expertfile: 'http://expertfile.com/experts/bernie.aho',
   },
   {
     name: 'Peter Dal Bianco',
@@ -60,25 +68,18 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/jamie.dewar',
   },
   {
-    name: 'Bernie Aho',
-    image: bernieAhoImg,
-    tags: ['Entrepreneurship', 'UI/UX'],
-    bio: 'Bernie is the CEO and Co-Founder of TimeHero. He is a seasoned entrepreneur and UI/UX expert with extensive experience in venture capital and product management. Bernie brings deep expertise in building software products, user experience design, and scaling technology startups.',
-    expertfile: 'http://expertfile.com/experts/bernie.aho',
+    name: 'Michael Dolinar',
+    image: michaelDolinarImg,
+    tags: ['Software', 'Product Development'],
+    bio: 'Michael is a technology leader with extensive experience in software engineering and product development. He brings deep expertise in building technology products, leading development teams, and scaling software solutions for growing companies.',
+    expertfile: 'http://expertfile.com/experts/michael.dolinar',
   },
   {
-    name: 'Barb Ward-Dagnon',
-    image: barbWardDagnonImg,
-    tags: ['Medical Research', 'Pharmaceuticals'],
-    bio: 'Barb is the founder and owner of Medicor Research Inc. She is a specialist in medical research, clinical trials, and pharmaceutical branding. Barb has extensive experience navigating the healthcare industry and bringing medical innovations to market.',
-    expertfile: 'http://expertfile.com/experts/barb.ward-dagnon',
-  },
-  {
-    name: 'Judy Gougeon',
-    image: judyGougeonImg,
-    tags: ['Insurance', 'Risk Management'],
-    bio: 'Judy is the President/CEO of Gougeon Insurance Brokers. With an MBA, she is an expert in risk management and innovative insurance programs. Judy brings deep expertise in business protection, risk mitigation strategies, and building successful service-based businesses.',
-    expertfile: 'http://expertfile.com/experts/judy.gougeon',
+    name: 'Tom Fortin',
+    image: tomFortinImg,
+    tags: ['Electronics', 'Manufacturing'],
+    bio: 'Tom is the owner of a Sudbury-based electronics design and manufacturing company, Ontrak Control Systems. Ontrak specializes in the design and manufacture of serial data acquisition interface devices used in industrial, medical and retail automation applications. After graduating from Cambrian in 1984, Tom started his career installing process control systems for paper machines. He is passionate about manufacturing in Canada and has helped start many technology companies producing medical devices, lasers, and automation products.',
+    expertfile: 'http://expertfile.com/experts/tom.fortin',
   },
   {
     name: 'Jeff Fuller',
@@ -88,6 +89,48 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/jeff.fuller',
   },
   {
+    name: 'Judy Gougeon',
+    image: judyGougeonImg,
+    tags: ['Insurance', 'Risk Management'],
+    bio: 'Judy is the President/CEO of Gougeon Insurance Brokers. With an MBA, she is an expert in risk management and innovative insurance programs. Judy brings deep expertise in business protection, risk mitigation strategies, and building successful service-based businesses.',
+    expertfile: 'http://expertfile.com/experts/judy.gougeon',
+  },
+  {
+    name: 'Ian Lane',
+    image: ianLaneImg,
+    tags: ['Angel Investing', 'Strategic Planning'],
+    bio: 'Ian is the Executive Director of Northern Ontario Angels. With a diverse career, he enjoys fostering connections between entrepreneurs and angel investors across Northern Ontario. He has experience in policy development, grant writing, and health innovation, having worked with Health Sciences North Research Institute and the Northern Ontario Health Innovation Cluster.',
+    expertfile: 'http://expertfile.com/experts/ian.lane',
+  },
+  {
+    name: 'Emily Mantle',
+    image: emilyMantleImg,
+    tags: ['Business Strategy', 'Legal'],
+    bio: 'Emily brings expertise in business strategy and legal advisory within the innovation ecosystem. She helps startups navigate complex business decisions, legal compliance, and strategic planning to build sustainable companies.',
+    expertfile: 'http://expertfile.com/experts/emily.mantle',
+  },
+  {
+    name: 'Ehsan Mirdamadi',
+    image: ehsanMirdamadiImg,
+    tags: ['SaaS', 'Venture Capital'],
+    bio: 'Ehsan is a serial entrepreneur and investor with a strong track record in technology sectors, particularly software and AI. He brings extensive experience in scaling technology companies, venture capital, and helping founders navigate growth challenges.',
+    expertfile: 'http://expertfile.com/experts/ehsan.mirdamadi',
+  },
+  {
+    name: 'Cathy Nadjiwon',
+    image: cathyNadjiwonImg,
+    tags: ['Mining', 'Business Development'],
+    bio: 'Cathy is a surveyor and geomatics professional specializing in the mineral exploration and mining sectors. She is the president of UnderCover Innovations Inc., a product innovation and development company. She has consulted in business start-ups, financing, I.T., and strategic planning. Cathy was recognized as Entrepreneur of the Year by the Greater Sudbury Chamber of Commerce and as an Influential Woman of Northern Ontario.',
+    expertfile: 'http://expertfile.com/experts/cathy.nadjiwon',
+  },
+  {
+    name: 'Chad Pallopson',
+    image: chadPallopsonImg,
+    tags: ['Technology', 'Project Management'],
+    bio: 'Chad is an expert in technology integration, project management, and industrial innovation. He helps startups and growing companies implement technology solutions and manage complex projects to drive operational efficiency.',
+    expertfile: 'http://expertfile.com/experts/chad.pallopson',
+  },
+  {
     name: 'Dennis Reich',
     image: dennisReichImg,
     tags: ['Healthcare', 'Medical Technology'],
@@ -95,11 +138,18 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/dennis.reich',
   },
   {
-    name: 'Don Duval',
-    image: donDuvalImg,
-    tags: ['Innovation', 'Leadership'],
-    bio: 'Don is the CEO of NORCAT. He is an expert in turnaround strategies, entrepreneurship, innovation strategy, and leadership. Don has led NORCAT\'s transformation into a world-class innovation hub and brings deep experience in organizational leadership and strategic planning.',
-    expertfile: 'http://expertfile.com/experts/don.duval',
+    name: 'Sheri Tomchick',
+    image: sheriTomchickImg,
+    tags: ['Healthcare', 'Recruitment'],
+    bio: 'Sheri is the founder of Plan A Long Term Care Staffing and Recruitment. She is recognized as a leader in healthcare staffing solutions and entrepreneurship in Northern Ontario, with expertise in scaling operations and building successful service businesses.',
+    expertfile: 'http://expertfile.com/experts/sheri.tomchick',
+  },
+  {
+    name: 'Barb Ward-Dagnon',
+    image: barbWardDagnonImg,
+    tags: ['Medical Research', 'Pharmaceuticals'],
+    bio: 'Barb is the founder and owner of Medicor Research Inc. She is a specialist in medical research, clinical trials, and pharmaceutical branding. Barb has extensive experience navigating the healthcare industry and bringing medical innovations to market.',
+    expertfile: 'http://expertfile.com/experts/barb.ward-dagnon',
   },
 ];
 
@@ -370,8 +420,8 @@ const MentorshipServices = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '10', label: 'Active Mentors' },
-              { number: '150+', label: 'Years Combined Experience' },
+              { number: '16', label: 'Active Mentors' },
+              { number: '200+', label: 'Years Combined Experience' },
               { number: '100+', label: 'Sessions Per Year' },
               { number: '95%', label: 'Founder Satisfaction' },
             ].map((stat, i) => (
