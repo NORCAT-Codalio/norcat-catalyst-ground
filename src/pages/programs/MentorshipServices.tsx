@@ -161,7 +161,7 @@ const principles = [
   },
   {
     icon: Shield,
-    title: 'Confidential & Judgment-Free',
+    title: 'Confidential & Inclusive',
     description: 'All sessions are confidential. Mentors provide guidance without judgment, creating a safe space to discuss challenges.',
   },
   {
@@ -179,7 +179,7 @@ const principles = [
 const benefits = [
   'Access to experienced entrepreneurs and industry executives',
   'Diverse perspectives from a team of mentors',
-  'Confidential, judgment-free guidance',
+  'Confidential, inclusive guidance',
   'Flexible scheduling that works for you',
   'Long-term relationships, not one-off advice',
   'Connections to our broader network of investors and partners',
@@ -319,7 +319,7 @@ const MentorshipServices = () => {
             </h1>
             <p className="body-xl text-white/70 max-w-2xl mb-10">
               A proven mentoring model that pairs founders with teams of experienced 
-              volunteers who provide confidential, judgment-free guidance at no cost.
+              volunteers who provide confidential, inclusive guidance at no cost.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="btn-primary-lg">
