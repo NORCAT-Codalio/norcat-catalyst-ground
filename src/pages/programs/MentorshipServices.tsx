@@ -15,93 +15,91 @@ import {
   Target,
   Handshake,
   X,
-  Linkedin
+  ExternalLink
 } from 'lucide-react';
+
+// Mentor headshots
+import tomFortinImg from '@/assets/mentors/tom-fortin.jpg';
+import lucRoyImg from '@/assets/mentors/luc-roy.jpg';
+import cathyNadjiwonImg from '@/assets/mentors/cathy-nadjiwon.jpg';
+import peterDalBiancoImg from '@/assets/mentors/peter-dal-bianco.jpg';
+import jamieDewarImg from '@/assets/mentors/jamie-dewar.jpg';
+import bernieAhoImg from '@/assets/mentors/bernie-aho.jpg';
+import barbWardDagnonImg from '@/assets/mentors/barb-ward-dagnon.jpg';
+import judyGougeonImg from '@/assets/mentors/judy-gougeon.jpg';
+import jeffFullerImg from '@/assets/mentors/jeff-fuller.jpg';
+import dennisReichImg from '@/assets/mentors/dennis-reich.jpg';
 
 const mentors = [
   {
-    name: 'David Morrison',
-    initials: 'DM',
-    tags: ['Mining Tech', 'Operations'],
-    bio: 'Former VP of Operations at a major mining company with 25+ years of experience in underground mining operations and technology adoption.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Tom Fortin',
+    image: tomFortinImg,
+    tags: ['Electronics', 'Manufacturing'],
+    bio: 'Tom is the owner of a Sudbury-based electronics design and manufacturing company, Ontrak Control Systems. Ontrak specializes in the design and manufacture of serial data acquisition interface devices used in industrial, medical and retail automation applications. After graduating from Cambrian in 1984, Tom started his career installing process control systems for paper machines. He is passionate about manufacturing in Canada and has helped start many technology companies producing medical devices, lasers, and automation products.',
+    expertfile: 'http://expertfile.com/experts/tom.fortin',
   },
   {
-    name: 'Sarah Chen',
-    initials: 'SC',
-    tags: ['Finance', 'Fundraising'],
-    bio: 'Angel investor and former CFO who has helped startups raise over $50M in venture capital. Specializes in financial modeling and investor relations.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Luc Roy',
+    image: lucRoyImg,
+    tags: ['IT', 'Product Marketing'],
+    bio: 'Luc is the Chief Information Officer for Laurentian University and co-owner of Old Rock Roastery. With a Bachelor of Computer Science from the University of Ottawa, Luc worked as Director of Product Marketing for Bay Networks and held VP positions at Chantry Networks, Siemens, Enterasys Networks, and BlueCat Networks. Old Rock Roastery has received many prizes including 2008 Start-Up of the Year by Sudbury Chamber of Commerce.',
+    expertfile: 'http://expertfile.com/experts/luc.roy',
   },
   {
-    name: 'Michael Torres',
-    initials: 'MT',
-    tags: ['Sales', 'B2B'],
-    bio: 'Serial entrepreneur with three successful exits. Expert in enterprise sales strategies and building high-performance sales teams.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Cathy Nadjiwon',
+    image: cathyNadjiwonImg,
+    tags: ['Mining', 'Business Development'],
+    bio: 'Cathy is a surveyor and geomatics professional specializing in the mineral exploration and mining sectors. She is the president of UnderCover Innovations Inc., a product innovation and development company. She has consulted in business start-ups, financing, I.T., and strategic planning. Cathy was recognized as Entrepreneur of the Year by the Greater Sudbury Chamber of Commerce and as an Influential Woman of Northern Ontario.',
+    expertfile: 'http://expertfile.com/experts/cathy.nadjiwon',
   },
   {
-    name: 'Jennifer Walsh',
-    initials: 'JW',
-    tags: ['Product', 'UX'],
-    bio: 'Product leader who has built and scaled products at Fortune 500 companies and startups. Passionate about user-centered design.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Peter Dal Bianco',
+    image: peterDalBiancoImg,
+    tags: ['Retail', 'Franchising'],
+    bio: 'Peter is the founder of Bianco\'s group of companies. He is an award-winning entrepreneur with 38+ years of experience in retail and franchising. Peter brings extensive knowledge in building and scaling retail businesses, franchise development, and entrepreneurial leadership.',
+    expertfile: 'http://expertfile.com/experts/peter.dalbianco',
   },
   {
-    name: 'Robert Blackwood',
-    initials: 'RB',
-    tags: ['Hardware', 'Manufacturing'],
-    bio: 'Mechanical engineer and entrepreneur who has brought multiple hardware products to market. Expert in prototyping and supply chain.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Jamie Dewar',
+    image: jamieDewarImg,
+    tags: ['Marketing', 'Marine Industry'],
+    bio: 'Jamie is the Marketing Manager and General Manager of Legend Boats. He is an expert in marine industry marketing and business achievement, bringing extensive experience in brand building, market positioning, and business growth strategies within the recreational boating sector.',
+    expertfile: 'http://expertfile.com/experts/jamie.dewar',
   },
   {
-    name: 'Amanda Foster',
-    initials: 'AF',
-    tags: ['Marketing', 'Brand'],
-    bio: 'CMO with experience at both startups and established brands. Specializes in go-to-market strategy and brand positioning.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Bernie Aho',
+    image: bernieAhoImg,
+    tags: ['Entrepreneurship', 'UI/UX'],
+    bio: 'Bernie is the CEO and Co-Founder of TimeHero. He is a seasoned entrepreneur and UI/UX expert with extensive experience in venture capital and product management. Bernie brings deep expertise in building software products, user experience design, and scaling technology startups.',
+    expertfile: 'http://expertfile.com/experts/bernie.aho',
   },
   {
-    name: 'James Liu',
-    initials: 'JL',
-    tags: ['AI/ML', 'Data'],
-    bio: 'Data scientist and AI entrepreneur. Previously led machine learning teams at major tech companies. PhD in Computer Science.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Barb Ward-Dagnon',
+    image: barbWardDagnonImg,
+    tags: ['Medical Research', 'Pharmaceuticals'],
+    bio: 'Barb is the founder and owner of Medicor Research Inc. She is a specialist in medical research, clinical trials, and pharmaceutical branding. Barb has extensive experience navigating the healthcare industry and bringing medical innovations to market.',
+    expertfile: 'http://expertfile.com/experts/barb.ward-dagnon',
   },
   {
-    name: 'Catherine Reid',
-    initials: 'CR',
-    tags: ['Legal', 'IP'],
-    bio: 'Corporate attorney specializing in startups, venture financing, and intellectual property. Has advised hundreds of early-stage companies.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Judy Gougeon',
+    image: judyGougeonImg,
+    tags: ['Insurance', 'Risk Management'],
+    bio: 'Judy is the President/CEO of Gougeon Insurance Brokers. With an MBA, she is an expert in risk management and innovative insurance programs. Judy brings deep expertise in business protection, risk mitigation strategies, and building successful service-based businesses.',
+    expertfile: 'http://expertfile.com/experts/judy.gougeon',
   },
   {
-    name: 'Thomas Bergeron',
-    initials: 'TB',
-    tags: ['Cleantech', 'Sustainability'],
-    bio: 'Cleantech executive with deep experience in renewable energy and sustainable mining practices. Board member at several ESG-focused companies.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Jeff Fuller',
+    image: jeffFullerImg,
+    tags: ['Industrial', 'International Business'],
+    bio: 'Jeff is the founder of Fuller Industrial. He is an expert in pipe fabrication, international business growth, and industrial manufacturing. Jeff has extensive experience in scaling manufacturing operations and expanding into international markets.',
+    expertfile: 'http://expertfile.com/experts/jeff.fuller',
   },
   {
-    name: 'Nicole Patel',
-    initials: 'NP',
-    tags: ['HR', 'Culture'],
-    bio: 'People operations leader who has scaled teams from 5 to 500. Expert in building inclusive cultures and high-performing teams.',
-    linkedin: 'https://linkedin.com/in/',
-  },
-  {
-    name: 'Andrew Mitchell',
-    initials: 'AM',
-    tags: ['Strategy', 'Growth'],
-    bio: 'Management consultant turned entrepreneur. Helps founders think strategically about market positioning and competitive advantage.',
-    linkedin: 'https://linkedin.com/in/',
-  },
-  {
-    name: 'Lisa Drummond',
-    initials: 'LD',
-    tags: ['Government', 'Grants'],
-    bio: 'Former government innovation program director. Expert in navigating public funding programs and regulatory environments.',
-    linkedin: 'https://linkedin.com/in/',
+    name: 'Dennis Reich',
+    image: dennisReichImg,
+    tags: ['Healthcare', 'Medical Technology'],
+    bio: 'Dennis is a practicing physician and principal investigator for medical research. He is the founder of multiple healthcare technology ventures including Chyma Systems. Dennis brings unique expertise at the intersection of medicine, research, and technology entrepreneurship.',
+    expertfile: 'http://expertfile.com/experts/dennis.reich',
   },
 ];
 
@@ -153,9 +151,11 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
         whileTap={{ scale: 0.98 }}
       >
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-sm flex-shrink-0">
-            {mentor.initials}
-          </div>
+          <img 
+            src={mentor.image} 
+            alt={mentor.name}
+            className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+          />
           <div className="min-w-0">
             <div className="font-semibold text-sm truncate">{mentor.name}</div>
             <div className="flex flex-wrap gap-1 mt-1">
@@ -206,9 +206,11 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
                 </button>
 
                 <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-teal-600 text-primary-foreground flex items-center justify-center font-bold text-2xl mx-auto mb-5 shadow-glow">
-                    {mentor.initials}
-                  </div>
+                  <img 
+                    src={mentor.image} 
+                    alt={mentor.name}
+                    className="w-24 h-24 rounded-full object-cover mx-auto mb-5 shadow-lg"
+                  />
                   
                   <h3 className="headline-sm mb-1">{mentor.name}</h3>
                   <div className="flex flex-wrap gap-2 justify-center mb-5">
@@ -227,13 +229,13 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
                   </p>
 
                   <a
-                    href={mentor.linkedin}
+                    href={mentor.expertfile}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0A66C2] text-white font-medium hover:bg-[#004182] transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
                   >
-                    <Linkedin className="w-5 h-5" />
-                    Connect on LinkedIn
+                    <ExternalLink className="w-5 h-5" />
+                    View Full Profile
                   </a>
                 </div>
               </motion.div>
@@ -368,8 +370,8 @@ const MentorshipServices = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '12', label: 'Active Mentors' },
-              { number: '50+', label: 'Years Combined Experience' },
+              { number: '10', label: 'Active Mentors' },
+              { number: '100+', label: 'Years Combined Experience' },
               { number: '100+', label: 'Sessions Per Year' },
               { number: '95%', label: 'Founder Satisfaction' },
             ].map((stat, i) => (
