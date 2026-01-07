@@ -134,12 +134,11 @@ const chatSupportItems = [
 ];
 
 const typingExamples = [
-  "How do I build a compelling pitch deck?",
-  "What grants are available for cleantech startups?",
-  "How do I find a technical co-founder?",
-  "What's the best way to validate my idea?",
-  "How do I protect my intellectual property?",
-  "What funding options exist for early-stage startups?",
+  "What services does NORCAT Innovation provide?",
+  "How do I begin the Discovery Document process?",
+  "What kinds of startups do you support?",
+  "Who is eligible for the funding programs?",
+  "Do I need to be in Greater Sudbury to apply?",
 ];
 
 function AIChatSection() {
@@ -212,7 +211,7 @@ function AIChatSection() {
               How can we help you <span className="text-gradient">scale?</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Get personalized guidance for your startup journey
+              Get personalized guidance navigating NORCAT Innovation support
             </p>
           </div>
         </ScrollReveal>
