@@ -660,7 +660,7 @@ export default function Index() {
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 text-sm font-medium mb-8">
                   <Mountain className="w-4 h-4" />
-                  Globally Unique
+                  Global One-Stop-Shop
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                   NORCAT<br />
@@ -670,10 +670,10 @@ export default function Index() {
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed mb-8">
                   The only innovation centre in the world with an operational underground mine. 
-                  Test, validate, and demonstrate your technology in real conditions—1.2km of active tunnels.
+                  Test, validate, and demonstrate your technology in real conditions—3KM of active tunnels.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {['Live underground testing environment', 'Technology demonstration zones', 'Mining industry validation', 'Global client access'].map((item, i) => <motion.li key={item} className="flex items-center gap-3 text-gray-300" initial={{
+                  {['Real-world underground testing environment', 'De-risked adoption for mine sites', 'Host to 50+ mining companies/year', 'Home of Mining Transformed'].map((item, i) => <motion.li key={item} className="flex items-center gap-3 text-gray-300" initial={{
                   opacity: 0,
                   x: -20
                 }} whileInView={{
@@ -717,7 +717,7 @@ export default function Index() {
                 }} transition={{
                   delay: 0.3
                 }}>
-                    <div className="text-3xl font-black text-white">1.2km</div>
+                    <div className="text-3xl font-black text-white">3KM</div>
                     <p className="text-white/70 text-sm">Underground Tunnels</p>
                   </motion.div>
                   
