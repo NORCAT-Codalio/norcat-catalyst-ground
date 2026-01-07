@@ -20,7 +20,6 @@ import {
 
 // Mentor headshots
 import tomFortinImg from '@/assets/mentors/tom-fortin.jpg';
-import lucRoyImg from '@/assets/mentors/luc-roy.jpg';
 import cathyNadjiwonImg from '@/assets/mentors/cathy-nadjiwon.jpg';
 import peterDalBiancoImg from '@/assets/mentors/peter-dal-bianco.jpg';
 import jamieDewarImg from '@/assets/mentors/jamie-dewar.jpg';
@@ -29,13 +28,7 @@ import barbWardDagnonImg from '@/assets/mentors/barb-ward-dagnon.jpg';
 import judyGougeonImg from '@/assets/mentors/judy-gougeon.jpg';
 import jeffFullerImg from '@/assets/mentors/jeff-fuller.jpg';
 import dennisReichImg from '@/assets/mentors/dennis-reich.jpg';
-import edReillyImg from '@/assets/mentors/ed-reilly.jpg';
 import donDuvalImg from '@/assets/mentors/don-duval.jpg';
-import trinaHaydenImg from '@/assets/mentors/trina-hayden.jpg';
-import jasonBubbaImg from '@/assets/mentors/jason-bubba.jpg';
-import steveDunlopImg from '@/assets/mentors/steve-dunlop.jpg';
-import mikeGarbuttImg from '@/assets/mentors/mike-garbutt.jpg';
-import nancyGuayImg from '@/assets/mentors/nancy-guay.jpg';
 
 const mentors = [
   {
@@ -44,13 +37,6 @@ const mentors = [
     tags: ['Electronics', 'Manufacturing'],
     bio: 'Tom is the owner of a Sudbury-based electronics design and manufacturing company, Ontrak Control Systems. Ontrak specializes in the design and manufacture of serial data acquisition interface devices used in industrial, medical and retail automation applications. After graduating from Cambrian in 1984, Tom started his career installing process control systems for paper machines. He is passionate about manufacturing in Canada and has helped start many technology companies producing medical devices, lasers, and automation products.',
     expertfile: 'http://expertfile.com/experts/tom.fortin',
-  },
-  {
-    name: 'Luc Roy',
-    image: lucRoyImg,
-    tags: ['IT', 'Product Marketing'],
-    bio: 'Luc is the Chief Information Officer for Laurentian University and co-owner of Old Rock Roastery. With a Bachelor of Computer Science from the University of Ottawa, Luc worked as Director of Product Marketing for Bay Networks and held VP positions at Chantry Networks, Siemens, Enterasys Networks, and BlueCat Networks. Old Rock Roastery has received many prizes including 2008 Start-Up of the Year by Sudbury Chamber of Commerce.',
-    expertfile: 'http://expertfile.com/experts/luc.roy',
   },
   {
     name: 'Cathy Nadjiwon',
@@ -109,53 +95,11 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/dennis.reich',
   },
   {
-    name: 'Ed Reilly',
-    image: edReillyImg,
-    tags: ['Accounting', 'Tax Planning'],
-    bio: 'Ed is the Managing Partner at Freelandt Caldwell Reilly LLP. He brings extensive expertise in accounting, assurance, business advisory, tax planning, and mergers and acquisitions. Ed helps entrepreneurs navigate complex financial decisions and structure their businesses for success.',
-    expertfile: 'http://expertfile.com/experts/ed.reilly',
-  },
-  {
     name: 'Don Duval',
     image: donDuvalImg,
     tags: ['Innovation', 'Leadership'],
     bio: 'Don is the CEO of NORCAT. He is an expert in turnaround strategies, entrepreneurship, innovation strategy, and leadership. Don has led NORCAT\'s transformation into a world-class innovation hub and brings deep experience in organizational leadership and strategic planning.',
     expertfile: 'http://expertfile.com/experts/don.duval',
-  },
-  {
-    name: 'Trina Hayden',
-    image: trinaHaydenImg,
-    tags: ['Health & Safety', 'Compliance'],
-    bio: 'Trina is the Director at NORCAT Advisory. She is an expert in occupational health and safety, compliance, and diversity/inclusion. Trina has been recognized as one of Canada\'s Top Women in Safety and brings valuable experience in regulatory compliance and workplace culture.',
-    expertfile: 'http://expertfile.com/experts/trina.hayden',
-  },
-  {
-    name: 'Jason Bubba',
-    image: jasonBubbaImg,
-    tags: ['Operations', 'Training'],
-    bio: 'Jason is the COO at NORCAT. He is an expert in skilled labour training, industrial productivity, and operational excellence. Jason brings extensive experience in building training programs and optimizing operational processes for industrial organizations.',
-    expertfile: 'http://expertfile.com/experts/jason.bubba',
-  },
-  {
-    name: 'Steve Dunlop',
-    image: steveDunlopImg,
-    tags: ['Technology', 'Corporate Leadership'],
-    bio: 'Steve is a Board Member with extensive experience in corporate leadership and technology. He brings strategic insight and governance expertise to help startups navigate growth challenges and build sustainable businesses.',
-    expertfile: 'http://expertfile.com/experts/steve.dunlop',
-  },
-  {
-    name: 'Mike Garbutt',
-    image: mikeGarbuttImg,
-    tags: ['Engineering', 'Business Administration'],
-    bio: 'Mike is a Board Member with a background in engineering and business administration. He brings technical expertise combined with business acumen to help founders bridge the gap between product development and commercial success.',
-    expertfile: 'http://expertfile.com/experts/mike.garbutt',
-  },
-  {
-    name: 'Nancy Guay',
-    image: nancyGuayImg,
-    tags: ['Mining Technology', 'Innovation'],
-    bio: 'Nancy is the VP of Technology Optimization at Agnico Eagle. She is an expert in innovation and mining technology, bringing deep experience in deploying cutting-edge technologies in operational mining environments.',
-    expertfile: 'http://expertfile.com/experts/nancy.guay',
   },
 ];
 
@@ -426,8 +370,8 @@ const MentorshipServices = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '17', label: 'Active Mentors' },
-              { number: '200+', label: 'Years Combined Experience' },
+              { number: '10', label: 'Active Mentors' },
+              { number: '150+', label: 'Years Combined Experience' },
               { number: '100+', label: 'Sessions Per Year' },
               { number: '95%', label: 'Founder Satisfaction' },
             ].map((stat, i) => (
