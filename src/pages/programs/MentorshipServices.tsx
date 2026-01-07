@@ -25,7 +25,6 @@ import peterDalBiancoImg from '@/assets/mentors/peter-dal-bianco.jpg';
 import jamieDewarImg from '@/assets/mentors/jamie-dewar.jpg';
 import bernieAhoImg from '@/assets/mentors/bernie-aho.jpg';
 import barbWardDagnonImg from '@/assets/mentors/barb-ward-dagnon.jpg';
-import judyGougeonImg from '@/assets/mentors/judy-gougeon.jpg';
 import jeffFullerImg from '@/assets/mentors/jeff-fuller.jpg';
 import dennisReichImg from '@/assets/mentors/dennis-reich.jpg';
 import donDuvalImg from '@/assets/mentors/don-duval.jpg';
@@ -35,6 +34,7 @@ import emilyMantleImg from '@/assets/mentors/emily-mantle.jpg';
 import sheriTomchickImg from '@/assets/mentors/sheri-tomchick.jpg';
 import chadPallopsonImg from '@/assets/mentors/chad-pallopson.jpg';
 import michaelDolinarImg from '@/assets/mentors/michael-dolinar.jpg';
+import davidPasiekaImg from '@/assets/mentors/david-pasieka.jpg';
 
 const mentors = [
   // EIR - First position
@@ -89,13 +89,6 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/jeff.fuller',
   },
   {
-    name: 'Judy Gougeon',
-    image: judyGougeonImg,
-    tags: ['Insurance', 'Risk Management'],
-    bio: 'Judy is the President/CEO of Gougeon Insurance Brokers. With an MBA, she is an expert in risk management and innovative insurance programs. Judy brings deep expertise in business protection, risk mitigation strategies, and building successful service-based businesses.',
-    expertfile: 'http://expertfile.com/experts/judy.gougeon',
-  },
-  {
     name: 'Ian Lane',
     image: ianLaneImg,
     tags: ['Angel Investing', 'Strategic Planning'],
@@ -129,6 +122,13 @@ const mentors = [
     tags: ['Technology', 'Project Management'],
     bio: 'Chad is an expert in technology integration, project management, and industrial innovation. He helps startups and growing companies implement technology solutions and manage complex projects to drive operational efficiency.',
     expertfile: 'http://expertfile.com/experts/chad.pallopson',
+  },
+  {
+    name: 'David Pasieka',
+    image: davidPasiekaImg,
+    tags: ['Utilities', 'Digital Transformation'],
+    bio: 'David is an experienced executive with a background in corporate transformation, utilities, and startup mentorship. He has served as President and COO of Liberty Utilities and Chief Transformation Officer at Algonquin Power & Utilities Corp. David holds an MBA from the Schulich School of Business and is a Chartered Director, bringing expertise in strategy, customer experience, and organizational growth.',
+    expertfile: 'http://expertfile.com/experts/david.pasieka',
   },
   {
     name: 'Dennis Reich',
