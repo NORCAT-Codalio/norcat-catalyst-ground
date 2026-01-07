@@ -389,7 +389,7 @@ const VentureGrowthServices = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10">
+              <Button asChild variant="outline" className="border-white/40 text-white bg-transparent hover:bg-white/10">
                 <a href="mailto:ventures@norcat.org">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book a Call
