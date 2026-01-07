@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Factory, Check, Cpu, Shield, Bot, Network, Blocks, Atom, Users, Rocket, Building2, ExternalLink } from 'lucide-react';
 
+import citOciOntarioLogos from '@/assets/logos/cit-oci-ontario.png';
+
 const CriticalIndustrialTech = () => {
   const technologies = [
     { icon: Network, name: '5G & Advanced Networks' },
@@ -103,7 +105,18 @@ const CriticalIndustrialTech = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="bg-secondary/30 rounded-3xl p-8">
+              <div className="space-y-8">
+                {/* Program Logos */}
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 flex items-center justify-center">
+                  <img 
+                    src={citOciOntarioLogos} 
+                    alt="Critical Industrial Technologies - Ontario Centre of Innovation - Government of Ontario" 
+                    className="max-h-64 object-contain"
+                  />
+                </div>
+
+                {/* TDS Info */}
+                <div className="bg-secondary/30 rounded-3xl p-8">
                 <h3 className="headline-sm mb-6">NORCAT as a Technology Development Site</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -123,6 +136,7 @@ const CriticalIndustrialTech = () => {
                     <span>Accelerated path to commercialization</span>
                   </li>
                 </ul>
+                </div>
               </div>
             </ScrollReveal>
           </div>
