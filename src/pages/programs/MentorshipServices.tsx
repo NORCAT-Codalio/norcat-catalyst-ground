@@ -420,10 +420,10 @@ const MentorshipServices = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '16', label: 'Active Mentors' },
-              { number: '200+', label: 'Years Combined Experience' },
-              { number: '100+', label: 'Sessions Per Year' },
-              { number: '95%', label: 'Founder Satisfaction' },
+              { number: '18', label: 'Active Mentors' },
+              { number: '1000+', label: 'Hours Mentored in 2025' },
+              { number: '100', label: 'NPS Score' },
+              { number: '$0', label: 'To Access Mentorship' },
             ].map((stat, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="stat-number mb-2">{stat.number}</div>
