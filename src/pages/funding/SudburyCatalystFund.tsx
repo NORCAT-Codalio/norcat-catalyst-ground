@@ -184,6 +184,34 @@ const SudburyCatalystFund = () => {
         </div>
       </section>
 
+      {/* Investment Criteria */}
+      <section className="section-padding bg-slate-900">
+        <div className="container mx-auto px-4 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="headline-lg text-white mb-4">Investment Criteria</h2>
+              <p className="body-lg text-white/70 max-w-2xl mx-auto">
+                What we look for in potential investments
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {investmentCriteria.map((criteria, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <criteria.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{criteria.title}</h3>
+                  <p className="text-white/60">{criteria.description}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About the Fund */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 lg:px-8">
@@ -221,34 +249,6 @@ const SudburyCatalystFund = () => {
                 </div>
               </div>
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Criteria */}
-      <section className="section-padding bg-slate-900">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="headline-lg text-white mb-4">Investment Criteria</h2>
-              <p className="body-lg text-white/70 max-w-2xl mx-auto">
-                What we look for in potential investments
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {investmentCriteria.map((criteria, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <criteria.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{criteria.title}</h3>
-                  <p className="text-white/60">{criteria.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>
