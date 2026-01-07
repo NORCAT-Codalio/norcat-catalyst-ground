@@ -27,16 +27,6 @@ const RogersCybersecure = () => {
       description: 'Our team provides mining-specific mentorship to Catalyst clients, helping them understand the unique cybersecurity challenges in the mining sector.',
     },
   ];
-
-  const benefits = [
-    'Expert-led cybersecurity training tailored for the mining sector',
-    'Access to self-assessment tools to evaluate your security posture',
-    'One-on-one consultations with cybersecurity advisors',
-    'Mining-specific mentorship from NORCAT\'s industry experts',
-    'Connections to a network of cybersecurity professionals',
-    'Government of Ontario supported program',
-  ];
-
   return (
     <Layout>
       {/* Hero */}
@@ -150,25 +140,6 @@ const RogersCybersecure = () => {
                 </div>
               </ScrollReveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <ScrollReveal>
-              <h2 className="headline-lg mb-8 text-center">Program Benefits</h2>
-              <ul className="space-y-4 mb-12">
-                {benefits.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-lg">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
           </div>
         </div>
       </section>
