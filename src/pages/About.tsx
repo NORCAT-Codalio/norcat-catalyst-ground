@@ -34,8 +34,8 @@ const values = [
   },
   {
     icon: Globe,
-    title: 'Globally Relevant',
-    description: 'We help startups build solutions that matter on a global scale.',
+    title: 'Execution Focused',
+    description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.',
   },
 ];
 
