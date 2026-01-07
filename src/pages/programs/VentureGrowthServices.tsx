@@ -31,7 +31,7 @@ const coreServices = [
     icon: GraduationCap,
     title: 'Founder Education',
     description: 'Structured curriculum covering everything from customer discovery to fundraising. Learn from practitioners who\'ve built and scaled companies themselves.',
-    features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'Leadership development']
+    features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'On-Demand Courses']
   },
   {
     icon: Handshake,
