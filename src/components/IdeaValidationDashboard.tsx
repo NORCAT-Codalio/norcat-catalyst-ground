@@ -580,33 +580,95 @@ export function IdeaValidationDashboard() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-12"
           >
             <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border border-primary/20 p-8 md:p-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-4">
-                <Zap className="w-3 h-3" />
-                Ready for the Full Picture?
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left side - Text content */}
+                <div className="text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-4">
+                    <Zap className="w-3 h-3" />
+                    Ready for the Full Picture?
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    Get Your Complete Report & Action Plan
+                  </h3>
+                  <div className="text-muted-foreground mb-6">
+                    <p className="mb-3">This is just a preview. Apply to NORCAT Innovation to get:</p>
+                    <ul className="space-y-1 list-disc list-inside pl-6">
+                      <li>A comprehensive validation report</li>
+                      <li>Personalized action plan</li>
+                      <li>1-on-1 guidance from our Venture Growth Team</li>
+                      <li>Access to NORCAT Mentorship Services</li>
+                      <li>Access to non-dilutive funding</li>
+                    </ul>
+                  </div>
+                  <Button asChild size="lg" className="btn-primary px-8">
+                    <Link to="/apply">
+                      Get the Full Report & Action Plan — It's Free!
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <p className="text-xs text-muted-foreground mt-4">Funded by the Government of Ontario</p>
+                </div>
+                
+                {/* Right side - Action Plan Mockup */}
+                <div className="relative">
+                  <div className="bg-background rounded-xl border border-border shadow-xl p-6 transform rotate-1 hover:rotate-0 transition-transform">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                        <Rocket className="w-4 h-4 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Personalized</p>
+                        <p className="font-semibold text-sm">Action Plan</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <div>
+                          <p className="text-xs font-medium">Week 1-2: Customer Discovery</p>
+                          <p className="text-xs text-muted-foreground">10 validation interviews</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <div>
+                          <p className="text-xs font-medium">Week 3-4: MVP Development</p>
+                          <p className="text-xs text-muted-foreground">Core feature buildout</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-4 h-4 rounded-full border-2 border-muted-foreground/30 mt-0.5 shrink-0" />
+                        <div>
+                          <p className="text-xs font-medium text-muted-foreground">Month 2: Pilot Launch</p>
+                          <p className="text-xs text-muted-foreground">First paying customer</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <div className="w-4 h-4 rounded-full border-2 border-muted-foreground/30 mt-0.5 shrink-0" />
+                        <div>
+                          <p className="text-xs font-medium text-muted-foreground">Month 3: Funding Ready</p>
+                          <p className="text-xs text-muted-foreground">Pitch deck & data room</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Progress</span>
+                        <span className="font-medium text-primary">2 of 4 milestones</span>
+                      </div>
+                      <div className="mt-2 h-2 bg-muted rounded-full overflow-hidden">
+                        <div className="h-full w-1/2 bg-gradient-to-r from-primary to-accent rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute -top-2 -right-2 w-16 h-16 bg-primary/10 rounded-full blur-xl" />
+                  <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-accent/10 rounded-full blur-xl" />
+                </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Get Your Complete Report & Action Plan
-              </h3>
-              <div className="text-muted-foreground max-w-xl mx-auto mb-6 text-left">
-                <p className="mb-3">This is just a preview. Apply to NORCAT Innovation to get:</p>
-                <ul className="space-y-1 list-disc list-inside pl-4">
-                  <li>A comprehensive validation report</li>
-                  <li>Personalized action plan</li>
-                  <li>1-on-1 guidance from our Venture Growth Team</li>
-                  <li>Access to NORCAT Mentorship Services</li>
-                  <li>Access to non-dilutive funding</li>
-                </ul>
-              </div>
-              <Button asChild size="lg" className="btn-primary px-8">
-                <Link to="/apply">
-                  Get the Full Report & Action Plan — It's Free!
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <p className="text-xs text-muted-foreground mt-4">Funded by the Government of Ontario</p>
             </div>
           </motion.div>
         </motion.div>
