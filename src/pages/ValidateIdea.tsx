@@ -17,6 +17,7 @@ import {
   Search
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { IdeaValidationDashboard } from "@/components/IdeaValidationDashboard";
 
 const validationItems = [
   { icon: Target, label: 'Is my market big enough?' },
@@ -235,6 +236,9 @@ const ValidateIdea = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Example Dashboard */}
+      <IdeaValidationDashboard />
 
       <Footer />
     </div>
