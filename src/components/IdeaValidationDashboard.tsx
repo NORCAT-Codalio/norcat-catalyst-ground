@@ -137,8 +137,8 @@ const ScoreRing = ({ score, maxScore = 5, size = "md", color = "amber" }: { scor
         />
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#f59e0b" />
-            <stop offset="100%" stopColor="#ea580c" />
+            <stop offset="0%" stopColor="hsl(var(--primary))" />
+            <stop offset="100%" stopColor="hsl(var(--accent))" />
           </linearGradient>
         </defs>
       </svg>
@@ -160,7 +160,7 @@ const ScoreBar = ({ score, maxScore = 5, label }: { score: number; maxScore?: nu
       </div>
       <div className="h-2 bg-muted/30 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"
+          className="h-full bg-gradient-teal rounded-full"
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -184,7 +184,7 @@ const TrendGraph = ({ data }: { data: typeof mockData.keywordTrends }) => {
           transition={{ duration: 0.5, delay: i * 0.05 }}
         >
           <motion.div
-            className="w-full bg-gradient-to-t from-amber-500 to-orange-400 rounded-t"
+            className="w-full bg-gradient-to-t from-primary to-accent rounded-t"
             initial={{ height: 0 }}
             animate={{ height: `${(point.volume / maxVolume) * 100}%` }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
@@ -217,8 +217,8 @@ export function IdeaValidationDashboard() {
       className="w-full flex items-center justify-between p-4 hover:bg-muted/50 transition-colors rounded-t-xl"
     >
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
-          <Icon className="w-5 h-5 text-amber-600" />
+        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+          <Icon className="w-5 h-5 text-primary" />
         </div>
         <div className="text-left">
           <h3 className="font-semibold text-foreground">{title}</h3>
@@ -243,7 +243,7 @@ export function IdeaValidationDashboard() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
             <Sparkles className="w-4 h-4" />
             Example Output
           </div>
@@ -265,11 +265,11 @@ export function IdeaValidationDashboard() {
         >
           {/* Company Header Card */}
           <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden mb-6">
-            <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 p-6 border-b border-border">
+            <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 p-6 border-b border-border">
               <div className="flex items-start justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-teal flex items-center justify-center">
                       <Lightbulb className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -280,7 +280,7 @@ export function IdeaValidationDashboard() {
                 </div>
                 <div className="text-right">
                   <div className="text-xs text-muted-foreground mb-1">Overall Score</div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold text-gradient-teal">
                     4.1/5
                   </div>
                 </div>
@@ -290,7 +290,7 @@ export function IdeaValidationDashboard() {
             {/* Elevator Pitch */}
             <div className="p-6">
               <div className="flex items-start gap-3 mb-4">
-                <Rocket className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                <Rocket className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-sm text-foreground mb-2">Elevator Pitch</h4>
                   <p className="text-muted-foreground leading-relaxed">{mockData.elevatorPitch}</p>
@@ -327,8 +327,8 @@ export function IdeaValidationDashboard() {
               {/* Keyword Trends */}
               <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-amber-600" />
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Search Interest Trend</h3>
@@ -356,7 +356,7 @@ export function IdeaValidationDashboard() {
                         <div className={cn(
                           "w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold",
                           value.score >= 4 ? "bg-green-500/20 text-green-600" :
-                          value.score >= 3 ? "bg-amber-500/20 text-amber-600" :
+                          value.score >= 3 ? "bg-primary/20 text-primary" :
                           "bg-red-500/20 text-red-600"
                         )}>
                           {value.score}
@@ -369,7 +369,7 @@ export function IdeaValidationDashboard() {
                             <span className={cn(
                               "text-xs font-medium px-2 py-0.5 rounded-full",
                               value.score >= 4 ? "bg-green-500/10 text-green-600" :
-                              value.score >= 3 ? "bg-amber-500/10 text-amber-600" :
+                              value.score >= 3 ? "bg-primary/10 text-primary" :
                               "bg-red-500/10 text-red-600"
                             )}>
                               {value.label}
@@ -402,7 +402,7 @@ export function IdeaValidationDashboard() {
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <div className="p-4 rounded-lg bg-muted/30 border-l-4 border-amber-500">
+                      <div className="p-4 rounded-lg bg-muted/30 border-l-4 border-primary">
                         <p className="text-sm text-foreground leading-relaxed">{mockData.problemClarity.statement}</p>
                       </div>
                       <div className="flex items-start gap-2 p-3 rounded-lg bg-green-500/10 border border-green-500/20">
@@ -430,7 +430,7 @@ export function IdeaValidationDashboard() {
                       { label: "Early Adopter Profile", value: mockData.targetCustomer.earlyAdopter },
                     ].map((item, i) => (
                       <div key={i} className="p-3 rounded-lg bg-muted/30">
-                        <div className="text-xs font-medium text-amber-600 mb-1">{item.label}</div>
+                        <div className="text-xs font-medium text-primary mb-1">{item.label}</div>
                         <p className="text-sm text-foreground">{item.value}</p>
                       </div>
                     ))}
@@ -486,12 +486,12 @@ export function IdeaValidationDashboard() {
                         ))}
                       </ul>
                     </div>
-                    <div className="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
-                      <div className="text-xs font-medium text-amber-600 mb-2 flex items-center gap-1">
+                    <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                      <div className="text-xs font-medium text-primary mb-2 flex items-center gap-1">
                         <Shield className="w-3 h-3" />
                         Gap to Address: {mockData.founderReadiness.gap.area}
                       </div>
-                      <p className="text-sm text-amber-800">{mockData.founderReadiness.gap.recommendation}</p>
+                      <p className="text-sm text-foreground">{mockData.founderReadiness.gap.recommendation}</p>
                     </div>
                   </motion.div>
                 )}
@@ -506,8 +506,8 @@ export function IdeaValidationDashboard() {
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
-            <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 rounded-2xl border border-amber-500/20 p-8 md:p-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-600 text-xs font-medium mb-4">
+            <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border border-primary/20 p-8 md:p-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-4">
                 <Zap className="w-3 h-3" />
                 Ready for the Full Picture?
               </div>
@@ -517,7 +517,7 @@ export function IdeaValidationDashboard() {
               <p className="text-muted-foreground max-w-xl mx-auto mb-6">
                 This is just a preview. Apply to NORCAT Innovation to get a comprehensive validation report, personalized action plan, and 1-on-1 guidance from our team.
               </p>
-              <Button asChild size="lg" className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8">
+              <Button asChild size="lg" className="btn-primary px-8">
                 <Link to="/apply">
                   Get the Full Report & Action Plan
                   <ArrowRight className="ml-2 h-5 w-5" />

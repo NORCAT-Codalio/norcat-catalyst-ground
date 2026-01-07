@@ -473,9 +473,9 @@ export function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             {/* Validate Idea - Flashy Button */}
-            <Button asChild variant="outline" className="relative text-sm px-5 py-2.5 border-amber-500/50 text-amber-600 hover:text-amber-700 hover:bg-amber-50 hover:border-amber-500 overflow-hidden group">
+            <Button asChild variant="outline" className="relative text-sm px-5 py-2.5 border-primary/50 text-primary hover:text-primary hover:bg-primary/5 hover:border-primary overflow-hidden group">
               <Link to="/validate-idea">
-                <span className="absolute inset-0 bg-gradient-to-r from-amber-400/20 via-orange-400/20 to-amber-400/20 animate-pulse" />
+                <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-pulse" />
                 <Lightbulb className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                 <span className="relative">Validate My Idea</span>
               </Link>
@@ -637,9 +637,9 @@ export function Navigation() {
                 </Link>
 
                 <div className="pt-4 border-t border-border mt-4 space-y-3">
-                  <Button asChild variant="outline" className="w-full relative border-amber-500/50 text-amber-600 hover:text-amber-700 hover:bg-amber-50 overflow-hidden">
+                  <Button asChild variant="outline" className="w-full relative border-primary/50 text-primary hover:text-primary hover:bg-primary/5 overflow-hidden">
                     <Link to="/validate-idea">
-                      <span className="absolute inset-0 bg-gradient-to-r from-amber-400/20 via-orange-400/20 to-amber-400/20 animate-pulse" />
+                      <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-pulse" />
                       <Lightbulb className="mr-2 h-4 w-4" />
                       <span className="relative">Validate My Idea</span>
                     </Link>
