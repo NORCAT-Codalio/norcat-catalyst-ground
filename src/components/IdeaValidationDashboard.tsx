@@ -590,9 +590,16 @@ export function IdeaValidationDashboard() {
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Get Your Complete Report & Action Plan
               </h3>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-6">
-                This is just a preview. Apply to NORCAT Innovation to get a comprehensive validation report, personalized action plan, and 1-on-1 guidance from our team.
-              </p>
+              <div className="text-muted-foreground max-w-xl mx-auto mb-6 text-left">
+                <p className="mb-3">This is just a preview. Apply to NORCAT Innovation to get:</p>
+                <ul className="space-y-1 list-disc list-inside">
+                  <li>A comprehensive validation report</li>
+                  <li>Personalized action plan</li>
+                  <li>1-on-1 guidance from our Venture Growth Team</li>
+                  <li>Access to NORCAT Mentorship Services</li>
+                  <li>Access to non-dilutive funding</li>
+                </ul>
+              </div>
               <Button asChild size="lg" className="btn-primary px-8">
                 <Link to="/apply">
                   Get the Full Report & Action Plan — It's Free!
