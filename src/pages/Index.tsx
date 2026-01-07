@@ -53,7 +53,7 @@ const services = [{
   icon: DollarSign,
   title: 'Capital Access',
   description: 'Non-dilutive funding and our $5M Sudbury Catalyst Fund.',
-  link: '/funding/sudbury-catalyst-fund',
+  link: '/programs/capital-navigation',
   gradient: 'from-emerald-500 to-teal-600'
 }, {
   icon: Lightbulb,
@@ -65,7 +65,7 @@ const services = [{
   icon: Mountain,
   title: 'Labs',
   description: 'State-of-the-art underground testing and R&D facilities at the NORCAT Underground Centre.',
-  link: '/mining/norcat-underground',
+  link: '/mining/labs',
   gradient: 'from-cyan-500 to-blue-600'
 }];
 const ecosystemPartners = [{
