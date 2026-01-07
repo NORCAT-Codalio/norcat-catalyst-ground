@@ -166,22 +166,9 @@ const SudburyCatalystFund = () => {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
 
-      {/* Portfolio Overview */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="headline-lg mb-4">Portfolio Companies</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                A diversified portfolio of high-growth companies across sectors
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
+          {/* Portfolio Logos */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 mt-16">
             {portfolioCompanies.map((company, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="group relative bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 border border-border/50 hover:border-primary/30 flex items-center justify-center min-h-[120px]">
