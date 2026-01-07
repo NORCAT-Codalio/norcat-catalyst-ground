@@ -155,7 +155,7 @@ const VentureGrowthServices = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: '1:1', label: 'Dedicated Advisor' },
-              { value: '200+', label: 'Mentors' },
+              { value: '18+', label: 'Mentors' },
               { value: '50+', label: 'Industry Partners' },
               { value: '$50M+', label: 'Capital Raised' },
             ].map((stat, i) => (
@@ -175,8 +175,7 @@ const VentureGrowthServices = () => {
             <div className="text-center mb-16">
               <h2 className="headline-lg mb-6">What's Included</h2>
               <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive support designed to accelerate your path from early stage to scale. 
-                Everything you need, nothing you don't.
+                Comprehensive support designed to accelerate your path from early stage to scale.
               </p>
             </div>
           </ScrollReveal>
