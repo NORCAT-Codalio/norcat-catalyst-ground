@@ -401,6 +401,34 @@ export function IdeaValidationDashboard() {
                   </motion.div>
                 )}
               </div>
+
+              {/* Appropriate Funding - moved to left column */}
+              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
+                <SectionHeader id="funding" icon={Banknote} title="Appropriate Funding" subtitle="Matched funding opportunities" />
+                {expandedSections.funding && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    className="p-6 pt-0 space-y-3"
+                  >
+                    {mockData.appropriateFunding.map((fund, i) => (
+                      <div key={i} className="p-3 rounded-lg bg-muted/30 border border-border">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-medium text-sm text-foreground">{fund.name}</span>
+                          <span className={cn(
+                            "text-xs font-medium px-2 py-0.5 rounded-full",
+                            fund.fit === "High" ? "bg-green-500/10 text-green-600" : "bg-primary/10 text-primary"
+                          )}>
+                            {fund.fit} Fit
+                          </span>
+                        </div>
+                        <div className="text-xs text-primary mb-1">{fund.provider}</div>
+                        <p className="text-xs text-muted-foreground">{fund.description}</p>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
             </div>
 
             {/* Right Column */}
@@ -482,6 +510,35 @@ export function IdeaValidationDashboard() {
                 )}
               </div>
 
+              {/* Ideal Customers - moved to be after Market Analogues */}
+              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
+                <SectionHeader id="idealCustomers" icon={Factory} title="Ideal Customers" subtitle="Target companies to pursue" />
+                {expandedSections.idealCustomers && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    className="p-6 pt-0"
+                  >
+                    <div className="space-y-2">
+                      {mockData.idealCustomers.map((customer, i) => (
+                        <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30">
+                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <Building2 className="w-4 h-4 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-sm text-foreground">{customer.name}</span>
+                              <span className="text-xs text-muted-foreground">• {customer.industry}</span>
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-0.5">{customer.reason}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
               {/* Founder Readiness */}
               <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
                 <SectionHeader id="founder" icon={Brain} title="Founder Readiness" subtitle="Strengths & gaps" />
@@ -511,63 +568,6 @@ export function IdeaValidationDashboard() {
                         Gap to Address: {mockData.founderReadiness.gap.area}
                       </div>
                       <p className="text-sm text-foreground">{mockData.founderReadiness.gap.recommendation}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </div>
-
-              {/* Appropriate Funding */}
-              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
-                <SectionHeader id="funding" icon={Banknote} title="Appropriate Funding" subtitle="Matched funding opportunities" />
-                {expandedSections.funding && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    className="p-6 pt-0 space-y-3"
-                  >
-                    {mockData.appropriateFunding.map((fund, i) => (
-                      <div key={i} className="p-3 rounded-lg bg-muted/30 border border-border">
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="font-medium text-sm text-foreground">{fund.name}</span>
-                          <span className={cn(
-                            "text-xs font-medium px-2 py-0.5 rounded-full",
-                            fund.fit === "High" ? "bg-green-500/10 text-green-600" : "bg-primary/10 text-primary"
-                          )}>
-                            {fund.fit} Fit
-                          </span>
-                        </div>
-                        <div className="text-xs text-primary mb-1">{fund.provider}</div>
-                        <p className="text-xs text-muted-foreground">{fund.description}</p>
-                      </div>
-                    ))}
-                  </motion.div>
-                )}
-              </div>
-
-              {/* Ideal Customers */}
-              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
-                <SectionHeader id="idealCustomers" icon={Factory} title="Ideal Customers" subtitle="Target companies to pursue" />
-                {expandedSections.idealCustomers && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    className="p-6 pt-0"
-                  >
-                    <div className="space-y-2">
-                      {mockData.idealCustomers.map((customer, i) => (
-                        <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30">
-                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <Building2 className="w-4 h-4 text-primary" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2">
-                              <span className="font-medium text-sm text-foreground">{customer.name}</span>
-                              <span className="text-xs text-muted-foreground">• {customer.industry}</span>
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-0.5">{customer.reason}</p>
-                          </div>
-                        </div>
-                      ))}
                     </div>
                   </motion.div>
                 )}
