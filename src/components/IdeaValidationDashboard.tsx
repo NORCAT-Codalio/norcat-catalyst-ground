@@ -429,6 +429,40 @@ export function IdeaValidationDashboard() {
                   </motion.div>
                 )}
               </div>
+
+              {/* Founder Readiness - moved to left column under Appropriate Funding */}
+              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
+                <SectionHeader id="founder" icon={Brain} title="Founder Readiness" subtitle="Strengths & gaps" />
+                {expandedSections.founder && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    className="p-6 pt-0"
+                  >
+                    <div className="mb-4">
+                      <div className="text-xs font-medium text-green-600 mb-2 flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3" />
+                        Strengths Aligned to Idea
+                      </div>
+                      <ul className="space-y-2">
+                        {mockData.founderReadiness.strengths.map((strength, i) => (
+                          <li key={i} className="flex items-center gap-2 text-sm text-foreground">
+                            <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                            {strength}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                      <div className="text-xs font-medium text-primary mb-2 flex items-center gap-1">
+                        <Shield className="w-3 h-3" />
+                        Gap to Address: {mockData.founderReadiness.gap.area}
+                      </div>
+                      <p className="text-sm text-foreground">{mockData.founderReadiness.gap.recommendation}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </div>
 
             {/* Right Column */}
@@ -534,40 +568,6 @@ export function IdeaValidationDashboard() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </motion.div>
-                )}
-              </div>
-
-              {/* Founder Readiness */}
-              <div className="bg-background rounded-2xl border border-border shadow-lg overflow-hidden">
-                <SectionHeader id="founder" icon={Brain} title="Founder Readiness" subtitle="Strengths & gaps" />
-                {expandedSections.founder && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    className="p-6 pt-0"
-                  >
-                    <div className="mb-4">
-                      <div className="text-xs font-medium text-green-600 mb-2 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3" />
-                        Strengths Aligned to Idea
-                      </div>
-                      <ul className="space-y-2">
-                        {mockData.founderReadiness.strengths.map((strength, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                            {strength}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
-                      <div className="text-xs font-medium text-primary mb-2 flex items-center gap-1">
-                        <Shield className="w-3 h-3" />
-                        Gap to Address: {mockData.founderReadiness.gap.area}
-                      </div>
-                      <p className="text-sm text-foreground">{mockData.founderReadiness.gap.recommendation}</p>
                     </div>
                   </motion.div>
                 )}
