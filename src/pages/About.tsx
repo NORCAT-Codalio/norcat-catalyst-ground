@@ -192,7 +192,7 @@ export default function About() {
         <div className="absolute top-20 right-20 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-6 relative">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <ScrollReveal>
               <div className="badge mb-6 mx-auto inline-flex">
                 <Sparkles className="h-4 w-4" />
