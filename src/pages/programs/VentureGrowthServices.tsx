@@ -304,7 +304,7 @@ const VentureGrowthServices = () => {
                 <ul className="space-y-3">
                   {[
                     'Early-stage founders (pre-seed to Series A)',
-                    'Building in mining, industrial tech, or tough tech',
+                    'Building a tech-enabled, IP-focused venture',
                     'Coachable and open to feedback',
                     'Committed full-time to your venture',
                     'Looking for hands-on support, not just capital'
