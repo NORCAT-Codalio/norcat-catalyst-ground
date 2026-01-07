@@ -447,9 +447,9 @@ const MentorshipServices = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {mentors.map((mentor) => (
-              <ScrollReveal key={mentor.name} delay={0.05} className="h-full">
+              <ScrollReveal key={mentor.name} delay={0.05}>
                 <MentorCard
                   mentor={mentor}
                   isExpanded={expandedMentor === mentor.name}
