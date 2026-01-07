@@ -572,14 +572,14 @@ export default function Index() {
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                   <Globe className="w-4 h-4" />
-                  The Sudbury Advantage
+                  The Greater Sudbury Advantage
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
                   A Thriving <span className="text-gradient">Innovation Ecosystem</span>
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed mb-8">
                   Greater Sudbury is home to the largest mining supply cluster in Canada, 
-                  world-class research institutions, and a community built on innovation. 
+                  world-renowned research institutions, and a community built on innovation. 
                   Join an ecosystem where startups and industry connect.
                 </p>
                 <Link to="/ecosystem/sudbury" className="btn-primary group">
