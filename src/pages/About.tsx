@@ -200,8 +200,8 @@ export default function About() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="headline-hero mb-8">
-                Sudbury's Regional
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                Greater Sudbury's Regional
                 <span className="block text-gradient">Innovation Centre</span>
               </h1>
             </ScrollReveal>
