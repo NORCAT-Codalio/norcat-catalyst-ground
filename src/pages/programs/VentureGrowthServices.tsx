@@ -130,8 +130,7 @@ const VentureGrowthServices = () => {
               education, network, and resources you need to build a category-defining company.
             </p>
             <p className="body-lg text-white/50 max-w-2xl mb-10">
-              Not just advice—active partnership. We work alongside you to find customers, 
-              raise capital, build teams, and navigate the challenges of scaling.
+              We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="btn-primary-lg">
