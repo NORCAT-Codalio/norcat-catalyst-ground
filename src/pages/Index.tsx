@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Zap, Globe, Cpu, Leaf, Factory, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake, Send, PresentationIcon, UserPlus, Scale, Briefcase, TrendingUp } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Cpu, Leaf, Factory, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake, Send, PresentationIcon, UserPlus, Scale, Briefcase, TrendingUp, Brain, Stethoscope, Cog, Globe } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
@@ -85,24 +85,28 @@ const ecosystemPartners = [{
   name: 'The Sudbury Model',
   desc: 'Innovation centres, industry, post-secondaries, and government working as one'
 }];
+
 const sectors = [{
   icon: Cpu,
   label: 'Mining Tech'
 }, {
   icon: Leaf,
-  label: 'Cleantech'
+  label: 'Clean Tech'
+}, {
+  icon: Brain,
+  label: 'AI/ML'
+}, {
+  icon: Stethoscope,
+  label: 'Med Tech'
+}, {
+  icon: Cog,
+  label: 'Robotics'
 }, {
   icon: Factory,
-  label: 'Industrial IoT'
-}, {
-  icon: Zap,
-  label: 'Energy'
-}, {
-  icon: Globe,
-  label: 'Critical Minerals'
+  label: 'Advanced Manufacturing'
 }, {
   icon: Rocket,
-  label: 'Deep Tech'
+  label: 'and more'
 }];
 const stats = [{
   value: '150+',
@@ -366,7 +370,7 @@ export default function Index() {
           }}>
               <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-8">
                 <Sparkles className="h-4 w-4 text-teal-400" />
-                Ontario's Regional Innovation Centre
+                Sudbury's Regional Innovation Centre
               </span>
             </motion.div>
 
