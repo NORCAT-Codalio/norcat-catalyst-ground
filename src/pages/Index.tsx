@@ -517,7 +517,7 @@ export default function Index() {
                 What We Offer
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Everything You Need to <span className="text-gradient">Scale</span>
+                The Support You Need to <span className="text-gradient">Scale Your Startup</span>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Comprehensive support designed for founders who want to move fast.
