@@ -102,9 +102,6 @@ const sectors = [{
   icon: Cog,
   label: 'Robotics'
 }, {
-  icon: Factory,
-  label: 'Advanced Manufacturing'
-}, {
   icon: Rocket,
   label: 'and more'
 }];
