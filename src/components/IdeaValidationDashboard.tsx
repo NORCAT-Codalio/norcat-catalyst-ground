@@ -592,7 +592,7 @@ export function IdeaValidationDashboard() {
               </h3>
               <div className="text-muted-foreground max-w-xl mx-auto mb-6 text-left">
                 <p className="mb-3">This is just a preview. Apply to NORCAT Innovation to get:</p>
-                <ul className="space-y-1 list-disc list-inside">
+                <ul className="space-y-1 list-disc list-inside pl-4">
                   <li>A comprehensive validation report</li>
                   <li>Personalized action plan</li>
                   <li>1-on-1 guidance from our Venture Growth Team</li>
