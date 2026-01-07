@@ -37,7 +37,7 @@ const coreServices = [
     icon: Handshake,
     title: 'Customer Pairing',
     description: 'We actively connect you with potential customers, pilot partners, and early adopters from our extensive industry network to accelerate your path to revenue.',
-    features: ['Warm introductions to prospects', 'Pilot project facilitation', 'Industry partner matching', 'Feedback loop integration']
+    features: ['Strategic network building', 'Pilot project facilitation', 'Industry partner matching', 'Feedback loop integration']
   },
   {
     icon: Users,
