@@ -195,20 +195,20 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
   return (
     <>
       <motion.div
-        className="card-modern p-5 cursor-pointer hover:shadow-glow transition-all duration-300 h-full"
+        className="bg-white rounded-2xl border border-gray-100 shadow-md p-5 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
         onClick={onToggle}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <div className="flex items-center gap-4 h-full">
+        <div className="flex items-center gap-4">
           <img 
             src={mentor.image} 
             alt={mentor.name}
             className="w-12 h-12 rounded-full object-cover flex-shrink-0"
           />
-          <div className="min-w-0 flex-1">
-            <div className="font-semibold text-sm truncate">{mentor.name}</div>
-            <div className="flex flex-wrap gap-1 mt-1 min-h-[28px]">
+          <div className="min-w-0">
+            <div className="font-semibold text-sm text-foreground truncate">{mentor.name}</div>
+            <div className="flex flex-wrap gap-1 mt-1">
               {mentor.tags.map((tag) => (
                 <span 
                   key={tag} 
