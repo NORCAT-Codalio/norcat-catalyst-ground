@@ -752,7 +752,7 @@ export default function Index() {
                 Who We Support
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                For <span className="text-gradient">Ambitious</span> Founders
+                Northern Ontario: For <span className="text-gradient">Ambitious</span> Founders
               </h2>
               <p className="text-xl text-muted-foreground mb-12">
                 Early-stage to scaling tech-enabled, IP-driven startups 
