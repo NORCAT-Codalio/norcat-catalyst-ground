@@ -519,10 +519,11 @@ export function IdeaValidationDashboard() {
               </p>
               <Button asChild size="lg" className="btn-primary px-8">
                 <Link to="/apply">
-                  Get the Full Report & Action Plan
+                  Get the Full Report & Action Plan — It's Free!
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
+              <p className="text-xs text-muted-foreground mt-4">Funded by the Government of Ontario</p>
             </div>
           </motion.div>
         </motion.div>
