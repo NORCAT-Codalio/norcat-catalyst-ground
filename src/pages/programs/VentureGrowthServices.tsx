@@ -98,7 +98,7 @@ const differentiators = [
   {
     icon: Zap,
     title: 'Northern Advantage',
-    description: 'Access to unique infrastructure like the NORCAT Underground Centre, plus lower costs and a focused, supportive community.'
+    description: 'Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada\'s most established mining ecosystems.'
   }
 ];
 
@@ -246,7 +246,7 @@ const VentureGrowthServices = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
-              <h2 className="headline-lg mb-6">What Makes This Different</h2>
+              <h2 className="headline-lg mb-6">What Makes Us Different?</h2>
               <p className="body-lg text-muted-foreground mb-8">
                 There are a lot of accelerators and programs out there. 
                 Here's why founders choose to build with us.
@@ -270,14 +270,13 @@ const VentureGrowthServices = () => {
               <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-10 text-white">
                 <MessageCircle className="w-10 h-10 text-primary mb-6" />
                 <blockquote className="text-xl font-medium mb-6 leading-relaxed">
-                  "The NORCAT team doesn't just give advice—they open doors. 
-                  The customer introductions alone were worth more than any program fee."
+                  "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been instrumental in our decision to relocate our team to Sudbury, a region with immense potential for growth and innovation."
                 </blockquote>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-white/10" />
                   <div>
-                    <div className="font-semibold">Portfolio Founder</div>
-                    <div className="text-sm text-white/60">Mining Technology Startup</div>
+                    <div className="font-semibold">Luke Begley</div>
+                    <div className="text-sm text-white/60">CEO and Co-Founder of CircuitIQ</div>
                   </div>
                 </div>
               </div>
