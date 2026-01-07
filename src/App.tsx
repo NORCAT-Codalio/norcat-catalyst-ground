@@ -11,6 +11,7 @@ import Ecosystem from "./pages/Ecosystem";
 import Impact from "./pages/Impact";
 import Events from "./pages/Events";
 import Apply from "./pages/Apply";
+import ValidateIdea from "./pages/ValidateIdea";
 import NotFound from "./pages/NotFound";
 
 // Programs pages
@@ -72,6 +73,7 @@ const App = () => (
             <Route path="/impact" element={<Impact />} />
             <Route path="/events" element={<Events />} />
             <Route path="/apply" element={<Apply />} />
+            <Route path="/validate-idea" element={<ValidateIdea />} />
             
             {/* Programs Routes */}
             <Route path="/programs/venture-growth-services" element={<VentureGrowthServices />} />
