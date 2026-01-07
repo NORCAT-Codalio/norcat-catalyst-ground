@@ -25,7 +25,7 @@ const coreServices = [
     icon: UserCheck,
     title: 'One-on-One Advisor Support',
     description: 'Every company is matched with a dedicated venture advisor who works alongside you on strategy, operations, and growth. Regular check-ins keep you accountable and moving forward.',
-    features: ['Dedicated advisor relationship', 'Weekly or bi-weekly sessions', 'Strategic planning support', 'Accountability check-ins']
+    features: ['Dedicated advisor relationship', 'Schedule flexible sessions', 'Strategic planning support', 'Leadership development']
   },
   {
     icon: GraduationCap,
