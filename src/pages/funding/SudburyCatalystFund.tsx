@@ -90,8 +90,8 @@ const SudburyCatalystFund = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-primary/10 blur-3xl -translate-x-1/2 translate-y-1/2" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal>
+          <ScrollReveal>
+            <div className="max-w-2xl">
               <div className="bg-slate-900 rounded-2xl p-6 inline-block mb-8">
                 <img 
                   src={scfLogo} 
@@ -99,7 +99,7 @@ const SudburyCatalystFund = () => {
                   className="h-24 md:h-32 object-contain"
                 />
               </div>
-              <p className="body-xl text-muted-foreground max-w-xl mb-10">
+              <p className="body-xl text-muted-foreground mb-10">
                 Early-stage investment capital for innovative companies building 
                 transformative solutions in Northern Ontario.
               </p>
@@ -116,29 +116,8 @@ const SudburyCatalystFund = () => {
                   </Link>
                 </Button>
               </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <div className="relative">
-                {/* Stats card */}
-                <div className="bg-slate-900 rounded-3xl p-10 text-white">
-                  <div className="text-6xl font-bold text-primary mb-2">$5M</div>
-                  <p className="text-xl text-white/70 mb-8">In Deployable Capital</p>
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                      <div className="text-3xl font-bold text-primary">$3M</div>
-                      <p className="text-sm text-white/60">Deployed To Date</p>
-                    </div>
-                    <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                      <div className="text-3xl font-bold text-primary">60+</div>
-                      <p className="text-sm text-white/60">Jobs Created</p>
-                    </div>
-                  </div>
-                </div>
-                {/* Decorative accent */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-2xl -z-10" />
-              </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
