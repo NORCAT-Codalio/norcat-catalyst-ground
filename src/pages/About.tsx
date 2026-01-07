@@ -200,15 +200,15 @@ export default function About() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8">
                 Greater Sudbury's Regional
                 <span className="block text-gradient">Innovation Centre</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="body-xl max-w-2xl mx-auto">
-                A not-for-profit Innovation Centre funded by the Government of Ontario. 
-                We're the catalyst for tech-enabled startup growth in Northern Ontario.
+                A not-for-profit Innovation Centre funded by the Government of Ontario, 
+                NORCAT Innovation supports tech-enabled, IP-driven startups across Northern Ontario.
               </p>
             </ScrollReveal>
           </div>
