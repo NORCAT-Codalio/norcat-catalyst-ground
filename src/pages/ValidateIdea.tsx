@@ -101,11 +101,11 @@ const ValidateIdea = () => {
       <Navigation />
       
       {/* Hero Section with AI Chat */}
-      <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-b from-background via-amber-500/5 to-background">
+      <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
         {/* Subtle background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -116,7 +116,7 @@ const ValidateIdea = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 font-semibold text-sm tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm tracking-wider uppercase">
               <Lightbulb className="h-5 w-5" />
               <span>Idea Validation</span>
             </div>
@@ -130,7 +130,7 @@ const ValidateIdea = () => {
             className="text-center font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
           >
             Validate Your{' '}
-            <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Startup Idea</span>
+            <span className="text-gradient-teal">Startup Idea</span>
           </motion.h1>
 
           {/* Sub-text */}
@@ -162,9 +162,9 @@ const ValidateIdea = () => {
                     <button
                       key={i}
                       onClick={() => handleItemClick(item.label)}
-                      className="group flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-amber-500/20 bg-background/80 backdrop-blur-sm hover:border-amber-500/50 hover:bg-amber-500/5 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+                      className="group flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-primary/20 bg-background/80 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
                     >
-                      <Icon className="h-4 w-4 text-amber-600/70 group-hover:text-amber-600 transition-colors" />
+                      <Icon className="h-4 w-4 text-primary/70 group-hover:text-primary transition-colors" />
                       <span className="text-sm text-foreground/80 group-hover:text-foreground whitespace-nowrap">
                         {item.label}
                       </span>
@@ -183,7 +183,7 @@ const ValidateIdea = () => {
             className="max-w-2xl mx-auto"
           >
             <form onSubmit={handleSubmit} className="relative">
-              <div className="relative rounded-2xl border-2 border-amber-500/20 bg-background/90 backdrop-blur-sm shadow-lg hover:border-amber-500/40 focus-within:border-amber-500/60 transition-all duration-300 overflow-hidden">
+              <div className="relative rounded-2xl border-2 border-primary/20 bg-background/90 backdrop-blur-sm shadow-lg hover:border-primary/40 focus-within:border-primary/60 transition-all duration-300 overflow-hidden">
                 <div className="relative">
                   <input
                     type="text"
@@ -197,18 +197,18 @@ const ValidateIdea = () => {
                     <div className="absolute inset-0 flex items-center px-5 pointer-events-none">
                       <span className="text-muted-foreground/60 text-base">
                         {displayText}
-                        <span className="inline-block w-0.5 h-5 bg-amber-500/60 ml-0.5 animate-pulse" />
+                        <span className="inline-block w-0.5 h-5 bg-primary/60 ml-0.5 animate-pulse" />
                       </span>
                     </div>
                   )}
                 </div>
                 
                 {/* Bottom toolbar */}
-                <div className="flex items-center justify-between px-4 py-3 border-t border-amber-500/10 bg-amber-500/5">
+                <div className="flex items-center justify-between px-4 py-3 border-t border-primary/10 bg-primary/5">
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      className="p-2 rounded-lg hover:bg-amber-500/10 transition-colors text-amber-600/70 hover:text-amber-600"
+                      className="p-2 rounded-lg hover:bg-primary/10 transition-colors text-primary/70 hover:text-primary"
                       title="AI Suggestions"
                     >
                       <Sparkles className="h-4 w-4" />
@@ -221,7 +221,7 @@ const ValidateIdea = () => {
                   <Button
                     type="submit"
                     size="sm"
-                    className="rounded-full h-9 w-9 p-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600"
+                    className="rounded-full h-9 w-9 p-0 bg-gradient-teal hover:opacity-90"
                     disabled={!chatInput.trim()}
                   >
                     <Send className="h-4 w-4" />
