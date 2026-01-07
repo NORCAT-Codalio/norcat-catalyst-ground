@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Check, Users, BookOpen, MessageSquare, ClipboardCheck, ExternalLink } from 'lucide-react';
 
+import torontoMetroLogo from '@/assets/logos/toronto-metropolitan-university.png';
+import rogersCatalystLogo from '@/assets/logos/rogers-cybersecure-catalyst.png';
+
 const RogersCybersecure = () => {
   const services = [
     {
@@ -93,8 +96,24 @@ const RogersCybersecure = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="bg-secondary/30 rounded-3xl p-8">
-                <h3 className="headline-sm mb-6">Eligibility</h3>
+              <div className="space-y-8">
+                {/* Partner Logos */}
+                <div className="flex flex-wrap items-center justify-center gap-8 bg-white rounded-2xl p-6 border border-gray-100">
+                  <img 
+                    src={rogersCatalystLogo} 
+                    alt="Rogers Cybersecure Catalyst" 
+                    className="h-16 object-contain"
+                  />
+                  <img 
+                    src={torontoMetroLogo} 
+                    alt="Toronto Metropolitan University" 
+                    className="h-16 object-contain"
+                  />
+                </div>
+
+                {/* Eligibility */}
+                <div className="bg-secondary/30 rounded-3xl p-8">
+                  <h3 className="headline-sm mb-6">Eligibility</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -109,6 +128,7 @@ const RogersCybersecure = () => {
                     <span>Looking to improve cybersecurity posture</span>
                   </li>
                 </ul>
+                </div>
               </div>
             </ScrollReveal>
           </div>
