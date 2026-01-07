@@ -195,20 +195,20 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
   return (
     <>
       <motion.div
-        className="card-modern p-5 cursor-pointer hover:shadow-glow transition-all duration-300"
+        className="card-modern p-5 cursor-pointer hover:shadow-glow transition-all duration-300 h-full"
         onClick={onToggle}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 h-full">
           <img 
             src={mentor.image} 
             alt={mentor.name}
             className="w-12 h-12 rounded-full object-cover flex-shrink-0"
           />
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <div className="font-semibold text-sm truncate">{mentor.name}</div>
-            <div className="flex flex-wrap gap-1 mt-1">
+            <div className="flex flex-wrap gap-1 mt-1 min-h-[28px]">
               {mentor.tags.map((tag) => (
                 <span 
                   key={tag} 
@@ -447,9 +447,9 @@ const MentorshipServices = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
             {mentors.map((mentor) => (
-              <ScrollReveal key={mentor.name} delay={0.05}>
+              <ScrollReveal key={mentor.name} delay={0.05} className="h-full">
                 <MentorCard
                   mentor={mentor}
                   isExpanded={expandedMentor === mentor.name}
