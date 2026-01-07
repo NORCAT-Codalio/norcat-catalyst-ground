@@ -383,7 +383,7 @@ const MentorshipServices = () => {
                   {[
                     { step: '01', title: 'Apply & Match', desc: 'Tell us about your venture and goals. We carefully match you with 2-4 mentors whose experience aligns with your needs.' },
                     { step: '02', title: 'Orientation', desc: 'Meet your mentor team and establish ground rules. Learn how to make the most of your sessions.' },
-                    { step: '03', title: 'Regular Sessions', desc: 'Meet monthly with your mentor team. You set the agenda based on your current challenges and opportunities.' },
+                    { step: '03', title: 'Regular Sessions', desc: 'Organize flexible recurring meetings with your mentor team. You set the agenda based on your current challenges and opportunities.' },
                     { step: '04', title: 'Grow & Evolve', desc: 'As your needs change, your mentor team can evolve. Access our full network of mentors and resources.' },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
