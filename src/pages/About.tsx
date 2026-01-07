@@ -350,6 +350,29 @@ export default function About() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="section-padding bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto px-6 relative text-center">
+          <ScrollReveal>
+            <h2 className="headline-xl text-white mb-6">
+              Ready to join our
+              <span className="text-gradient"> community?</span>
+            </h2>
+            <p className="body-xl text-gray-400 mb-10 max-w-xl mx-auto">
+              Whether you're just starting out or ready to scale, we're here to help 
+              you build something extraordinary.
+            </p>
+            <Link to="/apply" className="btn-primary-lg">
+              Apply for Venture Growth Services
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* RIC Network Section */}
       <section className="py-16 bg-secondary relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -405,29 +428,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl" />
-        </div>
-        <div className="container mx-auto px-6 relative text-center">
-          <ScrollReveal>
-            <h2 className="headline-xl text-white mb-6">
-              Ready to join our
-              <span className="text-gradient"> community?</span>
-            </h2>
-            <p className="body-xl text-gray-400 mb-10 max-w-xl mx-auto">
-              Whether you're just starting out or ready to scale, we're here to help 
-              you build something extraordinary.
-            </p>
-            <Link to="/apply" className="btn-primary-lg">
-              Apply for Venture Growth Services
-              <ArrowRight className="h-5 w-5" />
-            </Link>
           </ScrollReveal>
         </div>
       </section>
