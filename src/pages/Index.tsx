@@ -150,6 +150,7 @@ function AIChatSection() {
 
   useEffect(() => {
     const currentExample = typingExamples[exampleIndex];
+    if (!currentExample) return;
     
     if (isTyping) {
       if (charIndex < currentExample.length) {
