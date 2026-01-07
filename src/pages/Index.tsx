@@ -833,7 +833,7 @@ export default function Index() {
                 </span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                Join the next generation of founders scaling breakthrough technology.
+                Join founders building and scaling tech-enabled solutions in Northern Ontario that deliver real-world impact.
               </p>
               <Link to="/apply" className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg rounded-full transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 group">
                 <Rocket className="h-5 w-5" />
