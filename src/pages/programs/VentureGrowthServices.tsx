@@ -42,7 +42,7 @@ const coreServices = [
   {
     icon: Users,
     title: 'Mentorship Network',
-    description: 'Access 28+ experienced mentors across sectors including mining, technology, finance, operations, and more. Get tactical advice from those who\'ve been there.',
+    description: 'Access 18+ experienced mentors across sectors including mining, technology, finance, operations, and more. Get tactical advice from those who\'ve been there.',
     features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
     link: '/programs/mentorship-services',
     linkText: 'Explore Mentorship Services'
@@ -70,7 +70,7 @@ const programStructure = [
   {
     phase: '02',
     title: 'Build & Validate',
-    description: 'Intensive work on product-market fit, customer discovery, and early traction.'
+    description: 'Get paired with your mentorship team to work on product-market fit and early traction.'
   },
   {
     phase: '03',
