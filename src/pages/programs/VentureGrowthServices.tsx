@@ -70,7 +70,7 @@ const programStructure = [
   {
     phase: '02',
     title: 'Build & Validate',
-    description: 'Get paired with your mentorship team to work on product-market fit and early traction.'
+    description: 'Work with your mentorship team on product-market fit and early traction.'
   },
   {
     phase: '03',
