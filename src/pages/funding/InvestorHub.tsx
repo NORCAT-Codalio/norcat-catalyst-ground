@@ -24,6 +24,7 @@ import {
   Compass
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import noaLogo from '@/assets/logos/northern-ontario-angels.png';
 
 const InvestorHub = () => {
   const capitalPlaybook = [
@@ -248,13 +249,11 @@ const InvestorHub = () => {
                   <Star className="w-4 h-4" />
                   Strategic Partner
                 </span>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
-                  Northern Ontario
-                  <br />
-                  <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                    Angels
-                  </span>
-                </h2>
+                <img 
+                  src={noaLogo} 
+                  alt="Northern Ontario Angels" 
+                  className="h-12 md:h-16 object-contain mb-6"
+                />
                 <p className="text-lg text-white/60 mb-8 leading-relaxed">
                   Our exclusive partnership with Northern Ontario Angels connects 
                   investment-ready founders with a network of active angel investors 
@@ -295,7 +294,7 @@ const InvestorHub = () => {
                       <p className="text-white/60 text-sm">Active Investors</p>
                     </div>
                     <div className="text-center p-6 rounded-2xl bg-white/5">
-                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">$25M+</div>
+                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">$250M+</div>
                       <p className="text-white/60 text-sm">Invested</p>
                     </div>
                     <div className="text-center p-6 rounded-2xl bg-white/5">
@@ -303,7 +302,7 @@ const InvestorHub = () => {
                       <p className="text-white/60 text-sm">Portfolio Companies</p>
                     </div>
                     <div className="text-center p-6 rounded-2xl bg-white/5">
-                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">15+</div>
+                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">20+</div>
                       <p className="text-white/60 text-sm">Years Active</p>
                     </div>
                   </div>
