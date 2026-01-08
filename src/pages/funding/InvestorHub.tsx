@@ -25,6 +25,8 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import noaLogo from '@/assets/logos/northern-ontario-angels.png';
+import vnpBackground from '@/assets/vnp-background.png';
+import vnpLogo from '@/assets/logos/venture-north-pitch.png';
 
 const InvestorHub = () => {
   const capitalPlaybook = [
@@ -363,31 +365,40 @@ const InvestorHub = () => {
       </section>
 
       {/* Venture North Pitch - Flagship Event */}
-      <section id="venture-north" className="py-24 lg:py-32 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
+      <section id="venture-north" className="py-24 lg:py-32 relative overflow-hidden">
+        {/* Background image with blur and overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src={vnpBackground} 
+            alt="" 
+            className="w-full h-full object-cover blur-sm"
+          />
+          <div className="absolute inset-0 bg-gray-950/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 to-cyan-900/30" />
+        </div>
+        
         {/* Decorative elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 border border-yellow-500/20 rounded-full" />
-          <div className="absolute bottom-20 right-10 w-48 h-48 border border-yellow-500/10 rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-[100px]" />
+          <div className="absolute top-20 left-10 w-32 h-32 border border-teal-500/20 rounded-full" />
+          <div className="absolute bottom-20 right-10 w-48 h-48 border border-teal-500/10 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[100px]" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-8">
-                <Crown className="w-5 h-5 text-yellow-500" />
-                <span className="text-yellow-500 font-medium">Flagship Event</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-8">
+                <Crown className="w-5 h-5 text-teal-400" />
+                <span className="text-teal-400 font-medium">Flagship Event</span>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={0.1}>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
-                Venture North
-                <br />
-                <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">
-                  Pitch
-                </span>
-              </h2>
+              <img 
+                src={vnpLogo} 
+                alt="Venture North Pitch" 
+                className="h-24 md:h-32 lg:h-40 object-contain mx-auto mb-6"
+              />
             </ScrollReveal>
             
             <ScrollReveal delay={0.2}>
@@ -401,12 +412,12 @@ const InvestorHub = () => {
             <ScrollReveal delay={0.3}>
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
-                  { value: '$50K+', label: 'In Prizes & Investment' },
-                  { value: '10', label: 'Finalist Pitches' },
-                  { value: '200+', label: 'Attendees' },
+                  { value: '11', label: 'Years of VNP' },
+                  { value: '250+', label: 'Attendees' },
+                  { value: '$350K', label: 'In Prizes Awarded' },
                 ].map((stat, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent mb-1">
+                  <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-1">
                       {stat.value}
                     </div>
                     <p className="text-white/50 text-sm">{stat.label}</p>
@@ -417,13 +428,13 @@ const InvestorHub = () => {
             
             <ScrollReveal delay={0.4}>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 text-gray-900 font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-yellow-500/25">
+                <Button asChild size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-teal-500/25">
                   <Link to="/apply">
                     Apply to Compete
                     <Trophy className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl">
+                <Button asChild variant="outline" size="lg" className="border-teal-500/50 text-teal-300 hover:bg-teal-500/10 px-8 py-6 text-lg rounded-xl">
                   <Link to="/events">
                     View Past Events
                     <ArrowRight className="w-5 h-5 ml-2" />
