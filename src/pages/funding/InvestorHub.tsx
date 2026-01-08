@@ -16,35 +16,40 @@ import {
   Zap,
   Crown,
   Building2,
-  ChevronRight
+  ChevronRight,
+  AlertTriangle,
+  DollarSign,
+  Handshake,
+  Shield,
+  Compass
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const InvestorHub = () => {
-  const investorReadySteps = [
+  const capitalPlaybook = [
     { 
       step: '01', 
-      title: 'Pitch Refinement', 
-      desc: 'Craft a compelling narrative that resonates with investors',
-      icon: Presentation
-    },
-    { 
-      step: '02', 
-      title: 'Financial Modeling', 
-      desc: 'Build investor-grade projections and unit economics',
+      title: 'Revenue-Led Growth', 
+      desc: 'Build a durable business with sustainable unit economics, not growth at all costs',
       icon: TrendingUp
     },
     { 
+      step: '02', 
+      title: 'Strategic Partnerships', 
+      desc: 'Establish enterprise partnerships early for validation, revenue, and strategic value',
+      icon: Handshake
+    },
+    { 
       step: '03', 
-      title: 'Due Diligence Prep', 
-      desc: 'Organize your data room and anticipate investor questions',
-      icon: Target
+      title: 'Non-Dilutive Funding', 
+      desc: 'Navigate grants, SR&ED, and government programs with intentional capital strategy',
+      icon: Shield
     },
     { 
       step: '04', 
-      title: 'Investor Matching', 
-      desc: 'Connect with the right investors for your stage and sector',
-      icon: Users
+      title: 'Right Capital, Right Time', 
+      desc: 'When equity makes sense, connect with investors aligned to your stage and vision',
+      icon: Target
     },
   ];
 
@@ -80,10 +85,10 @@ const InvestorHub = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-sm mb-8"
             >
-              <Rocket className="w-4 h-4 text-teal-400" />
-              <span className="text-sm text-white/80">Funding & Capital</span>
+              <AlertTriangle className="w-4 h-4 text-amber-400" />
+              <span className="text-sm text-amber-300">The Capital Landscape Has Changed</span>
             </motion.div>
             
             <motion.h1 
@@ -92,10 +97,10 @@ const InvestorHub = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-[0.95]"
             >
-              Get Investor
+              The New
               <br />
               <span className="bg-gradient-to-r from-teal-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Ready
+                Capital Playbook
               </span>
             </motion.h1>
             
@@ -105,8 +110,9 @@ const InvestorHub = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-white/60 max-w-2xl mb-10 leading-relaxed"
             >
-              From pitch deck to term sheet. We prepare Northern Ontario's 
-              boldest founders to raise capital and scale their vision.
+              The capital environment founders were trained for no longer exists. 
+              This isn't a market correction—it's a structural shift. We help you 
+              navigate the new era of raising capital.
             </motion.p>
             
             <motion.div 
@@ -117,13 +123,13 @@ const InvestorHub = () => {
             >
               <Button asChild size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white border-0 px-8 py-6 text-lg rounded-xl shadow-lg shadow-teal-500/25">
                 <Link to="/apply">
-                  Start Your Journey
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Navigate Your Path
+                  <Compass className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl">
-                <a href="#venture-north">
-                  Explore Venture North
+                <a href="#new-playbook">
+                  Learn the New Playbook
                   <ChevronRight className="w-5 h-5 ml-1" />
                 </a>
               </Button>
@@ -143,26 +149,72 @@ const InvestorHub = () => {
         </motion.div>
       </section>
 
-      {/* Investor Ready Journey */}
+      {/* The Reality Section */}
       <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[100px]" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <ScrollReveal>
+              <div>
+                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-medium mb-6">
+                  <AlertTriangle className="w-4 h-4" />
+                  The Reality
+                </span>
+                <h2 className="headline-lg mb-6">2025: The Worst Year for Canadian VC Since 2016</h2>
+                <p className="body-lg text-muted-foreground mb-6">
+                  Only $2.1B raised by 21 funds—the lowest since 2016. 83% of capital concentrated 
+                  in Canada's five largest funds. Emerging managers at record lows. LPs pulling back 
+                  due to lack of exits.
+                </p>
+                <p className="body-lg text-muted-foreground">
+                  This isn't a downturn. It's a fundamental restructuring of how capital flows. 
+                  The playbook that worked in 2021 won't work today. Founders need a new approach.
+                </p>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.2}>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: '$2.1B', label: 'Raised in 2025', sublabel: 'Lowest since 2016' },
+                  { value: '83%', label: 'To Top 5 Funds', sublabel: 'Capital concentration' },
+                  { value: '42%', label: 'For New Startups', sublabel: 'Rest held in reserve' },
+                  { value: '$249M', label: 'Emerging Managers', sublabel: 'Record low' },
+                ].map((stat, i) => (
+                  <div key={i} className="p-6 rounded-2xl bg-card border border-border">
+                    <div className="text-2xl md:text-3xl font-display font-bold text-foreground mb-1">{stat.value}</div>
+                    <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
+                    <p className="text-xs text-muted-foreground/60">{stat.sublabel}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* The New Playbook */}
+      <section id="new-playbook" className="py-24 lg:py-32 bg-secondary/30 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Your Path to Funding
+                The New VC Playbook
               </span>
-              <h2 className="headline-lg mb-4">Become Investor Ready</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Our proven methodology has helped founders across Northern Ontario 
-                raise over $50M in capital.
+              <h2 className="headline-lg mb-4">Capital Navigation for the New Era</h2>
+              <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
+                We don't just help you raise investment—we help you build a durable company. 
+                Revenue-led growth, strategic partnerships, intentional non-dilutive funding. 
+                We explore all options and guide you to the best path forward.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {investorReadySteps.map((item, i) => (
+            {capitalPlaybook.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="group relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-teal-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -391,22 +443,23 @@ const InvestorHub = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <Building2 className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h2 className="headline-lg mb-6">Ready to Raise?</h2>
+              <Compass className="w-12 h-12 text-primary mx-auto mb-6" />
+              <h2 className="headline-lg mb-6">Ready to Navigate the New Era?</h2>
               <p className="body-lg text-muted-foreground mb-10">
-                Whether you're preparing for your first angel round or scaling to 
-                Series A, we're here to help you navigate the journey.
+                Whether you're exploring non-dilutive funding, building strategic partnerships, 
+                or preparing for the right investor conversation—we're here to help you find 
+                the best path for your company.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild className="btn-primary-lg">
                   <Link to="/apply">
-                    Get Started
+                    Start Your Journey
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="btn-outline-lg">
                   <Link to="/programs/capital-navigation">
-                    Learn About Capital Navigation
+                    Explore Capital Navigation
                   </Link>
                 </Button>
               </div>
