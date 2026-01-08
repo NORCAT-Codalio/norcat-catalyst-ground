@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import heroUnderground from '@/assets/hero-underground.jpg';
+import undergroundWorkers from '@/assets/underground-workers.png';
 import { 
   ArrowRight, 
   Mountain, 
@@ -56,7 +57,7 @@ const capabilities = [
 ];
 
 const stats = [
-  { value: '1.2', unit: 'km', label: 'Underground Tunnels' },
+  { value: '3', unit: 'km', label: 'Underground Tunnels' },
   { value: '300+', unit: '', label: 'Technology Tests' },
   { value: '50+', unit: '', label: 'Countries Reached' },
   { value: '15', unit: '+', label: 'Years Operating' },
@@ -314,7 +315,7 @@ const NorcatUnderground = () => {
               >
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src={heroUnderground} 
+                    src={undergroundWorkers} 
                     alt="Underground testing facility" 
                     className="w-full h-full object-cover"
                   />
