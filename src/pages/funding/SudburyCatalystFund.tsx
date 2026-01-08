@@ -18,6 +18,7 @@ import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
+import scfHeroImage from '@/assets/scf-hero.png';
 
 // Team headshots
 import jasonSullivanImage from '@/assets/team/jason-sullivan.png';
@@ -90,34 +91,45 @@ const SudburyCatalystFund = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-primary/10 blur-3xl -translate-x-1/2 translate-y-1/2" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <ScrollReveal>
-            <div className="max-w-2xl">
-              <div className="bg-slate-900 rounded-2xl p-6 inline-block mb-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <div className="max-w-2xl">
+                <div className="bg-slate-900 rounded-2xl p-6 inline-block mb-8">
+                  <img 
+                    src={scfLogo} 
+                    alt="Sudbury Catalyst Fund" 
+                    className="h-24 md:h-32 object-contain"
+                  />
+                </div>
+                <p className="body-xl text-muted-foreground mb-10">
+                  Early-stage investment capital for innovative companies building 
+                  transformative solutions in Northern Ontario.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild className="px-8 py-6 text-lg rounded-xl">
+                    <Link to="/apply">
+                      Apply for Funding
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="px-8 py-6 text-lg rounded-xl">
+                    <Link to="#overview">
+                      Learn More
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="hidden lg:flex justify-center">
                 <img 
-                  src={scfLogo} 
-                  alt="Sudbury Catalyst Fund" 
-                  className="h-24 md:h-32 object-contain"
+                  src={scfHeroImage} 
+                  alt="Founder presenting" 
+                  className="max-h-[500px] object-contain"
                 />
               </div>
-              <p className="body-xl text-muted-foreground mb-10">
-                Early-stage investment capital for innovative companies building 
-                transformative solutions in Northern Ontario.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild className="px-8 py-6 text-lg rounded-xl">
-                  <Link to="/apply">
-                    Apply for Funding
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="px-8 py-6 text-lg rounded-xl">
-                  <Link to="#overview">
-                    Learn More
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
