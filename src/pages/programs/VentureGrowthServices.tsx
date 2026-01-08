@@ -356,9 +356,9 @@ const VentureGrowthServices = () => {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { title: 'Mentorship Services', desc: 'Connect with 200+ industry experts', link: '/programs/mentorship-services' },
+              { title: 'Mentorship Services', desc: 'Connect with 18+ industry experts', link: '/programs/mentorship-services' },
               { title: 'Capital Navigation', desc: 'Fundraising support and investor access', link: '/programs/capital-navigation' },
-              { title: 'Labs & Facilities', desc: 'Prototyping, testing, and workspace', link: '/mining/labs' }
+              { title: 'Labs & Facilities', desc: 'Prototyping, testing, and workspaces.', link: '/mining/labs' }
             ].map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <Link to={item.link} className="card-modern p-6 h-full flex flex-col group hover:border-primary/50 transition-colors">
