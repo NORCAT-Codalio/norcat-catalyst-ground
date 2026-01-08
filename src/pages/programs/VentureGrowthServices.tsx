@@ -2,6 +2,7 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import { 
   ArrowRight, 
   Rocket, 
@@ -273,7 +274,7 @@ const VentureGrowthServices = () => {
                   "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been instrumental in our decision to relocate our team to Sudbury, a region with immense potential for growth and innovation."
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-white/10" />
+                  <img src={lukeBegleyPhoto} alt="Luke Begley" className="w-12 h-12 rounded-full object-cover" />
                   <div>
                     <div className="font-semibold">Luke Begley</div>
                     <div className="text-sm text-white/60">CEO and Co-Founder of CircuitIQ</div>
