@@ -403,9 +403,9 @@ const InvestorHub = () => {
             
             <ScrollReveal delay={0.2}>
               <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Northern Ontario's premier pitch competition. Think Dragon's Den, but for 
-                the innovators building the future of our region. Compete for investment, 
-                mentorship, and the spotlight.
+                Northern Ontario's premier pitch competition in partnership with Northern Ontario Angels. 
+                Think Dragon's Den, but for the innovators building the future of our region. 
+                Compete for investment, mentorship, and the spotlight.
               </p>
             </ScrollReveal>
             
