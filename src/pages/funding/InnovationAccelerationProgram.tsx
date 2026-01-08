@@ -32,7 +32,7 @@ const InnovationAccelerationProgram = () => {
     {
       step: '02',
       title: 'Evaluation',
-      description: 'Provide full application; detailed review follows.',
+      description: 'Eligible applications reviewed and approved by Mentorship Committee.',
       icon: Search,
     },
     {
