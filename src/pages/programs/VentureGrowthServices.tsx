@@ -42,7 +42,7 @@ const coreServices = [
   {
     icon: Users,
     title: 'Mentorship Network',
-    description: 'Access 200+ experienced mentors across sectors including mining, technology, finance, operations, and more. Get tactical advice from those who\'ve been there.',
+    description: 'Access 28+ experienced mentors across sectors including mining, technology, finance, operations, and more. Get tactical advice from those who\'ve been there.',
     features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
     link: '/programs/mentorship-services',
     linkText: 'Explore Mentorship Services'
@@ -57,7 +57,7 @@ const coreServices = [
     icon: Building2,
     title: 'Community Integration',
     description: 'Join a tight-knit community of ambitious founders building category-defining companies. Shared experiences, mutual support, and lifelong connections.',
-    features: ['Cohort-based experience', 'Founder dinners & events', 'Slack community access', 'Alumni network benefits']
+    features: ['Cohort-based experience', 'Founder dinners & events', 'NORCAT Community access', 'Alumni network benefits']
   }
 ];
 
