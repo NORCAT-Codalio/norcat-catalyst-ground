@@ -2,6 +2,7 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import { 
   ArrowRight, 
   Brain, 
@@ -421,7 +422,7 @@ const RegionalAIProgram = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <p className="text-muted-foreground font-medium">Funded by</p>
             <div className="px-8 py-4 bg-background rounded-xl border border-border/50">
-              <span className="text-xl font-bold">FedNor</span>
+              <img src={fednorFullLogo} alt="Federal Economic Development Agency for Northern Ontario" className="h-10 object-contain" />
             </div>
           </div>
         </div>
