@@ -3,7 +3,6 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mountain, Building2, Users, Briefcase, FlaskConical, MapPin, CheckCircle2 } from 'lucide-react';
-import labEquipment3d from '@/assets/lab-equipment-3d.png';
 
 const facilities = [
   {
@@ -97,8 +96,8 @@ const Labs = () => {
         <div className="orb orb-teal w-96 h-96 -top-48 -right-48" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <ScrollReveal>
+          <ScrollReveal>
+            <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 badge-dark mb-8">
                 <Building2 className="w-4 h-4" />
                 Infrastructure & Facilities
@@ -112,30 +111,20 @@ const Labs = () => {
                 and scale their innovations.
               </p>
               <div className="flex flex-wrap gap-4">
-              <Button asChild className="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 text-lg rounded-xl">
-                <Link to="/apply">
-                  Access Our Facilities
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
+                <Button asChild className="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 text-lg rounded-xl">
+                  <Link to="/apply">
+                    Access Our Facilities
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
                 <Button asChild variant="outline" className="btn-outline-lg">
                   <Link to="/mining/norcat-underground">
                     Explore Underground Centre
                   </Link>
                 </Button>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={0.2}>
-              <div className="hidden lg:block">
-                <img 
-                  src={labEquipment3d} 
-                  alt="Innovation lab equipment including 3D printer, laptop, and robotic arms" 
-                  className="w-full max-w-lg mx-auto drop-shadow-2xl"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
