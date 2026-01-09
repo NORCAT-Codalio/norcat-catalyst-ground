@@ -259,26 +259,42 @@ const CriticalIndustrialTech = () => {
       {/* Critical Technologies */}
       <section className="section-padding bg-secondary/50">
         <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-lg mb-4">Critical Technology Areas</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                The initiative focuses on technologies essential to industrial competitiveness.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {technologies.map((tech, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 text-center h-full">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <tech.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-sm">{tech.name}</h3>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left side - Title and stacked technology areas */}
+            <div>
+              <ScrollReveal direction="left">
+                <h2 className="headline-lg mb-4">Critical Technology Areas</h2>
+                <p className="body-lg text-muted-foreground mb-8">
+                  The initiative focuses on technologies essential to industrial competitiveness.
+                </p>
               </ScrollReveal>
-            ))}
+
+              <div className="grid grid-cols-2 gap-3">
+                {technologies.map((tech, i) => (
+                  <ScrollReveal key={i} delay={i * 0.05}>
+                    <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex items-center gap-3 h-full">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <tech.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h3 className="font-medium text-sm">{tech.name}</h3>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+
+            {/* Right side - YouTube Video */}
+            <ScrollReveal direction="right">
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://www.youtube.com/embed/J_Jx8ku0ayI"
+                  title="Critical Industrial Technologies"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
