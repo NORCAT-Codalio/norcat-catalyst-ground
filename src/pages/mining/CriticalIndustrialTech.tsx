@@ -206,6 +206,56 @@ const CriticalIndustrialTech = () => {
         </div>
       </section>
 
+      {/* CIT Impact Stats */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-glow opacity-30" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="headline-md text-white mb-2">CIT Initiative Impact</h2>
+              <p className="text-white/60">Driving critical technology adoption across Ontario</p>
+            </div>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
+            <ScrollReveal delay={0.1}>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">$55.8M</div>
+                <div className="text-sm text-white/60">Total Investment</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.15}>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">$21.7M</div>
+                <div className="text-sm text-white/60">CIT Investment</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.2}>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">$34.1M</div>
+                <div className="text-sm text-white/60">Co-Investment</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.25}>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">185</div>
+                <div className="text-sm text-white/60">Projects Supported</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.3}>
+              <div className="text-center col-span-2 md:col-span-1">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">194+</div>
+                <div className="text-sm text-white/60">Ontario Companies</div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Critical Technologies */}
       <section className="section-padding bg-secondary/50">
         <div className="container mx-auto px-4 lg:px-8">
