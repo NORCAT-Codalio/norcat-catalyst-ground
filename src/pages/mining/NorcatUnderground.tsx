@@ -137,7 +137,7 @@ const NorcatUnderground = () => {
             >
               <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-8">
                 <Mountain className="w-4 h-4" />
-                World's Only Underground Innovation Centre
+                The Global One-Stop Shop for the Future of Mining
               </span>
             </motion.div>
 
