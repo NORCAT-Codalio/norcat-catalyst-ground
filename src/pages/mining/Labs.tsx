@@ -2,7 +2,9 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mountain, Building2, Users, Briefcase, FlaskConical, MapPin, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Mountain, Building2, Users, Briefcase, FlaskConical, MapPin, CheckCircle2, Cpu, Cog, Printer, Radio, Wifi, Zap } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const facilities = [
   {
@@ -123,6 +125,274 @@ const Labs = () => {
               </Button>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Interactive Showcase Section */}
+      <section className="relative py-24 bg-gradient-to-b from-gray-900 to-background overflow-hidden">
+        {/* Animated background grid */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <Zap className="w-4 h-4" />
+                World-Class Innovation Infrastructure
+              </span>
+              <h2 className="headline-lg text-white mb-4">Experience Our Facilities</h2>
+              <p className="body-lg text-white/60 max-w-2xl mx-auto">
+                From 1.5km underground to cutting-edge fabrication labs—explore where innovation comes to life.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Underground Centre Visualization */}
+            <ScrollReveal direction="left">
+              <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl border border-white/10 p-8 h-[400px] overflow-hidden group">
+                {/* Underground tunnel background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-gray-800/50 via-gray-900/80 to-black/90" />
+                
+                {/* Animated tunnel lines */}
+                <div className="absolute inset-0 overflow-hidden">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+                      style={{ 
+                        top: `${20 + i * 15}%`, 
+                        left: 0, 
+                        right: 0 
+                      }}
+                      animate={{ 
+                        opacity: [0.2, 0.6, 0.2],
+                        scaleX: [0.8, 1, 0.8]
+                      }}
+                      transition={{ 
+                        duration: 3 + i * 0.5, 
+                        repeat: Infinity, 
+                        ease: "easeInOut",
+                        delay: i * 0.3
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Animated drones */}
+                <motion.div
+                  className="absolute w-8 h-8 text-primary"
+                  animate={{
+                    x: [0, 150, 100, 200, 50, 0],
+                    y: [50, 80, 120, 60, 100, 50],
+                  }}
+                  transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Radio className="w-full h-full drop-shadow-[0_0_10px_hsl(var(--primary))]" />
+                </motion.div>
+
+                <motion.div
+                  className="absolute w-6 h-6 text-teal-400"
+                  animate={{
+                    x: [200, 50, 150, 20, 180, 200],
+                    y: [100, 150, 80, 120, 180, 100],
+                  }}
+                  transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Radio className="w-full h-full drop-shadow-[0_0_10px_theme(colors.teal.400)]" />
+                </motion.div>
+
+                {/* WiFi signal pulses */}
+                <motion.div
+                  className="absolute top-1/4 right-1/4"
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.8, 0.2, 0.8] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Wifi className="w-6 h-6 text-primary/60" />
+                </motion.div>
+
+                {/* Content overlay */}
+                <div className="relative z-10 h-full flex flex-col justify-end">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                      <Mountain className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Underground Centre</h3>
+                      <p className="text-sm text-white/60">Onaping, ON</p>
+                    </div>
+                  </div>
+                  <p className="text-white/70 text-sm mb-4">
+                    1.5km of underground development for real-world testing with active connectivity, drones, robotics, and autonomous systems.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {['Autonomous Vehicles', 'Drones', 'IoT Sensors', 'LTE/WiFi'].map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Lab Space Visualization */}
+            <ScrollReveal direction="right">
+              <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-3xl border border-white/10 p-8 h-[400px] overflow-hidden group">
+                {/* Lab background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-gray-900/80 to-gray-900/90" />
+
+                {/* Animated 3D printer */}
+                <motion.div
+                  className="absolute top-1/4 left-1/4"
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <div className="relative">
+                    <Printer className="w-16 h-16 text-teal-400 drop-shadow-[0_0_15px_theme(colors.teal.400)]" />
+                    {/* Printing animation */}
+                    <motion.div
+                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-teal-400 to-primary rounded-full"
+                      animate={{
+                        opacity: [0, 1, 0],
+                        scaleX: [0.5, 1, 0.5]
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity
+                      }}
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Animated CNC/Gear */}
+                <motion.div
+                  className="absolute top-1/3 right-1/4"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                >
+                  <Cog className="w-14 h-14 text-primary/70" />
+                </motion.div>
+
+                <motion.div
+                  className="absolute top-1/2 right-1/3"
+                  animate={{ rotate: -360 }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                >
+                  <Cog className="w-10 h-10 text-teal-500/70" />
+                </motion.div>
+
+                {/* Circuit/CPU */}
+                <motion.div
+                  className="absolute bottom-1/3 right-1/4"
+                  animate={{
+                    opacity: [0.5, 1, 0.5],
+                    scale: [0.95, 1.05, 0.95]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Cpu className="w-12 h-12 text-primary drop-shadow-[0_0_10px_hsl(var(--primary))]" />
+                </motion.div>
+
+                {/* Floating particles */}
+                {[...Array(6)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-2 h-2 rounded-full bg-primary/40"
+                    style={{
+                      left: `${20 + Math.random() * 60}%`,
+                      top: `${20 + Math.random() * 60}%`
+                    }}
+                    animate={{
+                      y: [0, -20, 0],
+                      opacity: [0.3, 0.8, 0.3]
+                    }}
+                    transition={{
+                      duration: 2 + Math.random() * 2,
+                      repeat: Infinity,
+                      delay: i * 0.3
+                    }}
+                  />
+                ))}
+
+                {/* Content overlay */}
+                <div className="relative z-10 h-full flex flex-col justify-end">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center">
+                      <FlaskConical className="w-6 h-6 text-teal-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Fortin Discovery Lab</h3>
+                      <p className="text-sm text-white/60">Sudbury, ON</p>
+                    </div>
+                  </div>
+                  <p className="text-white/70 text-sm mb-4">
+                    State-of-the-art prototyping with 3D printers, CNC machines, electronics workbenches, and expert technical support.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {['3D Printing', 'CNC Machining', 'Electronics', 'Prototyping'].map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-white/80 text-xs">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Interactive stats bar */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { value: '1.5km', label: 'Underground Development', icon: Mountain },
+              { value: '5+', label: '3D Printers', icon: Printer },
+              { value: '24/7', label: 'Facility Access', icon: Zap },
+              { value: '100+', label: 'Companies Hosted', icon: Users }
+            ].map((stat, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <motion.div
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center cursor-pointer"
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-xs text-white/60">{stat.label}</div>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
