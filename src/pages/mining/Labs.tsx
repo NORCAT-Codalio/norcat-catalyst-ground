@@ -3,6 +3,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mountain, Building2, Users, Briefcase, FlaskConical, MapPin, CheckCircle2 } from 'lucide-react';
+import robotCharacter from '@/assets/robot-character.png';
 
 const facilities = [
   {
@@ -160,7 +161,13 @@ const Labs = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="card-modern p-8 h-full">
+              <div className="card-modern p-8 h-full relative overflow-visible">
+                {/* Robot character sitting on top right */}
+                <img 
+                  src={robotCharacter} 
+                  alt="Friendly robot mascot" 
+                  className="absolute -top-16 -right-4 w-32 h-auto z-10 drop-shadow-lg"
+                />
                 <div className="flex items-center gap-3 mb-4">
                   <MapPin className="w-6 h-6 text-primary" />
                   <h3 className="headline-sm">NORCAT Innovation</h3>
