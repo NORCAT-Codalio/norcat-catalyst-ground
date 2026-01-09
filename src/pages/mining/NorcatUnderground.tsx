@@ -25,7 +25,8 @@ import {
   Video,
   Database,
   HardHat,
-  Battery
+  Battery,
+  Lock
 } from 'lucide-react';
 
 const capabilities = [
@@ -39,7 +40,8 @@ const capabilities = [
   { icon: Shield, title: 'Wearables for Health & Safety / Location' },
   { icon: HardHat, title: 'Underground / Surface Drilling & Bolting Technology Development' },
   { icon: Battery, title: 'Electrical Vehicles and Energy Storage Systems' },
-  { icon: Wifi, title: 'LTE, Co-axial, Leaky Feeder & Wi-Fi Systems' },
+  { icon: Wifi, title: '5G, LTE, Co-axial, Leaky Feeder & Wi-Fi Systems' },
+  { icon: Lock, title: 'Cybersecurity' },
 ];
 
 const stats = [
