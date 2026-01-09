@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, FlaskConical, Handshake, Battery, Cpu, MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import core5Logo from '@/assets/logos/core5.png';
+import innovateonLogo from '@/assets/logos/innovateon.png';
 
 const Core5 = () => {
   const pillars = [
@@ -25,12 +26,11 @@ const Core5 = () => {
   ];
 
   const partners = [
-    { name: 'NORCAT', location: 'Sudbury' },
-    { name: 'Cambrian R&D', location: 'Sudbury' },
-    { name: 'IION', location: 'North Bay' },
-    { name: 'ICAMP', location: 'Canadore College' },
-    { name: 'TEDC', location: 'Timmins' },
-    { name: 'EDSSM', location: 'Sault Ste. Marie' },
+    { name: 'NORCAT', logo: innovateonLogo },
+    { name: 'Cambrian R&D', logo: null },
+    { name: 'IION', logo: null },
+    { name: 'ICAMP', logo: null },
+    { name: 'TEDC', logo: null },
   ];
 
   return (
@@ -173,12 +173,15 @@ const Core5 = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
             {partners.map((partner, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-card border border-border rounded-xl p-4 text-center hover:border-emerald-500/30 transition-colors">
-                  <p className="font-semibold text-sm">{partner.name}</p>
-                  <p className="text-xs text-muted-foreground">{partner.location}</p>
+                <div className="bg-card border border-border rounded-xl p-6 flex items-center justify-center h-24 hover:border-emerald-500/30 transition-colors">
+                  {partner.logo ? (
+                    <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
+                  ) : (
+                    <p className="font-semibold text-sm text-center">{partner.name}</p>
+                  )}
                 </div>
               </ScrollReveal>
             ))}
