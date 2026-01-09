@@ -2,7 +2,8 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Factory, Check, Cpu, Shield, Bot, Network, Blocks, Atom, Users, Rocket, Building2, ExternalLink } from 'lucide-react';
+import { ArrowRight, Factory, Check, Cpu, Shield, Bot, Network, Blocks, Atom, Users, Rocket, Building2, ExternalLink, GraduationCap, Briefcase, FlaskConical, Target } from 'lucide-react';
+import { useState } from 'react';
 
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
@@ -18,26 +19,76 @@ const CriticalIndustrialTech = () => {
     { icon: Atom, name: 'Quantum' },
   ];
 
+  const [expandedProgram, setExpandedProgram] = useState<number | null>(null);
+
   const programs = [
     {
       title: 'Development & Commercialization Program',
       description: 'New SME solutions can commercialize faster through exclusive, no-cost access to the NORCAT Underground Technology Development Site and up to $100k of support from OCI.',
       ideal: 'Accelerated Product Development',
+      icon: FlaskConical,
+      expandedDetails: {
+        funding: 'Up to $100,000',
+        benefits: [
+          'No-cost access to NORCAT Underground Technology Development Site',
+          'Real-world mining environment for testing and validation',
+          'Expert mentorship from industry professionals',
+          'Accelerated path from prototype to market-ready product'
+        ],
+        eligibility: 'Ontario-based SMEs developing new critical technology solutions for the mining sector',
+        link: 'https://www.citinnovation.ca/program/development-and-commercialization-program/'
+      }
     },
     {
       title: 'Technology Access Program',
       description: 'SMEs with an existing critical technology product or service can break into new markets faster through exclusive, no-cost access to our Technology Development Site.',
       ideal: 'Product Validation',
+      icon: Target,
+      expandedDetails: {
+        funding: 'No-cost site access',
+        benefits: [
+          'Exclusive access to Technology Development Site facilities',
+          'Opportunity to validate products in real mining conditions',
+          'Connect with potential industry customers and partners',
+          'Faster market penetration in the mining sector'
+        ],
+        eligibility: 'Ontario SMEs with existing critical technology products seeking market expansion',
+        link: 'https://www.citinnovation.ca/program/technology-access-program/'
+      }
     },
     {
       title: 'Talent Development Internships',
       description: 'Eligible SMEs can invest in the industrial workforce of tomorrow by hiring new talent for Critical Technology internships, with up to $20k in OCI support.',
       ideal: 'New Talent Hiring',
+      icon: GraduationCap,
+      expandedDetails: {
+        funding: 'Up to $20,000 ($10k per 4-month unit)',
+        benefits: [
+          'Financial support for hiring critical technology interns',
+          'Build your pipeline of future talent',
+          'Contribute to workforce development in Ontario',
+          'Flexible 4-month internship units'
+        ],
+        eligibility: 'Ontario SMEs looking to hire interns for critical technology roles',
+        link: 'https://www.citinnovation.ca/program/talent-development-internships/'
+      }
     },
     {
       title: 'Future Ready Program',
       description: 'Eligible SMEs can equip their employees for the challenges of today through upskilling initiatives with up to $10k of OCI support.',
       ideal: 'Talent Development',
+      icon: Briefcase,
+      expandedDetails: {
+        funding: 'Up to $10,000',
+        benefits: [
+          'Support for employee upskilling initiatives',
+          'Training in critical technology areas',
+          'Enhance your team\'s competitive capabilities',
+          'Prepare workforce for emerging industrial challenges'
+        ],
+        eligibility: 'Ontario SMEs seeking to upskill existing employees in critical technologies',
+        link: 'https://www.citinnovation.ca/program/future-ready-program/'
+      }
     },
   ];
 
@@ -197,12 +248,64 @@ const CriticalIndustrialTech = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {programs.map((program, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full">
-                  <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
-                    Ideal for: {program.ideal}
+                <div 
+                  className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-primary/30"
+                  onMouseEnter={() => setExpandedProgram(i)}
+                  onMouseLeave={() => setExpandedProgram(null)}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <program.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-3">
+                        Ideal for: {program.ideal}
+                      </div>
+                      <h3 className="font-semibold text-lg mb-2">{program.title}</h3>
+                      <p className="body-md text-sm text-muted-foreground">{program.description}</p>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-lg mb-3">{program.title}</h3>
-                  <p className="body-md text-sm">{program.description}</p>
+                  
+                  {/* Expanded content */}
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      expandedProgram === i ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="pt-6 border-t border-gray-100 space-y-4">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-semibold text-foreground">Funding:</span>
+                        <span className="text-sm text-primary font-bold">{program.expandedDetails.funding}</span>
+                      </div>
+                      
+                      <div>
+                        <span className="text-sm font-semibold text-foreground block mb-2">Key Benefits:</span>
+                        <ul className="space-y-2">
+                          {program.expandedDetails.benefits.map((benefit, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <span className="text-sm font-semibold text-foreground">Eligibility: </span>
+                        <span className="text-sm text-muted-foreground">{program.expandedDetails.eligibility}</span>
+                      </div>
+                      
+                      <a 
+                        href={program.expandedDetails.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline mt-2"
+                      >
+                        Learn more at OCI
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
