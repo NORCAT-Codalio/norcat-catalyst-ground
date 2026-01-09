@@ -68,7 +68,7 @@ const Core5 = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-sm mb-8"
             >
               <Battery className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm text-emerald-300">OVIN Regional Technology Development Site</span>
+              <span className="text-sm text-emerald-300">OVIN Northern Regional Technology Development Site</span>
             </motion.div>
             
             <motion.div
