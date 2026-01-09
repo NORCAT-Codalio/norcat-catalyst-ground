@@ -4,7 +4,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, FlaskConical, Handshake, Battery, Cpu, MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import core5Logo from '@/assets/logos/core5.png';
-import innovateonLogo from '@/assets/logos/innovateon.png';
+import norcatLogo from '@/assets/logos/norcat.png';
+import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
+import iionLogo from '@/assets/logos/iion.png';
+import icampLogo from '@/assets/logos/icamp.png';
+import tedcLogo from '@/assets/logos/tedc.png';
 
 const Core5 = () => {
   const pillars = [
@@ -26,11 +30,11 @@ const Core5 = () => {
   ];
 
   const partners = [
-    { name: 'NORCAT', logo: innovateonLogo },
-    { name: 'Cambrian R&D', logo: null },
-    { name: 'IION', logo: null },
-    { name: 'ICAMP', logo: null },
-    { name: 'TEDC', logo: null },
+    { name: 'NORCAT', logo: norcatLogo },
+    { name: 'Cambrian R&D', logo: cambrianRdLogo },
+    { name: 'IION', logo: iionLogo },
+    { name: 'ICAMP', logo: icampLogo },
+    { name: 'TEDC', logo: tedcLogo },
   ];
 
   return (
@@ -177,11 +181,7 @@ const Core5 = () => {
             {partners.map((partner, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div className="bg-card border border-border rounded-xl p-6 flex items-center justify-center h-24 hover:border-emerald-500/30 transition-colors">
-                  {partner.logo ? (
-                    <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
-                  ) : (
-                    <p className="font-semibold text-sm text-center">{partner.name}</p>
-                  )}
+                  <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
                 </div>
               </ScrollReveal>
             ))}
