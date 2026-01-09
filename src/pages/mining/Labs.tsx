@@ -112,12 +112,12 @@ const Labs = () => {
                 and scale their innovations.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild className="btn-primary-lg">
-                  <Link to="/apply">
-                    Access Our Facilities
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+              <Button asChild className="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 text-lg rounded-xl">
+                <Link to="/apply">
+                  Access Our Facilities
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
                 <Button asChild variant="outline" className="btn-outline-lg">
                   <Link to="/mining/norcat-underground">
                     Explore Underground Centre
