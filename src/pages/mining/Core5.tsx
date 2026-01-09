@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, FlaskConical, Handshake, Battery, Cpu, MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import core5Logo from '@/assets/logos/core5.png';
+import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
@@ -126,36 +127,52 @@ const Core5 = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[100px]" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <ScrollReveal>
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                <Cpu className="w-4 h-4" />
-                EV Innovation Hub
-              </span>
-              <h2 className="headline-lg mb-6">Powering Northern Ontario's EV Future</h2>
-              <p className="body-lg text-muted-foreground">
-                Core5 is one of six regional technology development sites within the Ontario Vehicle 
-                Innovation Network (OVIN). We're building a connected ecosystem across Northern Ontario 
-                to support the entire EV value chain.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {pillars.map((pillar, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group relative h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative bg-card border border-border rounded-2xl p-8 text-center h-full transition-all duration-300 group-hover:border-emerald-500/30 group-hover:-translate-y-1">
-                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <pillar.icon className="w-8 h-8 text-emerald-500" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">{pillar.title}</h3>
-                    <p className="text-muted-foreground">{pillar.description}</p>
-                  </div>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left side - Text and stacked boxes */}
+            <div>
+              <ScrollReveal>
+                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                  <Cpu className="w-4 h-4" />
+                  EV Innovation Hub
+                </span>
+                <h2 className="headline-lg mb-6">Powering Northern Ontario's EV Future</h2>
+                <p className="body-lg text-muted-foreground mb-10">
+                  Core5 is one of six regional technology development sites within the Ontario Vehicle 
+                  Innovation Network (OVIN). We're building a connected ecosystem across Northern Ontario 
+                  to support the entire EV value chain.
+                </p>
               </ScrollReveal>
-            ))}
+
+              <div className="flex flex-col gap-4">
+                {pillars.map((pillar, i) => (
+                  <ScrollReveal key={i} delay={i * 0.1}>
+                    <div className="group relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative bg-card border border-border rounded-2xl p-6 flex items-start gap-5 transition-all duration-300 group-hover:border-emerald-500/30 group-hover:-translate-y-1">
+                        <div className="w-14 h-14 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <pillar.icon className="w-7 h-7 text-emerald-500" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold mb-1">{pillar.title}</h3>
+                          <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+
+            {/* Right side - Map graphic */}
+            <ScrollReveal delay={0.2}>
+              <div className="flex items-center justify-center">
+                <img 
+                  src={core5Map} 
+                  alt="Core5 Northern Ontario Network" 
+                  className="w-full max-w-lg object-contain"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
