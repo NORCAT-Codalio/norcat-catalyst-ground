@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Factory, Check, Cpu, Shield, Bot, Network, Blocks, Atom, Users, Rocket, Building2, ExternalLink } from 'lucide-react';
 
-import citOciOntarioLogos from '@/assets/logos/cit-oci-ontario.png';
+import citLogo from '@/assets/logos/cit-logo.png';
+import ociLogo from '@/assets/logos/oci-logo.png';
+import ontarioLogo from '@/assets/logos/ontario-logo.png';
 
 const CriticalIndustrialTech = () => {
   const technologies = [
@@ -107,11 +109,21 @@ const CriticalIndustrialTech = () => {
             <ScrollReveal direction="right">
               <div className="space-y-8">
                 {/* Program Logos */}
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 flex items-center justify-center">
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 flex items-center justify-center gap-8">
                   <img 
-                    src={citOciOntarioLogos} 
-                    alt="Critical Industrial Technologies - Ontario Centre of Innovation - Government of Ontario" 
-                    className="max-h-64 object-contain"
+                    src={citLogo} 
+                    alt="Critical Industrial Technologies" 
+                    className="h-16 object-contain"
+                  />
+                  <img 
+                    src={ociLogo} 
+                    alt="Ontario Centre of Innovation" 
+                    className="h-16 object-contain"
+                  />
+                  <img 
+                    src={ontarioLogo} 
+                    alt="Government of Ontario" 
+                    className="h-12 object-contain"
                   />
                 </div>
 
