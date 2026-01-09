@@ -20,40 +20,26 @@ import {
   ChevronDown,
   Award,
   Target,
-  Lightbulb
+  Lightbulb,
+  Wind,
+  Video,
+  Database,
+  HardHat,
+  Battery
 } from 'lucide-react';
 
 const capabilities = [
-  {
-    icon: Bot,
-    title: 'Autonomous Vehicles',
-    description: 'Test self-driving mining vehicles in GPS-denied environments with real obstacles and complex navigation scenarios.',
-  },
-  {
-    icon: Radio,
-    title: '5G Underground',
-    description: 'Validate next-generation communication systems including mesh networks, 5G, and positioning technologies.',
-  },
-  {
-    icon: Camera,
-    title: 'Film & Media',
-    description: 'Produce stunning marketing videos and photography in an authentic underground mining environment.',
-  },
-  {
-    icon: Wifi,
-    title: 'IoT & Sensors',
-    description: 'Deploy and test connected devices, environmental sensors, and monitoring systems in harsh conditions.',
-  },
-  {
-    icon: Shield,
-    title: 'Safety Systems',
-    description: 'Validate emergency response equipment, proximity detection, and collision avoidance technologies.',
-  },
-  {
-    icon: Zap,
-    title: 'Electrification',
-    description: 'Test battery systems, charging infrastructure, and electric vehicle technology underground.',
-  },
+  { icon: Bot, title: 'Tele-remote / Autonomous Vehicle Operation' },
+  { icon: Pickaxe, title: 'Resin, Screening, Bolting Development' },
+  { icon: Wind, title: 'Ventilation-on-Demand / Monitoring Systems' },
+  { icon: Video, title: '"How to" Videos and Training Development' },
+  { icon: Database, title: 'Telemetry, Sensors, Analytics, AI, Big Data & Software Systems' },
+  { icon: Camera, title: 'Drone and Survey Testing & Evaluation' },
+  { icon: Zap, title: 'Blasting Materials and Systems' },
+  { icon: Shield, title: 'Wearables for Health & Safety / Location' },
+  { icon: HardHat, title: 'Underground / Surface Drilling & Bolting Technology Development' },
+  { icon: Battery, title: 'Electrical Vehicles and Energy Storage Systems' },
+  { icon: Wifi, title: 'LTE, Co-axial, Leaky Feeder & Wi-Fi Systems' },
 ];
 
 const stats = [
@@ -239,25 +225,22 @@ const NorcatUnderground = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {capabilities.map((cap, i) => (
                 <motion.div
                   key={i}
-                  className="group rounded-2xl bg-gray-800/50 border border-white/5 p-8 hover:bg-gray-800 hover:border-teal-500/30 transition-all duration-300"
+                  className="group rounded-xl bg-gray-800/50 border border-white/5 p-6 hover:bg-gray-800 hover:border-teal-500/30 transition-all duration-300 text-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.03 }}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-teal-500/20 flex items-center justify-center mb-6 group-hover:bg-teal-500/30 transition-colors">
-                    <cap.icon className="w-7 h-7 text-teal-400" />
+                  <div className="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-500/30 transition-colors">
+                    <cap.icon className="w-6 h-6 text-teal-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-sm font-semibold text-white leading-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-gray-400">
-                    {cap.description}
-                  </p>
                 </motion.div>
               ))}
             </div>
