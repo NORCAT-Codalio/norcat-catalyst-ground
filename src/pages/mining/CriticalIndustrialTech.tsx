@@ -313,7 +313,78 @@ const CriticalIndustrialTech = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Minimum Eligibility */}
+      <section className="section-padding bg-secondary/50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-10">
+                <h2 className="headline-lg mb-4">Minimum Eligibility Criteria</h2>
+                <p className="body-lg text-muted-foreground">
+                  The Critical Industrial Technology programs are a good fit for companies that meet these minimum criteria:
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <ScrollReveal delay={0.1}>
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-primary font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Small-and-Medium Enterprise</h3>
+                    <p className="text-sm text-muted-foreground">Less than 500 employees</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.15}>
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-primary font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">For-Profit Organization</h3>
+                    <p className="text-sm text-muted-foreground">Registered as a for-profit entity</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.2}>
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-primary font-bold">3</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Ontario Operations</h3>
+                    <p className="text-sm text-muted-foreground">Registered operations in Ontario</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.25}>
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-primary font-bold">4</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Critical Technology Focus</h3>
+                    <p className="text-sm text-muted-foreground">Adoption of Critical Technologies as part of your roadmap</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            <ScrollReveal delay={0.3}>
+              <p className="text-sm text-muted-foreground text-center mt-8">
+                Please note that each program has their own set of eligibility criteria. For details on each program, please view the full set of eligibility criteria in the program guidelines.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-gray-900">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <ScrollReveal>
