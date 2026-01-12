@@ -40,9 +40,6 @@ const programsMenu = {
     title: 'Partner Programs',
     icon: Handshake,
     items: [
-      { name: 'Innovation Quarters', href: '/partners/innovation-quarters' },
-      { name: 'MICA Network', href: '/partners/mica-network' },
-      { name: 'MineConnect', href: '/partners/mineconnect' },
       { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
     ],
   },
