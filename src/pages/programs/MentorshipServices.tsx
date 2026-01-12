@@ -341,28 +341,31 @@ const MentorshipServices = () => {
       {/* Impactful Statement */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <p className="headline-md text-center leading-relaxed mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Statement */}
+            <ScrollReveal direction="left">
+              <p className="headline-md leading-relaxed">
                 Our mentors share the drive of our founders. They've challenged convention, 
                 built real businesses, and expanded what's possible through experience.
               </p>
             </ScrollReveal>
 
-            {/* Client Quote Placeholder */}
-            <ScrollReveal delay={0.2}>
-              <div className="bg-secondary/50 rounded-3xl p-8 md:p-12">
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                    <span className="text-muted-foreground text-2xl">?</span>
-                  </div>
-                  <div className="text-center md:text-left">
-                    <p className="body-lg italic text-muted-foreground mb-4">
-                      "Client testimonial quote placeholder — Add a powerful quote from a founder 
-                      about their mentorship experience here."
-                    </p>
-                    <p className="font-semibold">Client Name</p>
-                    <p className="text-sm text-muted-foreground">Company Name, Role</p>
+            {/* Right - Client Quote Placeholder */}
+            <ScrollReveal direction="right">
+              <div className="bg-secondary/50 rounded-3xl p-8">
+                <div className="flex flex-col gap-6">
+                  <p className="body-lg italic text-muted-foreground">
+                    "Client testimonial quote placeholder — Add a powerful quote from a founder 
+                    about their mentorship experience here."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
+                      <span className="text-muted-foreground text-lg">?</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">Client Name</p>
+                      <p className="text-sm text-muted-foreground">Company Name, Role</p>
+                    </div>
                   </div>
                 </div>
               </div>
