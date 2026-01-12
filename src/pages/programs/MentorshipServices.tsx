@@ -338,8 +338,41 @@ const MentorshipServices = () => {
         </div>
       </section>
 
-      {/* What Makes It Different */}
+      {/* Impactful Statement */}
       <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <p className="headline-md text-center leading-relaxed mb-16">
+                Our mentors share the drive of our founders. They've challenged convention, 
+                built real businesses, and expanded what's possible through experience.
+              </p>
+            </ScrollReveal>
+
+            {/* Client Quote Placeholder */}
+            <ScrollReveal delay={0.2}>
+              <div className="bg-secondary/50 rounded-3xl p-8 md:p-12">
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
+                    <span className="text-muted-foreground text-2xl">?</span>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <p className="body-lg italic text-muted-foreground mb-4">
+                      "Client testimonial quote placeholder — Add a powerful quote from a founder 
+                      about their mentorship experience here."
+                    </p>
+                    <p className="font-semibold">Client Name</p>
+                    <p className="text-sm text-muted-foreground">Company Name, Role</p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes It Different */}
+      <section className="section-padding bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
