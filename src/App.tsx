@@ -33,9 +33,6 @@ import CriticalIndustrialTech from "./pages/mining/CriticalIndustrialTech";
 import Labs from "./pages/mining/Labs";
 
 // Partner pages
-import InnovationQuarters from "./pages/partners/InnovationQuarters";
-import MicaNetwork from "./pages/partners/MicaNetwork";
-import MineConnect from "./pages/partners/MineConnect";
 import RogersCybersecure from "./pages/partners/RogersCybersecure";
 
 // Ecosystem pages
@@ -95,9 +92,6 @@ const App = () => (
             <Route path="/mining/labs" element={<Labs />} />
             
             {/* Partner Routes */}
-            <Route path="/partners/innovation-quarters" element={<InnovationQuarters />} />
-            <Route path="/partners/mica-network" element={<MicaNetwork />} />
-            <Route path="/partners/mineconnect" element={<MineConnect />} />
             <Route path="/partners/rogers-cybersecure" element={<RogersCybersecure />} />
             
             {/* Ecosystem Routes */}

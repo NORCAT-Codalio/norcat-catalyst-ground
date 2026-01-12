@@ -261,34 +261,6 @@ const ecosystemOrgs: EcosystemOrg[] = [
 
   // Partner Programs
   {
-    name: 'Innovation Quarters (IQ)',
-    category: 'partners',
-    description: 'Downtown business incubator',
-    longDescription: 'Premium coworking and incubator space in downtown Sudbury for growing startups.',
-    internalLink: '/partners/innovation-quarters',
-    icon: Building2,
-    highlight: 'Coworking',
-    tags: ['Incubator', 'Workspace']
-  },
-  {
-    name: 'MICA Network',
-    category: 'partners',
-    description: 'Mining Innovation Commercialization Accelerator',
-    longDescription: 'Bridges mining companies with innovative technology solutions through pilot opportunities.',
-    internalLink: '/partners/mica-network',
-    icon: Rocket,
-    tags: ['Mining', 'Commercialization']
-  },
-  {
-    name: 'MineConnect',
-    category: 'partners',
-    description: 'Mining supply chain association',
-    longDescription: 'Northern Ontario\'s mining supply chain association connecting suppliers with global opportunities.',
-    internalLink: '/partners/mineconnect',
-    icon: Globe,
-    tags: ['Supply Chain', 'Global Markets']
-  },
-  {
     name: 'Core5',
     category: 'partners',
     description: 'OVIN Regional Technology Site',
