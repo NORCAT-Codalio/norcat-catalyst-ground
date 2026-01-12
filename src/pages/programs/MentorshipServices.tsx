@@ -35,7 +35,6 @@ import sheriTomchickImg from '@/assets/mentors/sheri-tomchick.jpg';
 import chadPallopsonImg from '@/assets/mentors/chad-pallopson.jpg';
 import michaelDolinarImg from '@/assets/mentors/michael-dolinar.jpg';
 import davidPasiekaImg from '@/assets/mentors/david-pasieka.jpg';
-import mentoringGroupImg from '@/assets/mentoring-group.png';
 
 const mentors = [
   // EIR - First position
@@ -364,46 +363,6 @@ const MentorshipServices = () => {
                 </div>
               </ScrollReveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mentoring Principles with Image */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Content */}
-            <ScrollReveal direction="left">
-              <div>
-                <h2 className="headline-lg mb-4">Built for Founders</h2>
-                <p className="body-lg text-muted-foreground mb-8">
-                  Every aspect of our mentoring program is designed with your success in mind.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {principles.map((item, i) => (
-                    <div key={i} className="card-modern p-5">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <item.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="font-semibold text-base mb-2">{item.title}</h3>
-                      <p className="body-md text-sm text-muted-foreground">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Right side - Image */}
-            <ScrollReveal direction="right">
-              <div className="flex items-center justify-center h-full">
-                <img 
-                  src={mentoringGroupImg} 
-                  alt="Mentors and founders collaborating" 
-                  className="max-w-full h-auto object-contain"
-                />
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>
