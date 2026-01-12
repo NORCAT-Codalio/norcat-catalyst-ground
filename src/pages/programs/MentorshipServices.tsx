@@ -396,7 +396,7 @@ const MentorshipServices = () => {
 
             {/* Right side - Image */}
             <ScrollReveal direction="right">
-              <div className="flex justify-center lg:justify-end">
+              <div className="flex items-center justify-center h-full">
                 <img 
                   src={mentoringGroupImg} 
                   alt="Mentors and founders collaborating" 
