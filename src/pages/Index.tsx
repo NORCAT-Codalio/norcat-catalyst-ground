@@ -387,8 +387,8 @@ export default function Index() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">How We Can Help You <span className="text-gradient">Scale</span></h2>
-                <p className="text-muted-foreground">NORCAT offers founders a variety of programs and services to help start, grow, and scale your venture.</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2">From Idea to <span className="text-gradient">"Oh Sh*t, This is Working"</span></h2>
+                <p className="text-muted-foreground">We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
               </div>
               <Link to="/events" className="inline-flex items-center gap-2 text-primary font-semibold group">
                 View all
@@ -463,8 +463,8 @@ export default function Index() {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Our partners.</h2>
-              <p className="text-muted-foreground">An ecosystem built on value-driven partnerships.</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Friends Who Open Doors</h2>
+              <p className="text-muted-foreground">These are the operators, builders, and organizations who show up, make intros, and help founders win.</p>
             </div>
           </ScrollReveal>
 
