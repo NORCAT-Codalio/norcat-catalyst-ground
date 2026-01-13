@@ -387,7 +387,7 @@ export default function Index() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">From Idea to <span className="text-gradient">"Oh Sh*t, This is Working"</span></h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2">Support that adapts as your <span className="text-gradient">company grows.</span></h2>
                 <p className="text-muted-foreground">We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
               </div>
               <Link to="/events" className="inline-flex items-center gap-2 text-primary font-semibold group">
