@@ -284,7 +284,7 @@ export default function Index() {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16">
-              The North's Hub for Global Innovation
+              Global Tech, Northern Grit
             </h2>
           </ScrollReveal>
 
@@ -505,7 +505,7 @@ export default function Index() {
                 <h2 className="text-3xl md:text-4xl font-bold">
                   Real stories. <span className="text-gradient">Unique insights.</span>
                 </h2>
-                <p className="text-muted-foreground mt-2">The ideas, advice and stories shaping the startup world.</p>
+                <p className="text-muted-foreground mt-2">No corporate fluff—just the raw, unfiltered truth about what it takes to build a company from the people who've done it.</p>
               </div>
               <Link to="/insights/news" className="inline-flex items-center gap-2 text-primary font-semibold group">
                 See all stories
