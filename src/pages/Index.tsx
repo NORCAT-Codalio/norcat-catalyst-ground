@@ -70,7 +70,7 @@ const sectors = [
 const stats = [
   { value: '$75M+', label: 'Capital Raised by Startups' },
   { value: '15+', label: 'Countries with Active Clients' },
-  { value: '50+', label: 'Mentors & Advisors in Your Corner' },
+  { value: '18', label: 'Mentors & Advisors in Your Corner' },
   { value: '2,000+', label: 'Jobs Created' },
 ];
 
@@ -254,7 +254,7 @@ export default function Index() {
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16">
-              A proven engine for startup & professional growth.
+              The North's Hub for Global Innovation
             </h2>
           </ScrollReveal>
 
@@ -303,7 +303,7 @@ export default function Index() {
                   </li>
                 </ul>
                 <Link to="/mining/norcat-underground" className="inline-flex items-center gap-2 text-primary font-semibold group">
-                  Explore NORCAT Underground
+                  Explore the NORCAT Underground Centre
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -445,11 +445,11 @@ export default function Index() {
                 </blockquote>
                 <div className="flex items-center justify-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">JF</span>
+                    <span className="text-2xl font-bold text-primary">LB</span>
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold">Jeff Fuller</p>
-                    <p className="text-gray-400">Founder & CEO, Portfolio Company</p>
+                    <p className="font-semibold">Luke Begley</p>
+                    <p className="text-gray-400">Founder & CEO, CircuitIQ</p>
                   </div>
                 </div>
               </div>
@@ -601,11 +601,9 @@ export default function Index() {
         <div className="container mx-auto px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">The Northern Mindset.</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">The Sudbury Model.</h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-10">
-                Unlike unicorns chasing rapid growth at any cost, we help founders build resilient, adaptable companies
-                designed to last. In Northern Ontario, we understand that real success comes from navigating challenges and
-                playing the long game.
+                The Sudbury Model is rooted in a century of industrial excellence, where generations of mining, precision manufacturing, and hands-on problem-solving have forged a unique culture of grit and technical mastery. In Northern Ontario, we don't just ideate—we build. For startup founders, this means access to an ecosystem that values strategic patience, relentless execution, and the sophisticated engineering required to solve the world's toughest real-world challenges.
               </p>
               <Link to="/about" className="inline-flex items-center gap-2 text-primary font-semibold group">
                 Read More About Our Approach
