@@ -18,8 +18,86 @@ import {
   Calendar,
   MessageCircle,
   Compass,
-  Zap
+  Zap,
+  Clock,
+  MapPin,
+  ExternalLink
 } from 'lucide-react';
+
+const allServices = [
+  {
+    type: 'Program',
+    title: 'Venture Growth Services',
+    applyBy: 'Rolling Intake',
+    duration: 'Ongoing',
+    location: 'Greater Sudbury (Virtual Available)',
+    link: '/programs/venture-growth-services',
+  },
+  {
+    type: 'Program',
+    title: 'Mentorship Services',
+    applyBy: 'Rolling Intake',
+    duration: '12+ Month Journey',
+    location: 'Northern Ontario',
+    link: '/programs/mentorship-services',
+  },
+  {
+    type: 'Program',
+    title: 'Capital Navigation',
+    applyBy: 'Rolling Intake',
+    duration: 'Ongoing',
+    location: 'Greater Sudbury',
+    link: '/programs/capital-navigation',
+  },
+  {
+    type: 'Funding',
+    title: 'Sudbury Catalyst Fund',
+    applyBy: 'Always Open',
+    duration: '$5M Fund',
+    location: 'Greater Sudbury',
+    link: '/funding/sudbury-catalyst-fund',
+  },
+  {
+    type: 'Funding',
+    title: 'Innovation Acceleration Program',
+    applyBy: 'Rolling Intake',
+    duration: 'Up to $50K',
+    location: 'Greater Sudbury',
+    link: '/funding/innovation-acceleration-program',
+  },
+  {
+    type: 'Funding',
+    title: 'Regional AI Program',
+    applyBy: 'Program Based',
+    duration: 'Variable',
+    location: 'Northern Ontario',
+    link: '/funding/regional-ai-program',
+  },
+  {
+    type: 'Facility',
+    title: 'NORCAT Underground Centre',
+    applyBy: 'Contact Us',
+    duration: 'On-Demand',
+    location: 'Onaping, ON',
+    link: '/mining/norcat-underground',
+  },
+  {
+    type: 'Facility',
+    title: 'Labs & Facilities',
+    applyBy: 'Contact Us',
+    duration: 'Flexible Access',
+    location: 'Greater Sudbury',
+    link: '/mining/labs',
+  },
+  {
+    type: 'Program',
+    title: 'Critical Industrial Tech',
+    applyBy: 'Rolling Intake',
+    duration: 'Ongoing',
+    location: 'Greater Sudbury',
+    link: '/mining/critical-industrial-tech',
+  },
+];
 
 const coreServices = [
   {
@@ -345,28 +423,49 @@ const VentureGrowthServices = () => {
         </div>
       </section>
 
-      {/* Related Services */}
+      {/* Our Services */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="headline-lg mb-6">Explore Related Services</h2>
+              <h2 className="headline-lg mb-6">Explore Our Services</h2>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { title: 'Mentorship Services', desc: 'Connect with 18+ industry experts', link: '/programs/mentorship-services' },
-              { title: 'Capital Navigation', desc: 'Fundraising support and investor access', link: '/programs/capital-navigation' },
-              { title: 'Labs & Facilities', desc: 'Prototyping, testing, and workspaces.', link: '/mining/labs' }
-            ].map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <Link to={item.link} className="card-modern p-6 h-full flex flex-col group hover:border-primary/50 transition-colors">
-                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="body-sm text-muted-foreground mb-4 flex-grow">{item.desc}</p>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1">
-                    Learn more <ArrowRight className="w-4 h-4" />
-                  </span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allServices.map((service, i) => (
+              <ScrollReveal key={service.title} delay={i * 0.05}>
+                <Link to={service.link} className="group block h-full">
+                  <div className="bg-background rounded-2xl p-6 h-full border border-border hover:border-primary/30 transition-all hover:shadow-lg">
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
+                      service.type === 'Program' 
+                        ? 'bg-primary/10 text-primary' 
+                        : service.type === 'Funding'
+                        ? 'bg-amber-500/10 text-amber-600'
+                        : 'bg-blue-500/10 text-blue-600'
+                    }`}>
+                      {service.type}
+                    </span>
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+                    <div className="space-y-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        {service.applyBy}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        {service.duration}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4" />
+                        {service.location}
+                      </div>
+                    </div>
+                    <div className="mt-6 flex items-center gap-2 text-primary font-medium text-sm">
+                      See Details
+                      <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </div>
                 </Link>
               </ScrollReveal>
             ))}
