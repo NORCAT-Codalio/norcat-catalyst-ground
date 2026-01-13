@@ -253,7 +253,7 @@ export default function Index() {
       <section className="py-16 bg-background border-y border-border">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Proudly Building in the North</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Clients are Pretty Cool</h2>
           </ScrollReveal>
 
           <div className="relative overflow-hidden">
