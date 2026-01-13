@@ -249,6 +249,36 @@ export default function Index() {
         </motion.div>
       </section>
 
+      {/* Portfolio Companies - DMZ Style */}
+      <section className="py-16 bg-background border-y border-border">
+        <div className="container mx-auto px-6">
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Proudly Building in the North</h2>
+          </ScrollReveal>
+
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 transition-colors group px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Two Column Value Prop - DMZ Style */}
       <section className="py-24 bg-background border-b border-border">
         <div className="container mx-auto px-6">
@@ -347,36 +377,6 @@ export default function Index() {
                 </div>
               </div>
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Companies - DMZ Style */}
-      <section className="py-16 bg-background border-y border-border">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Proudly Built in the North</h2>
-          </ScrollReveal>
-
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-8"
-              animate={{ x: [0, -1200] }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            >
-              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
-                <div
-                  key={`${company.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 transition-colors group px-4"
-                >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="max-h-10 max-w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              ))}
-            </motion.div>
           </div>
         </div>
       </section>
