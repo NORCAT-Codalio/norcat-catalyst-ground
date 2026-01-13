@@ -387,8 +387,8 @@ export default function Index() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">Coming up at NORCAT.</h2>
-                <p className="text-muted-foreground">Programs, events, and opportunities worth showing up for.</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-2">How We Can Help You <span className="text-gradient">Scale</span></h2>
+                <p className="text-muted-foreground">NORCAT offers founders a variety of programs and services to help start, grow, and scale your venture.</p>
               </div>
               <Link to="/events" className="inline-flex items-center gap-2 text-primary font-semibold group">
                 View all
