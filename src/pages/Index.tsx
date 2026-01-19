@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Cpu, Leaf, C
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
+import droneImage from '@/assets/drone-image.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -653,6 +654,30 @@ export default function Index() {
               </Link>
             </motion.div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Regional Innovation Centre Section */}
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ backgroundColor: '#ebebeb' }}>
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl">
+              <p 
+                className="text-lg md:text-xl lg:text-2xl leading-relaxed"
+                style={{ fontFamily: 'Archivo, sans-serif', color: '#000000' }}
+              >
+                NORCAT Innovation is Greater Sudbury's Regional Innovation Centre offering founders the resources they need to{' '}
+                <span className="text-primary font-semibold">start, grow, and scale</span> their venture
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <img 
+                src={droneImage} 
+                alt="Innovation drone technology" 
+                className="w-full max-w-md md:max-w-lg object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
