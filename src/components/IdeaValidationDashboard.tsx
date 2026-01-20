@@ -32,6 +32,18 @@ const mockData = {
   companyName: "MineGuard AI",
   elevatorPitch: "MineGuard AI uses computer vision and predictive analytics to detect equipment failures in underground mining operations 48 hours before they occur, reducing unplanned downtime by 40% and preventing costly safety incidents.",
   
+  eligibility: {
+    isEligible: true,
+    criteria: [
+      { name: "Tech-enabled startup with IP potential", met: true },
+      { name: "Canadian-incorporated or willing to incorporate", met: true },
+      { name: "Early-stage (pre-seed to Series A)", met: true },
+      { name: "Committed founder(s) working full-time", met: true },
+      { name: "Willingness to engage with mentorship", met: true },
+    ],
+    summary: "Your venture meets all eligibility requirements for NORCAT Innovation services.",
+  },
+  
   scores: {
     opportunity: 4.2,
     problem: 4.5,
@@ -307,12 +319,71 @@ export function IdeaValidationDashboard() {
             </div>
             
             {/* Elevator Pitch */}
-            <div className="p-6">
+            <div className="p-6 border-b border-border">
               <div className="flex items-start gap-3 mb-4">
                 <Rocket className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-sm text-foreground mb-2">Elevator Pitch</h4>
                   <p className="text-muted-foreground leading-relaxed">{mockData.elevatorPitch}</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Eligibility Check */}
+            <div className="p-6">
+              <div className="flex items-start gap-3">
+                <div className={cn(
+                  "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0",
+                  mockData.eligibility.isEligible 
+                    ? "bg-emerald-500/20" 
+                    : "bg-destructive/20"
+                )}>
+                  {mockData.eligibility.isEligible ? (
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 text-destructive" />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-sm text-foreground mb-2">
+                    NORCAT Innovation Eligibility
+                  </h4>
+                  <div className={cn(
+                    "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium mb-3",
+                    mockData.eligibility.isEligible 
+                      ? "bg-emerald-500/10 text-emerald-600" 
+                      : "bg-destructive/10 text-destructive"
+                  )}>
+                    {mockData.eligibility.isEligible ? (
+                      <>
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        Eligible
+                      </>
+                    ) : (
+                      <>
+                        <AlertCircle className="w-3.5 h-3.5" />
+                        Not Eligible
+                      </>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">{mockData.eligibility.summary}</p>
+                  
+                  <div className="space-y-2">
+                    {mockData.eligibility.criteria.map((criterion, index) => (
+                      <div key={index} className="flex items-center gap-2 text-sm">
+                        {criterion.met ? (
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                        ) : (
+                          <AlertCircle className="w-4 h-4 text-destructive flex-shrink-0" />
+                        )}
+                        <span className={cn(
+                          criterion.met ? "text-muted-foreground" : "text-destructive"
+                        )}>
+                          {criterion.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
