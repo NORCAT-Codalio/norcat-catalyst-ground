@@ -133,42 +133,12 @@ export default function Index() {
   return (
     <Layout>
       {/* NEW Hero Section - Testing */}
-      <section className="relative h-screen flex items-end overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={heroMiningUnderground} 
-            alt="NORCAT Innovation Underground" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
-        </div>
-
-        {/* Typography Overlay */}
-        <div className="relative z-10 w-full pb-12 md:pb-20 px-6 md:px-12 lg:px-20">
-          <motion.h1
-            className="text-[12vw] md:text-[10vw] lg:text-[9vw] font-black text-white leading-[0.85] tracking-tight uppercase"
-            style={{ fontFamily: 'Archivo, sans-serif' }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            NORCAT
-          </motion.h1>
-          <motion.h1
-            className="text-[12vw] md:text-[10vw] lg:text-[9vw] font-black leading-[0.85] tracking-tight uppercase"
-            style={{ 
-              fontFamily: 'Archivo, sans-serif',
-              WebkitTextStroke: '2px white',
-              WebkitTextFillColor: 'transparent',
-            }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            INNOVATION
-          </motion.h1>
-        </div>
+      <section className="relative h-screen overflow-hidden">
+        <img 
+          src={heroMiningUnderground} 
+          alt="NORCAT Innovation Underground" 
+          className="w-full h-full object-cover"
+        />
       </section>
 
       {/* Hero Section - KEEP EXISTING */}
