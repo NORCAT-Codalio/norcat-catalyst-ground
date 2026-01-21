@@ -63,6 +63,10 @@ export function Navigation() {
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
+  
+  // Check if we're on home page and should use light text
+  const isHomePage = location.pathname === '/';
+  const useLightText = isHomePage && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -206,10 +210,16 @@ export function Navigation() {
               <span className="text-primary-foreground font-display font-bold text-xl">N</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-lg leading-tight text-foreground">
+              <span className={cn(
+                "font-display font-bold text-lg leading-tight",
+                useLightText ? "text-white" : "text-foreground"
+              )}>
                 NORCAT
               </span>
-              <span className="text-xs text-muted-foreground font-medium tracking-wider uppercase">
+              <span className={cn(
+                "text-xs font-medium tracking-wider uppercase",
+                useLightText ? "text-white/70" : "text-muted-foreground"
+              )}>
                 Innovation
               </span>
             </div>
@@ -224,7 +234,9 @@ export function Navigation() {
                 'px-4 py-2 text-sm font-medium transition-colors rounded-md',
                 location.pathname === '/about'
                   ? 'text-primary bg-secondary'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  : useLightText 
+                    ? 'text-white hover:text-white/80 hover:bg-white/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               )}
             >
               About
@@ -241,7 +253,9 @@ export function Navigation() {
                   'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                   activeDropdown === 'programs'
                     ? 'text-primary bg-secondary'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    : useLightText 
+                      ? 'text-white hover:text-white/80 hover:bg-white/10'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
               >
                 Programs
@@ -334,7 +348,9 @@ export function Navigation() {
                   'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                   activeDropdown === 'ecosystem'
                     ? 'text-primary bg-secondary'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    : useLightText 
+                      ? 'text-white hover:text-white/80 hover:bg-white/10'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
               >
                 Ecosystem
@@ -392,7 +408,9 @@ export function Navigation() {
                   'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                   activeDropdown === 'insights'
                     ? 'text-primary bg-secondary'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    : useLightText 
+                      ? 'text-white hover:text-white/80 hover:bg-white/10'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
               >
                 Insights
@@ -446,7 +464,9 @@ export function Navigation() {
                 'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                 location.pathname === '/events'
                   ? 'text-primary bg-secondary'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  : useLightText 
+                    ? 'text-white hover:text-white/80 hover:bg-white/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               )}
             >
               Events
@@ -459,10 +479,12 @@ export function Navigation() {
                 'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
                 location.pathname.startsWith('/portal')
                   ? 'text-primary bg-secondary'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  : useLightText 
+                    ? 'text-white hover:text-white/80 hover:bg-white/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               )}
             >
-              <LogIn className="w-4 h-4 mr-1" />
+              <LogIn className={cn("w-4 h-4 mr-1", useLightText && "text-white")} />
               Client Portal
             </Link>
           </div>
