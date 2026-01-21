@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Cpu, Leaf, C
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
-import heroMiningUnderground from '@/assets/hero-mining-underground.png';
+import heroMiningUnderground from '@/assets/hero-mining-underground.jpg';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
