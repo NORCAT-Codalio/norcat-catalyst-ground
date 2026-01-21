@@ -133,11 +133,11 @@ export default function Index() {
   return (
     <Layout>
       {/* NEW Hero Section - Testing */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative w-full overflow-hidden">
         <img 
           src={heroMiningUnderground} 
           alt="NORCAT Innovation Underground" 
-          className="w-full h-full object-cover"
+          className="w-full h-auto object-contain object-top"
         />
       </section>
 
