@@ -132,14 +132,7 @@ export default function Index() {
 
   return (
     <Layout>
-      {/* NEW Hero Section - Testing */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-        <img 
-          src={heroMiningUnderground} 
-          alt="NORCAT Innovation Underground" 
-          className="max-w-full max-h-full object-contain"
-        />
-      </section>
+      {/* Hero Section */}
 
       {/* Hero Section - KEEP EXISTING */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
