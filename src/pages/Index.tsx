@@ -4,6 +4,7 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
 import heroMiningUnderground from '@/assets/hero-mining-underground.jpg';
+import heroHeader from '@/assets/hero-header.jpg';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -132,7 +133,14 @@ export default function Index() {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* New Hero Header */}
+      <section className="relative w-full">
+        <img 
+          src={heroHeader} 
+          alt="NORCAT Innovation" 
+          className="w-full h-auto"
+        />
+      </section>
 
       {/* Hero Section - KEEP EXISTING */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
