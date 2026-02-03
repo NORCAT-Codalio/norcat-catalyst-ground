@@ -54,6 +54,15 @@ import Reports from "./pages/portal/Reports";
 import Company from "./pages/portal/Company";
 import Notifications from "./pages/portal/Notifications";
 
+// Mentor Portal pages
+import MentorDashboard from "./pages/mentor/Dashboard";
+import MentorVentures from "./pages/mentor/Ventures";
+import MentorMeetings from "./pages/mentor/Meetings";
+import MentorResources from "./pages/mentor/Resources";
+import MentorEthics from "./pages/mentor/Ethics";
+import MentorEscalation from "./pages/mentor/Escalation";
+import MentorNotifications from "./pages/mentor/Notifications";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -112,6 +121,16 @@ const App = () => (
             <Route path="/portal/reports" element={<Reports />} />
             <Route path="/portal/company" element={<Company />} />
             <Route path="/portal/notifications" element={<Notifications />} />
+            
+            {/* Mentor Portal Routes */}
+            <Route path="/mentor" element={<MentorDashboard />} />
+            <Route path="/mentor/ventures" element={<MentorVentures />} />
+            <Route path="/mentor/meetings" element={<MentorMeetings />} />
+            <Route path="/mentor/resources" element={<MentorResources />} />
+            <Route path="/mentor/ethics" element={<MentorEthics />} />
+            <Route path="/mentor/escalation" element={<MentorEscalation />} />
+            <Route path="/mentor/notifications" element={<MentorNotifications />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>

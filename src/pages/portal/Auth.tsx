@@ -28,7 +28,7 @@ export default function Auth() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { signIn, signUp, user, isApproved, isLoading } = useAuth();
+  const { signIn, signUp, user, isApproved, isLoading, isMentor } = useAuth();
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -39,11 +39,16 @@ export default function Auth() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  // Redirect based on role
   useEffect(() => {
     if (!isLoading && user && isApproved) {
-      navigate('/portal');
+      if (isMentor) {
+        navigate('/mentor');
+      } else {
+        navigate('/portal');
+      }
     }
-  }, [user, isApproved, isLoading, navigate]);
+  }, [user, isApproved, isLoading, isMentor, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -81,7 +86,7 @@ export default function Auth() {
             title: 'Welcome back!',
             description: 'You have successfully signed in.',
           });
-          navigate('/portal');
+          // Navigation will happen via useEffect based on role
         }
       } else {
         const validation = signupSchema.safeParse(formData);
@@ -111,9 +116,9 @@ export default function Auth() {
         } else {
           toast({
             title: 'Account created!',
-            description: 'Welcome to the NORCAT Innovation Client Portal.',
+            description: 'Welcome to the NORCAT Innovation Portal.',
           });
-          navigate('/portal');
+          // Navigation will happen via useEffect based on role
         }
       }
     } catch (err) {
@@ -234,14 +239,24 @@ export default function Auth() {
             </div>
 
             {DEMO_MODE && (
-              <Button
-                onClick={() => navigate('/portal')}
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-                size="lg"
-              >
-                <Play className="mr-2 h-4 w-4" />
-                Preview Portal (Demo Mode)
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <Button
+                  onClick={() => navigate('/portal')}
+                  className="flex-1 bg-primary hover:bg-primary/90"
+                  size="lg"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  Client Portal
+                </Button>
+                <Button
+                  onClick={() => navigate('/mentor')}
+                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
+                  size="lg"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  Mentor Portal
+                </Button>
+              </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
