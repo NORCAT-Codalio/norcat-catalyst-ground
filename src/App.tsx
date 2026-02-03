@@ -57,6 +57,7 @@ import Notifications from "./pages/portal/Notifications";
 // Mentor Portal pages
 import MentorDashboard from "./pages/mentor/Dashboard";
 import MentorVentures from "./pages/mentor/Ventures";
+import MentorVentureWorkspace from "./pages/mentor/VentureWorkspace";
 import MentorMeetings from "./pages/mentor/Meetings";
 import MentorResources from "./pages/mentor/Resources";
 import MentorEthics from "./pages/mentor/Ethics";
@@ -125,6 +126,7 @@ const App = () => (
             {/* Mentor Portal Routes */}
             <Route path="/mentor" element={<MentorDashboard />} />
             <Route path="/mentor/ventures" element={<MentorVentures />} />
+            <Route path="/mentor/ventures/:id" element={<MentorVentureWorkspace />} />
             <Route path="/mentor/meetings" element={<MentorMeetings />} />
             <Route path="/mentor/resources" element={<MentorResources />} />
             <Route path="/mentor/ethics" element={<MentorEthics />} />
