@@ -19,6 +19,7 @@ interface AuthContextType {
   session: Session | null;
   profile: Profile | null;
   isAdmin: boolean;
+  isMentor: boolean;
   isApproved: boolean;
   isLoading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
@@ -34,6 +35,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isMentor, setIsMentor] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
 
@@ -66,12 +68,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return !!data;
   };
 
+  const checkMentorRole = async (userId: string) => {
+    const { data, error } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', userId)
+      .eq('role', 'mentor')
+      .maybeSingle();
+
+    if (error) {
+      console.error('Error checking mentor role:', error);
+      return false;
+    }
+    return !!data;
+  };
+
   const refreshProfile = async () => {
     if (user) {
       const profileData = await fetchProfile(user.id);
       setProfile(profileData);
       const adminStatus = await checkAdminRole(user.id);
       setIsAdmin(adminStatus);
+      const mentorStatus = await checkMentorRole(user.id);
+      setIsMentor(mentorStatus);
     }
   };
 
@@ -89,11 +108,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setProfile(profileData);
             const adminStatus = await checkAdminRole(session.user.id);
             setIsAdmin(adminStatus);
+            const mentorStatus = await checkMentorRole(session.user.id);
+            setIsMentor(mentorStatus);
             setIsLoading(false);
           }, 0);
         } else {
           setProfile(null);
           setIsAdmin(false);
+          setIsMentor(false);
           setIsLoading(false);
         }
       }
@@ -110,6 +132,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           setProfile(profileData);
           const adminStatus = await checkAdminRole(session.user.id);
           setIsAdmin(adminStatus);
+          const mentorStatus = await checkMentorRole(session.user.id);
+          setIsMentor(mentorStatus);
           setIsLoading(false);
         }, 0);
       } else {
@@ -192,6 +216,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setSession(null);
     setProfile(null);
     setIsAdmin(false);
+    setIsMentor(false);
   };
 
   const isApproved = profile?.is_approved ?? false;
@@ -203,6 +228,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         session,
         profile,
         isAdmin,
+        isMentor,
         isApproved,
         isLoading,
         signIn,
