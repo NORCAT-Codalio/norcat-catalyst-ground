@@ -186,6 +186,18 @@ export default function About() {
 
   return (
     <Layout>
+      <div style={{
+        '--primary': '168 100% 36%',
+        '--accent': '168 100% 36%',
+        '--ring': '168 100% 36%',
+        '--teal-400': '168 85% 45%',
+        '--teal-500': '168 100% 36%',
+        '--teal-600': '168 100% 30%',
+        '--teal-700': '168 95% 25%',
+        '--gradient-primary': 'linear-gradient(135deg, hsl(168 100% 30%) 0%, hsl(168 100% 36%) 50%, hsl(168 85% 55%) 100%)',
+        '--shadow-glow': '0 0 60px -12px hsl(168 100% 36% / 0.5)',
+        '--shadow-glow-lg': '0 0 80px -12px hsl(168 100% 36% / 0.6)',
+      } as React.CSSProperties}>
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
@@ -431,6 +443,7 @@ export default function About() {
           </ScrollReveal>
         </div>
       </section>
+      </div>
     </Layout>
   );
 }
