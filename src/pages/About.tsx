@@ -108,7 +108,7 @@ function GlassCard({ children, className = '', shimmer = true }: { children: Rea
   );
 }
 
-// Light card for white sections
+// Light glass card for white/off-white sections — frosted glass with embossed feel
 function LightCard({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -129,9 +129,9 @@ function LightCard({ children, className = '' }: { children: React.ReactNode; cl
   return (
     <div
       ref={cardRef}
-      className={`rounded-2xl border border-border/60 shadow-sm hover:shadow-lg transition-all duration-500 ${className}`}
+      className={`liquid-glass-light-strong rounded-2xl glass-shimmer hover:shadow-lg transition-all duration-500 ${className}`}
       style={{
-        background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(168 100% 36% / 0.04) 0%, transparent 50%), white`,
+        background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(168 100% 36% / 0.05) 0%, transparent 50%), linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(240,240,240,0.5) 100%)`,
       }}
     >
       {children}
@@ -270,7 +270,7 @@ export default function About() {
         </section>
 
         {/* ===== MISSION SECTION — LIGHT ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#e4e4e8' }}>
           <img 
             src={signatureLines} 
             alt="" 
@@ -312,7 +312,7 @@ export default function About() {
         </section>
 
         {/* ===== VALUES SECTION — WHITE ===== */}
-        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#dcdce0' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <img 
             src={signatureLines} 
@@ -355,7 +355,7 @@ export default function About() {
         </section>
 
         {/* ===== TEAM SECTION — OFF-WHITE ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#e4e4e8' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -436,7 +436,7 @@ export default function About() {
         </section>
 
         {/* ===== RIC NETWORK SECTION — OFF-WHITE ===== */}
-        <section className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
+        <section className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: '#dcdce0' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6">
             <ScrollReveal>
