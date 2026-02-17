@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, X, Users, Lightbulb, Target, Zap, Globe, TrendingUp, Building2 } from 'lucide-react';
+import { ArrowRight, Linkedin, X, Users, Lightbulb, Target, Globe, TrendingUp } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { useState, useRef, useEffect } from 'react';
@@ -77,7 +77,7 @@ const stats = [
   { number: '$50M+', label: 'CAPITAL RAISED' },
 ];
 
-// Shimmer card wrapper with mouse tracking
+// Dark glass card (for hero)
 function GlassCard({ children, className = '', shimmer = true }: { children: React.ReactNode; className?: string; shimmer?: boolean }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -108,6 +108,37 @@ function GlassCard({ children, className = '', shimmer = true }: { children: Rea
   );
 }
 
+// Light card for white sections
+function LightCard({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+    const card = cardRef.current;
+    const handleMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', `${x}%`);
+      card.style.setProperty('--mouse-y', `${y}%`);
+    };
+    card.addEventListener('mousemove', handleMove);
+    return () => card.removeEventListener('mousemove', handleMove);
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className={`rounded-2xl border border-border/60 shadow-sm hover:shadow-lg transition-all duration-500 ${className}`}
+      style={{
+        background: `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(168 100% 36% / 0.04) 0%, transparent 50%), white`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 interface TeamModalProps {
   member: typeof team[0] | null;
   onClose: () => void;
@@ -118,7 +149,7 @@ function TeamModal({ member, onClose }: TeamModalProps) {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black/60 backdrop-blur-md z-50"
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -131,7 +162,7 @@ function TeamModal({ member, onClose }: TeamModalProps) {
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="liquid-glass-strong rounded-3xl max-w-md w-full p-8 relative"
+          className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative border border-border/50"
           initial={{ scale: 0.95, y: 10 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.95, y: 10 }}
@@ -139,29 +170,29 @@ function TeamModal({ member, onClose }: TeamModalProps) {
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full liquid-glass-btn flex items-center justify-center transition-colors hover:bg-white/10"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-muted hover:bg-muted/80 flex items-center justify-center transition-colors"
           >
-            <X className="w-4 h-4 text-white/70" />
+            <X className="w-4 h-4 text-muted-foreground" />
           </button>
           <div className="text-center">
             <div className="relative w-24 h-24 mx-auto mb-6">
-              <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl" />
+              <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl" />
               <img 
                 src={member.image} 
                 alt={member.name} 
-                className="relative w-24 h-24 rounded-full object-cover ring-2 ring-primary/30"
+                className="relative w-24 h-24 rounded-full object-cover ring-2 ring-primary/20"
               />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
             <p className="text-primary font-medium mb-6">{member.role}</p>
-            <p className="text-white/60 text-left leading-relaxed mb-8">
+            <p className="text-muted-foreground text-left leading-relaxed mb-8">
               {member.bio}
             </p>
             <a
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full liquid-glass-btn text-white font-medium hover:bg-white/15 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0A66C2] text-white font-medium hover:bg-[#004182] transition-colors"
             >
               <Linkedin className="w-5 h-5" />
               Connect on LinkedIn
@@ -179,18 +210,15 @@ export default function About() {
 
   return (
     <Layout>
-      {/* Dark base with fluid teal gradients */}
-      <div className="relative" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 30%, hsl(220 25% 8%) 60%, hsl(218 30% 6%) 100%)' }}>
+      <div>
+        {/* ===== HERO SECTION — DARK ===== */}
+        <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
+          {/* Ambient gradient orbs */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(168 100% 36% / 0.3), transparent 70%)' }} />
+            <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 80% 50% / 0.2), transparent 70%)' }} />
+          </div>
 
-        {/* Ambient gradient orbs */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-          <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(168 100% 36% / 0.3), transparent 70%)' }} />
-          <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 80% 50% / 0.2), transparent 70%)' }} />
-          <div className="absolute bottom-[20%] left-0 w-[500px] h-[500px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(200 60% 30% / 0.2), transparent 70%)' }} />
-        </div>
-
-        {/* ===== HERO SECTION ===== */}
-        <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden">
           {/* Signature lines decoration */}
           <img 
             src={signatureLines} 
@@ -241,39 +269,39 @@ export default function About() {
           </div>
         </section>
 
-        {/* ===== MISSION SECTION ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
+        {/* ===== MISSION SECTION — LIGHT ===== */}
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
           <img 
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute bottom-0 left-0 w-[40%] opacity-[0.05] pointer-events-none select-none rotate-180 mix-blend-screen"
+            className="absolute bottom-0 left-0 w-[40%] opacity-[0.15] pointer-events-none select-none rotate-180"
           />
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <ScrollReveal direction="left">
-                <GlassCard className="p-2 overflow-hidden">
+                <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img
                     src={foundersImage}
                     alt="NORCAT Innovation team working with founders"
-                    className="rounded-xl w-full"
+                    className="w-full"
                   />
-                </GlassCard>
+                </div>
               </ScrollReveal>
               <ScrollReveal direction="right">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
                     Our Mission
                   </span>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
                     Helping founders build{' '}
                     <span className="text-gradient">world-changing</span> companies
                   </h2>
-                  <p className="text-lg leading-relaxed text-white/50 mb-5">
+                  <p className="text-lg leading-relaxed text-muted-foreground mb-5">
                     Through mentorship, capital access, and our unique underground testing facility, 
                     we provide everything ambitious entrepreneurs need to start, grow, and scale.
                   </p>
-                  <p className="text-base leading-relaxed text-white/35">
+                  <p className="text-base leading-relaxed text-muted-foreground/70">
                     Our specialization in mining technology makes us unique—offering founders 
                     access to a real operational mine for testing and validation.
                   </p>
@@ -283,23 +311,23 @@ export default function About() {
           </div>
         </section>
 
-        {/* ===== VALUES SECTION ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, hsl(168 100% 36% / 0.15), transparent)' }} />
+        {/* ===== VALUES SECTION — WHITE ===== */}
+        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <img 
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute top-0 right-0 w-[50%] opacity-[0.04] pointer-events-none select-none mix-blend-screen"
+            className="absolute top-0 right-0 w-[50%] opacity-[0.08] pointer-events-none select-none"
           />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-2xl mb-16">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
                   Our Values
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-foreground">
                   Principles that guide us
                 </h2>
               </div>
@@ -308,37 +336,37 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               {values.map((value, index) => (
                 <ScrollReveal key={value.title} delay={index * 100}>
-                  <GlassCard className="p-8 md:p-10 h-full group hover:border-primary/20 transition-all duration-500">
+                  <LightCard className="p-8 md:p-10 h-full group hover:border-primary/30">
                     <div className="flex items-start gap-5">
-                      <div className="w-12 h-12 rounded-xl liquid-glass-btn flex items-center justify-center flex-shrink-0 group-hover:shadow-glow transition-shadow duration-500">
-                        <value.icon className="w-5 h-5 text-primary icon-glow" />
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors duration-300">
+                        <value.icon className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <div className="text-xs font-bold text-primary/40 tracking-widest mb-2">0{index + 1}</div>
-                        <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                        <p className="text-base leading-relaxed text-white/45">{value.description}</p>
+                        <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
+                        <p className="text-base leading-relaxed text-muted-foreground">{value.description}</p>
                       </div>
                     </div>
-                  </GlassCard>
+                  </LightCard>
                 </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ===== TEAM SECTION ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, hsl(168 100% 36% / 0.15), transparent)' }} />
+        {/* ===== TEAM SECTION — OFF-WHITE ===== */}
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
+          <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-2xl mb-16">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
                   Our Team
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-6">
                   Meet the Innovation Team
                 </h2>
-                <p className="text-lg leading-relaxed text-white/50">
+                <p className="text-lg leading-relaxed text-muted-foreground">
                   Our dedicated team works closely with founders to provide the support, 
                   resources, and connections needed to build successful companies.
                 </p>
@@ -354,7 +382,7 @@ export default function About() {
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <GlassCard className="p-3 pb-5 text-center overflow-hidden hover:border-primary/20 transition-all duration-500">
+                    <LightCard className="p-3 pb-5 text-center overflow-hidden hover:border-primary/30">
                       <div className="relative mb-4 overflow-hidden rounded-xl">
                         <img 
                           src={member.image} 
@@ -363,9 +391,9 @@ export default function About() {
                         />
                         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300" />
                       </div>
-                      <h3 className="font-bold text-base text-white">{member.name}</h3>
-                      <p className="text-sm font-medium text-white/40">{member.role}</p>
-                    </GlassCard>
+                      <h3 className="font-bold text-base text-foreground">{member.name}</h3>
+                      <p className="text-sm font-medium text-muted-foreground">{member.role}</p>
+                    </LightCard>
                   </motion.div>
                 </ScrollReveal>
               ))}
@@ -378,89 +406,85 @@ export default function About() {
           />
         </section>
 
-        {/* ===== CTA SECTION ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, hsl(168 100% 36% / 0.15), transparent)' }} />
+        {/* ===== CTA SECTION — DARK ===== */}
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(220 30% 7%) 0%, hsl(215 28% 12%) 100%)' }}>
           <img 
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.04] pointer-events-none select-none mix-blend-screen"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none select-none mix-blend-screen"
           />
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
-              <GlassCard className="max-w-3xl mx-auto p-12 md:p-16">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
-                  Ready to join our{' '}
-                  <span className="text-primary">community?</span>
-                </h2>
-                <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/45">
-                  Whether you're just starting out or ready to scale, we're here to help 
-                  you build something extraordinary.
-                </p>
-                <Link 
-                  to="/apply" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white bg-primary hover:shadow-glow-lg transition-all duration-300 hover:scale-[1.02]"
-                >
-                  Apply for Venture Growth Services
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </GlassCard>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+                Ready to join our{' '}
+                <span className="text-primary">community?</span>
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/50">
+                Whether you're just starting out or ready to scale, we're here to help 
+                you build something extraordinary.
+              </p>
+              <Link 
+                to="/apply" 
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white bg-primary hover:shadow-glow-lg transition-all duration-300 hover:scale-[1.02]"
+              >
+                Apply for Venture Growth Services
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* ===== RIC NETWORK SECTION ===== */}
-        <section className="py-16 md:py-20 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, hsl(168 100% 36% / 0.1), transparent)' }} />
+        {/* ===== RIC NETWORK SECTION — OFF-WHITE ===== */}
+        <section className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: '#faf8f5' }}>
+          <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <div className="grid lg:grid-cols-2 gap-8">
-                <GlassCard className="p-8">
+                <LightCard className="p-8">
                   <img 
                     src={innovateonLogo} 
                     alt="InnovateON - Regional Innovation Centre Network" 
-                    className="h-8 object-contain mb-5 brightness-0 invert opacity-70"
+                    className="h-8 object-contain mb-5"
                   />
-                  <p className="text-base leading-relaxed mb-6 text-white/45">
+                  <p className="text-base leading-relaxed mb-6 text-muted-foreground">
                     We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs 
                     with resources, mentorship, and funding to start and scale businesses.
                   </p>
                   <div className="flex gap-10">
                     <div>
-                      <div className="text-3xl font-black text-primary icon-glow">17</div>
-                      <p className="text-[10px] font-semibold tracking-[0.15em] uppercase mt-1 text-white/35">Centres</p>
+                      <div className="text-3xl font-black text-primary">17</div>
+                      <p className="text-[10px] font-semibold tracking-[0.15em] uppercase mt-1 text-muted-foreground">Centres</p>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-primary icon-glow">1000+</div>
-                      <p className="text-[10px] font-semibold tracking-[0.15em] uppercase mt-1 text-white/35">Startups/Year</p>
+                      <div className="text-3xl font-black text-primary">1000+</div>
+                      <p className="text-[10px] font-semibold tracking-[0.15em] uppercase mt-1 text-muted-foreground">Startups/Year</p>
                     </div>
                   </div>
-                </GlassCard>
-                <GlassCard className="p-8">
+                </LightCard>
+                <LightCard className="p-8">
                   <img 
                     src={ontarioLogo} 
                     alt="Government of Ontario" 
-                    className="h-10 object-contain mb-5 brightness-0 invert opacity-70"
+                    className="h-10 object-contain mb-5"
                   />
-                  <p className="text-base leading-relaxed mb-6 text-white/45">
-                    Funded by the <strong className="text-white/60">Ministry of Economic Development, Job Creation and Trade</strong>, 
+                  <p className="text-base leading-relaxed mb-6 text-muted-foreground">
+                    Funded by the <strong className="text-foreground">Ministry of Economic Development, Job Creation and Trade</strong>, 
                     enabling free and subsidized services for Northern Ontario entrepreneurs.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs font-medium px-3 py-1.5 rounded-full liquid-glass-btn text-primary">
+                    <span className="text-xs font-medium px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                       Not-for-Profit
                     </span>
-                    <span className="text-xs font-medium px-3 py-1.5 rounded-full liquid-glass-btn text-primary">
+                    <span className="text-xs font-medium px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                       Ontario Funded
                     </span>
                   </div>
-                </GlassCard>
+                </LightCard>
               </div>
             </ScrollReveal>
           </div>
         </section>
-
       </div>
     </Layout>
   );
