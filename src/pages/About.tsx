@@ -426,7 +426,14 @@ export default function About() {
               </p>
               <Link 
                 to="/apply" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white bg-primary hover:shadow-glow-lg transition-all duration-300 hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(168, 100%, 36%, 0.85) 0%, hsla(168, 100%, 28%, 0.7) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '0.5px solid hsla(168, 100%, 60%, 0.4)',
+                  boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 80%, 0.5), inset 0 -1px 0 0 hsla(168, 100%, 20%, 0.2), 0 4px 16px hsla(168, 100%, 36%, 0.3), 0 8px 32px hsla(168, 100%, 36%, 0.15)',
+                }}
               >
                 Apply for Venture Growth Services
                 <ArrowRight className="h-5 w-5" />
