@@ -442,6 +442,43 @@ export default function About() {
           </div>
         </section>
 
+        {/* ===== CTA SECTION — TEAL ===== */}
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+          <img 
+            src={signatureLines} 
+            alt="" 
+            aria-hidden="true"
+            className="absolute top-0 right-0 h-full w-auto object-contain object-right opacity-25 pointer-events-none select-none mix-blend-overlay"
+          />
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+                Ready to join our{' '}
+                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>community?</span>
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
+                Whether you're just starting out or ready to scale, we're here to help 
+                you build something extraordinary.
+              </p>
+              <Link 
+                to="/apply" 
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  color: 'white',
+                  border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                  boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                }}
+              >
+                Apply for Venture Growth Services
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* ===== RIC NETWORK SECTION — OFF-WHITE ===== */}
         <section className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: '#dcdce0' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
