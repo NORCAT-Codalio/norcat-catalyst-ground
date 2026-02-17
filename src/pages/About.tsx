@@ -448,7 +448,7 @@ export default function About() {
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute top-0 left-0 h-full w-auto object-contain object-left opacity-50 pointer-events-none select-none mix-blend-overlay"
+            className="absolute top-0 left-0 h-3/4 w-auto object-contain object-left opacity-50 pointer-events-none select-none mix-blend-overlay"
             style={{ transform: 'scaleX(-1) scaleY(-1)' }}
           />
           <div className="container mx-auto px-6 relative z-10 text-center">
