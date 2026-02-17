@@ -412,7 +412,7 @@ export default function About() {
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none select-none mix-blend-screen"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
           />
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
