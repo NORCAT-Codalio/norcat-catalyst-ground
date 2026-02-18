@@ -568,20 +568,24 @@ export default function Index() {
         </section>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 22% 6%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 100% 97%) 0%, hsl(168 40% 93%) 40%, hsl(168 20% 95%) 100%)' }}>
+          {/* Subtle teal accent orb */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 60%)' }} />
+
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass" style={{ color: 'hsl(168, 100%, 50%)' }}>
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4" style={{ background: 'hsl(168 100% 35% / 0.1)', color: 'hsl(168, 100%, 30%)', border: '0.5px solid hsl(168 100% 35% / 0.2)' }}>
                     Programs & Funding
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                    Support that adapts as your <span style={{ color: 'hsl(168, 100%, 35%)' }}>company grows.</span>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                    Support that adapts as your <span style={{ color: 'hsl(168, 100%, 30%)' }}>company grows.</span>
                   </h2>
-                  <p className="text-white/40 font-light max-w-xl">We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
+                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 10%, 45%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
-                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 30%)' }}>
                   View all
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -592,26 +596,35 @@ export default function Index() {
               {upcomingPrograms.map((program, i) => (
                 <ScrollReveal key={program.title} delay={i * 0.1}>
                   <Link to={program.link} className="group block h-full">
-                    <div className="liquid-glass-strong glass-shimmer rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300">
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-5" style={{ background: 'hsl(168 100% 35% / 0.12)', color: 'hsl(168, 100%, 50%)' }}>
+                    <div 
+                      className="glass-shimmer rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300"
+                      style={{
+                        background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.7) 0%, hsla(0, 0%, 100%, 0.5) 100%)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        border: '0.5px solid hsla(168, 100%, 35%, 0.15)',
+                        boxShadow: '0 4px 24px hsla(168, 100%, 20%, 0.06), inset 0 1px 0 0 hsla(0, 0%, 100%, 0.8)',
+                      }}
+                    >
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-5" style={{ background: 'hsl(168 100% 35% / 0.1)', color: 'hsl(168, 100%, 28%)' }}>
                         {program.type}
                       </span>
-                      <h3 className="text-xl font-bold text-white mb-5 group-hover:text-[hsl(168,100%,45%)] transition-colors">{program.title}</h3>
-                      <div className="space-y-3 text-sm text-white/35 font-light">
+                      <h3 className="text-xl font-bold mb-5 group-hover:text-[hsl(168,100%,30%)] transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{program.title}</h3>
+                      <div className="space-y-3 text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>
                         <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" style={{ color: 'hsl(168 100% 35% / 0.5)' }} />
+                          <Clock className="w-4 h-4" style={{ color: 'hsl(168 100% 35% / 0.6)' }} />
                           {program.applyBy}
                         </div>
                         <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" style={{ color: 'hsl(168 100% 35% / 0.5)' }} />
+                          <Calendar className="w-4 h-4" style={{ color: 'hsl(168 100% 35% / 0.6)' }} />
                           {program.duration}
                         </div>
                         <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" style={{ color: 'hsl(168 100% 35% / 0.5)' }} />
+                          <MapPin className="w-4 h-4" style={{ color: 'hsl(168 100% 35% / 0.6)' }} />
                           {program.location}
                         </div>
                       </div>
-                      <div className="mt-7 flex items-center gap-2 text-sm font-medium" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                      <div className="mt-7 flex items-center gap-2 text-sm font-medium" style={{ color: 'hsl(168, 100%, 30%)' }}>
                         See Details
                         <ExternalLink className="w-4 h-4" />
                       </div>
