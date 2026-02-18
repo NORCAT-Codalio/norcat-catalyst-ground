@@ -568,10 +568,10 @@ export default function Index() {
         </section>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(200 15% 72%) 0%, hsl(190 12% 68%) 40%, hsl(185 10% 65%) 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 60% 42%) 0%, hsl(168 80% 35%) 40%, hsl(172 70% 30%) 100%)' }}>
           {/* Subtle lighter orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 40% 70% / 0.2) 0%, transparent 60%)' }} />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(200 20% 60% / 0.15) 0%, transparent 60%)' }} />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(164 80% 55% / 0.2) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(172 60% 28% / 0.3) 0%, transparent 60%)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
