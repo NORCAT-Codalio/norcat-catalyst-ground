@@ -676,25 +676,23 @@ export default function Index() {
         </section>
 
         {/* ───── ECOSYSTEM — Data Map Section ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 22% 6%)' }}>
-          {/* Subtle dot grid simulating a map */}
-          <div className="absolute inset-0 opacity-[0.04]" style={{
-            backgroundImage: 'radial-gradient(hsl(168 100% 35%) 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
-          }} />
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 30% 95%) 0%, hsl(168 40% 90%) 40%, hsl(168 25% 93%) 100%)' }}>
+          {/* Subtle teal orbs */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal direction="left">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 liquid-glass" style={{ color: 'hsl(168, 100%, 50%)' }}>
-                    <Globe className="w-4 h-4 icon-glow" />
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 glass-frosted-btn-teal">
+                    <Globe className="w-4 h-4" />
                     The Greater Sudbury Advantage
                   </span>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                    A Thriving <span style={{ color: 'hsl(168, 100%, 35%)' }}>Innovation Ecosystem</span>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                    A Thriving <span style={{ color: 'hsl(168, 100%, 28%)' }}>Innovation Ecosystem</span>
                   </h2>
-                  <p className="text-xl text-white/40 leading-relaxed mb-8 font-light">
+                  <p className="text-xl leading-relaxed mb-8 font-light" style={{ color: 'hsl(220, 10%, 45%)' }}>
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
                     institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
                   </p>
@@ -715,17 +713,27 @@ export default function Index() {
                   ].map((partner, i) => (
                     <motion.div
                       key={partner.name}
-                      className="liquid-glass glass-shimmer p-6 rounded-2xl hover:scale-[1.03] transition-transform duration-300"
+                      className="rounded-[20px] p-6 hover:scale-[1.03] transition-transform duration-300"
+                      style={{
+                        background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
+                        borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
+                        borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
+                        borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
                     >
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'hsl(168 100% 35% / 0.1)' }}>
-                        <partner.icon className="w-6 h-6 icon-glow" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                        <partner.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
-                      <h3 className="font-semibold text-white mb-1">{partner.name}</h3>
-                      <p className="text-sm text-white/35 font-light">{partner.desc}</p>
+                      <h3 className="font-semibold mb-1" style={{ color: 'hsl(220, 20%, 15%)' }}>{partner.name}</h3>
+                      <p className="text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>{partner.desc}</p>
                     </motion.div>
                   ))}
                 </div>
