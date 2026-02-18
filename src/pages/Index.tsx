@@ -297,33 +297,17 @@ export default function Index() {
             </ScrollReveal>
             <ScrollReveal delay={300}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/apply" className="btn-primary-lg group">
+                <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white hover:text-white transition-all duration-300 liquid-glass-btn group">
                   Work With Us
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white/80 hover:text-white transition-all duration-300 liquid-glass-btn">
+                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white/80 hover:text-white transition-all duration-300 liquid-glass-btn group">
                   Learn More
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </ScrollReveal>
           </div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10 mt-20">
-          <ScrollReveal delay={400}>
-            <div className="flex flex-wrap gap-6 md:gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="liquid-glass rounded-2xl px-8 py-6 flex-1 min-w-[180px]">
-                  <div className="text-4xl md:text-5xl font-black text-primary tracking-tight icon-glow">
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] font-semibold tracking-[0.2em] uppercase mt-2 text-white/40">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
