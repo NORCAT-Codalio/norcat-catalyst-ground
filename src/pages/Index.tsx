@@ -499,7 +499,7 @@ export default function Index() {
 
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 30% 95%) 0%, hsl(168 40% 90%) 40%, hsl(168 25% 93%) 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
           {/* Subtle teal orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
