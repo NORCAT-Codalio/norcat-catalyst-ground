@@ -604,13 +604,16 @@ export default function Index() {
                 <ScrollReveal key={program.title} delay={i * 0.1}>
                   <Link to={program.link} className="group block h-full">
                     <div 
-                      className="rounded-[20px] p-7 h-full hover:scale-[1.02] transition-all duration-300"
+                      className="rounded-[20px] p-7 h-full hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
                       style={{
-                        background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.65) 0%, hsla(0, 0%, 100%, 0.45) 100%)',
-                        backdropFilter: 'blur(24px)',
-                        WebkitBackdropFilter: 'blur(24px)',
-                        border: '0.5px solid hsla(0, 0%, 100%, 0.7)',
-                        boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.8), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.03), 0 8px 32px hsla(168, 100%, 20%, 0.08), 0 2px 8px hsla(0, 0%, 0%, 0.04)',
+                        background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
+                        borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
+                        borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
+                        borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                       }}
                     >
                       <span 
