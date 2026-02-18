@@ -161,34 +161,58 @@ export default function Index() {
 
         {/* ───── HERO ───── */}
         <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+          {/* Parallax background image */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
-            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover scale-110" />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg, hsl(220 22% 6% / 0.95) 0%, hsl(220 20% 8% / 0.85) 50%, hsl(168 40% 12% / 0.8) 100%)' }} />
+            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover scale-[1.15]" />
+            {/* Cinematic multi-layer gradient */}
+            <div className="absolute inset-0" style={{
+              background: `
+                linear-gradient(180deg, hsl(220 25% 4% / 0.6) 0%, transparent 35%),
+                linear-gradient(0deg, hsl(220 25% 4% / 0.95) 0%, transparent 40%),
+                linear-gradient(160deg, hsl(220 22% 6% / 0.92) 0%, hsl(220 20% 8% / 0.7) 40%, hsl(168 50% 10% / 0.75) 100%)
+              `
+            }} />
           </motion.div>
 
-          {/* Ambient orbs */}
+          {/* Cinematic vignette */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            background: 'radial-gradient(ellipse 70% 60% at 50% 50%, transparent 0%, hsl(220 25% 4% / 0.5) 100%)'
+          }} />
+
+          {/* Animated ambient orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <motion.div
-              className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full"
-              style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.12) 0%, transparent 70%)' }}
-              animate={{ scale: [1, 1.3, 1], x: [0, 60, 0], y: [0, -40, 0] }}
-              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute top-[15%] right-[20%] w-[700px] h-[700px] rounded-full"
+              style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.15) 0%, hsl(168 100% 35% / 0.05) 40%, transparent 70%)' }}
+              animate={{ scale: [1, 1.4, 1], x: [0, 80, 0], y: [0, -50, 0] }}
+              transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
             />
             <motion.div
-              className="absolute bottom-1/3 left-1/6 w-[500px] h-[500px] rounded-full"
-              style={{ background: 'radial-gradient(circle, hsl(220 60% 40% / 0.08) 0%, transparent 70%)' }}
-              animate={{ scale: [1.2, 1, 1.2], x: [0, -50, 0] }}
-              transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute bottom-[20%] left-[10%] w-[600px] h-[600px] rounded-full"
+              style={{ background: 'radial-gradient(circle, hsl(168 80% 45% / 0.1) 0%, transparent 70%)' }}
+              animate={{ scale: [1.2, 0.9, 1.2], x: [0, -60, 0], y: [0, 30, 0] }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.div
+              className="absolute top-[60%] right-[10%] w-[400px] h-[400px] rounded-full"
+              style={{ background: 'radial-gradient(circle, hsl(200 60% 50% / 0.06) 0%, transparent 70%)' }}
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
             />
           </div>
 
-          {/* Grid overlay */}
+          {/* Subtle grid overlay */}
           <div
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 opacity-[0.025]"
             style={{
-              backgroundImage: 'linear-gradient(hsl(168 100% 35% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(168 100% 35% / 0.3) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(hsl(168 100% 50% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(168 100% 50% / 0.4) 1px, transparent 1px)',
               backgroundSize: '80px 80px',
             }}
+          />
+
+          {/* Noise texture overlay for premium feel */}
+          <div className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
+            style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }}
           />
 
           {/* Signature lines */}
@@ -196,11 +220,13 @@ export default function Index() {
             src={signatureLines}
             alt=""
             aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-30 pointer-events-none select-none mix-blend-overlay"
+            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-20 pointer-events-none select-none mix-blend-overlay"
           />
 
+          {/* Hero content */}
           <motion.div className="container mx-auto px-6 relative z-10 py-32" style={{ opacity: heroOpacity }}>
             <div className="max-w-5xl">
+              {/* Badge */}
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
                 <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white/90 mb-8 liquid-glass-btn">
                   <Sparkles className="h-4 w-4 icon-glow" style={{ color: 'hsl(168, 100%, 35%)' }} />
@@ -208,40 +234,57 @@ export default function Index() {
                 </span>
               </motion.div>
 
+              {/* Headline */}
               <motion.h1
                 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-8 tracking-tight leading-[0.92]"
+                style={{ textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 Build the
-                <span className="block" style={{ color: 'hsl(168, 100%, 35%)' }}>
+                <span className="block" style={{ color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)' }}>
                   Future Here
                 </span>
               </motion.h1>
 
+              {/* Glowing divider line */}
+              <motion.div
+                className="mb-8 h-px w-32"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(168 100% 35%), hsl(168 100% 35% / 0.3), transparent)',
+                  boxShadow: '0 0 20px 2px hsl(168 100% 35% / 0.3)'
+                }}
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ delay: 0.45, duration: 0.8, ease: 'easeOut' }}
+                style-origin="left"
+              />
+
+              {/* Description */}
               <motion.p
-                className="text-xl md:text-2xl text-white/50 leading-relaxed mb-8 max-w-2xl font-light"
+                className="text-xl md:text-2xl text-white/55 leading-relaxed mb-8 max-w-2xl font-light"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
               >
                 World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
               </motion.p>
 
+              {/* Sector tags */}
               <motion.div
                 className="flex flex-wrap gap-2 mb-10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
               >
                 {sectors.map((sector, i) => (
                   <motion.span
                     key={sector.label}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white/70 text-sm liquid-glass"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white/70 text-sm liquid-glass hover:text-white/90 transition-colors duration-300"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6 + i * 0.05 }}
+                    transition={{ delay: 0.7 + i * 0.06 }}
                   >
                     <sector.icon className="w-4 h-4" />
                     {sector.label}
@@ -249,13 +292,14 @@ export default function Index() {
                 ))}
               </motion.div>
 
+              {/* CTAs */}
               <motion.div
                 className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
               >
-                <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 0 40px -8px hsl(168 100% 35% / 0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)' }}>
+                <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 0 50px -8px hsl(168 100% 35% / 0.5), 0 0 100px -20px hsl(168 100% 35% / 0.3), inset 0 1px 0 0 rgba(255,255,255,0.2)' }}>
                   Work With Us
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -272,16 +316,17 @@ export default function Index() {
             className="absolute bottom-8 left-1/2 -translate-x-1/2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 1.2 }}
           >
             <motion.div
               className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-2"
+              style={{ boxShadow: '0 0 20px hsl(168 100% 35% / 0.1)' }}
               animate={{ y: [0, 5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               <motion.div
                 className="w-1 h-2 rounded-full"
-                style={{ background: 'hsl(168, 100%, 35%)' }}
+                style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 0 6px hsl(168 100% 35% / 0.6)' }}
                 animate={{ y: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
