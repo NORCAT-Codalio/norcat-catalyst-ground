@@ -483,16 +483,7 @@ export default function Index() {
                 {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
                   <div
                     key={`${company.name}-${i}`}
-                    className="flex-shrink-0 flex items-center justify-center w-36 h-16 rounded-xl hover:scale-[1.05] transition-transform duration-300 px-4"
-                    style={{
-                      background: 'linear-gradient(135deg, hsla(168, 100%, 35%, 0.06) 0%, hsla(168, 80%, 40%, 0.03) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 100%, 60%, 0.25)',
-                      borderLeft: '1px solid hsla(168, 100%, 60%, 0.15)',
-                      borderRight: '0.5px solid hsla(168, 100%, 35%, 0.08)',
-                      borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.06)',
-                    }}
+                    className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
                   >
                     <img
                       src={company.logo}
