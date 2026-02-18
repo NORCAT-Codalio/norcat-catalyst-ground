@@ -381,7 +381,7 @@ export default function Index() {
                   }}>
                     <stat.icon className="w-6 h-6 mx-auto mb-4" style={{ color: 'hsl(168, 100%, 30%)' }} />
                     <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>{stat.value}</div>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>{stat.label}</p>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>{stat.label}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -406,7 +406,7 @@ export default function Index() {
                   <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>
                     Support that adapts as your <span style={{ color: 'hsl(168, 100%, 28%)' }}>company grows.</span>
                   </h2>
-                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 10%, 45%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
+                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
                 <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
                   View all
@@ -443,7 +443,7 @@ export default function Index() {
                         {program.type}
                       </span>
                       <h3 className="text-xl font-bold mb-5 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{program.title}</h3>
-                      <div className="space-y-3 text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>
+                      <div className="space-y-3 text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
                         <div className="flex items-center gap-2">
                           <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
                           {program.applyBy}
@@ -517,7 +517,7 @@ export default function Index() {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: 'hsl(220, 20%, 15%)' }}>
                     A Thriving <span style={{ color: 'hsl(168, 100%, 28%)' }}>Innovation Ecosystem</span>
                   </h2>
-                  <p className="text-xl leading-relaxed mb-8 font-light" style={{ color: 'hsl(220, 10%, 45%)' }}>
+                  <p className="text-xl leading-relaxed mb-8 font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
                     institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
                   </p>
@@ -558,7 +558,7 @@ export default function Index() {
                         <partner.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
                       <h3 className="font-semibold mb-1" style={{ color: 'hsl(220, 20%, 15%)' }}>{partner.name}</h3>
-                      <p className="text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>{partner.desc}</p>
+                      <p className="text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>{partner.desc}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -586,7 +586,7 @@ export default function Index() {
                   <h2 className="text-3xl md:text-4xl font-bold" style={{ color: 'hsl(220, 20%, 15%)' }}>
                     Real stories. <span style={{ color: 'hsl(168, 100%, 30%)' }}>Unique insights.</span>
                   </h2>
-                  <p className="mt-2 font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>No corporate fluff—just the raw, unfiltered truth about what it takes to build a company from the people who've done it.</p>
+                  <p className="mt-2 font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>No corporate fluff—just the raw, unfiltered truth about what it takes to build a company from the people who've done it.</p>
                 </div>
                 <Link to="/insights/news" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 30%)' }}>
                   See all stories
@@ -611,7 +611,7 @@ export default function Index() {
                     }}>
                       <span className="text-xs font-medium mb-4 block" style={{ color: 'hsl(168, 100%, 30%)' }}>{post.category}</span>
                       <h3 className="text-lg font-bold mb-5 group-hover:text-[hsl(168,100%,30%)] transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{post.title}</h3>
-                      <span className="inline-flex items-center gap-2 text-sm group-hover:text-[hsl(168,100%,30%)] transition-colors font-light" style={{ color: 'hsl(220, 10%, 55%)' }}>
+                      <span className="inline-flex items-center gap-2 text-sm group-hover:text-[hsl(168,100%,30%)] transition-colors font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
                         Read More
                         <ArrowRight className="w-4 h-4" />
                       </span>
