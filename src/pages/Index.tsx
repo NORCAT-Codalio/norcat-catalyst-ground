@@ -6,6 +6,7 @@ import heroImage from '@/assets/hero-underground.jpg';
 import heroMiningUnderground from '@/assets/hero-mining-underground.jpg';
 import heroHeader from '@/assets/hero-header.jpg';
 import signatureLines from '@/assets/signature-lines.png';
+import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -256,6 +257,14 @@ export default function Index() {
 
       {/* ===== HERO SECTION — TEAL (About-page style) ===== */}
       <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 60%, hsl(170 90% 20%) 100%)' }}>
+        {/* Background image – flipped horizontally, teal overlay sits in front */}
+        <img
+          src={miningUndergroundHero}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none opacity-25"
+          style={{ transform: 'scaleX(-1)' }}
+        />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(0 0% 100% / 0.2), transparent 70%)' }} />
           <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 60% 60% / 0.3), transparent 70%)' }} />
