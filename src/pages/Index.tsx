@@ -338,7 +338,7 @@ export default function Index() {
           src={signatureLines} 
           alt="" 
           aria-hidden="true"
-          className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay"
+          className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-80 pointer-events-none select-none"
         />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
