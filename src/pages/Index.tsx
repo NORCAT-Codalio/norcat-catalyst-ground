@@ -5,6 +5,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import signatureLines from '@/assets/signature-lines.png';
+import circuitiqTeam from '@/assets/circuitiq-team.png';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
@@ -578,9 +579,11 @@ export default function Index() {
         </section>
 
         {/* ───── TESTIMONIAL — Full-width Glass Quote ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(220 20% 8%) 0%, hsl(168 30% 8%) 50%, hsl(220 22% 7%) 100%)' }}>
-          {/* Ambient glow behind quote */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+        <section className="relative py-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={circuitiqTeam} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'hsla(220, 25%, 8%, 0.8)' }} />
+          </div>
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto">
