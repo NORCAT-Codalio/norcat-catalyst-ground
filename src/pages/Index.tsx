@@ -593,23 +593,13 @@ export default function Index() {
                     The Greater Sudbury Advantage
                   </span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                    A Thriving <span style={{ color: 'hsl(220, 15%, 45%)' }}>Innovation Ecosystem</span>
+                    A Thriving <span className="text-gradient">Innovation Ecosystem</span>
                   </h2>
                   <p className="text-xl leading-relaxed mb-8 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
                     institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
                   </p>
-                  <Link to="/ecosystem/sudbury" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 75%, 0.3) 0%, hsla(220, 15%, 65%, 0.18) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderTop: '1px solid hsla(220, 15%, 100%, 0.45)',
-                    borderLeft: '1px solid hsla(220, 15%, 100%, 0.3)',
-                    borderRight: '0.5px solid hsla(220, 15%, 80%, 0.15)',
-                    borderBottom: '0.5px solid hsla(220, 15%, 60%, 0.1)',
-                    color: 'hsl(220, 15%, 25%)',
-                    boxShadow: 'inset 0 1px 1px 0 hsla(220, 15%, 100%, 0.25), 0 4px 16px hsla(220, 15%, 30%, 0.1)',
-                  }}>
+                  <Link to="/ecosystem/sudbury" className="glass-frosted-btn-teal inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]">
                     Explore the Ecosystem
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -642,8 +632,8 @@ export default function Index() {
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'hsla(220, 15%, 70%, 0.2)' }}>
-                        <partner.icon className="w-6 h-6" style={{ color: 'hsl(220, 15%, 40%)' }} />
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'hsla(168, 100%, 35%, 0.1)' }}>
+                        <partner.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
                       <h3 className="font-semibold mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{partner.name}</h3>
                       <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{partner.desc}</p>
