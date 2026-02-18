@@ -133,33 +133,6 @@ export default function Index() {
 
   return (
     <Layout>
-      {/* New Hero Header */}
-      <section className="relative w-full">
-        <img 
-          src={heroHeader} 
-          alt="NORCAT Innovation" 
-          className="w-full h-auto"
-        />
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <motion.div
-            className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <motion.div
-              className="w-1 h-2 bg-white/60 rounded-full"
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-          </motion.div>
-        </motion.div>
-      </section>
 
       {/* Hero Section - KEEP EXISTING */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
