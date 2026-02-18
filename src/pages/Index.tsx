@@ -774,22 +774,6 @@ export default function Index() {
         </section>
 
 
-        {/* ───── EDGE-TO-EDGE IMAGE STRIP ───── */}
-        <section className="grid grid-cols-2 md:grid-cols-4">
-          <div className="aspect-[4/3] overflow-hidden">
-            <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden">
-            <img src="/placeholder.svg" alt="Community photo 2" className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden">
-            <img src="/placeholder.svg" alt="Community photo 3" className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-[4/3] overflow-hidden">
-            <img src="/placeholder.svg" alt="Community photo 4" className="w-full h-full object-cover" />
-          </div>
-        </section>
-
         {/* ───── FINAL CTA ───── */}
         <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
@@ -825,6 +809,25 @@ export default function Index() {
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </ScrollReveal>
+
+            {/* Community photo strip */}
+            <div className="grid grid-cols-5 gap-3 mt-14 max-w-5xl mx-auto">
+              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <img src="/placeholder.svg" alt="Community photo 2" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <img src="/placeholder.svg" alt="Community photo 3" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <img src="/placeholder.svg" alt="Community photo 4" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+                <img src="/placeholder.svg" alt="Community photo 5" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </div>
         </section>
 
