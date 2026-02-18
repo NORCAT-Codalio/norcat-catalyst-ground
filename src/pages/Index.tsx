@@ -647,7 +647,7 @@ export default function Index() {
                     Reports & Resources
                   </span>
                   <h2 className="text-3xl md:text-4xl font-bold" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                    Deep dives. <span style={{ color: 'hsl(220, 15%, 45%)' }}>Data-driven.</span>
+                    Real Stories. <span className="text-gradient">Unique Insights.</span>
                   </h2>
                   <p className="mt-2 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>
