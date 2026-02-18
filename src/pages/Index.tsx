@@ -809,24 +809,24 @@ export default function Index() {
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </ScrollReveal>
+          </div>
 
-            {/* Community photo strip */}
-            <div className="grid grid-cols-5 gap-3 mt-14 max-w-5xl mx-auto">
-              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-                <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-                <img src="/placeholder.svg" alt="Community photo 2" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-                <img src="/placeholder.svg" alt="Community photo 3" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-                <img src="/placeholder.svg" alt="Community photo 4" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-                <img src="/placeholder.svg" alt="Community photo 5" className="w-full h-full object-cover" />
-              </div>
+          {/* Community photo strip — edge to edge */}
+          <div className="grid grid-cols-5 gap-3 px-3 mt-14">
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="/placeholder.svg" alt="Community photo 2" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="/placeholder.svg" alt="Community photo 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="/placeholder.svg" alt="Community photo 4" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="/placeholder.svg" alt="Community photo 5" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
