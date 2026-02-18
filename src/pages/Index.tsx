@@ -426,20 +426,20 @@ export default function Index() {
         </section>
 
         {/* ───── STATS — Data Dashboard Strip ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 22% 6%) 0%, hsl(220 20% 9%) 100%)' }}>
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: 'linear-gradient(hsl(168 100% 35% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(168 100% 35% / 0.4) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }} />
+        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.05) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.04) 0%, transparent 70%)' }} />
+          </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] uppercase mb-6 liquid-glass" style={{ color: 'hsl(168, 100%, 50%)' }}>
+                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] uppercase mb-6">
                   <BarChart3 className="w-3.5 h-3.5" />
                   Global Impact Dashboard
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                  Trusted by <span style={{ color: 'hsl(168, 100%, 35%)' }}>150+ startups.</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                  Trusted by <span style={{ color: 'hsl(168, 100%, 30%)' }}>150+ startups.</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -447,10 +447,19 @@ export default function Index() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, i) => (
                 <ScrollReveal key={stat.label} delay={i * 0.1}>
-                  <div className="liquid-glass-strong glass-shimmer rounded-2xl p-8 text-center hover:scale-[1.03] transition-transform duration-300">
-                    <stat.icon className="w-6 h-6 mx-auto mb-4 icon-glow" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                    <div className="text-3xl md:text-4xl font-black text-white mb-2">{stat.value}</div>
-                    <p className="text-white/40 text-sm font-light">{stat.label}</p>
+                  <div className="rounded-2xl p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={{
+                    background: 'linear-gradient(135deg, hsla(168, 100%, 35%, 0.06) 0%, hsla(168, 80%, 40%, 0.03) 100%)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
+                    borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
+                    borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
+                    borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                    boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                  }}>
+                    <stat.icon className="w-6 h-6 mx-auto mb-4" style={{ color: 'hsl(168, 100%, 30%)' }} />
+                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>{stat.value}</div>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>{stat.label}</p>
                   </div>
                 </ScrollReveal>
               ))}
