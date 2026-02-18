@@ -641,20 +641,7 @@ export default function Index() {
                           {program.location}
                         </div>
                       </div>
-                      <div 
-                        className="mt-7 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 group-hover:scale-[1.03]"
-                        style={{
-                          background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.08) 0%, hsla(168, 100%, 35%, 0.03) 100%)',
-                          backdropFilter: 'blur(12px)',
-                          WebkitBackdropFilter: 'blur(12px)',
-                          borderTop: '1px solid hsla(168, 100%, 50%, 0.3)',
-                          borderLeft: '1px solid hsla(168, 100%, 50%, 0.2)',
-                          borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
-                          borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
-                          boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.12), inset 0 0 12px 0 hsla(168, 100%, 35%, 0.03), 0 4px 16px hsla(168, 100%, 20%, 0.08)',
-                          color: 'hsl(168, 100%, 28%)',
-                        }}
-                      >
+                      <div className="mt-7 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium glass-frosted-btn-teal group-hover:scale-[1.03]">
                         See Details
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </div>
