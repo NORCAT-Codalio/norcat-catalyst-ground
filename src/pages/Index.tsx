@@ -431,6 +431,30 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* ───── STATS — Data Dashboard Strip ───── */}
         <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
           <div className="absolute inset-0 pointer-events-none">
@@ -469,36 +493,6 @@ export default function Index() {
                   </div>
                 </ScrollReveal>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ───── PORTFOLIO COMPANIES — Glass Marquee ───── */}
-        <section className="relative py-16 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
-          <div className="container mx-auto px-6">
-            <ScrollReveal>
-              <h2 className="text-2xl md:text-3xl font-bold text-center mb-12" style={{ color: 'hsl(220, 20%, 15%)' }}>Our Clients are Pretty Cool</h2>
-            </ScrollReveal>
-
-            <div className="relative overflow-hidden">
-              <motion.div
-                className="flex gap-8"
-                animate={{ x: [0, -1200] }}
-                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-              >
-                {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
-                  <div
-                    key={`${company.name}-${i}`}
-                    className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
-                  >
-                    <img
-                      src={company.logo}
-                      alt={company.name}
-                      className="max-h-10 max-w-full object-contain"
-                    />
-                  </div>
-                ))}
-              </motion.div>
             </div>
           </div>
         </section>
