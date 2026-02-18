@@ -290,6 +290,14 @@ export default function About() {
           </div>
 
 
+          {/* Signature lines decoration — over entire section */}
+          <img 
+            src={signatureLines} 
+            alt="" 
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-30 pointer-events-none select-none mix-blend-overlay z-[5]"
+          />
+
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-3xl">
@@ -318,12 +326,6 @@ export default function About() {
                     src={miningEquipment} 
                     alt="Mining equipment at NORCAT facility" 
                     className="w-full h-auto object-cover"
-                  />
-                  <img 
-                    src={signatureLines} 
-                    alt="" 
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none mix-blend-overlay"
                   />
                 </div>
               </ScrollReveal>
