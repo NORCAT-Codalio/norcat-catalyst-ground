@@ -494,7 +494,7 @@ export default function Index() {
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="max-h-10 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity"
+                      className="max-h-10 max-w-full object-contain"
                     />
                   </div>
                 ))}
@@ -709,7 +709,7 @@ export default function Index() {
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="max-h-12 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity"
+                      className="max-h-12 max-w-full object-contain"
                     />
                   </div>
                 ))}
