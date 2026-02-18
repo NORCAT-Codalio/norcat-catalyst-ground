@@ -775,7 +775,7 @@ export default function Index() {
 
 
         {/* ───── FINAL CTA ───── */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <section className="pt-24 md:pt-32 pb-0 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
             src={signatureLines} 
             alt="" 
@@ -812,7 +812,7 @@ export default function Index() {
           </div>
 
           {/* Community photo strip — edge to edge */}
-          <div className="grid grid-cols-5 gap-3 px-3 mt-14">
+          <div className="grid grid-cols-5 gap-3 px-3 pb-3 mt-14">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
             </div>
