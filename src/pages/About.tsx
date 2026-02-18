@@ -295,7 +295,7 @@ export default function About() {
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-30 pointer-events-none select-none mix-blend-overlay z-[5]"
+            className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-30 pointer-events-none select-none mix-blend-overlay"
           />
 
           <div className="container mx-auto px-6 relative z-10">
