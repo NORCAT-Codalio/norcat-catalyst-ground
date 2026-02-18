@@ -567,6 +567,72 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ───── ECOSYSTEM 2 — Duplicate ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
+          {/* Subtle teal orbs */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal direction="left">
+                <div>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 glass-frosted-btn-teal">
+                    <Globe className="w-4 h-4" />
+                    The Greater Sudbury Advantage
+                  </span>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                    A Thriving <span style={{ color: 'hsl(168, 100%, 28%)' }}>Innovation Ecosystem</span>
+                  </h2>
+                  <p className="text-xl leading-relaxed mb-8 font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                    Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
+                    institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
+                  </p>
+                  <Link to="/ecosystem/sudbury" className="glass-frosted-btn-teal inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]">
+                    Explore the Ecosystem
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right">
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: Mountain, name: 'Mining Hub', desc: 'Nine operating mines and 300+ mining supply companies' },
+                    { icon: Rocket, name: 'A City Built to Scale', desc: 'Major investments and growing population' },
+                    { icon: GraduationCap, name: 'Talent', desc: 'Five post-secondary institutions' },
+                    { icon: Handshake, name: 'The Sudbury Model', desc: 'Industry, academia, and government working as one' },
+                  ].map((partner, i) => (
+                    <motion.div
+                      key={partner.name}
+                      className="rounded-[20px] p-6 hover:scale-[1.03] transition-transform duration-300"
+                      style={{
+                        background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
+                        borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
+                        borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
+                        borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                    >
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'hsl(168 100% 35% / 0.1)' }}>
+                        <partner.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      </div>
+                      <h3 className="font-semibold mb-1" style={{ color: 'hsl(220, 20%, 15%)' }}>{partner.name}</h3>
+                      <p className="text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>{partner.desc}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
 
 
 
