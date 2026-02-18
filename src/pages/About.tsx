@@ -418,41 +418,6 @@ export default function About() {
           />
         </section>
 
-        {/* ===== CTA SECTION — DARK ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(220 30% 7%) 0%, hsl(215 28% 12%) 100%)' }}>
-          <img 
-            src={signatureLines} 
-            alt="" 
-            aria-hidden="true"
-            className="absolute top-0 right-0 h-full w-auto object-contain object-right opacity-25 pointer-events-none select-none mix-blend-screen"
-          />
-          <div className="container mx-auto px-6 relative z-10 text-center">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
-                Ready to join our{' '}
-                <span className="text-primary">community?</span>
-              </h2>
-              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/50">
-                Whether you're just starting out or ready to scale, we're here to help 
-                you build something extraordinary.
-              </p>
-              <Link 
-                to="/apply" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(145deg, hsla(168, 100%, 36%, 0.85) 0%, hsla(168, 100%, 28%, 0.7) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  border: '0.5px solid hsla(168, 100%, 60%, 0.4)',
-                  boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 80%, 0.5), inset 0 -1px 0 0 hsla(168, 100%, 20%, 0.2), 0 4px 16px hsla(168, 100%, 36%, 0.3), 0 8px 32px hsla(168, 100%, 36%, 0.15)',
-                }}
-              >
-                Apply for Venture Growth Services
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </ScrollReveal>
-          </div>
-        </section>
 
         {/* ===== CTA SECTION — TEAL ===== */}
         <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
