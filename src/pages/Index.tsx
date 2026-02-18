@@ -468,10 +468,10 @@ export default function Index() {
         </section>
 
         {/* ───── PORTFOLIO COMPANIES — Glass Marquee ───── */}
-        <section className="relative py-16 overflow-hidden" style={{ borderTop: '0.5px solid rgba(255,255,255,0.06)', borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
+        <section className="relative py-16 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
           <div className="container mx-auto px-6">
             <ScrollReveal>
-              <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">Our Clients are Pretty Cool</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-12" style={{ color: 'hsl(220, 20%, 15%)' }}>Our Clients are Pretty Cool</h2>
             </ScrollReveal>
 
             <div className="relative overflow-hidden">
@@ -483,12 +483,21 @@ export default function Index() {
                 {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
                   <div
                     key={`${company.name}-${i}`}
-                    className="flex-shrink-0 flex items-center justify-center w-36 h-16 rounded-xl liquid-glass hover:scale-[1.05] transition-transform duration-300 px-4"
+                    className="flex-shrink-0 flex items-center justify-center w-36 h-16 rounded-xl hover:scale-[1.05] transition-transform duration-300 px-4"
+                    style={{
+                      background: 'linear-gradient(135deg, hsla(168, 100%, 35%, 0.06) 0%, hsla(168, 80%, 40%, 0.03) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      borderTop: '1px solid hsla(168, 100%, 60%, 0.25)',
+                      borderLeft: '1px solid hsla(168, 100%, 60%, 0.15)',
+                      borderRight: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                      borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.06)',
+                    }}
                   >
                     <img
                       src={company.logo}
                       alt={company.name}
-                      className="max-h-10 max-w-full object-contain opacity-50 hover:opacity-90 transition-opacity brightness-0 invert"
+                      className="max-h-10 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity"
                     />
                   </div>
                 ))}
