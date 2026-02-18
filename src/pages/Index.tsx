@@ -780,7 +780,7 @@ export default function Index() {
             src={signatureLines} 
             alt="" 
             aria-hidden="true"
-            className="absolute top-0 right-0 h-3/4 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
+            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
             style={{ transform: 'scaleX(-1)' }}
           />
           <div className="container mx-auto px-6 relative z-10 text-center">
