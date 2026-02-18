@@ -632,7 +632,11 @@ export default function Index() {
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'hsla(168, 100%, 35%, 0.1)' }}>
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{
+                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                      }}>
                         <partner.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
                       <h3 className="font-semibold mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{partner.name}</h3>
