@@ -774,6 +774,22 @@ export default function Index() {
         </section>
 
 
+        {/* ───── EDGE-TO-EDGE IMAGE STRIP ───── */}
+        <section className="grid grid-cols-2 md:grid-cols-4">
+          <div className="aspect-[4/3] overflow-hidden">
+            <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden">
+            <img src="/placeholder.svg" alt="Community photo 2" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden">
+            <img src="/placeholder.svg" alt="Community photo 3" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden">
+            <img src="/placeholder.svg" alt="Community photo 4" className="w-full h-full object-cover" />
+          </div>
+        </section>
+
         {/* ───── FINAL CTA ───── */}
         <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
