@@ -816,47 +816,39 @@ export default function Index() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(172 100% 30%) 0%, hsl(168 100% 35%) 50%, hsl(164 70% 55%) 100%)' }}>
-          {/* Signature lines - bottom left, flipped */}
-          <img
-            src={signatureLines}
-            alt=""
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+          <img 
+            src={signatureLines} 
+            alt="" 
             aria-hidden="true"
-            className="absolute bottom-0 left-0 w-auto h-2/3 object-contain object-left-bottom opacity-50 pointer-events-none select-none"
+            className="absolute bottom-0 left-0 h-3/4 w-auto object-contain object-left opacity-50 pointer-events-none select-none mix-blend-overlay"
             style={{ transform: 'scaleX(-1) scaleY(-1)' }}
           />
-          {/* Signature lines - top right */}
-          <img
-            src={signatureLines}
-            alt=""
-            aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-30 pointer-events-none select-none"
-          />
-
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+                Ready to join our{' '}
+                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>community?</span>
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
+                Whether you're just starting out or ready to scale, we're here to help 
+                you build something extraordinary.
+              </p>
+              <Link 
+                to="/apply" 
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  color: 'white',
+                  border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                  boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
-                  Ready to{' '}
-                  <span className="italic font-light">Build?</span>
-                </h2>
-                <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto font-light">
-                  Join founders building and scaling tech-enabled solutions in Northern Ontario that deliver real-world
-                  impact.
-                </p>
-                <Link
-                  to="/apply"
-                  className="liquid-glass-light-btn inline-flex items-center gap-3 px-10 py-4 text-white font-semibold text-base rounded-full transition-all duration-300 group hover:scale-[1.03] active:scale-[0.97]"
-                >
-                  Apply for Venture Growth Services
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </motion.div>
+                Apply for Venture Growth Services
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </ScrollReveal>
           </div>
         </section>
