@@ -399,7 +399,7 @@ export default function About() {
                         <img 
                           src={member.image} 
                           alt={member.name} 
-                          className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                          className="w-full aspect-square object-cover transition-all duration-500"
                         />
                         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300" />
                       </div>
