@@ -263,7 +263,7 @@ export default function Index() {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none opacity-15"
-          style={{ transform: 'scaleX(-1)', maskImage: 'linear-gradient(to right, transparent 0%, black 60%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 60%)' }}
+          style={{ transform: 'scaleX(-1)', maskImage: 'linear-gradient(to left, transparent 0%, black 60%)', WebkitMaskImage: 'linear-gradient(to left, transparent 0%, black 60%)' }}
         />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(0 0% 100% / 0.2), transparent 70%)' }} />
