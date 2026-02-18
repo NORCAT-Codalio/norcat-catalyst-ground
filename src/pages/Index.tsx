@@ -743,12 +743,19 @@ export default function Index() {
         </section>
 
         {/* ───── PARTNERS — Glass Marquee ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ borderTop: '0.5px solid rgba(255,255,255,0.06)', borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
-          <div className="container mx-auto px-6">
+        <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 30% 95%) 0%, hsl(168 40% 90%) 40%, hsl(168 25% 93%) 100%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.05) 0%, transparent 70%)' }} />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Friends Who Open Doors</h2>
-                <p className="text-white/35 font-light">These are the operators, builders, and organizations who show up, make intros, and help founders win.</p>
+                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
+                  Our Partners
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>Friends Who Open Doors</h2>
+                <p className="font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>These are the operators, builders, and organizations who show up, make intros, and help founders win.</p>
               </div>
             </ScrollReveal>
 
@@ -763,7 +770,7 @@ export default function Index() {
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="max-h-12 max-w-full object-contain opacity-40 hover:opacity-80 transition-opacity brightness-0 invert"
+                      className="max-h-12 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity"
                     />
                   </div>
                 ))}
@@ -771,7 +778,7 @@ export default function Index() {
             </div>
 
             <div className="text-center mt-8">
-              <Link to="/ecosystem" className="inline-flex items-center gap-2 font-semibold group" style={{ color: 'hsl(168, 100%, 45%)' }}>
+              <Link to="/ecosystem" className="inline-flex items-center gap-2 font-semibold group" style={{ color: 'hsl(168, 100%, 30%)' }}>
                 Explore Partners
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
