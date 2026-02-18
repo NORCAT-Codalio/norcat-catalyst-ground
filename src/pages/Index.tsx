@@ -839,32 +839,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── PHILOSOPHY — The Sudbury Model ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 22% 6%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
-              style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }}
-              animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 6, repeat: Infinity }}
-            />
-          </div>
-
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">The Sudbury Model.</h2>
-                <p className="text-xl text-white/40 leading-relaxed mb-10 font-light">
-                  The Sudbury Model is rooted in a century of industrial excellence, where generations of mining, precision manufacturing, and hands-on problem-solving have forged a unique culture of grit and technical mastery. In Northern Ontario, we don't just ideate—we build. For startup founders, this means access to an ecosystem that values strategic patience, relentless execution, and the sophisticated engineering required to solve the world's toughest real-world challenges.
-                </p>
-                <Link to="/about" className="inline-flex items-center gap-2 font-semibold group" style={{ color: 'hsl(168, 100%, 45%)' }}>
-                  Read More About Our Approach
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
 
         {/* ───── FINAL CTA ───── */}
         <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
