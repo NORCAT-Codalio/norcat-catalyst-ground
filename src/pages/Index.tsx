@@ -781,7 +781,7 @@ export default function Index() {
             alt="" 
             aria-hidden="true"
             className="absolute top-0 right-0 h-3/4 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
-            style={{ transform: 'scaleY(-1)' }}
+            style={{ transform: 'scaleX(-1)' }}
           />
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
