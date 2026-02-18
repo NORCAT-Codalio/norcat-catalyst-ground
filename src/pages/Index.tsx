@@ -696,7 +696,7 @@ export default function Index() {
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
                     institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
                   </p>
-                  <Link to="/ecosystem/sudbury" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 0 40px -8px hsl(168 100% 35% / 0.5), inset 0 1px 0 0 rgba(255,255,255,0.2)' }}>
+                  <Link to="/ecosystem/sudbury" className="glass-frosted-btn-teal inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]">
                     Explore the Ecosystem
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
