@@ -580,49 +580,8 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── PARTNERS — Glass Marquee ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.05) 0%, transparent 70%)' }} />
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="text-center mb-12">
-                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
-                  Our Partners
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>Friends Who Open Doors</h2>
-                <p className="font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>These are the operators, builders, and organizations who show up, make intros, and help founders win.</p>
-              </div>
-            </ScrollReveal>
 
-            <div className="relative overflow-hidden">
-              <motion.div
-                className="flex gap-12 items-center justify-center"
-                animate={{ x: [0, -600] }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              >
-                {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, i) => (
-                  <div key={`${partner.name}-${i}`} className="flex-shrink-0 flex items-center justify-center w-40 h-20 px-4">
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="max-h-12 max-w-full object-contain"
-                    />
-                  </div>
-                ))}
-              </motion.div>
-            </div>
 
-            <div className="text-center mt-8">
-              <Link to="/ecosystem" className="inline-flex items-center gap-2 font-semibold group" style={{ color: 'hsl(168, 100%, 30%)' }}>
-                Explore Partners
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </section>
 
         {/* ───── INSIGHTS — Blog Cards ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
