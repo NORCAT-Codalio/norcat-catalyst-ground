@@ -262,7 +262,7 @@ export default function Index() {
           src={miningUndergroundHero}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none opacity-25"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none opacity-15"
           style={{ transform: 'scaleX(-1)' }}
         />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -273,7 +273,7 @@ export default function Index() {
           src={signatureLines} 
           alt="" 
           aria-hidden="true"
-          className="absolute top-0 right-0 w-auto h-3/4 object-contain object-right-top opacity-30 pointer-events-none select-none mix-blend-overlay"
+          className="absolute top-0 right-0 w-auto h-3/4 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay"
         />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
