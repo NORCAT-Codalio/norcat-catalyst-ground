@@ -6,6 +6,9 @@ import heroImage from '@/assets/hero-underground.jpg';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import signatureLines from '@/assets/signature-lines.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
+import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
+import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
@@ -814,13 +817,13 @@ export default function Index() {
           {/* Community photo strip — edge to edge */}
           <div className="grid grid-cols-5 gap-3 px-3 pb-3 mt-14">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src="/placeholder.svg" alt="Community photo 1" className="w-full h-full object-cover" />
+              <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src="/placeholder.svg" alt="Community photo 2" className="w-full h-full object-cover" />
+              <img src={ctaPhoto2} alt="Audience at event" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src="/placeholder.svg" alt="Community photo 3" className="w-full h-full object-cover" />
+              <img src={ctaPhoto3} alt="Community event" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src="/placeholder.svg" alt="Community photo 4" className="w-full h-full object-cover" />
