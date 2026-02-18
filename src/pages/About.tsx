@@ -292,11 +292,11 @@ export default function About() {
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <ScrollReveal direction="left">
-                <div className="rounded-2xl overflow-hidden shadow-xl">
+                <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                   <img
                     src={foundersImage}
                     alt="NORCAT Innovation team working with founders"
-                    className="w-full"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </ScrollReveal>
