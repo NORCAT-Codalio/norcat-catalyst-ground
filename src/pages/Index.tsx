@@ -322,7 +322,6 @@ export default function Index() {
         </section>
 
 
-
         {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
         <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
           <div className="relative overflow-hidden">
@@ -704,6 +703,27 @@ export default function Index() {
                   ))}
                 </div>
               </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── Community Photo Strip ───── */}
+        <section className="relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="grid grid-cols-5 gap-3 px-3 py-5">
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto2} alt="Audience at event" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto3} alt="Community event" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto4} alt="NORCAT podium presentation" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto5} alt="Kinmetrix pitch presentation" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
