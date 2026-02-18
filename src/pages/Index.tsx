@@ -787,20 +787,24 @@ export default function Index() {
         </section>
 
         {/* ───── INSIGHTS — Blog Cards ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 22% 7%) 0%, hsl(220 20% 9%) 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 30% 95%) 0%, hsl(168 40% 90%) 40%, hsl(168 25% 93%) 100%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.05) 0%, transparent 70%)' }} />
+          </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass" style={{ color: 'hsl(168, 100%, 50%)' }}>
+                  <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
                     Insights
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white">
-                    Real stories. <span style={{ color: 'hsl(168, 100%, 35%)' }}>Unique insights.</span>
+                  <h2 className="text-3xl md:text-4xl font-bold" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                    Real stories. <span style={{ color: 'hsl(168, 100%, 30%)' }}>Unique insights.</span>
                   </h2>
-                  <p className="text-white/40 mt-2 font-light">No corporate fluff—just the raw, unfiltered truth about what it takes to build a company from the people who've done it.</p>
+                  <p className="mt-2 font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>No corporate fluff—just the raw, unfiltered truth about what it takes to build a company from the people who've done it.</p>
                 </div>
-                <Link to="/insights/news" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                <Link to="/insights/news" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 30%)' }}>
                   See all stories
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -811,10 +815,19 @@ export default function Index() {
               {blogPosts.map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block h-full">
-                    <div className="liquid-glass glass-shimmer rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300">
-                      <span className="text-xs font-medium mb-4 block" style={{ color: 'hsl(168, 100%, 50%)' }}>{post.category}</span>
-                      <h3 className="text-lg font-bold text-white mb-5 group-hover:text-[hsl(168,100%,45%)] transition-colors">{post.title}</h3>
-                      <span className="inline-flex items-center gap-2 text-white/30 text-sm group-hover:text-[hsl(168,100%,45%)] transition-colors font-light">
+                    <div className="rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300" style={{
+                      background: 'linear-gradient(135deg, hsla(168, 100%, 35%, 0.06) 0%, hsla(168, 80%, 40%, 0.03) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
+                      borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
+                      borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
+                      borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                    }}>
+                      <span className="text-xs font-medium mb-4 block" style={{ color: 'hsl(168, 100%, 30%)' }}>{post.category}</span>
+                      <h3 className="text-lg font-bold mb-5 group-hover:text-[hsl(168,100%,30%)] transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{post.title}</h3>
+                      <span className="inline-flex items-center gap-2 text-sm group-hover:text-[hsl(168,100%,30%)] transition-colors font-light" style={{ color: 'hsl(220, 10%, 55%)' }}>
                         Read More
                         <ArrowRight className="w-4 h-4" />
                       </span>
