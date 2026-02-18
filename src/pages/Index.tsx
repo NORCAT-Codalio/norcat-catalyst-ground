@@ -5,6 +5,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
 import heroMiningUnderground from '@/assets/hero-mining-underground.jpg';
 import heroHeader from '@/assets/hero-header.jpg';
+import signatureLines from '@/assets/signature-lines.png';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -251,6 +252,79 @@ export default function Index() {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ===== HERO SECTION — DARK (About-page style) ===== */}
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(168 100% 36% / 0.3), transparent 70%)' }} />
+          <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 80% 50% / 0.2), transparent 70%)' }} />
+        </div>
+        <img 
+          src={signatureLines} 
+          alt="" 
+          aria-hidden="true"
+          className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-[0.07] pointer-events-none select-none mix-blend-screen"
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl">
+            <ScrollReveal>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-8">
+                <Sparkles className="w-3.5 h-3.5 icon-glow" />
+                Sudbury's Regional Innovation Centre
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] font-bold leading-[1.08] tracking-tight text-white mb-8">
+                Build the{' '}
+                <span className="text-gradient">Future Here</span>
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-lg md:text-xl leading-relaxed text-white/50 max-w-2xl mb-8">
+                World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={250}>
+              <div className="flex flex-wrap gap-2 mb-10">
+                {sectors.map((sector) => (
+                  <span key={sector.label} className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-white/70 text-sm">
+                    <sector.icon className="w-4 h-4" />
+                    {sector.label}
+                  </span>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/apply" className="btn-primary-lg group">
+                  Work With Us
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white/80 hover:text-white transition-all duration-300 liquid-glass-btn">
+                  Learn More
+                  <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10 mt-20">
+          <ScrollReveal delay={400}>
+            <div className="flex flex-wrap gap-6 md:gap-8">
+              {stats.map((stat) => (
+                <div key={stat.label} className="liquid-glass rounded-2xl px-8 py-6 flex-1 min-w-[180px]">
+                  <div className="text-4xl md:text-5xl font-black text-primary tracking-tight icon-glow">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] font-semibold tracking-[0.2em] uppercase mt-2 text-white/40">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* Portfolio Companies - DMZ Style */}
