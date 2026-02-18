@@ -816,23 +816,21 @@ export default function Index() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="relative py-36 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(220 20% 8%) 0%, hsl(168 30% 6%) 50%, hsl(220 22% 5%) 100%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
-              style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.12) 0%, transparent 60%)' }}
-              animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 6, repeat: Infinity }}
-            />
-          </div>
-
-          {/* Signature lines */}
+        <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(172 100% 30%) 0%, hsl(168 100% 35%) 50%, hsl(164 70% 55%) 100%)' }}>
+          {/* Signature lines - bottom left, flipped */}
           <img
             src={signatureLines}
             alt=""
             aria-hidden="true"
-            className="absolute bottom-0 left-0 w-auto h-1/2 object-contain object-left-bottom opacity-20 pointer-events-none select-none mix-blend-overlay"
+            className="absolute bottom-0 left-0 w-auto h-2/3 object-contain object-left-bottom opacity-50 pointer-events-none select-none"
             style={{ transform: 'scaleX(-1) scaleY(-1)' }}
+          />
+          {/* Signature lines - top right */}
+          <img
+            src={signatureLines}
+            alt=""
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-30 pointer-events-none select-none"
           />
 
           <div className="container mx-auto px-6 relative z-10 text-center">
@@ -843,21 +841,19 @@ export default function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
                   Ready to{' '}
-                  <span style={{ color: 'hsl(168, 100%, 35%)' }}>Build?</span>
+                  <span className="italic font-light">Build?</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-white/40 mb-10 max-w-2xl mx-auto font-light">
+                <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto font-light">
                   Join founders building and scaling tech-enabled solutions in Northern Ontario that deliver real-world
                   impact.
                 </p>
                 <Link
                   to="/apply"
-                  className="inline-flex items-center gap-3 px-10 py-5 text-white font-bold text-lg rounded-full transition-all duration-300 group hover:scale-[1.03] active:scale-[0.97]"
-                  style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 0 60px -10px hsl(168 100% 35% / 0.6), inset 0 1px 0 0 rgba(255,255,255,0.2), inset 0 -1px 0 0 rgba(0,0,0,0.1)' }}
+                  className="liquid-glass-light-btn inline-flex items-center gap-3 px-10 py-4 text-white font-semibold text-base rounded-full transition-all duration-300 group hover:scale-[1.03] active:scale-[0.97]"
                 >
-                  <Rocket className="h-5 w-5" />
-                  Start Your Journey
+                  Apply for Venture Growth Services
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </motion.div>
