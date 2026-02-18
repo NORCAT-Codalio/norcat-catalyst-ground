@@ -248,35 +248,12 @@ export default function Index() {
                 </span>
               </motion.h1>
 
-              {/* Glowing divider line */}
-              <motion.div
-                className="mb-8 h-px w-32"
-                style={{
-                  background: 'linear-gradient(90deg, hsl(168 100% 35%), hsl(168 100% 35% / 0.3), transparent)',
-                  boxShadow: '0 0 20px 2px hsl(168 100% 35% / 0.3)'
-                }}
-                initial={{ opacity: 0, scaleX: 0 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                transition={{ delay: 0.45, duration: 0.8, ease: 'easeOut' }}
-                style-origin="left"
-              />
-
-              {/* Description */}
-              <motion.p
-                className="text-xl md:text-2xl text-white/55 leading-relaxed mb-8 max-w-2xl font-light"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              >
-                World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
-              </motion.p>
-
               {/* Sector tags */}
               <motion.div
-                className="flex flex-wrap gap-2 mb-10"
+                className="flex flex-wrap gap-2 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
+                transition={{ delay: 0.45, duration: 0.8 }}
               >
                 {sectors.map((sector, i) => (
                   <motion.span
@@ -284,13 +261,23 @@ export default function Index() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white/70 text-sm liquid-glass hover:text-white/90 transition-colors duration-300"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.7 + i * 0.06 }}
+                    transition={{ delay: 0.55 + i * 0.06 }}
                   >
                     <sector.icon className="w-4 h-4" />
                     {sector.label}
                   </motion.span>
                 ))}
               </motion.div>
+
+              {/* Description */}
+              <motion.p
+                className="text-xl md:text-2xl text-white leading-relaxed mb-10 max-w-2xl font-light"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.8 }}
+              >
+                World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
+              </motion.p>
 
               {/* CTAs */}
               <motion.div
