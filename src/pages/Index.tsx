@@ -254,41 +254,41 @@ export default function Index() {
         </motion.div>
       </section>
 
-      {/* ===== HERO SECTION — DARK (About-page style) ===== */}
-      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
+      {/* ===== HERO SECTION — TEAL (About-page style) ===== */}
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 60%, hsl(170 90% 20%) 100%)' }}>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(168 100% 36% / 0.3), transparent 70%)' }} />
-          <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 80% 50% / 0.2), transparent 70%)' }} />
+          <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(0 0% 100% / 0.2), transparent 70%)' }} />
+          <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 60% 60% / 0.3), transparent 70%)' }} />
         </div>
         <img 
           src={signatureLines} 
           alt="" 
           aria-hidden="true"
-          className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-[0.07] pointer-events-none select-none mix-blend-screen"
+          className="absolute top-0 right-0 w-auto h-3/4 object-contain object-right-top opacity-30 pointer-events-none select-none mix-blend-overlay"
         />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl">
             <ScrollReveal>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-8">
-                <Sparkles className="w-3.5 h-3.5 icon-glow" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] uppercase text-white/90 mb-8" style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '0.5px solid hsla(0, 0%, 100%, 0.25)' }}>
+                <Sparkles className="w-3.5 h-3.5" />
                 Sudbury's Regional Innovation Centre
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] font-bold leading-[1.08] tracking-tight text-white mb-8">
                 Build the{' '}
-                <span className="text-gradient">Future Here</span>
+                <span className="text-white/85">Future Here</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-lg md:text-xl leading-relaxed text-white/50 max-w-2xl mb-8">
+              <p className="text-lg md:text-xl leading-relaxed text-white/60 max-w-2xl mb-8">
                 World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={250}>
               <div className="flex flex-wrap gap-2 mb-10">
                 {sectors.map((sector) => (
-                  <span key={sector.label} className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-white/70 text-sm">
+                  <span key={sector.label} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white/80 text-sm" style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '0.5px solid hsla(0, 0%, 100%, 0.25)' }}>
                     <sector.icon className="w-4 h-4" />
                     {sector.label}
                   </span>
@@ -297,11 +297,11 @@ export default function Index() {
             </ScrollReveal>
             <ScrollReveal delay={300}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white hover:text-white transition-all duration-300 liquid-glass-btn group">
+                <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white hover:text-white transition-all duration-300 group" style={{ background: 'hsla(0, 0%, 100%, 0.2)', border: '0.5px solid hsla(0, 0%, 100%, 0.3)', backdropFilter: 'blur(12px)' }}>
                   Work With Us
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white/80 hover:text-white transition-all duration-300 liquid-glass-btn group">
+                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white/80 hover:text-white transition-all duration-300 group" style={{ background: 'hsla(0, 0%, 100%, 0.1)', border: '0.5px solid hsla(0, 0%, 100%, 0.2)', backdropFilter: 'blur(12px)' }}>
                   Learn More
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
