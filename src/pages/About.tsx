@@ -289,13 +289,6 @@ export default function About() {
             <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 60% 60% / 0.3), transparent 70%)' }} />
           </div>
 
-          {/* Signature lines decoration */}
-          <img 
-            src={signatureLines} 
-            alt="" 
-            aria-hidden="true"
-            className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-[0.12] pointer-events-none select-none mix-blend-overlay"
-          />
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -320,11 +313,17 @@ export default function About() {
                 </ScrollReveal>
               </div>
               <ScrollReveal delay={250}>
-                <div className="hidden lg:block rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                   <img 
                     src={miningEquipment} 
                     alt="Mining equipment at NORCAT facility" 
                     className="w-full h-auto object-cover"
+                  />
+                  <img 
+                    src={signatureLines} 
+                    alt="" 
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-cover opacity-[0.06] pointer-events-none select-none mix-blend-overlay"
                   />
                 </div>
               </ScrollReveal>
