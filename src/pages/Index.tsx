@@ -256,7 +256,7 @@ export default function Index() {
       </section>
 
       {/* ===== HERO SECTION — TEAL (About-page style) ===== */}
-      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 60%, hsl(170 90% 20%) 100%)' }}>
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(90deg, hsl(168 100% 22%) 0%, hsl(168 100% 28%) 40%, hsl(168 80% 22%) 70%, hsl(170 90% 20%) 100%)' }}>
         {/* Background image – flipped horizontally, teal overlay sits in front */}
         <img
           src={miningUndergroundHero}
