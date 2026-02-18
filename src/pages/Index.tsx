@@ -596,16 +596,7 @@ export default function Index() {
               {upcomingPrograms.map((program, i) => (
                 <ScrollReveal key={program.title} delay={i * 0.1}>
                   <Link to={program.link} className="group block h-full">
-                    <div 
-                      className="glass-shimmer rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300"
-                      style={{
-                        background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.7) 0%, hsla(0, 0%, 100%, 0.5) 100%)',
-                        backdropFilter: 'blur(20px)',
-                        WebkitBackdropFilter: 'blur(20px)',
-                        border: '0.5px solid hsla(168, 100%, 35%, 0.15)',
-                        boxShadow: '0 4px 24px hsla(168, 100%, 20%, 0.06), inset 0 1px 0 0 hsla(0, 0%, 100%, 0.8)',
-                      }}
-                    >
+                    <div className="liquid-glass-light glass-shimmer rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300">
                       <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-5" style={{ background: 'hsl(168 100% 35% / 0.1)', color: 'hsl(168, 100%, 28%)' }}>
                         {program.type}
                       </span>
