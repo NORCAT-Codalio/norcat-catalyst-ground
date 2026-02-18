@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 import signatureLines from '@/assets/signature-lines.png';
+import miningEquipment from '@/assets/mining-equipment.jpg';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -228,24 +229,35 @@ export default function About() {
           />
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-3xl">
-              <ScrollReveal>
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-8">
-                  <Lightbulb className="w-3.5 h-3.5 icon-glow" />
-                  About NORCAT Innovation
-                </span>
-              </ScrollReveal>
-              <ScrollReveal delay={100}>
-                <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] font-bold leading-[1.08] tracking-tight text-white mb-8">
-                  Greater Sudbury's Regional{' '}
-                  <span className="text-gradient">Innovation Centre</span>
-                </h1>
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <p className="text-lg md:text-xl leading-relaxed text-white/50 max-w-2xl">
-                  A not-for-profit Innovation Centre funded by the Government of Ontario, 
-                  supporting tech-enabled, IP-driven startups across Northern Ontario.
-                </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-3xl">
+                <ScrollReveal>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-8">
+                    <Lightbulb className="w-3.5 h-3.5 icon-glow" />
+                    About NORCAT Innovation
+                  </span>
+                </ScrollReveal>
+                <ScrollReveal delay={100}>
+                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] font-bold leading-[1.08] tracking-tight text-white mb-8">
+                    Greater Sudbury's Regional{' '}
+                    <span className="text-gradient">Innovation Centre</span>
+                  </h1>
+                </ScrollReveal>
+                <ScrollReveal delay={200}>
+                  <p className="text-lg md:text-xl leading-relaxed text-white/50 max-w-2xl">
+                    A not-for-profit Innovation Centre funded by the Government of Ontario, 
+                    supporting tech-enabled, IP-driven startups across Northern Ontario.
+                  </p>
+                </ScrollReveal>
+              </div>
+              <ScrollReveal delay={250}>
+                <div className="hidden lg:block rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                  <img 
+                    src={miningEquipment} 
+                    alt="Mining equipment at NORCAT facility" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </ScrollReveal>
             </div>
           </div>
