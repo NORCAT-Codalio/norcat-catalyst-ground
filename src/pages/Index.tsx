@@ -568,10 +568,10 @@ export default function Index() {
         </section>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 60% 42%) 0%, hsl(168 80% 35%) 40%, hsl(172 70% 30%) 100%)' }}>
-          {/* Subtle lighter orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(164 80% 55% / 0.2) 0%, transparent 60%)' }} />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(172 60% 28% / 0.3) 0%, transparent 60%)' }} />
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(168 30% 95%) 0%, hsl(168 40% 90%) 40%, hsl(168 25% 93%) 100%)' }}>
+          {/* Subtle teal orbs */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -580,20 +580,19 @@ export default function Index() {
                   <span 
                     className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4"
                     style={{ 
-                      background: 'hsla(0, 0%, 100%, 0.12)',
-                      color: 'hsla(0, 0%, 100%, 0.7)',
-                      border: '0.5px solid hsla(0, 0%, 100%, 0.2)',
-                      backdropFilter: 'blur(8px)',
+                      background: 'hsl(168 100% 35% / 0.1)',
+                      color: 'hsl(168, 100%, 28%)',
+                      border: '0.5px solid hsl(168 100% 35% / 0.2)',
                     }}
                   >
                     Programs & Funding
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">
-                    Support that adapts as your <span style={{ color: 'hsla(0, 0%, 100%, 0.7)' }}>company grows.</span>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                    Support that adapts as your <span style={{ color: 'hsl(168, 100%, 28%)' }}>company grows.</span>
                   </h2>
-                  <p className="font-light max-w-xl" style={{ color: 'hsla(0, 0%, 100%, 0.5)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
+                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 10%, 45%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
-                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/70 hover:text-white transition-colors">
+                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
                   View all
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -607,39 +606,39 @@ export default function Index() {
                     <div 
                       className="rounded-[20px] p-7 h-full hover:scale-[1.02] transition-all duration-300"
                       style={{
-                        background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.12) 0%, hsla(0, 0%, 100%, 0.05) 100%)',
+                        background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.65) 0%, hsla(0, 0%, 100%, 0.45) 100%)',
                         backdropFilter: 'blur(24px)',
                         WebkitBackdropFilter: 'blur(24px)',
-                        border: '0.5px solid hsla(0, 0%, 100%, 0.25)',
-                        boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.05), 0 8px 32px hsla(0, 0%, 0%, 0.12), 0 2px 8px hsla(0, 0%, 0%, 0.08)',
+                        border: '0.5px solid hsla(0, 0%, 100%, 0.7)',
+                        boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.8), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.03), 0 8px 32px hsla(168, 100%, 20%, 0.08), 0 2px 8px hsla(0, 0%, 0%, 0.04)',
                       }}
                     >
                       <span 
                         className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-5"
                         style={{ 
-                          background: 'hsla(0, 0%, 100%, 0.1)',
-                          color: 'hsla(0, 0%, 100%, 0.7)',
-                          border: '0.5px solid hsla(0, 0%, 100%, 0.15)',
+                          background: 'hsl(168 100% 35% / 0.1)',
+                          color: 'hsl(168, 100%, 28%)',
+                          border: '0.5px solid hsl(168 100% 35% / 0.15)',
                         }}
                       >
                         {program.type}
                       </span>
-                      <h3 className="text-xl font-bold mb-5 text-white group-hover:text-white/90 transition-colors">{program.title}</h3>
-                      <div className="space-y-3 text-sm font-light" style={{ color: 'hsla(0, 0%, 100%, 0.45)' }}>
+                      <h3 className="text-xl font-bold mb-5 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{program.title}</h3>
+                      <div className="space-y-3 text-sm font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>
                         <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" style={{ color: 'hsla(0, 0%, 100%, 0.3)' }} />
+                          <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
                           {program.applyBy}
                         </div>
                         <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" style={{ color: 'hsla(0, 0%, 100%, 0.3)' }} />
+                          <Calendar className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
                           {program.duration}
                         </div>
                         <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" style={{ color: 'hsla(0, 0%, 100%, 0.3)' }} />
+                          <MapPin className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
                           {program.location}
                         </div>
                       </div>
-                      <div className="mt-7 flex items-center gap-2 text-sm font-medium" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }}>
+                      <div className="mt-7 flex items-center gap-2 text-sm font-medium" style={{ color: 'hsl(168, 100%, 28%)' }}>
                         See Details
                         <ExternalLink className="w-4 h-4" />
                       </div>
