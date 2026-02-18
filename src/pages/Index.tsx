@@ -817,7 +817,7 @@ export default function Index() {
           </div>
 
           {/* Community photo strip — edge to edge */}
-          <div className="grid grid-cols-5 gap-3 px-3 pb-3 mt-14">
+          <div className="grid grid-cols-5 gap-3 px-3 pb-5 mt-14">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
             </div>
