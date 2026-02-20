@@ -520,7 +520,7 @@ export default function Index() {
             <ScrollReveal>
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
-                  Innovation Ecosystem
+                  The Sudbury Advantage
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'hsl(220, 20%, 15%)' }}>
                   A network designed to{' '}
