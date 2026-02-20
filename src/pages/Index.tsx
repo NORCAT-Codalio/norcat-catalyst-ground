@@ -726,14 +726,14 @@ export default function Index() {
                       key={partner.name}
                       className="rounded-[20px] p-6 hover:scale-[1.03] transition-transform duration-300"
                       style={{
-                        background: 'linear-gradient(165deg, hsla(220, 15%, 80%, 0.35) 0%, hsla(220, 15%, 75%, 0.2) 50%, hsla(220, 15%, 85%, 0.12) 100%)',
+                        background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
                         backdropFilter: 'blur(20px)',
                         WebkitBackdropFilter: 'blur(20px)',
-                        borderTop: '1px solid hsla(220, 15%, 100%, 0.5)',
-                        borderLeft: '1px solid hsla(220, 15%, 100%, 0.35)',
-                        borderRight: '0.5px solid hsla(220, 15%, 80%, 0.15)',
-                        borderBottom: '0.5px solid hsla(220, 15%, 70%, 0.1)',
-                        boxShadow: 'inset 0 1px 1px 0 hsla(220, 15%, 100%, 0.25), inset 0 0 20px 0 hsla(220, 15%, 90%, 0.08), 0 8px 32px hsla(220, 15%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                        borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                        borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                        borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                        borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                       }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
