@@ -511,8 +511,82 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ───── INNOVATION ECOSYSTEM — Grey-Teal ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 95%)' }}>
+          <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 60%)' }} />
 
+          <div className="container mx-auto px-6 relative z-10">
+            <ScrollReveal>
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
+                  Innovation Ecosystem
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: 'hsl(220, 20%, 15%)' }}>
+                  A network designed to{' '}
+                  <span className="text-gradient">accelerate growth.</span>
+                </h2>
+                <p className="font-light" style={{ color: 'hsl(220, 20%, 35%)' }}>
+                  Access the resources, connections, and infrastructure you need to move from concept to market—all in one ecosystem.
+                </p>
+              </div>
+            </ScrollReveal>
 
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Brain, title: 'Mentorship', desc: 'Expert mentors matched to your stage and industry.' },
+                { icon: DollarSign, title: 'Capital Access', desc: 'Connections to angel, VC, and government funding.' },
+                { icon: Cpu, title: 'Tech Infrastructure', desc: 'Labs, testing facilities, and development spaces.' },
+                { icon: Handshake, title: 'Industry Partners', desc: 'Pilot opportunities with enterprise customers.' },
+              ].map((item, i) => (
+                <ScrollReveal key={item.title} delay={i * 0.1}>
+                  <div 
+                    className="rounded-[20px] p-7 text-center h-full"
+                    style={{
+                      background: 'linear-gradient(165deg, hsla(220, 15%, 100%, 0.7) 0%, hsla(220, 15%, 96%, 0.5) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      borderTop: '1px solid hsla(220, 15%, 100%, 0.8)',
+                      borderLeft: '1px solid hsla(220, 15%, 100%, 0.6)',
+                      borderRight: '0.5px solid hsla(220, 15%, 85%, 0.3)',
+                      borderBottom: '0.5px solid hsla(220, 15%, 85%, 0.2)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.6), 0 8px 32px hsla(220, 15%, 50%, 0.08), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                    }}
+                  >
+                    <div 
+                      className="w-14 h-14 rounded-full mx-auto mb-5 flex items-center justify-center"
+                      style={{
+                        background: 'linear-gradient(145deg, hsl(168 100% 38%) 0%, hsl(168 100% 28%) 100%)',
+                        boxShadow: 'inset 0 1px 2px 0 hsla(168, 100%, 70%, 0.4), 0 4px 12px hsla(168, 100%, 25%, 0.25), 0 2px 4px hsla(0, 0%, 0%, 0.1)',
+                      }}
+                    >
+                      <item.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>{item.title}</h3>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 20%, 35%)' }}>{item.desc}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal delay={0.3}>
+              <div className="text-center mt-12">
+                <Link 
+                  to="/ecosystem" 
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsl(168 100% 35%) 0%, hsl(168 100% 25%) 100%)',
+                    color: 'white',
+                    boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.3), 0 4px 16px hsla(168, 100%, 25%, 0.3), 0 2px 8px hsla(0, 0%, 0%, 0.1)',
+                  }}
+                >
+                  Explore the Ecosystem
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
