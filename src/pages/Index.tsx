@@ -472,7 +472,7 @@ export default function Index() {
                 ))}
               </div>
               <ScrollReveal delay={0.2} className="flex items-center">
-                <div className="rounded-[20px] overflow-hidden shadow-lg w-[80%] ml-auto">
+                <div className="rounded-[20px] overflow-hidden shadow-lg w-[90%] ml-auto">
                   <img src={loopxTeam} alt="LoopX team photo" className="w-full h-auto object-cover" />
                 </div>
               </ScrollReveal>
