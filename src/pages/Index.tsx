@@ -677,12 +677,26 @@ export default function Index() {
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
                     institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
                   </p>
-                  <Link to="/ecosystem/sudbury" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                    color: 'hsl(168, 100%, 35%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                  }}>
+                  <Link to="/ecosystem/sudbury" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-base font-bold tracking-wide transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                    background: 'linear-gradient(180deg, hsla(140, 18%, 82%, 0.85) 0%, hsla(145, 15%, 76%, 0.75) 60%, hsla(148, 14%, 72%, 0.7) 100%)',
+                    backdropFilter: 'blur(18px)',
+                    WebkitBackdropFilter: 'blur(18px)',
+                    border: '1.5px solid hsla(145, 18%, 68%, 0.5)',
+                    borderTop: '1.5px solid hsla(140, 25%, 90%, 0.8)',
+                    borderBottom: '1.5px solid hsla(148, 15%, 60%, 0.45)',
+                    color: 'hsl(155, 55%, 15%)',
+                    boxShadow: 'inset 0 2px 6px 0 hsla(140, 30%, 95%, 0.6), inset 0 -2px 6px 0 hsla(148, 15%, 55%, 0.12), 0 4px 16px -2px hsla(150, 25%, 45%, 0.18), 0 1px 4px hsla(150, 20%, 40%, 0.1)',
+                    letterSpacing: '0.01em',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(180deg, hsla(140, 18%, 85%, 0.9) 0%, hsla(145, 15%, 79%, 0.8) 60%, hsla(148, 14%, 75%, 0.75) 100%)';
+                    e.currentTarget.style.boxShadow = 'inset 0 2px 6px 0 hsla(140, 30%, 95%, 0.7), inset 0 -2px 6px 0 hsla(148, 15%, 55%, 0.15), 0 6px 24px -2px hsla(150, 25%, 45%, 0.25), 0 2px 8px hsla(150, 20%, 40%, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(180deg, hsla(140, 18%, 82%, 0.85) 0%, hsla(145, 15%, 76%, 0.75) 60%, hsla(148, 14%, 72%, 0.7) 100%)';
+                    e.currentTarget.style.boxShadow = 'inset 0 2px 6px 0 hsla(140, 30%, 95%, 0.6), inset 0 -2px 6px 0 hsla(148, 15%, 55%, 0.12), 0 4px 16px -2px hsla(150, 25%, 45%, 0.18), 0 1px 4px hsla(150, 20%, 40%, 0.1)';
+                  }}
+                  >
                     Explore the Ecosystem
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
