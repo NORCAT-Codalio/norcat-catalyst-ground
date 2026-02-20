@@ -557,27 +557,32 @@ export default function Index() {
                   ].map((partner, i) => (
                     <motion.div
                       key={partner.name}
-                      className="rounded-[20px] p-6 hover:scale-[1.03] transition-transform duration-300"
+                      className="rounded-[20px] p-6 hover:scale-[1.03] transition-transform duration-300 cursor-default"
                       style={{
-                        background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
-                        backdropFilter: 'blur(20px)',
-                        WebkitBackdropFilter: 'blur(20px)',
-                        borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
-                        borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
-                        borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
-                        borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
-                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                        background: 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)',
+                        backdropFilter: 'blur(18px)',
+                        WebkitBackdropFilter: 'blur(18px)',
+                        border: '1px solid hsla(150, 30%, 60%, 0.4)',
+                        borderTop: '1px solid hsla(150, 40%, 85%, 0.7)',
+                        boxShadow: '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)',
                       }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
+                      whileHover={{
+                        boxShadow: '0 8px 32px -4px hsla(155, 40%, 40%, 0.3), 0 4px 12px -2px hsla(155, 30%, 50%, 0.2), inset 0 1px 1px hsla(150, 50%, 95%, 0.5)',
+                      }}
                     >
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: 'hsl(168 100% 35% / 0.1)' }}>
-                        <partner.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ 
+                        background: 'hsla(150, 30%, 60%, 0.25)',
+                        border: '0.5px solid hsla(150, 40%, 80%, 0.5)',
+                        boxShadow: 'inset 0 1px 1px hsla(150, 50%, 95%, 0.3)',
+                      }}>
+                        <partner.icon className="w-6 h-6" style={{ color: 'hsl(155, 50%, 18%)' }} />
                       </div>
-                      <h3 className="font-semibold mb-1" style={{ color: 'hsl(220, 20%, 15%)' }}>{partner.name}</h3>
-                      <p className="text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>{partner.desc}</p>
+                      <h3 className="font-semibold mb-1" style={{ color: 'hsl(155, 50%, 18%)' }}>{partner.name}</h3>
+                      <p className="text-sm font-light" style={{ color: 'hsl(155, 40%, 25%)' }}>{partner.desc}</p>
                     </motion.div>
                   ))}
                 </div>
