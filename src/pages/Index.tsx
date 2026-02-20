@@ -547,31 +547,24 @@ export default function Index() {
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block h-full">
-                    <div className="rounded-2xl p-7 h-full hover:scale-[1.02] transition-all duration-300" style={{
-                      background: 'linear-gradient(145deg, hsla(220, 15%, 75%, 0.2) 0%, hsla(220, 15%, 65%, 0.1) 100%)',
+                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.02] transition-all duration-300 relative overflow-hidden" style={{
+                      background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
                       backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(220, 15%, 100%, 0.5)',
-                      borderLeft: '1px solid hsla(220, 15%, 100%, 0.35)',
-                      borderRight: '0.5px solid hsla(220, 15%, 80%, 0.15)',
-                      borderBottom: '0.5px solid hsla(220, 15%, 60%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(220, 15%, 100%, 0.25), inset 0 0 20px 0 hsla(220, 15%, 80%, 0.06), 0 8px 32px hsla(220, 15%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
+                      borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
+                      borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
+                      borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                     }}>
-                      <span className="text-xs font-medium mb-4 block" style={{ color: 'hsl(220, 15%, 45%)' }}>{post.category}</span>
-                      <h3 className="text-lg font-bold mb-5 group-hover:opacity-70 transition-opacity" style={{ color: 'hsl(220, 15%, 20%)' }}>{post.title}</h3>
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style={{
+                        background: 'hsl(168 100% 35% / 0.1)',
+                        color: 'hsl(168, 100%, 28%)',
+                        border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                      }}>{post.category}</span>
+                      <h3 className="text-lg font-bold mb-5 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{post.title}</h3>
                       
-                      {/* Glass capsule button inspired by reference */}
-                      <span className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 group-hover:scale-[1.03]" style={{
-                        background: 'linear-gradient(145deg, hsla(220, 15%, 75%, 0.25) 0%, hsla(220, 15%, 65%, 0.15) 100%)',
-                        backdropFilter: 'blur(16px)',
-                        WebkitBackdropFilter: 'blur(16px)',
-                        borderTop: '1px solid hsla(220, 15%, 100%, 0.45)',
-                        borderLeft: '1px solid hsla(220, 15%, 100%, 0.3)',
-                        borderRight: '0.5px solid hsla(220, 15%, 80%, 0.12)',
-                        borderBottom: '0.5px solid hsla(220, 15%, 60%, 0.08)',
-                        boxShadow: 'inset 0 1px 0 0 hsla(220, 15%, 100%, 0.3), inset 0 -1px 2px 0 hsla(220, 15%, 40%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.1)',
-                        color: 'hsl(220, 15%, 30%)',
-                      }}>
+                      <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium glass-frosted-btn-teal group-hover:scale-[1.03]">
                         Download PDF
                         <ArrowRight className="w-4 h-4" />
                       </span>
