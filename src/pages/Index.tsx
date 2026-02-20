@@ -406,7 +406,7 @@ export default function Index() {
           {/* Subtle teal orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
-          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[500px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
