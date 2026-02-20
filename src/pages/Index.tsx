@@ -323,7 +323,7 @@ export default function Index() {
 
 
         {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
-        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
+        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="relative overflow-hidden">
             <motion.div
               className="flex gap-8"
