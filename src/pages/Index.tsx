@@ -520,7 +520,27 @@ export default function Index() {
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research
                     institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
                   </p>
-                  <Link to="/ecosystem/sudbury" className="glass-frosted-btn-teal inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]">
+                  <Link 
+                    to="/ecosystem/sudbury" 
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
+                    style={{
+                      background: 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)',
+                      backdropFilter: 'blur(18px)',
+                      WebkitBackdropFilter: 'blur(18px)',
+                      border: '1px solid hsla(150, 30%, 60%, 0.4)',
+                      borderTop: '1px solid hsla(150, 40%, 85%, 0.7)',
+                      boxShadow: '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)',
+                      color: 'hsl(155, 50%, 18%)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(145deg, hsla(150, 22%, 78%, 0.65) 0%, hsla(155, 28%, 68%, 0.55) 100%)';
+                      e.currentTarget.style.boxShadow = '0 8px 32px -4px hsla(155, 40%, 40%, 0.3), 0 4px 12px -2px hsla(155, 30%, 50%, 0.2), inset 0 1px 1px hsla(150, 50%, 95%, 0.5)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)';
+                      e.currentTarget.style.boxShadow = '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)';
+                    }}
+                  >
                     Explore the Ecosystem
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
