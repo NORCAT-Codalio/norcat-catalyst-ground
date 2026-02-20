@@ -524,20 +524,21 @@ export default function Index() {
                     to="/ecosystem/sudbury" 
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(200, 220, 200, 0.5) 0%, rgba(180, 200, 180, 0.4) 50%, rgba(155, 180, 160, 0.35) 100%)',
-                      backdropFilter: 'blur(12px)',
-                      WebkitBackdropFilter: 'blur(12px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      boxShadow: '0 12px 40px -8px rgba(100, 140, 110, 0.25), 0 4px 6px -1px rgba(60, 90, 70, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
-                      color: 'hsl(155, 55%, 15%)',
+                      background: 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)',
+                      backdropFilter: 'blur(18px)',
+                      WebkitBackdropFilter: 'blur(18px)',
+                      border: '1px solid hsla(150, 30%, 60%, 0.4)',
+                      borderTop: '1px solid hsla(150, 40%, 85%, 0.7)',
+                      boxShadow: '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)',
+                      color: 'hsl(155, 50%, 18%)',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(210, 230, 210, 0.6) 0%, rgba(190, 210, 190, 0.5) 50%, rgba(165, 190, 170, 0.45) 100%)';
-                      e.currentTarget.style.boxShadow = '0 16px 48px -8px rgba(100, 140, 110, 0.35), 0 6px 10px -2px rgba(60, 90, 70, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4)';
+                      e.currentTarget.style.background = 'linear-gradient(145deg, hsla(150, 22%, 78%, 0.65) 0%, hsla(155, 28%, 68%, 0.55) 100%)';
+                      e.currentTarget.style.boxShadow = '0 8px 32px -4px hsla(155, 40%, 40%, 0.3), 0 4px 12px -2px hsla(155, 30%, 50%, 0.2), inset 0 1px 1px hsla(150, 50%, 95%, 0.5)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(200, 220, 200, 0.5) 0%, rgba(180, 200, 180, 0.4) 50%, rgba(155, 180, 160, 0.35) 100%)';
-                      e.currentTarget.style.boxShadow = '0 12px 40px -8px rgba(100, 140, 110, 0.25), 0 4px 6px -1px rgba(60, 90, 70, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                      e.currentTarget.style.background = 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)';
+                      e.currentTarget.style.boxShadow = '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)';
                     }}
                   >
                     Explore the Ecosystem
