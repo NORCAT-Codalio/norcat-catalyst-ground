@@ -709,24 +709,6 @@ export default function Index() {
             </ScrollReveal>
           </div>
 
-          {/* Community photo strip — edge to edge */}
-          <div className="grid grid-cols-5 gap-3 px-3 pb-5 mt-14">
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto2} alt="Audience at event" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto3} alt="Community event" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto4} alt="NORCAT podium presentation" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto5} alt="Kinmetrix pitch presentation" className="w-full h-full object-cover" />
-            </div>
-          </div>
         </section>
 
       </div>
