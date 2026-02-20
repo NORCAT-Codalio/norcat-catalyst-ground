@@ -347,20 +347,30 @@ export default function Index() {
         </section>
 
         {/* ───── STATS — Data Dashboard Strip ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.05) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.04) 0%, transparent 70%)' }} />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{
+                  background: 'linear-gradient(145deg, hsla(220, 15%, 70%, 0.25) 0%, hsla(220, 15%, 60%, 0.15) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  borderTop: '1px solid hsla(220, 15%, 100%, 0.4)',
+                  borderLeft: '1px solid hsla(220, 15%, 100%, 0.3)',
+                  borderRight: '0.5px solid hsla(220, 15%, 80%, 0.15)',
+                  borderBottom: '0.5px solid hsla(220, 15%, 60%, 0.1)',
+                  color: 'hsl(220, 15%, 35%)',
+                  boxShadow: 'inset 0 1px 1px 0 hsla(220, 15%, 100%, 0.2), 0 2px 8px hsla(220, 15%, 30%, 0.08)',
+                }}>
                   <BarChart3 className="w-3.5 h-3.5" />
                   Global Impact Dashboard
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: 'hsl(220, 20%, 15%)' }}>
-                  Trusted by <span style={{ color: 'hsl(168, 100%, 30%)' }}>150+ startups.</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                  Trusted by <span className="text-gradient">150+ startups.</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -368,19 +378,25 @@ export default function Index() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, i) => (
                 <ScrollReveal key={stat.label} delay={i * 0.1}>
-                  <div className="rounded-2xl p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={{
-                    background: 'linear-gradient(135deg, hsla(168, 100%, 35%, 0.06) 0%, hsla(168, 80%, 40%, 0.03) 100%)',
+                  <div className="rounded-[20px] p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={{
+                    background: 'linear-gradient(165deg, hsla(220, 15%, 80%, 0.35) 0%, hsla(220, 15%, 75%, 0.2) 50%, hsla(220, 15%, 85%, 0.12) 100%)',
                     backdropFilter: 'blur(20px)',
                     WebkitBackdropFilter: 'blur(20px)',
-                    borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
-                    borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
-                    borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
-                    borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
-                    boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                    borderTop: '1px solid hsla(220, 15%, 100%, 0.5)',
+                    borderLeft: '1px solid hsla(220, 15%, 100%, 0.35)',
+                    borderRight: '0.5px solid hsla(220, 15%, 80%, 0.15)',
+                    borderBottom: '0.5px solid hsla(220, 15%, 70%, 0.1)',
+                    boxShadow: 'inset 0 1px 1px 0 hsla(220, 15%, 100%, 0.25), inset 0 0 20px 0 hsla(220, 15%, 90%, 0.08), 0 8px 32px hsla(220, 15%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                   }}>
-                    <stat.icon className="w-6 h-6 mx-auto mb-4" style={{ color: 'hsl(168, 100%, 30%)' }} />
-                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 20%, 15%)' }}>{stat.value}</div>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>{stat.label}</p>
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{
+                      background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                      border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                      boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    }}>
+                      <stat.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                    </div>
+                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
                   </div>
                 </ScrollReveal>
               ))}
