@@ -427,12 +427,12 @@ export default function Index() {
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col gap-5 max-w-2xl">
               {upcomingPrograms.map((program, i) => (
                 <ScrollReveal key={program.title} delay={i * 0.1}>
-                  <Link to={program.link} className="group block h-full">
+                  <Link to={program.link} className="group block">
                     <div 
-                      className="rounded-[20px] p-7 h-full hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
+                      className="rounded-[20px] p-7 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden"
                       style={{
                         background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
                         backdropFilter: 'blur(20px)',
@@ -444,34 +444,25 @@ export default function Index() {
                         boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                       }}
                     >
-                      <span 
-                        className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-5"
-                        style={{ 
-                          background: 'hsl(168 100% 35% / 0.1)',
-                          color: 'hsl(168, 100%, 28%)',
-                          border: '0.5px solid hsl(168 100% 35% / 0.15)',
-                        }}
-                      >
-                        {program.type}
-                      </span>
-                      <h3 className="text-xl font-bold mb-5 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{program.title}</h3>
-                      <div className="space-y-3 text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          {program.applyBy}
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span 
+                            className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+                            style={{ 
+                              background: 'hsl(168 100% 35% / 0.1)',
+                              color: 'hsl(168, 100%, 28%)',
+                              border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                            }}
+                          >
+                            {program.type}
+                          </span>
+                          <h3 className="text-xl font-bold mb-2 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{program.title}</h3>
+                          <div className="flex items-center gap-2 text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                            <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                            {program.applyBy}
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          {program.duration}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          {program.location}
-                        </div>
-                      </div>
-                      <div className="mt-7 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium glass-frosted-btn-teal group-hover:scale-[1.03]">
-                        See Details
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
                     </div>
                   </Link>
