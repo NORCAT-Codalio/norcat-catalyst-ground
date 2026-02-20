@@ -641,7 +641,7 @@ export default function Index() {
                       <h3 className="text-lg font-bold mb-5 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{post.title}</h3>
                       
                       <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium glass-frosted-btn-teal group-hover:scale-[1.03]">
-                        Download PDF
+                        Read More
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
