@@ -5,6 +5,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import signatureLines from '@/assets/signature-lines.png';
+import linesTeal from '@/assets/lines-teal.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
@@ -400,12 +401,12 @@ export default function Index() {
           </div>
         </section>
 
-
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           {/* Subtle teal orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
+          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[500px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleX(-1)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
