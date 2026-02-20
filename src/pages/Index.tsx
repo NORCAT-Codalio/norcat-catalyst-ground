@@ -356,15 +356,10 @@ export default function Index() {
             <ScrollReveal>
               <div className="text-center mb-16">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{
-                  background: 'linear-gradient(145deg, hsla(220, 15%, 70%, 0.25) 0%, hsla(220, 15%, 60%, 0.15) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  borderTop: '1px solid hsla(220, 15%, 100%, 0.4)',
-                  borderLeft: '1px solid hsla(220, 15%, 100%, 0.3)',
-                  borderRight: '0.5px solid hsla(220, 15%, 80%, 0.15)',
-                  borderBottom: '0.5px solid hsla(220, 15%, 60%, 0.1)',
+                  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
                   color: 'hsl(220, 15%, 35%)',
-                  boxShadow: 'inset 0 1px 1px 0 hsla(220, 15%, 100%, 0.2), 0 2px 8px hsla(220, 15%, 30%, 0.08)',
+                  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                 }}>
                   <BarChart3 className="w-3.5 h-3.5" />
                   Global Impact Dashboard
