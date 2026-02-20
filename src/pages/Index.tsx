@@ -673,7 +673,7 @@ export default function Index() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="pt-24 md:pt-32 pb-0 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
             src={signatureLines} 
             alt="" 
