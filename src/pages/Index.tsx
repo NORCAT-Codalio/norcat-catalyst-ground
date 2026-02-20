@@ -522,22 +522,44 @@ export default function Index() {
                   </p>
                   <Link 
                     to="/ecosystem/sudbury" 
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
+                    className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
                     style={{
-                      background: 'linear-gradient(170deg, hsla(140, 18%, 78%, 0.7) 0%, hsla(145, 20%, 68%, 0.6) 60%, hsla(150, 22%, 62%, 0.55) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      border: '2px solid hsla(145, 25%, 55%, 0.5)',
-                      boxShadow: 'inset 0 1.5px 0 0 hsla(140, 30%, 90%, 0.7), inset 0 -1px 2px 0 hsla(150, 20%, 40%, 0.1), 0 4px 16px -2px hsla(145, 30%, 40%, 0.18), 0 1px 4px hsla(145, 20%, 50%, 0.1)',
-                      color: 'hsl(155, 45%, 16%)',
+                      background: 'linear-gradient(175deg, hsla(138, 22%, 82%, 0.85) 0%, hsla(142, 20%, 72%, 0.7) 40%, hsla(148, 22%, 65%, 0.6) 100%)',
+                      backdropFilter: 'blur(24px)',
+                      WebkitBackdropFilter: 'blur(24px)',
+                      border: '2px solid hsla(145, 30%, 50%, 0.45)',
+                      borderTop: '2px solid hsla(140, 35%, 70%, 0.6)',
+                      boxShadow: `
+                        inset 0 2px 6px 0 hsla(138, 40%, 95%, 0.8),
+                        inset 0 8px 16px -4px hsla(140, 30%, 90%, 0.5),
+                        inset 0 -4px 8px -2px hsla(150, 25%, 40%, 0.15),
+                        0 2px 4px hsla(145, 30%, 40%, 0.12),
+                        0 6px 20px -4px hsla(145, 35%, 35%, 0.22),
+                        0 12px 40px -8px hsla(145, 30%, 40%, 0.18)
+                      `,
+                      color: 'hsl(155, 45%, 14%)',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'linear-gradient(170deg, hsla(140, 20%, 82%, 0.8) 0%, hsla(145, 22%, 72%, 0.7) 60%, hsla(150, 24%, 66%, 0.65) 100%)';
-                      e.currentTarget.style.boxShadow = 'inset 0 1.5px 0 0 hsla(140, 30%, 92%, 0.8), inset 0 -1px 2px 0 hsla(150, 20%, 40%, 0.12), 0 6px 24px -2px hsla(145, 30%, 40%, 0.25), 0 2px 6px hsla(145, 20%, 50%, 0.15)';
+                      e.currentTarget.style.background = 'linear-gradient(175deg, hsla(138, 25%, 86%, 0.9) 0%, hsla(142, 22%, 76%, 0.8) 40%, hsla(148, 24%, 68%, 0.7) 100%)';
+                      e.currentTarget.style.boxShadow = `
+                        inset 0 2px 6px 0 hsla(138, 40%, 97%, 0.9),
+                        inset 0 8px 16px -4px hsla(140, 30%, 92%, 0.6),
+                        inset 0 -4px 8px -2px hsla(150, 25%, 40%, 0.18),
+                        0 2px 4px hsla(145, 30%, 40%, 0.15),
+                        0 8px 28px -4px hsla(145, 35%, 35%, 0.28),
+                        0 16px 48px -8px hsla(145, 30%, 40%, 0.22)
+                      `;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'linear-gradient(170deg, hsla(140, 18%, 78%, 0.7) 0%, hsla(145, 20%, 68%, 0.6) 60%, hsla(150, 22%, 62%, 0.55) 100%)';
-                      e.currentTarget.style.boxShadow = 'inset 0 1.5px 0 0 hsla(140, 30%, 90%, 0.7), inset 0 -1px 2px 0 hsla(150, 20%, 40%, 0.1), 0 4px 16px -2px hsla(145, 30%, 40%, 0.18), 0 1px 4px hsla(145, 20%, 50%, 0.1)';
+                      e.currentTarget.style.background = 'linear-gradient(175deg, hsla(138, 22%, 82%, 0.85) 0%, hsla(142, 20%, 72%, 0.7) 40%, hsla(148, 22%, 65%, 0.6) 100%)';
+                      e.currentTarget.style.boxShadow = `
+                        inset 0 2px 6px 0 hsla(138, 40%, 95%, 0.8),
+                        inset 0 8px 16px -4px hsla(140, 30%, 90%, 0.5),
+                        inset 0 -4px 8px -2px hsla(150, 25%, 40%, 0.15),
+                        0 2px 4px hsla(145, 30%, 40%, 0.12),
+                        0 6px 20px -4px hsla(145, 35%, 35%, 0.22),
+                        0 12px 40px -8px hsla(145, 30%, 40%, 0.18)
+                      `;
                     }}
                   >
                     Explore the Ecosystem
