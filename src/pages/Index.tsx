@@ -524,21 +524,20 @@ export default function Index() {
                     to="/ecosystem/sudbury" 
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
                     style={{
-                      background: 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)',
-                      backdropFilter: 'blur(18px)',
-                      WebkitBackdropFilter: 'blur(18px)',
-                      border: '1px solid hsla(150, 30%, 60%, 0.4)',
-                      borderTop: '1px solid hsla(150, 40%, 85%, 0.7)',
-                      boxShadow: '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)',
-                      color: 'hsl(155, 50%, 18%)',
+                      background: 'linear-gradient(170deg, hsla(140, 18%, 78%, 0.7) 0%, hsla(145, 20%, 68%, 0.6) 60%, hsla(150, 22%, 62%, 0.55) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      border: '2px solid hsla(145, 25%, 55%, 0.5)',
+                      boxShadow: 'inset 0 1.5px 0 0 hsla(140, 30%, 90%, 0.7), inset 0 -1px 2px 0 hsla(150, 20%, 40%, 0.1), 0 4px 16px -2px hsla(145, 30%, 40%, 0.18), 0 1px 4px hsla(145, 20%, 50%, 0.1)',
+                      color: 'hsl(155, 45%, 16%)',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'linear-gradient(145deg, hsla(150, 22%, 78%, 0.65) 0%, hsla(155, 28%, 68%, 0.55) 100%)';
-                      e.currentTarget.style.boxShadow = '0 8px 32px -4px hsla(155, 40%, 40%, 0.3), 0 4px 12px -2px hsla(155, 30%, 50%, 0.2), inset 0 1px 1px hsla(150, 50%, 95%, 0.5)';
+                      e.currentTarget.style.background = 'linear-gradient(170deg, hsla(140, 20%, 82%, 0.8) 0%, hsla(145, 22%, 72%, 0.7) 60%, hsla(150, 24%, 66%, 0.65) 100%)';
+                      e.currentTarget.style.boxShadow = 'inset 0 1.5px 0 0 hsla(140, 30%, 92%, 0.8), inset 0 -1px 2px 0 hsla(150, 20%, 40%, 0.12), 0 6px 24px -2px hsla(145, 30%, 40%, 0.25), 0 2px 6px hsla(145, 20%, 50%, 0.15)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'linear-gradient(145deg, hsla(150, 20%, 75%, 0.55) 0%, hsla(155, 25%, 65%, 0.45) 100%)';
-                      e.currentTarget.style.boxShadow = '0 6px 24px -4px hsla(155, 40%, 40%, 0.2), 0 2px 8px -2px hsla(155, 30%, 50%, 0.15), inset 0 1px 1px hsla(150, 50%, 95%, 0.4)';
+                      e.currentTarget.style.background = 'linear-gradient(170deg, hsla(140, 18%, 78%, 0.7) 0%, hsla(145, 20%, 68%, 0.6) 60%, hsla(150, 22%, 62%, 0.55) 100%)';
+                      e.currentTarget.style.boxShadow = 'inset 0 1.5px 0 0 hsla(140, 30%, 90%, 0.7), inset 0 -1px 2px 0 hsla(150, 20%, 40%, 0.1), 0 4px 16px -2px hsla(145, 30%, 40%, 0.18), 0 1px 4px hsla(145, 20%, 50%, 0.1)';
                     }}
                   >
                     Explore the Ecosystem
