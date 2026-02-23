@@ -119,7 +119,7 @@ const SuccessStories = () => {
         <div className="absolute inset-0 bg-glow opacity-50" />
         <div className="absolute inset-0 bg-mesh" />
         <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[400px] opacity-[0.07] pointer-events-none" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-        <img src={linesTeal} alt="" aria-hidden="true" className="absolute bottom-0 left-0 w-[600px] opacity-[0.12] pointer-events-none" style={{ transform: 'scaleX(-1)' }} />
+        <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
