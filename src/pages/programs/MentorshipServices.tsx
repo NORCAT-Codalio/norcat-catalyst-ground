@@ -1,22 +1,25 @@
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, 
   Users, 
-  Lightbulb, 
-  MessageCircle, 
-  Calendar,
   CheckCircle,
   Shield,
   Target,
   Handshake,
   X,
-  ExternalLink
+  ExternalLink,
+  Sparkles,
+  ChevronRight,
+  Quote,
 } from 'lucide-react';
+
+import signatureLines from '@/assets/signature-lines.png';
+import linesTeal from '@/assets/lines-teal.png';
+import mentoringGroup from '@/assets/mentoring-group.png';
 
 // Mentor headshots
 import tomFortinImg from '@/assets/mentors/tom-fortin.jpg';
@@ -37,7 +40,6 @@ import michaelDolinarImg from '@/assets/mentors/michael-dolinar.jpg';
 import davidPasiekaImg from '@/assets/mentors/david-pasieka.jpg';
 
 const mentors = [
-  // EIR - First position
   {
     name: 'Don Duval',
     image: donDuvalImg,
@@ -45,7 +47,6 @@ const mentors = [
     bio: 'Don is the CEO of NORCAT and serves as Entrepreneur in Residence. He is an expert in turnaround strategies, entrepreneurship, innovation strategy, and leadership. Don has led NORCAT\'s transformation into a world-class innovation hub and brings deep experience in organizational leadership and strategic planning.',
     expertfile: 'http://expertfile.com/experts/don.duval',
   },
-  // Alphabetical by last name
   {
     name: 'Bernie Aho',
     image: bernieAhoImg,
@@ -185,6 +186,33 @@ const benefits = [
   'Connections to our broader network of investors and partners',
 ];
 
+// Shared glassmorphic card style
+const glassCardStyle = {
+  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+};
+
+// Neumorphic icon container style
+const iconContainerStyle = {
+  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
+
+// Sage badge style
+const sageBadgeStyle = {
+  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+  color: 'hsl(168, 40%, 30%)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
+
 interface MentorCardProps {
   mentor: typeof mentors[0];
   isExpanded: boolean;
@@ -195,9 +223,9 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
   return (
     <>
       <motion.div
-        className="bg-white rounded-2xl border border-gray-100 shadow-md p-5 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+        className="rounded-[20px] p-5 cursor-pointer hover:scale-[1.03] transition-all duration-300"
+        style={glassCardStyle}
         onClick={onToggle}
-        whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
         <div className="flex items-center gap-4">
@@ -207,12 +235,17 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
             className="w-12 h-12 rounded-full object-cover flex-shrink-0"
           />
           <div className="min-w-0">
-            <div className="font-semibold text-sm text-foreground truncate">{mentor.name}</div>
+            <div className="font-semibold text-sm truncate" style={{ color: 'hsl(220, 15%, 20%)' }}>{mentor.name}</div>
             <div className="flex flex-wrap gap-1 mt-1">
               {mentor.tags.map((tag) => (
                 <span 
                   key={tag} 
-                  className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary"
+                  className="text-xs px-2 py-0.5 rounded-full"
+                  style={{
+                    background: 'hsl(168 100% 35% / 0.1)',
+                    color: 'hsl(168, 100%, 28%)',
+                    border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                  }}
                 >
                   {tag}
                 </span>
@@ -267,7 +300,12 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
                     {mentor.tags.map((tag) => (
                       <span 
                         key={tag} 
-                        className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
+                        className="text-xs px-3 py-1 rounded-full"
+                        style={{
+                          background: 'hsl(168 100% 35% / 0.1)',
+                          color: 'hsl(168, 100%, 28%)',
+                          border: '0.5px solid hsl(168 100% 35% / 0.2)',
+                        }}
                       >
                         {tag}
                       </span>
@@ -282,7 +320,13 @@ function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
                     href={mentor.expertfile}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                      color: 'white',
+                      border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
+                      boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 15px hsla(168, 100%, 35%, 0.3)',
+                    }}
                   >
                     <ExternalLink className="w-5 h-5" />
                     View Full Profile
@@ -302,70 +346,146 @@ const MentorshipServices = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-50" />
-        <div className="orb orb-teal w-96 h-96 -top-48 -right-48" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <ScrollReveal>
-            <div className="inline-flex items-center gap-2 badge-dark mb-8">
-              <Users className="w-4 h-4" />
-              Venture Mentoring Service
-            </div>
-            <h1 className="headline-hero text-white mb-6 max-w-4xl">
-              Team-Based<br />
-              <span className="text-gradient">Mentorship</span>
-            </h1>
-            <p className="body-xl text-white/70 max-w-2xl mb-10">
+      {/* ══════════════ DARK HERO ══════════════ */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden" style={{ background: 'hsl(220, 20%, 7%)' }}>
+        {/* Ambient orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-[15%] right-[20%] w-[700px] h-[700px] rounded-full"
+            style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.15) 0%, hsl(168 100% 35% / 0.05) 40%, transparent 70%)' }}
+            animate={{ scale: [1, 1.4, 1], x: [0, 80, 0], y: [0, -50, 0] }}
+            transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute bottom-[20%] left-[10%] w-[600px] h-[600px] rounded-full"
+            style={{ background: 'radial-gradient(circle, hsl(168 80% 45% / 0.1) 0%, transparent 70%)' }}
+            animate={{ scale: [1.2, 0.9, 1.2], x: [0, -60, 0], y: [0, 30, 0] }}
+            transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </div>
+
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: 'linear-gradient(hsl(168 100% 50% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(168 100% 50% / 0.4) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
+          }}
+        />
+
+        {/* Noise texture */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
+          style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }}
+        />
+
+        {/* Signature lines */}
+        <img
+          src={signatureLines}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
+        />
+
+        {/* Hero content */}
+        <div className="container mx-auto px-6 relative z-10 py-32">
+          <div className="max-w-5xl">
+            {/* Badge */}
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white/90 mb-8 liquid-glass-btn">
+                <Sparkles className="h-4 w-4 icon-glow" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                Venture Mentoring Service
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1
+              className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium text-white mb-8 tracking-tight leading-[0.92]"
+              style={{ fontFamily: "'Space Grotesk', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              Team-Based
+              <span className="block italic" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
+                Mentorship.
+              </span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              className="text-xl md:text-2xl text-white leading-relaxed mb-10 max-w-2xl font-light"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
               A proven mentoring model that pairs founders with teams of experienced 
               volunteers who provide confidential, inclusive guidance at no cost.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="btn-primary-lg">
-                <Link to="/apply">
-                  Apply for Mentoring
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild className="btn-outline-dark">
-                <Link to="/apply">
-                  Become a Mentor
-                </Link>
-              </Button>
-            </div>
-          </ScrollReveal>
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+            >
+              <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.3) 0%, hsla(168, 100%, 35%, 0.15) 100%)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                color: 'white',
+                border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
+                boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+              }}>
+                Apply for Mentoring
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                color: 'white',
+                border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+              }}>
+                Become a Mentor
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Impactful Statement */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* ═══ IMPACTFUL STATEMENT ═══ */}
+      <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
+          <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Statement */}
             <ScrollReveal direction="left">
-              <p className="headline-md leading-relaxed">
+              <p className="text-2xl md:text-3xl leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
                 Our mentors share the drive of our founders. They've challenged convention, 
-                built real businesses, and expanded what's possible through experience.
+                built real businesses, and expanded what's possible through{' '}
+                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>experience.</span>
               </p>
             </ScrollReveal>
 
-            {/* Right - Client Quote Placeholder */}
             <ScrollReveal direction="right">
-              <div className="bg-secondary/50 rounded-3xl p-8">
-                <div className="flex flex-col gap-6">
-                  <p className="body-lg italic text-muted-foreground">
-                    "Client testimonial quote placeholder — Add a powerful quote from a founder 
-                    about their mentorship experience here."
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                      <span className="text-muted-foreground text-lg">?</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold">Client Name</p>
-                      <p className="text-sm text-muted-foreground">Company Name, Role</p>
-                    </div>
+              <div className="rounded-[20px] p-8" style={glassCardStyle}>
+                <Quote className="w-8 h-8 mb-4 opacity-40" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                <p className="text-lg italic font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 15%, 30%)' }}>
+                  "Client testimonial quote placeholder — Add a powerful quote from a founder 
+                  about their mentorship experience here."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style={iconContainerStyle}>
+                    <span style={{ color: 'hsl(168, 100%, 35%)' }} className="text-lg font-bold">?</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>Client Name</p>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Company Name, Role</p>
                   </div>
                 </div>
               </div>
@@ -374,13 +494,23 @@ const MentorshipServices = () => {
         </div>
       </section>
 
-      {/* What Makes It Different */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* ═══ WHAT MAKES IT DIFFERENT ═══ */}
+      <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsla(168, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
+        <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[60%] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+        
+        <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="headline-lg mb-4">A Different Kind of Mentoring</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={sageBadgeStyle}>
+                <Users className="w-3.5 h-3.5" />
+                Our Approach
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                A Different Kind of{' '}
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Mentoring.</span>
+              </h2>
+              <p className="font-light max-w-2xl mx-auto" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Our Venture Mentoring Service is built on principles that put founders first 
                 and create lasting, meaningful relationships.
               </p>
@@ -390,12 +520,12 @@ const MentorshipServices = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {principles.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="card-modern p-6 h-full">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
-                    <item.icon className="w-6 h-6 text-primary" />
+                <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5" style={iconContainerStyle}>
+                    <item.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="body-md text-sm">{item.description}</p>
+                  <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h3>
+                  <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -403,14 +533,21 @@ const MentorshipServices = () => {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="section-padding bg-secondary/50">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* ═══ HOW IT WORKS ═══ */}
+      <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsla(168, 100%, 35%, 0.06) 0%, transparent 60%)' }} />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <div>
-                <h2 className="headline-lg mb-6">How It Works</h2>
-                <p className="body-lg mb-8">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={sageBadgeStyle}>
+                  Process
+                </span>
+                <h2 className="text-3xl md:text-4xl mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                  How It{' '}
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Works.</span>
+                </h2>
+                <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
                   Our structured approach ensures you get the most out of every mentoring session 
                   while building long-term relationships with your mentors.
                 </p>
@@ -423,10 +560,10 @@ const MentorshipServices = () => {
                     { step: '04', title: 'Grow & Evolve', desc: 'As your needs change, your mentor team can evolve. Access our full network of mentors and resources.' },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
-                      <div className="text-primary font-bold text-lg">{item.step}</div>
+                      <div className="text-lg font-bold" style={{ color: 'hsl(168, 100%, 35%)' }}>{item.step}</div>
                       <div>
-                        <h4 className="font-semibold mb-1">{item.title}</h4>
-                        <p className="body-md text-sm">{item.desc}</p>
+                        <h4 className="font-semibold mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h4>
+                        <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -435,13 +572,13 @@ const MentorshipServices = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="card-modern p-8">
-                <h3 className="headline-sm mb-6">What You Get</h3>
+              <div className="rounded-[20px] p-8" style={glassCardStyle}>
+                <h3 className="text-xl font-bold mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif" }}>What You Get</h3>
                 <ul className="space-y-4">
                   {benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="body-md">{benefit}</span>
+                      <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      <span className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{benefit}</span>
                     </li>
                   ))}
                 </ul>
@@ -451,10 +588,10 @@ const MentorshipServices = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+      {/* ═══ STATS ═══ */}
+      <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { number: '18', label: 'Active Mentors' },
               { number: '1000+', label: 'Hours Mentored in 2025' },
@@ -462,21 +599,35 @@ const MentorshipServices = () => {
               { number: '$0', label: 'To Access Mentorship' },
             ].map((stat, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="stat-number mb-2">{stat.number}</div>
-                <p className="body-md text-muted-foreground">{stat.label}</p>
+                <div className="rounded-[20px] p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                  <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.number}</div>
+                  <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{stat.label}</p>
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Mentors Grid */}
-      <section className="section-padding bg-secondary/50">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* ═══ MENTORS GRID ═══ */}
+      <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
+        </div>
+        <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[60%] opacity-[0.15] pointer-events-none" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-lg mb-4">Meet Our Mentors</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={sageBadgeStyle}>
+                <Users className="w-3.5 h-3.5" />
+                Our Network
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                Meet Our{' '}
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Mentors.</span>
+              </h2>
+              <p className="font-light max-w-2xl mx-auto" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Our volunteer mentors are accomplished entrepreneurs, executives, and experts 
                 who are passionate about helping the next generation succeed.
               </p>
@@ -499,27 +650,48 @@ const MentorshipServices = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-gray-900">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
+      {/* ═══ FINAL CTA ═══ */}
+      <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <img 
+          src={signatureLines} 
+          alt="" 
+          aria-hidden="true"
+          className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
+          style={{ transform: 'scaleX(-1)' }}
+        />
+        <div className="container mx-auto px-6 relative z-10 text-center">
           <ScrollReveal>
-            <h2 className="headline-lg text-white mb-6">Ready to Get Started?</h2>
-            <p className="body-lg text-white/70 mb-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+              Ready to Get{' '}
+              <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>Started?</span>
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
               Join our Venture Mentoring Service and get matched with experienced mentors 
               who can help you navigate the challenges of building a successful company.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="btn-primary-lg">
-                <Link to="/apply">
-                  Apply for Mentoring
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild className="btn-outline-dark">
-                <Link to="/apply">
-                  Become a Mentor
-                </Link>
-              </Button>
+              <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                color: 'white',
+                border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+              }}>
+                Apply for Mentoring
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                color: 'white',
+                border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+              }}>
+                Become a Mentor
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </ScrollReveal>
         </div>
