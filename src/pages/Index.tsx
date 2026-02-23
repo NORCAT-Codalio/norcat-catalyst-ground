@@ -372,8 +372,8 @@ export default function Index() {
                   <BarChart3 className="w-3.5 h-3.5" />
                   Global Impact Dashboard
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                  Trusted by <span className="text-gradient">150+ startups.</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                  Trusted by <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>150+ startups.</span>
                 </h2>
               </div>
             </ScrollReveal>
