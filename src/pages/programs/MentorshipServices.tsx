@@ -2,7 +2,7 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   Users, 
@@ -212,134 +212,7 @@ const sageBadgeStyle = {
   color: 'hsl(168, 40%, 30%)',
   boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
 };
-
-interface MentorCardProps {
-  mentor: typeof mentors[0];
-  isExpanded: boolean;
-  onToggle: () => void;
-}
-
-function MentorCard({ mentor, isExpanded, onToggle }: MentorCardProps) {
-  return (
-    <>
-      <motion.div
-        className="rounded-[20px] p-5 cursor-pointer hover:scale-[1.03] transition-all duration-300"
-        style={glassCardStyle}
-        onClick={onToggle}
-        whileTap={{ scale: 0.98 }}
-      >
-        <div className="flex items-center gap-4">
-          <img 
-            src={mentor.image} 
-            alt={mentor.name}
-            className="w-12 h-12 rounded-full object-cover flex-shrink-0"
-          />
-          <div className="min-w-0">
-            <div className="font-semibold text-sm truncate" style={{ color: 'hsl(220, 15%, 20%)' }}>{mentor.name}</div>
-            <div className="flex flex-wrap gap-1 mt-1">
-              {mentor.tags.map((tag) => (
-                <span 
-                  key={tag} 
-                  className="text-xs px-2 py-0.5 rounded-full"
-                  style={{
-                    background: 'hsl(168 100% 35% / 0.1)',
-                    color: 'hsl(168, 100%, 28%)',
-                    border: '0.5px solid hsl(168 100% 35% / 0.15)',
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Expanded Modal */}
-      <AnimatePresence>
-        {isExpanded && (
-          <>
-            <motion.div
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={onToggle}
-            />
-            
-            <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.div
-                className="bg-background rounded-3xl shadow-2xl max-w-2xl w-full p-10 relative max-h-[90vh] overflow-y-auto"
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  onClick={onToggle}
-                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-secondary hover:bg-secondary/80 flex items-center justify-center transition-colors"
-                >
-                  <X className="w-5 h-5 text-muted-foreground" />
-                </button>
-
-                <div className="text-center">
-                  <img 
-                    src={mentor.image} 
-                    alt={mentor.name}
-                    className="w-32 h-32 rounded-full object-cover mx-auto mb-6 shadow-lg"
-                  />
-                  
-                  <h3 className="headline-sm mb-1">{mentor.name}</h3>
-                  <div className="flex flex-wrap gap-2 justify-center mb-5">
-                    {mentor.tags.map((tag) => (
-                      <span 
-                        key={tag} 
-                        className="text-xs px-3 py-1 rounded-full"
-                        style={{
-                          background: 'hsl(168 100% 35% / 0.1)',
-                          color: 'hsl(168, 100%, 28%)',
-                          border: '0.5px solid hsl(168 100% 35% / 0.2)',
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <p className="body-md text-left mb-6">
-                    {mentor.bio}
-                  </p>
-
-                  <a
-                    href={mentor.expertfile}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
-                      color: 'white',
-                      border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
-                      boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 15px hsla(168, 100%, 35%, 0.3)',
-                    }}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    View Full Profile
-                  </a>
-                </div>
-              </motion.div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
+// No separate MentorCard component — inline expand is handled in the grid below
 
 const MentorshipServices = () => {
   const [expandedMentor, setExpandedMentor] = useState<string | null>(null);
@@ -634,19 +507,132 @@ const MentorshipServices = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {mentors.map((mentor) => (
-              <ScrollReveal key={mentor.name} delay={0.05}>
-                <MentorCard
-                  mentor={mentor}
-                  isExpanded={expandedMentor === mentor.name}
-                  onToggle={() => setExpandedMentor(
-                    expandedMentor === mentor.name ? null : mentor.name
-                  )}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
+          <motion.div layout className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {mentors.map((mentor) => {
+              const isExpanded = expandedMentor === mentor.name;
+              return (
+                <motion.div
+                  key={mentor.name}
+                  layout
+                  transition={{ layout: { type: 'spring', stiffness: 350, damping: 30 } }}
+                  className={`cursor-pointer ${isExpanded ? 'sm:col-span-2 md:col-span-3 lg:col-span-4' : ''}`}
+                  style={{ zIndex: isExpanded ? 10 : 1 }}
+                  onClick={() => setExpandedMentor(isExpanded ? null : mentor.name)}
+                >
+                  <motion.div
+                    layout
+                    className="rounded-[20px] overflow-hidden"
+                    style={glassCardStyle}
+                    animate={{
+                      scale: expandedMentor && !isExpanded ? 0.92 : 1,
+                      opacity: expandedMentor && !isExpanded ? 0.5 : 1,
+                    }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  >
+                    {/* Collapsed state */}
+                    {!isExpanded && (
+                      <motion.div className="p-5" layout="position">
+                        <div className="flex items-center gap-4">
+                          <img 
+                            src={mentor.image} 
+                            alt={mentor.name}
+                            className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                          />
+                          <div className="min-w-0">
+                            <div className="font-semibold text-sm truncate" style={{ color: 'hsl(220, 15%, 20%)' }}>{mentor.name}</div>
+                            <div className="flex flex-wrap gap-1 mt-1">
+                              {mentor.tags.map((tag) => (
+                                <span 
+                                  key={tag} 
+                                  className="text-xs px-2 py-0.5 rounded-full"
+                                  style={{
+                                    background: 'hsl(168 100% 35% / 0.1)',
+                                    color: 'hsl(168, 100%, 28%)',
+                                    border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                                  }}
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {/* Expanded state */}
+                    {isExpanded && (
+                      <motion.div
+                        className="p-8 md:p-10"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.15, duration: 0.3 }}
+                      >
+                        <div className="flex flex-col md:flex-row gap-8 items-start">
+                          <div className="flex flex-col items-center md:items-start shrink-0">
+                            <img 
+                              src={mentor.image} 
+                              alt={mentor.name}
+                              className="w-28 h-28 rounded-2xl object-cover shadow-lg mb-4"
+                            />
+                            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                              {mentor.tags.map((tag) => (
+                                <span 
+                                  key={tag} 
+                                  className="text-xs px-3 py-1 rounded-full"
+                                  style={{
+                                    background: 'hsl(168 100% 35% / 0.1)',
+                                    color: 'hsl(168, 100%, 28%)',
+                                    border: '0.5px solid hsl(168 100% 35% / 0.2)',
+                                  }}
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between mb-3">
+                              <h3 className="text-2xl font-bold" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif" }}>{mentor.name}</h3>
+                              <button
+                                onClick={(e) => { e.stopPropagation(); setExpandedMentor(null); }}
+                                className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 ml-4 transition-colors"
+                                style={{
+                                  background: 'hsla(220, 15%, 50%, 0.1)',
+                                  border: '1px solid hsla(220, 15%, 80%, 0.3)',
+                                }}
+                              >
+                                <X className="w-4 h-4" style={{ color: 'hsl(220, 15%, 40%)' }} />
+                              </button>
+                            </div>
+                            <p className="text-sm font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 15%, 35%)' }}>
+                              {mentor.bio}
+                            </p>
+                            <a
+                              href={mentor.expertfile}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                              style={{
+                                background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                                color: 'white',
+                                border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
+                                boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 15px hsla(168, 100%, 35%, 0.3)',
+                              }}
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              View Full Profile
+                            </a>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
