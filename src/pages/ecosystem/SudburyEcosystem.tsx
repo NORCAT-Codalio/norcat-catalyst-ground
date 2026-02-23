@@ -25,6 +25,8 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import signatureLines from '@/assets/signature-lines.png';
+import linesTeal from '@/assets/lines-teal.png';
 
 type CategoryType = 'all' | 'support' | 'funding' | 'education' | 'research' | 'industry' | 'partners';
 
@@ -41,13 +43,13 @@ interface EcosystemOrg {
 }
 
 const categories = [
-  { id: 'all' as const, label: 'All Resources', icon: Globe, color: 'from-primary to-primary/70' },
-  { id: 'support' as const, label: 'Support Orgs', icon: Users, color: 'from-blue-500 to-blue-600' },
-  { id: 'funding' as const, label: 'Funding', icon: DollarSign, color: 'from-emerald-500 to-emerald-600' },
-  { id: 'education' as const, label: 'Education', icon: GraduationCap, color: 'from-amber-500 to-amber-600' },
-  { id: 'research' as const, label: 'Research', icon: FlaskConical, color: 'from-violet-500 to-violet-600' },
-  { id: 'industry' as const, label: 'Industry', icon: Pickaxe, color: 'from-orange-500 to-orange-600' },
-  { id: 'partners' as const, label: 'Partner Programs', icon: Landmark, color: 'from-rose-500 to-rose-600' },
+  { id: 'all' as const, label: 'All Resources', icon: Globe },
+  { id: 'support' as const, label: 'Support Orgs', icon: Users },
+  { id: 'funding' as const, label: 'Funding', icon: DollarSign },
+  { id: 'education' as const, label: 'Education', icon: GraduationCap },
+  { id: 'research' as const, label: 'Research', icon: FlaskConical },
+  { id: 'industry' as const, label: 'Industry', icon: Pickaxe },
+  { id: 'partners' as const, label: 'Partner Programs', icon: Landmark },
 ];
 
 const ecosystemOrgs: EcosystemOrg[] = [
@@ -281,14 +283,19 @@ const ecosystemOrgs: EcosystemOrg[] = [
   },
 ];
 
-const categoryColors: Record<CategoryType, string> = {
-  all: 'bg-primary',
-  support: 'bg-blue-500',
-  funding: 'bg-emerald-500',
-  education: 'bg-amber-500',
-  research: 'bg-violet-500',
-  industry: 'bg-orange-500',
-  partners: 'bg-rose-500',
+// Shared styles
+const glassCardStyle: React.CSSProperties = {
+  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 90%, 0.15) 50%, hsla(220, 20%, 95%, 0.2) 100%)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  border: '1px solid hsla(168, 30%, 80%, 0.35)',
+  boxShadow: '0 8px 32px hsla(168, 30%, 40%, 0.08), inset 0 1px 0 hsla(0, 0%, 100%, 0.4)',
+};
+
+const neumorphicIconStyle: React.CSSProperties = {
+  background: 'linear-gradient(145deg, hsl(220, 15%, 96%), hsl(220, 15%, 88%))',
+  boxShadow: '6px 6px 14px hsla(220, 15%, 70%, 0.4), -6px -6px 14px hsla(0, 0%, 100%, 0.9), inset 0 1px 0 hsla(0, 0%, 100%, 0.7)',
+  border: '1px solid hsla(220, 15%, 85%, 0.5)',
 };
 
 const SudburyEcosystem = () => {
@@ -300,121 +307,127 @@ const SudburyEcosystem = () => {
     : ecosystemOrgs.filter(org => org.category === activeCategory);
 
   const stats = [
-    { number: '30+', label: 'Support Organizations' },
-    { number: '$25M+', label: 'Available Funding' },
-    { number: '5', label: 'Post-Secondary Institutions' },
-    { number: '8+', label: 'Research Centres' },
+    { number: '30+', label: 'Support Organizations', icon: Users },
+    { number: '$25M+', label: 'Available Funding', icon: DollarSign },
+    { number: '5', label: 'Post-Secondary Institutions', icon: GraduationCap },
+    { number: '8+', label: 'Research Centres', icon: FlaskConical },
   ];
 
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center bg-gray-950 overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.15),transparent_70%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-          
-          {/* Floating orbs */}
-          <motion.div 
-            className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 blur-[120px]"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{ top: '-20%', right: '-10%' }}
-          />
-          <motion.div 
-            className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-violet-500/15 to-purple-500/15 blur-[100px]"
-            animate={{
-              x: [0, -50, 0],
-              y: [0, 100, 0],
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            style={{ bottom: '10%', left: '-5%' }}
-          />
-        </div>
+      <section className="relative pt-32 pb-28 overflow-hidden" style={{ background: 'hsl(220, 15%, 92%)' }}>
+        {/* Decorative lines */}
+        <img 
+          src={signatureLines} 
+          alt="" 
+          className="absolute top-0 right-0 w-[500px] opacity-10 pointer-events-none" 
+        />
+        <img 
+          src={linesTeal} 
+          alt="" 
+          className="absolute bottom-0 left-0 w-[400px] opacity-8 pointer-events-none" 
+        />
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <ScrollReveal>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-teal-400 text-sm font-medium mb-8">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="max-w-4xl">
+            <ScrollReveal>
+              <span 
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold tracking-wide uppercase mb-8"
+                style={{
+                  ...glassCardStyle,
+                  color: 'hsl(168, 100%, 28%)',
+                }}
+              >
                 <Globe className="w-4 h-4" />
                 Greater Sudbury Innovation Ecosystem
               </span>
-            </motion.div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 max-w-5xl leading-[1.1]">
-              Everything You Need to
-              <br />
-              <span className="bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                Build & Scale
-              </span>
-            </h1>
-          </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <h1 className="mb-6" style={{ lineHeight: 1.1 }}>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'hsl(220, 20%, 18%)' }}>
+                  Everything You Need to
+                </span>
+                <br />
+                <span style={{ 
+                  fontFamily: "'Cormorant Garamond', serif", 
+                  fontWeight: 600, 
+                  fontStyle: 'italic',
+                  fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                  background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>
+                  Build & Scale
+                </span>
+              </h1>
+            </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <p className="text-xl text-white/60 max-w-2xl mb-12 leading-relaxed">
-              Explore the complete network of support organizations, funding programs, 
-              research institutions, and industry partners that make Greater Sudbury 
-              one of Canada's most connected innovation ecosystems.
-            </p>
-          </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-lg max-w-2xl mb-14" style={{ color: 'hsl(220, 15%, 40%)', lineHeight: 1.7 }}>
+                Explore the complete network of support organizations, funding programs, 
+                research institutions, and industry partners that make Greater Sudbury 
+                one of Canada's most connected innovation ecosystems.
+              </p>
+            </ScrollReveal>
 
-          {/* Stats */}
-          <ScrollReveal delay={0.3}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.1 }}
-                  className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
-                >
-                  <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-white/50">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-white/40 rounded-full" />
+            {/* Stats */}
+            <ScrollReveal delay={300}>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl">
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    className="text-center p-6 rounded-2xl"
+                    style={glassCardStyle}
+                  >
+                    <div 
+                      className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                      style={neumorphicIconStyle}
+                    >
+                      <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                    </div>
+                    <div className="text-3xl font-bold mb-1" style={{ 
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      color: 'hsl(220, 20%, 18%)',
+                    }}>
+                      {stat.number}
+                    </div>
+                    <div className="text-sm" style={{ color: 'hsl(220, 15%, 45%)' }}>{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Filter Tabs */}
-      <section className="sticky top-20 z-40 bg-background/95 backdrop-blur-xl border-b border-border py-4">
+      <section className="sticky top-20 z-40 py-4 border-b" style={{ 
+        background: 'hsla(220, 15%, 92%, 0.95)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderColor: 'hsla(220, 15%, 80%, 0.5)',
+      }}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-wrap gap-2">
             {categories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={cn(
-                  'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
-                  activeCategory === cat.id
-                    ? `bg-gradient-to-r ${cat.color} text-white shadow-lg`
-                    : 'bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80'
-                )}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300"
+                style={activeCategory === cat.id ? {
+                  background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                  color: 'white',
+                  boxShadow: '0 4px 15px hsla(168, 100%, 35%, 0.3)',
+                } : {
+                  ...glassCardStyle,
+                  color: 'hsl(220, 15%, 40%)',
+                }}
               >
                 <cat.icon className="h-4 w-4" />
                 {cat.label}
@@ -425,8 +438,33 @@ const SudburyEcosystem = () => {
       </section>
 
       {/* Interactive Directory */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-28" style={{ background: 'hsl(220, 15%, 92%)' }}>
         <div className="container mx-auto px-4 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="mb-4" style={{ lineHeight: 1.15 }}>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'hsl(220, 20%, 18%)' }}>
+                  Ecosystem{' '}
+                </span>
+                <span style={{ 
+                  fontFamily: "'Cormorant Garamond', serif", 
+                  fontWeight: 600, 
+                  fontStyle: 'italic',
+                  fontSize: 'clamp(2rem, 4vw, 3rem)',
+                  background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>
+                  Directory
+                </span>
+              </h2>
+              <p style={{ color: 'hsl(220, 15%, 45%)', maxWidth: '600px', margin: '0 auto' }}>
+                Select a category to filter, then click any organization to learn more.
+              </p>
+            </div>
+          </ScrollReveal>
+
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Cards Grid */}
             <div className="lg:col-span-2">
@@ -446,35 +484,44 @@ const SudburyEcosystem = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.05 }}
                       onClick={() => setSelectedOrg(org)}
-                      className={cn(
-                        'group p-6 rounded-2xl border transition-all duration-300 cursor-pointer',
-                        selectedOrg?.name === org.name
-                          ? 'bg-primary/5 border-primary shadow-lg'
-                          : 'bg-card border-border hover:border-primary/50 hover:shadow-md'
-                      )}
+                      className="group p-6 rounded-2xl cursor-pointer transition-all duration-300"
+                      style={{
+                        ...glassCardStyle,
+                        ...(selectedOrg?.name === org.name ? {
+                          border: '1px solid hsla(168, 100%, 35%, 0.5)',
+                          boxShadow: '0 8px 32px hsla(168, 30%, 40%, 0.15), inset 0 1px 0 hsla(0, 0%, 100%, 0.4)',
+                        } : {}),
+                      }}
                     >
                       <div className="flex items-start gap-4">
-                        <div className={cn(
-                          'w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300',
-                          categoryColors[org.category],
-                          'text-white'
-                        )}>
-                          <org.icon className="w-6 h-6" />
+                        <div 
+                          className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+                          style={neumorphicIconStyle}
+                        >
+                          <org.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <h3 className="font-semibold text-foreground truncate">{org.name}</h3>
-                            {org.highlight && (
-                              <span className="shrink-0 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                                {org.highlight}
-                              </span>
-                            )}
+                            <h3 className="font-semibold truncate" style={{ color: 'hsl(220, 20%, 18%)', fontFamily: "'Space Grotesk', sans-serif" }}>
+                              {org.name}
+                            </h3>
                           </div>
-                          <p className="text-sm text-muted-foreground line-clamp-2">
+                          {org.highlight && (
+                            <span 
+                              className="inline-block px-2 py-0.5 rounded-full text-xs font-medium mb-1.5"
+                              style={{
+                                background: 'hsla(168, 100%, 35%, 0.12)',
+                                color: 'hsl(168, 100%, 28%)',
+                              }}
+                            >
+                              {org.highlight}
+                            </span>
+                          )}
+                          <p className="text-sm line-clamp-2" style={{ color: 'hsl(220, 15%, 45%)' }}>
                             {org.description}
                           </p>
                         </div>
-                        <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                        <ChevronRight className="w-5 h-5 shrink-0 transition-colors" style={{ color: 'hsl(220, 15%, 65%)' }} />
                       </div>
                     </motion.div>
                   ))}
@@ -492,31 +539,54 @@ const SudburyEcosystem = () => {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
-                      className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-950 border border-white/10 text-white"
+                      className="p-8 rounded-3xl"
+                      style={{
+                        background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.4) 0%, hsla(168, 20%, 90%, 0.2) 50%, hsla(220, 20%, 95%, 0.25) 100%)',
+                        backdropFilter: 'blur(24px)',
+                        WebkitBackdropFilter: 'blur(24px)',
+                        border: '1px solid hsla(168, 30%, 80%, 0.4)',
+                        boxShadow: '0 12px 40px hsla(168, 30%, 40%, 0.1), inset 0 1px 0 hsla(0, 0%, 100%, 0.5)',
+                      }}
                     >
-                      <div className={cn(
-                        'w-16 h-16 rounded-2xl flex items-center justify-center mb-6',
-                        categoryColors[selectedOrg.category]
-                      )}>
-                        <selectedOrg.icon className="w-8 h-8" />
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                        style={neumorphicIconStyle}
+                      >
+                        <selectedOrg.icon className="w-7 h-7" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
 
-                      <h3 className="text-2xl font-display font-bold mb-2">{selectedOrg.name}</h3>
+                      <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
+                        {selectedOrg.name}
+                      </h3>
                       
                       {selectedOrg.highlight && (
-                        <span className="inline-block px-3 py-1 rounded-full bg-teal-500/20 text-teal-400 text-sm font-medium mb-4">
+                        <span 
+                          className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4"
+                          style={{
+                            background: 'hsla(168, 100%, 35%, 0.12)',
+                            color: 'hsl(168, 100%, 28%)',
+                          }}
+                        >
                           {selectedOrg.highlight}
                         </span>
                       )}
 
-                      <p className="text-white/70 mb-6 leading-relaxed">
+                      <p className="mb-6 leading-relaxed" style={{ color: 'hsl(220, 15%, 40%)' }}>
                         {selectedOrg.longDescription || selectedOrg.description}
                       </p>
 
                       {selectedOrg.tags && (
                         <div className="flex flex-wrap gap-2 mb-6">
                           {selectedOrg.tags.map(tag => (
-                            <span key={tag} className="px-3 py-1 rounded-full bg-white/5 text-white/60 text-xs">
+                            <span 
+                              key={tag} 
+                              className="px-3 py-1 rounded-full text-xs"
+                              style={{
+                                background: 'hsla(220, 15%, 85%, 0.5)',
+                                color: 'hsl(220, 15%, 40%)',
+                                border: '1px solid hsla(220, 15%, 80%, 0.4)',
+                              }}
+                            >
                               {tag}
                             </span>
                           ))}
@@ -524,14 +594,20 @@ const SudburyEcosystem = () => {
                       )}
 
                       {selectedOrg.internalLink ? (
-                        <Button asChild className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white border-0">
+                        <Button asChild className="w-full border-0 text-white" style={{
+                          background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                          boxShadow: '0 4px 15px hsla(168, 100%, 35%, 0.3)',
+                        }}>
                           <Link to={selectedOrg.internalLink}>
                             Learn More
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Link>
                         </Button>
                       ) : selectedOrg.link ? (
-                        <Button asChild className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                        <Button asChild className="w-full" style={{
+                          ...glassCardStyle,
+                          color: 'hsl(168, 100%, 28%)',
+                        }}>
                           <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer">
                             Visit Website
                             <ExternalLink className="w-4 h-4 ml-2" />
@@ -543,13 +619,19 @@ const SudburyEcosystem = () => {
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="p-8 rounded-3xl bg-secondary/50 border border-border text-center"
+                      className="p-8 rounded-3xl text-center"
+                      style={glassCardStyle}
                     >
-                      <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center mx-auto mb-4">
-                        <Globe className="w-8 h-8 text-muted-foreground" />
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                        style={neumorphicIconStyle}
+                      >
+                        <Globe className="w-7 h-7" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
-                      <h3 className="text-lg font-semibold mb-2">Select an Organization</h3>
-                      <p className="text-sm text-muted-foreground">
+                      <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
+                        Select an Organization
+                      </h3>
+                      <p className="text-sm" style={{ color: 'hsl(220, 15%, 45%)' }}>
                         Click on any organization to view more details and connect with them.
                       </p>
                     </motion.div>
@@ -562,26 +644,53 @@ const SudburyEcosystem = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.1),transparent_60%)]" />
+      <section className="relative py-28 overflow-hidden" style={{
+        background: 'linear-gradient(135deg, hsl(168, 100%, 28%) 0%, hsl(168, 80%, 22%) 100%)',
+      }}>
+        <img 
+          src={signatureLines} 
+          alt="" 
+          className="absolute top-0 right-0 w-[500px] opacity-10 pointer-events-none" 
+        />
         
         <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Ready to Join the Ecosystem?
+            <h2 className="mb-6" style={{ lineHeight: 1.15 }}>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'white' }}>
+                Ready to Join the{' '}
+              </span>
+              <span style={{ 
+                fontFamily: "'Cormorant Garamond', serif", 
+                fontWeight: 600, 
+                fontStyle: 'italic',
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                color: 'hsla(168, 60%, 85%, 1)',
+              }}>
+                Ecosystem?
+              </span>
             </h2>
-            <p className="text-lg text-white/60 mb-10 max-w-2xl mx-auto">
+            <p className="text-lg mb-10 max-w-2xl mx-auto" style={{ color: 'hsla(0, 0%, 100%, 0.7)' }}>
               Connect with NORCAT Innovation to access the full network of resources, 
               mentors, and funding opportunities available to founders in Greater Sudbury.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white border-0 px-8">
+              <Button asChild size="lg" className="border-0 px-8" style={{
+                background: 'hsla(0, 0%, 100%, 0.15)',
+                backdropFilter: 'blur(10px)',
+                color: 'white',
+                border: '1px solid hsla(0, 0%, 100%, 0.25)',
+                boxShadow: '0 4px 15px hsla(0, 0%, 0%, 0.1), inset 0 1px 0 hsla(0, 0%, 100%, 0.2)',
+              }}>
                 <Link to="/apply">
                   Get Started
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="px-8" style={{
+                background: 'transparent',
+                color: 'white',
+                border: '1px solid hsla(0, 0%, 100%, 0.3)',
+              }}>
                 <Link to="/about">
                   Learn About NORCAT
                 </Link>
