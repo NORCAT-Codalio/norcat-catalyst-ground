@@ -165,7 +165,7 @@ export default function Index() {
         <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
           {/* Parallax background image */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
-            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover scale-[1.15] object-right" />
+            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
             {/* Cinematic multi-layer gradient */}
             <div className="absolute inset-0" style={{
               background: `
