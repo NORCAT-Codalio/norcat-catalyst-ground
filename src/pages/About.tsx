@@ -13,7 +13,7 @@ import aboutHeroBg from '@/assets/about-hero-bg.png';
 import brendanImage from '@/assets/team/brendan.png';
 import shashankImage from '@/assets/team/shashank.png';
 import bartImage from '@/assets/team/bart.png';
-import jieImage from '@/assets/team/jie.png';
+import jieImage from '@/assets/team/jie-new.png';
 
 // Logos
 import ontarioLogo from '@/assets/logos/ontario.png';
