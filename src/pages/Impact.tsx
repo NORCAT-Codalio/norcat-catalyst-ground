@@ -44,7 +44,7 @@ export default function Impact() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
             <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[500px] opacity-[0.12] pointer-events-none" />
+            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
