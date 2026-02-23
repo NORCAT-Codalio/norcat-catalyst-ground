@@ -317,65 +317,63 @@ const SudburyEcosystem = () => {
     <Layout>
       {/* Hero */}
       <section className="relative pt-32 pb-28 overflow-hidden" style={{ background: 'hsl(220, 15%, 92%)' }}>
-        {/* Decorative lines */}
+        {/* Signature lines - top right */}
         <img 
           src={signatureLines} 
           alt="" 
-          className="absolute top-0 right-0 w-[500px] opacity-10 pointer-events-none" 
-        />
-        <img 
-          src={linesTeal} 
-          alt="" 
-          className="absolute bottom-0 left-0 w-[400px] opacity-8 pointer-events-none" 
+          className="absolute -top-10 -right-10 w-[550px] opacity-[0.07] pointer-events-none" 
         />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
-            <ScrollReveal>
-              <span 
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold tracking-wide uppercase mb-8"
-                style={{
-                  ...glassCardStyle,
-                  color: 'hsl(168, 100%, 28%)',
-                }}
-              >
-                <Globe className="w-4 h-4" />
-                Greater Sudbury Innovation Ecosystem
-              </span>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <h1 className="mb-6" style={{ lineHeight: 1.1 }}>
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'hsl(220, 20%, 18%)' }}>
-                  Everything You Need to
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Text */}
+            <div>
+              <ScrollReveal>
+                <span 
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold tracking-wide uppercase mb-8"
+                  style={{
+                    ...glassCardStyle,
+                    color: 'hsl(168, 100%, 28%)',
+                  }}
+                >
+                  <Globe className="w-4 h-4" />
+                  Greater Sudbury Innovation Ecosystem
                 </span>
-                <br />
-                <span style={{ 
-                  fontFamily: "'Cormorant Garamond', serif", 
-                  fontWeight: 600, 
-                  fontStyle: 'italic',
-                  fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                  background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-                  Build & Scale
-                </span>
-              </h1>
-            </ScrollReveal>
+              </ScrollReveal>
 
-            <ScrollReveal delay={200}>
-              <p className="text-lg max-w-2xl mb-14" style={{ color: 'hsl(220, 15%, 40%)', lineHeight: 1.7 }}>
-                Explore the complete network of support organizations, funding programs, 
-                research institutions, and industry partners that make Greater Sudbury 
-                one of Canada's most connected innovation ecosystems.
-              </p>
-            </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="mb-6" style={{ lineHeight: 1.1 }}>
+                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'hsl(220, 20%, 18%)' }}>
+                    Everything You Need to
+                  </span>
+                  <br />
+                  <span style={{ 
+                    fontFamily: "'Cormorant Garamond', serif", 
+                    fontWeight: 600, 
+                    fontStyle: 'italic',
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}>
+                    Build & Scale
+                  </span>
+                </h1>
+              </ScrollReveal>
 
-            {/* Stats */}
+              <ScrollReveal delay={200}>
+                <p className="text-lg max-w-xl" style={{ color: 'hsl(220, 15%, 40%)', lineHeight: 1.7 }}>
+                  Explore the complete network of support organizations, funding programs, 
+                  research institutions, and industry partners that make Greater Sudbury 
+                  one of Canada's most connected innovation ecosystems.
+                </p>
+              </ScrollReveal>
+            </div>
+
+            {/* Right Column - 2x2 Stats Grid */}
             <ScrollReveal delay={300}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl">
+              <div className="grid grid-cols-2 gap-5">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={i}
