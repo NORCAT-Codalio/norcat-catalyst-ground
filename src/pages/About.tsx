@@ -298,7 +298,7 @@ export default function About() {
 
 
         {/* ===== MISSION SECTION — LIGHT ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#e4e4e8' }}>
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <img 
             src={signatureLines} 
             alt="" 
@@ -340,7 +340,7 @@ export default function About() {
         </section>
 
         {/* ===== VALUES SECTION — WHITE ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#dcdce0' }}>
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <img 
             src={signatureLines} 
@@ -399,7 +399,7 @@ export default function About() {
         </section>
 
         {/* ===== TEAM SECTION — OFF-WHITE ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: '#e4e4e8' }}>
+        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -534,7 +534,7 @@ export default function About() {
         </section>
 
         {/* ===== RIC NETWORK SECTION — OFF-WHITE ===== */}
-        <section className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: '#dcdce0' }}>
+        <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6">
             <ScrollReveal>
