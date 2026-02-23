@@ -11,6 +11,14 @@ import { cn } from '@/lib/utils';
 import autonomousMiningVehicle from '@/assets/autonomous-mining-vehicle.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// ── Neumorphic icon container (matches homepage / VentureGrowth) ──
+const iconContainerStyle: React.CSSProperties = {
+  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+  boxShadow:
+    'inset 0 2px 4px 0 hsla(0, 0%, 100%, 0.7), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.15), 0 4px 8px -2px hsla(220, 15%, 30%, 0.15), 0 2px 4px -2px hsla(220, 15%, 30%, 0.1)',
+};
+
 // Featured/Breaking news
 const featuredNews = {
   title: 'Sudbury Startup Raises $12M to Scale Autonomous Mining Fleet',
@@ -157,9 +165,9 @@ const News = () => {
                   <span className="text-white/30 text-sm">{featuredNews.date}</span>
                 </div>
                 
-                <button className="btn-primary">
+                <a href="#" className="glass-frosted-btn-teal rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2 no-underline" style={{ color: 'hsl(168, 100%, 25%)' }}>
                   Read Full Story <ArrowRight className="h-4 w-4" />
-                </button>
+                </a>
               </div>
             </ScrollReveal>
 
@@ -241,12 +249,8 @@ const News = () => {
                     <article className="group liquid-glass-light rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                       {/* Icon + Category header */}
                       <div className="p-6 pb-0 flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{
-                          background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.12), hsla(168, 80%, 40%, 0.05))',
-                          border: '1px solid hsla(168, 80%, 60%, 0.2)',
-                          boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 70%, 0.1), 0 2px 8px hsla(168, 100%, 20%, 0.08)',
-                        }}>
-                          <Icon className="w-5 h-5 text-primary" />
+                        <div className="w-11 h-11 rounded-full flex items-center justify-center" style={iconContainerStyle}>
+                          <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                         </div>
                         <span className="text-xs font-semibold text-primary uppercase tracking-wider">{item.category}</span>
                       </div>
@@ -299,9 +303,9 @@ const News = () => {
 
           {/* Load More */}
           <div className="text-center mt-16">
-            <button className="btn-outline">
+            <a href="#" className="glass-frosted-btn-teal rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2 no-underline" style={{ color: 'hsl(168, 100%, 25%)' }}>
               Load More Stories
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -334,7 +338,7 @@ const News = () => {
                   placeholder="Enter your email"
                   className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-primary liquid-glass"
                 />
-                <button className="btn-primary">
+                <button className="glass-frosted-btn rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2">
                   Subscribe
                 </button>
               </div>
