@@ -15,7 +15,7 @@ import {
 
 /* ── Audience tabs ── */
 const audiences = ['Startups', 'Scale-ups', 'Enterprises'] as const;
-type Audience = typeof audiences[number];
+export type Audience = typeof audiences[number];
 
 /* ── Category data per audience ── */
 interface CategoryItem {
@@ -158,55 +158,56 @@ const placeholderImages: Record<Audience, string[]> = {
   ],
 };
 
-export function ServicesExplorer() {
-  const [activeAudience, setActiveAudience] = useState<Audience>('Startups');
+/* ── Audience Tabs (standalone) ── */
+export function AudienceTabs({ active, onChange }: { active: Audience; onChange: (a: Audience) => void }) {
+  return (
+    <div
+      className="inline-flex rounded-full p-1.5"
+      style={{
+        background: 'linear-gradient(145deg, hsla(220, 15%, 95%, 0.8) 0%, hsla(220, 15%, 90%, 0.5) 100%)',
+        border: '1px solid hsla(220, 15%, 100%, 0.6)',
+        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.06), 0 2px 8px hsla(0, 0%, 0%, 0.04)',
+      }}
+    >
+      {audiences.map((audience) => (
+        <button
+          key={audience}
+          onClick={() => onChange(audience)}
+          className="relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+          style={{ color: active === audience ? 'hsl(168, 40%, 25%)' : 'hsl(220, 15%, 45%)' }}
+        >
+          {active === audience && (
+            <motion.div
+              layoutId="audience-pill"
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12)',
+              }}
+              transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
+            />
+          )}
+          <span className="relative z-10">{audience}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export function ServicesExplorer({ activeAudience }: { activeAudience: Audience }) {
   const [activeCategory, setActiveCategory] = useState(0);
 
   const currentCategories = categories[activeAudience];
-  const activeItem = currentCategories[activeCategory];
+  const activeItem = currentCategories[Math.min(activeCategory, currentCategories.length - 1)];
   const Icon = activeItem.icon;
 
-  const handleAudienceChange = (audience: Audience) => {
-    setActiveAudience(audience);
-    setActiveCategory(0);
-  };
+  // Reset category when audience changes
+  const effectiveCategory = Math.min(activeCategory, currentCategories.length - 1);
+  if (effectiveCategory !== activeCategory) setActiveCategory(effectiveCategory);
 
   return (
     <div>
-      {/* ── Audience Tabs — inline with section heading ── */}
-      <div
-        className="inline-flex rounded-full p-1.5"
-        style={{
-          background: 'linear-gradient(145deg, hsla(220, 15%, 95%, 0.8) 0%, hsla(220, 15%, 90%, 0.5) 100%)',
-          border: '1px solid hsla(220, 15%, 100%, 0.6)',
-          boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.06), 0 2px 8px hsla(0, 0%, 0%, 0.04)',
-        }}
-      >
-        {audiences.map((audience) => (
-          <button
-            key={audience}
-            onClick={() => handleAudienceChange(audience)}
-            className="relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
-            style={{
-              color: activeAudience === audience ? 'hsl(168, 40%, 25%)' : 'hsl(220, 15%, 45%)',
-            }}
-          >
-            {activeAudience === audience && (
-              <motion.div
-                layoutId="audience-pill"
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12)',
-                }}
-                transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
-              />
-            )}
-            <span className="relative z-10">{audience}</span>
-          </button>
-        ))}
-      </div>
 
       {/* ── Main Layout: Category sidebar (left) + Image & Content (right) ── */}
       <div className="grid lg:grid-cols-[240px_1fr] gap-8 mt-10">

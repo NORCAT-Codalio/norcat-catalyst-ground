@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ServicesExplorer } from '@/components/ServicesExplorer';
+import { ServicesExplorer, AudienceTabs, type Audience } from '@/components/ServicesExplorer';
 import { Link } from 'react-router-dom';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
@@ -135,6 +136,7 @@ const iconContainerStyle = {
 };
 
 const VentureGrowthServices = () => {
+  const [activeAudience, setActiveAudience] = useState<Audience>('Startups');
   return (
     <Layout>
       <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
@@ -220,23 +222,28 @@ const VentureGrowthServices = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="mb-14">
+               <div className="mb-14">
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                   What's Included
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                  Everything you need to{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
-                    accelerate.
-                  </span>
-                </h2>
-                <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
-                  Comprehensive support designed to accelerate your path from early stage to scale.
-                </p>
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                      Everything you need to{' '}
+                      <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                        accelerate.
+                      </span>
+                    </h2>
+                    <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                      Comprehensive support designed to accelerate your path from early stage to scale.
+                    </p>
+                  </div>
+                  <AudienceTabs active={activeAudience} onChange={setActiveAudience} />
+                </div>
               </div>
             </ScrollReveal>
 
-            <ServicesExplorer />
+            <ServicesExplorer activeAudience={activeAudience} />
           </div>
         </section>
 
