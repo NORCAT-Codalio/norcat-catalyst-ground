@@ -220,7 +220,7 @@ const VentureGrowthServices = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="max-w-2xl mb-14">
+              <div className="mb-14">
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                   What's Included
                 </span>
@@ -230,7 +230,7 @@ const VentureGrowthServices = () => {
                     accelerate.
                   </span>
                 </h2>
-                <p className="font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
                   Comprehensive support designed to accelerate your path from early stage to scale.
                 </p>
               </div>
