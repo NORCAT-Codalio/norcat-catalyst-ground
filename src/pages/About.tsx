@@ -247,8 +247,8 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-3xl">
                 <ScrollReveal>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass-btn text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-8">
-                    <Lightbulb className="w-3.5 h-3.5 icon-glow" />
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white/70 mb-8">
+                    <Lightbulb className="w-3.5 h-3.5" />
                     About NORCAT Innovation
                   </span>
                 </ScrollReveal>
@@ -318,7 +318,7 @@ export default function About() {
               </ScrollReveal>
               <ScrollReveal direction="right">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
+                  <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                     Our Mission
                   </span>
                   <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
@@ -352,7 +352,7 @@ export default function About() {
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-2xl mb-16">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
+                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                   Our Values
                 </span>
                 <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
@@ -388,7 +388,7 @@ export default function About() {
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-2xl mb-16">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-5">
+                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                   Our Team
                 </span>
                 <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
