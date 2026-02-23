@@ -306,7 +306,7 @@ export default function About() {
 
 
         {/* ===== MISSION SECTION — LIGHT ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <img 
             src={signatureLines} 
             alt="" 
@@ -348,7 +348,7 @@ export default function About() {
         </section>
 
         {/* ===== VALUES SECTION — WHITE ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <img 
             src={signatureLines} 
@@ -407,13 +407,13 @@ export default function About() {
         </section>
 
         {/* ===== TEAM SECTION — OFF-WHITE ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-2xl mb-16">
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
-                  Our Team
+                   Our Team
                 </span>
                 <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
                   Meet the <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Team</span>
@@ -460,7 +460,7 @@ export default function About() {
 
 
         {/* ───── PARTNERS — Glass Marquee ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.05) 0%, transparent 70%)' }} />
@@ -504,7 +504,7 @@ export default function About() {
         </section>
 
         {/* ===== CTA SECTION — TEAL ===== */}
-        <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
             src={signatureLines} 
             alt="" 
@@ -542,7 +542,7 @@ export default function About() {
         </section>
 
         {/* ===== RIC NETWORK SECTION — OFF-WHITE ===== */}
-        <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6">
             <ScrollReveal>
