@@ -326,7 +326,7 @@ const SudburyEcosystem = () => {
         <img 
           src={linesTeal} 
           alt="" 
-          className="absolute -bottom-6 right-0 w-[450px] pointer-events-none" 
+          className="absolute -top-10 -right-10 w-[450px] pointer-events-none" 
           style={{ transform: 'scaleX(-1)', opacity: 0.35 }}
         />
 
