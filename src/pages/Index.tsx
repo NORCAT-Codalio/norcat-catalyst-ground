@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe, FileText } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-underground.jpg';
@@ -637,30 +637,36 @@ export default function Index() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { category: 'Annual Report', title: '2025 Annual Impact Report: Our Ecosystem at a Glance', link: '/insights/reports' },
-                { category: 'Research', title: 'Northern Ontario Tech Ecosystem Landscape Analysis', link: '/insights/reports' },
-                { category: 'Industry Report', title: 'Mining Technology Trends Shaping 2026 and Beyond', link: '/insights/reports' },
+                { icon: FileText, category: 'Annual Report', title: '2025 Annual Impact Report: Our Ecosystem at a Glance', link: '/insights/reports' },
+                { icon: TrendingUp, category: 'Research', title: 'Northern Ontario Tech Ecosystem Landscape Analysis', link: '/insights/reports' },
+                { icon: Pickaxe, category: 'Industry Report', title: 'Mining Technology Trends Shaping 2026 and Beyond', link: '/insights/reports' },
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block h-full">
-                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.02] transition-all duration-300 relative overflow-hidden" style={{
-                      background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
+                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={{
+                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
                       backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
-                      borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
-                      borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
-                      borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                     }}>
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style={{
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{
+                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                      }}>
+                        <post.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      </div>
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3" style={{
                         background: 'hsl(168 100% 35% / 0.1)',
                         color: 'hsl(168, 100%, 28%)',
                         border: '0.5px solid hsl(168 100% 35% / 0.15)',
                       }}>{post.category}</span>
-                      <h3 className="text-lg font-bold mb-5 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{post.title}</h3>
-                      
-                      <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium glass-frosted-btn-teal group-hover:scale-[1.03]">
+                      <h3 className="text-lg font-bold mb-4 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{post.title}</h3>
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
                         Read More
                         <ArrowRight className="w-4 h-4" />
                       </span>
