@@ -434,16 +434,16 @@ export default function Index() {
                   <ScrollReveal key={program.title} delay={i * 0.1}>
                     <Link to={program.link} className="group block">
                       <div 
-                        className="rounded-[20px] p-7 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden"
+                        className="rounded-[20px] p-7 hover:scale-[1.03] transition-transform duration-300"
                         style={{
-                          background: 'linear-gradient(165deg, hsla(168, 100%, 35%, 0.12) 0%, hsla(168, 100%, 35%, 0.06) 50%, hsla(168, 80%, 40%, 0.03) 100%)',
+                          background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
                           backdropFilter: 'blur(20px)',
                           WebkitBackdropFilter: 'blur(20px)',
-                          borderTop: '1px solid hsla(168, 100%, 60%, 0.35)',
-                          borderLeft: '1px solid hsla(168, 100%, 60%, 0.25)',
-                          borderRight: '0.5px solid hsla(168, 100%, 35%, 0.1)',
-                          borderBottom: '0.5px solid hsla(168, 100%, 35%, 0.08)',
-                          boxShadow: 'inset 0 1px 1px 0 hsla(168, 100%, 70%, 0.15), inset 0 0 20px 0 hsla(168, 100%, 35%, 0.04), 0 8px 32px hsla(168, 100%, 20%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                          borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                          borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                          borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                          borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                          boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
                         }}
                       >
                         <div className="flex items-center justify-between">
@@ -458,8 +458,8 @@ export default function Index() {
                             >
                               {program.type}
                             </span>
-                            <h3 className="text-xl font-bold mb-2 transition-colors" style={{ color: 'hsl(220, 20%, 15%)' }}>{program.title}</h3>
-                            <div className="flex items-center gap-2 text-sm font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                            <h3 className="text-xl font-bold mb-2 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
+                            <div className="flex items-center gap-2 text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
                               <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
                               {program.applyBy}
                             </div>
