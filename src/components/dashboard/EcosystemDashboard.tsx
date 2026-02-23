@@ -54,11 +54,11 @@ const timelineData = [
 ];
 
 const sectorData = [
-  { name: 'Mining Tech', value: 35, color: 'hsl(173, 83%, 44%)' },
-  { name: 'Cleantech', value: 22, color: 'hsl(170, 80%, 55%)' },
-  { name: 'Industrial IoT', value: 18, color: 'hsl(175, 70%, 65%)' },
-  { name: 'AI & ML', value: 15, color: 'hsl(180, 65%, 45%)' },
-  { name: 'Critical Minerals', value: 10, color: 'hsl(168, 75%, 35%)' },
+  { name: 'Mining Tech', value: 35, color: 'hsl(168, 100%, 28%)' },
+  { name: 'Cleantech', value: 22, color: 'hsl(168, 100%, 35%)' },
+  { name: 'Industrial IoT', value: 18, color: 'hsl(168, 80%, 45%)' },
+  { name: 'AI & ML', value: 15, color: 'hsl(168, 60%, 55%)' },
+  { name: 'Critical Minerals', value: 10, color: 'hsl(168, 45%, 65%)' },
 ];
 
 const monthlyMetrics = [
@@ -247,11 +247,11 @@ export default function EcosystemDashboard() {
               </div>
               <div className="flex gap-4 text-xs">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(173, 83%, 44%)' }} />
+                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(168, 100%, 35%)' }} />
                   <span style={{ color: 'hsl(220, 15%, 40%)' }}>Investment ($M)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(170, 80%, 72%)' }} />
+                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(168, 60%, 55%)' }} />
                   <span style={{ color: 'hsl(220, 15%, 40%)' }}>Revenue ($M)</span>
                 </div>
               </div>
@@ -260,12 +260,12 @@ export default function EcosystemDashboard() {
               <AreaChart data={timelineData}>
                 <defs>
                   <linearGradient id="investmentGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="hsl(173, 83%, 44%)" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="hsl(173, 83%, 44%)" stopOpacity={0} />
+                    <stop offset="5%" stopColor="hsl(168, 100%, 35%)" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="hsl(168, 100%, 35%)" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="hsl(170, 80%, 72%)" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="hsl(170, 80%, 72%)" stopOpacity={0} />
+                    <stop offset="5%" stopColor="hsl(168, 60%, 55%)" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="hsl(168, 60%, 55%)" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsla(220, 13%, 70%, 0.3)" />
@@ -275,7 +275,7 @@ export default function EcosystemDashboard() {
                 <Area 
                   type="monotone" 
                   dataKey="investment" 
-                  stroke="hsl(173, 83%, 44%)" 
+                  stroke="hsl(168, 100%, 35%)" 
                   strokeWidth={2}
                   fill="url(#investmentGradient)" 
                   name="Investment ($M)"
@@ -283,7 +283,7 @@ export default function EcosystemDashboard() {
                 <Area 
                   type="monotone" 
                   dataKey="revenue" 
-                  stroke="hsl(170, 80%, 72%)" 
+                  stroke="hsl(168, 60%, 55%)" 
                   strokeWidth={2}
                   fill="url(#revenueGradient)" 
                   name="Revenue ($M)"
@@ -390,14 +390,14 @@ export default function EcosystemDashboard() {
                 <Bar 
                   yAxisId="left"
                   dataKey="mentorship" 
-                  fill="hsl(173, 83%, 44%)" 
+                  fill="hsl(168, 100%, 35%)" 
                   radius={[4, 4, 0, 0]}
                   name="Mentorship Hours"
                 />
                 <Bar 
                   yAxisId="right"
                   dataKey="partnerships" 
-                  fill="hsl(170, 80%, 72%)" 
+                  fill="hsl(168, 60%, 55%)" 
                   radius={[4, 4, 0, 0]}
                   name="New Partnerships"
                 />
