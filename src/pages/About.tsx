@@ -291,7 +291,7 @@ export default function About() {
               <div className="flex flex-wrap gap-6 md:gap-8">
                 {stats.map((stat) => (
                   <GlassCard key={stat.label} className="px-8 py-6 flex-1 min-w-[180px]">
-                    <div className="text-4xl md:text-5xl font-black text-primary tracking-tight icon-glow">
+                    <div className="text-4xl md:text-5xl font-black tracking-tight" style={{ color: 'hsl(168, 100%, 35%)' }}>
                       {stat.number}
                     </div>
                     <div className="text-[10px] font-semibold tracking-[0.2em] uppercase mt-2 text-white/40">
