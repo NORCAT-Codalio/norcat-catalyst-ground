@@ -87,27 +87,15 @@ const stats = [
 
 const upcomingPrograms = [
   {
-    type: 'Program',
     title: 'Venture Growth Services',
-    applyBy: 'Rolling Intake',
-    duration: 'Ongoing',
-    location: 'Greater Sudbury (Virtual Available)',
     link: '/programs/venture-growth-services',
   },
   {
-    type: 'Program',
-    title: 'Mentorship Services',
-    applyBy: 'Rolling Intake',
-    duration: '12+ Month Journey',
-    location: 'Northern Ontario',
+    title: 'Product Testing and Validation',
     link: '/programs/mentorship-services',
   },
   {
-    type: 'Funding',
-    title: 'Sudbury Catalyst Fund',
-    applyBy: 'Always Open',
-    duration: '$5M Fund',
-    location: 'Greater Sudbury',
+    title: 'Growth & Investment',
     link: '/funding/sudbury-catalyst-fund',
   },
 ];
@@ -462,21 +450,7 @@ export default function Index() {
                       >
                         <div className="flex items-center justify-between">
                           <div>
-                            <span 
-                              className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
-                              style={{ 
-                                background: 'hsl(168 100% 35% / 0.1)',
-                                color: 'hsl(168, 100%, 28%)',
-                                border: '0.5px solid hsl(168 100% 35% / 0.15)',
-                              }}
-                            >
-                              {program.type}
-                            </span>
-                            <h3 className="text-xl font-bold mb-2 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
-                            <div className="flex items-center gap-2 text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                              <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                              {program.applyBy}
-                            </div>
+                            <h3 className="text-xl font-bold transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
                           </div>
                           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
                         </div>
