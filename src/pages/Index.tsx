@@ -88,14 +88,17 @@ const stats = [
 const upcomingPrograms = [
   {
     title: 'Venture Growth Services',
+    description: 'For early-stage founders looking for 1-on-1 support, mentorship, IP strategy, and micro-grants.',
     link: '/programs/venture-growth-services',
   },
   {
     title: 'Product Testing and Validation',
+    description: 'Gain access to the Fortin Discovery Lab to build your prototype, or the NORCAT Underground Centre to test your technology in an operating mine.',
     link: '/programs/mentorship-services',
   },
   {
     title: 'Growth & Investment',
+    description: 'Get help navigating both dilutive and non-dilutive funding opportunities.',
     link: '/funding/sudbury-catalyst-fund',
   },
 ];
@@ -451,6 +454,7 @@ export default function Index() {
                         <div className="flex items-center justify-between">
                           <div>
                             <h3 className="text-xl font-bold transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
+                            <p className="text-sm font-light mt-2" style={{ color: 'hsl(220, 15%, 40%)' }}>{program.description}</p>
                           </div>
                           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
                         </div>
