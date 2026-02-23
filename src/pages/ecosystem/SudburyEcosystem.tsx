@@ -323,6 +323,12 @@ const SudburyEcosystem = () => {
           alt="" 
           className="absolute -top-10 -right-10 w-[550px] opacity-[0.07] pointer-events-none" 
         />
+        <img 
+          src={linesTeal} 
+          alt="" 
+          className="absolute bottom-0 right-0 w-[400px] opacity-[0.08] pointer-events-none" 
+          style={{ transform: 'scaleX(-1)' }}
+        />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
