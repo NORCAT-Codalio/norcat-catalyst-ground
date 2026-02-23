@@ -171,7 +171,7 @@ export default function Index() {
               background: `
                 linear-gradient(180deg, hsl(220 25% 4% / 0.6) 0%, transparent 35%),
                 linear-gradient(0deg, hsl(220 25% 4% / 0.95) 0%, transparent 40%),
-                linear-gradient(160deg, hsl(220 22% 6% / 0.92) 0%, hsl(220 20% 8% / 0.7) 40%, hsl(168 50% 10% / 0.75) 100%)
+                linear-gradient(90deg, hsl(220 22% 6% / 0.92) 0%, hsl(220 20% 8% / 0.7) 40%, hsl(168 50% 10% / 0.35) 100%)
               `
             }} />
           </motion.div>
