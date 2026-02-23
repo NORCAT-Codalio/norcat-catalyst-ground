@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 import signatureLines from '@/assets/signature-lines.png';
 import miningEquipment from '@/assets/mining-equipment.jpg';
+import aboutHeroBg from '@/assets/about-hero-bg.png';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -229,18 +230,25 @@ export default function About() {
       <div>
         {/* ===== HERO SECTION — DARK ===== */}
         <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
-          {/* Ambient gradient orbs */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-[800px] h-[600px] rounded-full opacity-15" style={{ background: 'radial-gradient(ellipse, hsl(168 100% 36% / 0.3), transparent 70%)' }} />
-            <div className="absolute top-[40%] right-0 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(ellipse, hsl(168 80% 50% / 0.2), transparent 70%)' }} />
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <img src={aboutHeroBg} alt="" className="w-full h-full object-cover object-right" />
+            {/* Overlay */}
+            <div className="absolute inset-0" style={{
+              background: `
+                linear-gradient(180deg, hsl(220 25% 4% / 0.6) 0%, transparent 35%),
+                linear-gradient(0deg, hsl(220 25% 4% / 0.95) 0%, transparent 40%),
+                linear-gradient(90deg, hsl(220 22% 6% / 0.92) 0%, hsl(220 20% 8% / 0.7) 40%, hsl(168 50% 10% / 0.35) 100%)
+              `
+            }} />
           </div>
 
-          {/* Signature lines decoration */}
-          <img 
-            src={signatureLines} 
-            alt="" 
+          {/* Signature lines */}
+          <img
+            src={signatureLines}
+            alt=""
             aria-hidden="true"
-            className="absolute top-0 right-0 w-[60%] h-full object-cover opacity-[0.07] pointer-events-none select-none mix-blend-screen"
+            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
           />
 
           <div className="container mx-auto px-6 relative z-10">
