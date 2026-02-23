@@ -364,18 +364,34 @@ export default function About() {
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               {values.map((value, index) => (
                 <ScrollReveal key={value.title} delay={index * 100}>
-                  <LightCard className="p-8 md:p-10 h-full group hover:border-primary/30">
+                  <div 
+                    className="rounded-[20px] p-8 md:p-10 h-full group hover:scale-[1.03] transition-transform duration-300"
+                    style={{
+                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                    }}
+                  >
                     <div className="flex items-start gap-5">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors duration-300">
-                        <value.icon className="w-5 h-5 text-primary" />
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style={{
+                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                      }}>
+                        <value.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-primary/40 tracking-widest mb-2">0{index + 1}</div>
-                        <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
-                        <p className="text-base leading-relaxed text-muted-foreground">{value.description}</p>
+                        <div className="text-xs font-bold tracking-widest mb-2" style={{ color: 'hsla(168, 100%, 35%, 0.4)' }}>0{index + 1}</div>
+                        <h3 className="text-xl font-bold mb-3" style={{ color: 'hsl(220, 15%, 20%)' }}>{value.title}</h3>
+                        <p className="text-base leading-relaxed font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{value.description}</p>
                       </div>
                     </div>
-                  </LightCard>
+                  </div>
                 </ScrollReveal>
               ))}
             </div>
