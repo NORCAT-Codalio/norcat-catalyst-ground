@@ -2,15 +2,33 @@ import { useState } from 'react';
 import { 
   Building2, TrendingUp, DollarSign, Globe, Users, 
   Lightbulb, Handshake, Award, Package, Clock,
-  ChevronDown, Sparkles, Rocket
+  Sparkles, Rocket
 } from 'lucide-react';
 import { 
   AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell,
-  RadialBarChart, RadialBar, LineChart, Line,
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { cn } from '@/lib/utils';
+
+// ── Shared glassmorphic card style ──
+const glassCardStyle: React.CSSProperties = {
+  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+};
+
+// ── Neumorphic icon container style ──
+const neumorphicIconStyle: React.CSSProperties = {
+  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
 
 // Ecosystem Data
 const ecosystemStats = {
@@ -56,12 +74,6 @@ const monthlyMetrics = [
   { month: 'Oct', mentorship: 1450, partnerships: 12, products: 8 },
   { month: 'Nov', mentorship: 1580, partnerships: 15, products: 9 },
   { month: 'Dec', mentorship: 1200, partnerships: 11, products: 7 },
-];
-
-const ipMetrics = [
-  { name: 'Patents Filed', value: 89, fill: 'hsl(173, 83%, 44%)' },
-  { name: 'Trademarks', value: 156, fill: 'hsl(170, 80%, 55%)' },
-  { name: 'Products', value: 67, fill: 'hsl(175, 70%, 65%)' },
 ];
 
 const fundingStages = [
@@ -117,7 +129,6 @@ const StatCard = ({
   prefix = '', 
   suffix = '', 
   trend,
-  color = 'primary',
   delay = 0 
 }: { 
   icon: any; 
@@ -126,43 +137,30 @@ const StatCard = ({
   prefix?: string; 
   suffix?: string; 
   trend?: number;
-  color?: 'primary' | 'teal' | 'emerald';
   delay?: number;
 }) => {
-  const colorClasses = {
-    primary: 'from-primary/20 to-primary/5 border-primary/30',
-    teal: 'from-teal-500/20 to-teal-500/5 border-teal-500/30',
-    emerald: 'from-emerald-500/20 to-emerald-500/5 border-emerald-500/30',
-  };
-
   return (
     <ScrollReveal delay={delay}>
-      <div className={cn(
-        "relative group p-6 rounded-2xl bg-gradient-to-br border backdrop-blur-sm",
-        "hover:scale-[1.02] transition-all duration-300 cursor-default",
-        colorClasses[color]
-      )}>
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-        <div className="relative z-10">
-          <div className="flex items-center justify-between mb-4">
-            <div className="p-2.5 rounded-xl bg-primary/10">
-              <Icon className="h-5 w-5 text-primary" />
-            </div>
-            {trend && (
-              <div className={cn(
-                "flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full",
-                trend > 0 ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"
-              )}>
-                <TrendingUp className={cn("h-3 w-3", trend < 0 && "rotate-180")} />
-                {Math.abs(trend)}%
-              </div>
-            )}
-          </div>
-          <div className="text-3xl font-bold text-foreground mb-1">
-            <AnimatedCounter value={value} prefix={prefix} suffix={suffix} decimals={prefix === '$' ? 1 : 0} />
-          </div>
-          <div className="text-sm text-muted-foreground">{label}</div>
+      <div 
+        className="rounded-[20px] p-7 text-center hover:scale-[1.03] transition-transform duration-300"
+        style={glassCardStyle}
+      >
+        <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={neumorphicIconStyle}>
+          <Icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
         </div>
+        <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>
+          <AnimatedCounter value={value} prefix={prefix} suffix={suffix} decimals={prefix === '$' ? 1 : 0} />
+        </div>
+        {trend && (
+          <div className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full mb-2" style={{
+            background: 'hsl(168 100% 35% / 0.1)',
+            color: 'hsl(168, 100%, 28%)',
+          }}>
+            <TrendingUp className="h-3 w-3" />
+            +{Math.abs(trend)}%
+          </div>
+        )}
+        <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{label}</p>
       </div>
     </ScrollReveal>
   );
@@ -171,8 +169,12 @@ const StatCard = ({
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg p-3 shadow-xl">
-        <p className="font-semibold text-foreground mb-2">{label}</p>
+      <div className="rounded-xl p-3 shadow-xl" style={{
+        background: 'hsla(220, 15%, 95%, 0.95)',
+        backdropFilter: 'blur(12px)',
+        border: '1px solid hsla(168, 30%, 90%, 0.5)',
+      }}>
+        <p className="font-semibold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{label}</p>
         {payload.map((entry: any, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
             {entry.name}: {entry.name.includes('$') || entry.dataKey === 'investment' || entry.dataKey === 'revenue' 
@@ -206,12 +208,16 @@ export default function EcosystemDashboard() {
             <button
               key={filter.key}
               onClick={() => setActiveFilter(filter.key)}
-              className={cn(
-                "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
-                activeFilter === filter.key
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
-                  : "bg-secondary hover:bg-secondary/80 text-foreground"
-              )}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300"
+              style={activeFilter === filter.key ? {
+                background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)',
+                color: 'white',
+                boxShadow: '0 4px 16px hsla(168, 100%, 20%, 0.3)',
+              } : {
+                ...glassCardStyle,
+                color: 'hsl(220, 15%, 30%)',
+                cursor: 'pointer',
+              }}
             >
               <filter.icon className="h-4 w-4" />
               {filter.label}
@@ -221,11 +227,11 @@ export default function EcosystemDashboard() {
       </ScrollReveal>
 
       {/* Main Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
         <StatCard icon={Building2} value={ecosystemStats.totalCompanies} label="Total Companies" trend={12} delay={0} />
-        <StatCard icon={Rocket} value={ecosystemStats.newCompanies} label="New This Year" trend={18} delay={50} color="teal" />
+        <StatCard icon={Rocket} value={ecosystemStats.newCompanies} label="New This Year" trend={18} delay={50} />
         <StatCard icon={DollarSign} value={ecosystemStats.totalInvestment} label="Total Investment" prefix="$" suffix="M" trend={15} delay={100} />
-        <StatCard icon={Globe} value={ecosystemStats.exportRevenue} label="Export Revenue" prefix="$" suffix="M" trend={22} delay={150} color="emerald" />
+        <StatCard icon={Globe} value={ecosystemStats.exportRevenue} label="Export Revenue" prefix="$" suffix="M" trend={22} delay={150} />
         <StatCard icon={Users} value={2150} label="Jobs Created" trend={10} delay={200} />
       </div>
 
@@ -233,20 +239,20 @@ export default function EcosystemDashboard() {
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Growth Timeline */}
         <ScrollReveal delay={100}>
-          <div className="bg-background rounded-2xl border border-border p-6 h-[400px]">
+          <div className="rounded-[20px] p-7 h-[400px]" style={glassCardStyle}>
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="font-bold text-lg">Ecosystem Growth</h3>
-                <p className="text-sm text-muted-foreground">Investment & Revenue over time</p>
+                <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Ecosystem Growth</h3>
+                <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Investment & Revenue over time</p>
               </div>
               <div className="flex gap-4 text-xs">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                  <span>Investment ($M)</span>
+                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(173, 83%, 44%)' }} />
+                  <span style={{ color: 'hsl(220, 15%, 40%)' }}>Investment ($M)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-teal-300" />
-                  <span>Revenue ($M)</span>
+                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(170, 80%, 72%)' }} />
+                  <span style={{ color: 'hsl(220, 15%, 40%)' }}>Revenue ($M)</span>
                 </div>
               </div>
             </div>
@@ -262,9 +268,9 @@ export default function EcosystemDashboard() {
                     <stop offset="95%" stopColor="hsl(170, 80%, 72%)" stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 91%)" />
-                <XAxis dataKey="year" tick={{ fontSize: 12 }} stroke="hsl(220, 9%, 46%)" />
-                <YAxis tick={{ fontSize: 12 }} stroke="hsl(220, 9%, 46%)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsla(220, 13%, 70%, 0.3)" />
+                <XAxis dataKey="year" tick={{ fontSize: 12, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
+                <YAxis tick={{ fontSize: 12, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
                 <Tooltip content={<CustomTooltip />} />
                 <Area 
                   type="monotone" 
@@ -289,10 +295,10 @@ export default function EcosystemDashboard() {
 
         {/* Sector Distribution */}
         <ScrollReveal delay={150}>
-          <div className="bg-background rounded-2xl border border-border p-6 h-[400px]">
+          <div className="rounded-[20px] p-7 h-[400px]" style={glassCardStyle}>
             <div className="mb-6">
-              <h3 className="font-bold text-lg">Portfolio by Sector</h3>
-              <p className="text-sm text-muted-foreground">Distribution of companies across industries</p>
+              <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Portfolio by Sector</h3>
+              <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Distribution of companies across industries</p>
             </div>
             <div className="flex items-center gap-8 h-[calc(100%-80px)]">
               <div className="flex-1 h-full">
@@ -322,9 +328,13 @@ export default function EcosystemDashboard() {
                       content={({ active, payload }) => {
                         if (active && payload && payload.length) {
                           return (
-                            <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg p-3 shadow-xl">
-                              <p className="font-semibold">{payload[0].name}</p>
-                              <p className="text-primary font-bold">{payload[0].value}%</p>
+                            <div className="rounded-xl p-3 shadow-xl" style={{
+                              background: 'hsla(220, 15%, 95%, 0.95)',
+                              backdropFilter: 'blur(12px)',
+                              border: '1px solid hsla(168, 30%, 90%, 0.5)',
+                            }}>
+                              <p className="font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>{payload[0].name}</p>
+                              <p className="font-bold" style={{ color: 'hsl(168, 100%, 28%)' }}>{payload[0].value}%</p>
                             </div>
                           );
                         }
@@ -340,14 +350,17 @@ export default function EcosystemDashboard() {
                     key={sector.name}
                     className={cn(
                       "flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-300 cursor-default",
-                      hoveredSector === sector.name ? "bg-secondary scale-105" : "hover:bg-secondary/50"
+                      hoveredSector === sector.name ? "scale-105" : ""
                     )}
+                    style={hoveredSector === sector.name ? {
+                      background: 'hsla(168, 25%, 85%, 0.3)',
+                    } : undefined}
                     onMouseEnter={() => setHoveredSector(sector.name)}
                     onMouseLeave={() => setHoveredSector(null)}
                   >
                     <div className="w-3 h-3 rounded-full" style={{ backgroundColor: sector.color }} />
-                    <span className="text-sm font-medium">{sector.name}</span>
-                    <span className="text-sm text-muted-foreground ml-auto">{sector.value}%</span>
+                    <span className="text-sm font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>{sector.name}</span>
+                    <span className="text-sm ml-auto" style={{ color: 'hsl(220, 15%, 40%)' }}>{sector.value}%</span>
                   </div>
                 ))}
               </div>
@@ -360,19 +373,19 @@ export default function EcosystemDashboard() {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Monthly Activity */}
         <ScrollReveal delay={100} className="lg:col-span-2">
-          <div className="bg-background rounded-2xl border border-border p-6 h-[350px]">
+          <div className="rounded-[20px] p-7 h-[350px]" style={glassCardStyle}>
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="font-bold text-lg">Monthly Activity</h3>
-                <p className="text-sm text-muted-foreground">Mentorship hours & partnerships</p>
+                <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Monthly Activity</h3>
+                <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Mentorship hours & partnerships</p>
               </div>
             </div>
             <ResponsiveContainer width="100%" height="85%">
               <BarChart data={monthlyMetrics} barGap={8}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 13%, 91%)" vertical={false} />
-                <XAxis dataKey="month" tick={{ fontSize: 11 }} stroke="hsl(220, 9%, 46%)" />
-                <YAxis yAxisId="left" tick={{ fontSize: 11 }} stroke="hsl(220, 9%, 46%)" />
-                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11 }} stroke="hsl(220, 9%, 46%)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="hsla(220, 13%, 70%, 0.3)" vertical={false} />
+                <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
+                <YAxis yAxisId="left" tick={{ fontSize: 11, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
+                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
                 <Tooltip content={<CustomTooltip />} />
                 <Bar 
                   yAxisId="left"
@@ -395,72 +408,36 @@ export default function EcosystemDashboard() {
 
         {/* IP & Innovation Stats */}
         <ScrollReveal delay={150}>
-          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl border border-white/10 p-6 h-[350px] text-white">
+          <div className="rounded-[20px] p-7 h-[350px]" style={glassCardStyle}>
             <div className="mb-4">
-              <h3 className="font-bold text-lg">IP Portfolio</h3>
-              <p className="text-sm text-white/60">Intellectual property assets</p>
+              <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>IP Portfolio</h3>
+              <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Intellectual property assets</p>
             </div>
             <div className="space-y-6 mt-8">
-              <div className="group">
-                <div className="flex justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Award className="h-4 w-4 text-teal-400" />
-                    <span className="text-sm">Patents Filed</span>
+              {[
+                { icon: Award, label: 'Patents Filed', value: ecosystemStats.patents, width: '75%' },
+                { icon: Lightbulb, label: 'Trademarks', value: ecosystemStats.trademarks, width: '90%' },
+                { icon: Package, label: 'Products Launched', value: ecosystemStats.productsLaunched, width: '55%' },
+                { icon: Clock, label: 'Mentorship Hours', value: ecosystemStats.mentorshipHours.toLocaleString(), width: '85%' },
+              ].map((item) => (
+                <div key={item.label}>
+                  <div className="flex justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center" style={neumorphicIconStyle}>
+                        <item.icon className="h-3.5 w-3.5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      </div>
+                      <span className="text-sm" style={{ color: 'hsl(220, 15%, 30%)' }}>{item.label}</span>
+                    </div>
+                    <span className="font-bold text-sm" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.value}</span>
                   </div>
-                  <span className="font-bold text-teal-400">{ecosystemStats.patents}</span>
-                </div>
-                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-teal-500 to-teal-300 rounded-full transition-all duration-1000"
-                    style={{ width: '75%' }}
-                  />
-                </div>
-              </div>
-              <div className="group">
-                <div className="flex justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Lightbulb className="h-4 w-4 text-teal-300" />
-                    <span className="text-sm">Trademarks</span>
+                  <div className="h-2 rounded-full overflow-hidden" style={{ background: 'hsla(220, 15%, 80%, 0.4)' }}>
+                    <div 
+                      className="h-full rounded-full transition-all duration-1000"
+                      style={{ width: item.width, background: 'linear-gradient(90deg, hsl(168, 100%, 35%), hsl(168, 80%, 50%))' }}
+                    />
                   </div>
-                  <span className="font-bold text-teal-300">{ecosystemStats.trademarks}</span>
                 </div>
-                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-teal-400 to-teal-200 rounded-full transition-all duration-1000"
-                    style={{ width: '90%' }}
-                  />
-                </div>
-              </div>
-              <div className="group">
-                <div className="flex justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Package className="h-4 w-4 text-teal-200" />
-                    <span className="text-sm">Products Launched</span>
-                  </div>
-                  <span className="font-bold text-teal-200">{ecosystemStats.productsLaunched}</span>
-                </div>
-                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-teal-300 to-teal-100 rounded-full transition-all duration-1000"
-                    style={{ width: '55%' }}
-                  />
-                </div>
-              </div>
-              <div className="group">
-                <div className="flex justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-white/80" />
-                    <span className="text-sm">Mentorship Hours</span>
-                  </div>
-                  <span className="font-bold text-white/80">{ecosystemStats.mentorshipHours.toLocaleString()}</span>
-                </div>
-                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-white/60 to-white/40 rounded-full transition-all duration-1000"
-                    style={{ width: '85%' }}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </ScrollReveal>
@@ -468,24 +445,28 @@ export default function EcosystemDashboard() {
 
       {/* Funding Stages */}
       <ScrollReveal delay={100}>
-        <div className="bg-background rounded-2xl border border-border p-6">
+        <div className="rounded-[20px] p-7" style={glassCardStyle}>
           <div className="mb-6">
-            <h3 className="font-bold text-lg">Companies by Funding Stage</h3>
-            <p className="text-sm text-muted-foreground">Distribution across investment stages</p>
+            <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Companies by Funding Stage</h3>
+            <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Distribution across investment stages</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {fundingStages.map((stage, index) => (
               <div 
                 key={stage.stage}
-                className="relative p-5 rounded-xl bg-gradient-to-br from-secondary to-secondary/50 border border-border hover:border-primary/30 transition-all duration-300 hover:scale-[1.02] group"
+                className="relative rounded-[16px] p-5 hover:scale-[1.03] transition-transform duration-300"
+                style={glassCardStyle}
               >
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center absolute top-3 right-3 text-xs font-bold" style={{
+                  ...neumorphicIconStyle,
+                  color: 'hsl(168, 100%, 35%)',
+                }}>
                   {index + 1}
                 </div>
-                <div className="text-2xl font-bold text-foreground mb-1">{stage.companies}</div>
-                <div className="text-sm font-medium text-foreground/80 mb-2">{stage.stage}</div>
-                <div className="text-xs text-muted-foreground">
-                  Avg raise: <span className="text-primary font-medium">${stage.avgRaise}M</span>
+                <div className="text-2xl font-black mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{stage.companies}</div>
+                <div className="text-sm font-medium mb-2" style={{ color: 'hsl(220, 15%, 25%)' }}>{stage.stage}</div>
+                <div className="text-xs font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                  Avg raise: <span className="font-medium" style={{ color: 'hsl(168, 100%, 28%)' }}>${stage.avgRaise}M</span>
                 </div>
               </div>
             ))}
@@ -494,10 +475,10 @@ export default function EcosystemDashboard() {
       </ScrollReveal>
 
       {/* Bottom Stats Row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <StatCard icon={Handshake} value={ecosystemStats.partnerships} label="Total Partnerships" trend={28} delay={0} color="teal" />
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <StatCard icon={Handshake} value={ecosystemStats.partnerships} label="Total Partnerships" trend={28} delay={0} />
         <StatCard icon={DollarSign} value={ecosystemStats.totalRevenue} label="Total Revenue" prefix="$" suffix="M" trend={10} delay={50} />
-        <StatCard icon={Award} value={ecosystemStats.patents + ecosystemStats.trademarks} label="IP Assets" trend={15} delay={100} color="emerald" />
+        <StatCard icon={Award} value={ecosystemStats.patents + ecosystemStats.trademarks} label="IP Assets" trend={15} delay={100} />
         <StatCard icon={Clock} value={ecosystemStats.mentorshipHours} label="Mentorship Hours" delay={150} />
       </div>
     </div>
