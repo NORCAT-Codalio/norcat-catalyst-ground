@@ -598,25 +598,35 @@ const SudburyEcosystem = () => {
                       )}
 
                       {selectedOrg.internalLink ? (
-                        <Button asChild className="w-full border-0 text-white" style={{
-                          background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
-                          boxShadow: '0 4px 15px hsla(168, 100%, 35%, 0.3)',
-                        }}>
-                          <Link to={selectedOrg.internalLink}>
-                            Learn More
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </Link>
-                        </Button>
+                        <Link 
+                          to={selectedOrg.internalLink}
+                          className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                          style={{
+                            background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                            border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                            color: 'hsl(168, 40%, 25%)',
+                            boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                          }}
+                        >
+                          Learn More
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
                       ) : selectedOrg.link ? (
-                        <Button asChild className="w-full" style={{
-                          ...glassCardStyle,
-                          color: 'hsl(168, 100%, 28%)',
-                        }}>
-                          <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer">
-                            Visit Website
-                            <ExternalLink className="w-4 h-4 ml-2" />
-                          </a>
-                        </Button>
+                        <a 
+                          href={selectedOrg.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                          style={{
+                            background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                            border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                            color: 'hsl(168, 40%, 25%)',
+                            boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                          }}
+                        >
+                          Visit Website
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
                       ) : null}
                     </motion.div>
                   ) : (
@@ -678,27 +688,36 @@ const SudburyEcosystem = () => {
               mentors, and funding opportunities available to founders in Greater Sudbury.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="border-0 px-8" style={{
-                background: 'hsla(0, 0%, 100%, 0.15)',
-                backdropFilter: 'blur(10px)',
-                color: 'white',
-                border: '1px solid hsla(0, 0%, 100%, 0.25)',
-                boxShadow: '0 4px 15px hsla(0, 0%, 0%, 0.1), inset 0 1px 0 hsla(0, 0%, 100%, 0.2)',
-              }}>
-                <Link to="/apply">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="px-8" style={{
-                background: 'transparent',
-                color: 'white',
-                border: '1px solid hsla(0, 0%, 100%, 0.3)',
-              }}>
-                <Link to="/about">
-                  Learn About NORCAT
-                </Link>
-              </Button>
+              <Link 
+                to="/apply"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.3) 0%, hsla(168, 100%, 35%, 0.15) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  color: 'white',
+                  border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
+                  boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                }}
+              >
+                Get Started
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link 
+                to="/about"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  color: 'white',
+                  border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                  boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                }}
+              >
+                Learn About NORCAT
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </ScrollReveal>
         </div>
