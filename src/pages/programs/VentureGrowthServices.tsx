@@ -1,5 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { ServicesExplorer } from '@/components/ServicesExplorer';
 import { Link } from 'react-router-dom';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
@@ -9,19 +10,11 @@ import {
   ArrowRight, 
   Rocket, 
   Target, 
-  Users, 
-  Check, 
-  Handshake, 
-  GraduationCap, 
-  Network, 
-  Building2,
-  UserCheck,
-  MessageCircle,
   Compass,
   Zap,
+  MessageCircle,
   Clock,
   MapPin,
-  ExternalLink,
   Quote,
   BarChart3,
   Globe
@@ -102,46 +95,6 @@ const allServices = [
   },
 ];
 
-const coreServices = [
-  {
-    icon: UserCheck,
-    title: 'One-on-One Advisor Support',
-    description: 'Every company is matched with a dedicated venture advisor who works alongside you on strategy, operations, and growth.',
-    features: ['Dedicated advisor relationship', 'Schedule flexible sessions', 'Strategic planning support', 'Leadership development']
-  },
-  {
-    icon: GraduationCap,
-    title: 'Founder Education',
-    description: 'Structured curriculum covering everything from customer discovery to fundraising. Learn from practitioners who\'ve built and scaled companies.',
-    features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'On-Demand Courses']
-  },
-  {
-    icon: Handshake,
-    title: 'Customer Pairing',
-    description: 'We actively connect you with potential customers, pilot partners, and early adopters from our extensive industry network.',
-    features: ['Strategic network building', 'Pilot project facilitation', 'Industry partner matching', 'Feedback loop integration']
-  },
-  {
-    icon: Users,
-    title: 'Mentorship Network',
-    description: 'Access 18+ experienced mentors across sectors including mining, technology, finance, operations, and more.',
-    features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
-    link: '/programs/mentorship-services',
-    linkText: 'Explore Mentorship Services'
-  },
-  {
-    icon: Network,
-    title: 'Powerful Network Access',
-    description: 'Tap into our ecosystem of investors, corporate partners, government agencies, and fellow founders.',
-    features: ['Investor introductions', 'Corporate partnership opportunities', 'Government funding connections', 'Founder peer network']
-  },
-  {
-    icon: Building2,
-    title: 'Community Integration',
-    description: 'Join a tight-knit community of ambitious founders building category-defining companies.',
-    features: ['Cohort-based experience', 'Founder dinners & events', 'NORCAT Community access', 'Alumni network benefits']
-  }
-];
 
 const programStructure = [
   { phase: '01', title: 'Onboarding', description: 'Deep dive into your business, assign your advisor, and create a tailored growth plan.' },
@@ -260,7 +213,7 @@ const VentureGrowthServices = () => {
           </div>
         </section>
 
-        {/* ───── CORE SERVICES ───── */}
+        {/* ───── SERVICES EXPLORER ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
           <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
@@ -283,37 +236,7 @@ const VentureGrowthServices = () => {
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {coreServices.map((service, i) => (
-                <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5" style={iconContainerStyle}>
-                      <service.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                    </div>
-                    <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{service.title}</h3>
-                    <p className="text-sm font-light mb-5" style={{ color: 'hsl(220, 15%, 40%)' }}>{service.description}</p>
-                    <ul className="space-y-2 mb-5">
-                      {service.features.map((feature, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm">
-                          <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          <span style={{ color: 'hsl(220, 15%, 30%)' }}>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {service.link && (
-                      <Link 
-                        to={service.link} 
-                        className="inline-flex items-center gap-2 text-sm font-semibold hover:translate-x-1 transition-transform"
-                        style={{ color: 'hsl(168, 100%, 28%)' }}
-                      >
-                        {service.linkText}
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    )}
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
+            <ServicesExplorer />
           </div>
         </section>
 
