@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import autonomousMiningVehicle from '@/assets/autonomous-mining-vehicle.jpg';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Featured/Breaking news
 const featuredNews = {
@@ -16,11 +17,11 @@ const featuredNews = {
   excerpt: 'MineTech Robotics closes Series A round led by Northvolt Ventures, plans to deploy autonomous vehicles at 10 additional mine sites by 2027.',
   date: 'January 6, 2026',
   category: 'Breaking',
-  image: '/placeholder.svg',
+  image: autonomousMiningVehicle,
   readTime: '4 min read',
 };
 
-// Main news items with more variety
+// Main news items
 const newsItems = [
   {
     title: 'NORCAT Launches New Mining Technology Accelerator Program',
@@ -28,7 +29,6 @@ const newsItems = [
     excerpt: 'A new 16-week program supporting startups developing innovative solutions for underground operations, with $100K in non-dilutive funding.',
     category: 'Program Launch',
     icon: Rocket,
-    color: 'bg-teal-500',
   },
   {
     title: 'SubSurface AI Acquired by Dassault Systèmes for $45M',
@@ -36,7 +36,6 @@ const newsItems = [
     excerpt: 'Sudbury-born AI company\'s geological analysis platform now part of global mining software giant.',
     category: 'Acquisition',
     icon: DollarSign,
-    color: 'bg-amber-500',
   },
   {
     title: 'Venture North Pitch 2025 Winners Announced',
@@ -44,7 +43,6 @@ const newsItems = [
     excerpt: 'Three startups share $150K in prizes at Northern Ontario\'s largest pitch competition.',
     category: 'Event',
     icon: Award,
-    color: 'bg-purple-500',
   },
   {
     title: 'Vale Partners with 5 NORCAT Portfolio Companies',
@@ -52,7 +50,6 @@ const newsItems = [
     excerpt: 'Strategic pilots launching at Sudbury operations to test next-gen safety and automation tech.',
     category: 'Partnership',
     icon: Building2,
-    color: 'bg-blue-500',
   },
   {
     title: 'Northern Ontario Angels Closes $8M Fund II',
@@ -60,7 +57,6 @@ const newsItems = [
     excerpt: 'Investor network ready to deploy capital into early-stage Northern Ontario startups.',
     category: 'Funding',
     icon: TrendingUp,
-    color: 'bg-emerald-500',
   },
   {
     title: 'Core5 Opens New EV Testing Facility in Sudbury',
@@ -68,11 +64,10 @@ const newsItems = [
     excerpt: 'State-of-the-art facility for battery electric vehicle testing and certification.',
     category: 'Infrastructure',
     icon: Zap,
-    color: 'bg-orange-500',
   },
 ];
 
-// Quick updates / activity feed
+// Activity feed
 const activityFeed = [
   { text: 'VentFlow Systems expanded to South Africa', time: '2 hours ago', type: 'expansion' },
   { text: 'New mentor joined: Sarah Chen, ex-Google', time: '5 hours ago', type: 'team' },
@@ -80,10 +75,6 @@ const activityFeed = [
   { text: 'GeoVision closed $2.5M seed round', time: '12 hours ago', type: 'funding' },
   { text: 'MineTech demo at CIM Conference', time: '1 day ago', type: 'event' },
   { text: 'Underground AI pilot at Garson Mine', time: '1 day ago', type: 'pilot' },
-  { text: 'NORCAT hosted 45 investors for pitch day', time: '2 days ago', type: 'event' },
-  { text: 'DrillTech signed OEM partnership', time: '2 days ago', type: 'partnership' },
-  { text: 'New cohort: 8 startups onboarded', time: '3 days ago', type: 'program' },
-  { text: 'SafeMine raised $1.8M pre-seed', time: '3 days ago', type: 'funding' },
 ];
 
 // Stats ticker
@@ -94,7 +85,7 @@ const ecosystemStats = [
   { label: 'Pilot Programs', value: '23' },
 ];
 
-// Categories for filtering
+// Categories
 const categories = ['All', 'Funding', 'Partnerships', 'Events', 'Programs', 'Acquisitions'];
 
 const News = () => {
@@ -102,89 +93,100 @@ const News = () => {
 
   return (
     <Layout>
-      {/* Hero with Featured Story */}
-      <section className="relative bg-slate-900 overflow-hidden">
-        {/* Live Stats Ticker - now inside hero */}
-        <div className="bg-slate-950 border-b border-slate-800 overflow-hidden pt-20">
+      {/* ── Hero with Featured Story ── */}
+      <section className="relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, hsl(224 71% 4%) 0%, hsl(215 28% 17%) 50%, hsl(217 19% 27%) 100%)',
+      }}>
+        {/* Stats Ticker */}
+        <div className="border-b border-white/5 overflow-hidden pt-20">
           <div className="container mx-auto px-4">
             <div className="flex items-center py-3 gap-8 animate-marquee">
-              <span className="text-teal-400 text-xs font-bold tracking-wider uppercase flex items-center gap-2 shrink-0">
-                <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
+              <span className="text-primary text-xs font-bold tracking-wider uppercase flex items-center gap-2 shrink-0">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Live Ecosystem Stats
               </span>
               {[...ecosystemStats, ...ecosystemStats].map((stat, i) => (
                 <div key={i} className="flex items-center gap-2 shrink-0">
-                  <span className="text-slate-50 font-bold">{stat.value}</span>
-                  <span className="text-slate-400 text-sm">{stat.label}</span>
-                  <span className="text-slate-700 mx-4">|</span>
+                  <span className="text-white font-bold">{stat.value}</span>
+                  <span className="text-white/50 text-sm">{stat.label}</span>
+                  <span className="text-white/10 mx-4">|</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-purple-500/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.15),transparent_50%)]" />
+        {/* Gradient orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-15" style={{
+            background: 'radial-gradient(circle, hsl(168 100% 35% / 0.4), transparent 70%)',
+          }} />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-10" style={{
+            background: 'radial-gradient(circle, hsl(164 70% 55% / 0.4), transparent 70%)',
+          }} />
+        </div>
         
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-12 pb-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-16 pb-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Featured Article */}
             <ScrollReveal>
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full animate-pulse">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold text-white animate-pulse" style={{
+                    background: 'linear-gradient(135deg, hsl(0 84% 50%), hsl(0 84% 60%))',
+                  }}>
                     BREAKING
                   </span>
-                  <span className="text-slate-400 text-sm flex items-center gap-1">
+                  <span className="text-white/40 text-sm flex items-center gap-1">
                     <Clock className="w-4 h-4" />
                     {featuredNews.readTime}
                   </span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-slate-50 leading-[1.1]">
-                  {featuredNews.title}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                  <span className="text-white">Sudbury Startup Raises </span>
+                  <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
+                  <span className="text-white"> to Scale Autonomous Mining Fleet</span>
                 </h1>
                 
-                <p className="text-xl text-slate-400 leading-relaxed">
+                <p className="text-lg text-white/50 leading-relaxed max-w-lg">
                   {featuredNews.excerpt}
                 </p>
                 
                 <div className="flex items-center gap-4">
-                  <span className="text-slate-500 text-sm">{featuredNews.date}</span>
+                  <span className="text-white/30 text-sm">{featuredNews.date}</span>
                 </div>
                 
-                <Button className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-6">
-                  Read Full Story <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <button className="btn-primary">
+                  Read Full Story <ArrowRight className="h-4 w-4" />
+                </button>
               </div>
             </ScrollReveal>
 
             {/* Right: Featured Image */}
             <ScrollReveal delay={200}>
               <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-800">
+                <div className="aspect-[4/3] rounded-3xl overflow-hidden liquid-glass-strong">
                   <img 
                     src={autonomousMiningVehicle} 
                     alt="Autonomous mining vehicle in underground tunnel"
                     className="w-full h-full object-cover"
                   />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 bg-teal-500 text-white px-4 py-2 rounded-xl shadow-lg shadow-teal-500/30">
-                  <span className="text-sm font-bold">$12M Raised</span>
+                <div className="absolute -bottom-4 -left-4 liquid-glass-strong rounded-2xl px-5 py-3 glass-shimmer">
+                  <span className="text-sm font-bold text-white">$12M Raised</span>
                 </div>
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-teal-500/30 rounded-2xl" />
+                <div className="absolute -top-3 -right-3 w-20 h-20 rounded-2xl border border-primary/30" />
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Category Filters */}
-      <section className="sticky top-16 z-30 bg-background/95 backdrop-blur-md border-b border-border">
+      {/* ── Category Filters ── */}
+      <section className="sticky top-16 z-30 bg-background/90 backdrop-blur-xl border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
             {categories.map((cat) => (
@@ -192,112 +194,165 @@ const News = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap",
+                  "px-5 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap relative",
                   activeCategory === cat
-                    ? "bg-teal-500 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                {cat}
+                {activeCategory === cat && (
+                  <motion.div
+                    layoutId="news-cat-pill"
+                    className="absolute inset-0 rounded-full"
+                    style={{ background: 'linear-gradient(135deg, hsl(172 100% 30%) 0%, hsl(168 100% 35%) 50%, hsl(164 70% 55%) 100%)' }}
+                    transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
+                  />
+                )}
+                <span className="relative z-10">{cat}</span>
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* News Grid */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="headline-md">Latest Updates</h2>
-            <span className="text-muted-foreground text-sm">{newsItems.length} stories</span>
+      {/* ── News Grid + Activity Feed ── */}
+      <section className="section-padding bg-background relative">
+        {/* Subtle mesh background */}
+        <div className="absolute inset-0 bg-mesh pointer-events-none opacity-50" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                <span className="text-foreground">Latest </span>
+                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
+              </h2>
+              <p className="body-md mt-2">{newsItems.length} stories</p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {newsItems.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <ScrollReveal key={i} delay={i * 50}>
-                  <article className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-teal-500/5 transition-all duration-300 hover:-translate-y-1">
-                    {/* Category Header */}
-                    <div className={cn("p-4 flex items-center gap-3", item.color)}>
-                      <Icon className="w-5 h-5 text-white" />
-                      <span className="text-white text-sm font-semibold">{item.category}</span>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                        <Calendar className="w-4 h-4" />
-                        {item.date}
+          <div className="grid lg:grid-cols-[1fr_320px] gap-10">
+            {/* Main News Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {newsItems.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <ScrollReveal key={i} delay={i * 60}>
+                    <article className="group liquid-glass-light rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                      {/* Icon + Category header */}
+                      <div className="p-6 pb-0 flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{
+                          background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.12), hsla(168, 80%, 40%, 0.05))',
+                          border: '1px solid hsla(168, 80%, 60%, 0.2)',
+                          boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 70%, 0.1), 0 2px 8px hsla(168, 100%, 20%, 0.08)',
+                        }}>
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <span className="text-xs font-semibold text-primary uppercase tracking-wider">{item.category}</span>
                       </div>
-                      <h3 className="font-display font-bold text-lg text-foreground mb-3 group-hover:text-teal-600 transition-colors line-clamp-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
-                        {item.excerpt}
-                      </p>
-                      <Button variant="ghost" className="p-0 h-auto text-teal-600 hover:text-teal-700 font-medium">
-                        Read More <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </article>
-                </ScrollReveal>
-              );
-            })}
+                      
+                      {/* Content */}
+                      <div className="p-6 flex-1 flex flex-col">
+                        <div className="flex items-center gap-2 text-muted-foreground text-xs mb-3">
+                          <Calendar className="w-3.5 h-3.5" />
+                          {item.date}
+                        </div>
+                        <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm line-clamp-3 mb-5 flex-1">
+                          {item.excerpt}
+                        </p>
+                        <button className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:gap-2 transition-all">
+                          Read More <ArrowRight className="h-4 w-4" />
+                        </button>
+                      </div>
+                    </article>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+
+            {/* Activity Feed Sidebar */}
+            <div className="hidden lg:block">
+              <div className="sticky top-32">
+                <div className="liquid-glass-light-strong rounded-3xl p-6">
+                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    Live Activity
+                  </h3>
+                  <div className="space-y-4">
+                    {activityFeed.map((item, i) => (
+                      <div key={i} className="flex gap-3 group">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 group-hover:bg-primary transition-colors" />
+                        <div>
+                          <p className="text-sm text-foreground leading-snug group-hover:text-primary transition-colors">{item.text}</p>
+                          <span className="text-xs text-muted-foreground">{item.time}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Load More */}
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="rounded-full">
+          <div className="text-center mt-16">
+            <button className="btn-outline">
               Load More Stories
-            </Button>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(20,184,166,0.1),transparent_70%)]" />
+      {/* ── Newsletter CTA ── */}
+      <section className="py-24 md:py-32 relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, hsl(224 71% 4%) 0%, hsl(215 28% 17%) 50%, hsl(217 19% 27%) 100%)',
+      }}>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(circle at 50% 50%, hsl(168 100% 35% / 0.1), transparent 70%)',
+        }} />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="max-w-2xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 rounded-full text-teal-400 text-sm font-medium mb-6">
+              <div className="badge-dark mb-6">
                 <Newspaper className="w-4 h-4" />
                 Stay Connected
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-black text-slate-50 mb-4">
-                Never Miss an Update
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                <span className="text-white">Never Miss an </span>
+                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
               </h2>
-              <p className="text-slate-400 text-lg mb-8">
+              <p className="text-white/40 text-lg mb-10">
                 Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input 
                   type="email" 
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-full bg-slate-800 border border-slate-700 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-primary liquid-glass"
                 />
-                <Button className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-6">
+                <button className="btn-primary">
                   Subscribe
-                </Button>
+                </button>
               </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* External Links */}
-      <section className="py-12 bg-muted/50 border-t border-border">
+      {/* ── External Links ── */}
+      <section className="py-12 bg-secondary/50 border-t border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <span className="font-medium">Also Featured In:</span>
+            <span className="font-medium text-foreground">Also Featured In:</span>
             {['Northern Ontario Business', 'Mining.com', 'BetaKit', 'Sudbury Star', 'CBC North'].map((pub) => (
               <a 
                 key={pub} 
                 href="#" 
-                className="hover:text-teal-600 transition-colors flex items-center gap-1"
+                className="link-fancy hover:text-primary transition-colors flex items-center gap-1"
               >
                 {pub} <ExternalLink className="w-3 h-3" />
               </a>
