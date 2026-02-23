@@ -460,7 +460,7 @@ export default function About() {
 
 
         {/* ───── PARTNERS — Glass Marquee ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(168 40% 98%)' }}>
+        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 80% 50% / 0.05) 0%, transparent 70%)' }} />
