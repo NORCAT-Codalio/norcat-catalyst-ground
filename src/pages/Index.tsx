@@ -238,7 +238,7 @@ export default function Index() {
 
               {/* Headline */}
               <motion.h1
-                className="text-5xl md:text-7xl lg:text-[5.5rem] font-semibold text-white mb-8 tracking-tight leading-[0.92]"
+                className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium text-white mb-8 tracking-tight leading-[0.92]"
                 style={{ fontFamily: "'Space Grotesk', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
