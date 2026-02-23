@@ -427,10 +427,13 @@ const SudburyEcosystem = () => {
                 style={activeCategory === cat.id ? {
                   background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
                   color: 'white',
-                  boxShadow: '0 4px 15px hsla(168, 100%, 35%, 0.3)',
+                  border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
+                  boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 15px hsla(168, 100%, 35%, 0.3)',
                 } : {
-                  ...glassCardStyle,
+                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
                   color: 'hsl(220, 15%, 40%)',
+                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                 }}
               >
                 <cat.icon className="h-4 w-4" />
