@@ -222,7 +222,7 @@ export default function Index() {
             src={signatureLines}
             alt=""
             aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-35 pointer-events-none select-none mix-blend-overlay"
+            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay"
           />
 
           {/* Hero content */}
