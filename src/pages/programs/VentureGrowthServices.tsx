@@ -1,27 +1,30 @@
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
+import signatureLines from '@/assets/signature-lines.png';
+import linesTeal from '@/assets/lines-teal.png';
+import circuitiqTeam from '@/assets/circuitiq-team.png';
 import { 
   ArrowRight, 
   Rocket, 
   Target, 
   Users, 
-  TrendingUp, 
   Check, 
   Handshake, 
   GraduationCap, 
   Network, 
   Building2,
   UserCheck,
-  Calendar,
   MessageCircle,
   Compass,
   Zap,
   Clock,
   MapPin,
-  ExternalLink
+  ExternalLink,
+  Quote,
+  BarChart3,
+  Globe
 } from 'lucide-react';
 
 const allServices = [
@@ -103,25 +106,25 @@ const coreServices = [
   {
     icon: UserCheck,
     title: 'One-on-One Advisor Support',
-    description: 'Every company is matched with a dedicated venture advisor who works alongside you on strategy, operations, and growth. Regular check-ins keep you accountable and moving forward.',
+    description: 'Every company is matched with a dedicated venture advisor who works alongside you on strategy, operations, and growth.',
     features: ['Dedicated advisor relationship', 'Schedule flexible sessions', 'Strategic planning support', 'Leadership development']
   },
   {
     icon: GraduationCap,
     title: 'Founder Education',
-    description: 'Structured curriculum covering everything from customer discovery to fundraising. Learn from practitioners who\'ve built and scaled companies themselves.',
+    description: 'Structured curriculum covering everything from customer discovery to fundraising. Learn from practitioners who\'ve built and scaled companies.',
     features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'On-Demand Courses']
   },
   {
     icon: Handshake,
     title: 'Customer Pairing',
-    description: 'We actively connect you with potential customers, pilot partners, and early adopters from our extensive industry network to accelerate your path to revenue.',
+    description: 'We actively connect you with potential customers, pilot partners, and early adopters from our extensive industry network.',
     features: ['Strategic network building', 'Pilot project facilitation', 'Industry partner matching', 'Feedback loop integration']
   },
   {
     icon: Users,
     title: 'Mentorship Network',
-    description: 'Access 18+ experienced mentors across sectors including mining, technology, finance, operations, and more. Get tactical advice from those who\'ve been there.',
+    description: 'Access 18+ experienced mentors across sectors including mining, technology, finance, operations, and more.',
     features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
     link: '/programs/mentorship-services',
     linkText: 'Explore Mentorship Services'
@@ -129,317 +132,432 @@ const coreServices = [
   {
     icon: Network,
     title: 'Powerful Network Access',
-    description: 'Tap into our ecosystem of investors, corporate partners, government agencies, and fellow founders. The right introduction at the right time can change everything.',
+    description: 'Tap into our ecosystem of investors, corporate partners, government agencies, and fellow founders.',
     features: ['Investor introductions', 'Corporate partnership opportunities', 'Government funding connections', 'Founder peer network']
   },
   {
     icon: Building2,
     title: 'Community Integration',
-    description: 'Join a tight-knit community of ambitious founders building category-defining companies. Shared experiences, mutual support, and lifelong connections.',
+    description: 'Join a tight-knit community of ambitious founders building category-defining companies.',
     features: ['Cohort-based experience', 'Founder dinners & events', 'NORCAT Community access', 'Alumni network benefits']
   }
 ];
 
 const programStructure = [
-  {
-    phase: '01',
-    title: 'Onboarding',
-    description: 'Deep dive into your business, assign your advisor, and create a tailored growth plan.'
-  },
-  {
-    phase: '02',
-    title: 'Build & Validate',
-    description: 'Work with your mentorship team on product-market fit and early traction.'
-  },
-  {
-    phase: '03',
-    title: 'Scale & Raise',
-    description: 'Focus on growth metrics, team building, and fundraising preparation.'
-  },
-  {
-    phase: '04',
-    title: 'Ongoing Support',
-    description: 'Continued access to network, resources, and advisor support as you scale.'
-  }
+  { phase: '01', title: 'Onboarding', description: 'Deep dive into your business, assign your advisor, and create a tailored growth plan.' },
+  { phase: '02', title: 'Build & Validate', description: 'Work with your mentorship team on product-market fit and early traction.' },
+  { phase: '03', title: 'Scale & Raise', description: 'Focus on growth metrics, team building, and fundraising preparation.' },
+  { phase: '04', title: 'Ongoing Support', description: 'Continued access to network, resources, and advisor support as you scale.' }
 ];
 
 const differentiators = [
-  {
-    icon: Compass,
-    title: 'Hands-On, Not Hands-Off',
-    description: 'We roll up our sleeves and work alongside you. This isn\'t passive mentorship—it\'s active partnership in your success.'
-  },
-  {
-    icon: Target,
-    title: 'Industry-Connected',
-    description: 'Deep relationships with mining, industrial, and technology sectors mean real customer introductions, not just advice.'
-  },
-  {
-    icon: Zap,
-    title: 'Northern Advantage',
-    description: 'Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada\'s most established mining ecosystems.'
-  }
+  { icon: Compass, title: 'Hands-On, Not Hands-Off', description: 'We roll up our sleeves and work alongside you. This isn\'t passive mentorship—it\'s active partnership in your success.' },
+  { icon: Target, title: 'Industry-Connected', description: 'Deep relationships with mining, industrial, and technology sectors mean real customer introductions, not just advice.' },
+  { icon: Zap, title: 'Northern Advantage', description: 'Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada\'s most established mining ecosystems.' }
 ];
+
+// Shared glass card style
+const glassCardStyle = {
+  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+};
+
+const neumorphicBadgeStyle = {
+  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+  color: 'hsl(168, 40%, 30%)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
+
+const iconContainerStyle = {
+  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
 
 const VentureGrowthServices = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-50" />
-        <div className="orb orb-teal w-96 h-96 -top-48 -right-48" />
-        <div className="orb orb-blue w-64 h-64 bottom-0 left-1/4" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <ScrollReveal>
-            <div className="inline-flex items-center gap-2 badge-dark mb-8">
-              <Rocket className="w-4 h-4" />
-              Core Program
-            </div>
-            <h1 className="headline-hero text-white mb-6 max-w-4xl">
-              Venture Growth<br />
-              <span className="text-gradient">Services</span>
-            </h1>
-            <p className="body-xl text-white/70 max-w-2xl mb-6">
-              The operating system for ambitious founders. We provide the hands-on support, 
-              education, network, and resources you need to build a category-defining company.
-            </p>
-            <p className="body-lg text-white/50 max-w-2xl mb-10">
-              We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="btn-primary-lg">
-                <Link to="/apply">
-                  Apply to Join
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="btn-outline-lg">
-                <Link to="/insights/success-stories">
-                  See Our Portfolio
-                </Link>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
 
-      {/* What You Get - Stats Bar */}
-      <section className="bg-primary py-8">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: '1:1', label: 'Dedicated Advisor' },
-              { value: '18+', label: 'Mentors' },
-              { value: '50+', label: 'Industry Partners' },
-              { value: '$50M+', label: 'Capital Raised' },
-            ].map((stat, i) => (
-              <div key={i}>
-                <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm text-white/80">{stat.label}</div>
-              </div>
-            ))}
+        {/* ───── HERO ───── */}
+        <section className="relative pt-40 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
           </div>
-        </div>
-      </section>
 
-      {/* Core Services */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="headline-lg mb-6">What's Included</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive support designed to accelerate your path from early stage to scale.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreServices.map((service, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="card-modern p-8 h-full flex flex-col">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                    <service.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="headline-sm mb-3">{service.title}</h3>
-                  <p className="body-md text-muted-foreground mb-6">{service.description}</p>
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    {service.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {service.link && (
-                    <Link 
-                      to={service.link} 
-                      className="inline-flex items-center gap-2 text-primary font-medium hover:underline mt-auto"
-                    >
-                      {service.linkText}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  )}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="headline-lg mb-6">How It Works</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                A structured program that adapts to your stage and needs, 
-                with ongoing support as you scale.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {programStructure.map((phase, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="relative">
-                  {i < programStructure.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent -translate-x-4" />
-                  )}
-                  <div className="bg-background rounded-2xl p-6 border border-border h-full">
-                    <div className="text-4xl font-bold text-primary/20 mb-2">{phase.phase}</div>
-                    <h3 className="headline-sm mb-3">{phase.title}</h3>
-                    <p className="body-sm text-muted-foreground">{phase.description}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <h2 className="headline-lg mb-6">What Makes Us Different?</h2>
-              <p className="body-lg text-muted-foreground mb-8">
-                There are a lot of accelerators and programs out there. 
-                Here's why founders choose to build with us.
-              </p>
-              <div className="space-y-8">
-                {differentiators.map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <item.icon className="w-6 h-6 text-primary" />
+              <div className="max-w-3xl">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                  <Rocket className="w-3.5 h-3.5" />
+                  Core Program
+                </span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                  Venture Growth{' '}
+                  <span className="block text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                    Services
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                  The operating system for ambitious founders. We provide the hands-on support, 
+                  education, network, and resources you need to build a category-defining company.
+                </p>
+                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                  We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                    background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                    border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                    color: 'hsl(168, 40%, 25%)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    Apply to Join
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <Link to="/insights/success-stories" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.4) 0%, hsla(220, 15%, 85%, 0.2) 100%)',
+                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                    color: 'hsl(220, 15%, 30%)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    See Our Portfolio
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ───── STATS BAR ───── */}
+        <section className="relative py-12 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { value: '1:1', label: 'Dedicated Advisor' },
+                { value: '18+', label: 'Mentors' },
+                { value: '50+', label: 'Industry Partners' },
+                { value: '$50M+', label: 'Capital Raised' },
+              ].map((stat, i) => (
+                <ScrollReveal key={stat.label} delay={i * 0.1}>
+                  <div className="rounded-[20px] p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── CORE SERVICES ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <ScrollReveal>
+              <div className="max-w-2xl mb-14">
+                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
+                  What's Included
+                </span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                  Everything you need to{' '}
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                    accelerate.
+                  </span>
+                </h2>
+                <p className="font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                  Comprehensive support designed to accelerate your path from early stage to scale.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {coreServices.map((service, i) => (
+                <ScrollReveal key={i} delay={i * 0.1}>
+                  <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5" style={iconContainerStyle}>
+                      <service.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                     </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{item.title}</h3>
-                      <p className="body-md text-muted-foreground">{item.description}</p>
+                    <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{service.title}</h3>
+                    <p className="text-sm font-light mb-5" style={{ color: 'hsl(220, 15%, 40%)' }}>{service.description}</p>
+                    <ul className="space-y-2 mb-5">
+                      {service.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm">
+                          <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                          <span style={{ color: 'hsl(220, 15%, 30%)' }}>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {service.link && (
+                      <Link 
+                        to={service.link} 
+                        className="inline-flex items-center gap-2 text-sm font-semibold hover:translate-x-1 transition-transform"
+                        style={{ color: 'hsl(168, 100%, 28%)' }}
+                      >
+                        {service.linkText}
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    )}
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── HOW IT WORKS ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <ScrollReveal>
+              <div className="text-center mb-14">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={neumorphicBadgeStyle}>
+                  <BarChart3 className="w-3.5 h-3.5" />
+                  Your Journey
+                </span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                  How it{' '}
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                    works.
+                  </span>
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {programStructure.map((phase, i) => (
+                <ScrollReveal key={i} delay={i * 0.1}>
+                  <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                    <div className="text-4xl font-black mb-3" style={{ color: 'hsl(168, 100%, 35%)', opacity: 0.25 }}>{phase.phase}</div>
+                    <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{phase.title}</h3>
+                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{phase.description}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── TESTIMONIAL ───── */}
+        <section className="relative py-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={circuitiqTeam} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'hsla(220, 25%, 8%, 0.8)' }} />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <ScrollReveal>
+                <div className="liquid-glass-strong glass-shimmer rounded-3xl p-10 md:p-14 text-center">
+                  <Quote className="w-10 h-10 mx-auto mb-8 opacity-30" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                  <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/80 mb-10">
+                    "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been instrumental in our decision to relocate our team to Sudbury."
+                  </blockquote>
+                  <div className="flex items-center justify-center gap-4">
+                    <img src={lukeBegleyPhoto} alt="Luke Begley" className="w-14 h-14 rounded-full object-cover" style={{ border: '1px solid hsl(168 100% 35% / 0.3)' }} />
+                    <div className="text-left">
+                      <p className="font-semibold text-white">Luke Begley</p>
+                      <p className="text-white/35 text-sm font-light">CEO and Co-Founder of CircuitIQ</p>
                     </div>
                   </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── WHAT MAKES US DIFFERENT ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal>
+                <div>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                    <Globe className="w-3.5 h-3.5" />
+                    Why NORCAT
+                  </span>
+                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                    What makes us{' '}
+                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                      different?
+                    </span>
+                  </h2>
+                  <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                    There are a lot of accelerators and programs out there. Here's why founders choose to build with us.
+                  </p>
+                </div>
+              </ScrollReveal>
+              
+              <div className="flex flex-col gap-5">
+                {differentiators.map((item, i) => (
+                  <ScrollReveal key={i} delay={i * 0.1}>
+                    <div className="rounded-[20px] p-7 hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                      <div className="flex gap-4">
+                        <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0" style={iconContainerStyle}>
+                          <item.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h3>
+                          <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </ScrollReveal>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── EXPLORE OUR SERVICES ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <ScrollReveal>
+              <div className="max-w-2xl mb-14">
+                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
+                  All Services
+                </span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                  Explore our{' '}
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                    services.
+                  </span>
+                </h2>
+              </div>
             </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-10 text-white">
-                <MessageCircle className="w-10 h-10 text-primary mb-6" />
-                <blockquote className="text-xl font-medium mb-6 leading-relaxed">
-                  "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been instrumental in our decision to relocate our team to Sudbury, a region with immense potential for growth and innovation."
-                </blockquote>
-                <div className="flex items-center gap-3">
-                  <img src={lukeBegleyPhoto} alt="Luke Begley" className="w-12 h-12 rounded-full object-cover" />
-                  <div>
-                    <div className="font-semibold">Luke Begley</div>
-                    <div className="text-sm text-white/60">CEO and Co-Founder of CircuitIQ</div>
-                  </div>
-                </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allServices.map((service, i) => (
+                <ScrollReveal key={service.title} delay={i * 0.05}>
+                  <Link to={service.link} className="group block h-full">
+                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style={{
+                        background: service.type === 'Program' 
+                          ? 'hsl(168 100% 35% / 0.1)' 
+                          : service.type === 'Funding'
+                          ? 'hsla(40, 80%, 50%, 0.1)'
+                          : 'hsla(210, 70%, 50%, 0.1)',
+                        color: service.type === 'Program'
+                          ? 'hsl(168, 100%, 28%)'
+                          : service.type === 'Funding'
+                          ? 'hsl(40, 70%, 35%)'
+                          : 'hsl(210, 60%, 35%)',
+                        border: service.type === 'Program'
+                          ? '0.5px solid hsl(168 100% 35% / 0.15)'
+                          : service.type === 'Funding'
+                          ? '0.5px solid hsla(40, 80%, 50%, 0.15)'
+                          : '0.5px solid hsla(210, 70%, 50%, 0.15)',
+                      }}>
+                        {service.type}
+                      </span>
+                      <h3 className="text-xl font-bold mb-4 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{service.title}</h3>
+                      <div className="space-y-2 text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                          {service.applyBy}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <BarChart3 className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                          {service.duration}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                          {service.location}
+                        </div>
+                      </div>
+                      <div className="mt-6 flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
+                        See Details
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── FINAL CTA ───── */}
+        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+          <img 
+            src={signatureLines} 
+            alt="" 
+            aria-hidden="true"
+            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
+            style={{ transform: 'scaleX(-1)' }}
+          />
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
+                Ready to{' '}
+                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>accelerate?</span>
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
+                Join the next cohort of ambitious founders building category-defining 
+                companies. Applications are open.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link 
+                  to="/apply" 
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    color: 'white',
+                    border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                  }}
+                >
+                  Apply Now
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+                <a 
+                  href="mailto:ventures@norcat.org" 
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.08) 0%, hsla(0, 0%, 100%, 0.04) 100%)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    color: 'hsla(0, 0%, 100%, 0.8)',
+                    border: '0.5px solid hsla(0, 0%, 100%, 0.2)',
+                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.15), 0 4px 16px hsla(168, 100%, 20%, 0.2)',
+                  }}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Book a Call
+                </a>
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Our Services */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-lg mb-6">Explore Our Services</h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {allServices.map((service, i) => (
-              <ScrollReveal key={service.title} delay={i * 0.05}>
-                <Link to={service.link} className="group block h-full">
-                  <div className="bg-background rounded-2xl p-6 h-full border border-border hover:border-primary/30 transition-all hover:shadow-lg">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
-                      service.type === 'Program' 
-                        ? 'bg-primary/10 text-primary' 
-                        : service.type === 'Funding'
-                        ? 'bg-amber-500/10 text-amber-600'
-                        : 'bg-blue-500/10 text-blue-600'
-                    }`}>
-                      {service.type}
-                    </span>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        {service.applyBy}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        {service.duration}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        {service.location}
-                      </div>
-                    </div>
-                    <div className="mt-6 flex items-center gap-2 text-primary font-medium text-sm">
-                      See Details
-                      <ExternalLink className="w-4 h-4" />
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-gray-900">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="headline-lg text-white mb-6">Ready to Accelerate?</h2>
-            <p className="body-lg text-white/70 mb-10 max-w-2xl mx-auto">
-              Join the next cohort of ambitious founders building category-defining 
-              companies. Applications are open.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild className="btn-primary-lg">
-                <Link to="/apply">
-                  Apply Now
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-white/40 text-white bg-transparent hover:bg-white/10">
-                <a href="mailto:ventures@norcat.org">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Book a Call
-                </a>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      </div>
     </Layout>
   );
 };
