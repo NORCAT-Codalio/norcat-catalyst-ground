@@ -364,65 +364,6 @@ const VentureGrowthServices = () => {
         </div>
       </section>
 
-      {/* Who This Is For */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-lg mb-6">Who This Is For</h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <ScrollReveal>
-              <div className="bg-background rounded-2xl p-8 border border-border">
-                <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-4">
-                  <Check className="w-6 h-6 text-green-500" />
-                </div>
-                <h3 className="headline-sm mb-4">Great Fit</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Early-stage founders (pre-seed to Series A)',
-                    'Building a tech-enabled, IP-focused venture',
-                    'Coachable and open to feedback',
-                    'Committed full-time to your venture',
-                    'Looking for hands-on support, not just capital'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <Check className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <div className="bg-background rounded-2xl p-8 border border-border">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-muted-foreground" />
-                </div>
-                <h3 className="headline-sm mb-4">Might Not Be Right If</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Looking for passive investment only',
-                    'Not ready to commit significant time',
-                    'Prefer to work in isolation',
-                    'Already past Series A stage',
-                    'Not open to pivoting or iterating'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="w-4 h-4 mt-0.5 shrink-0">—</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* Our Services */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 lg:px-8">
