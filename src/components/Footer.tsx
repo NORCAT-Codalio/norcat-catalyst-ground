@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import norcatLogoWhite from '@/assets/logos/norcat-white.png';
 
 const footerLinks = {
   programs: [
@@ -36,18 +37,12 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-teal flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-xl">N</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg leading-tight text-slate-50">
-                  NORCAT
-                </span>
-                <span className="text-xs text-slate-400 font-medium tracking-wider uppercase">
-                  Innovation
-                </span>
-              </div>
+            <Link to="/" className="flex items-center mb-6">
+              <img
+                src={norcatLogoWhite}
+                alt="NORCAT Innovation"
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-slate-400 text-sm mb-6 max-w-xs">
               Sudbury's Regional Innovation Centre. Helping founders start, grow, 
