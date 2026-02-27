@@ -211,7 +211,7 @@ export function Navigation() {
             <img
               src={useLightText ? norcatLogoWhite : norcatLogoBlack}
               alt="NORCAT Innovation"
-              className="h-8 w-auto"
+              className="h-6 w-auto"
             />
           </Link>
 
