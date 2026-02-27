@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Mountain, Handshake, Globe, Lightbulb, Calendar, LogIn } from 'lucide-react';
+import norcatLogoBlack from '@/assets/logos/norcat-black.png';
+import norcatLogoWhite from '@/assets/logos/norcat-white.png';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -205,24 +207,12 @@ export function Navigation() {
       <div className="container mx-auto px-4 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-teal flex items-center justify-center shadow-md">
-              <span className="text-primary-foreground font-display font-bold text-xl">N</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={cn(
-                "font-display font-bold text-lg leading-tight",
-                useLightText ? "text-white" : "text-foreground"
-              )}>
-                NORCAT
-              </span>
-              <span className={cn(
-                "text-xs font-medium tracking-wider uppercase",
-                useLightText ? "text-white/70" : "text-muted-foreground"
-              )}>
-                Innovation
-              </span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img
+              src={useLightText ? norcatLogoWhite : norcatLogoBlack}
+              alt="NORCAT Innovation"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
