@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
-import norcatLogoWhite from '@/assets/logos/norcat-white.png';
+import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 
 const footerLinks = {
   programs: [
@@ -39,7 +39,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="flex items-center mb-6">
               <img
-                src={norcatLogoWhite}
+                src={norcatLogoBlack}
                 alt="NORCAT Innovation"
                 className="h-8 w-auto"
               />
