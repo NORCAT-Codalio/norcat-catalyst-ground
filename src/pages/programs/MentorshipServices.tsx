@@ -593,7 +593,7 @@ const MentorshipServices = () => {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between mb-3">
-                              <h3 className="text-2xl font-bold" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif" }}>{mentor.name}</h3>
+                              <h3 className="text-2xl font-bold" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{mentor.name}</h3>
                               <button
                                 onClick={(e) => { e.stopPropagation(); setExpandedMentor(null); }}
                                 className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 ml-4 transition-colors"

@@ -323,7 +323,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                     className="text-2xl md:text-3xl"
                     style={{
                       color: 'hsl(168, 100%, 28%)',
-                      fontFamily: "'Cormorant Garamond', serif",
+                      fontFamily: "'Open Sans', sans-serif",
                       fontWeight: 700,
                       fontStyle: 'italic',
                     }}
