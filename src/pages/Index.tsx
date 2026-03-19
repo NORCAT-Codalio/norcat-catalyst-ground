@@ -154,7 +154,9 @@ export default function Index() {
   return (
     <Layout>
       {/* ══════════════ FULL DARK PAGE WRAPPER ══════════════ */}
-      <div className="bg-[hsl(220,20%,7%)] min-h-screen">
+      <div className="min-h-screen">
+        {/* Dark hero area */}
+        <div style={{ background: 'hsl(220, 20%, 7%)' }}>
 
         {/* ───── HERO ───── */}
         <section ref={heroRef} className="relative flex flex-col" style={{ minHeight: 'calc(100vh - 80px)' }}>
