@@ -356,7 +356,6 @@ const SudburyEcosystem = () => {
                   <span style={{ 
                     fontFamily: "'Open Sans', sans-serif", 
                     fontWeight: 600, 
-                    fontStyle: 'italic',
                     fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                     background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
                     WebkitBackgroundClip: 'text',
@@ -456,7 +455,6 @@ const SudburyEcosystem = () => {
                 <span style={{ 
                   fontFamily: "'Open Sans', sans-serif", 
                   fontWeight: 600, 
-                  fontStyle: 'italic',
                   fontSize: 'clamp(2rem, 4vw, 3rem)',
                   background: 'linear-gradient(135deg, hsl(172, 100%, 30%) 0%, hsl(168, 100%, 35%) 50%, hsl(164, 70%, 55%) 100%)',
                   WebkitBackgroundClip: 'text',
@@ -679,7 +677,6 @@ const SudburyEcosystem = () => {
               <span style={{ 
                 fontFamily: "'Open Sans', sans-serif", 
                 fontWeight: 600, 
-                fontStyle: 'italic',
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 color: 'hsla(168, 60%, 85%, 1)',
               }}>

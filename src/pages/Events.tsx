@@ -314,7 +314,7 @@ export default function Events() {
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Upcoming{' '}
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Events
                 </span>
               </h1>
@@ -360,7 +360,7 @@ export default function Events() {
             <div className="flex items-center justify-between mb-10">
               <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Featured{' '}
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Events
                 </span>
               </h2>
@@ -433,7 +433,7 @@ export default function Events() {
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-8" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               All Upcoming{' '}
-              <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                 Events
               </span>
             </h2>
@@ -479,7 +479,7 @@ export default function Events() {
             <div className="flex items-center justify-between mb-10">
               <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Past{' '}
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Highlights
                 </span>
               </h2>
@@ -531,7 +531,7 @@ export default function Events() {
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Never Miss an{' '}
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Event
                 </span>
               </h2>
@@ -563,7 +563,7 @@ export default function Events() {
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               Want to Host an{' '}
-              <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                 Event?
               </span>
             </h2>

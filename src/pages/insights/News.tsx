@@ -153,7 +153,7 @@ const News = () => {
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                   <span className="text-white">Sudbury Startup Raises </span>
-                  <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
+                  <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
                   <span className="text-white"> to Scale Autonomous Mining Fleet</span>
                 </h1>
                 
@@ -233,7 +233,7 @@ const News = () => {
             <div>
               <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-foreground">Latest </span>
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
               </h2>
               <p className="body-md mt-2">{newsItems.length} stories</p>
             </div>
@@ -327,7 +327,7 @@ const News = () => {
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-white">Never Miss an </span>
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
               </h2>
               <p className="text-white/40 text-lg mb-10">
                 Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.
