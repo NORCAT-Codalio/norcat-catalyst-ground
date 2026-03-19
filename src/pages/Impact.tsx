@@ -61,7 +61,7 @@ export default function Impact() {
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                   Real-Time{' '}
-                  <span className="text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
+                  <span className="text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                     Impact Dashboard
                   </span>
                 </h1>
