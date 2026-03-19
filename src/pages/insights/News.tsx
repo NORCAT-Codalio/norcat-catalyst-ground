@@ -281,7 +281,7 @@ const News = () => {
             <div className="hidden lg:block">
               <div className="sticky top-32">
                 <div className="liquid-glass-light-strong rounded-3xl p-6">
-                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     Live Activity
                   </h3>
