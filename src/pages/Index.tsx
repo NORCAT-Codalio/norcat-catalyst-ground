@@ -259,19 +259,11 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.8 }}
               >
-                <Link to="/apply" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                  background: 'hsl(168, 100%, 35%)',
-                  color: 'white',
-                  boxShadow: '0 4px 16px hsla(168, 100%, 20%, 0.4)',
-                }}>
+                <Link to="/apply" className="btn-primary group">
                   Work With Us
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link to="/about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98] hover:bg-white/10" style={{
-                  background: 'transparent',
-                  color: 'white',
-                  border: '1px solid hsla(0, 0%, 100%, 0.25)',
-                }}>
+                <Link to="/about" className="btn-outline-dark group">
                   Learn More
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
