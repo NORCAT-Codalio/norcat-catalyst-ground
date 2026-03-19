@@ -569,32 +569,32 @@ export default function Index() {
             </ScrollReveal>
           </div>
 
-          {/* Horizontally scrollable cards - Startup Genome style */}
+          {/* Horizontally scrollable cards */}
           <div className="pl-6 md:pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto scrollbar-hide">
             <div className="flex gap-5 pr-6" style={{ width: 'max-content' }}>
               {[
-                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', desc: 'From idea to scale, see how our venture programs have supported founders across Northern Ontario.', image: ctaPhoto1, link: '/insights/success-stories' },
-                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', desc: 'Discover how emerging technologies are reshaping the mining sector through innovation and collaboration.', image: miningUndergroundHero, link: '/insights/news' },
-                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', desc: 'An in-depth look at the growth, investment, and talent driving Sudbury\'s innovation economy.', image: ctaPhoto3, link: '/insights/reports' },
-                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', desc: 'How Northern Ontario is becoming a hub for cleantech, mining innovation, and deep tech ventures.', image: ctaPhoto4, link: '/ecosystem' },
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
+                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
+                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem' },
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block">
-                    <div className="w-[340px] rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300" style={{
-                      background: 'hsl(220 25% 14%)',
-                    }}>
-                      <div className="mx-4 mt-4 rounded-xl overflow-hidden aspect-[16/9]">
-                        <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                    <div className="relative rounded-2xl overflow-hidden w-[340px] aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                          background: 'hsla(168, 100%, 35%, 0.2)',
+                          color: 'hsl(168, 100%, 60%)',
+                          border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                          backdropFilter: 'blur(8px)',
+                        }}>{post.category}</span>
                       </div>
-                      <div className="p-5">
-                        <h3 className="text-white font-bold text-lg leading-snug mb-1" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
-                        <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'hsl(168, 100%, 50%)' }}>{post.category}</p>
-                        <p className="text-white/50 text-sm leading-relaxed mb-5">{post.desc}</p>
-                        <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-colors" style={{
-                          border: '1.5px solid hsl(168, 100%, 40%)',
-                          color: 'hsl(168, 100%, 50%)',
-                        }}>
-                          Read More
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
+                          Read More <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
                     </div>
