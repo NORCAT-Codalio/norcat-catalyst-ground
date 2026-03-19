@@ -307,76 +307,71 @@ export default function Index() {
         </section>
 
         {/* ───── GLOBAL TECH, NORTHERN GRIT ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 10%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.05]" />
-          </div>
+        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(220 20% 10%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
-                  <BarChart3 className="w-3.5 h-3.5" />
-                  Global Impact Dashboard
-                </span>
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase text-white mb-4">
-                  Global Tech,{' '}
-                  <span style={{ color: 'hsl(168, 100%, 40%)' }}>Northern Grit</span>
-                </h2>
+              <div className="rounded-[24px] overflow-hidden liquid-glass-strong" style={{ border: '1px solid hsla(168, 100%, 35%, 0.15)' }}>
+                <div className="grid lg:grid-cols-[0.45fr_0.55fr]">
+                  {/* Left — Image */}
+                  <div className="relative min-h-[300px] lg:min-h-[420px]">
+                    <img src={miningUndergroundHero} alt="Mining underground" className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, transparent 60%, hsl(220 20% 8% / 0.6) 100%)' }} />
+                  </div>
+
+                  {/* Right — Content */}
+                  <div className="p-10 lg:p-12">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase text-white mb-8 leading-tight">
+                      Global Tech,<br />
+                      <span style={{ color: 'hsl(168, 100%, 40%)' }}>Northern Grit</span>
+                    </h2>
+
+                    <div className="grid sm:grid-cols-2 gap-10">
+                      {/* For Founders */}
+                      <div>
+                        <h3 className="text-sm font-bold text-white/80 uppercase tracking-wider mb-5">For Founders</h3>
+                        <ul className="space-y-3">
+                          {[
+                            { icon: Rocket, text: 'One-on-one and cohort-based mentorship' },
+                            { icon: DollarSign, text: 'Capital access and investor connections' },
+                            { icon: Handshake, text: 'Community, events, and strategic partnerships' },
+                          ].map((item, i) => (
+                            <li key={i} className="flex items-start gap-2.5">
+                              <item.icon className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'hsl(168, 100%, 40%)' }} />
+                              <span className="text-sm text-white/60 font-light">{item.text}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link to="/programs/venture-growth-services" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                          Explore Startup Programs
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </div>
+
+                      {/* For Industry */}
+                      <div>
+                        <h3 className="text-sm font-bold text-white/80 uppercase tracking-wider mb-5">For Industry</h3>
+                        <ul className="space-y-3">
+                          {[
+                            { icon: Mountain, text: 'Underground testing and validation' },
+                            { icon: Cpu, text: 'Diversified technology isolation' },
+                            { icon: Globe, text: 'Innovation and smart city properties' },
+                          ].map((item, i) => (
+                            <li key={i} className="flex items-start gap-2.5">
+                              <item.icon className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'hsl(168, 100%, 40%)' }} />
+                              <span className="text-sm text-white/60 font-light">{item.text}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link to="/mining/norcat-underground" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                          Explore the NORCAT Underground Centre
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
-
-            <div className="grid md:grid-cols-2 gap-16">
-              {/* For Founders */}
-              <ScrollReveal>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-6">For Founders</h3>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: Rocket, text: 'One-on-one and cohort-based mentorship' },
-                      { icon: DollarSign, text: 'Capital access and investor connections' },
-                      { icon: Handshake, text: 'Community, events, and strategic partnerships' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 liquid-glass-btn">
-                          <item.icon className="w-4 h-4" style={{ color: 'hsl(168, 100%, 40%)' }} />
-                        </div>
-                        <span className="text-white/70 font-light">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/programs/venture-growth-services" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
-                    Explore Startup Programs
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </ScrollReveal>
-
-              {/* For Industry */}
-              <ScrollReveal delay={0.15}>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-6">For Industry</h3>
-                  <ul className="space-y-4">
-                    {[
-                      { icon: Mountain, text: 'Underground testing and validation' },
-                      { icon: Cpu, text: 'Diversified technology isolation' },
-                      { icon: Globe, text: 'Innovation and smart city properties' },
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 liquid-glass-btn">
-                          <item.icon className="w-4 h-4" style={{ color: 'hsl(168, 100%, 40%)' }} />
-                        </div>
-                        <span className="text-white/70 font-light">{item.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/mining/norcat-underground" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
-                    Explore the NORCAT Underground Centre
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </ScrollReveal>
-            </div>
           </div>
         </section>
 
