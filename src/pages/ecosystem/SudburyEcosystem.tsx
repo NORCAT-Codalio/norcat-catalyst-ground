@@ -396,7 +396,7 @@ const SudburyEcosystem = () => {
                       <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                     </div>
                     <div className="text-3xl font-bold mb-1" style={{ 
-                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontFamily: "'Open Sans', sans-serif",
                       color: 'hsl(220, 20%, 18%)',
                     }}>
                       {stat.number}
