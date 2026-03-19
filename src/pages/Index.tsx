@@ -154,7 +154,9 @@ export default function Index() {
   return (
     <Layout>
       {/* ══════════════ FULL DARK PAGE WRAPPER ══════════════ */}
-      <div className="bg-[hsl(220,20%,7%)] min-h-screen">
+      <div className="min-h-screen">
+        {/* Dark hero area */}
+        <div style={{ background: 'hsl(220, 20%, 7%)' }}>
 
         {/* ───── HERO ───── */}
         <section ref={heroRef} className="relative flex flex-col" style={{ minHeight: 'calc(100vh - 80px)' }}>
@@ -236,8 +238,8 @@ export default function Index() {
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 Build the<br />
-                <span className="italic">Future </span>
-                <span style={{ color: 'hsl(168, 100%, 35%)' }}>Here</span>
+                <span style={{ color: 'hsl(168, 100%, 35%)' }}>Future </span>
+                Here
               </motion.h1>
 
               {/* Description */}
@@ -257,19 +259,11 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.8 }}
               >
-                <Link to="/apply" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                  background: 'hsl(168, 100%, 35%)',
-                  color: 'white',
-                  boxShadow: '0 4px 16px hsla(168, 100%, 20%, 0.4)',
-                }}>
+                <Link to="/apply" className="btn-primary group">
                   Work With Us
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link to="/about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98] hover:bg-white/10" style={{
-                  background: 'transparent',
-                  color: 'white',
-                  border: '1px solid hsla(0, 0%, 100%, 0.25)',
-                }}>
+                <Link to="/about" className="btn-outline-dark group">
                   Learn More
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -278,25 +272,18 @@ export default function Index() {
           </motion.div>
 
           {/* Stats strip */}
-          <div className="relative z-20 pb-6">
+          <div className="relative z-20 pb-8">
             <div className="container mx-auto px-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
-                className="rounded-2xl flex items-center justify-between"
-                style={{
-                  background: 'linear-gradient(135deg, hsla(168, 50%, 15%, 0.5) 0%, hsla(220, 30%, 10%, 0.7) 100%)',
-                  backdropFilter: 'blur(24px)',
-                  WebkitBackdropFilter: 'blur(24px)',
-                  border: '1px solid hsla(168, 100%, 35%, 0.2)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                }}
+                className="rounded-3xl flex items-center justify-between liquid-glass-strong glass-shimmer"
               >
                 {stats.map((stat, i) => (
-                  <div key={stat.label} className="flex-1 text-center py-5 px-2 relative">
+                  <div key={stat.label} className="flex-1 text-center py-6 px-2 relative">
                     {i > 0 && (
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10" style={{ background: 'hsla(168, 100%, 35%, 0.15)' }} />
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10" style={{ background: 'rgba(255, 255, 255, 0.1)' }} />
                     )}
                     <div className="text-2xl md:text-4xl font-bold" style={{ color: 'hsl(168, 100%, 45%)' }}>{stat.value}</div>
                     <p className="text-[10px] md:text-xs text-white/35 font-light leading-tight mt-1">{stat.label}</p>
@@ -307,29 +294,32 @@ export default function Index() {
           </div>
         </section>
 
+        {/* Dark-to-light fade transition */}
+        <div className="h-32" style={{ background: 'linear-gradient(180deg, hsl(220, 20%, 7%) 0%, hsl(0, 0%, 96%) 100%)' }} />
+        </div>{/* end dark hero wrapper */}
+
         {/* ───── GLOBAL TECH, NORTHERN GRIT ───── */}
-        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(220 20% 10%)' }}>
+        <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(0, 0%, 96%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="rounded-[24px] overflow-hidden liquid-glass-strong" style={{ border: '1px solid hsla(168, 100%, 35%, 0.15)' }}>
+              <div className="rounded-[24px] overflow-hidden liquid-glass-light-strong" style={{ border: '1px solid hsla(168, 100%, 35%, 0.15)' }}>
                 <div className="grid lg:grid-cols-[0.45fr_0.55fr]">
                   {/* Left — Image */}
                   <div className="relative min-h-[300px] lg:min-h-[420px]">
                     <img src={miningUndergroundHero} alt="Mining underground" className="absolute inset-0 w-full h-full object-cover" />
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, transparent 60%, hsl(220 20% 8% / 0.6) 100%)' }} />
                   </div>
 
                   {/* Right — Content */}
                   <div className="p-10 lg:p-12">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase text-white mb-8 leading-tight">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase text-foreground mb-8 leading-tight">
                       Global Tech,<br />
-                      <span style={{ color: 'hsl(168, 100%, 40%)' }}>Northern Grit</span>
+                      <span className="text-primary">Northern Grit</span>
                     </h2>
 
                     <div className="grid sm:grid-cols-2 gap-10">
                       {/* For Founders */}
                       <div>
-                        <h3 className="text-sm font-bold text-white/80 uppercase tracking-wider mb-5">For Founders</h3>
+                        <h3 className="text-sm font-bold text-foreground/80 uppercase tracking-wider mb-5">For Founders</h3>
                         <ul className="space-y-3">
                           {[
                             { icon: Rocket, text: 'One-on-one and cohort-based mentorship' },
@@ -337,12 +327,12 @@ export default function Index() {
                             { icon: Handshake, text: 'Community, events, and strategic partnerships' },
                           ].map((item, i) => (
                             <li key={i} className="flex items-start gap-2.5">
-                              <item.icon className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'hsl(168, 100%, 40%)' }} />
-                              <span className="text-sm text-white/60 font-light">{item.text}</span>
+                              <item.icon className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
+                              <span className="text-sm text-muted-foreground font-light">{item.text}</span>
                             </li>
                           ))}
                         </ul>
-                        <Link to="/programs/venture-growth-services" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                        <Link to="/programs/venture-growth-services" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary group">
                           Explore Startup Programs
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Link>
@@ -350,7 +340,7 @@ export default function Index() {
 
                       {/* For Industry */}
                       <div>
-                        <h3 className="text-sm font-bold text-white/80 uppercase tracking-wider mb-5">For Industry</h3>
+                        <h3 className="text-sm font-bold text-foreground/80 uppercase tracking-wider mb-5">For Industry</h3>
                         <ul className="space-y-3">
                           {[
                             { icon: Mountain, text: 'Underground testing and validation' },
@@ -358,12 +348,12 @@ export default function Index() {
                             { icon: Globe, text: 'Innovation and smart city properties' },
                           ].map((item, i) => (
                             <li key={i} className="flex items-start gap-2.5">
-                              <item.icon className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'hsl(168, 100%, 40%)' }} />
-                              <span className="text-sm text-white/60 font-light">{item.text}</span>
+                              <item.icon className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
+                              <span className="text-sm text-muted-foreground font-light">{item.text}</span>
                             </li>
                           ))}
                         </ul>
-                        <Link to="/mining/norcat-underground" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                        <Link to="/mining/norcat-underground" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary group">
                           Explore the NORCAT Underground Centre
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Link>
@@ -377,25 +367,21 @@ export default function Index() {
         </section>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 8%)' }}>
-          {/* Subtle teal orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.05) 0%, transparent 60%)' }} />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 60%)' }} />
-
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(0, 0%, 96%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 bg-primary/10 text-primary border border-primary/20">
                     Programs & Funding
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                     Support that adapts as your{' '}
-                    <span style={{ color: 'hsl(168, 100%, 40%)' }}>company grows.</span>
+                    <span className="text-primary">company grows.</span>
                   </h2>
-                  <p className="font-light max-w-xl text-white/50">We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
+                  <p className="font-light max-w-xl text-muted-foreground">We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
-                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                <Link to="/events" className="inline-flex items-center gap-2 font-semibold text-primary group shrink-0 transition-colors">
                   View all
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -406,22 +392,20 @@ export default function Index() {
               {upcomingPrograms.map((program, i) => (
                 <ScrollReveal key={program.title} delay={i * 0.1}>
                   <Link to={program.link} className="group block h-full">
-                    <div 
-                      className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-strong glass-shimmer"
-                    >
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-light-strong glass-shimmer" style={{ border: '1px solid hsla(168, 100%, 35%, 0.1)' }}>
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-primary/10 text-primary border border-primary/20">
                         {program.tag}
                       </span>
-                      <h3 className="text-lg font-bold text-white mb-4 transition-colors">{program.title}</h3>
+                      <h3 className="text-lg font-bold text-foreground mb-4 transition-colors">{program.title}</h3>
                       <ul className="space-y-2.5 mb-5">
                         {program.bullets.map((bullet, j) => (
                           <li key={j} className="flex items-center gap-2.5">
-                            <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'hsl(168, 100%, 40%)' }} />
-                            <span className="text-sm text-white/50 font-light">{bullet}</span>
+                            <div className="w-1.5 h-1.5 rounded-full shrink-0 bg-primary" />
+                            <span className="text-sm text-muted-foreground font-light">{bullet}</span>
                           </li>
                         ))}
                       </ul>
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform">
                         See Details
                         <ArrowRight className="w-4 h-4" />
                       </span>
@@ -465,24 +449,21 @@ export default function Index() {
         </section>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 8%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 70%)' }} />
-          </div>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(0, 0%, 96%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 bg-primary/10 text-primary border border-primary/20">
                     Reports & Resources
                   </span>
-                  <h2 className="text-3xl md:text-5xl font-extrabold uppercase text-white">
+                  <h2 className="text-3xl md:text-5xl font-extrabold uppercase text-foreground">
                     Real Stories.{' '}
-                    <span style={{ color: 'hsl(168, 100%, 40%)' }}>Unique Insights.</span>
+                    <span className="text-primary">Unique Insights.</span>
                   </h2>
-                  <p className="mt-2 font-light text-white/50">Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
+                  <p className="mt-2 font-light text-muted-foreground">Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>
-                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold text-primary group shrink-0">
                   View all reports
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -493,8 +474,7 @@ export default function Index() {
               {blogPosts.map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block h-full">
-                    <div className="rounded-[20px] overflow-hidden h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-strong glass-shimmer">
-                      {/* Image placeholder using existing photos */}
+                    <div className="rounded-[20px] overflow-hidden h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-light-strong glass-shimmer" style={{ border: '1px solid hsla(168, 100%, 35%, 0.1)' }}>
                       <div className="h-48 overflow-hidden">
                         <img 
                           src={i === 0 ? ctaPhoto1 : i === 1 ? ctaPhoto3 : ctaPhoto2} 
@@ -503,11 +483,11 @@ export default function Index() {
                         />
                       </div>
                       <div className="p-6">
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 bg-primary/10 text-primary border border-primary/20">
                           {post.category}
                         </span>
-                        <h3 className="text-lg font-bold text-white mb-4 transition-colors">{post.title}</h3>
-                        <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                        <h3 className="text-lg font-bold text-foreground mb-4 transition-colors">{post.title}</h3>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform">
                           Read More
                           <ArrowRight className="w-4 h-4" />
                         </span>
