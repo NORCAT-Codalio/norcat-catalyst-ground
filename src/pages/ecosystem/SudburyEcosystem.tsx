@@ -673,7 +673,7 @@ const SudburyEcosystem = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
           <ScrollReveal>
             <h2 className="mb-6" style={{ lineHeight: 1.15 }}>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'white' }}>
+              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'white' }}>
                 Ready to Join the{' '}
               </span>
               <span style={{ 
