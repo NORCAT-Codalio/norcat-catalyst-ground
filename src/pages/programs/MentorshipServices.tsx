@@ -341,7 +341,7 @@ const MentorshipServices = () => {
                <p className="text-2xl md:text-3xl leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Our mentors share the drive of our founders. They've challenged convention, 
                 built real businesses, and expanded what's possible through{' '}
-                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>experience.</span>
+                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>experience.</span>
               </p>
             </ScrollReveal>
 
