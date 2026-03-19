@@ -433,7 +433,7 @@ export default function Events() {
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-8" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               All Upcoming{' '}
-              <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                 Events
               </span>
             </h2>
