@@ -215,7 +215,7 @@ export default function Index() {
           />
 
           {/* Hero content — grows to fill */}
-          <motion.div className="container mx-auto px-6 relative z-10 flex-1 flex items-center pt-24 pb-8" style={{ opacity: heroOpacity }}>
+          <motion.div className="container mx-auto px-6 relative z-10 flex-1 flex items-center pt-20 pb-4" style={{ opacity: heroOpacity }}>
             <div className="max-w-5xl">
               {/* Badge */}
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
@@ -282,33 +282,32 @@ export default function Index() {
             </div>
           </motion.div>
 
-          {/* Stats strip at bottom of hero */}
-          <div className="relative z-20 pb-6">
+          {/* Stats strip */}
+          <div className="relative z-20 pb-8">
             <div className="container mx-auto px-6">
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.6 }}
+                className="rounded-2xl flex items-center justify-between px-2 py-1"
+                style={{
+                  background: 'linear-gradient(135deg, hsla(168, 60%, 20%, 0.4) 0%, hsla(220, 30%, 12%, 0.6) 100%)',
+                  backdropFilter: 'blur(24px)',
+                  WebkitBackdropFilter: 'blur(24px)',
+                  border: '1px solid hsla(168, 100%, 35%, 0.25)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 hsla(168, 100%, 50%, 0.1)',
+                }}
+              >
                 {stats.map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9 + i * 0.1, duration: 0.6 }}
-                    className="rounded-xl px-4 py-4 text-center"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.04)',
-                      backdropFilter: 'blur(24px)',
-                      WebkitBackdropFilter: 'blur(24px)',
-                      borderTop: '2px solid hsl(168, 100%, 35%)',
-                      borderLeft: '0.5px solid rgba(255, 255, 255, 0.08)',
-                      borderRight: '0.5px solid rgba(255, 255, 255, 0.08)',
-                      borderBottom: '0.5px solid rgba(255, 255, 255, 0.05)',
-                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-                    }}
-                  >
-                    <div className="text-xl md:text-2xl font-extrabold mb-0.5" style={{ color: 'hsl(168, 100%, 40%)' }}>{stat.value}</div>
-                    <p className="text-[11px] text-white/40 font-light leading-tight">{stat.label}</p>
-                  </motion.div>
+                  <div key={stat.label} className="flex-1 text-center py-4 px-3 relative">
+                    {i > 0 && (
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8" style={{ background: 'hsla(168, 100%, 35%, 0.2)' }} />
+                    )}
+                    <div className="text-xl md:text-2xl font-extrabold" style={{ color: 'hsl(168, 100%, 40%)' }}>{stat.value}</div>
+                    <p className="text-[10px] md:text-[11px] text-white/40 font-light leading-tight mt-0.5">{stat.label}</p>
+                  </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
