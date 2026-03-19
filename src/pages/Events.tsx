@@ -312,9 +312,9 @@ export default function Events() {
                 <Sparkles className="w-4 h-4" />
                 Discover What's Happening
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Upcoming{' '}
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Events
                 </span>
               </h1>
