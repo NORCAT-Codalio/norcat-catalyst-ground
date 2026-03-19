@@ -378,32 +378,34 @@ export default function Index() {
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((stat, i) => (
-                <ScrollReveal key={stat.label} delay={i * 0.1}>
-                  <div className="rounded-[20px] p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={{
-                    background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                    borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                    borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                    borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                    boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                  }}>
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{
+            <ScrollReveal>
+              <div className="rounded-[20px] p-8 flex flex-wrap justify-around gap-6" style={{
+                background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+              }}>
+                {stats.map((stat, i) => (
+                  <div key={stat.label} className="flex items-center gap-4 px-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
                       background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
                       border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
                       boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                     }}>
-                      <stat.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                     </div>
-                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                    <div>
+                      <div className="text-2xl md:text-3xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                      <p className="text-xs font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                    </div>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
