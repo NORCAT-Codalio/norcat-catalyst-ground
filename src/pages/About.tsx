@@ -331,7 +331,7 @@ export default function About() {
                   </span>
                    <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Helping founders build{' '}
-                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>world-changing</span> companies
+                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>world-changing</span> companies
                   </h2>
                   <p className="text-lg leading-relaxed text-muted-foreground mb-5">
                     Through mentorship, capital access, and our unique underground testing facility, 
