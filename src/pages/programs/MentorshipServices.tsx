@@ -338,10 +338,10 @@ const MentorshipServices = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
-              <p className="text-2xl md:text-3xl leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+               <p className="text-2xl md:text-3xl leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Our mentors share the drive of our founders. They've challenged convention, 
                 built real businesses, and expanded what's possible through{' '}
-                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>experience.</span>
+                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>experience.</span>
               </p>
             </ScrollReveal>
 
