@@ -672,6 +672,30 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* ───── FINAL CTA ───── */}
         <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
