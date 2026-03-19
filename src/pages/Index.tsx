@@ -640,7 +640,7 @@ export default function Index() {
         </section>
 
         {/* ───── Community Photo Strip ───── */}
-        <section style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <section style={{ background: '#00b398' }}>
           <div className="grid grid-cols-5 gap-3 px-3 py-3">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
