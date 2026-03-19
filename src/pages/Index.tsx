@@ -570,7 +570,7 @@ export default function Index() {
           </div>
 
           {/* Horizontally scrollable cards */}
-          <div className="pl-6 md:pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto scrollbar-hide">
+          <div className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
             <div className="flex gap-5 pr-6" style={{ width: 'max-content' }}>
               {[
                 { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
