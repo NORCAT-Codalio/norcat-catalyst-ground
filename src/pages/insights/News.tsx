@@ -231,9 +231,9 @@ const News = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-foreground">Latest </span>
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
               </h2>
               <p className="body-md mt-2">{newsItems.length} stories</p>
             </div>
