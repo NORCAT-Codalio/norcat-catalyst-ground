@@ -522,24 +522,27 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── Community Photo Strip ───── */}
-        <section style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="grid grid-cols-5 gap-3 px-3 pb-8">
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto2} alt="Audience at event" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto3} alt="Group celebration" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto4} alt="Industry event" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto5} alt="Tech showcase" className="w-full h-full object-cover" />
-            </div>
+        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
@@ -598,30 +601,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
-        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-8"
-              animate={{ x: [0, -1200] }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            >
-              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
-                <div
-                  key={`${company.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
-                >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="max-h-10 max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* ───── FINAL CTA ───── */}
         <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
           <img 
@@ -658,7 +637,27 @@ export default function Index() {
               </Link>
             </ScrollReveal>
           </div>
+        </section>
 
+        {/* ───── Community Photo Strip ───── */}
+        <section>
+          <div className="grid grid-cols-5 gap-3 px-3 py-3">
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto2} alt="Audience at event" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto3} alt="Group celebration" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto4} alt="Industry event" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src={ctaPhoto5} alt="Tech showcase" className="w-full h-full object-cover" />
+            </div>
+          </div>
         </section>
 
       </div>
