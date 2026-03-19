@@ -261,7 +261,7 @@ const News = () => {
                           <Calendar className="w-3.5 h-3.5" />
                           {item.date}
                         </div>
-                        <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                           {item.title}
                         </h3>
                         <p className="text-muted-foreground text-sm line-clamp-3 mb-5 flex-1">
