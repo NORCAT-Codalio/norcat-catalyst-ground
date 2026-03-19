@@ -454,7 +454,7 @@ const SudburyEcosystem = () => {
                   Ecosystem{' '}
                 </span>
                 <span style={{ 
-                  fontFamily: "'Cormorant Garamond', serif", 
+                  fontFamily: "'Open Sans', sans-serif", 
                   fontWeight: 600, 
                   fontStyle: 'italic',
                   fontSize: 'clamp(2rem, 4vw, 3rem)',
