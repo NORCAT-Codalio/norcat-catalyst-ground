@@ -236,7 +236,7 @@ export default function Index() {
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 Build. Test.
-                <span className="block italic" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
+                <span className="block italic" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
                   Scale.
                 </span>
               </motion.h1>
