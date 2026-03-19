@@ -233,7 +233,7 @@ const News = () => {
             <div>
               <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-foreground">Latest </span>
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
               </h2>
               <p className="body-md mt-2">{newsItems.length} stories</p>
             </div>
