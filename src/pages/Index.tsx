@@ -328,8 +328,8 @@ export default function Index() {
           </motion.div>
         </section>
 
-        {/* ───── STATS — Overlapping Strip ───── */}
-        <div className="relative z-20" style={{ marginTop: '-60px' }}>
+        {/* ───── STATS Strip ───── */}
+        <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-6">
             <div className="rounded-[20px] p-8 flex flex-wrap justify-around gap-6" style={{
               background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.5) 0%, hsla(168, 20%, 75%, 0.35) 50%, hsla(168, 15%, 82%, 0.25) 100%)',
