@@ -238,8 +238,8 @@ export default function Index() {
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 Build the<br />
-                <span className="italic">Future </span>
-                <span style={{ color: 'hsl(168, 100%, 35%)' }}>Here</span>
+                <span style={{ color: 'hsl(168, 100%, 35%)' }}>Future </span>
+                Here
               </motion.h1>
 
               {/* Description */}
