@@ -415,8 +415,8 @@ export default function About() {
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                    Our Team
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                  Meet the <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Team</span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                  Meet the <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Team</span>
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   Our dedicated team works closely with founders to provide the support, 
