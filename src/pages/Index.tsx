@@ -157,14 +157,8 @@ export default function Index() {
           {/* Parallax background image */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
             <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
-            {/* Cinematic multi-layer gradient */}
-            <div className="absolute inset-0" style={{
-              background: `
-                linear-gradient(180deg, hsl(220 25% 4% / 0.6) 0%, transparent 35%),
-                linear-gradient(0deg, hsl(220 25% 4% / 0.95) 0%, transparent 40%),
-                linear-gradient(90deg, hsl(220 22% 6% / 0.92) 0%, hsl(220 20% 8% / 0.7) 40%, hsl(168 50% 10% / 0.35) 100%)
-              `
-            }} />
+            {/* Dark overlay at 20% opacity */}
+            <div className="absolute inset-0 bg-black/20" />
           </motion.div>
 
           {/* Cinematic vignette */}
@@ -208,13 +202,6 @@ export default function Index() {
             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }}
           />
 
-          {/* Signature lines */}
-          <img
-            src={signatureLines}
-            alt=""
-            aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
-          />
 
           {/* Hero content */}
           <motion.div className="container mx-auto px-6 relative z-10 py-32" style={{ opacity: heroOpacity }}>
