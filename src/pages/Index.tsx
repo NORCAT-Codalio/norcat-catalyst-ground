@@ -157,7 +157,7 @@ export default function Index() {
       <div className="bg-[hsl(220,20%,7%)] min-h-screen">
 
         {/* ───── HERO ───── */}
-        <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+        <section ref={heroRef} className="relative flex flex-col overflow-hidden" style={{ minHeight: '100vh' }}>
           {/* Parallax background image */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
             <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
@@ -190,12 +190,6 @@ export default function Index() {
               animate={{ scale: [1.2, 0.9, 1.2], x: [0, -60, 0], y: [0, 30, 0] }}
               transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
             />
-            <motion.div
-              className="absolute top-[60%] right-[10%] w-[400px] h-[400px] rounded-full"
-              style={{ background: 'radial-gradient(circle, hsl(200 60% 50% / 0.06) 0%, transparent 70%)' }}
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-            />
           </div>
 
           {/* Subtle grid overlay */}
@@ -207,7 +201,7 @@ export default function Index() {
             }}
           />
 
-          {/* Noise texture overlay for premium feel */}
+          {/* Noise texture overlay */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }}
           />
@@ -220,8 +214,8 @@ export default function Index() {
             className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
           />
 
-          {/* Hero content */}
-          <motion.div className="container mx-auto px-6 relative z-10 py-32" style={{ opacity: heroOpacity }}>
+          {/* Hero content — grows to fill */}
+          <motion.div className="container mx-auto px-6 relative z-10 flex-1 flex items-center pt-24 pb-8" style={{ opacity: heroOpacity }}>
             <div className="max-w-5xl">
               {/* Badge */}
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
@@ -247,7 +241,7 @@ export default function Index() {
 
               {/* Description */}
               <motion.p
-                className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl font-light"
+                className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl font-light"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -289,19 +283,29 @@ export default function Index() {
           </motion.div>
 
           {/* Stats strip at bottom of hero */}
-          <div className="absolute bottom-0 left-0 right-0 z-20">
+          <div className="relative z-20 pb-6">
             <div className="container mx-auto px-6">
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pb-6">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.9 + i * 0.1, duration: 0.6 }}
-                    className="rounded-2xl p-5 text-center liquid-glass-strong"
+                    className="rounded-xl px-4 py-4 text-center"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.04)',
+                      backdropFilter: 'blur(24px)',
+                      WebkitBackdropFilter: 'blur(24px)',
+                      borderTop: '2px solid hsl(168, 100%, 35%)',
+                      borderLeft: '0.5px solid rgba(255, 255, 255, 0.08)',
+                      borderRight: '0.5px solid rgba(255, 255, 255, 0.08)',
+                      borderBottom: '0.5px solid rgba(255, 255, 255, 0.05)',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    }}
                   >
-                    <div className="text-2xl md:text-3xl font-extrabold mb-1" style={{ color: 'hsl(168, 100%, 40%)' }}>{stat.value}</div>
-                    <p className="text-xs text-white/50 font-light leading-tight">{stat.label}</p>
+                    <div className="text-xl md:text-2xl font-extrabold mb-0.5" style={{ color: 'hsl(168, 100%, 40%)' }}>{stat.value}</div>
+                    <p className="text-[11px] text-white/40 font-light leading-tight">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
