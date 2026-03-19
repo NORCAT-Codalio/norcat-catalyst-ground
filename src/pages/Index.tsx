@@ -412,10 +412,17 @@ export default function Index() {
                       className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-strong glass-shimmer"
                     >
                       <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
-                        {program.title === 'Venture Growth Services' ? 'Founders' : program.title === 'Mentorship Services' ? 'Founders' : 'Funding'}
+                        {program.tag}
                       </span>
-                      <h3 className="text-xl font-bold text-white mb-3 transition-colors">{program.title}</h3>
-                      <p className="text-sm font-light text-white/50 mb-4">{program.description}</p>
+                      <h3 className="text-lg font-bold text-white mb-4 transition-colors">{program.title}</h3>
+                      <ul className="space-y-2.5 mb-5">
+                        {program.bullets.map((bullet, j) => (
+                          <li key={j} className="flex items-center gap-2.5">
+                            <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'hsl(168, 100%, 40%)' }} />
+                            <span className="text-sm text-white/50 font-light">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
                       <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 40%)' }}>
                         See Details
                         <ArrowRight className="w-4 h-4" />
