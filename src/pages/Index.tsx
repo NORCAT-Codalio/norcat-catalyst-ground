@@ -616,7 +616,7 @@ export default function Index() {
                     Reports & Resources
                   </span>
                    <h2 className="text-3xl md:text-4xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Real Stories. <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
+                    Real Stories. <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
                   </h2>
                   <p className="mt-2 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>
