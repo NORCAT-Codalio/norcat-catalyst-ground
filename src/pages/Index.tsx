@@ -157,14 +157,8 @@ export default function Index() {
           {/* Parallax background image */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
             <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
-            {/* Cinematic multi-layer gradient */}
-            <div className="absolute inset-0" style={{
-              background: `
-                linear-gradient(180deg, hsl(220 25% 4% / 0.6) 0%, transparent 35%),
-                linear-gradient(0deg, hsl(220 25% 4% / 0.95) 0%, transparent 40%),
-                linear-gradient(90deg, hsl(220 22% 6% / 0.92) 0%, hsl(220 20% 8% / 0.7) 40%, hsl(168 50% 10% / 0.35) 100%)
-              `
-            }} />
+            {/* Dark overlay at 20% opacity */}
+            <div className="absolute inset-0 bg-black/20" />
           </motion.div>
 
           {/* Cinematic vignette */}
