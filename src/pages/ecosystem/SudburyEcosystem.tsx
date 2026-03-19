@@ -450,7 +450,7 @@ const SudburyEcosystem = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="mb-4" style={{ lineHeight: 1.15 }}>
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'hsl(220, 20%, 18%)' }}>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'hsl(220, 20%, 18%)' }}>
                   Ecosystem{' '}
                 </span>
                 <span style={{ 
