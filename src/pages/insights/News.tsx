@@ -151,9 +151,9 @@ const News = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                   <span className="text-white">Sudbury Startup Raises </span>
-                  <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
+                  <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
                   <span className="text-white"> to Scale Autonomous Mining Fleet</span>
                 </h1>
                 
@@ -231,9 +231,9 @@ const News = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-foreground">Latest </span>
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
               </h2>
               <p className="body-md mt-2">{newsItems.length} stories</p>
             </div>
@@ -261,7 +261,7 @@ const News = () => {
                           <Calendar className="w-3.5 h-3.5" />
                           {item.date}
                         </div>
-                        <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                           {item.title}
                         </h3>
                         <p className="text-muted-foreground text-sm line-clamp-3 mb-5 flex-1">
@@ -281,7 +281,7 @@ const News = () => {
             <div className="hidden lg:block">
               <div className="sticky top-32">
                 <div className="liquid-glass-light-strong rounded-3xl p-6">
-                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     Live Activity
                   </h3>
@@ -325,9 +325,9 @@ const News = () => {
                 <Newspaper className="w-4 h-4" />
                 Stay Connected
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-white">Never Miss an </span>
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
               </h2>
               <p className="text-white/40 text-lg mb-10">
                 Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.

@@ -157,9 +157,9 @@ const VentureGrowthServices = () => {
                   <Rocket className="w-3.5 h-3.5" />
                   Core Program
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                   Venture Growth{' '}
-                  <span className="block text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                  <span className="block text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
                     Services
                   </span>
                 </h1>
@@ -228,9 +228,9 @@ const VentureGrowthServices = () => {
                 </span>
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                   <div>
-                    <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                    <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                       Everything you need to{' '}
-                      <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                      <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
                         accelerate.
                       </span>
                     </h2>
@@ -261,9 +261,9 @@ const VentureGrowthServices = () => {
                   <BarChart3 className="w-3.5 h-3.5" />
                   Your Journey
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                   How it{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
                     works.
                   </span>
                 </h2>
@@ -328,9 +328,9 @@ const VentureGrowthServices = () => {
                     <Globe className="w-3.5 h-3.5" />
                     Why NORCAT
                   </span>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     What makes us{' '}
-                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
                       different?
                     </span>
                   </h2>
@@ -372,9 +372,9 @@ const VentureGrowthServices = () => {
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                   All Services
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                   Explore our{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
                     services.
                   </span>
                 </h2>

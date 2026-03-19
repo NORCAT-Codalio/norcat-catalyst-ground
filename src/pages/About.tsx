@@ -261,9 +261,9 @@ export default function About() {
                   </span>
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
-                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Greater Sudbury's Regional{' '}
-                    <span className="text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5rem]" style={{ color: 'hsl(168, 100%, 50%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Centre</span>
+                    <span className="text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5rem]" style={{ color: 'hsl(168, 100%, 50%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Centre</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
@@ -329,9 +329,9 @@ export default function About() {
                   <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                     Our Mission
                   </span>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                   <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Helping founders build{' '}
-                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>world-changing</span> companies
+                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>world-changing</span> companies
                   </h2>
                   <p className="text-lg leading-relaxed text-muted-foreground mb-5">
                     Through mentorship, capital access, and our unique underground testing facility, 
@@ -363,8 +363,8 @@ export default function About() {
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                   Our Values
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                  Principles that <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>guide us</span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                  Principles that <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>guide us</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -415,8 +415,8 @@ export default function About() {
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
                    Our Team
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                  Meet the <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Team</span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                  Meet the <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Team</span>
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   Our dedicated team works closely with founders to provide the support, 
@@ -471,7 +471,7 @@ export default function About() {
                 <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
                   Our Partners
                 </span>
-                <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>Friends Who <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Open Doors</span></h2>
+                <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>Friends Who <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Open Doors</span></h2>
                 <p className="font-light" style={{ color: 'hsl(220, 10%, 50%)' }}>These are the operators, builders, and organizations who show up, make intros, and help founders win.</p>
               </div>
             </ScrollReveal>
@@ -514,9 +514,9 @@ export default function About() {
           />
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-white mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Ready to join our{' '}
-                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsla(0, 0%, 100%, 0.85)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>community?</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsla(0, 0%, 100%, 0.85)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>community?</span>
               </h2>
               <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
                 Whether you're just starting out or ready to scale, we're here to help 

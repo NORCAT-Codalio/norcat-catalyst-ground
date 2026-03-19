@@ -349,12 +349,12 @@ const SudburyEcosystem = () => {
 
               <ScrollReveal delay={100}>
                 <h1 className="mb-6" style={{ lineHeight: 1.1 }}>
-                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'hsl(220, 20%, 18%)' }}>
+                  <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'hsl(220, 20%, 18%)' }}>
                     Everything You Need to
                   </span>
                   <br />
                   <span style={{ 
-                    fontFamily: "'Cormorant Garamond', serif", 
+                    fontFamily: "'Open Sans', sans-serif", 
                     fontWeight: 600, 
                     fontStyle: 'italic',
                     fontSize: 'clamp(2.5rem, 5vw, 4rem)',
@@ -396,7 +396,7 @@ const SudburyEcosystem = () => {
                       <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                     </div>
                     <div className="text-3xl font-bold mb-1" style={{ 
-                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontFamily: "'Open Sans', sans-serif",
                       color: 'hsl(220, 20%, 18%)',
                     }}>
                       {stat.number}
@@ -450,11 +450,11 @@ const SudburyEcosystem = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="mb-4" style={{ lineHeight: 1.15 }}>
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'hsl(220, 20%, 18%)' }}>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'hsl(220, 20%, 18%)' }}>
                   Ecosystem{' '}
                 </span>
                 <span style={{ 
-                  fontFamily: "'Cormorant Garamond', serif", 
+                  fontFamily: "'Open Sans', sans-serif", 
                   fontWeight: 600, 
                   fontStyle: 'italic',
                   fontSize: 'clamp(2rem, 4vw, 3rem)',
@@ -509,7 +509,7 @@ const SudburyEcosystem = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <h3 className="font-semibold truncate" style={{ color: 'hsl(220, 20%, 18%)', fontFamily: "'Space Grotesk', sans-serif" }}>
+                            <h3 className="font-semibold truncate" style={{ color: 'hsl(220, 20%, 18%)', fontFamily: "'Open Sans', sans-serif" }}>
                               {org.name}
                             </h3>
                           </div>
@@ -562,7 +562,7 @@ const SudburyEcosystem = () => {
                         <selectedOrg.icon className="w-7 h-7" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
 
-                      <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
+                      <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
                         {selectedOrg.name}
                       </h3>
                       
@@ -645,7 +645,7 @@ const SudburyEcosystem = () => {
                       >
                         <Globe className="w-7 h-7" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
-                      <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
+                      <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
                         Select an Organization
                       </h3>
                       <p className="text-sm" style={{ color: 'hsl(220, 15%, 45%)' }}>
@@ -673,11 +673,11 @@ const SudburyEcosystem = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
           <ScrollReveal>
             <h2 className="mb-6" style={{ lineHeight: 1.15 }}>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'white' }}>
+              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'white' }}>
                 Ready to Join the{' '}
               </span>
               <span style={{ 
-                fontFamily: "'Cormorant Garamond', serif", 
+                fontFamily: "'Open Sans', sans-serif", 
                 fontWeight: 600, 
                 fontStyle: 'italic',
                 fontSize: 'clamp(2rem, 4vw, 3rem)',

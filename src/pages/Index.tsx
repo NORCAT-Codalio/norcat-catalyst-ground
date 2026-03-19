@@ -230,13 +230,13 @@ export default function Index() {
               {/* Headline */}
               <motion.h1
                 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium text-white mb-8 tracking-tight leading-[0.92]"
-                style={{ fontFamily: "'Space Grotesk', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
+                style={{ fontFamily: "'Open Sans', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 Build. Test.
-                <span className="block italic" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
+                <span className="block italic" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
                   Scale.
                 </span>
               </motion.h1>
@@ -372,7 +372,7 @@ export default function Index() {
                   <BarChart3 className="w-3.5 h-3.5" />
                   Global Impact Dashboard
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                   Trusted by 150+ startups.
                 </h2>
               </div>
@@ -421,8 +421,8 @@ export default function Index() {
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
                     Programs & Funding
                   </span>
-                  <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                    Support that adapts as your <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>company grows.</span>
+                   <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                    Support that adapts as your <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>company grows.</span>
                   </h2>
                   <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
@@ -524,8 +524,8 @@ export default function Index() {
                     <Globe className="w-3.5 h-3.5" />
                     The Greater Sudbury Advantage
                   </span>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                    A Thriving <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Ecosystem</span>
+                   <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                    A Thriving <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Ecosystem</span>
                   </h2>
                   <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
@@ -615,8 +615,8 @@ export default function Index() {
                   <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
                     Reports & Resources
                   </span>
-                  <h2 className="text-3xl md:text-4xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                    Real Stories. <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
+                   <h2 className="text-3xl md:text-4xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                    Real Stories. <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
                   </h2>
                   <p className="mt-2 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>

@@ -180,7 +180,7 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
 
         {/* Bottom info */}
         <div className="absolute bottom-4 left-4 right-4">
-          <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
             {event.title}
           </h3>
           <div className="flex items-center gap-4 text-white/80 text-sm">
@@ -251,7 +251,7 @@ const EventCard = ({ event }: { event: Event }) => {
               )}
             </div>
 
-            <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1 truncate" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1 truncate" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               {event.title}
             </h3>
 
@@ -312,9 +312,9 @@ export default function Events() {
                 <Sparkles className="w-4 h-4" />
                 Discover What's Happening
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Upcoming{' '}
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Events
                 </span>
               </h1>
@@ -358,9 +358,9 @@ export default function Events() {
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="flex items-center justify-between mb-10">
-              <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Featured{' '}
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Events
                 </span>
               </h2>
@@ -431,9 +431,9 @@ export default function Events() {
       <section className="section-padding-sm" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-8" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               All Upcoming{' '}
-              <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+              <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                 Events
               </span>
             </h2>
@@ -477,9 +477,9 @@ export default function Events() {
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="flex items-center justify-between mb-10">
-              <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Past{' '}
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Highlights
                 </span>
               </h2>
@@ -507,7 +507,7 @@ export default function Events() {
                       {event.date}
                     </div>
                   </div>
-                  <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{event.title}</h3>
+                  <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
                   <div className="flex items-center gap-4 text-sm">
                     <span className="flex items-center gap-1 text-muted-foreground">
                       <Users className="w-4 h-4" />
@@ -529,9 +529,9 @@ export default function Events() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Never Miss an{' '}
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Event
                 </span>
               </h2>
@@ -561,9 +561,9 @@ export default function Events() {
       <section className="section-padding-sm" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               Want to Host an{' '}
-              <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+              <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                 Event?
               </span>
             </h2>

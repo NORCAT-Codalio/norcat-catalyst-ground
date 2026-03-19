@@ -273,13 +273,13 @@ const MentorshipServices = () => {
             {/* Headline */}
             <motion.h1
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium text-white mb-8 tracking-tight leading-[0.92]"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
+              style={{ fontFamily: "'Open Sans', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               Team-Based
-              <span className="block italic" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
+              <span className="block italic" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
                 Mentorship.
               </span>
             </motion.h1>
@@ -338,10 +338,10 @@ const MentorshipServices = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
-              <p className="text-2xl md:text-3xl leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+               <p className="text-2xl md:text-3xl leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Our mentors share the drive of our founders. They've challenged convention, 
                 built real businesses, and expanded what's possible through{' '}
-                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>experience.</span>
+                <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>experience.</span>
               </p>
             </ScrollReveal>
 
@@ -379,9 +379,9 @@ const MentorshipServices = () => {
                 <Users className="w-3.5 h-3.5" />
                 Our Approach
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 A Different Kind of{' '}
-                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Mentoring.</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Mentoring.</span>
               </h2>
               <p className="font-light max-w-2xl mx-auto" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Our Venture Mentoring Service is built on principles that put founders first 
@@ -416,9 +416,9 @@ const MentorshipServices = () => {
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={sageBadgeStyle}>
                   Process
                 </span>
-                <h2 className="text-3xl md:text-4xl mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                <h2 className="text-3xl md:text-4xl mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                   How It{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Works.</span>
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Works.</span>
                 </h2>
                 <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
                   Our structured approach ensures you get the most out of every mentoring session 
@@ -446,7 +446,7 @@ const MentorshipServices = () => {
 
             <ScrollReveal direction="right">
               <div className="rounded-[20px] p-8" style={glassCardStyle}>
-                <h3 className="text-xl font-bold mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif" }}>What You Get</h3>
+                <h3 className="text-xl font-bold mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>What You Get</h3>
                 <ul className="space-y-4">
                   {benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -496,9 +496,9 @@ const MentorshipServices = () => {
                 <Users className="w-3.5 h-3.5" />
                 Our Network
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Meet Our{' '}
-                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Mentors.</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Mentors.</span>
               </h2>
               <p className="font-light max-w-2xl mx-auto" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Our volunteer mentors are accomplished entrepreneurs, executives, and experts 
@@ -593,7 +593,7 @@ const MentorshipServices = () => {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between mb-3">
-                              <h3 className="text-2xl font-bold" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif" }}>{mentor.name}</h3>
+                              <h3 className="text-2xl font-bold" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{mentor.name}</h3>
                               <button
                                 onClick={(e) => { e.stopPropagation(); setExpandedMentor(null); }}
                                 className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 ml-4 transition-colors"
