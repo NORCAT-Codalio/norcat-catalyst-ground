@@ -272,25 +272,18 @@ export default function Index() {
           </motion.div>
 
           {/* Stats strip */}
-          <div className="relative z-20 pb-6">
+          <div className="relative z-20 pb-8">
             <div className="container mx-auto px-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
-                className="rounded-2xl flex items-center justify-between"
-                style={{
-                  background: 'linear-gradient(135deg, hsla(168, 50%, 15%, 0.5) 0%, hsla(220, 30%, 10%, 0.7) 100%)',
-                  backdropFilter: 'blur(24px)',
-                  WebkitBackdropFilter: 'blur(24px)',
-                  border: '1px solid hsla(168, 100%, 35%, 0.2)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                }}
+                className="rounded-3xl flex items-center justify-between liquid-glass-strong glass-shimmer"
               >
                 {stats.map((stat, i) => (
-                  <div key={stat.label} className="flex-1 text-center py-5 px-2 relative">
+                  <div key={stat.label} className="flex-1 text-center py-6 px-2 relative">
                     {i > 0 && (
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10" style={{ background: 'hsla(168, 100%, 35%, 0.15)' }} />
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10" style={{ background: 'rgba(255, 255, 255, 0.1)' }} />
                     )}
                     <div className="text-2xl md:text-4xl font-bold" style={{ color: 'hsl(168, 100%, 45%)' }}>{stat.value}</div>
                     <p className="text-[10px] md:text-xs text-white/35 font-light leading-tight mt-1">{stat.label}</p>
@@ -300,6 +293,10 @@ export default function Index() {
             </div>
           </div>
         </section>
+
+        {/* Dark-to-light fade transition */}
+        <div className="h-32" style={{ background: 'linear-gradient(180deg, hsl(220, 20%, 7%) 0%, hsl(0, 0%, 96%) 100%)' }} />
+        </div>{/* end dark hero wrapper */}
 
         {/* ───── GLOBAL TECH, NORTHERN GRIT ───── */}
         <section className="relative py-20 overflow-hidden" style={{ background: 'hsl(220 20% 10%)' }}>
