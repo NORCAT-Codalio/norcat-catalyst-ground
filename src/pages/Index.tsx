@@ -449,24 +449,21 @@ export default function Index() {
         </section>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 8%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 70%)' }} />
-          </div>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(0, 0%, 96%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 bg-primary/10 text-primary border border-primary/20">
                     Reports & Resources
                   </span>
-                  <h2 className="text-3xl md:text-5xl font-extrabold uppercase text-white">
+                  <h2 className="text-3xl md:text-5xl font-extrabold uppercase text-foreground">
                     Real Stories.{' '}
-                    <span style={{ color: 'hsl(168, 100%, 40%)' }}>Unique Insights.</span>
+                    <span className="text-primary">Unique Insights.</span>
                   </h2>
-                  <p className="mt-2 font-light text-white/50">Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
+                  <p className="mt-2 font-light text-muted-foreground">Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>
-                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold text-primary group shrink-0">
                   View all reports
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -477,8 +474,7 @@ export default function Index() {
               {blogPosts.map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block h-full">
-                    <div className="rounded-[20px] overflow-hidden h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-strong glass-shimmer">
-                      {/* Image placeholder using existing photos */}
+                    <div className="rounded-[20px] overflow-hidden h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-light-strong glass-shimmer" style={{ border: '1px solid hsla(168, 100%, 35%, 0.1)' }}>
                       <div className="h-48 overflow-hidden">
                         <img 
                           src={i === 0 ? ctaPhoto1 : i === 1 ? ctaPhoto3 : ctaPhoto2} 
@@ -487,11 +483,11 @@ export default function Index() {
                         />
                       </div>
                       <div className="p-6">
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 bg-primary/10 text-primary border border-primary/20">
                           {post.category}
                         </span>
-                        <h3 className="text-lg font-bold text-white mb-4 transition-colors">{post.title}</h3>
-                        <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                        <h3 className="text-lg font-bold text-foreground mb-4 transition-colors">{post.title}</h3>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform">
                           Read More
                           <ArrowRight className="w-4 h-4" />
                         </span>
