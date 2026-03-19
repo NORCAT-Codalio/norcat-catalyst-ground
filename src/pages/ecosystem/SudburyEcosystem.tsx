@@ -645,7 +645,7 @@ const SudburyEcosystem = () => {
                       >
                         <Globe className="w-7 h-7" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
-                      <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
+                      <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
                         Select an Organization
                       </h3>
                       <p className="text-sm" style={{ color: 'hsl(220, 15%, 45%)' }}>
