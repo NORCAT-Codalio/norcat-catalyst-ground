@@ -381,7 +381,7 @@ const MentorshipServices = () => {
               </span>
                <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 A Different Kind of{' '}
-                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Mentoring.</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Mentoring.</span>
               </h2>
               <p className="font-light max-w-2xl mx-auto" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Our Venture Mentoring Service is built on principles that put founders first 
