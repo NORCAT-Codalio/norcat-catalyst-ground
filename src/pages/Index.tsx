@@ -547,7 +547,7 @@ export default function Index() {
         </section>
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: '#00b398' }}>
           <div className="absolute inset-0 pointer-events-none">
             <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
           </div>
@@ -602,14 +602,7 @@ export default function Index() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
-          <img 
-            src={signatureLines} 
-            alt="" 
-            aria-hidden="true"
-            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
-            style={{ transform: 'scaleX(-1)' }}
-          />
+        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: '#00b398' }}>
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
@@ -640,7 +633,7 @@ export default function Index() {
         </section>
 
         {/* ───── Community Photo Strip ───── */}
-        <section style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+        <section style={{ background: '#00b398' }}>
           <div className="grid grid-cols-5 gap-3 px-3 py-3">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
