@@ -216,32 +216,33 @@ export default function Index() {
 
           {/* Hero content — grows to fill */}
           <motion.div className="container mx-auto px-6 relative z-10 flex-1 flex items-center pt-20 pb-4" style={{ opacity: heroOpacity }}>
-            <div className="max-w-5xl">
-              {/* Badge */}
-              <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
-                <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white/90 mb-8 liquid-glass-btn">
-                  <Sparkles className="h-4 w-4 icon-glow" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                  // Advanced Mining Innovation
-                </span>
-              </motion.div>
+            <div className="max-w-3xl">
+              {/* Tag line */}
+              <motion.p
+                className="text-sm md:text-base font-semibold tracking-[0.15em] uppercase mb-6"
+                style={{ color: 'hsl(168, 100%, 40%)' }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+              >
+                // Advanced Mining Innovation
+              </motion.p>
 
               {/* Headline */}
               <motion.h1
-                className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white mb-8 tracking-tight leading-[0.92] uppercase"
+                className="text-6xl md:text-8xl lg:text-[7rem] font-black text-white mb-6 tracking-tight leading-[0.95] uppercase"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 Build the<br />
-                Future{' '}
-                <span style={{ color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)' }}>
-                  Here
-                </span>
+                <span className="italic">Future </span>
+                <span style={{ color: 'hsl(168, 100%, 35%)' }}>Here</span>
               </motion.h1>
 
               {/* Description */}
               <motion.p
-                className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl font-light"
+                className="text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -251,29 +252,23 @@ export default function Index() {
 
               {/* CTAs */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.8 }}
               >
-                <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                  background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.3) 0%, hsla(168, 100%, 35%, 0.15) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
+                <Link to="/apply" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                  background: 'hsl(168, 100%, 35%)',
                   color: 'white',
-                  border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
-                  boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                  boxShadow: '0 4px 16px hsla(168, 100%, 20%, 0.4)',
                 }}>
                   Work With Us
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                  background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
+                <Link to="/about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98] hover:bg-white/10" style={{
+                  background: 'transparent',
                   color: 'white',
-                  border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
-                  boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                  border: '1px solid hsla(0, 0%, 100%, 0.25)',
                 }}>
                   Learn More
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -283,28 +278,28 @@ export default function Index() {
           </motion.div>
 
           {/* Stats strip */}
-          <div className="relative z-20 pb-8">
+          <div className="relative z-20 pb-6">
             <div className="container mx-auto px-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.6 }}
-                className="rounded-2xl flex items-center justify-between px-2 py-1"
+                className="rounded-2xl flex items-center justify-between"
                 style={{
-                  background: 'linear-gradient(135deg, hsla(168, 60%, 20%, 0.4) 0%, hsla(220, 30%, 12%, 0.6) 100%)',
+                  background: 'linear-gradient(135deg, hsla(168, 50%, 15%, 0.5) 0%, hsla(220, 30%, 10%, 0.7) 100%)',
                   backdropFilter: 'blur(24px)',
                   WebkitBackdropFilter: 'blur(24px)',
-                  border: '1px solid hsla(168, 100%, 35%, 0.25)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 hsla(168, 100%, 50%, 0.1)',
+                  border: '1px solid hsla(168, 100%, 35%, 0.2)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
                 }}
               >
                 {stats.map((stat, i) => (
-                  <div key={stat.label} className="flex-1 text-center py-4 px-3 relative">
+                  <div key={stat.label} className="flex-1 text-center py-5 px-2 relative">
                     {i > 0 && (
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8" style={{ background: 'hsla(168, 100%, 35%, 0.2)' }} />
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10" style={{ background: 'hsla(168, 100%, 35%, 0.15)' }} />
                     )}
-                    <div className="text-xl md:text-2xl font-extrabold" style={{ color: 'hsl(168, 100%, 40%)' }}>{stat.value}</div>
-                    <p className="text-[10px] md:text-[11px] text-white/40 font-light leading-tight mt-0.5">{stat.label}</p>
+                    <div className="text-2xl md:text-4xl font-bold" style={{ color: 'hsl(168, 100%, 45%)' }}>{stat.value}</div>
+                    <p className="text-[10px] md:text-xs text-white/35 font-light leading-tight mt-1">{stat.label}</p>
                   </div>
                 ))}
               </motion.div>
