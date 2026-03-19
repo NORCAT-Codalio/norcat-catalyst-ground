@@ -603,7 +603,6 @@ export default function Index() {
 
         {/* ───── FINAL CTA ───── */}
         <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: '#00b398' }}>
-          />
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
