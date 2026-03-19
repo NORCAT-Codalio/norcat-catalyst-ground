@@ -509,7 +509,7 @@ const SudburyEcosystem = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <h3 className="font-semibold truncate" style={{ color: 'hsl(220, 20%, 18%)', fontFamily: "'Space Grotesk', sans-serif" }}>
+                            <h3 className="font-semibold truncate" style={{ color: 'hsl(220, 20%, 18%)', fontFamily: "'Open Sans', sans-serif" }}>
                               {org.name}
                             </h3>
                           </div>
