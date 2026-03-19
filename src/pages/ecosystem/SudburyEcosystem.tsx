@@ -562,7 +562,7 @@ const SudburyEcosystem = () => {
                         <selectedOrg.icon className="w-7 h-7" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
 
-                      <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
+                      <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 20%, 18%)' }}>
                         {selectedOrg.name}
                       </h3>
                       
