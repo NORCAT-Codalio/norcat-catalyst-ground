@@ -328,63 +328,37 @@ export default function Index() {
           </motion.div>
         </section>
 
-
-
-        {/* ───── STATS — Data Dashboard Strip ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{
-                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                  color: 'hsl(168, 40%, 30%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                }}>
-                  <BarChart3 className="w-3.5 h-3.5" />
-                  Global Impact Dashboard
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                  Trusted by 150+ startups.
-                </h2>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal>
-              <div className="rounded-[20px] p-8 flex flex-wrap justify-around gap-6" style={{
-                background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-              }}>
-                {stats.map((stat, i) => (
-                  <div key={stat.label} className="flex items-center gap-4 px-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
-                      background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                      border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                      boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                    }}>
-                      <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                    </div>
-                    <div>
-                      <div className="text-2xl md:text-3xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
-                      <p className="text-xs font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
-                    </div>
+        {/* ───── STATS — Overlapping Strip ───── */}
+        <div className="relative z-20" style={{ marginTop: '-60px' }}>
+          <div className="container mx-auto px-6">
+            <div className="rounded-[20px] p-8 flex flex-wrap justify-around gap-6" style={{
+              background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.5) 0%, hsla(168, 20%, 75%, 0.35) 50%, hsla(168, 15%, 82%, 0.25) 100%)',
+              backdropFilter: 'blur(24px)',
+              WebkitBackdropFilter: 'blur(24px)',
+              borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+              borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+              borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+              borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+              boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.15), 0 2px 8px hsla(0, 0%, 0%, 0.06)',
+            }}>
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex items-center gap-4 px-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
+                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
+                  <div>
+                    <div className="text-2xl md:text-3xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                    <p className="text-xs font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
