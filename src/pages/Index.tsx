@@ -557,7 +557,7 @@ export default function Index() {
         </section>
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 80% 12%) 0%, hsl(168 60% 18%) 50%, hsl(168 50% 22%) 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: '#00b398' }}>
           <div className="absolute inset-0 pointer-events-none">
             <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
           </div>
