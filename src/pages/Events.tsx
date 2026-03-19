@@ -507,7 +507,7 @@ export default function Events() {
                       {event.date}
                     </div>
                   </div>
-                  <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{event.title}</h3>
+                  <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
                   <div className="flex items-center gap-4 text-sm">
                     <span className="flex items-center gap-1 text-muted-foreground">
                       <Users className="w-4 h-4" />
