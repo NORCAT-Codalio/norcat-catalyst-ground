@@ -529,9 +529,9 @@ export default function Events() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
                 Never Miss an{' '}
-                <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
+                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
                   Event
                 </span>
               </h2>
