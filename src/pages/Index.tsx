@@ -557,7 +557,7 @@ export default function Index() {
         </section>
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 80% 12%) 0%, hsl(168 60% 18%) 50%, hsl(168 50% 22%) 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: '#00b398' }}>
           <div className="absolute inset-0 pointer-events-none">
             <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
           </div>
@@ -567,7 +567,7 @@ export default function Index() {
                 <div>
                    <h2 className="text-3xl md:text-4xl uppercase tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                      <span className="text-white">Real Stories. </span>
-                     <span style={{ color: 'hsl(168, 100%, 50%)' }}>Unique Insights.</span>
+                     <span className="text-white">Unique Insights.</span>
                    </h2>
                   <p className="mt-3 font-light text-white/50 max-w-xl">Nothing we tell, your one and about innovation what it takes to live foreveryo to the programme of stor gnelfo.</p>
                 </div>
