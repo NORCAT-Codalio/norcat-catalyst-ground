@@ -557,64 +557,52 @@ export default function Index() {
         </section>
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 80% 12%) 0%, hsl(168 60% 18%) 50%, hsl(168 50% 22%) 100%)' }}>
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
+            <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
-                    Reports & Resources
-                  </span>
-                   <h2 className="text-3xl md:text-4xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Real Stories. <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Unique Insights.</span>
-                  </h2>
-                  <p className="mt-2 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
+                   <h2 className="text-3xl md:text-4xl uppercase tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                     <span className="text-white">Real Stories. </span>
+                     <span style={{ color: 'hsl(168, 100%, 50%)' }}>Unique Insights.</span>
+                   </h2>
+                  <p className="mt-3 font-light text-white/50 max-w-xl">Nothing we tell, your one and about innovation what it takes to live foreveryo to the programme of stor gnelfo.</p>
                 </div>
-                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
                   View all reports
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-5">
               {[
-                { icon: FileText, category: 'Annual Report', title: '2025 Annual Impact Report: Our Ecosystem at a Glance', link: '/insights/reports' },
-                { icon: TrendingUp, category: 'Research', title: 'Northern Ontario Tech Ecosystem Landscape Analysis', link: '/insights/reports' },
-                { icon: Pickaxe, category: 'Industry Report', title: 'Mining Technology Trends Shaping 2026 and Beyond', link: '/insights/reports' },
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
+                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block h-full">
-                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={{
-                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                    }}>
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{
-                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                      }}>
-                        <post.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                    <div className="relative rounded-2xl overflow-hidden aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                          background: 'hsla(168, 100%, 35%, 0.2)',
+                          color: 'hsl(168, 100%, 60%)',
+                          border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                          backdropFilter: 'blur(8px)',
+                        }}>{post.category}</span>
                       </div>
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3" style={{
-                        background: 'hsl(168 100% 35% / 0.1)',
-                        color: 'hsl(168, 100%, 28%)',
-                        border: '0.5px solid hsl(168 100% 35% / 0.15)',
-                      }}>{post.category}</span>
-                      <h3 className="text-lg font-bold mb-4 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{post.title}</h3>
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                        Read More
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
+                          Read More <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 </ScrollReveal>
