@@ -261,9 +261,9 @@ const VentureGrowthServices = () => {
                   <BarChart3 className="w-3.5 h-3.5" />
                   Your Journey
                 </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                   How it{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>
+                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>
                     works.
                   </span>
                 </h2>
