@@ -97,7 +97,7 @@ export default function Impact() {
                   Portfolio Highlights
                 </span>
                 <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                  Recent <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Wins</span>
+                  Recent <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Wins</span>
                 </h2>
                 <p className="font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
                   Celebrating the achievements of our portfolio companies. Click to explore each story.

@@ -325,7 +325,6 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                       color: 'hsl(168, 100%, 28%)',
                       fontFamily: "'Open Sans', sans-serif",
                       fontWeight: 700,
-                      fontStyle: 'italic',
                     }}
                   >
                     {activeItem.headlineItalic}

@@ -327,7 +327,7 @@ const News = () => {
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 <span className="text-white">Never Miss an </span>
-                <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
+                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
               </h2>
               <p className="text-white/40 text-lg mb-10">
                 Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.

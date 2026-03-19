@@ -516,7 +516,7 @@ export default function About() {
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-white mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Ready to join our{' '}
-                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsla(0, 0%, 100%, 0.85)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>community?</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl" style={{ color: 'hsla(0, 0%, 100%, 0.85)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>community?</span>
               </h2>
               <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
                 Whether you're just starting out or ready to scale, we're here to help 
