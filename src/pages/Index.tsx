@@ -577,6 +577,9 @@ export default function Index() {
                 { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
                 { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
                 { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem' },
+                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
+                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news' },
+                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block">
