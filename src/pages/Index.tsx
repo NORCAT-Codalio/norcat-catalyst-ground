@@ -88,18 +88,21 @@ const stats = [
 
 const upcomingPrograms = [
   {
+    tag: 'Founders',
     title: 'Venture Growth Services',
-    description: 'For early-stage founders looking for 1-on-1 support, mentorship, IP strategy, and micro-grants.',
+    bullets: ['Believe in you', 'Ongoing', 'Greater Sudbury (Greater Audience)'],
     link: '/programs/venture-growth-services',
   },
   {
+    tag: 'Founders',
     title: 'Mentorship Services',
-    description: 'Gain access to the Fortin Discovery Lab to build your prototype, or the NORCAT Underground Centre to test your technology in an operating mine.',
+    bullets: ['Scaling/Move', '16 Month Journey', 'Matched Mentors'],
     link: '/programs/mentorship-services',
   },
   {
+    tag: 'Funding',
     title: 'Sudbury Catalyst Fund',
-    description: 'Get help navigating both dilutive and non-dilutive funding opportunities.',
+    bullets: ['Jentry Byrne', 'Staff Fund', 'Growth Mastery'],
     link: '/funding/sudbury-catalyst-fund',
   },
 ];
