@@ -422,7 +422,7 @@ export default function Index() {
                     Programs & Funding
                   </span>
                    <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Support that adapts as your <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>company grows.</span>
+                    Support that adapts as your <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>company grows.</span>
                   </h2>
                   <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
@@ -525,7 +525,7 @@ export default function Index() {
                     The Greater Sudbury Advantage
                   </span>
                    <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    A Thriving <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Ecosystem</span>
+                    A Thriving <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Ecosystem</span>
                   </h2>
                   <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
                     Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
@@ -616,7 +616,7 @@ export default function Index() {
                     Reports & Resources
                   </span>
                    <h2 className="text-3xl md:text-4xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Real Stories. <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
+                    Real Stories. <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
                   </h2>
                   <p className="mt-2 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>
