@@ -602,7 +602,7 @@ export default function Index() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: '#00b398' }}>
+        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
@@ -633,7 +633,7 @@ export default function Index() {
         </section>
 
         {/* ───── Community Photo Strip ───── */}
-        <section style={{ background: '#00b398' }}>
+        <section style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="grid grid-cols-5 gap-3 px-3 py-3">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
