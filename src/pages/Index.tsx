@@ -547,8 +547,8 @@ export default function Index() {
         </section>
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: '#00b398' }}>
-          <div className="absolute inset-0 pointer-events-none">
+        <section className="relative py-28" style={{ background: '#00b398' }}>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
           </div>
           <div className="container mx-auto px-6 relative z-10">
@@ -567,16 +567,20 @@ export default function Index() {
                 </Link>
               </div>
             </ScrollReveal>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-5">
+          {/* Horizontally scrollable cards - extends beyond container */}
+          <div className="pl-6 md:pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto scrollbar-hide">
+            <div className="flex gap-5 pr-6" style={{ width: 'max-content' }}>
               {[
                 { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
                 { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
                 { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
+                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem' },
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
-                  <Link to={post.link} className="group block h-full">
-                    <div className="relative rounded-2xl overflow-hidden aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
+                  <Link to={post.link} className="group block">
+                    <div className="relative rounded-2xl overflow-hidden w-[340px] aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
                       <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                       <div className="absolute top-4 left-4">
