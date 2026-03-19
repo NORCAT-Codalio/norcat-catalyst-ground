@@ -157,7 +157,7 @@ export default function Index() {
       <div className="bg-[hsl(220,20%,7%)] min-h-screen">
 
         {/* ───── HERO ───── */}
-        <section ref={heroRef} className="relative flex flex-col overflow-hidden" style={{ minHeight: '100vh' }}>
+        <section ref={heroRef} className="relative flex flex-col" style={{ minHeight: 'calc(100vh - 80px)' }}>
           {/* Parallax background image */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
             <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
