@@ -263,7 +263,7 @@ export default function About() {
                 <ScrollReveal delay={100}>
                   <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Greater Sudbury's Regional{' '}
-                    <span className="text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5rem]" style={{ color: 'hsl(168, 100%, 50%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Centre</span>
+                    <span className="text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5rem]" style={{ color: 'hsl(168, 100%, 50%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Centre</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
