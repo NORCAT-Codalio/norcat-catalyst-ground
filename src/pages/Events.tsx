@@ -251,7 +251,7 @@ const EventCard = ({ event }: { event: Event }) => {
               )}
             </div>
 
-            <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1 truncate" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1 truncate" style={{ fontFamily: "'Open Sans', sans-serif" }}>
               {event.title}
             </h3>
 
