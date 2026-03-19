@@ -313,7 +313,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                 <h3
                   className="text-xl md:text-2xl leading-tight"
                   style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontFamily: "'Open Sans', sans-serif",
                     fontWeight: 500,
                     color: 'hsl(220, 15%, 20%)',
                   }}
