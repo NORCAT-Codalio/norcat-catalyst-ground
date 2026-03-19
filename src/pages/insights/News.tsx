@@ -151,9 +151,9 @@ const News = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                   <span className="text-white">Sudbury Startup Raises </span>
-                  <span className="italic" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
+                  <span className="italic" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
                   <span className="text-white"> to Scale Autonomous Mining Fleet</span>
                 </h1>
                 
