@@ -79,7 +79,8 @@ const sectors = [
 ];
 
 const stats = [
-  { value: '$75M+', label: 'Capital Raised by Startups', icon: TrendingUp },
+  { value: '150+', label: 'Clients', icon: TrendingUp },
+  { value: '$75M+', label: 'Capital Raised by Startups', icon: DollarSign },
   { value: '15+', label: 'Countries with Active Clients', icon: Globe },
   { value: '18', label: 'Mentors & Advisors in Your Corner', icon: Users },
   { value: '2,000+', label: 'Jobs Created', icon: Activity },
@@ -92,12 +93,12 @@ const upcomingPrograms = [
     link: '/programs/venture-growth-services',
   },
   {
-    title: 'Product Testing and Validation',
+    title: 'Mentorship Services',
     description: 'Gain access to the Fortin Discovery Lab to build your prototype, or the NORCAT Underground Centre to test your technology in an operating mine.',
     link: '/programs/mentorship-services',
   },
   {
-    title: 'Growth & Investment',
+    title: 'Sudbury Catalyst Fund',
     description: 'Get help navigating both dilutive and non-dilutive funding opportunities.',
     link: '/funding/sudbury-catalyst-fund',
   },
@@ -223,53 +224,32 @@ export default function Index() {
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
                 <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-white/90 mb-8 liquid-glass-btn">
                   <Sparkles className="h-4 w-4 icon-glow" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                  Sudbury's Regional Innovation Centre
+                  // Advanced Mining Innovation
                 </span>
               </motion.div>
 
               {/* Headline */}
               <motion.h1
-                className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium text-white mb-8 tracking-tight leading-[0.92]"
-                style={{ fontFamily: "'Space Grotesk', sans-serif", textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}
+                className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold text-white mb-8 tracking-tight leading-[0.92] uppercase"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Build. Test.
-                <span className="block italic" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontSize: '1.15em', fontWeight: 700 }}>
-                  Scale.
+                Build the<br />
+                Future{' '}
+                <span style={{ color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)' }}>
+                  Here
                 </span>
               </motion.h1>
 
-              {/* Sector tags */}
-              <motion.div
-                className="flex flex-wrap gap-2 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45, duration: 0.8 }}
-              >
-                {sectors.map((sector, i) => (
-                  <motion.span
-                    key={sector.label}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white/70 text-sm liquid-glass hover:text-white/90 transition-colors duration-300"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.55 + i * 0.06 }}
-                  >
-                    <sector.icon className="w-4 h-4" />
-                    {sector.label}
-                  </motion.span>
-                ))}
-              </motion.div>
-
               {/* Description */}
               <motion.p
-                className="text-xl md:text-2xl text-white leading-relaxed mb-10 max-w-2xl font-light"
+                className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl font-light"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.65, duration: 0.8 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
               >
-                World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
+                World-class mentorship, capital access and infrastructure for tech-enabled, IP-driven startups ready to scale.
               </motion.p>
 
               {/* CTAs */}
@@ -277,7 +257,7 @@ export default function Index() {
                 className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
+                transition={{ delay: 0.65, duration: 0.8 }}
               >
                 <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
                   background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.3) 0%, hsla(168, 100%, 35%, 0.15) 100%)',
@@ -305,169 +285,147 @@ export default function Index() {
             </div>
           </motion.div>
 
-          {/* Scroll indicator */}
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-          >
-            <motion.div
-              className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-2"
-              style={{ boxShadow: '0 0 20px hsl(168 100% 35% / 0.1)' }}
-              animate={{ y: [0, 5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <motion.div
-                className="w-1 h-2 rounded-full"
-                style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 0 6px hsl(168 100% 35% / 0.6)' }}
-                animate={{ y: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              />
-            </motion.div>
-          </motion.div>
-        </section>
-
-
-        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
-        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-8"
-              animate={{ x: [0, -1200] }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            >
-              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
-                <div
-                  key={`${company.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
-                >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="max-h-10 max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </motion.div>
+          {/* Stats strip at bottom of hero */}
+          <div className="absolute bottom-0 left-0 right-0 z-20">
+            <div className="container mx-auto px-6">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pb-6">
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9 + i * 0.1, duration: 0.6 }}
+                    className="rounded-2xl p-5 text-center liquid-glass-strong"
+                  >
+                    <div className="text-2xl md:text-3xl font-extrabold mb-1" style={{ color: 'hsl(168, 100%, 40%)' }}>{stat.value}</div>
+                    <p className="text-xs text-white/50 font-light leading-tight">{stat.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ───── STATS — Data Dashboard Strip ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        {/* ───── GLOBAL TECH, NORTHERN GRIT ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 10%)' }}>
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 70%)' }} />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.05]" />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{
-                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                  color: 'hsl(168, 40%, 30%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                }}>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
                   <BarChart3 className="w-3.5 h-3.5" />
                   Global Impact Dashboard
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                  Trusted by 150+ startups.
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase text-white mb-4">
+                  Global Tech,{' '}
+                  <span style={{ color: 'hsl(168, 100%, 40%)' }}>Northern Grit</span>
                 </h2>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((stat, i) => (
-                <ScrollReveal key={stat.label} delay={i * 0.1}>
-                  <div className="rounded-[20px] p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={{
-                    background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                    borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                    borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                    borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                    boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                  }}>
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{
-                      background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                      border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                      boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                    }}>
-                      <stat.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                    </div>
-                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
+            <div className="grid md:grid-cols-2 gap-16">
+              {/* For Founders */}
+              <ScrollReveal>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-6">For Founders</h3>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: Rocket, text: 'One-on-one and cohort-based mentorship' },
+                      { icon: DollarSign, text: 'Capital access and investor connections' },
+                      { icon: Handshake, text: 'Community, events, and strategic partnerships' },
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 liquid-glass-btn">
+                          <item.icon className="w-4 h-4" style={{ color: 'hsl(168, 100%, 40%)' }} />
+                        </div>
+                        <span className="text-white/70 font-light">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/programs/venture-growth-services" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                    Explore Startup Programs
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </ScrollReveal>
+
+              {/* For Industry */}
+              <ScrollReveal delay={0.15}>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-6">For Industry</h3>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: Mountain, text: 'Underground testing and validation' },
+                      { icon: Cpu, text: 'Diversified technology isolation' },
+                      { icon: Globe, text: 'Innovation and smart city properties' },
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 liquid-glass-btn">
+                          <item.icon className="w-4 h-4" style={{ color: 'hsl(168, 100%, 40%)' }} />
+                        </div>
+                        <span className="text-white/70 font-light">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/mining/norcat-underground" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold group" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                    Explore the NORCAT Underground Centre
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 8%)' }}>
           {/* Subtle teal orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
-          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.05) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 60%)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
                     Programs & Funding
                   </span>
-                  <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                    Support that adapts as your <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>company grows.</span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    Support that adapts as your{' '}
+                    <span style={{ color: 'hsl(168, 100%, 40%)' }}>company grows.</span>
                   </h2>
-                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
+                  <p className="font-light max-w-xl text-white/50">We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
                 </div>
-                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
+                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 40%)' }}>
                   View all
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div className="flex flex-col gap-5">
-                {upcomingPrograms.map((program, i) => (
-                  <ScrollReveal key={program.title} delay={i * 0.1}>
-                    <Link to={program.link} className="group block">
-                      <div 
-                        className="rounded-[20px] p-7 hover:scale-[1.03] transition-transform duration-300"
-                        style={{
-                          background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                          backdropFilter: 'blur(20px)',
-                          WebkitBackdropFilter: 'blur(20px)',
-                          borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                          borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                          borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                          borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                          boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                        }}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <h3 className="text-xl font-bold transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
-                            <p className="text-sm font-light mt-2" style={{ color: 'hsl(220, 15%, 40%)' }}>{program.description}</p>
-                          </div>
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                        </div>
-                      </div>
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </div>
-              <ScrollReveal delay={0.2} className="flex items-center">
-                <div className="rounded-[20px] overflow-hidden shadow-lg w-[90%] ml-auto">
-                  <img src={loopxTeam} alt="LoopX team photo" className="w-full h-auto object-cover" />
-                </div>
-              </ScrollReveal>
+            <div className="grid md:grid-cols-3 gap-6">
+              {upcomingPrograms.map((program, i) => (
+                <ScrollReveal key={program.title} delay={i * 0.1}>
+                  <Link to={program.link} className="group block h-full">
+                    <div 
+                      className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-strong glass-shimmer"
+                    >
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                        {program.title === 'Venture Growth Services' ? 'Founders' : program.title === 'Mentorship Services' ? 'Founders' : 'Funding'}
+                      </span>
+                      <h3 className="text-xl font-bold text-white mb-3 transition-colors">{program.title}</h3>
+                      <p className="text-sm font-light text-white/50 mb-4">{program.description}</p>
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                        See Details
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>
@@ -503,87 +461,91 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── THE SUDBURY ADVANTAGE ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 20% 8%)' }}>
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.04) 0%, transparent 70%)' }} />
           </div>
           <div className="container mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Left column — text */}
-              <ScrollReveal>
+            <ScrollReveal>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{
-                    background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                    border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                    color: 'hsl(168, 40%, 30%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                  }}>
-                    <Globe className="w-3.5 h-3.5" />
-                    The Greater Sudbury Advantage
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                    Reports & Resources
                   </span>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                    A Thriving <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Innovation Ecosystem</span>
+                  <h2 className="text-3xl md:text-5xl font-extrabold uppercase text-white">
+                    Real Stories.{' '}
+                    <span style={{ color: 'hsl(168, 100%, 40%)' }}>Unique Insights.</span>
                   </h2>
-                  <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                    Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
-                  </p>
-                  <Link 
-                    to="/ecosystem" 
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
-                    style={{
-                      background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                      border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                      color: 'hsl(168, 40%, 25%)',
-                      boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                    }}
-                  >
-                    Explore the Ecosystem
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <p className="mt-2 font-light text-white/50">Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
                 </div>
-              </ScrollReveal>
-
-              {/* Right column — 2×2 cards */}
-              <div className="grid grid-cols-2 gap-5">
-                {[
-                  { icon: Pickaxe, title: 'Mining Hub', desc: 'Nine operating mines and 300+ mining supply companies' },
-                  { icon: TrendingUp, title: 'A City Built to Scale', desc: 'Major investments and growing population' },
-                  { icon: GraduationCap, title: 'Talent', desc: 'Five post-secondary institutions' },
-                  { icon: Handshake, title: 'The Sudbury Model', desc: 'Industry, academia, and government working as one' },
-                ].map((item, i) => (
-                  <ScrollReveal key={item.title} delay={i * 0.1}>
-                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={{
-                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                    }}>
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{
-                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                      }}>
-                        <item.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                      </div>
-                      <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h3>
-                      <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.desc}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
+                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                  View all reports
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {blogPosts.map((post, i) => (
+                <ScrollReveal key={post.title} delay={i * 0.1}>
+                  <Link to={post.link} className="group block h-full">
+                    <div className="rounded-[20px] overflow-hidden h-full hover:scale-[1.03] transition-transform duration-300 liquid-glass-strong glass-shimmer">
+                      {/* Image placeholder using existing photos */}
+                      <div className="h-48 overflow-hidden">
+                        <img 
+                          src={i === 0 ? ctaPhoto1 : i === 1 ? ctaPhoto3 : ctaPhoto2} 
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 liquid-glass-btn" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                          {post.category}
+                        </span>
+                        <h3 className="text-lg font-bold text-white mb-4 transition-colors">{post.title}</h3>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 40%)' }}>
+                          Read More
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+        <section className="relative py-14 overflow-hidden" style={{ background: 'hsl(220 20% 10%)' }}>
+          <div className="container mx-auto px-6 mb-8">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">Our Clients are Pretty Cool</h3>
+          </div>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4 rounded-xl liquid-glass"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-8 max-w-full object-contain brightness-0 invert opacity-70"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* ───── Community Photo Strip ───── */}
-        <section style={{ background: 'hsl(220 15% 92%)' }}>
+        <section style={{ background: 'hsl(220 20% 7%)' }}>
           <div className="grid grid-cols-5 gap-3 px-3 pb-8">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
@@ -599,73 +561,6 @@ export default function Index() {
             </div>
             <div className="rounded-2xl overflow-hidden aspect-[4/3]">
               <img src={ctaPhoto5} alt="Tech showcase" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </section>
-
-        {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-                <div>
-                  <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4">
-                    Reports & Resources
-                  </span>
-                  <h2 className="text-3xl md:text-4xl" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-                    Real Stories. <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontStyle: 'italic' }}>Unique Insights.</span>
-                  </h2>
-                  <p className="mt-2 font-light" style={{ color: 'hsl(220, 15%, 25%)' }}>Research, analysis, and quarterly updates from our team—transparent reporting on ecosystem impact and portfolio performance.</p>
-                </div>
-                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                  View all reports
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { icon: FileText, category: 'Annual Report', title: '2025 Annual Impact Report: Our Ecosystem at a Glance', link: '/insights/reports' },
-                { icon: TrendingUp, category: 'Research', title: 'Northern Ontario Tech Ecosystem Landscape Analysis', link: '/insights/reports' },
-                { icon: Pickaxe, category: 'Industry Report', title: 'Mining Technology Trends Shaping 2026 and Beyond', link: '/insights/reports' },
-              ].map((post, i) => (
-                <ScrollReveal key={post.title} delay={i * 0.1}>
-                  <Link to={post.link} className="group block h-full">
-                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={{
-                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                    }}>
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{
-                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                      }}>
-                        <post.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                      </div>
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3" style={{
-                        background: 'hsl(168 100% 35% / 0.1)',
-                        color: 'hsl(168, 100%, 28%)',
-                        border: '0.5px solid hsl(168 100% 35% / 0.15)',
-                      }}>{post.category}</span>
-                      <h3 className="text-lg font-bold mb-4 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{post.title}</h3>
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                        Read More
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </Link>
-                </ScrollReveal>
-              ))}
             </div>
           </div>
         </section>
@@ -706,7 +601,6 @@ export default function Index() {
               </Link>
             </ScrollReveal>
           </div>
-
         </section>
 
       </div>
