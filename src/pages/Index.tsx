@@ -303,8 +303,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Dark-to-light fade transition */}
-        <div className="h-48" style={{ background: 'linear-gradient(180deg, hsl(220, 20%, 7%) 0%, hsl(220, 15%, 14%) 40%, hsl(220, 10%, 85%) 75%, hsl(0, 0%, 96%) 100%)' }} />
         </div>{/* end dark hero wrapper */}
 
         {/* ───── GLOBAL TECH, NORTHERN GRIT ───── */}
