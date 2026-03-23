@@ -8,6 +8,7 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import signatureLines from '@/assets/signature-lines.png';
 import miningEquipment from '@/assets/mining-equipment.jpg';
 import aboutHeroBg from '@/assets/about-hero-bg.png';
+import founderFirstGif from '@/assets/values/founder-first.gif';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -39,6 +40,7 @@ const values = [
     title: 'Founder First',
     description: 'Everything we do centers on helping founders succeed. We support people, not just companies.',
     icon: Users,
+    bgGif: founderFirstGif,
   },
   {
     title: 'Impact Driven',
@@ -384,19 +386,50 @@ export default function About() {
                       background: 'linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(220 20% 8%) 100%)',
                     }}
                   >
+                    {/* Background GIF — frozen until hover */}
+                    {value.bgGif && (
+                      <>
+                        {/* Static first frame (shown by default) */}
+                        <img 
+                          src={value.bgGif} 
+                          alt="" 
+                          className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
+                          style={{ filter: 'grayscale(0.3)' }}
+                          loading="eager"
+                          ref={(el) => {
+                            // Pause gif by converting to canvas on load
+                            if (el && !el.dataset.frozen) {
+                              el.dataset.frozen = 'true';
+                              const canvas = document.createElement('canvas');
+                              const img = new Image();
+                              img.onload = () => {
+                                canvas.width = img.naturalWidth;
+                                canvas.height = img.naturalHeight;
+                                canvas.getContext('2d')?.drawImage(img, 0, 0);
+                                el.src = canvas.toDataURL();
+                              };
+                              img.src = value.bgGif;
+                            }
+                          }}
+                        />
+                        {/* Animated GIF (shown on hover) */}
+                        <img 
+                          src={value.bgGif} 
+                          alt="" 
+                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none"
+                        />
+                      </>
+                    )}
+
                     {/* Subtle teal orb */}
-                    <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full opacity-20 pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.4) 0%, transparent 70%)' }} />
+                    {!value.bgGif && (
+                      <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full opacity-20 pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.4) 0%, transparent 70%)' }} />
+                    )}
                     
                     {/* Dark gradient overlay from bottom */}
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.5) 40%, transparent 100%)' }} />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.7) 40%, transparent 100%)' }} />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-7">
-                      <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
-                        background: 'hsla(168, 100%, 35%, 0.2)',
-                        color: 'hsl(168, 100%, 60%)',
-                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
-                        backdropFilter: 'blur(8px)',
-                      }}>0{index + 1}</span>
                       <h3 className="text-white font-bold text-xl leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{value.title}</h3>
                       <p className="text-white/60 text-sm font-light leading-relaxed">{value.description}</p>
                     </div>
