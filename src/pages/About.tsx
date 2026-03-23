@@ -285,24 +285,30 @@ export default function About() {
             </div>
           </div>
 
-          {/* Stats Row — glass capsules */}
-          <div className="container mx-auto px-6 relative z-10 mt-20">
-            <ScrollReveal delay={300}>
-              <div className="flex flex-wrap gap-6 md:gap-8">
-                {stats.map((stat) => (
-                  <GlassCard key={stat.label} className="px-8 py-6 flex-1 min-w-[180px]">
-                    <div className="text-4xl md:text-5xl font-black tracking-tight" style={{ color: 'hsl(168, 100%, 35%)' }}>
-                      {stat.number}
-                    </div>
-                    <div className="text-[10px] font-semibold tracking-[0.2em] uppercase mt-2 text-white/40">
-                      {stat.label}
-                    </div>
-                  </GlassCard>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
         </section>
+
+        {/* ───── STATS Strip (outside hero, matching Index) ───── */}
+        <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="w-full px-6">
+            <div className="flex flex-wrap justify-around gap-6">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex items-center gap-4 px-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
+                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    <Users className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.number}</div>
+                    <p className="text-sm md:text-base font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
 
         {/* ===== MISSION SECTION — LIGHT ===== */}
