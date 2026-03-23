@@ -381,7 +381,7 @@ export default function About() {
               {values.map((value, index) => (
                 <ScrollReveal key={value.title} delay={index * 100}>
                   <div 
-                    className="relative rounded-2xl overflow-hidden h-[280px] hover:scale-[1.02] transition-transform duration-300 group"
+                    className="relative rounded-2xl overflow-hidden h-[340px] hover:scale-[1.02] transition-transform duration-300 group"
                     style={{
                       background: 'linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(220 20% 8%) 100%)',
                     }}
@@ -393,7 +393,7 @@ export default function About() {
                         <img 
                           src={value.bgGif} 
                           alt="" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
+                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
                           style={{ filter: 'grayscale(0.3)' }}
                           loading="eager"
                           ref={(el) => {
@@ -416,7 +416,7 @@ export default function About() {
                         <img 
                           src={value.bgGif} 
                           alt="" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none"
+                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
                         />
                       </>
                     )}
@@ -427,7 +427,7 @@ export default function About() {
                     )}
                     
                     {/* Dark gradient overlay from bottom */}
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.7) 40%, transparent 100%)' }} />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.85) 25%, transparent 55%)' }} />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-7">
                       <h3 className="text-white font-bold text-xl leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{value.title}</h3>
