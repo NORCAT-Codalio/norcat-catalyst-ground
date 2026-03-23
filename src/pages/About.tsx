@@ -261,9 +261,9 @@ export default function About() {
                   </span>
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
-                  <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.92] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, textShadow: '0 0 80px hsl(168 100% 35% / 0.15), 0 4px 16px hsl(220 25% 4% / 0.4)' }}>
+                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Greater Sudbury's Regional{' '}
-                    <span className="block" style={{ color: 'hsl(168, 100%, 35%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700, textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)' }}>Innovation Centre</span>
+                    <span style={{ color: 'hsl(168, 100%, 35%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Centre</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
@@ -285,24 +285,30 @@ export default function About() {
             </div>
           </div>
 
-          {/* Stats Row — glass capsules */}
-          <div className="container mx-auto px-6 relative z-10 mt-20">
-            <ScrollReveal delay={300}>
-              <div className="flex flex-wrap gap-6 md:gap-8">
-                {stats.map((stat) => (
-                  <GlassCard key={stat.label} className="px-8 py-6 flex-1 min-w-[180px]">
-                    <div className="text-4xl md:text-5xl font-black tracking-tight" style={{ color: 'hsl(168, 100%, 35%)' }}>
-                      {stat.number}
-                    </div>
-                    <div className="text-[10px] font-semibold tracking-[0.2em] uppercase mt-2 text-white/40">
-                      {stat.label}
-                    </div>
-                  </GlassCard>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
         </section>
+
+        {/* ───── STATS Strip (outside hero, matching Index) ───── */}
+        <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="w-full px-6">
+            <div className="flex flex-wrap justify-around gap-6">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex items-center gap-4 px-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
+                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    <Users className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.number}</div>
+                    <p className="text-sm md:text-base font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
 
         {/* ===== MISSION SECTION — LIGHT ===== */}
@@ -434,7 +440,19 @@ export default function About() {
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <LightCard className="p-3 pb-5 text-center overflow-hidden hover:border-primary/30">
+                    <div 
+                      className="p-3 pb-5 text-center overflow-hidden rounded-[20px] hover:scale-[1.03] transition-transform duration-300"
+                      style={{
+                        background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                        borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                        borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                        borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      }}
+                    >
                       <div className="relative mb-4 overflow-hidden rounded-xl">
                         <img 
                           src={member.image} 
@@ -445,7 +463,7 @@ export default function About() {
                       </div>
                       <h3 className="font-bold text-base text-foreground">{member.name}</h3>
                       <p className="text-sm font-medium text-muted-foreground">{member.role}</p>
-                    </LightCard>
+                    </div>
                   </motion.div>
                 </ScrollReveal>
               ))}
@@ -503,35 +521,26 @@ export default function About() {
           </div>
         </section>
 
-        {/* ===== CTA SECTION — TEAL ===== */}
-        <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
-          <img 
-            src={signatureLines} 
-            alt="" 
-            aria-hidden="true"
-            className="absolute bottom-0 left-0 h-3/4 w-auto object-contain object-left opacity-50 pointer-events-none select-none mix-blend-overlay"
-            style={{ transform: 'scaleX(-1) scaleY(-1)' }}
-          />
+        {/* ===== CTA SECTION — LIGHT (matching Index) ===== */}
+        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-white mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-6" style={{ color: 'hsl(220, 15%, 20%)' }}>
                 Ready to join our{' '}
-                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>community?</span>
+                <span style={{ color: 'hsl(168, 100%, 28%)' }}>community?</span>
               </h2>
-              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
+              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Whether you're just starting out or ready to scale, we're here to help 
                 you build something extraordinary.
               </p>
               <Link 
                 to="/apply" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                 style={{
-                  background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  color: 'white',
-                  border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
-                  boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                  color: 'hsl(168, 40%, 25%)',
+                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                 }}
               >
                 Apply for Venture Growth Services
