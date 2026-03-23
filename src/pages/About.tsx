@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, X, Users, Lightbulb, Target, Globe, TrendingUp } from 'lucide-react';
+import { ArrowRight, Linkedin, X, Users, Lightbulb, Target, Globe, TrendingUp, DollarSign } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { useState, useRef, useEffect } from 'react';
@@ -89,9 +89,9 @@ const team = [
 ];
 
 const stats = [
-  { number: '150+', label: 'STARTUPS SUPPORTED' },
-  { number: '15+', label: 'YEARS OF IMPACT' },
-  { number: '$50M+', label: 'CAPITAL RAISED' },
+  { number: '150+', label: 'STARTUPS SUPPORTED', icon: Users },
+  { number: '15+', label: 'YEARS OF IMPACT', icon: TrendingUp },
+  { number: '$50M+', label: 'CAPITAL RAISED', icon: DollarSign },
 ];
 
 // Dark glass card (for hero)
@@ -262,7 +262,7 @@ export default function About() {
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
                   <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Greater Sudbury's Regional{' '}
+                    Sudbury's Regional{' '}
                     <span style={{ color: 'hsl(168, 100%, 35%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Centre</span>
                   </h1>
                 </ScrollReveal>
@@ -298,7 +298,7 @@ export default function About() {
                     border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
                     boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                   }}>
-                    <Users className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                    <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                   </div>
                   <div>
                     <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.number}</div>
@@ -556,13 +556,13 @@ export default function About() {
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <div className="grid lg:grid-cols-2 gap-8">
-                <LightCard className="p-8">
+                <div className="p-8 rounded-2xl border border-border/30 bg-background/50">
                   <img 
                     src={innovateonLogo} 
                     alt="InnovateON - Regional Innovation Centre Network" 
                     className="h-8 object-contain mb-5"
                   />
-                  <p className="text-base leading-relaxed mb-6 text-muted-foreground">
+                  <p className="text-base leading-relaxed mb-6 text-muted-foreground font-light">
                     We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs 
                     with resources, mentorship, and funding to start and scale businesses.
                   </p>
@@ -576,14 +576,14 @@ export default function About() {
                       <p className="text-[10px] font-semibold tracking-[0.15em] uppercase mt-1 text-muted-foreground">Startups/Year</p>
                     </div>
                   </div>
-                </LightCard>
-                <LightCard className="p-8">
+                </div>
+                <div className="p-8 rounded-2xl border border-border/30 bg-background/50">
                   <img 
                     src={ontarioLogo} 
                     alt="Government of Ontario" 
                     className="h-10 object-contain mb-5"
                   />
-                  <p className="text-base leading-relaxed mb-6 text-muted-foreground">
+                  <p className="text-base leading-relaxed mb-6 text-muted-foreground font-light">
                     Funded by the <strong className="text-foreground">Ministry of Economic Development, Job Creation and Trade</strong>, 
                     enabling free and subsidized services for Northern Ontario entrepreneurs.
                   </p>
@@ -595,7 +595,7 @@ export default function About() {
                       Ontario Funded
                     </span>
                   </div>
-                </LightCard>
+                </div>
               </div>
             </ScrollReveal>
           </div>
