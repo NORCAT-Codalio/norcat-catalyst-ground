@@ -9,6 +9,7 @@ import signatureLines from '@/assets/signature-lines.png';
 import miningEquipment from '@/assets/mining-equipment.jpg';
 import aboutHeroBg from '@/assets/about-hero-bg.png';
 import founderFirstGif from '@/assets/values/founder-first.gif';
+import communityFocusedGif from '@/assets/values/community-focused.gif';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -51,6 +52,7 @@ const values = [
     title: 'Community Focused',
     description: 'We believe in the power of community and connections to accelerate growth.',
     icon: Globe,
+    bgGif: communityFocusedGif,
   },
   {
     title: 'Execution Focused',
