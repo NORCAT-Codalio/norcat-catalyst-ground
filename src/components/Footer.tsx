@@ -71,8 +71,16 @@ export function Footer() {
                 placeholder="Your email address"
                 className="h-11 w-64 rounded-md border border-white/30 bg-transparent px-4 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white/60"
               />
-              <button className="h-11 w-11 rounded-md bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors">
-                <Send className="h-5 w-5 text-white" />
+              <button 
+                className="h-11 px-5 rounded-full inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                  color: 'white',
+                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                }}
+              >
+                <Send className="h-4 w-4" />
               </button>
             </div>
             <div className="flex items-center gap-4">
