@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, X, Users, Lightbulb, Target, Globe, TrendingUp } from 'lucide-react';
+import { ArrowRight, Linkedin, X, Users, Lightbulb, Target, Globe, TrendingUp, DollarSign } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { useState, useRef, useEffect } from 'react';
