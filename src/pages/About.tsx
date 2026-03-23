@@ -375,35 +375,30 @@ export default function About() {
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid md:grid-cols-2 gap-5">
               {values.map((value, index) => (
                 <ScrollReveal key={value.title} delay={index * 100}>
                   <div 
-                    className="rounded-[20px] p-8 md:p-10 h-full group hover:scale-[1.03] transition-transform duration-300"
+                    className="relative rounded-2xl overflow-hidden h-[280px] hover:scale-[1.02] transition-transform duration-300 group"
                     style={{
-                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      background: 'linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(220 20% 8%) 100%)',
                     }}
                   >
-                    <div className="flex items-start gap-5">
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style={{
-                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                      }}>
-                        <value.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold tracking-widest mb-2" style={{ color: 'hsla(168, 100%, 35%, 0.4)' }}>0{index + 1}</div>
-                        <h3 className="text-xl font-bold mb-3" style={{ color: 'hsl(220, 15%, 20%)' }}>{value.title}</h3>
-                        <p className="text-base leading-relaxed font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{value.description}</p>
-                      </div>
+                    {/* Subtle teal orb */}
+                    <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full opacity-20 pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.4) 0%, transparent 70%)' }} />
+                    
+                    {/* Dark gradient overlay from bottom */}
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.5) 40%, transparent 100%)' }} />
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-7">
+                      <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
+                        background: 'hsla(168, 100%, 35%, 0.2)',
+                        color: 'hsl(168, 100%, 60%)',
+                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                        backdropFilter: 'blur(8px)',
+                      }}>0{index + 1}</span>
+                      <h3 className="text-white font-bold text-xl leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{value.title}</h3>
+                      <p className="text-white/60 text-sm font-light leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 </ScrollReveal>
