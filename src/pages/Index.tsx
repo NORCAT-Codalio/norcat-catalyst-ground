@@ -462,6 +462,20 @@ export default function Index() {
               ))}
             </div>
           </div>
+
+          {/* Scroll hint */}
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="flex justify-end mt-8">
+              <motion.div
+                className="flex items-center gap-2 text-white/50 text-sm"
+                animate={{ x: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <span className="font-light">Scroll to explore</span>
+                <ArrowRight className="w-4 h-4" />
+              </motion.div>
+            </div>
+          </div>
         </section>
 
         {/* ───── THE SUDBURY ADVANTAGE ───── */}
