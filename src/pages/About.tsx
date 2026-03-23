@@ -40,6 +40,7 @@ const values = [
     title: 'Founder First',
     description: 'Everything we do centers on helping founders succeed. We support people, not just companies.',
     icon: Users,
+    bgGif: founderFirstGif,
   },
   {
     title: 'Impact Driven',
