@@ -414,7 +414,7 @@ export default function Index() {
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28" style={{ background: 'linear-gradient(135deg, hsl(172 100% 30%) 0%, hsl(168 100% 35%) 50%, hsl(164 70% 55%) 100%)' }}>
+        <section className="relative py-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #2596be 100%)' }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
