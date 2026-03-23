@@ -1,13 +1,39 @@
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Factory, Check, Cpu, Shield, Bot, Network, Blocks, Atom, Users, Rocket, Building2, ExternalLink, GraduationCap, Briefcase, FlaskConical, Target } from 'lucide-react';
+import { ArrowRight, Factory, Check, Cpu, Shield, Bot, Network, Blocks, Atom, ExternalLink, GraduationCap, Briefcase, FlaskConical, Target, DollarSign, Users, Building2, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo.png';
+import signatureLines from '@/assets/signature-lines.png';
+import linesTeal from '@/assets/lines-teal.png';
+
+// Shared glass card style
+const glassCardStyle = {
+  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+};
+
+const neumorphicBadgeStyle = {
+  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+  color: 'hsl(168, 40%, 30%)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
+
+const iconContainerStyle = {
+  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
+  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+};
 
 const CriticalIndustrialTech = () => {
   const technologies = [
@@ -92,390 +118,415 @@ const CriticalIndustrialTech = () => {
     },
   ];
 
+  const stats = [
+    { value: '$55.8M', label: 'Total Investment', icon: DollarSign },
+    { value: '$21.7M', label: 'CIT Investment', icon: TrendingUp },
+    { value: '185', label: 'Projects Supported', icon: Building2 },
+    { value: '194+', label: 'Ontario Companies', icon: Users },
+  ];
+
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-50" />
-        <div className="orb orb-teal w-96 h-96 -top-48 -right-48" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <ScrollReveal>
-            <div className="inline-flex items-center gap-2 badge-dark mb-8">
-              <Factory className="w-4 h-4" />
-              Ontario Centre of Innovation Program
-            </div>
-            <h1 className="headline-hero text-white mb-6 max-w-4xl">
-              Critical Industrial<br />
-              <span className="text-gradient">Technologies Initiative</span>
-            </h1>
-            <p className="body-xl text-white/70 max-w-2xl mb-10">
-              An Ontario Centre of Innovation program integrating critical technologies 
-              into the mining sector. NORCAT delivers this program as a Technology Development 
-              Site through the NORCAT Underground Centre.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="btn-primary-lg">
-                <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer">
-                  Learn More at OCI
-                  <ExternalLink className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button asChild className="btn-outline-dark">
-                <Link to="/apply">
-                  Apply Through NORCAT
-                </Link>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
 
-      {/* About the Program */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal direction="left">
-              <div>
-                <h2 className="headline-lg mb-6">About the Initiative</h2>
-                <p className="body-lg mb-6">
-                  The Critical Industrial Technologies initiative is an Ontario Centre of Innovation 
-                  program that converges Ontario industry with innovative SMEs to amplify the 
-                  province's critical technology capabilities across four key sectors: Mining, 
-                  Advanced Manufacturing, Agri-Food, and Construction.
-                </p>
-                <p className="body-lg mb-6">
-                  As a <strong>Technology Development Site (TDS)</strong>, the NORCAT Underground Centre 
-                  provides SMEs with a real-world mining environment to validate and commercialize 
-                  their critical technology solutions.
-                </p>
-                <p className="body-md text-muted-foreground">
-                  The initiative supports Ontario SMEs to develop new IP faster and at a greater 
-                  scale, while investing in talent development to advance knowledge and training 
-                  in critical technologies.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div className="space-y-8">
-                {/* Program Logos */}
-                <div className="bg-white rounded-2xl p-8 border border-gray-100 flex items-center justify-center gap-8">
-                  <img 
-                    src={citLogo} 
-                    alt="Critical Industrial Technologies" 
-                    className="h-16 object-contain"
-                  />
-                  <img 
-                    src={ociLogo} 
-                    alt="Ontario Centre of Innovation" 
-                    className="h-16 object-contain"
-                  />
-                  <img 
-                    src={ontarioLogo} 
-                    alt="Government of Ontario" 
-                    className="h-12 object-contain"
-                  />
-                </div>
-
-                {/* TDS Info */}
-                <div className="bg-secondary/30 rounded-3xl p-8">
-                <h3 className="headline-sm mb-6">NORCAT as a Technology Development Site</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Real-world underground mining environment for testing</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>No-cost access for qualifying SMEs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Expert mentorship from mining industry professionals</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>Accelerated path to commercialization</span>
-                  </li>
-                </ul>
-                </div>
-              </div>
-            </ScrollReveal>
+        {/* ───── HERO ───── */}
+        <section className="relative pt-40 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
+            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
           </div>
-        </div>
-      </section>
 
-      {/* CIT Impact Stats */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-30" />
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-md text-white mb-2">CIT Initiative Impact</h2>
-              <p className="text-white/60">Driving critical technology adoption across Ontario</p>
-            </div>
-          </ScrollReveal>
-          
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
-            <ScrollReveal delay={0.1}>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">$55.8M</div>
-                <div className="text-sm text-white/60">Total Investment</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.15}>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">$21.7M</div>
-                <div className="text-sm text-white/60">CIT Investment</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">$34.1M</div>
-                <div className="text-sm text-white/60">Co-Investment</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.25}>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">185</div>
-                <div className="text-sm text-white/60">Projects Supported</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.3}>
-              <div className="text-center col-span-2 md:col-span-1">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">194+</div>
-                <div className="text-sm text-white/60">Ontario Companies</div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Critical Technologies */}
-      <section className="section-padding bg-secondary/50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left side - Title and stacked technology areas */}
-            <div>
-              <ScrollReveal direction="left">
-                <h2 className="headline-lg mb-4">Critical Technology Areas</h2>
-                <p className="body-lg text-muted-foreground mb-8">
-                  The initiative focuses on technologies essential to industrial competitiveness.
-                </p>
-              </ScrollReveal>
-
-              <div className="grid grid-cols-2 gap-3">
-                {technologies.map((tech, i) => (
-                  <ScrollReveal key={i} delay={i * 0.05}>
-                    <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex items-center gap-3 h-full">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                        <tech.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="font-medium text-sm">{tech.name}</h3>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-
-            {/* Right side - YouTube Video */}
-            <ScrollReveal direction="right">
-              <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
-                <iframe
-                  src="https://www.youtube.com/embed/J_Jx8ku0ayI"
-                  title="Critical Industrial Technologies"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Program Streams */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-lg mb-4">Program Streams</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Multiple pathways to support SMEs at different stages of development.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {programs.map((program, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div 
-                  className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-primary/30"
-                  onMouseEnter={() => setExpandedProgram(i)}
-                  onMouseLeave={() => setExpandedProgram(null)}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <program.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-3">
-                        Ideal for: {program.ideal}
-                      </div>
-                      <h3 className="font-semibold text-lg mb-2">{program.title}</h3>
-                      <p className="body-md text-sm text-muted-foreground">{program.description}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Expanded content */}
-                  <div 
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      expandedProgram === i ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="pt-6 border-t border-gray-100 space-y-4">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold text-foreground">Funding:</span>
-                        <span className="text-sm text-primary font-bold">{program.expandedDetails.funding}</span>
-                      </div>
-                      
-                      <div>
-                        <span className="text-sm font-semibold text-foreground block mb-2">Key Benefits:</span>
-                        <ul className="space-y-2">
-                          {program.expandedDetails.benefits.map((benefit, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                              <span>{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <span className="text-sm font-semibold text-foreground">Eligibility: </span>
-                        <span className="text-sm text-muted-foreground">{program.expandedDetails.eligibility}</span>
-                      </div>
-                      
-                      <a 
-                        href={program.expandedDetails.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline mt-2"
-                      >
-                        Learn more at OCI
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Minimum Eligibility */}
-      <section className="section-padding bg-secondary/50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="text-center mb-10">
-                <h2 className="headline-lg mb-4">Minimum Eligibility Criteria</h2>
-                <p className="body-lg text-muted-foreground">
-                  The Critical Industrial Technology programs are a good fit for companies that meet these minimum criteria:
+              <div className="max-w-3xl">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                  <Factory className="w-3.5 h-3.5" />
+                  Ontario Centre of Innovation Program
+                </span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                  Critical Industrial{' '}
+                  <span className="block" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                    Technologies
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                  An Ontario Centre of Innovation program integrating critical technologies 
+                  into the mining sector. NORCAT delivers this program as a Technology Development 
+                  Site through the NORCAT Underground Centre.
                 </p>
+                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                  Access real-world mining environments, funding support, and expert mentorship to validate and commercialize your critical technology solutions.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                    background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                    border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                    color: 'hsl(168, 40%, 25%)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    Learn More at OCI
+                    <ExternalLink className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </a>
+                  <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
+                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.4) 0%, hsla(220, 15%, 85%, 0.2) 100%)',
+                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
+                    color: 'hsl(220, 15%, 30%)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}>
+                    Apply Through NORCAT
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             </ScrollReveal>
+          </div>
+        </section>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <ScrollReveal delay={0.1}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold">1</span>
+        {/* ───── STATS STRIP ───── */}
+        <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="w-full px-6">
+            <div className="flex flex-wrap justify-around gap-6">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex items-center gap-4 px-4">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={iconContainerStyle}>
+                    <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Small-and-Medium Enterprise</h3>
-                    <p className="text-sm text-muted-foreground">Less than 500 employees</p>
+                    <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                    <p className="text-sm md:text-base font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
                   </div>
                 </div>
-              </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </div>
 
-              <ScrollReveal delay={0.15}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold">2</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">For-Profit Organization</h3>
-                    <p className="text-sm text-muted-foreground">Registered as a for-profit entity</p>
-                  </div>
+        {/* ───── ABOUT + LOGOS ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <ScrollReveal>
+                <div>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                    <Building2 className="w-3.5 h-3.5" />
+                    About the Initiative
+                  </span>
+                  <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                    Converging industry with{' '}
+                    <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                      innovation.
+                    </span>
+                  </h2>
+                  <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                    The Critical Industrial Technologies initiative is an Ontario Centre of Innovation 
+                    program that converges Ontario industry with innovative SMEs to amplify the 
+                    province's critical technology capabilities across four key sectors: Mining, 
+                    Advanced Manufacturing, Agri-Food, and Construction.
+                  </p>
+                  <p className="font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                    As a <strong style={{ color: 'hsl(220, 15%, 20%)', fontWeight: 600 }}>Technology Development Site (TDS)</strong>, the NORCAT Underground Centre 
+                    provides SMEs with a real-world mining environment to validate and commercialize 
+                    their critical technology solutions.
+                  </p>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold">3</span>
+                <div className="space-y-6">
+                  {/* Partner logos */}
+                  <div className="rounded-[20px] p-8 flex items-center justify-center gap-8" style={glassCardStyle}>
+                    <img src={citLogo} alt="Critical Industrial Technologies" className="h-16 object-contain" />
+                    <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-16 object-contain" />
+                    <img src={ontarioLogo} alt="Government of Ontario" className="h-12 object-contain" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Ontario Operations</h3>
-                    <p className="text-sm text-muted-foreground">Registered operations in Ontario</p>
-                  </div>
-                </div>
-              </ScrollReveal>
 
-              <ScrollReveal delay={0.25}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 h-full flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold">4</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Critical Technology Focus</h3>
-                    <p className="text-sm text-muted-foreground">Adoption of Critical Technologies as part of your roadmap</p>
+                  {/* TDS Info */}
+                  <div className="rounded-[20px] p-8" style={glassCardStyle}>
+                    <h3 className="text-lg font-bold mb-5" style={{ color: 'hsl(220, 15%, 20%)' }}>NORCAT as a Technology Development Site</h3>
+                    <ul className="space-y-3">
+                      {[
+                        'Real-world underground mining environment for testing',
+                        'No-cost access for qualifying SMEs',
+                        'Expert mentorship from mining industry professionals',
+                        'Accelerated path to commercialization',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                          <span className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </ScrollReveal>
             </div>
+          </div>
+        </section>
 
-            <ScrollReveal delay={0.3}>
-              <p className="text-sm text-muted-foreground text-center mt-8">
-                Please note that each program has their own set of eligibility criteria. For details on each program, please view the full set of eligibility criteria in the program guidelines.
+        {/* ───── CRITICAL TECHNOLOGY AREAS ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <ScrollReveal>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                    <Cpu className="w-3.5 h-3.5" />
+                    Focus Areas
+                  </span>
+                  <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                    Critical technology{' '}
+                    <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                      areas.
+                    </span>
+                  </h2>
+                  <p className="font-light max-w-xl mb-8" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                    The initiative focuses on technologies essential to industrial competitiveness.
+                  </p>
+                </ScrollReveal>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {technologies.map((tech, i) => (
+                    <ScrollReveal key={i} delay={i * 0.05}>
+                      <div className="rounded-[16px] p-5 flex items-center gap-4 hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={iconContainerStyle}>
+                          <tech.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 28%)' }} />
+                        </div>
+                        <span className="font-semibold text-sm" style={{ color: 'hsl(220, 15%, 20%)' }}>{tech.name}</span>
+                      </div>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </div>
+
+              <ScrollReveal delay={0.2}>
+                <div className="aspect-video rounded-[20px] overflow-hidden" style={{ boxShadow: '0 20px 60px hsla(220, 15%, 20%, 0.15)' }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/J_Jx8ku0ayI"
+                    title="Critical Industrial Technologies"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── PROGRAM STREAMS ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <ScrollReveal>
+              <div className="text-center mb-14">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={neumorphicBadgeStyle}>
+                  <Target className="w-3.5 h-3.5" />
+                  Program Streams
+                </span>
+                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                  Multiple pathways to{' '}
+                  <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                    support.
+                  </span>
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {programs.map((program, i) => (
+                <ScrollReveal key={i} delay={i * 0.1}>
+                  <div 
+                    className="rounded-[20px] p-7 cursor-pointer hover:scale-[1.02] transition-all duration-300"
+                    style={glassCardStyle}
+                    onMouseEnter={() => setExpandedProgram(i)}
+                    onMouseLeave={() => setExpandedProgram(null)}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={iconContainerStyle}>
+                        <program.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 28%)' }} />
+                      </div>
+                      <div className="flex-1">
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3" style={{
+                          background: 'hsl(168 100% 35% / 0.1)',
+                          color: 'hsl(168, 100%, 28%)',
+                          border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                        }}>
+                          Ideal for: {program.ideal}
+                        </span>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
+                        <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{program.description}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Expanded content */}
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${expandedProgram === i ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                      <div className="pt-6 space-y-4" style={{ borderTop: '1px solid hsla(168, 25%, 80%, 0.3)' }}>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>Funding:</span>
+                          <span className="text-sm font-bold" style={{ color: 'hsl(168, 100%, 28%)' }}>{program.expandedDetails.funding}</span>
+                        </div>
+                        
+                        <div>
+                          <span className="text-sm font-semibold block mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>Key Benefits:</span>
+                          <ul className="space-y-2">
+                            {program.expandedDetails.benefits.map((benefit, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                                <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                                <span>{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <span className="text-sm font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>Eligibility: </span>
+                          <span className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{program.expandedDetails.eligibility}</span>
+                        </div>
+                        
+                        <a 
+                          href={program.expandedDetails.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
+                          style={{ color: 'hsl(168, 100%, 28%)' }}
+                        >
+                          Learn more at OCI
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── MINIMUM ELIGIBILITY ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <ScrollReveal>
+                <div className="text-center mb-14">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={neumorphicBadgeStyle}>
+                    <Check className="w-3.5 h-3.5" />
+                    Requirements
+                  </span>
+                  <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                    Minimum eligibility{' '}
+                    <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                      criteria.
+                    </span>
+                  </h2>
+                  <p className="font-light max-w-2xl mx-auto" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                    The Critical Industrial Technology programs are a good fit for companies that meet these minimum criteria:
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                {[
+                  { title: 'Small-and-Medium Enterprise', desc: 'Less than 500 employees' },
+                  { title: 'For-Profit Organization', desc: 'Registered as a for-profit entity' },
+                  { title: 'Ontario Operations', desc: 'Registered operations in Ontario' },
+                  { title: 'Critical Technology Focus', desc: 'Adoption of Critical Technologies as part of your roadmap' },
+                ].map((item, i) => (
+                  <ScrollReveal key={i} delay={i * 0.08}>
+                    <div className="rounded-[20px] p-6 h-full flex items-start gap-4 hover:scale-[1.02] transition-transform duration-300" style={glassCardStyle}>
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={iconContainerStyle}>
+                        <span className="font-bold text-sm" style={{ color: 'hsl(168, 100%, 28%)' }}>{i + 1}</span>
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h3>
+                        <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+
+              <ScrollReveal delay={0.3}>
+                <p className="text-sm font-light text-center mt-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                  Please note that each program has their own set of eligibility criteria. For details on each program, please view the full set of eligibility criteria in the program guidelines.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── FINAL CTA ───── */}
+        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
+          <img 
+            src={signatureLines} 
+            alt="" 
+            aria-hidden="true"
+            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
+            style={{ transform: 'scaleX(-1)' }}
+          />
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-white mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                Ready to develop your{' '}
+                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>critical technology?</span>
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60 font-light">
+                Access the NORCAT Underground Centre as your Technology Development Site 
+                and accelerate your path to commercialization in the mining sector.
               </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a 
+                  href="https://www.oc-innovation.ca/programs/cit/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    color: 'white',
+                    border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
+                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
+                  }}
+                >
+                  Visit OCI Program Page
+                  <ExternalLink className="h-5 w-5" />
+                </a>
+                <Link 
+                  to="/apply" 
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.08) 0%, hsla(0, 0%, 100%, 0.04) 100%)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                    color: 'hsla(0, 0%, 100%, 0.8)',
+                    border: '0.5px solid hsla(0, 0%, 100%, 0.2)',
+                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.15), 0 4px 16px hsla(168, 100%, 20%, 0.2)',
+                  }}
+                >
+                  Apply Through NORCAT
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section-padding bg-gray-900">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="headline-lg text-white mb-4">Ready to Develop Your Critical Technology?</h2>
-            <p className="body-lg text-white/70 mb-10 max-w-2xl mx-auto">
-              Access the NORCAT Underground Centre as your Technology Development Site 
-              and accelerate your path to commercialization in the mining sector.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="btn-primary-lg">
-                <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer">
-                  Visit OCI Program Page
-                  <ExternalLink className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button asChild className="btn-outline-dark">
-                <Link to="/apply">
-                  Apply Through NORCAT
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      </div>
     </Layout>
   );
 };
