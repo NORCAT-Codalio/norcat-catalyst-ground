@@ -159,7 +159,7 @@ const VentureGrowthServices = () => {
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
                   Venture Growth{' '}
-                  <span className="block text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                  <span className="block" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                     Services
                   </span>
                 </h1>
@@ -194,26 +194,6 @@ const VentureGrowthServices = () => {
           </div>
         </section>
 
-        {/* ───── STATS BAR ───── */}
-        <section className="relative py-12 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { value: '1:1', label: 'Dedicated Advisor' },
-                { value: '18+', label: 'Mentors' },
-                { value: '50+', label: 'Industry Partners' },
-                { value: '$50M+', label: 'Capital Raised' },
-              ].map((stat, i) => (
-                <ScrollReveal key={stat.label} delay={i * 0.1}>
-                  <div className="rounded-[20px] p-8 text-center hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
-                    <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ───── SERVICES EXPLORER ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
