@@ -41,7 +41,7 @@ export function Footer() {
         src={signatureLines} 
         alt="" 
         aria-hidden="true" 
-        className="absolute bottom-0 left-0 w-[400px] opacity-80 pointer-events-none rotate-180"
+        className="absolute bottom-0 left-0 w-[800px] opacity-80 pointer-events-none rotate-180"
       />
 
       {/* Top Section - CTA + Newsletter */}
