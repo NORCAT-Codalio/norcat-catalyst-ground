@@ -414,9 +414,9 @@ export default function Index() {
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28" style={{ background: '#00b398' }}>
+        <section className="relative py-28" style={{ background: 'hsl(220, 20%, 12%)' }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -424,9 +424,9 @@ export default function Index() {
                 <div>
                    <h2 className="text-3xl md:text-4xl uppercase tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                      <span className="text-white">Real Stories. </span>
-                     <span className="text-white">Unique Insights.</span>
+                     <span className="text-white font-extrabold">Unique Insights.</span>
                    </h2>
-                  <p className="mt-3 font-light text-white/50 max-w-xl">Nothing we tell, your one and about innovation what it takes to live foreveryo to the programme of stor gnelfo.</p>
+                  <p className="mt-3 font-light text-white/70 max-w-xl">No xing preve tlalt, your sve can, and olead innovatioie what it takes to ltes for oe you to the programmeve of olor grentis.</p>
                 </div>
                 <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
                   View all reports
@@ -450,9 +450,9 @@ export default function Index() {
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
                   <Link to={post.link} className="group block">
-                    <div className="relative rounded-2xl overflow-hidden w-[340px] aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
+                    <div className="relative rounded-2xl overflow-hidden w-[380px] aspect-[3/4] hover:scale-[1.02] transition-transform duration-300">
                       <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
                       <div className="absolute top-4 left-4">
                         <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
                           background: 'hsla(168, 100%, 35%, 0.2)',
@@ -461,7 +461,7 @@ export default function Index() {
                           backdropFilter: 'blur(8px)',
                         }}>{post.category}</span>
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
                         <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
                         <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
                           Read More <ArrowRight className="w-3.5 h-3.5" />
