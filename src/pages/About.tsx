@@ -381,7 +381,7 @@ export default function About() {
               {values.map((value, index) => (
                 <ScrollReveal key={value.title} delay={index * 100}>
                   <div 
-                    className="relative rounded-2xl overflow-hidden h-[280px] hover:scale-[1.02] transition-transform duration-300 group"
+                    className="relative rounded-2xl overflow-hidden h-[340px] hover:scale-[1.02] transition-transform duration-300 group"
                     style={{
                       background: 'linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(220 20% 8%) 100%)',
                     }}
