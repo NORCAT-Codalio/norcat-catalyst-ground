@@ -52,6 +52,7 @@ const values = [
     title: 'Community Focused',
     description: 'We believe in the power of community and connections to accelerate growth.',
     icon: Globe,
+    bgGif: communityFocusedGif,
   },
   {
     title: 'Execution Focused',
