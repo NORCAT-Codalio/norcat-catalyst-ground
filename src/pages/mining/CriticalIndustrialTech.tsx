@@ -9,6 +9,7 @@ import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo.png';
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
+import citHeroBg from '@/assets/cit-hero-bg.jpg';
 
 // Shared glass card style
 const glassCardStyle = {
@@ -130,49 +131,50 @@ const CriticalIndustrialTech = () => {
       <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
 
         {/* ───── HERO ───── */}
-        <section className="relative pt-40 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
+        <section className="relative pt-40 pb-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={citHeroBg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsla(220, 15%, 10%, 0.75) 0%, hsla(220, 15%, 10%, 0.5) 50%, transparent 100%)' }} />
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{ background: 'hsla(0, 0%, 100%, 0.15)', backdropFilter: 'blur(10px)', border: '1px solid hsla(0, 0%, 100%, 0.25)', color: 'hsl(0, 0%, 100%)' }}>
                   <Factory className="w-3.5 h-3.5" />
                   Ontario Centre of Innovation Program
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(0, 0%, 100%)' }}>
                   Critical Industrial{' '}
-                  <span className="block" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                  <span className="block" style={{ color: 'hsl(168, 100%, 55%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                     Technologies
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsla(0, 0%, 100%, 0.9)' }}>
                   An Ontario Centre of Innovation program integrating critical technologies 
                   into the mining sector. NORCAT delivers this program as a Technology Development 
                   Site through the NORCAT Underground Centre.
                 </p>
-                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsla(0, 0%, 100%, 0.7)' }}>
                   Access real-world mining environments, funding support, and expert mentorship to validate and commercialize your critical technology solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                    border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                    color: 'hsl(168, 40%, 25%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'hsla(168, 100%, 55%, 0.2)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1.5px solid hsla(168, 100%, 55%, 0.4)',
+                    color: 'hsl(168, 100%, 75%)',
+                    boxShadow: '0 4px 16px hsla(168, 100%, 40%, 0.15)',
                   }}>
                     Learn More at OCI
                     <ExternalLink className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                   <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.4) 0%, hsla(220, 15%, 85%, 0.2) 100%)',
-                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                    color: 'hsl(220, 15%, 30%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'hsla(0, 0%, 100%, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1.5px solid hsla(0, 0%, 100%, 0.25)',
+                    color: 'hsl(0, 0%, 100%)',
+                    boxShadow: '0 4px 12px hsla(0, 0%, 0%, 0.15)',
                   }}>
                     Apply Through NORCAT
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
