@@ -413,11 +413,11 @@ export default function Index() {
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                   <h2 className="text-3xl md:text-4xl uppercase tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                   <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                      <span className="text-white">Real Stories. </span>
-                     <span className="text-white font-extrabold">Unique Insights.</span>
+                     <span className="text-white" style={{ fontWeight: 700 }}>Unique Insights.</span>
                    </h2>
-                  <p className="mt-3 font-light text-white/70 max-w-xl">No xing preve tlalt, your sve can, and olead innovatioie what it takes to ltes for oe you to the programmeve of olor grentis.</p>
+                  <p className="font-light text-white/70 max-w-xl">No xing preve tlalt, your sve can, and olead innovatioie what it takes to ltes for oe you to the programmeve of olor grentis.</p>
                 </div>
                 <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
                   View all reports
