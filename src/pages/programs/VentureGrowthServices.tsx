@@ -18,7 +18,9 @@ import {
   MapPin,
   Quote,
   BarChart3,
-  Globe
+  Globe,
+  DollarSign,
+  Building2
 } from 'lucide-react';
 
 const allServices = [
