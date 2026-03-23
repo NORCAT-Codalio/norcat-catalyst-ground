@@ -581,12 +581,12 @@ export default function About() {
         </section>
 
         {/* ===== RIC NETWORK SECTION — OFF-WHITE ===== */}
-        <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="py-16 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 left-0 right-0 h-px bg-border/50" />
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <div className="grid lg:grid-cols-2 gap-8">
-                <div className="p-8 rounded-2xl border border-border/30 bg-background/50">
+                <div className="p-8">
                   <img 
                     src={innovateonLogo} 
                     alt="InnovateON - Regional Innovation Centre Network" 
@@ -607,7 +607,7 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-                <div className="p-8 rounded-2xl border border-border/30 bg-background/50">
+                <div className="p-8">
                   <img 
                     src={ontarioLogo} 
                     alt="Government of Ontario" 
