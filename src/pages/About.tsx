@@ -333,7 +333,7 @@ export default function About() {
                     Helping founders build{' '}
                     <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>world-changing</span> companies
                   </h2>
-                  <p className="text-lg leading-relaxed text-muted-foreground mb-5">
+                  <p className="text-lg leading-relaxed text-muted-foreground font-light mb-5">
                     Through mentorship, capital access, and our unique underground testing facility, 
                     we provide everything ambitious entrepreneurs need to start, grow, and scale.
                   </p>
