@@ -393,8 +393,8 @@ export default function About() {
                         <img 
                           src={value.bgGif} 
                           alt="" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
-                          style={{ filter: 'grayscale(0.3)' }}
+                          className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
+                          style={{}}
                           loading="eager"
                           ref={(el) => {
                             // Pause gif by converting to canvas on load
