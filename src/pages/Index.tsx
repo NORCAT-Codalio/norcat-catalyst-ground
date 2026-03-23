@@ -467,12 +467,12 @@ export default function Index() {
           <div className="container mx-auto px-6 relative z-10">
             <div className="flex justify-end mt-8">
               <motion.div
-                className="flex items-center gap-2 text-white/50 text-sm"
-                animate={{ x: [0, 8, 0] }}
+                className="flex items-center gap-1"
+                animate={{ x: [0, 10, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <span className="font-light">Scroll to explore</span>
-                <ArrowRight className="w-4 h-4" />
+                <div className="w-8 h-[2px] rounded-full bg-white/40" />
+                <ArrowRight className="w-5 h-5 text-white/40" />
               </motion.div>
             </div>
           </div>
