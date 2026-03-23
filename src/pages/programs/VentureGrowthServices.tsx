@@ -18,7 +18,9 @@ import {
   MapPin,
   Quote,
   BarChart3,
-  Globe
+  Globe,
+  DollarSign,
+  Building2
 } from 'lucide-react';
 
 const allServices = [
@@ -344,70 +346,80 @@ const VentureGrowthServices = () => {
         {/* ───── EXPLORE OUR SERVICES ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
           <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="max-w-2xl mb-14">
-                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
-                  All Services
-                </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                  Explore our{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                    services.
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+                <div>
+                  <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
+                    All Services
                   </span>
-                </h2>
+                  <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                    Explore our{' '}
+                    <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                      services.
+                    </span>
+                  </h2>
+                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                    From hands-on advisory to funding and world-class facilities — everything you need under one roof.
+                  </p>
+                </div>
+                <Link to="/apply" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
+                  Apply now
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {allServices.map((service, i) => (
-                <ScrollReveal key={service.title} delay={i * 0.05}>
-                  <Link to={service.link} className="group block h-full">
-                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4" style={{
-                        background: service.type === 'Program' 
-                          ? 'hsl(168 100% 35% / 0.1)' 
-                          : service.type === 'Funding'
-                          ? 'hsla(40, 80%, 50%, 0.1)'
-                          : 'hsla(210, 70%, 50%, 0.1)',
-                        color: service.type === 'Program'
-                          ? 'hsl(168, 100%, 28%)'
-                          : service.type === 'Funding'
-                          ? 'hsl(40, 70%, 35%)'
-                          : 'hsl(210, 60%, 35%)',
-                        border: service.type === 'Program'
-                          ? '0.5px solid hsl(168 100% 35% / 0.15)'
-                          : service.type === 'Funding'
-                          ? '0.5px solid hsla(40, 80%, 50%, 0.15)'
-                          : '0.5px solid hsla(210, 70%, 50%, 0.15)',
-                      }}>
-                        {service.type}
-                      </span>
-                      <h3 className="text-xl font-bold mb-4 transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{service.title}</h3>
-                      <div className="space-y-2 text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          {service.applyBy}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {(['Program', 'Funding', 'Facility'] as const).map((type, colIdx) => {
+                const typeServices = allServices.filter(s => s.type === type);
+                const typeLabel = type === 'Program' ? 'Programs' : type === 'Funding' ? 'Funding' : 'Facilities';
+                const typeIcon = type === 'Program' ? Rocket : type === 'Funding' ? DollarSign : Building2;
+                const TypeIcon = typeIcon;
+                return (
+                  <ScrollReveal key={type} delay={colIdx * 0.1}>
+                    <div className="h-full">
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={iconContainerStyle}>
+                          <TypeIcon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 28%)' }} />
                         </div>
-                        <div className="flex items-center gap-2">
-                          <BarChart3 className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          {service.duration}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                          {service.location}
-                        </div>
+                        <h3 className="text-lg font-bold" style={{ color: 'hsl(220, 15%, 20%)' }}>{typeLabel}</h3>
                       </div>
-                      <div className="mt-6 flex items-center gap-2 text-sm font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                        See Details
-                        <ArrowRight className="w-4 h-4" />
+                      <div className="flex flex-col gap-3">
+                        {typeServices.map((service) => (
+                          <Link key={service.title} to={service.link} className="group block">
+                            <div 
+                              className="rounded-[16px] p-5 hover:scale-[1.02] transition-all duration-300"
+                              style={glassCardStyle}
+                            >
+                              <h4 className="font-bold text-base mb-2 group-hover:text-[hsl(168,100%,28%)] transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                                {service.title}
+                              </h4>
+                              <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-light mb-3" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                                <span className="flex items-center gap-1">
+                                  <Clock className="w-3 h-3" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                                  {service.duration}
+                                </span>
+                                <span className="flex items-center gap-1">
+                                  <MapPin className="w-3 h-3" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                                  {service.location}
+                                </span>
+                              </div>
+                              <div className="flex items-center gap-1.5 text-xs font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
+                                Learn more
+                                <ArrowRight className="w-3.5 h-3.5" />
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
                     </div>
-                  </Link>
-                </ScrollReveal>
-              ))}
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </div>
         </section>
