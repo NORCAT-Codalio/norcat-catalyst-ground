@@ -110,7 +110,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -120,11 +120,11 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Resources</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -134,11 +134,11 @@ export function Footer() {
 
           {/* Events */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Events</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Events</h4>
             <ul className="space-y-3">
               {footerLinks.events.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -148,11 +148,11 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Company</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
