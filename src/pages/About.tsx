@@ -89,9 +89,9 @@ const team = [
 ];
 
 const stats = [
-  { number: '150+', label: 'STARTUPS SUPPORTED' },
-  { number: '15+', label: 'YEARS OF IMPACT' },
-  { number: '$50M+', label: 'CAPITAL RAISED' },
+  { number: '150+', label: 'STARTUPS SUPPORTED', icon: Users },
+  { number: '15+', label: 'YEARS OF IMPACT', icon: TrendingUp },
+  { number: '$50M+', label: 'CAPITAL RAISED', icon: DollarSign },
 ];
 
 // Dark glass card (for hero)
