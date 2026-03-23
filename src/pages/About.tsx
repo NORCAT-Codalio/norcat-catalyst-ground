@@ -393,8 +393,8 @@ export default function About() {
                         <img 
                           src={value.bgGif} 
                           alt="" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
-                          style={{ filter: 'grayscale(0.3)' }}
+                          className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
+                          style={{}}
                           loading="eager"
                           ref={(el) => {
                             // Pause gif by converting to canvas on load
@@ -416,7 +416,7 @@ export default function About() {
                         <img 
                           src={value.bgGif} 
                           alt="" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
+                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                         />
                       </>
                     )}
@@ -427,7 +427,7 @@ export default function About() {
                     )}
                     
                     {/* Dark gradient overlay from bottom */}
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.85) 25%, transparent 55%)' }} />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.7) 20%, transparent 45%)' }} />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-7">
                       <h3 className="text-white font-bold text-xl leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{value.title}</h3>
