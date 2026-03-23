@@ -160,9 +160,15 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
-                    {link.name}
-                  </Link>
+                  {'external' in link && link.external ? (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-white/80 hover:text-teal-300 transition-colors">
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
