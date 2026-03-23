@@ -140,7 +140,7 @@ const CriticalIndustrialTech = () => {
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{ background: 'hsla(0, 0%, 100%, 0.15)', backdropFilter: 'blur(10px)', border: '1px solid hsla(0, 0%, 100%, 0.25)', color: 'hsl(0, 0%, 100%)' }}>
                   <Factory className="w-3.5 h-3.5" />
                   Ontario Centre of Innovation Program
                 </span>
