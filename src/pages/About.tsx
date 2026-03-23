@@ -262,7 +262,7 @@ export default function About() {
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
                   <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Greater Sudbury's Regional{' '}
+                    Sudbury's Regional{' '}
                     <span style={{ color: 'hsl(168, 100%, 35%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Centre</span>
                   </h1>
                 </ScrollReveal>
