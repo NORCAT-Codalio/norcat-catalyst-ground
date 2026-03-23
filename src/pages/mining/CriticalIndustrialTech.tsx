@@ -144,18 +144,18 @@ const CriticalIndustrialTech = () => {
                   <Factory className="w-3.5 h-3.5" />
                   Ontario Centre of Innovation Program
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(0, 0%, 100%)' }}>
                   Critical Industrial{' '}
-                  <span className="block" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                  <span className="block" style={{ color: 'hsl(168, 100%, 55%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                     Technologies
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsla(0, 0%, 100%, 0.9)' }}>
                   An Ontario Centre of Innovation program integrating critical technologies 
                   into the mining sector. NORCAT delivers this program as a Technology Development 
                   Site through the NORCAT Underground Centre.
                 </p>
-                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsla(0, 0%, 100%, 0.7)' }}>
                   Access real-world mining environments, funding support, and expert mentorship to validate and commercialize your critical technology solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
