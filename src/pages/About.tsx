@@ -8,6 +8,7 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import signatureLines from '@/assets/signature-lines.png';
 import miningEquipment from '@/assets/mining-equipment.jpg';
 import aboutHeroBg from '@/assets/about-hero-bg.png';
+import founderFirstGif from '@/assets/values/founder-first.gif';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
