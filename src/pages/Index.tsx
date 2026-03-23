@@ -413,6 +413,68 @@ export default function Index() {
         </section>
 
 
+        {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
+        <section className="relative py-28" style={{ background: '#00b398' }}>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
+            <ScrollReveal>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+                <div>
+                   <h2 className="text-3xl md:text-4xl uppercase tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                     <span className="text-white">Real Stories. </span>
+                     <span className="text-white">Unique Insights.</span>
+                   </h2>
+                  <p className="mt-3 font-light text-white/50 max-w-xl">Nothing we tell, your one and about innovation what it takes to live foreveryo to the programme of stor gnelfo.</p>
+                </div>
+                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
+                  View all reports
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Horizontally scrollable cards */}
+          <div className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
+            <div className="flex gap-5 pr-6" style={{ width: 'max-content' }}>
+              {[
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
+                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
+                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem' },
+                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
+                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news' },
+                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
+              ].map((post, i) => (
+                <ScrollReveal key={post.title} delay={i * 0.1}>
+                  <Link to={post.link} className="group block">
+                    <div className="relative rounded-2xl overflow-hidden w-[340px] aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                          background: 'hsla(168, 100%, 35%, 0.2)',
+                          color: 'hsl(168, 100%, 60%)',
+                          border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                          backdropFilter: 'blur(8px)',
+                        }}>{post.category}</span>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
+                          Read More <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ───── THE SUDBURY ADVANTAGE ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="absolute inset-0 pointer-events-none">
@@ -513,68 +575,6 @@ export default function Index() {
                 </div>
               ))}
             </motion.div>
-          </div>
-        </section>
-
-        {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28" style={{ background: '#00b398' }}>
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={linesTeal} alt="" className="absolute top-0 right-0 w-[600px] opacity-[0.08]" />
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-                <div>
-                   <h2 className="text-3xl md:text-4xl uppercase tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                     <span className="text-white">Real Stories. </span>
-                     <span className="text-white">Unique Insights.</span>
-                   </h2>
-                  <p className="mt-3 font-light text-white/50 max-w-xl">Nothing we tell, your one and about innovation what it takes to live foreveryo to the programme of stor gnelfo.</p>
-                </div>
-                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
-                  View all reports
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Horizontally scrollable cards */}
-          <div className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
-            <div className="flex gap-5 pr-6" style={{ width: 'max-content' }}>
-              {[
-                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
-                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
-                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
-                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem' },
-                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
-                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news' },
-                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
-              ].map((post, i) => (
-                <ScrollReveal key={post.title} delay={i * 0.1}>
-                  <Link to={post.link} className="group block">
-                    <div className="relative rounded-2xl overflow-hidden w-[340px] aspect-[4/3] hover:scale-[1.02] transition-transform duration-300">
-                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
-                          background: 'hsla(168, 100%, 35%, 0.2)',
-                          color: 'hsl(168, 100%, 60%)',
-                          border: '1px solid hsla(168, 100%, 50%, 0.25)',
-                          backdropFilter: 'blur(8px)',
-                        }}>{post.category}</span>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-5">
-                        <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
-                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
-                          Read More <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </ScrollReveal>
-              ))}
-            </div>
           </div>
         </section>
 
