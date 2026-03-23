@@ -24,7 +24,7 @@ const footerLinks = {
     { name: 'All Events', href: '/events' },
   ],
   company: [
-    { name: 'norcat.org', href: 'https://norcat.org', external: true },
+    { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
     { name: 'About Us', href: '/about' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
