@@ -416,7 +416,7 @@ export default function About() {
                         <img 
                           src={value.bgGif} 
                           alt="" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-70 transition-opacity duration-300 pointer-events-none"
+                          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                         />
                       </>
                     )}
