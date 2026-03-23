@@ -440,7 +440,19 @@ export default function About() {
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <LightCard className="p-3 pb-5 text-center overflow-hidden hover:border-primary/30">
+                    <div 
+                      className="p-3 pb-5 text-center overflow-hidden rounded-[20px] hover:scale-[1.03] transition-transform duration-300"
+                      style={{
+                        background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                        borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                        borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                        borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                        boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                      }}
+                    >
                       <div className="relative mb-4 overflow-hidden rounded-xl">
                         <img 
                           src={member.image} 
@@ -451,7 +463,7 @@ export default function About() {
                       </div>
                       <h3 className="font-bold text-base text-foreground">{member.name}</h3>
                       <p className="text-sm font-medium text-muted-foreground">{member.role}</p>
-                    </LightCard>
+                    </div>
                   </motion.div>
                 </ScrollReveal>
               ))}
