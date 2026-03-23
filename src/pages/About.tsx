@@ -427,7 +427,7 @@ export default function About() {
                     )}
                     
                     {/* Dark gradient overlay from bottom */}
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.85) 25%, transparent 55%)' }} />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 6%) 0%, hsl(220 25% 6% / 0.7) 20%, transparent 45%)' }} />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-7">
                       <h3 className="text-white font-bold text-xl leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{value.title}</h3>
