@@ -267,7 +267,7 @@ export default function About() {
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
-                  <p className="text-lg md:text-xl leading-relaxed text-white/50 max-w-2xl">
+                  <p className="text-xl md:text-2xl leading-relaxed text-white/50 max-w-2xl font-light">
                     A not-for-profit Innovation Centre funded by the Government of Ontario, 
                     supporting tech-enabled, IP-driven startups across Northern Ontario.
                   </p>
