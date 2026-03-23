@@ -364,7 +364,7 @@ export default function About() {
                   Our Values
                 </span>
                 <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight text-foreground" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                  Principles that <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>guide us</span>
+                  Principles that <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>guide us</span>
                 </h2>
               </div>
             </ScrollReveal>
