@@ -106,7 +106,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
           {/* Programs */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Programs</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Programs</h4>
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.name}>
