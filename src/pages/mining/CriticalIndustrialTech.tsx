@@ -160,19 +160,21 @@ const CriticalIndustrialTech = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                    border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                    color: 'hsl(168, 40%, 25%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'hsla(168, 100%, 55%, 0.2)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1.5px solid hsla(168, 100%, 55%, 0.4)',
+                    color: 'hsl(168, 100%, 75%)',
+                    boxShadow: '0 4px 16px hsla(168, 100%, 40%, 0.15)',
                   }}>
                     Learn More at OCI
                     <ExternalLink className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                   <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.4) 0%, hsla(220, 15%, 85%, 0.2) 100%)',
-                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                    color: 'hsl(220, 15%, 30%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'hsla(0, 0%, 100%, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1.5px solid hsla(0, 0%, 100%, 0.25)',
+                    color: 'hsl(0, 0%, 100%)',
+                    boxShadow: '0 4px 12px hsla(0, 0%, 0%, 0.15)',
                   }}>
                     Apply Through NORCAT
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
