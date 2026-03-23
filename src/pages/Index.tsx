@@ -437,31 +437,29 @@ export default function Index() {
           </div>
 
           {/* Horizontally scrollable cards */}
-          <div className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
-            <div className="flex gap-5 pr-6" style={{ width: 'max-content' }}>
+          <div className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
+            <div className="flex gap-5 pr-6 items-stretch" style={{ width: 'max-content' }}>
               {[
-                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories' },
-                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
-                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports' },
-                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem' },
-                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
-                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news' },
-                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories', wide: false },
+                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news', wide: true },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports', wide: false },
+                { category: 'Ecosystem', title: 'Northern Ontario\'s Growing Tech & Innovation Landscape', image: ctaPhoto4, link: '/ecosystem', wide: false },
+                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories', wide: false },
+                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news', wide: false },
+                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports', wide: false },
               ].map((post, i) => (
                 <ScrollReveal key={post.title} delay={i * 0.1}>
-                  <Link to={post.link} className="group block">
-                    <div className="relative rounded-2xl overflow-hidden w-[380px] aspect-[3/4] hover:scale-[1.02] transition-transform duration-300">
+                  <Link to={post.link} className="group block h-full">
+                    <div className={`relative rounded-2xl overflow-hidden h-[420px] hover:scale-[1.02] transition-transform duration-300 ${post.wide ? 'w-[700px]' : 'w-[380px]'}`}>
                       <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
                           background: 'hsla(168, 100%, 35%, 0.2)',
                           color: 'hsl(168, 100%, 60%)',
                           border: '1px solid hsla(168, 100%, 50%, 0.25)',
                           backdropFilter: 'blur(8px)',
                         }}>{post.category}</span>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
                         <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{post.title}</h3>
                         <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
                           Read More <ArrowRight className="w-3.5 h-3.5" />
