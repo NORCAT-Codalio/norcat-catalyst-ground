@@ -556,13 +556,13 @@ export default function About() {
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <div className="grid lg:grid-cols-2 gap-8">
-                <LightCard className="p-8">
+                <div className="p-8 rounded-2xl border border-border/30 bg-background/50">
                   <img 
                     src={innovateonLogo} 
                     alt="InnovateON - Regional Innovation Centre Network" 
                     className="h-8 object-contain mb-5"
                   />
-                  <p className="text-base leading-relaxed mb-6 text-muted-foreground">
+                  <p className="text-base leading-relaxed mb-6 text-muted-foreground font-light">
                     We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs 
                     with resources, mentorship, and funding to start and scale businesses.
                   </p>
@@ -576,14 +576,14 @@ export default function About() {
                       <p className="text-[10px] font-semibold tracking-[0.15em] uppercase mt-1 text-muted-foreground">Startups/Year</p>
                     </div>
                   </div>
-                </LightCard>
-                <LightCard className="p-8">
+                </div>
+                <div className="p-8 rounded-2xl border border-border/30 bg-background/50">
                   <img 
                     src={ontarioLogo} 
                     alt="Government of Ontario" 
                     className="h-10 object-contain mb-5"
                   />
-                  <p className="text-base leading-relaxed mb-6 text-muted-foreground">
+                  <p className="text-base leading-relaxed mb-6 text-muted-foreground font-light">
                     Funded by the <strong className="text-foreground">Ministry of Economic Development, Job Creation and Trade</strong>, 
                     enabling free and subsidized services for Northern Ontario entrepreneurs.
                   </p>
@@ -595,7 +595,7 @@ export default function About() {
                       Ontario Funded
                     </span>
                   </div>
-                </LightCard>
+                </div>
               </div>
             </ScrollReveal>
           </div>
