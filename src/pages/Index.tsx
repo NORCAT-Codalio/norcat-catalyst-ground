@@ -317,17 +317,8 @@ export default function Index() {
 
         {/* ───── STATS Strip ───── */}
         <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="container mx-auto px-6">
-            <div className="rounded-[20px] p-8 flex flex-wrap justify-around gap-6" style={{
-              background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.5) 0%, hsla(168, 20%, 75%, 0.35) 50%, hsla(168, 15%, 82%, 0.25) 100%)',
-              backdropFilter: 'blur(24px)',
-              WebkitBackdropFilter: 'blur(24px)',
-              borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-              borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-              borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-              borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-              boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.15), 0 2px 8px hsla(0, 0%, 0%, 0.06)',
-            }}>
+          <div className="w-full px-6">
+            <div className="flex flex-wrap justify-around gap-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-center gap-4 px-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
