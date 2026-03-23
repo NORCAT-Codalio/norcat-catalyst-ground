@@ -53,8 +53,8 @@ export function Footer() {
               Explore More of NORCAT
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-white leading-tight" style={{ fontWeight: 400 }}>
-              Innovation Hub<br />
-              for the Future
+              Sudbury's Regional<br />
+              Innovation Centre
             </h2>
           </div>
 
