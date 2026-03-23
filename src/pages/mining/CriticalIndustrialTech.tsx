@@ -131,11 +131,10 @@ const CriticalIndustrialTech = () => {
       <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
 
         {/* ───── HERO ───── */}
-        <section className="relative pt-40 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
+        <section className="relative pt-40 pb-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={citHeroBg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, hsla(220, 15%, 10%, 0.75) 0%, hsla(220, 15%, 10%, 0.5) 50%, transparent 100%)' }} />
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
