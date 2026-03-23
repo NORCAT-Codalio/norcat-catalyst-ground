@@ -9,6 +9,7 @@ import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo.png';
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
+import citHeroBg from '@/assets/cit-hero-bg.jpg';
 
 // Shared glass card style
 const glassCardStyle = {
