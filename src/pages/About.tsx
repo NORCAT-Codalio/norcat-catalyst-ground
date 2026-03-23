@@ -337,7 +337,7 @@ export default function About() {
                     Through mentorship, capital access, and our unique underground testing facility, 
                     we provide everything ambitious entrepreneurs need to start, grow, and scale.
                   </p>
-                  <p className="text-base leading-relaxed text-muted-foreground/70">
+                  <p className="text-base leading-relaxed text-muted-foreground/70 font-light">
                     Our specialization in mining technology makes us unique—offering founders 
                     access to a real operational mine for testing and validation.
                   </p>
