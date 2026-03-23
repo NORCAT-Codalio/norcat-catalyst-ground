@@ -298,7 +298,7 @@ export default function About() {
                     border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
                     boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                   }}>
-                    <Users className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                    <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                   </div>
                   <div>
                     <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.number}</div>
