@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
+import signatureLines from '@/assets/signature-lines.png';
 import { useState } from 'react';
 
 const footerLinks = {
@@ -35,13 +36,13 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-      {/* Decorative angular lines - bottom left */}
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] pointer-events-none">
-        <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-20">
-          <path d="M0 300 L80 100 L60 300" stroke="white" strokeWidth="1" fill="none" />
-          <path d="M30 300 L110 120 L90 300" stroke="white" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
+      {/* Signature lines - bottom left */}
+      <img 
+        src={signatureLines} 
+        alt="" 
+        aria-hidden="true" 
+        className="absolute bottom-0 left-0 w-[400px] opacity-80 pointer-events-none rotate-180"
+      />
 
       {/* Top Section - CTA + Newsletter */}
       <div className="container mx-auto px-4 lg:px-8 pt-16 pb-10">
@@ -52,8 +53,8 @@ export function Footer() {
               Explore More of NORCAT
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-white leading-tight" style={{ fontWeight: 400 }}>
-              Innovation Hub<br />
-              for the Future
+              Sudbury's Regional<br />
+              Innovation Centre
             </h2>
           </div>
 
@@ -105,11 +106,11 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
           {/* Programs */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Programs</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Programs</h4>
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -119,11 +120,11 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Resources</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -133,11 +134,11 @@ export function Footer() {
 
           {/* Events */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Events</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Events</h4>
             <ul className="space-y-3">
               {footerLinks.events.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -147,11 +148,11 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-5">Company</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-teal-300 transition-colors">
+                  <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
                   </Link>
                 </li>
