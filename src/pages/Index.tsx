@@ -329,8 +329,8 @@ export default function Index() {
                     <stat.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                   </div>
                   <div>
-                    <div className="text-2xl md:text-3xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
-                    <p className="text-xs font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                    <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                    <p className="text-sm md:text-base font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
                   </div>
                 </div>
               ))}
