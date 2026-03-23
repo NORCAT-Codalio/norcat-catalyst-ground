@@ -36,13 +36,13 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-      {/* Decorative angular lines - bottom left */}
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] pointer-events-none">
-        <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-20">
-          <path d="M0 300 L80 100 L60 300" stroke="white" strokeWidth="1" fill="none" />
-          <path d="M30 300 L110 120 L90 300" stroke="white" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
+      {/* Signature lines - bottom left */}
+      <img 
+        src={signatureLines} 
+        alt="" 
+        aria-hidden="true" 
+        className="absolute bottom-0 left-0 w-[400px] opacity-80 pointer-events-none rotate-180"
+      />
 
       {/* Top Section - CTA + Newsletter */}
       <div className="container mx-auto px-4 lg:px-8 pt-16 pb-10">
