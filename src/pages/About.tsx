@@ -244,14 +244,14 @@ export default function About() {
             src={signatureLines}
             alt=""
             aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-2/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
+            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
           />
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-3xl">
                 <ScrollReveal>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white/70 mb-8">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
                     <Lightbulb className="w-3.5 h-3.5" />
                     About NORCAT Innovation
                   </span>
@@ -259,11 +259,11 @@ export default function About() {
                 <ScrollReveal delay={100}>
                   <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Sudbury's Regional{' '}
-                    <span style={{ color: 'hsl(168, 100%, 35%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Centre</span>
+                    <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Centre</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
-                  <p className="text-xl md:text-2xl leading-relaxed text-white/50 max-w-2xl font-light">
+                  <p className="text-xl md:text-2xl leading-relaxed text-white max-w-2xl font-light">
                     A not-for-profit Innovation Centre funded by the Government of Ontario, 
                     supporting tech-enabled, IP-driven startups across Northern Ontario.
                   </p>
