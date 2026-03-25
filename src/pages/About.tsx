@@ -277,15 +277,6 @@ export default function About() {
                   </p>
                 </ScrollReveal>
               </div>
-              <ScrollReveal delay={250}>
-                <div className="hidden lg:block rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                  <img 
-                    src={miningEquipment} 
-                    alt="Mining equipment at NORCAT facility" 
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </ScrollReveal>
             </div>
           </div>
 
