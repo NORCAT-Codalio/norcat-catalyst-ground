@@ -149,7 +149,7 @@ const VentureGrowthServices = () => {
           <img src={ventureHeroBg} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'hsla(0, 0%, 0%, 0.2)' }} />
           <div className="absolute inset-0 pointer-events-none">
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.15] pointer-events-none" style={{ width: '60%' }} />
+            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.15] pointer-events-none" style={{ width: '30%' }} />
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
