@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
+import ventureHeroBg from '@/assets/venture-growth-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import { 
   ArrowRight, 
