@@ -145,7 +145,7 @@ const VentureGrowthServices = () => {
       <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
 
         {/* ───── HERO ───── */}
-        <section className="relative pt-40 pb-28 overflow-hidden">
+        <section className="relative pt-32 pb-20 overflow-hidden min-h-[500px] flex items-center">
           <img src={ventureHeroBg} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'hsla(0, 0%, 0%, 0.2)' }} />
           <div className="absolute inset-0 pointer-events-none">
