@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
+import ventureHeroBg from '@/assets/venture-growth-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import { 
   ArrowRight, 
@@ -144,49 +145,48 @@ const VentureGrowthServices = () => {
       <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
 
         {/* ───── HERO ───── */}
-        <section className="relative pt-40 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="relative pt-40 pb-28 overflow-hidden">
+          <img src={ventureHeroBg} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
+          <div className="absolute inset-0 pointer-events-none" style={{ background: 'hsla(0, 0%, 0%, 0.2)' }} />
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
+            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.15] pointer-events-none" style={{ width: '60%' }} />
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.3)', color: 'hsl(0, 0%, 100%)' }}>
                   <Rocket className="w-3.5 h-3.5" />
                   Core Program
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(0, 0%, 100%)' }}>
                   Venture Growth{' '}
-                  <span className="block" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
+                  <span className="block" style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
                     Services
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(220, 20%, 10%)' }}>
+                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(0, 0%, 100%)' }}>
                   The operating system for ambitious founders. We provide the hands-on support, 
                   education, network, and resources you need to build a category-defining company.
                 </p>
-                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsla(0, 0%, 100%, 0.8)' }}>
                   We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                    border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                    color: 'hsl(168, 40%, 25%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.9) 0%, hsla(168, 100%, 28%, 0.9) 100%)',
+                    border: '1.5px solid hsla(168, 100%, 50%, 0.4)',
+                    color: 'hsl(0, 0%, 100%)',
+                    boxShadow: '0 4px 16px hsla(168, 100%, 25%, 0.3), 0 1px 3px hsla(0, 0%, 0%, 0.1)',
                   }}>
                     Apply to Join
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                   <Link to="/insights/success-stories" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.4) 0%, hsla(220, 15%, 85%, 0.2) 100%)',
-                    border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                    color: 'hsl(220, 15%, 30%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'hsla(0, 0%, 100%, 0.15)',
+                    border: '1.5px solid hsla(0, 0%, 100%, 0.3)',
+                    color: 'hsl(0, 0%, 100%)',
+                    boxShadow: '0 4px 12px hsla(0, 0%, 0%, 0.15)',
                   }}>
                     See Our Portfolio
                   </Link>
