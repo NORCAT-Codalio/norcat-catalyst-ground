@@ -184,11 +184,9 @@ const News = () => {
         </div>
       </section>
 
-      {/* ── News Grid + Activity Feed ── */}
+      {/* ── News Grid ── */}
       <section className="py-28 relative" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="container mx-auto px-6 relative z-10">
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
