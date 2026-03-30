@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Mountain, Handshake, Globe, Lightbulb, Calendar, LogIn } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Mountain, Handshake, Globe, Lightbulb, Calendar, LogIn, Phone } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 import norcatLogoWhite from '@/assets/logos/norcat-white.png';
 import { Button } from '@/components/ui/button';
