@@ -14,6 +14,7 @@ import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
+import planaTeam from '@/assets/plana-team.jpg';
 
 
 // All stories data
@@ -67,16 +68,16 @@ const allStories: SuccessStory[] = [
     founded: '2001',
   },
   {
-    id: 'drilltech-solutions',
-    company: 'DrillTech Solutions',
-    tagline: 'Precision drilling guidance systems for optimized ore extraction.',
-    sector: 'Mining Tech',
+    id: 'plana-staffstat',
+    company: 'Plan A & StaffStat',
+    tagline: 'People-first tech staffing strategy transforming senior care across Canada.',
+    sector: 'Medtech',
     stage: 'growth',
-    status: 'commercial',
-    metrics: { capitalRaised: '$8M', jobsCreated: 32, marketsReached: 4 },
-    programs: ['UG Centre', 'Mentorship', 'VGS'],
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&auto=format&fit=crop&q=80',
-    founded: '2017',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 18, marketsReached: 1 },
+    programs: ['Mentorship', 'VGS'],
+    image: planaTeam,
+    founded: '2012',
   },
   {
     id: 'safemine-ai',

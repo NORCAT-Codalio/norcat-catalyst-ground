@@ -7,6 +7,7 @@ import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
+import planaTeam from '@/assets/plana-team.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -486,5 +487,39 @@ export const detailedStories: Record<string, StoryDetails> = {
     whatsNext: 'With a permanent engineering presence at the NORCAT Underground Centre and expansion into the Nevada market, Jannatec continues to redefine safety and communications for mines worldwide.',
     globalPresence: ['Sudbury', 'Ontario', 'Nevada', 'Global'],
     fullStory: "With 25 years of experience, Jannatec Technologies is leading the way as one of the preferred communication solution providers of total wireless networks to mines in Canada and throughout the world. Its Jannatec JET Lab and the Jannatec Edge of Technology house engineering staff, technologists, and technicians that are redefining communications in the mining industry.\n\nJannatec credits NORCAT's Underground Centre for allowing meaningful and practical testing and showcasing of its technology in an operating mine environment—a Centre situated in Sudbury that is unique to the global mining industry. Above ground at the NORCAT Centre, it's the cluster of informative individuals, mentors, and expertise under one roof that has supported Jannatec in their growth and development in new lines of products.\n\nIn late 2022, Jannatec underwent a significant leadership transition, appointing Rey Boucher as President to lead team development and commercial growth. During this period, the company pivotally rebranded its focus from communications company to a safety company and saw the launch of the JAWS 2 (Jannatec Advanced Warning System)—an advanced proximity detection platform.\n\nA major milestone occurred with the opening of a permanent office at the newly expanded NORCAT Underground Centre in Onaping Falls, placing Jannatec's engineering team directly within an active mining environment.\n\nThrough its association with MineConnect, located in NORCAT's Sudbury location, Jannatec has successfully expanded into the Nevada mining market.",
+  },
+  'plana-staffstat': {
+    id: 'plana-staffstat',
+    company: 'Plan A & StaffStat',
+    tagline: 'People-first tech staffing strategy transforming senior care across Canada.',
+    sector: 'Medtech / Health Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 18, marketsReached: 1 },
+    programs: ['Mentorship', 'VGS'],
+    image: planaTeam,
+    founded: '2012',
+    problem: 'Long-term care homes in Canada had no reliable, modern way to fill nursing and PSW shifts—relying on cold calls at all hours, leading to chronic understaffing and burnout.',
+    breakthrough: {
+      text: 'Sheri Tomchick built StaffStat—a digital shift-filling platform that removes friction from frontline staffing. What started as a tool to get shifts to staff "stat" evolved into an intelligent workforce hub using AI to predict shift anomalies days or weeks in advance, measure staff engagement, and alert leaders when employees need more support.',
+    },
+    timeline: [
+      { year: '2012', event: 'Sheri Tomchick founded Plan A staffing agency in Sudbury' },
+      { year: '2014', event: 'Began developing StaffStat digital platform' },
+      { year: '2016', event: 'Joined NORCAT Innovation; paired with mentor Peter Dal Bianco' },
+      { year: '2020', event: 'StaffStat evolved into AI-powered workforce engagement hub' },
+      { year: '2024', event: 'Expanded to support over 900 nursing homes across Canada' },
+      { year: '2026', event: 'Team of 18 operating nationally from Greater Sudbury' },
+    ],
+    impactMetrics: { jobs: 18, capital: '900+', pilots: 2, markets: 1 },
+    founderQuote: {
+      text: "I got involved with NORCAT, and I was a really passionate business owner, but I needed help. I was running on a dream, a positive attitude, and a belief I was going to get this done. Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without somebody like Peter.",
+      author: 'Sheri Tomchick',
+      role: 'CEO & Co-founder, Plan A & StaffStat',
+    },
+    currentStage: 'Scaling Nationally',
+    whatsNext: 'Supporting over 900 nursing homes across Canada with growing demand. StaffStat\'s AI-powered engagement analytics and predictive scheduling are setting a new standard for frontline healthcare staffing.',
+    globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
+    fullStory: "Sheri's journey began with a dose of hard reality. After graduating from nursing and returning to Sudbury for her preceptorship, she quickly felt the cracks in the system. \"There was zero backup plan for nurses and PSWs in Sudbury,\" she says. \"I was ready to begin my career, but I just burned out really fast.\"\n\nThat fire began as a small staffing agency—Plan A. But Sheri hated cold-calling people, waking them up at all hours to fill shifts. She began developing what would become StaffStat—a digital shift-filling platform that would remove friction from frontline staffing.\n\nMentorship made the difference. \"Once I was paired with Mr. Peter Dal Bianco, things really changed for my company,\" Sheri says. The software evolved fast. What started as a shift-filling tool soon became an intelligent workforce hub.\n\nToday, StaffStat uses AI to predict shift anomalies days or weeks in advance. It measures staff engagement and alerts when employees are not engaged so leaders can act early.\n\nOn the ground, Mandy Gauthier is the human engine behind Plan A's national growth. \"I call Mandy the fairy godmother of long-term care,\" Sheri says. Their combined leadership has built a \"Small Giant\" in Canadian health tech.\n\n\"Nobody really understands all the magnificent things we're doing across Canada from Greater Sudbury… with an incredible team of 18,\" Sheri says proudly. Plan A now offers a full continuum of staffing services, from frontline recruitment to predictive scheduling to engagement analytics.\n\nPlan A and StaffStat now support over 900 nursing homes across Canada, with demand growing fast. \"There's nothing in the healthcare market that has as much impact on the front line as it does the bottom line as StaffStat.\"",
   },
 };
