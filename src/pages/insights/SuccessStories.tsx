@@ -23,7 +23,7 @@ const allStories: SuccessStory[] = [
     stage: 'growth',
     status: 'scaling',
     metrics: { capitalRaised: '$4M', jobsCreated: 43, marketsReached: 2 },
-    programs: ['SCF', 'Mentorship', 'VGS'],
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'RAI', 'UG Centre'],
     image: circuitiqTeam,
     founded: '2022',
   },
