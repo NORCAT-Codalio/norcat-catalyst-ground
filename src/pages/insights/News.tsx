@@ -260,37 +260,39 @@ const News = () => {
       </section>
 
       {/* ── Newsletter CTA ── */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, hsl(224 71% 4%) 0%, hsl(215 28% 17%) 50%, hsl(217 19% 27%) 100%)',
-      }}>
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(circle at 50% 50%, hsl(168 100% 35% / 0.1), transparent 70%)',
-        }} />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="container mx-auto px-6 relative z-10 text-center">
           <ScrollReveal>
-            <div className="max-w-2xl mx-auto text-center">
-              <div className="badge-dark mb-6">
-                <Newspaper className="w-4 h-4" />
-                Stay Connected
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                <span className="text-white">Never Miss an </span>
-                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Update</span>
-              </h2>
-              <p className="text-white/40 text-lg mb-10">
-                Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email"
-                  className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-primary liquid-glass"
-                />
-                <button className="glass-frosted-btn rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2">
-                  Subscribe
-                </button>
-              </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>
+              Never Miss an{' '}
+              <span style={{ color: 'hsl(168, 100%, 28%)' }}>Update</span>
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
+              Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="flex-1 px-5 py-3.5 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                style={{
+                  background: 'hsla(220, 15%, 100%, 0.7)',
+                  border: '1.5px solid hsla(220, 15%, 80%, 0.5)',
+                  color: 'hsl(220, 15%, 20%)',
+                  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.1)',
+                }}
+              />
+              <button 
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03] whitespace-nowrap"
+                style={{
+                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
+                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
+                  color: 'hsl(168, 40%, 25%)',
+                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                }}
+              >
+                Subscribe
+              </button>
             </div>
           </ScrollReveal>
         </div>
