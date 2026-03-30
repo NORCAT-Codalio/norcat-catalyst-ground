@@ -338,7 +338,7 @@ const SuccessStories = () => {
                               {/* The Breakthrough */}
                               <div className="mb-10">
                                 <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Breakthrough</span>
-                                <p className="text-sm font-light leading-relaxed" style={{ color: 'hsl(220, 15%, 35%)' }}>{details.breakthrough.text}</p>
+                                <p className="text-lg font-medium leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{details.breakthrough.text}</p>
                               </div>
 
                               {/* Founder Quote */}
