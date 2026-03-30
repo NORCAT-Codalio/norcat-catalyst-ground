@@ -153,21 +153,6 @@ const SuccessStories = () => {
         </div>
       </section>
 
-      {/* Stats Strip */}
-      <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="w-full px-6">
-          <div className="flex flex-wrap justify-around gap-6">
-            {ecosystemStats.map((stat, i) => (
-              <div key={i} className="flex items-center gap-4 px-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
-                  <p className="text-sm md:text-base font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Filter Bar */}
       <section className="sticky top-16 z-30 bg-white border-b border-gray-200 shadow-sm">
