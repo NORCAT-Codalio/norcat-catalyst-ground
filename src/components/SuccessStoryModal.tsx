@@ -6,6 +6,7 @@ import type { SuccessStory } from './SuccessStoryCard';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
+import jannatecProduct from '@/assets/jannatec-product.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
