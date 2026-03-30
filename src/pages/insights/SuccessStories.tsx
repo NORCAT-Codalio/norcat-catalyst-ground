@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, Building2, CheckCircle, MapPin, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { SuccessStoryCard, type SuccessStory } from '@/components/SuccessStoryCard';
-import { SuccessStoryModal, detailedStories } from '@/components/SuccessStoryModal';
+import { motion, AnimatePresence } from 'framer-motion';
+import type { SuccessStory } from '@/components/SuccessStoryCard';
+import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 
@@ -209,25 +210,250 @@ const SuccessStories = () => {
       </section>
 
       {/* Stories Grid */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredStories.map((story, i) => (
-              <ScrollReveal key={story.id} delay={i * 50}>
-                <SuccessStoryCard 
-                  story={story} 
-                  onClick={() => setSelectedStory(story.id)}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
+      <section className="py-28 relative" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="container mx-auto px-6">
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredStories.map((story) => {
+              const isExpanded = selectedStory === story.id;
+              const details = detailedStories[story.id];
+
+              return (
+                <motion.div
+                  key={story.id}
+                  layout
+                  transition={{ layout: { type: 'spring', stiffness: 350, damping: 30 } }}
+                  className={`cursor-pointer ${isExpanded ? 'md:col-span-2 lg:col-span-3' : ''}`}
+                  style={{ zIndex: isExpanded ? 10 : 1 }}
+                  onClick={() => !isExpanded && setSelectedStory(story.id)}
+                >
+                  <motion.div
+                    layout
+                    className="rounded-[20px] overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                    }}
+                    animate={{
+                      scale: selectedStory && !isExpanded ? 0.95 : 1,
+                      opacity: selectedStory && !isExpanded ? 0.4 : 1,
+                    }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  >
+                    {/* ── Collapsed Card ── */}
+                    {!isExpanded && (
+                      <motion.div layout="position">
+                        {/* Image */}
+                        <div className="relative aspect-[16/10] overflow-hidden">
+                          <img src={story.image} alt={story.company} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+                          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsla(220, 25%, 12%, 0.8) 0%, hsla(220, 25%, 12%, 0.2) 40%, transparent 100%)' }} />
+                          {story.hasVideo && (
+                            <div className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsla(0, 0%, 100%, 0.2)', backdropFilter: 'blur(8px)' }}>
+                              <Play className="w-5 h-5 text-white fill-white" />
+                            </div>
+                          )}
+                        </div>
+                        <div className="p-6">
+                          <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: 'hsl(168, 100%, 28%)' }}>{story.sector}</span>
+                          <h3 className="text-xl font-bold mt-2 mb-2" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{story.company}</h3>
+                          <p className="text-sm font-light line-clamp-2 mb-4" style={{ color: 'hsl(220, 15%, 40%)' }}>{story.tagline}</p>
+                          <div className="flex items-center gap-4 text-sm">
+                            {story.metrics.capitalRaised && (
+                              <div className="flex items-center gap-1.5">
+                                <DollarSign className="w-4 h-4" style={{ color: 'hsl(152, 69%, 40%)' }} />
+                                <span className="font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>{story.metrics.capitalRaised}</span>
+                              </div>
+                            )}
+                            {story.metrics.jobsCreated && (
+                              <div className="flex items-center gap-1.5">
+                                <Users className="w-4 h-4" style={{ color: 'hsl(217, 91%, 60%)' }} />
+                                <span className="font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>{story.metrics.jobsCreated}</span>
+                              </div>
+                            )}
+                            {story.metrics.marketsReached && (
+                              <div className="flex items-center gap-1.5">
+                                <Globe className="w-4 h-4" style={{ color: 'hsl(270, 50%, 60%)' }} />
+                                <span className="font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>{story.metrics.marketsReached}</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {/* ── Expanded Card ── */}
+                    {isExpanded && details && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.15, duration: 0.3 }}
+                      >
+                        {/* Hero banner */}
+                        <div className="relative h-[300px] md:h-[400px] overflow-hidden">
+                          <img src={story.image} alt={story.company} className="w-full h-full object-cover" />
+                          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsla(220, 25%, 12%, 0.9) 0%, hsla(220, 25%, 12%, 0.4) 50%, transparent 100%)' }} />
+                          
+                          {/* Close button */}
+                          <button
+                            onClick={(e) => { e.stopPropagation(); setSelectedStory(null); }}
+                            className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-20 transition-transform hover:scale-110"
+                            style={{
+                              background: 'hsla(0, 0%, 100%, 0.15)',
+                              backdropFilter: 'blur(12px)',
+                              border: '1px solid hsla(0, 0%, 100%, 0.25)',
+                            }}
+                          >
+                            <X className="w-5 h-5 text-white" />
+                          </button>
+                          
+                          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+                            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4" style={{
+                              background: 'hsl(168 100% 35% / 0.2)',
+                              color: 'hsl(168, 100%, 60%)',
+                              border: '0.5px solid hsl(168 100% 50% / 0.3)',
+                            }}>
+                              {story.sector}
+                            </span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{story.company}</h2>
+                            <p className="text-lg text-white/80 font-light max-w-2xl">{story.tagline}</p>
+                          </div>
+                        </div>
+
+                        {/* Content grid */}
+                        <div className="p-8 md:p-12">
+                          <div className="grid md:grid-cols-2 gap-12">
+                            {/* Left column */}
+                            <div>
+                              {/* The Problem */}
+                              <div className="mb-10">
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Problem</span>
+                                <p className="text-lg font-medium leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{details.problem}</p>
+                              </div>
+
+                              {/* The Breakthrough */}
+                              <div className="mb-10">
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Breakthrough</span>
+                                <p className="text-sm font-light leading-relaxed" style={{ color: 'hsl(220, 15%, 35%)' }}>{details.breakthrough.text}</p>
+                              </div>
+
+                              {/* Founder Quote */}
+                              <div className="rounded-2xl p-6 mb-10" style={{
+                                background: 'linear-gradient(145deg, hsla(168, 20%, 88%, 0.4) 0%, hsla(168, 15%, 85%, 0.2) 100%)',
+                                border: '1px solid hsla(168, 25%, 85%, 0.3)',
+                              }}>
+                                <div className="text-4xl leading-none mb-3" style={{ color: 'hsl(168, 100%, 28%)' }}>"</div>
+                                <blockquote className="text-sm italic leading-relaxed mb-4" style={{ color: 'hsl(220, 15%, 25%)' }}>
+                                  {details.founderQuote.text}
+                                </blockquote>
+                                <div>
+                                  <p className="text-sm font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>{details.founderQuote.author}</p>
+                                  <p className="text-xs" style={{ color: 'hsl(220, 15%, 50%)' }}>{details.founderQuote.role}</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Right column */}
+                            <div>
+                              {/* Impact Metrics */}
+                              <div className="mb-10">
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(168, 100%, 28%)' }}>Impact</span>
+                                <div className="grid grid-cols-2 gap-4">
+                                  {[
+                                    { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
+                                    { icon: DollarSign, label: 'Capital Raised', value: details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
+                                    { icon: Building2, label: 'Pilots', value: details.impactMetrics.pilots, color: 'hsl(270, 50%, 60%)' },
+                                    { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
+                                  ].map((metric) => (
+                                    <div key={metric.label} className="rounded-xl p-4" style={{
+                                      background: 'hsla(220, 15%, 88%, 0.5)',
+                                      border: '0.5px solid hsla(220, 15%, 80%, 0.4)',
+                                    }}>
+                                      <metric.icon className="w-5 h-5 mb-2" style={{ color: metric.color }} />
+                                      <div className="text-2xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{metric.value}</div>
+                                      <p className="text-xs" style={{ color: 'hsl(220, 15%, 50%)' }}>{metric.label}</p>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Timeline */}
+                              <div className="mb-10">
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(168, 100%, 28%)' }}>Journey</span>
+                                <div className="relative pl-6">
+                                  <div className="absolute left-[7px] top-2 bottom-2 w-0.5" style={{ background: 'hsl(168 100% 35% / 0.2)' }} />
+                                  {details.timeline.map((item, idx) => (
+                                    <div key={idx} className="relative flex items-start gap-4 mb-4 last:mb-0">
+                                      <div className="absolute left-[-19px] top-1.5 w-3 h-3 rounded-full shrink-0" style={{
+                                        background: 'hsl(168, 100%, 35%)',
+                                        boxShadow: '0 0 8px hsl(168 100% 35% / 0.4)',
+                                      }} />
+                                      <div>
+                                        <span className="text-xs font-bold" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.year}</span>
+                                        <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{item.event}</p>
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Where They Are Now */}
+                              <div className="rounded-2xl p-6" style={{
+                                background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)',
+                              }}>
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-2 block" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }}>Where They Are Now</span>
+                                <h3 className="text-xl font-bold text-white mb-2">{details.currentStage}</h3>
+                                <p className="text-sm font-light text-white/80 mb-4">{details.whatsNext}</p>
+                                {details.globalPresence && (
+                                  <div className="flex flex-wrap gap-2">
+                                    {details.globalPresence.map((loc) => (
+                                      <span key={loc} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs text-white/90" style={{
+                                        background: 'hsla(0, 0%, 100%, 0.15)',
+                                        border: '0.5px solid hsla(0, 0%, 100%, 0.2)',
+                                      }}>
+                                        <MapPin className="w-3 h-3" />
+                                        {loc}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Programs bar */}
+                          <div className="mt-8 pt-6 flex flex-wrap items-center gap-3" style={{ borderTop: '1px solid hsla(168, 20%, 80%, 0.3)' }}>
+                            <span className="text-xs font-medium" style={{ color: 'hsl(220, 15%, 50%)' }}>Supported by:</span>
+                            {story.programs.map((prog) => (
+                              <span key={prog} className="px-3 py-1 rounded-full text-xs font-medium" style={{
+                                background: 'hsl(168 100% 35% / 0.08)',
+                                color: 'hsl(168, 100%, 28%)',
+                                border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                              }}>
+                                {prog}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
 
           {filteredStories.length === 0 && (
             <div className="text-center py-20">
-              <p className="body-lg">No companies match your filters.</p>
+              <p className="text-lg font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>No companies match your filters.</p>
               <Button 
                 variant="ghost" 
-                className="mt-4 text-primary"
+                className="mt-4"
+                style={{ color: 'hsl(168, 100%, 28%)' }}
                 onClick={() => {
                   setSelectedSector('All');
                   setSelectedStage('All');
@@ -239,13 +465,6 @@ const SuccessStories = () => {
           )}
         </div>
       </section>
-
-      {/* Story Modal */}
-      <SuccessStoryModal 
-        story={selectedStory ? detailedStories[selectedStory] || null : null}
-        open={!!selectedStory}
-        onClose={() => setSelectedStory(null)}
-      />
 
       {/* CTA Section */}
       <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
