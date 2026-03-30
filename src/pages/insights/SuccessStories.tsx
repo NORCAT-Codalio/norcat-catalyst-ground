@@ -13,6 +13,7 @@ import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
+import jannatecProduct from '@/assets/jannatec-product.jpg';
 
 
 // All stories data
@@ -54,16 +55,16 @@ const allStories: SuccessStory[] = [
     founded: '2015',
   },
   {
-    id: 'rocksense-analytics',
-    company: 'RockSense Analytics',
-    tagline: 'Real-time rock mechanics monitoring for safer underground operations.',
+    id: 'jannatec',
+    company: 'Jannatec Technologies',
+    tagline: 'Leading wireless communication and safety solutions for mines worldwide.',
     sector: 'Mining Tech',
-    stage: 'early',
-    status: 'piloting',
-    metrics: { capitalRaised: '$1.2M', jobsCreated: 8, marketsReached: 1 },
-    programs: ['UG Centre', 'SCF'],
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&auto=format&fit=crop&q=80',
-    founded: '2023',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { capitalRaised: '', jobsCreated: 30, marketsReached: 3 },
+    programs: ['UG Centre', 'Mentorship'],
+    image: jannatecProduct,
+    founded: '2001',
   },
   {
     id: 'drilltech-solutions',
