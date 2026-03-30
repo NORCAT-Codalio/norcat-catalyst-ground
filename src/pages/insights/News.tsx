@@ -4,7 +4,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { 
   Newspaper, Calendar, ArrowRight, TrendingUp, Rocket, 
   Building2, Users, DollarSign, Award, Zap, Globe, 
-  ExternalLink, Clock, Sparkles
+  ExternalLink, Clock, Sparkles, X
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
