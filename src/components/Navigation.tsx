@@ -68,7 +68,7 @@ export function Navigation() {
   
   // Check if we're on home page and should use light text
   const isHomePage = location.pathname === '/';
-  const useLightText = isHomePage && !isScrolled;
+  const useLightText = false;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -198,10 +198,10 @@ export function Navigation() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-xl border-b border-border/50',
         isScrolled
-          ? 'bg-background/80 backdrop-blur-xl shadow-lg border-b border-border/50 py-3'
-          : 'bg-transparent py-5'
+          ? 'shadow-lg py-3'
+          : 'py-5'
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
