@@ -114,107 +114,54 @@ const SuccessStories = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 bg-glow opacity-50" />
-        <div className="absolute inset-0 bg-mesh" />
-        <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[400px] opacity-[0.07] pointer-events-none" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-        <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left content */}
-            <div>
-              <ScrollReveal>
-                <div className="inline-flex items-center gap-2 badge-dark mb-8">
-                  <Sparkles className="w-4 h-4" />
-                  Portfolio Companies
-                </div>
-              </ScrollReveal>
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
+        {/* Signature lines */}
+        <img
+          src={signatureLines}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
+        />
 
-              <ScrollReveal delay={100}>
-                <h1 className="headline-hero text-white mb-8">
-                  Built in<br />
-                  <span className="text-gradient">Sudbury.</span><br />
-                  Scaling<br />
-                  <span className="text-gradient">Globally.</span>
-                </h1>
-              </ScrollReveal>
-
-              <ScrollReveal delay={200}>
-                <p className="body-xl text-white/70 max-w-2xl mb-12">
-                  These are the founders proving that world-changing mining and industrial technology 
-                  can come from Northern Ontario. Real companies. Real impact. Real stories.
-                </p>
-              </ScrollReveal>
-
-              {/* Quick stats */}
-              <ScrollReveal delay={300}>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  {ecosystemStats.map((stat, i) => (
-                    <div key={i}>
-                      <div className="stat-number text-4xl md:text-5xl mb-1">
-                        {stat.value}
-                      </div>
-                      <p className="text-sm text-white/50">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </ScrollReveal>
-            </div>
-
-            {/* Right graphics */}
-            <div className="hidden lg:block relative">
-              <ScrollReveal delay={200}>
-                <div className="relative">
-                  {/* Main graphic container */}
-                  <div className="relative w-full aspect-square max-w-lg mx-auto">
-                    {/* Floating cards representing companies */}
-                    <div className="absolute top-0 right-0 w-48 h-32 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm border border-primary/20 p-4 animate-float">
-                      <div className="text-primary text-2xl font-bold">$180M+</div>
-                      <div className="text-white/60 text-sm">Capital Raised</div>
-                    </div>
-                    
-                    <div className="absolute top-1/4 left-0 w-44 h-28 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 backdrop-blur-sm border border-accent/20 p-4 animate-float" style={{ animationDelay: '0.5s' }}>
-                      <div className="text-accent text-2xl font-bold">450+</div>
-                      <div className="text-white/60 text-sm">Jobs Created</div>
-                    </div>
-                    
-                    <div className="absolute bottom-1/4 right-8 w-40 h-24 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 p-4 animate-float" style={{ animationDelay: '1s' }}>
-                      <div className="text-white text-xl font-bold">23</div>
-                      <div className="text-white/60 text-sm">Countries</div>
-                    </div>
-                    
-                    <div className="absolute bottom-0 left-1/4 w-36 h-24 rounded-xl bg-gradient-to-br from-primary/15 to-accent/10 backdrop-blur-sm border border-primary/15 p-4 animate-float" style={{ animationDelay: '1.5s' }}>
-                      <div className="text-primary text-xl font-bold">89%</div>
-                      <div className="text-white/60 text-sm">Survival Rate</div>
-                    </div>
-
-                    {/* Center glow */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-32 h-32 rounded-full bg-primary/20 blur-3xl" />
-                    </div>
-                    
-                    {/* Connection lines */}
-                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-                      <defs>
-                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                          <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.1" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M200,200 L350,50" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
-                      <path d="M200,200 L50,120" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
-                      <path d="M200,200 L320,250" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
-                      <path d="M200,200 L130,350" stroke="url(#lineGradient)" strokeWidth="1" fill="none" strokeDasharray="4,4" />
-                    </svg>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <ScrollReveal>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
+                <Sparkles className="w-3.5 h-3.5" />
+                Portfolio Companies
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                Built in Sudbury.{' '}
+                <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Scaling Globally.</span>
+              </h1>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-xl md:text-2xl leading-relaxed text-white max-w-2xl font-light">
+                These are the founders proving that world-changing mining and industrial technology 
+                can come from Northern Ontario. Real companies. Real impact. Real stories.
+              </p>
+            </ScrollReveal>
           </div>
         </div>
       </section>
+
+      {/* Stats Strip */}
+      <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="w-full px-6">
+          <div className="flex flex-wrap justify-around gap-6">
+            {ecosystemStats.map((stat, i) => (
+              <div key={i} className="flex items-center gap-4 px-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-black" style={{ color: 'hsl(220, 15%, 20%)' }}>{stat.value}</div>
+                  <p className="text-sm md:text-base font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{stat.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Filter Bar */}
       <section className="sticky top-16 z-30 bg-white border-b border-gray-200 shadow-sm">
