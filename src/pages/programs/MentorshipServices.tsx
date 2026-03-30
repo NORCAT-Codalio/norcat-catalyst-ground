@@ -21,6 +21,7 @@ import {
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
 import mentoringGroup from '@/assets/mentoring-group.png';
+import mentorshipHeroBg from '@/assets/mentorship-hero-bg.png';
 
 // Mentor headshots
 import tomFortinImg from '@/assets/mentors/tom-fortin.png';
