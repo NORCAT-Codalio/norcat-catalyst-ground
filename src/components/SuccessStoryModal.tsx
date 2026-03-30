@@ -8,6 +8,7 @@ import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
+import maestroUnderground from '@/assets/maestro-underground.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
