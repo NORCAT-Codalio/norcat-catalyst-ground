@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, Building2, CheckCircle, MapPin, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { SuccessStoryCard, type SuccessStory } from '@/components/SuccessStoryCard';
-import { SuccessStoryModal, detailedStories } from '@/components/SuccessStoryModal';
+import { motion, AnimatePresence } from 'framer-motion';
+import type { SuccessStory } from '@/components/SuccessStoryCard';
+import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 
