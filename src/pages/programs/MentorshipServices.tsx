@@ -233,8 +233,7 @@ const MentorshipServices = () => {
       <section className="relative min-h-[80vh] flex items-center overflow-hidden" style={{ background: 'hsl(220, 20%, 7%)' }}>
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src={mentorshipHeroBg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/60" />
+          <img src={mentorshipHeroBg} alt="" aria-hidden="true" className="w-full h-full object-contain object-right" />
         </div>
 
         {/* Grid overlay */}
