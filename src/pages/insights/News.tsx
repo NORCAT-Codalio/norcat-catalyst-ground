@@ -264,9 +264,24 @@ const News = () => {
                                 {paragraph}
                               </p>
                             ))}
+
+                            {/* About Sections */}
+                            {item.aboutSections && item.aboutSections.length > 0 && (
+                              <>
+                                <div className="my-8" style={{ borderTop: '1px solid hsla(220, 15%, 75%, 0.4)' }} />
+                                {item.aboutSections.map((about, idx) => (
+                                  <div key={idx} className="mb-6 last:mb-0">
+                                    <h4 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                      {about.title}
+                                    </h4>
+                                    <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                      {about.text}
+                                    </p>
+                                  </div>
+                                ))}
+                              </>
+                            )}
                           </div>
-                        </div>
-                      </motion.div>
                     )}
                   </motion.div>
                 </motion.div>
