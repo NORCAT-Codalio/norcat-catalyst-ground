@@ -22,22 +22,23 @@ import linesTeal from '@/assets/lines-teal.png';
 import mentoringGroup from '@/assets/mentoring-group.png';
 
 // Mentor headshots
-import tomFortinImg from '@/assets/mentors/tom-fortin.jpg';
+import tomFortinImg from '@/assets/mentors/tom-fortin.png';
 import cathyNadjiwonImg from '@/assets/mentors/cathy-nadjiwon.jpg';
-import peterDalBiancoImg from '@/assets/mentors/peter-dal-bianco.jpg';
-import jamieDewarImg from '@/assets/mentors/jamie-dewar.jpg';
+import peterDalBiancoImg from '@/assets/mentors/peter-dal-bianco.png';
+import jamieDewarImg from '@/assets/mentors/jamie-dewar.png';
 import bernieAhoImg from '@/assets/mentors/bernie-aho.jpg';
 import barbWardDagnonImg from '@/assets/mentors/barb-ward-dagnon.jpg';
-import jeffFullerImg from '@/assets/mentors/jeff-fuller.jpg';
+import jeffFullerImg from '@/assets/mentors/jeff-fuller.png';
 import dennisReichImg from '@/assets/mentors/dennis-reich.jpg';
 import donDuvalImg from '@/assets/mentors/don-duval.jpg';
-import ianLaneImg from '@/assets/mentors/ian-lane.jpg';
+import ianLaneImg from '@/assets/mentors/ian-lane.png';
 import ehsanMirdamadiImg from '@/assets/mentors/ehsan-mirdamadi.jpg';
 import emilyMantleImg from '@/assets/mentors/emily-mantle.jpg';
-import sheriTomchickImg from '@/assets/mentors/sheri-tomchick.jpg';
+import sheriTomchickImg from '@/assets/mentors/sheri-tomchick.png';
 import chadPallopsonImg from '@/assets/mentors/chad-pallopson.jpg';
-import michaelDolinarImg from '@/assets/mentors/michael-dolinar.jpg';
+import michaelDolinarImg from '@/assets/mentors/michael-dolinar.png';
 import davidPasiekaImg from '@/assets/mentors/david-pasieka.jpg';
+import peyvandMelatiImg from '@/assets/mentors/peyvand-melati.png';
 
 const mentors = [
   {
