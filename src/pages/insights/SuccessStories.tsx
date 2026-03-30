@@ -11,6 +11,7 @@ import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import symxAiTeam from '@/assets/symx-ai-team.jpg';
 
 
 // All stories data
@@ -28,16 +29,16 @@ const allStories: SuccessStory[] = [
     founded: '2022',
   },
   {
-    id: 'subsurface-ai',
-    company: 'SubSurface AI',
-    tagline: 'AI-powered geological analysis reducing exploration costs by 60%.',
+    id: 'symx-ai',
+    company: 'SYMX.AI',
+    tagline: 'Revolutionizing mining with AI, Industrial IoT, and predictive analytics.',
     sector: 'AI',
-    stage: 'exit',
-    status: 'acquired',
-    metrics: { capitalRaised: '$45M', jobsCreated: 28, marketsReached: 12 },
-    programs: ['Mentorship', 'VGS', 'RAI'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
-    founded: '2018',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { capitalRaised: '$2M+', jobsCreated: 25, marketsReached: 8 },
+    programs: ['UG Centre', 'Mentorship', 'VGS', 'IAP'],
+    image: symxAiTeam,
+    founded: '2008',
   },
   {
     id: 'ventflow-systems',

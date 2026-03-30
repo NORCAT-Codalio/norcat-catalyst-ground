@@ -4,6 +4,7 @@ import { X, MapPin, Users, DollarSign, Building2, Globe, Award, TrendingUp, Chec
 import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import symxAiTeam from '@/assets/symx-ai-team.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -380,38 +381,40 @@ export const detailedStories: Record<string, StoryDetails> = {
     globalPresence: ['Greater Sudbury', 'Canada', 'USA'],
     fullStory: 'Within two years of winning PITCH 2022, Luke relocated the company to Greater Sudbury, expanded the team by over 300%, and secured several investments and grants to further grow the company. CircuitIQ secured $2 million in seed funding from local investors and grew the team from 7 to 26 in just two years.\n\nBy 2026, Luke has grown CircuitIQ to a sizeable operation of 43 staff, expanded their headquarters to Downtown Sudbury, and secured significant funding totaling over $4 million through several recent provincial and local investment initiatives such as the Sudbury Catalyst Fund, FedNor, the Northern Ontario Heritage Fund Corporation (NOHFC) and local angel investors.\n\nMapping more than 400 buildings across Canada and the USA and planning to expand into the underground and deep-tech space, CircuitIQ champions optimization, innovation, and safety with smarter spaces.',
   },
-  'subsurface-ai': {
-    id: 'subsurface-ai',
-    company: 'SubSurface AI',
-    tagline: 'AI-powered geological analysis reducing exploration costs by 60%.',
+  'symx-ai': {
+    id: 'symx-ai',
+    company: 'SYMX.AI',
+    tagline: 'Revolutionizing mining with AI, Industrial IoT, and predictive analytics.',
     sector: 'AI / Mining Tech',
-    stage: 'exit',
-    status: 'acquired',
-    metrics: { capitalRaised: '$45M', jobsCreated: 28, marketsReached: 12 },
-    programs: ['Mentorship', 'VGS', 'RAI'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80',
-    founded: '2018',
-    problem: 'Mineral exploration was expensive, slow, and relied too heavily on human interpretation of geological data.',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { capitalRaised: '$2M+', jobsCreated: 25, marketsReached: 8 },
+    programs: ['UG Centre', 'Mentorship', 'VGS', 'IAP'],
+    image: symxAiTeam,
+    founded: '2008',
+    problem: 'Mining operations lacked reliable real-time data gathering and communication underground, leading to unscheduled downtime, excessive fuel consumption, and siloed information between surface and underground teams.',
     breakthrough: {
-      text: 'SubSurface AI built a machine learning platform that analyzes core samples, geophysical surveys, and historical drilling data to predict mineral deposits with 85% accuracy. Their technology reduced the average exploration program cost by 60% and timeline by 40%.',
+      text: 'SYMX.AI built an integrated suite of AI-powered software and hardware solutions—X.Machines for real-time asset performance management, X.Parts for predictive maintenance, and X.Connect for resilient IoT mesh Wi-Fi—delivering measurable results including a 9% reduction in fuel consumption, 14% decrease in maintenance costs, and 50% reduction in unscheduled downtime.',
     },
     timeline: [
-      { year: '2018', event: 'Founded by Dr. Michael Torres' },
-      { year: '2019', event: 'Joined NORCAT Mentorship Program' },
-      { year: '2020', event: 'Seed round: $2.5M' },
-      { year: '2021', event: 'Partnership with major mining companies' },
-      { year: '2022', event: 'Series A: $15M' },
-      { year: '2023', event: 'Acquired by Dassault Systèmes for $45M' },
+      { year: '2008', event: 'Founded by Kirk Petroski in Sudbury' },
+      { year: '2015', event: 'Began testing and development at NORCAT Underground Centre' },
+      { year: '2020', event: 'Rebranded to SYMX.AI, pivoting to AI and predictive analytics' },
+      { year: '2022', event: 'Ash Agarwal appointed CEO; Kirk Petroski transitions to Executive Chairman' },
+      { year: '2024', event: 'Strategic collaboration with LoopX, fusing Vision AI and LiDAR with X.Machines platform' },
+      { year: '2025', event: 'Received $2M OCI investment for digital tire management platform with Yokohama and Fountain Tire' },
+      { year: '2026', event: 'Centerpiece of Ontario innovation economy, deploying tire platform across global sites' },
     ],
-    impactMetrics: { jobs: 28, revenue: '$8M', capital: '$45M', pilots: 22, markets: 12 },
+    impactMetrics: { jobs: 25, capital: '$2M+', pilots: 3, markets: 8 },
     founderQuote: {
-      text: 'The mentorship we received connected us with industry veterans who understood both the technical and business challenges. That network was invaluable when we started conversations with Dassault.',
-      author: 'Dr. Michael Torres',
-      role: 'Founder, SubSurface AI',
+      text: "NORCAT Innovation has enabled SYMX.AI to be a global leader and innovator in underground communications and real-time data gathering technologies. NORCAT's ability and influence has allowed our company to access funding, market exposure, and grow into a leading-edge technology provider. Demonstrating products in an operating mine setting is an opportunity few others in the world have—it has played a key role in the development and success SYMX.AI enjoys today.",
+      author: 'Kirk Petroski',
+      role: 'Founder & Executive Chairman, SYMX.AI',
     },
-    currentStage: 'Acquired',
-    whatsNext: 'Now part of Dassault Systèmes GEOVIA division, with technology being integrated into industry-standard mining software.',
-    globalPresence: ['Global'],
+    currentStage: 'Scaling Globally',
+    whatsNext: 'Deploying a first-of-its-kind digital tire management platform with Yokohama and Fountain Tire across global mine sites, while continuing to serve as the "nervous system" of the modern mine.',
+    globalPresence: ['Sudbury', 'Ontario', 'Canada', 'Global'],
+    fullStory: "SYMX.AI's utilization of the NORCAT Underground Centre was like having access to an \"active laboratory.\" The Underground Centre, situated in Sudbury, is unique in the world and a key anchor that demonstrates the global eminence of the mining technology cluster. Beyond development and testing activities, the networking opportunities and exposure to investors and networks outside of Sudbury has allowed SYMX.AI to showcase, sell, and promote its digital mining solutions to a global audience.\n\nAs the industry shifted from \"getting data\" to \"using data,\" the company rebranded to SYMX.AI, reflecting a new focus on Artificial Intelligence and Predictive Analytics. During this period, Ash Agarwal stepped in as CEO while Founder Kirk Petroski transitioned to Executive Chairman, focusing on dismantling infrastructure silos and mentoring the next generation of innovators through programs like the Creative Destruction Lab (CDL).\n\nIn late 2024 and throughout 2025, SYMX.AI structured itself as the \"nervous system\" of the mine through a strategic collaboration with local founder Dr. Chao Yu of LoopX. Fusing LoopX's Vision AI and LiDAR with SYMX.AI's X.Machines platform, the partnership enabled legacy mining vehicles to achieve 360-degree situational awareness.\n\nIn late 2025, the company received a $2 million investment from the Ontario Centre of Innovation (OCI) to develop a first-of-its-kind digital tire management platform in collaboration with Yokohama and Fountain Tire. This platform is currently being deployed to reduce fuel waste and extend equipment life across global sites.",
   },
   'ventflow-systems': {
     id: 'ventflow-systems',
