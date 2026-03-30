@@ -690,5 +690,6 @@ export function Navigation() {
         </AnimatePresence>
       </div>
     </header>
+    </>
   );
 }
