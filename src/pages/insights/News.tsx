@@ -41,6 +41,12 @@ const newsItems = [
     category: 'Event',
     icon: Award,
     fullContent: `Greater Sudbury, ON – Becker Mining Systems Canada and Turnkey Communications have joined forces as Title Sponsors of Mining Transformed 2026, taking place May 25–27, 2026, at the NORCAT Underground Centre in Sudbury, Ontario.\n\nNow in its third iteration, Mining Transformed remains the world's only mining technology exhibition hosted within an operating underground mine. The event will bring together more than 50 technology companies and 250 global mining leaders to demonstrate, evaluate, and accelerate the adoption of next-generation mining innovation.\n\nBy combining Becker's global leadership in underground energy, automation, and infrastructure systems with Turnkey's expertise in advanced connectivity and private LTE/5G integration, the partnership reinforces the critical role of infrastructure and communications as the backbone of modern digital mining operations.\n\nMining Transformed provides a secure, real-world environment for mining operators to de-risk procurement decisions, evaluate technologies under authentic underground conditions, and collaborate directly with technology builders.\n\nAs Title Sponsors, Becker and Turnkey will co-host "Doors Open NORCAT" on Monday, May 25 for an exclusive evening experience at NORCAT's headquarters. The event will feature guided tours of the innovation and training centre, curated technology activations, early attendee registration, and premium networking with leaders from across the mining ecosystem.\n\n"Reliable connectivity and resilient infrastructure are foundational to the future of mining," said Terry Joseph CEO, Turnkey Communications. "As operations advance toward full electrification and automation, the integration of communications, energy, and operational systems becomes mission-critical. Mining Transformed creates a platform where those systems can be validated in real-world environments."\n\n"The mining sector is undergoing one of the most significant transitions in its history," said Albert Becker CEO, Becker Mining Systems Canada. "Electrification, automation, and digital integration demand robust underground infrastructure. Mining Transformed allows the industry to see innovation operating where it matters most — underground."\n\n"Mining Transformed is built on collaboration," said Greg Major, NORCAT Underground Centre Director. "Through NORCAT's innovation ecosystem, we bring together operators, technology leaders, and global partners to accelerate meaningful progress. The leadership of Becker Mining Systems Canada and Turnkey Communications reflects the commitment required to advance the future of mining."\n\nIndustry leaders interested in participating in Mining Transformed 2026 are encouraged to register at miningtransformed.norcat.org`,
+    aboutSections: [
+      { title: 'About Becker Mining Systems Canada', text: 'Becker Mining Systems is the only worldwide supplier offering complete energy distribution, automation, communication, transportation, and infrastructure solutions for the mining industry. Founded in 1964, the company is recognized globally for engineering solutions designed to perform in demanding and explosive underground environments.' },
+      { title: 'About Turnkey Communications', text: 'Turnkey Communications delivers end-to-end telecommunications and infrastructure solutions for industrial and mission-critical environments. From private LTE/5G networks and advanced connectivity platforms to fiber optic deployment and large-scale infrastructure integration, Turnkey enables secure, resilient communications that power digital transformation.' },
+      { title: 'About NORCAT', text: 'NORCAT is a global leader in skilled labour training and mining technology development. It operates the world\'s only underground mine dedicated to enabling companies to develop, test, and showcase emerging technologies designed to transform mining operations.' },
+      { title: 'About the Canadian Institute of Mining, Metallurgy and Petroleum (CIM)', text: 'CIM is the trusted authority advancing knowledge and leading practices across Canada\'s minerals and metals industry through conferences, professional development, publications, and a national network of technical societies.' },
+    ],
   },
 ];
 
@@ -258,6 +264,23 @@ const News = () => {
                                 {paragraph}
                               </p>
                             ))}
+
+                            {/* About Sections */}
+                            {item.aboutSections && item.aboutSections.length > 0 && (
+                              <>
+                                <div className="my-8" style={{ borderTop: '1px solid hsla(220, 15%, 75%, 0.4)' }} />
+                                {item.aboutSections.map((about, idx) => (
+                                  <div key={idx} className="mb-6 last:mb-0">
+                                    <h4 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                      {about.title}
+                                    </h4>
+                                    <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                      {about.text}
+                                    </p>
+                                  </div>
+                                ))}
+                              </>
+                            )}
                           </div>
                         </div>
                       </motion.div>
