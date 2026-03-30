@@ -103,93 +103,40 @@ const News = () => {
 
   return (
     <Layout>
-      {/* ── Hero with Featured Story ── */}
-      <section className="relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, hsl(224 71% 4%) 0%, hsl(215 28% 17%) 50%, hsl(217 19% 27%) 100%)',
-      }}>
-        {/* Stats Ticker */}
-        <div className="border-b border-white/5 overflow-hidden pt-20">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center py-3 gap-8 animate-marquee">
-              <span className="text-primary text-xs font-bold tracking-wider uppercase flex items-center gap-2 shrink-0">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Live Ecosystem Stats
-              </span>
-              {[...ecosystemStats, ...ecosystemStats].map((stat, i) => (
-                <div key={i} className="flex items-center gap-2 shrink-0">
-                  <span className="text-white font-bold">{stat.value}</span>
-                  <span className="text-white/50 text-sm">{stat.label}</span>
-                  <span className="text-white/10 mx-4">|</span>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* ── Hero (matches About page) ── */}
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
+        {/* Background image */}
+        <div className="absolute inset-0 flex items-center justify-end">
+          <img src={newsHeroBg} alt="" className="h-full max-w-none object-contain object-right" />
         </div>
 
-        {/* Gradient orbs */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-15" style={{
-            background: 'radial-gradient(circle, hsl(168 100% 35% / 0.4), transparent 70%)',
-          }} />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-10" style={{
-            background: 'radial-gradient(circle, hsl(164 70% 55% / 0.4), transparent 70%)',
-          }} />
-        </div>
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-16 pb-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Featured Article */}
+        {/* Signature lines */}
+        <img
+          src={signatureLines}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
+        />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
             <ScrollReveal>
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold text-white animate-pulse" style={{
-                    background: 'linear-gradient(135deg, hsl(0 84% 50%), hsl(0 84% 60%))',
-                  }}>
-                    BREAKING
-                  </span>
-                  <span className="text-white/40 text-sm flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {featuredNews.readTime}
-                  </span>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                  <span className="text-white">Sudbury Startup Raises </span>
-                  <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>$12M</span>
-                  <span className="text-white"> to Scale Autonomous Mining Fleet</span>
-                </h1>
-                
-                <p className="text-lg text-white/50 leading-relaxed max-w-lg">
-                  {featuredNews.excerpt}
-                </p>
-                
-                <div className="flex items-center gap-4">
-                  <span className="text-white/30 text-sm">{featuredNews.date}</span>
-                </div>
-                
-                <a href="#" className="glass-frosted-btn-teal rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2 no-underline" style={{ color: 'hsl(168, 100%, 25%)' }}>
-                  Read Full Story <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
+                <Sparkles className="w-3.5 h-3.5" />
+                News & Updates
+              </span>
             </ScrollReveal>
-
-            {/* Right: Featured Image */}
+            <ScrollReveal delay={100}>
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                Ecosystem{' '}
+                <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Newsroom</span>
+              </h1>
+            </ScrollReveal>
             <ScrollReveal delay={200}>
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-3xl overflow-hidden liquid-glass-strong">
-                  <img 
-                    src={autonomousMiningVehicle} 
-                    alt="Autonomous mining vehicle in underground tunnel"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                </div>
-                {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 liquid-glass-strong rounded-2xl px-5 py-3 glass-shimmer">
-                  <span className="text-sm font-bold text-white">$12M Raised</span>
-                </div>
-                <div className="absolute -top-3 -right-3 w-20 h-20 rounded-2xl border border-primary/30" />
-              </div>
+              <p className="text-xl md:text-2xl leading-relaxed text-white max-w-2xl font-light">
+                The latest from NORCAT Innovation and our portfolio companies—funding rounds, 
+                partnerships, program launches, and ecosystem milestones.
+              </p>
             </ScrollReveal>
           </div>
         </div>
