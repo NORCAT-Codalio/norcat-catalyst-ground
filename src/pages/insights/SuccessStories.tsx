@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { SuccessStoryCard, type SuccessStory } from '@/components/SuccessStoryCard';
 import { SuccessStoryModal, detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
+import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 
 
 // All stories data
@@ -115,6 +116,11 @@ const SuccessStories = () => {
     <Layout>
       {/* Hero */}
       <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
+        {/* Background image */}
+        <div className="absolute inset-0 flex items-center justify-end">
+          <img src={successStoriesHeroBg} alt="" className="h-full max-w-none object-contain object-right" />
+        </div>
+
         {/* Signature lines */}
         <img
           src={signatureLines}
