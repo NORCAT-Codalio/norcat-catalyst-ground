@@ -48,6 +48,19 @@ const newsItems = [
       { title: 'About the Canadian Institute of Mining, Metallurgy and Petroleum (CIM)', text: 'CIM is the trusted authority advancing knowledge and leading practices across Canada\'s minerals and metals industry through conferences, professional development, publications, and a national network of technical societies.' },
     ],
   },
+  {
+    id: 'don-duval-honorary-chair',
+    title: 'Don Duval Appointed Honorary Chair for Mining Transformed 2026',
+    date: 'February 6, 2026',
+    excerpt: 'NORCAT welcomes Don Duval, Principal at Evok Innovations, as the Honorary Chair for Mining Transformed 2026, bringing nearly three decades of venture capital and mining innovation experience.',
+    category: 'Event',
+    icon: Award,
+    fullContent: `Greater Sudbury, ON | February 6, 2026 – NORCAT is pleased to announce Don Duval, Principal at Evok Innovations, as the Honorary Chair for Mining Transformed 2026 hosted at the NORCAT Underground Centre in Greater Sudbury on May 25th to 27th, 2026. Delivered in partnership with the Canadian Institute of Mining, Metallurgy and Petroleum (CIM), Mining Transformed remains the world's only exhibition in an underground operating mine providing a unique, hands-on opportunity for technology ventures and mining companies to engage amongst live demonstrations of emerging technologies poised to transform the global mining industry.\n\n"We are thrilled to welcome Don Duval as the Honorary Chair for Mining Transformed 2026. Given his longstanding commitment to mining technology and innovation, coupled with his industry knowledge and venture capital experience, he is a welcomed addition to support this one-of-a-kind exhibition," cited Greg Major, Director of the NORCAT Underground Centre.\n\nWith nearly three decades of experience spanning venture capital, technology commercialization, and innovation ecosystem development, Duval brings extensive experience to Mining Transformed – exemplified by his role as Principal, Head of Mining at Evok Innovations. Prior to Evok, Duval served as the CEO of NORCAT where he led the organization's evolution into a globally recognized mining innovation hub.\n\n"Industry collaboration is essential to accelerating the development, adoption, and broader diffusion of emerging technologies," said Don Duval. "This hands-on exhibition offers a unique opportunity to experience innovation firsthand within a world-class mining ecosystem. I am absolutely delighted to support Mining Transformed as Honorary Chair."\n\nTickets to Mining Transformed are limited and available by invitation only. To learn more about eligibility or to submit your interest in attending, please visit miningtransformed.norcat.org`,
+    aboutSections: [
+      { title: 'About the NORCAT Underground Centre', text: 'Located in the City of Greater Sudbury, the NORCAT Underground Centre serves as the global one-stop shop operating mine designed to enable start-ups, small/medium enterprises, and international companies to develop, test, and demonstrate emerging technologies that are poised to transform the global mining industry.' },
+      { title: 'About CIM', text: 'The Canadian Institute of Mining, Metallurgy and Petroleum (CIM) is the trusted authority and collective source for advancing knowledge and leading practices within Canada\'s minerals and metals industry. Through conferences, publications, professional development, and a national network of members and technical societies, CIM cultivates expertise and innovation to support a safe, responsible, and competitive mining sector.' },
+    ],
+  },
 ];
 
 // Activity feed
