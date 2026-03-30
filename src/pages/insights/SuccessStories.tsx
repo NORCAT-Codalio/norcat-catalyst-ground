@@ -10,22 +10,22 @@ import type { SuccessStory } from '@/components/SuccessStoryCard';
 import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
+import circuitiqTeam from '@/assets/circuitiq-team.png';
 
 
 // All stories data
 const allStories: SuccessStory[] = [
   {
-    id: 'minetech-robotics',
-    company: 'MineTech Robotics',
-    tagline: 'Autonomous underground vehicles making mining safer and more efficient.',
-    sector: 'Mining Tech',
+    id: 'circuitiq',
+    company: 'CircuitIQ',
+    tagline: 'Professional electrical circuit mapping system with 100% accuracy.',
+    sector: 'Cleantech',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$12M', jobsCreated: 47, marketsReached: 5 },
-    programs: ['UG Centre', 'SCF', 'Mentorship', 'VGS'],
-    image: 'https://images.unsplash.com/photo-1578496781379-7dcfb995293d?w=800&auto=format&fit=crop&q=80',
-    founded: '2019',
-    hasVideo: true,
+    metrics: { capitalRaised: '$4M', jobsCreated: 43, marketsReached: 2 },
+    programs: ['SCF', 'Mentorship', 'VGS'],
+    image: circuitiqTeam,
+    founded: '2022',
   },
   {
     id: 'subsurface-ai',
