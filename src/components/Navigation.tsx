@@ -68,7 +68,7 @@ export function Navigation() {
   
   // Check if we're on home page and should use light text
   const isHomePage = location.pathname === '/';
-  const useLightText = isHomePage && !isScrolled;
+  const useLightText = false;
 
   useEffect(() => {
     const handleScroll = () => {
