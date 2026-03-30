@@ -494,21 +494,9 @@ export function Navigation() {
             {/* Work With Us - Sage Green Glass Button */}
             <Link
               to="/apply"
-              className="group relative flex items-center gap-2 text-sm font-bold px-6 py-2.5 rounded-xl backdrop-blur-[18px] border transition-all duration-300"
+              className="group relative flex items-center gap-2 text-sm font-bold px-6 py-2.5 rounded-xl border border-white/20 text-white transition-all duration-300 shadow-[0_4px_20px_-4px_hsla(168,100%,35%,0.4)] hover:shadow-[0_6px_28px_-4px_hsla(168,100%,35%,0.55)] hover:scale-[1.03]"
               style={{
-                background: 'hsla(155, 30%, 60%, 0.25)',
-                borderColor: 'hsla(155, 40%, 75%, 0.5)',
-                borderTop: '1px solid hsla(155, 50%, 85%, 0.7)',
-                color: 'hsl(155, 50%, 18%)',
-                boxShadow: '0 2px 12px -2px hsla(155, 40%, 40%, 0.15)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'hsla(155, 30%, 60%, 0.35)';
-                e.currentTarget.style.boxShadow = '0 4px 18px -2px hsla(155, 40%, 40%, 0.25)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'hsla(155, 30%, 60%, 0.25)';
-                e.currentTarget.style.boxShadow = '0 2px 12px -2px hsla(155, 40%, 40%, 0.15)';
+                background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)',
               }}
             >
               Work With Us
