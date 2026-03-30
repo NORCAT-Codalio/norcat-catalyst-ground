@@ -1,4 +1,5 @@
 import { Layout } from '@/components/Layout';
+import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
