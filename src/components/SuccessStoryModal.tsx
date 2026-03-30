@@ -4,6 +4,7 @@ import { X, MapPin, Users, DollarSign, Building2, Globe, Award, TrendingUp, Chec
 import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import symxAiTeam from '@/assets/symx-ai-team.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
