@@ -220,12 +220,12 @@ const News = () => {
                 <span className="text-foreground">Latest </span>
                 <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
               </h2>
-              <p className="body-md mt-2">{newsItems.length} stories</p>
+              <p className="body-md mt-2">{filteredNews.length} {filteredNews.length === 1 ? 'story' : 'stories'}</p>
             </div>
           </div>
 
           <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {newsItems.map((item) => {
+            {filteredNews.map((item) => {
               const Icon = item.icon;
               const isExpanded = selectedNews === item.id;
 
