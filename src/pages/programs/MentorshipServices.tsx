@@ -153,6 +153,13 @@ const mentors = [
     bio: 'Barb is the founder and owner of Medicor Research Inc. She is a specialist in medical research, clinical trials, and pharmaceutical branding. Barb has extensive experience navigating the healthcare industry and bringing medical innovations to market.',
     expertfile: 'http://expertfile.com/experts/barb.ward-dagnon',
   },
+  {
+    name: 'Peyvand Melati',
+    image: peyvandMelatiImg,
+    tags: ['Technology', 'Strategy'],
+    bio: 'Peyvand is an experienced technology executive and strategic advisor with deep expertise in business strategy, technology leadership, and helping companies scale through innovation and operational excellence.',
+    expertfile: 'http://expertfile.com/experts/peyvand.melati',
+  },
 ];
 
 const principles = [
