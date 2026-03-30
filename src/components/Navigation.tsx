@@ -481,21 +481,39 @@ export function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Validate Idea - Flashy Button */}
-            <Button asChild variant="outline" className="relative text-sm px-5 py-2.5 border-primary/50 text-primary hover:text-primary hover:bg-primary/5 hover:border-primary overflow-hidden group">
-              <Link to="/validate-idea">
-                <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-pulse" />
-                <Lightbulb className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-                <span className="relative">Validate My Idea</span>
-              </Link>
-            </Button>
-            
-            <Button asChild variant="default" className="btn-primary text-sm px-6 py-2.5">
-              <Link to="/apply">
-                Work With Us
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            {/* Validate Idea - Glass Button */}
+            <Link
+              to="/validate-idea"
+              className="group relative flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl bg-white/40 backdrop-blur-[18px] border border-white/60 shadow-[0_2px_12px_-2px_hsl(var(--primary)/0.15)] text-primary transition-all duration-300 hover:bg-white/55 hover:shadow-[0_4px_18px_-2px_hsl(var(--primary)/0.25)] hover:border-white/80"
+              style={{ borderTop: '1px solid hsla(0,0%,100%,0.7)' }}
+            >
+              <Lightbulb className="h-4 w-4 group-hover:animate-bounce" />
+              Validate My Idea
+            </Link>
+
+            {/* Work With Us - Sage Green Glass Button */}
+            <Link
+              to="/apply"
+              className="group relative flex items-center gap-2 text-sm font-bold px-6 py-2.5 rounded-xl backdrop-blur-[18px] border transition-all duration-300"
+              style={{
+                background: 'hsla(155, 30%, 60%, 0.25)',
+                borderColor: 'hsla(155, 40%, 75%, 0.5)',
+                borderTop: '1px solid hsla(155, 50%, 85%, 0.7)',
+                color: 'hsl(155, 50%, 18%)',
+                boxShadow: '0 2px 12px -2px hsla(155, 40%, 40%, 0.15)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'hsla(155, 30%, 60%, 0.35)';
+                e.currentTarget.style.boxShadow = '0 4px 18px -2px hsla(155, 40%, 40%, 0.25)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'hsla(155, 30%, 60%, 0.25)';
+                e.currentTarget.style.boxShadow = '0 2px 12px -2px hsla(155, 40%, 40%, 0.15)';
+              }}
+            >
+              Work With Us
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
