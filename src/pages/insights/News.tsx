@@ -4,12 +4,14 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { 
   Newspaper, Calendar, ArrowRight, TrendingUp, Rocket, 
   Building2, Users, DollarSign, Award, Zap, Globe, 
-  ExternalLink, Clock
+  ExternalLink, Clock, Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import autonomousMiningVehicle from '@/assets/autonomous-mining-vehicle.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
+import signatureLines from '@/assets/signature-lines.png';
+import newsHeroBg from '@/assets/news-hero-bg.png';
 
 // ── Neumorphic icon container (matches homepage / VentureGrowth) ──
 const iconContainerStyle: React.CSSProperties = {
