@@ -30,6 +30,7 @@ interface StoryDetails extends SuccessStory {
   currentStage: string;
   whatsNext: string;
   globalPresence?: string[];
+  fullStory?: string;
 }
 
 interface SuccessStoryModalProps {
