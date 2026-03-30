@@ -185,9 +185,8 @@ const News = () => {
       </section>
 
       {/* ── News Grid + Activity Feed ── */}
-      <section className="section-padding bg-background relative">
-        {/* Subtle mesh background */}
-        <div className="absolute inset-0 bg-mesh pointer-events-none opacity-50" />
+      <section className="py-28 relative" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="container mx-auto px-6 relative z-10">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex items-end justify-between mb-12">
