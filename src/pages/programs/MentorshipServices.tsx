@@ -105,6 +105,13 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/emily.mantle',
   },
   {
+    name: 'Peyvand Melati',
+    image: peyvandMelatiImg,
+    tags: ['Technology', 'Strategy'],
+    bio: 'Peyvand is an experienced technology executive and strategic advisor with deep expertise in business strategy, technology leadership, and helping companies scale through innovation and operational excellence.',
+    expertfile: 'http://expertfile.com/experts/peyvand.melati',
+  },
+  {
     name: 'Ehsan Mirdamadi',
     image: ehsanMirdamadiImg,
     tags: ['SaaS', 'Venture Capital'],
@@ -133,13 +140,6 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/david.pasieka',
   },
   {
-    name: 'Gideon Uchihara',
-    image: dennisReichImg,
-    tags: ['AI/ML', 'Quantum'],
-    bio: 'Gideon is an experienced professional with expertise in healthcare and medical technology. He brings valuable insights to startups navigating the healthcare industry and developing innovative medical solutions.',
-    expertfile: 'http://expertfile.com/experts/gideon.uchihara',
-  },
-  {
     name: 'Sheri Tomchick',
     image: sheriTomchickImg,
     tags: ['Healthcare', 'Recruitment'],
@@ -147,18 +147,18 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/sheri.tomchick',
   },
   {
+    name: 'Gideon Uchihara',
+    image: dennisReichImg,
+    tags: ['AI/ML', 'Quantum'],
+    bio: 'Gideon is an experienced professional with expertise in healthcare and medical technology. He brings valuable insights to startups navigating the healthcare industry and developing innovative medical solutions.',
+    expertfile: 'http://expertfile.com/experts/gideon.uchihara',
+  },
+  {
     name: 'Barb Ward-Dagnon',
     image: barbWardDagnonImg,
     tags: ['Medical Research', 'Pharmaceuticals'],
     bio: 'Barb is the founder and owner of Medicor Research Inc. She is a specialist in medical research, clinical trials, and pharmaceutical branding. Barb has extensive experience navigating the healthcare industry and bringing medical innovations to market.',
     expertfile: 'http://expertfile.com/experts/barb.ward-dagnon',
-  },
-  {
-    name: 'Peyvand Melati',
-    image: peyvandMelatiImg,
-    tags: ['Technology', 'Strategy'],
-    bio: 'Peyvand is an experienced technology executive and strategic advisor with deep expertise in business strategy, technology leadership, and helping companies scale through innovation and operational excellence.',
-    expertfile: 'http://expertfile.com/experts/peyvand.melati',
   },
 ];
 
