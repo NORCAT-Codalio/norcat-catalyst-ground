@@ -256,7 +256,7 @@ const MentorshipServices = () => {
               <ScrollReveal delay={100}>
                 <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                   Team-Based{' '}
-                  <span style={{ color: 'hsl(168, 100%, 35%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Mentorship.</span>
+                  <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Mentorship</span>
                 </h1>
               </ScrollReveal>
               <ScrollReveal delay={200}>
@@ -264,32 +264,6 @@ const MentorshipServices = () => {
                   A proven mentoring model that pairs founders with teams of experienced 
                   volunteers who provide confidential, inclusive guidance at no cost.
                 </p>
-              </ScrollReveal>
-              <ScrollReveal delay={300}>
-                <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                  <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.3) 0%, hsla(168, 100%, 35%, 0.15) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    color: 'white',
-                    border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
-                    boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
-                  }}>
-                    Apply for Mentoring
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    color: 'white',
-                    border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
-                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
-                  }}>
-                    Become a Mentor
-                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
               </ScrollReveal>
             </div>
           </div>
