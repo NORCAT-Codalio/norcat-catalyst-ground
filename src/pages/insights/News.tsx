@@ -129,12 +129,17 @@ const ecosystemStats = [
   { label: 'Pilot Programs', value: '23' },
 ];
 
-// Categories
-const categories = ['All', 'Funding', 'Partnerships', 'Events', 'Programs', 'Acquisitions'];
+// Categories - derived from actual news items
+const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.category)))];
 
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<string | null>(null);
+
+  const filteredNews = activeCategory === 'All' 
+    ? newsItems 
+    : newsItems.filter(item => item.category === activeCategory);
+
   return (
     <Layout>
       {/* ── Hero (matches About page) ── */}
@@ -215,12 +220,12 @@ const News = () => {
                 <span className="text-foreground">Latest </span>
                 <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
               </h2>
-              <p className="body-md mt-2">{newsItems.length} stories</p>
+              <p className="body-md mt-2">{filteredNews.length} {filteredNews.length === 1 ? 'story' : 'stories'}</p>
             </div>
           </div>
 
           <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {newsItems.map((item) => {
+            {filteredNews.map((item) => {
               const Icon = item.icon;
               const isExpanded = selectedNews === item.id;
 
