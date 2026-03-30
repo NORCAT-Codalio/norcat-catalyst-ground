@@ -112,7 +112,7 @@ const categories = ['All', 'Funding', 'Partnerships', 'Events', 'Programs', 'Acq
 
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-
+  const [selectedNews, setSelectedNews] = useState<string | null>(null);
   return (
     <Layout>
       {/* ── Hero (matches About page) ── */}
