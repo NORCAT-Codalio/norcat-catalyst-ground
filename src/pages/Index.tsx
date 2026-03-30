@@ -318,7 +318,7 @@ export default function Index() {
         {/* ───── STATS Strip ───── */}
         <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="w-full">
-            <div className="flex flex-wrap justify-between gap-6 px-2 md:px-0">
+            <div className="flex flex-wrap justify-between gap-6 px-0">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-center gap-4 px-6 flex-1 justify-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
