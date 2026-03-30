@@ -135,7 +135,7 @@ const mentors = [
   {
     name: 'Gideon Uchihara',
     image: dennisReichImg,
-    tags: ['Healthcare', 'Medical Technology'],
+    tags: ['AI/ML', 'Quantum'],
     bio: 'Gideon is an experienced professional with expertise in healthcare and medical technology. He brings valuable insights to startups navigating the healthcare industry and developing innovative medical solutions.',
     expertfile: 'http://expertfile.com/experts/gideon.uchihara',
   },
