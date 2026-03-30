@@ -200,74 +200,121 @@ const News = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-[1fr_320px] gap-10">
-            {/* Main News Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {newsItems.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <ScrollReveal key={i} delay={i * 60}>
-                    <article className="group liquid-glass-light rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                      {/* Icon + Category header */}
-                      <div className="p-6 pb-0 flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-full flex items-center justify-center" style={iconContainerStyle}>
-                          <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsItems.map((item) => {
+              const Icon = item.icon;
+              const isExpanded = selectedNews === item.id;
+
+              return (
+                <motion.div
+                  key={item.id}
+                  layout
+                  transition={{ layout: { type: 'spring', stiffness: 350, damping: 30 } }}
+                  className={`cursor-pointer ${isExpanded ? 'md:col-span-2 lg:col-span-3' : ''}`}
+                  style={{ zIndex: isExpanded ? 10 : 1 }}
+                  onClick={() => !isExpanded && setSelectedNews(item.id)}
+                >
+                  <motion.div
+                    layout
+                    className="rounded-[20px] overflow-hidden"
+                    style={{
+                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
+                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
+                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
+                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+                    }}
+                    animate={{
+                      scale: selectedNews && !isExpanded ? 0.95 : 1,
+                      opacity: selectedNews && !isExpanded ? 0.4 : 1,
+                    }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  >
+                    {/* ── Collapsed Card ── */}
+                    {!isExpanded && (
+                      <motion.div layout="position" className="p-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-11 h-11 rounded-full flex items-center justify-center" style={iconContainerStyle}>
+                            <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                          </div>
+                          <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.category}</span>
                         </div>
-                        <span className="text-xs font-semibold text-primary uppercase tracking-wider">{item.category}</span>
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="p-6 flex-1 flex flex-col">
-                        <div className="flex items-center gap-2 text-muted-foreground text-xs mb-3">
+                        <div className="flex items-center gap-2 text-xs mb-3" style={{ color: 'hsl(220, 15%, 50%)' }}>
                           <Calendar className="w-3.5 h-3.5" />
                           {item.date}
                         </div>
-                        <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+                        <h3 className="text-lg font-bold mb-3 leading-snug line-clamp-2" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>
                           {item.title}
                         </h3>
-                        <p className="text-muted-foreground text-sm line-clamp-3 mb-5 flex-1">
+                        <p className="text-sm font-light line-clamp-3 mb-4" style={{ color: 'hsl(220, 15%, 40%)' }}>
                           {item.excerpt}
                         </p>
-                        <button className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:gap-2 transition-all">
+                        <span className="inline-flex items-center gap-1 text-sm font-medium" style={{ color: 'hsl(168, 100%, 28%)' }}>
                           Read More <ArrowRight className="h-4 w-4" />
-                        </button>
-                      </div>
-                    </article>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
+                        </span>
+                      </motion.div>
+                    )}
 
-            {/* Activity Feed Sidebar */}
-            <div className="hidden lg:block">
-              <div className="sticky top-32">
-                <div className="liquid-glass-light-strong rounded-3xl p-6">
-                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-5 flex items-center gap-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    Live Activity
-                  </h3>
-                  <div className="space-y-4">
-                    {activityFeed.map((item, i) => (
-                      <div key={i} className="flex gap-3 group">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 group-hover:bg-primary transition-colors" />
-                        <div>
-                          <p className="text-sm text-foreground leading-snug group-hover:text-primary transition-colors">{item.text}</p>
-                          <span className="text-xs text-muted-foreground">{item.time}</span>
+                    {/* ── Expanded Card ── */}
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.15, duration: 0.3 }}
+                      >
+                        {/* Header bar */}
+                        <div className="relative p-8 md:p-12 pb-0">
+                          {/* Close button */}
+                          <button
+                            onClick={(e) => { e.stopPropagation(); setSelectedNews(null); }}
+                            className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-20 transition-transform hover:scale-110"
+                            style={{
+                              background: 'hsla(220, 15%, 85%, 0.5)',
+                              border: '1px solid hsla(220, 15%, 80%, 0.4)',
+                            }}
+                          >
+                            <X className="w-5 h-5" style={{ color: 'hsl(220, 15%, 30%)' }} />
+                          </button>
+
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-12 h-12 rounded-full flex items-center justify-center" style={iconContainerStyle}>
+                              <Icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                            </div>
+                            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold" style={{
+                              background: 'hsl(168 100% 35% / 0.1)',
+                              color: 'hsl(168, 100%, 28%)',
+                              border: '0.5px solid hsl(168 100% 35% / 0.2)',
+                            }}>
+                              {item.category}
+                            </span>
+                            <span className="text-xs" style={{ color: 'hsl(220, 15%, 50%)' }}>{item.date}</span>
+                          </div>
+
+                          <h2 className="text-2xl md:text-3xl font-bold mb-4 max-w-3xl" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
+                            {item.title}
+                          </h2>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Load More */}
-          <div className="text-center mt-16">
-            <a href="#" className="glass-frosted-btn-teal rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2 no-underline" style={{ color: 'hsl(168, 100%, 25%)' }}>
-              Load More Stories
-            </a>
-          </div>
+                        {/* Content */}
+                        <div className="p-8 md:p-12 pt-4">
+                          <div className="max-w-3xl">
+                            {item.fullContent.split('\n\n').map((paragraph, idx) => (
+                              <p key={idx} className="text-base leading-relaxed mb-4 last:mb-0" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
