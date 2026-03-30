@@ -355,6 +355,18 @@ const SuccessStories = () => {
                                   <p className="text-xs" style={{ color: 'hsl(220, 15%, 50%)' }}>{details.founderQuote.role}</p>
                                 </div>
                               </div>
+
+                              {/* Full Story */}
+                              {details.fullStory && (
+                                <div className="mb-10">
+                                  <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Full Story</span>
+                                  {details.fullStory.split('\n\n').map((paragraph, idx) => (
+                                    <p key={idx} className="text-sm font-light leading-relaxed mb-4 last:mb-0" style={{ color: 'hsl(220, 15%, 35%)' }}>
+                                      {paragraph}
+                                    </p>
+                                  ))}
+                                </div>
+                              )}
                             </div>
 
                             {/* Right column */}
