@@ -200,11 +200,11 @@ export function Navigation() {
       {/* Top info bar - visible only at top */}
       <div
         className={cn(
-          'fixed top-0 left-0 right-0 z-[51] transition-all duration-300 bg-muted/80 backdrop-blur-sm border-b border-border/30 overflow-hidden',
-          isScrolled ? 'max-h-0 opacity-0' : 'max-h-10 opacity-100'
+          'fixed top-0 left-0 right-0 z-[51] transition-all duration-300 bg-[hsl(220_15%_18%)] border-b border-white/10 overflow-hidden',
+          isScrolled ? 'max-h-0 opacity-0' : 'max-h-8 opacity-100'
         )}
       >
-        <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-1.5 text-xs text-muted-foreground">
+        <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-1 text-[11px] text-white/80">
           <a href="https://www.norcat.org" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
             norcat.org
           </a>
