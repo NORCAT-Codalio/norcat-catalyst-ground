@@ -248,19 +248,18 @@ const SuccessStories = () => {
       />
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-50" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              <h2 className="headline-hero text-white mb-8">
-                Your Company<br />Could Be Next
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                Your Company Could Be{' '}
+                <span style={{ color: 'hsl(168, 100%, 28%)', fontWeight: 700 }}>Next</span>
               </h2>
             </ScrollReveal>
             
             <ScrollReveal delay={100}>
-              <p className="body-xl text-white/70 mb-12 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 These aren't outliers. This is what happens when the right founders 
                 meet the right ecosystem.
               </p>
@@ -268,11 +267,29 @@ const SuccessStories = () => {
 
             <ScrollReveal delay={200}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/apply" className="btn-primary-lg">
+                <Link 
+                  to="/apply" 
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsla(168, 30%, 85%, 0.5) 0%, hsla(168, 25%, 80%, 0.25) 100%)',
+                    border: '1.5px solid hsla(168, 30%, 75%, 0.4)',
+                    color: 'hsl(168, 50%, 22%)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                  }}
+                >
                   Apply to NORCAT Innovation
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <Link to="/programs/venture-growth-services" className="btn-outline-dark">
+                <Link 
+                  to="/programs/venture-growth-services" 
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(145deg, hsla(220, 15%, 90%, 0.5) 0%, hsla(220, 15%, 85%, 0.25) 100%)',
+                    border: '1.5px solid hsla(220, 15%, 80%, 0.4)',
+                    color: 'hsl(220, 15%, 30%)',
+                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 95%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.08)',
+                  }}
+                >
                   Explore Programs
                 </Link>
               </div>
