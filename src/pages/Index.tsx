@@ -224,7 +224,7 @@ export default function Index() {
               >
                 Build. Test.{' '}
                 <span style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontWeight: 700 }}>
-                  World Scale.
+                  Scale.
                 </span>
               </motion.h1>
 
