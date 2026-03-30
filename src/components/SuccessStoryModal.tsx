@@ -378,6 +378,7 @@ export const detailedStories: Record<string, StoryDetails> = {
     currentStage: 'Scaling Across North America',
     whatsNext: 'Planning expansion into underground and deep-tech space, championing optimization, innovation, and safety with smarter spaces.',
     globalPresence: ['Greater Sudbury', 'Canada', 'USA'],
+    fullStory: 'Within two years of winning PITCH 2022, Luke relocated the company to Greater Sudbury, expanded the team by over 300%, and secured several investments and grants to further grow the company. CircuitIQ secured $2 million in seed funding from local investors and grew the team from 7 to 26 in just two years.\n\nBy 2026, Luke has grown CircuitIQ to a sizeable operation of 43 staff, expanded their headquarters to Downtown Sudbury, and secured significant funding totaling over $4 million through several recent provincial and local investment initiatives such as the Sudbury Catalyst Fund, FedNor, the Northern Ontario Heritage Fund Corporation (NOHFC) and local angel investors.\n\nMapping more than 400 buildings across Canada and the USA and planning to expand into the underground and deep-tech space, CircuitIQ champions optimization, innovation, and safety with smarter spaces.',
   },
   'subsurface-ai': {
     id: 'subsurface-ai',
