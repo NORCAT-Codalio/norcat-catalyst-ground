@@ -129,8 +129,8 @@ const ecosystemStats = [
   { label: 'Pilot Programs', value: '23' },
 ];
 
-// Categories
-const categories = ['All', 'Funding', 'Partnerships', 'Events', 'Programs', 'Acquisitions'];
+// Categories - derived from actual news items
+const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.category)))];
 
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
