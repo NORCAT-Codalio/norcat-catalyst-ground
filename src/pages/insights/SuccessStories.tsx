@@ -15,6 +15,7 @@ import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
+import maestroUnderground from '@/assets/maestro-underground.jpg';
 
 
 // All stories data
@@ -80,16 +81,16 @@ const allStories: SuccessStory[] = [
     founded: '2012',
   },
   {
-    id: 'safemine-ai',
-    company: 'SafeMine AI',
-    tagline: 'Computer vision for real-time safety hazard detection.',
-    sector: 'AI',
-    stage: 'early',
-    status: 'piloting',
-    metrics: { capitalRaised: '$1.8M', jobsCreated: 12, marketsReached: 1 },
-    programs: ['RAI', 'SCF', 'Mentorship'],
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80',
-    founded: '2022',
+    id: 'maestro-digital-mine',
+    company: 'Maestro Digital Mine',
+    tagline: 'IIoT environmental monitoring bringing clarity and safety underground.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { capitalRaised: '', jobsCreated: 50, marketsReached: 10 },
+    programs: ['UG Centre', 'Mentorship'],
+    image: maestroUnderground,
+    founded: '2011',
   },
 ];
 

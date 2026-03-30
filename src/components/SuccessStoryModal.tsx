@@ -8,6 +8,7 @@ import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
+import maestroUnderground from '@/assets/maestro-underground.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -521,5 +522,39 @@ export const detailedStories: Record<string, StoryDetails> = {
     whatsNext: 'Supporting over 900 nursing homes across Canada with growing demand. StaffStat\'s AI-powered engagement analytics and predictive scheduling are setting a new standard for frontline healthcare staffing.',
     globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
     fullStory: "Sheri's journey began with a dose of hard reality. After graduating from nursing and returning to Sudbury for her preceptorship, she quickly felt the cracks in the system. \"There was zero backup plan for nurses and PSWs in Sudbury,\" she says. \"I was ready to begin my career, but I just burned out really fast.\"\n\nThat fire began as a small staffing agency—Plan A. But Sheri hated cold-calling people, waking them up at all hours to fill shifts. She began developing what would become StaffStat—a digital shift-filling platform that would remove friction from frontline staffing.\n\nMentorship made the difference. \"Once I was paired with Mr. Peter Dal Bianco, things really changed for my company,\" Sheri says. The software evolved fast. What started as a shift-filling tool soon became an intelligent workforce hub.\n\nToday, StaffStat uses AI to predict shift anomalies days or weeks in advance. It measures staff engagement and alerts when employees are not engaged so leaders can act early.\n\nOn the ground, Mandy Gauthier is the human engine behind Plan A's national growth. \"I call Mandy the fairy godmother of long-term care,\" Sheri says. Their combined leadership has built a \"Small Giant\" in Canadian health tech.\n\n\"Nobody really understands all the magnificent things we're doing across Canada from Greater Sudbury… with an incredible team of 18,\" Sheri says proudly. Plan A now offers a full continuum of staffing services, from frontline recruitment to predictive scheduling to engagement analytics.\n\nPlan A and StaffStat now support over 900 nursing homes across Canada, with demand growing fast. \"There's nothing in the healthcare market that has as much impact on the front line as it does the bottom line as StaffStat.\"",
+  },
+  'maestro-digital-mine': {
+    id: 'maestro-digital-mine',
+    company: 'Maestro Digital Mine',
+    tagline: 'IIoT environmental monitoring bringing clarity and safety underground.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { capitalRaised: '', jobsCreated: 50, marketsReached: 10 },
+    programs: ['UG Centre', 'Mentorship'],
+    image: maestroUnderground,
+    founded: '2011',
+    problem: 'Underground mines relied on fragmented, analogue tools that offered limited visibility into air quality, environmental conditions, and worker safety—despite being one of the harshest environments on earth.',
+    breakthrough: {
+      text: "Maestro built a suite of digital airflow, gas, particulate, and environmental monitoring systems purpose-built for underground work. Unlike traditional analogue sensors that offer isolated readings, Maestro's IIoT ecosystem provides context, diagnostics, and connected understanding of underground conditions—enabling operators to anticipate problems instead of reacting to them.",
+    },
+    timeline: [
+      { year: '2011', event: 'Founded by Michael Gribbons to bridge the digital gap in underground mining' },
+      { year: '2014', event: 'Early concepts refined at the Tom Fortin Discovery Centre' },
+      { year: '2016', event: 'One of the first companies to install technology at NORCAT Underground Centre' },
+      { year: '2022', event: 'Implemented full digital network for inaugural Mining Transformed event in two weeks' },
+      { year: '2025', event: 'Solutions deployed in mines around the world' },
+      { year: '2026', event: '82% of workforce are newcomers to Canada building new lives in Sudbury' },
+    ],
+    impactMetrics: { jobs: 50, capital: 'Global', pilots: 6, markets: 10 },
+    founderQuote: {
+      text: "There was a significant gap between what mines had access to and what was possible. That's what we set out to solve. For decades, my father worked for mining companies with dangerous air quality and poor systems to measure the amounts of dangerous gasses he breathed in every day. These working conditions caused him severe lung damage. Maestro's core purpose was, and still is, to enhance lives by the pursuit of safety and productivity excellence.",
+      author: 'Michael Gribbons',
+      role: 'Founder, Maestro Digital Mine',
+    },
+    currentStage: 'Global Commercial Leader',
+    whatsNext: "Maestro's solutions are used around the world, bringing clarity and confidence to underground environments. 82% of the workforce are newcomers to Canada—building new lives, securing permanent residency, and purchasing first homes.",
+    globalPresence: ['Sudbury', 'Canada', 'Global'],
+    fullStory: "Michael Gribbons carried a deeply personal understanding of what was at stake. \"For decades, my father worked for mining companies with dangerous air quality and poor systems to measure the amounts of dangerous and illness-causing gasses he breathed in every day,\" he says. \"These working conditions caused him severe lung damage and ultimately led to open-chest surgery.\"\n\nFrom the beginning, Michael envisioned a mine where workers, supervisors, and operators could finally know what was happening in the air around them and on the ground beneath them. A core principle drove development: safety and productivity are inseparable.\n\nMaestro's relationship with NORCAT became a turning point. Early support from Tom Fortin and the Tom Fortin Discovery Centre played a meaningful role by providing Maestro with the environment required to test, refine, and prove out initial concepts. Subsequently, Maestro was one of the first companies invited to install its technology at the NORCAT Underground Centre.\n\nThis foundation led directly into Maestro's role in the inaugural Mining Transformed event in 2022, where the company was asked to implement a full digital network throughout the underground mine. \"We accepted the challenge and the result—accomplished in two weeks with only two workers who had two hours of training—was a clear demonstration of what integrated IIoT can accomplish,\" says Michael.\n\nToday, Maestro Digital Mine's solutions are used around the world. Yet despite the company's growth and technical success, Michael has never measured progress solely through products. \"Today, around 82% of Maestro's workforce are newcomers to Canada,\" Michael explains. \"I've had the joy of watching them build new lives in Canada—securing permanent residency, purchasing their first home, getting married and having children. To me, that's the most meaningful measure of success.\"",
   },
 };
