@@ -135,6 +135,11 @@ const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.cate
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<string | null>(null);
+
+  const filteredNews = activeCategory === 'All' 
+    ? newsItems 
+    : newsItems.filter(item => item.category === activeCategory);
+
   return (
     <Layout>
       {/* ── Hero (matches About page) ── */}
