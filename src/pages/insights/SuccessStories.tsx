@@ -13,6 +13,7 @@ import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
+import jannatecProduct from '@/assets/jannatec-product.jpg';
 
 
 // All stories data
