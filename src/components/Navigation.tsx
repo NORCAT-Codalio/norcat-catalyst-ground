@@ -205,10 +205,12 @@ export function Navigation() {
         )}
       >
         <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-1 text-[11px] text-white/80">
-          <a href="https://www.norcat.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://www.norcat.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <Globe className="h-3 w-3" />
             norcat.org
           </a>
-          <a href="tel:7055218324" className="hover:text-white transition-colors">
+          <a href="tel:7055218324" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <Phone className="h-3 w-3" />
             705-521-8324
           </a>
         </div>
