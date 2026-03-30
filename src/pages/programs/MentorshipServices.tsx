@@ -1,4 +1,5 @@
 import { Layout } from '@/components/Layout';
+import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -354,22 +355,7 @@ const MentorshipServices = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="rounded-[20px] p-8" style={glassCardStyle}>
-                <Quote className="w-8 h-8 mb-4 opacity-40" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                <p className="text-lg italic font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 15%, 30%)' }}>
-                  "Client testimonial quote placeholder — Add a powerful quote from a founder 
-                  about their mentorship experience here."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style={iconContainerStyle}>
-                    <span style={{ color: 'hsl(168, 100%, 35%)' }} className="text-lg font-bold">?</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>Client Name</p>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Company Name, Role</p>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCarousel glassCardStyle={glassCardStyle} iconContainerStyle={iconContainerStyle} />
             </ScrollReveal>
           </div>
         </div>
