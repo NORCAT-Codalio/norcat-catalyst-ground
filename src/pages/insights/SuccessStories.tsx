@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { SuccessStoryCard, type SuccessStory } from '@/components/SuccessStoryCard';
 import { SuccessStoryModal, detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
+import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 
 
 // All stories data
