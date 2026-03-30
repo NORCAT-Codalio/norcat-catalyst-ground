@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
+import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -416,37 +417,40 @@ export const detailedStories: Record<string, StoryDetails> = {
     globalPresence: ['Sudbury', 'Ontario', 'Canada', 'Global'],
     fullStory: "SYMX.AI's utilization of the NORCAT Underground Centre was like having access to an \"active laboratory.\" The Underground Centre, situated in Sudbury, is unique in the world and a key anchor that demonstrates the global eminence of the mining technology cluster. Beyond development and testing activities, the networking opportunities and exposure to investors and networks outside of Sudbury has allowed SYMX.AI to showcase, sell, and promote its digital mining solutions to a global audience.\n\nAs the industry shifted from \"getting data\" to \"using data,\" the company rebranded to SYMX.AI, reflecting a new focus on Artificial Intelligence and Predictive Analytics. During this period, Ash Agarwal stepped in as CEO while Founder Kirk Petroski transitioned to Executive Chairman, focusing on dismantling infrastructure silos and mentoring the next generation of innovators through programs like the Creative Destruction Lab (CDL).\n\nIn late 2024 and throughout 2025, SYMX.AI structured itself as the \"nervous system\" of the mine through a strategic collaboration with local founder Dr. Chao Yu of LoopX. Fusing LoopX's Vision AI and LiDAR with SYMX.AI's X.Machines platform, the partnership enabled legacy mining vehicles to achieve 360-degree situational awareness.\n\nIn late 2025, the company received a $2 million investment from the Ontario Centre of Innovation (OCI) to develop a first-of-its-kind digital tire management platform in collaboration with Yokohama and Fountain Tire. This platform is currently being deployed to reduce fuel waste and extend equipment life across global sites.",
   },
-  'ventflow-systems': {
-    id: 'ventflow-systems',
-    company: 'VentFlow Systems',
-    tagline: 'Smart ventilation technology for safer, more sustainable mining.',
-    sector: 'Cleantech / Mining',
+  'flosonics-medical': {
+    id: 'flosonics-medical',
+    company: 'FloSonics Medical',
+    tagline: 'Wearable sensors improving clinical management of critically ill patients.',
+    sector: 'Medtech',
     stage: 'growth',
-    status: 'commercial',
-    metrics: { capitalRaised: '$6.5M', jobsCreated: 35, marketsReached: 3 },
-    programs: ['UG Centre', 'Core5', 'Mentorship'],
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&auto=format&fit=crop&q=80',
-    founded: '2020',
-    problem: "Underground ventilation wastes 40% of a mine's energy while often failing to protect workers from hazardous air quality.",
+    status: 'scaling',
+    metrics: { capitalRaised: '$20M+ USD', jobsCreated: 40, marketsReached: 2 },
+    programs: ['IAP', 'Mentorship'],
+    image: flosonicsFlopatch,
+    founded: '2015',
+    problem: 'Critically ill patients in ICUs and emergency departments lacked continuous, non-invasive hemodynamic monitoring—forcing clinicians to rely on intermittent, invasive measurements for fluid resuscitation decisions.',
     breakthrough: {
-      text: "VentFlow's smart ventilation system uses IoT sensors, AI prediction, and automated fan controls to deliver air exactly where it's needed, when it's needed. The system reduces energy consumption by 38% while improving worker safety through real-time air quality monitoring.",
+      text: 'FloSonics developed the FloPatch, a wearable ultrasound sensor that enables real-time functional hemodynamic monitoring for patients requiring cardiopulmonary and fluid resuscitation. Clinical data from partner hospitals has shown that FloPatch use can help reduce sepsis mortality by up to 80% through precision fluid management.',
     },
     timeline: [
-      { year: '2020', event: 'Joined NORCAT Innovation' },
-      { year: '2021', event: 'Prototype tested at Underground Centre' },
-      { year: '2022', event: 'Pilot with Vale Sudbury operations' },
-      { year: '2023', event: 'Seed round: $3M' },
-      { year: '2024', event: 'Epiroc OEM partnership announced' },
+      { year: '2015', event: 'Four cofounders approached NORCAT Innovation with the FloPatch idea' },
+      { year: '2016', event: 'Received initial funding through NORCAT\'s Innovation Acceleration Program for prototype development' },
+      { year: '2017', event: 'Connected with Northern Ontario Angels (NOA) for successful pitch and proof-of-concept funding' },
+      { year: '2024', event: 'Closed $20M USD Series C financing led by New Leaf Venture Partners' },
+      { year: '2024', event: 'Honored as "Best in Class" at Digital Health Awards during HLTH conference in Las Vegas' },
+      { year: '2025', event: 'Landmark adoption by The Mount Sinai Hospital in New York City' },
+      { year: '2026', event: 'Secured major contract with Vizient, expanding to thousands of U.S. hospitals' },
     ],
-    impactMetrics: { jobs: 35, revenue: '$2.8M', capital: '$6.5M', pilots: 6, markets: 3 },
+    impactMetrics: { jobs: 40, capital: '$20M+ USD', pilots: 1, markets: 2 },
     founderQuote: {
-      text: "Fresh air underground shouldn't be a luxury. NORCAT helped us prove that sustainability and worker safety aren't competing priorities—they're the same thing.",
-      author: 'James Whitehorse',
-      role: 'CEO, VentFlow Systems',
+      text: "NORCAT was a true partner; they were instrumental in launching our company. From prototyping to formal fundraising, the NORCAT Innovation team provided the experience, know how, and credibility we needed to develop a world-class start-up in the North.",
+      author: 'Dr. Joe Eibl',
+      role: 'CEO & Co-founder, FloSonics Medical',
     },
-    currentStage: 'Commercial Scale',
-    whatsNext: 'Expanding to South America with Epiroc. Targeting 50 mine deployments by 2026.',
-    globalPresence: ['Canada', 'South Africa', 'Chile'],
+    currentStage: 'Scaling Across North America',
+    whatsNext: 'FloPatch is now deployed in leading health systems across the continent, with widespread expansion within Sutter Health in California and a major Vizient contract cementing its presence in thousands of hospitals.',
+    globalPresence: ['Sudbury', 'New York City', 'California', 'North America'],
+    fullStory: "In the fall of 2015, FloSonics' four cofounders approached NORCAT Innovation with their idea for the FloPatch. The group worked together with NORCAT to validate the need for the FloPatch technology and subsequently received initial funding through NORCAT's Innovation Acceleration Program to support the planning, development and testing of the FloPatch prototype. The connection with NORCAT Innovation kindled a relationship with the Northern Ontario Angels (NOA), who coached the team to a successful pitch, aiding in the further development of a proof-of-concept device.\n\nIn March 2024, the company closed a $20 million USD Series C financing round led by New Leaf Venture Partners. This milestone allowed the company to scale its manufacturing and accelerate the adoption of FloPatch in emergency departments and ICUs across North America. By late 2024, FloSonics was honored as \"Best in Class\" at the Digital Health Awards during the HLTH conference in Las Vegas.\n\nAs of March 2026, the FloPatch is now deployed in leading health systems across the continent, including a landmark adoption by The Mount Sinai Hospital in New York City (2025) and a widespread expansion within Sutter Health in California.\n\nIn early 2026, FloSonics secured a major contract with Vizient, the largest member-driven healthcare performance improvement company in the U.S., further cementing its presence in thousands of hospitals.",
   },
   'rocksense-analytics': {
     id: 'rocksense-analytics',

@@ -12,6 +12,7 @@ import signatureLines from '@/assets/signature-lines.png';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
+import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 
 
 // All stories data
@@ -41,17 +42,16 @@ const allStories: SuccessStory[] = [
     founded: '2008',
   },
   {
-    id: 'ventflow-systems',
-    company: 'VentFlow Systems',
-    tagline: 'Smart ventilation technology for safer, more sustainable mining.',
-    sector: 'Cleantech',
+    id: 'flosonics-medical',
+    company: 'FloSonics Medical',
+    tagline: 'Wearable sensors improving clinical management of critically ill patients.',
+    sector: 'Medtech',
     stage: 'growth',
-    status: 'commercial',
-    metrics: { capitalRaised: '$6.5M', jobsCreated: 35, marketsReached: 3 },
-    programs: ['UG Centre', 'Core5', 'Mentorship'],
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&auto=format&fit=crop&q=80',
-    founded: '2020',
-    hasVideo: true,
+    status: 'scaling',
+    metrics: { capitalRaised: '$20M+ USD', jobsCreated: 40, marketsReached: 2 },
+    programs: ['IAP', 'Mentorship'],
+    image: flosonicsFlopatch,
+    founded: '2015',
   },
   {
     id: 'rocksense-analytics',
