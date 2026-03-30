@@ -46,6 +46,7 @@ const programIcons: Record<string, string> = {
   'Core5': '⚡',
   'VGS': '🚀',
   'RAI': '🤖',
+  'IAP': '🔬',
 };
 
 export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {

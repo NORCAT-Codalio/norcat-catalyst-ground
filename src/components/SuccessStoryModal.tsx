@@ -355,7 +355,7 @@ export const detailedStories: Record<string, StoryDetails> = {
     stage: 'growth',
     status: 'scaling',
     metrics: { capitalRaised: '$4M', jobsCreated: 43, marketsReached: 2 },
-    programs: ['SCF', 'Mentorship', 'VGS'],
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'RAI', 'UG Centre'],
     image: circuitiqTeam,
     founded: '2022',
     problem: 'Electricians and property managers had no reliable way to locate and map electrical circuits—leading to wasted time, safety hazards, and costly guesswork.',
