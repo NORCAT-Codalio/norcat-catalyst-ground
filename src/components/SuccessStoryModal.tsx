@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { X, MapPin, Users, DollarSign, Building2, Globe, Award, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
+import circuitiqTeam from '@/assets/circuitiq-team.png';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -345,39 +346,37 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
 
 // Sample detailed stories data
 export const detailedStories: Record<string, StoryDetails> = {
-  'minetech-robotics': {
-    id: 'minetech-robotics',
-    company: 'MineTech Robotics',
-    tagline: 'Autonomous underground vehicles making mining safer and more efficient.',
-    sector: 'Mining Tech',
+  'circuitiq': {
+    id: 'circuitiq',
+    company: 'CircuitIQ',
+    tagline: 'Professional electrical circuit mapping system with 100% accuracy.',
+    sector: 'Cleantech',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$12M', jobsCreated: 47, marketsReached: 5 },
-    programs: ['UG Centre', 'SCF', 'Mentorship', 'VGS'],
-    image: 'https://images.unsplash.com/photo-1578496781379-7dcfb995293d?w=1200&auto=format&fit=crop&q=80',
-    founded: '2019',
-    problem: 'Mining needed faster, safer underground data collection—without putting operators at risk.',
+    metrics: { capitalRaised: '$4M', jobsCreated: 43, marketsReached: 2 },
+    programs: ['SCF', 'Mentorship', 'VGS'],
+    image: circuitiqTeam,
+    founded: '2022',
+    problem: 'Electricians and property managers had no reliable way to locate and map electrical circuits—leading to wasted time, safety hazards, and costly guesswork.',
     breakthrough: {
-      text: 'They built the first fully autonomous LHD (Load-Haul-Dump) vehicle designed specifically for narrow-vein mining. Using proprietary LIDAR and AI navigation, their vehicles can operate in complete darkness, navigate unpredictable terrain, and communicate in real-time with surface operations.',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&auto=format&fit=crop&q=80',
+      text: 'CircuitIQ built the fastest, most accurate circuit mapping kit on the market, capable of locating circuits at any distance with 100% accuracy. The system digitally collects as-built property data, opening new possibilities in power management across all property types.',
     },
     timeline: [
-      { year: '2019', event: 'Joined NORCAT Innovation' },
-      { year: '2020', event: 'First prototype tested at NORCAT Underground Centre' },
-      { year: '2021', event: 'Pilot program with Vale at Creighton Mine' },
-      { year: '2022', event: 'First commercial customer signed' },
-      { year: '2023', event: 'Series A closed at $12M' },
-      { year: '2024', event: 'Expanded to 5 international mine sites' },
+      { year: '2022', event: 'Luke Begley introduced CircuitIQ at PITCH 2022, winning both Judge\'s Choice and People\'s Choice Awards' },
+      { year: '2023', event: 'Relocated to Greater Sudbury and secured $2M in seed funding from local investors' },
+      { year: '2024', event: 'Grew team from 7 to 26 employees, expanded product line' },
+      { year: '2025', event: 'Secured funding from Sudbury Catalyst Fund, FedNor, NOHFC, and angel investors' },
+      { year: '2026', event: 'Team of 43 staff, expanded HQ to Downtown Sudbury, mapped 400+ buildings across Canada and the USA' },
     ],
-    impactMetrics: { jobs: 47, revenue: '$4.2M', capital: '$12M', pilots: 8, markets: 5 },
+    impactMetrics: { jobs: 43, capital: '$4M', pilots: 3, markets: 2 },
     founderQuote: {
-      text: "We wouldn't have been able to validate this technology without access to a real operating mine. NORCAT's Underground Centre gave us something no accelerator could—actual underground conditions.",
-      author: 'Sarah Chen',
-      role: 'Co-founder & CEO, MineTech Robotics',
+      text: "My first pitch with NORCAT Innovation was a night I'll never forget. Not only did I conquer my stage fright, but I also won! This unexpected victory caught the eye of a major investor—one who had never invested in a startup before. His investment of over $1 million, my largest yet, changed everything. Since that night in Sudbury, our company has taken off.",
+      author: 'Luke Begley',
+      role: 'Founder & CEO, CircuitIQ',
     },
-    currentStage: 'Scaling Globally',
-    whatsNext: 'Deploying to 15 additional mine sites by 2027, with Series B expected in late 2025.',
-    globalPresence: ['Canada', 'Australia', 'Chile', 'South Africa', 'Peru'],
+    currentStage: 'Scaling Across North America',
+    whatsNext: 'Planning expansion into underground and deep-tech space, championing optimization, innovation, and safety with smarter spaces.',
+    globalPresence: ['Greater Sudbury', 'Canada', 'USA'],
   },
   'subsurface-ai': {
     id: 'subsurface-ai',
