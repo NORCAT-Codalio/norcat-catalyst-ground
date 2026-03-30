@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { X, MapPin, Users, DollarSign, Building2, Globe, Award, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
+import circuitiqTeam from '@/assets/circuitiq-team.png';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
