@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import type { SuccessStory } from './SuccessStoryCard';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
+import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
