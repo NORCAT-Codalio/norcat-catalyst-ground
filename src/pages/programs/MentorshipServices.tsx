@@ -46,7 +46,7 @@ const mentors = [
     name: 'Don Duval',
     image: donDuvalImg,
     tags: ['Entrepreneur in Residence', 'Leadership'],
-    bio: 'Don is the CEO of NORCAT and serves as Entrepreneur in Residence. He is an expert in turnaround strategies, entrepreneurship, innovation strategy, and leadership. Don has led NORCAT\'s transformation into a world-class innovation hub and brings deep experience in organizational leadership and strategic planning.',
+    bio: 'Don brings more than two decades of leadership experience across Canada\'s innovation ecosystem. He is currently Principal, Head of Mining at Evok Innovations, and serves as NORCAT\'s Entrepreneur in Residence. Previously, Don served as CEO of NORCAT, where he advanced mining innovation, technology adoption, and industry–academic collaboration. Earlier in his career, he held senior roles at MaRS Discovery District, supporting the growth and commercialization of technology-based ventures. He is also an active mentor in the Creative Destruction Lab Minerals program. A former tech entrepreneur and engineering adjunct professor, Don is an active angel investor and was a Top 40 under 40 recipient and two-time TEDx speaker. He holds degrees from Queen\'s University and the University of Toronto.',
     expertfile: 'http://expertfile.com/experts/don.duval',
   },
   {
