@@ -366,7 +366,7 @@ const SuccessStories = () => {
                                   {[
                                     { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
                                     { icon: DollarSign, label: 'Capital Raised', value: details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
-                                    { icon: Building2, label: 'Pilots', value: details.impactMetrics.pilots, color: 'hsl(270, 50%, 60%)' },
+                                    { icon: Building2, label: 'Products', value: details.impactMetrics.pilots, color: 'hsl(270, 50%, 60%)' },
                                     { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
                                   ].map((metric) => (
                                     <div key={metric.label} className="rounded-xl p-4" style={{
