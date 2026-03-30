@@ -133,11 +133,11 @@ const mentors = [
     expertfile: 'http://expertfile.com/experts/david.pasieka',
   },
   {
-    name: 'Dennis Reich',
+    name: 'Gideon Uchihara',
     image: dennisReichImg,
     tags: ['Healthcare', 'Medical Technology'],
-    bio: 'Dennis is a practicing physician and principal investigator for medical research. He is the founder of multiple healthcare technology ventures including Chyma Systems. Dennis brings unique expertise at the intersection of medicine, research, and technology entrepreneurship.',
-    expertfile: 'http://expertfile.com/experts/dennis.reich',
+    bio: 'Gideon is an experienced professional with expertise in healthcare and medical technology. He brings valuable insights to startups navigating the healthcare industry and developing innovative medical solutions.',
+    expertfile: 'http://expertfile.com/experts/gideon.uchihara',
   },
   {
     name: 'Sheri Tomchick',
