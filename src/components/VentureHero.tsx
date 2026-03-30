@@ -107,7 +107,7 @@ export function VentureHero() {
   };
 
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden bg-gradient-to-b from-background via-secondary/30 to-background">
+    <section className="relative pt-8 pb-16 overflow-hidden bg-gradient-to-b from-background via-secondary/30 to-background">
       {/* Subtle background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
