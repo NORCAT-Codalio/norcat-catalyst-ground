@@ -21,6 +21,7 @@ import {
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
 import mentoringGroup from '@/assets/mentoring-group.png';
+import mentorshipHeroBg from '@/assets/mentorship-hero-bg.png';
 
 // Mentor headshots
 import tomFortinImg from '@/assets/mentors/tom-fortin.png';
@@ -230,20 +231,10 @@ const MentorshipServices = () => {
     <Layout>
       {/* ══════════════ DARK HERO ══════════════ */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden" style={{ background: 'hsl(220, 20%, 7%)' }}>
-        {/* Ambient orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute top-[15%] right-[20%] w-[700px] h-[700px] rounded-full"
-            style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.15) 0%, hsl(168 100% 35% / 0.05) 40%, transparent 70%)' }}
-            animate={{ scale: [1, 1.4, 1], x: [0, 80, 0], y: [0, -50, 0] }}
-            transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.div
-            className="absolute bottom-[20%] left-[10%] w-[600px] h-[600px] rounded-full"
-            style={{ background: 'radial-gradient(circle, hsl(168 80% 45% / 0.1) 0%, transparent 70%)' }}
-            animate={{ scale: [1.2, 0.9, 1.2], x: [0, -60, 0], y: [0, 30, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-          />
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img src={mentorshipHeroBg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/60" />
         </div>
 
         {/* Grid overlay */}
