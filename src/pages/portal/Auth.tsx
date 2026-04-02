@@ -153,13 +153,7 @@ export default function Auth() {
         <div className="relative z-10 flex flex-col justify-between p-12 w-full">
           <div>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">N</span>
-              </div>
-              <div>
-                <span className="text-white font-bold text-xl">NORCAT</span>
-                <span className="text-white/60 text-sm block">Innovation</span>
-              </div>
+              <img src={norcatLogoWhite} alt="NORCAT Innovation" className="h-7 w-auto" />
             </div>
           </div>
 
