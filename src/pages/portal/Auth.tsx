@@ -208,14 +208,8 @@ export default function Auth() {
       <div className="flex-1 flex items-center justify-center p-8 bg-background">
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
-          <div className="lg:hidden flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">N</span>
-            </div>
-            <div>
-              <span className="font-bold text-lg">NORCAT</span>
-              <span className="text-muted-foreground text-xs block">Innovation</span>
-            </div>
+          <div className="lg:hidden mb-8">
+            <img src={norcatLogoBlack} alt="NORCAT Innovation" className="h-6 w-auto" />
           </div>
 
           <motion.div
