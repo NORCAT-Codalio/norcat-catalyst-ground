@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
+import norcatLogoWhite from '@/assets/logos/norcat-white.png';
+import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 
 // Demo mode flag - set to true to bypass authentication
 const DEMO_MODE = true;
