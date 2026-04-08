@@ -242,6 +242,9 @@ const placeholderImages: Record<Audience, string[]> = {
     'linear-gradient(135deg, hsla(168,60%,70%,0.4) 0%, hsla(200,50%,75%,0.3) 50%, hsla(168,40%,85%,0.2) 100%)',
     'linear-gradient(135deg, hsla(200,60%,70%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(220,40%,85%,0.2) 100%)',
     'linear-gradient(135deg, hsla(168,50%,65%,0.4) 0%, hsla(190,60%,75%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
+    'linear-gradient(135deg, hsla(190,55%,68%,0.4) 0%, hsla(168,45%,72%,0.3) 50%, hsla(200,35%,82%,0.2) 100%)',
+    'linear-gradient(135deg, hsla(210,48%,66%,0.4) 0%, hsla(168,52%,70%,0.3) 50%, hsla(190,38%,80%,0.2) 100%)',
+    'linear-gradient(135deg, hsla(168,56%,62%,0.4) 0%, hsla(200,46%,74%,0.3) 50%, hsla(220,32%,84%,0.2) 100%)',
   ],
   'Funding Support': [
     'linear-gradient(135deg, hsla(210,50%,65%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(200,40%,80%,0.2) 100%)',
