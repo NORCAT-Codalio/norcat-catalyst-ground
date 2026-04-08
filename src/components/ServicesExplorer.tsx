@@ -210,6 +210,9 @@ const placeholderImages: Record<Audience, string[]> = {
     'linear-gradient(135deg, hsla(210,50%,65%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(200,40%,80%,0.2) 100%)',
     'linear-gradient(135deg, hsla(168,60%,60%,0.4) 0%, hsla(220,40%,70%,0.3) 50%, hsla(168,30%,85%,0.2) 100%)',
     'linear-gradient(135deg, hsla(190,55%,65%,0.4) 0%, hsla(168,50%,70%,0.3) 50%, hsla(210,40%,80%,0.2) 100%)',
+    'linear-gradient(135deg, hsla(200,52%,62%,0.4) 0%, hsla(168,48%,72%,0.3) 50%, hsla(220,36%,82%,0.2) 100%)',
+    'linear-gradient(135deg, hsla(168,58%,58%,0.4) 0%, hsla(200,44%,68%,0.3) 50%, hsla(190,34%,80%,0.2) 100%)',
+    'linear-gradient(135deg, hsla(220,46%,64%,0.4) 0%, hsla(168,54%,70%,0.3) 50%, hsla(200,38%,78%,0.2) 100%)',
   ],
   'Labs': [
     'linear-gradient(135deg, hsla(220,50%,60%,0.4) 0%, hsla(168,40%,70%,0.3) 50%, hsla(200,30%,80%,0.2) 100%)',
