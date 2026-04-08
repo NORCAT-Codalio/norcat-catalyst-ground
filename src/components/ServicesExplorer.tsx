@@ -426,7 +426,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                 >
                   {activeItem.headline}{' '}
                   <span
-                    className="text-2xl md:text-3xl"
+                    className=""
                     style={{
                       color: 'hsl(168, 100%, 28%)',
                       fontFamily: "'Open Sans', sans-serif",
