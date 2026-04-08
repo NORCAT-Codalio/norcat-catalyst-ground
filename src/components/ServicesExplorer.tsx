@@ -93,30 +93,57 @@ const categories: Record<Audience, CategoryItem[]> = {
   'Labs': [
     {
       icon: Building2,
-      title: 'Innovation Partnerships',
-      headline: 'Co-create with high-potential',
-      headlineItalic: 'ventures',
+      title: 'NORCAT Underground Centre',
+      headline: 'The world\'s first underground',
+      headlineItalic: 'innovation hub',
       description:
-        'Connect with emerging startups building solutions for your industry. We facilitate pilot programs, co-development partnerships, and technology scouting.',
-      features: ['Startup scouting & matching', 'Pilot program facilitation', 'Co-development frameworks', 'Innovation pipeline access'],
-    },
-    {
-      icon: Network,
-      title: 'Ecosystem Integration',
-      headline: 'Embed into a thriving',
-      headlineItalic: 'ecosystem',
-      description:
-        'Join a tight-knit community of ambitious founders building category-defining companies. Shared experiences, mutual support, and lifelong connections.',
-      features: ['NORCAT Community access', 'Industry event participation', 'Research institution connections', 'Government relations support'],
+        'A fully operational underground mine environment where companies can develop, test, and validate mining technologies in real-world conditions at depth.',
+      features: ['Real-world underground testing', 'Technology validation at depth', 'Controlled mine environment', 'Industry-standard infrastructure'],
     },
     {
       icon: Handshake,
-      title: 'Talent & Technology',
-      headline: 'Access emerging talent and',
-      headlineItalic: 'cutting-edge tech',
+      title: 'Fortin Discovery Lab',
+      headline: 'Where ideas become',
+      headlineItalic: 'prototypes',
       description:
-        'Leverage our network of skilled founders, engineers, and researchers. Access breakthrough technologies emerging from Northern Ontario\'s innovation ecosystem.',
-      features: ['Talent pipeline access', 'Technology showcases', 'Underground testing facilities', 'Applied R&D collaboration'],
+        'A state-of-the-art fabrication and prototyping lab equipped with tools and resources to help innovators bring their concepts to life quickly and affordably.',
+      features: ['Rapid prototyping equipment', 'Fabrication tools & resources', 'Expert technical support', 'Concept-to-prototype pipeline'],
+    },
+    {
+      icon: Building2,
+      title: 'NORCAT Office Spaces',
+      headline: 'Professional workspace for',
+      headlineItalic: 'growing teams',
+      description:
+        'Dedicated office spaces designed for startups and scale-ups, located within NORCAT\'s innovation campus with access to shared amenities and community.',
+      features: ['Private office suites', 'Meeting & boardrooms', 'Shared amenities', 'Innovation campus access'],
+    },
+    {
+      icon: Network,
+      title: 'NORCAT Surface Facility',
+      headline: 'Above-ground testing and',
+      headlineItalic: 'demonstration',
+      description:
+        'Surface-level facilities for technology testing, demonstrations, and training in a controlled environment before deploying underground.',
+      features: ['Surface testing grounds', 'Demo & showcase space', 'Training facilities', 'Equipment staging area'],
+    },
+    {
+      icon: Handshake,
+      title: 'Shop-of-the-Future',
+      headline: 'Reimagining retail through',
+      headlineItalic: 'innovation',
+      description:
+        'An experiential retail innovation space where companies can pilot new technologies, customer experiences, and business models in a live environment.',
+      features: ['Live retail testing', 'Customer experience pilots', 'Emerging tech showcases', 'Business model validation'],
+    },
+    {
+      icon: Users,
+      title: 'NORCAT Hot Desks',
+      headline: 'Flexible workspace on',
+      headlineItalic: 'your terms',
+      description:
+        'Drop-in coworking desks available for entrepreneurs, freelancers, and remote workers who want access to NORCAT\'s community without a dedicated office.',
+      features: ['Flexible daily access', 'Community networking', 'High-speed connectivity', 'Campus amenity access'],
     },
   ],
 };
