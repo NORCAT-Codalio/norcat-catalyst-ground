@@ -13,6 +13,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import entrepreneurialCoursesImg from '@/assets/entrepreneurial-courses.png';
+import core5PreviewImg from '@/assets/core5-preview.png';
 
 /* ── Audience tabs ── */
 const audiences = ['Startup Support', 'Funding Support', 'Labs'] as const;
@@ -75,6 +76,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       features: ['Mining tech matching', 'Pilot project facilitation', 'Industry challenge solving', 'Operational innovation'],
       link: '/mining/core5',
       linkText: 'Learn More',
+      image: core5PreviewImg,
     },
     {
       icon: Network,
