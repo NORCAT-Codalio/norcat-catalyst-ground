@@ -142,6 +142,7 @@ function useCounter(end: number, duration = 2000, inView = false) {
 
 export default function Index() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const storiesScrollRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -440,7 +441,7 @@ export default function Index() {
           </div>
 
           {/* Horizontally scrollable cards */}
-          <div className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
+          <div ref={storiesScrollRef} className="pl-[max(1.5rem,calc((100vw-var(--container-max,1280px))/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide" style={{ '--container-max': '1280px' } as React.CSSProperties}>
             <div className="flex gap-5 pr-6 items-stretch" style={{ width: 'max-content' }}>
               {[
                 { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories', wide: false },
@@ -475,17 +476,33 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Scroll hint */}
+          {/* Navigation arrows */}
           <div className="container mx-auto px-6 relative z-10">
-            <div className="flex justify-end mt-8">
-              <motion.div
-                className="flex items-center gap-1"
-                animate={{ x: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            <div className="flex justify-end mt-8 gap-3">
+              <button
+                onClick={() => storiesScrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                style={{
+                  background: 'hsla(0, 0%, 100%, 0.15)',
+                  border: '1px solid hsla(0, 0%, 100%, 0.25)',
+                  backdropFilter: 'blur(10px)',
+                }}
+                aria-label="Scroll left"
               >
-                <div className="w-8 h-[2px] rounded-full bg-white/40" />
-                <ArrowRight className="w-5 h-5 text-white/40" />
-              </motion.div>
+                <ChevronRight className="w-5 h-5 text-white/80 rotate-180" />
+              </button>
+              <button
+                onClick={() => storiesScrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                style={{
+                  background: 'hsla(0, 0%, 100%, 0.15)',
+                  border: '1px solid hsla(0, 0%, 100%, 0.25)',
+                  backdropFilter: 'blur(10px)',
+                }}
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-5 h-5 text-white/80" />
+              </button>
             </div>
           </div>
         </section>
