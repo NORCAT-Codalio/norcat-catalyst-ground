@@ -12,6 +12,7 @@ import {
   Check,
   type LucideIcon,
 } from 'lucide-react';
+import entrepreneurialCoursesImg from '@/assets/entrepreneurial-courses.png';
 
 /* ── Audience tabs ── */
 const audiences = ['Startup Support', 'Funding Support', 'Labs'] as const;
@@ -27,6 +28,7 @@ interface CategoryItem {
   features: string[];
   link?: string;
   linkText?: string;
+  image?: string;
 }
 
 const categories: Record<Audience, CategoryItem[]> = {
@@ -61,6 +63,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       description:
         'Structured curriculum covering everything from customer discovery to fundraising. Learn from practitioners who\'ve built and scaled companies themselves.',
       features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'On-demand courses'],
+      image: entrepreneurialCoursesImg,
     },
     {
       icon: Handshake,
@@ -377,26 +380,33 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
             className="rounded-[20px] overflow-hidden"
             style={glassCardStyle}
           >
-            {/* Placeholder image area */}
+            {/* Image area */}
             <div
               className="w-full h-64 md:h-80 relative overflow-hidden"
               style={{
-                background: placeholderImages[activeAudience][activeCategory],
+                background: activeItem.image ? undefined : placeholderImages[activeAudience][activeCategory],
               }}
             >
-              {/* Decorative elements inside placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center"
-                  style={{
-                    background: 'hsla(0, 0%, 100%, 0.15)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid hsla(0, 0%, 100%, 0.2)',
-                  }}
-                >
-                  <Icon className="w-10 h-10" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }} />
+              {activeItem.image ? (
+                <img
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div
+                    className="w-20 h-20 rounded-full flex items-center justify-center"
+                    style={{
+                      background: 'hsla(0, 0%, 100%, 0.15)',
+                      backdropFilter: 'blur(12px)',
+                      border: '1px solid hsla(0, 0%, 100%, 0.2)',
+                    }}
+                  >
+                    <Icon className="w-10 h-10" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }} />
+                  </div>
                 </div>
-              </div>
+              )}
               {/* Bottom fade */}
               <div
                 className="absolute bottom-0 left-0 right-0 h-20"
