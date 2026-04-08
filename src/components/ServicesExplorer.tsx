@@ -30,7 +30,7 @@ interface CategoryItem {
 }
 
 const categories: Record<Audience, CategoryItem[]> = {
-  Startups: [
+  'Startup Support': [
     {
       icon: UserCheck,
       title: 'Advisor Support',
@@ -59,7 +59,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       features: ['Strategic network building', 'Pilot project facilitation', 'Industry partner matching', 'Feedback loop integration'],
     },
   ],
-  'Scale-ups': [
+  'Funding Support': [
     {
       icon: Users,
       title: 'Mentorship Network',
@@ -90,7 +90,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       features: ['Growth metrics frameworks', 'Team hiring playbooks', 'Series A readiness', 'Board advisory support'],
     },
   ],
-  Enterprises: [
+  'Labs': [
     {
       icon: Building2,
       title: 'Innovation Partnerships',
@@ -141,17 +141,17 @@ const iconContainerStyle: React.CSSProperties = {
 
 /* Placeholder gradient backgrounds for each category */
 const placeholderImages: Record<Audience, string[]> = {
-  Startups: [
+  'Startup Support': [
     'linear-gradient(135deg, hsla(168,60%,70%,0.4) 0%, hsla(200,50%,75%,0.3) 50%, hsla(168,40%,85%,0.2) 100%)',
     'linear-gradient(135deg, hsla(200,60%,70%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(220,40%,85%,0.2) 100%)',
     'linear-gradient(135deg, hsla(168,50%,65%,0.4) 0%, hsla(190,60%,75%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
   ],
-  'Scale-ups': [
+  'Funding Support': [
     'linear-gradient(135deg, hsla(210,50%,65%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(200,40%,80%,0.2) 100%)',
     'linear-gradient(135deg, hsla(168,60%,60%,0.4) 0%, hsla(220,40%,70%,0.3) 50%, hsla(168,30%,85%,0.2) 100%)',
     'linear-gradient(135deg, hsla(190,55%,65%,0.4) 0%, hsla(168,50%,70%,0.3) 50%, hsla(210,40%,80%,0.2) 100%)',
   ],
-  Enterprises: [
+  'Labs': [
     'linear-gradient(135deg, hsla(220,50%,60%,0.4) 0%, hsla(168,40%,70%,0.3) 50%, hsla(200,30%,80%,0.2) 100%)',
     'linear-gradient(135deg, hsla(168,45%,65%,0.4) 0%, hsla(210,50%,70%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
     'linear-gradient(135deg, hsla(200,55%,60%,0.4) 0%, hsla(168,45%,72%,0.3) 50%, hsla(220,35%,82%,0.2) 100%)',
