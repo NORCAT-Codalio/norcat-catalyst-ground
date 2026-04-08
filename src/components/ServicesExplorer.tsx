@@ -33,30 +33,67 @@ const categories: Record<Audience, CategoryItem[]> = {
   'Startup Support': [
     {
       icon: UserCheck,
-      title: 'Advisor Support',
-      headline: 'A dedicated advisor in',
+      title: 'Venture Growth Team',
+      headline: 'A dedicated team in',
       headlineItalic: 'your corner',
       description:
-        'Every company is matched with a dedicated venture advisor who works alongside you on strategy, operations, and growth. Regular check-ins keep you accountable and moving forward.',
-      features: ['Dedicated advisor relationship', 'Schedule flexible sessions', 'Strategic planning support', 'Leadership development'],
+        'Every company is matched with a dedicated venture growth team who works alongside you on strategy, operations, and growth. Regular check-ins keep you accountable and moving forward.',
+      features: ['Dedicated advisor relationship', 'Strategic planning support', 'Operational guidance', 'Leadership development'],
+      link: '/programs/venture-growth-services',
+      linkText: 'Learn More',
+    },
+    {
+      icon: Users,
+      title: 'Mentorship Services',
+      headline: 'Tactical advice from those who\'ve',
+      headlineItalic: 'been there',
+      description:
+        'Access 18+ experienced mentors across sectors including mining, technology, finance, operations, and more. Get tactical advice from domain experts who\'ve built it themselves.',
+      features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
+      link: '/programs/mentorship-services',
+      linkText: 'Learn More',
     },
     {
       icon: GraduationCap,
-      title: 'Founder Education',
+      title: 'Entrepreneurial Courses',
       headline: 'Learn from those who\'ve',
       headlineItalic: 'built it',
       description:
         'Structured curriculum covering everything from customer discovery to fundraising. Learn from practitioners who\'ve built and scaled companies themselves.',
-      features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'On-Demand Courses'],
+      features: ['Workshop series & masterclasses', 'Fundraising preparation', 'Go-to-market strategies', 'On-demand courses'],
     },
     {
       icon: Handshake,
-      title: 'Customer Pairing',
-      headline: 'Your first customers,',
-      headlineItalic: 'delivered',
+      title: 'Core5',
+      headline: 'Mining innovation at',
+      headlineItalic: 'the core',
       description:
-        'We actively connect you with potential customers, pilot partners, and early adopters from our extensive industry network to accelerate your path to revenue.',
-      features: ['Strategic network building', 'Pilot project facilitation', 'Industry partner matching', 'Feedback loop integration'],
+        'A specialized program connecting mining companies with innovative technology solutions to solve critical industry challenges and drive operational excellence.',
+      features: ['Mining tech matching', 'Pilot project facilitation', 'Industry challenge solving', 'Operational innovation'],
+      link: '/mining/core5',
+      linkText: 'Learn More',
+    },
+    {
+      icon: Network,
+      title: 'Critical Industrial Technologies Initiative',
+      headline: 'Advancing critical',
+      headlineItalic: 'technologies',
+      description:
+        'Supporting the development and commercialization of critical industrial technologies essential to Canada\'s economic security and industrial competitiveness.',
+      features: ['Technology development funding', 'Commercialization support', 'Industry partnerships', 'Strategic sector focus'],
+      link: '/mining/critical-industrial-tech',
+      linkText: 'Learn More',
+    },
+    {
+      icon: Building2,
+      title: 'Rogers Cybersecure Catalyst',
+      headline: 'Building cyber-resilient',
+      headlineItalic: 'ventures',
+      description:
+        'A partnership with Rogers Cybersecure Catalyst providing startups with cybersecurity training, resources, and certification to build secure products from the ground up.',
+      features: ['Cybersecurity training', 'Security assessment tools', 'Certification pathways', 'Industry best practices'],
+      link: '/partners/rogers-cybersecure',
+      linkText: 'Learn More',
     },
   ],
   'Funding Support': [
