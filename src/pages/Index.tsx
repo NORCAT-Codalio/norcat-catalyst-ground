@@ -80,9 +80,11 @@ const sectors = [
 
 const stats = [
   { value: '$75M+', label: 'Capital Raised by Startups', icon: TrendingUp },
+  { value: '150+', label: 'Startups Supported', icon: Rocket },
   { value: '15+', label: 'Countries with Active Clients', icon: Globe },
   { value: '18', label: 'Mentors & Advisors in Your Corner', icon: Users },
   { value: '2,000+', label: 'Jobs Created', icon: Activity },
+  { value: '95%', label: 'Client Satisfaction Rate', icon: Sparkles },
 ];
 
 const upcomingPrograms = [
@@ -316,11 +318,16 @@ export default function Index() {
         </section>
 
         {/* ───── STATS Strip ───── */}
-        <div className="relative z-20 py-10" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="w-full">
-            <div className="flex flex-wrap justify-between gap-6 px-0">
-              {stats.map((stat) => (
-                <div key={stat.label} className="flex items-center gap-4 px-6 flex-1 justify-center">
+        <div className="relative z-20" style={{ background: 'hsl(220 15% 92%)' }}>
+          {/* Top wave */}
+          <svg className="absolute top-0 left-0 w-full" viewBox="0 0 1440 60" preserveAspectRatio="none" style={{ marginTop: '-59px' }}>
+            <path d="M0,60 C360,0 720,40 1080,10 C1260,0 1380,20 1440,30 L1440,60 Z" fill="hsl(220 15% 92%)" />
+          </svg>
+          
+          <div className="w-full py-12">
+            <div className="flex flex-wrap justify-center gap-x-2 gap-y-8 px-4">
+              {stats.map((stat, i) => (
+                <div key={stat.label} className="flex items-center gap-4 px-5 min-w-[200px]">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
                     background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
                     border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
@@ -336,6 +343,11 @@ export default function Index() {
               ))}
             </div>
           </div>
+
+          {/* Bottom wave */}
+          <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 50" preserveAspectRatio="none" style={{ marginBottom: '-49px', zIndex: 10 }}>
+            <path d="M0,0 C240,45 480,10 720,35 C960,55 1200,15 1440,0 L1440,50 L0,50 Z" fill="hsl(220 15% 92%)" />
+          </svg>
         </div>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
