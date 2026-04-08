@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 /* ── Audience tabs ── */
-const audiences = ['Startups', 'Scale-ups', 'Enterprises'] as const;
+const audiences = ['Startup Support', 'Funding Support', 'Labs'] as const;
 export type Audience = typeof audiences[number];
 
 /* ── Category data per audience ── */
