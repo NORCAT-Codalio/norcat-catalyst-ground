@@ -139,7 +139,7 @@ const iconContainerStyle = {
 };
 
 const VentureGrowthServices = () => {
-  const [activeAudience, setActiveAudience] = useState<Audience>('Startups');
+  const [activeAudience, setActiveAudience] = useState<Audience>('Startup Support');
   return (
     <Layout>
       <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
