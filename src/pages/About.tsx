@@ -10,6 +10,7 @@ import miningEquipment from '@/assets/mining-equipment.jpg';
 import aboutHeroBg from '@/assets/about-hero-bg.png';
 import founderFirstGif from '@/assets/values/founder-first.gif';
 import communityFocusedGif from '@/assets/values/community-focused.gif';
+import executionFocusedGif from '@/assets/values/execution-focused.gif';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -58,6 +59,7 @@ const values = [
     title: 'Execution Focused',
     description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.',
     icon: Target,
+    bgGif: executionFocusedGif,
   },
 ];
 
