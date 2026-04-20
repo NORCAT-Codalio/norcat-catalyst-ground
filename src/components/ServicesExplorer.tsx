@@ -438,11 +438,11 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                 >
                   {activeItem.headline}{' '}
                   <span
-                    className=""
                     style={{
                       color: 'hsl(168, 100%, 28%)',
                       fontFamily: "'Open Sans', sans-serif",
                       fontWeight: 700,
+                      fontSize: 'inherit',
                     }}
                   >
                     {activeItem.headlineItalic}
