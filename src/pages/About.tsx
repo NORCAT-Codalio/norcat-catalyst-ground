@@ -11,6 +11,7 @@ import aboutHeroBg from '@/assets/about-hero-bg.png';
 import founderFirstGif from '@/assets/values/founder-first.gif';
 import communityFocusedGif from '@/assets/values/community-focused.gif';
 import executionFocusedGif from '@/assets/values/execution-focused.gif';
+import impactDrivenGif from '@/assets/values/impact-driven.gif';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -48,6 +49,7 @@ const values = [
     title: 'Impact Driven',
     description: 'We measure success by the jobs created, capital raised, and innovations brought to market.',
     icon: TrendingUp,
+    bgGif: impactDrivenGif,
   },
   {
     title: 'Community Focused',
