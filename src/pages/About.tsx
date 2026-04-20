@@ -383,7 +383,7 @@ export default function About() {
                           src={value.bgGif} 
                           alt="" 
                           className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
-                          style={value.title === 'Execution Focused' ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' } : {}}
+                          style={value.title === 'Execution Focused' ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' } : value.title === 'Impact Driven' ? { transform: 'scale(1.15)', transformOrigin: 'center center' } : {}}
                           loading="eager"
                           ref={(el) => {
                             // Pause gif by converting to canvas on load
@@ -406,7 +406,7 @@ export default function About() {
                           src={value.bgGif} 
                           alt="" 
                           className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                          style={value.title === 'Execution Focused' ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' } : {}}
+                          style={value.title === 'Execution Focused' ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' } : value.title === 'Impact Driven' ? { transform: 'scale(1.15)', transformOrigin: 'center center' } : {}}
                         />
                       </>
                     )}
