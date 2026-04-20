@@ -319,9 +319,9 @@ export default function Index() {
         {/* ───── STATS Strip ───── */}
         <div className="relative z-20" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-4 py-12">
-            <div className="flex flex-wrap justify-center gap-x-2 gap-y-8">
+            <div className="flex flex-wrap justify-between items-center gap-x-4 gap-y-8">
               {stats.map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-4 px-5 min-w-[200px]">
+                <div key={stat.label} className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{
                     background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
                     border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
