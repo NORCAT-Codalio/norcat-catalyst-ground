@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, DollarSign, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Target, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe, FileText } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe, FileText } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroImage from '@/assets/hero-header-bg.png';
@@ -437,9 +437,9 @@ export default function Index() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {[
-                { ...upcomingPrograms[0], icon: Rocket, img: ctaPhoto1 },
-                { ...upcomingPrograms[1], icon: Target, img: ctaPhoto2 },
-                { ...upcomingPrograms[2], icon: DollarSign, img: ctaPhoto3 },
+                { ...upcomingPrograms[0], img: ctaPhoto1 },
+                { ...upcomingPrograms[1], img: ctaPhoto2 },
+                { ...upcomingPrograms[2], img: ctaPhoto3 },
               ].map((program, i) => (
                 <ScrollReveal key={program.title} delay={i * 0.1}>
                   <Link to={program.link} className="group block h-full">
@@ -454,9 +454,6 @@ export default function Index() {
                         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 15% 92%) 0%, hsl(220 15% 92% / 0.4) 50%, transparent 100%)' }} />
                       </div>
                       <div className="p-7 -mt-20 relative">
-                        <div className="size-12 rounded-lg flex items-center justify-center mb-4" style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 8px 24px hsl(168 100% 35% / 0.35)' }}>
-                          <program.icon className="size-6 text-white" />
-                        </div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-2" style={{ color: 'hsl(168, 100%, 28%)' }}>
                           0{i + 1}
                         </p>
