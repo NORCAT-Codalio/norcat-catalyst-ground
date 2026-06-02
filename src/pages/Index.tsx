@@ -409,6 +409,91 @@ export default function Index() {
           </div>
         </section>
 
+        {/* ───── PROGRAMS & FUNDING — Venture North Accelerator Style ───── */}
+        <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(220 30% 12%) 50%, hsl(220 25% 8%) 100%)' }}>
+          <img src={linesTeal} alt="" aria-hidden="true" className="pointer-events-none absolute -right-16 top-8 w-[420px] opacity-20 hidden md:block" />
+          <img src={signatureLines} alt="" aria-hidden="true" className="pointer-events-none absolute -left-20 bottom-0 w-[360px] opacity-[0.08] hidden md:block" />
+          <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.12) 0%, transparent 60%)' }} />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
+              <ScrollReveal className="max-w-2xl">
+                <p className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] uppercase mb-5" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                  <span className="size-1.5 rounded-full" style={{ background: 'hsl(168, 100%, 45%)' }} />
+                  Programs & Funding
+                </p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.05]" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                  One ecosystem.<br />
+                  <span style={{ color: 'hsl(168, 100%, 45%)', fontWeight: 700 }}>Three ways to grow.</span>
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <Link to="/apply" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all hover:scale-[1.03]" style={{ borderColor: 'hsl(168, 100%, 45%)', color: 'hsl(168, 100%, 45%)' }}>
+                  Apply to NORCAT Innovation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </ScrollReveal>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-3">
+              {[
+                { ...upcomingPrograms[0], icon: Rocket, img: ctaPhoto1 },
+                { ...upcomingPrograms[1], icon: Target, img: ctaPhoto2 },
+                { ...upcomingPrograms[2], icon: DollarSign, img: ctaPhoto3 },
+              ].map((program, i) => (
+                <ScrollReveal key={program.title} delay={i * 0.1}>
+                  <Link to={program.link} className="group block h-full">
+                    <article className="relative h-full overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1" style={{ borderColor: 'hsl(220 20% 22%)', background: 'hsl(220 25% 11%)' }}>
+                      <div className="aspect-[4/3] overflow-hidden relative">
+                        <img
+                          src={program.img}
+                          alt={program.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 25% 11%) 0%, hsl(220 25% 11% / 0.4) 50%, transparent 100%)' }} />
+                      </div>
+                      <div className="p-7 -mt-20 relative">
+                        <div className="size-12 rounded-lg flex items-center justify-center mb-4" style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 8px 24px hsl(168 100% 35% / 0.35)' }}>
+                          <program.icon className="size-6 text-white" />
+                        </div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-2" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                          0{i + 1}
+                        </p>
+                        <h3 className="text-2xl text-white mb-3 uppercase" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, letterSpacing: '-0.01em' }}>
+                          {program.title}
+                        </h3>
+                        <p className="text-sm font-light leading-relaxed mb-5" style={{ color: 'hsl(220 15% 70%)' }}>
+                          {program.description}
+                        </p>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: 'hsl(168, 100%, 45%)' }}>
+                          Learn more
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </div>
+                    </article>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <div className="mt-14 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                { stat: '150+', label: 'Startups supported across Northern Ontario' },
+                { stat: '$75M+', label: 'Capital raised by NORCAT-backed founders' },
+                { stat: '18', label: 'Mentors & advisors in your corner' },
+              ].map((s, i) => (
+                <ScrollReveal key={s.label} delay={i * 0.1}>
+                  <div className="border-l-2 pl-4" style={{ borderColor: 'hsl(168, 100%, 45%)' }}>
+                    <p className="text-3xl md:text-4xl" style={{ color: 'hsl(168, 100%, 45%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 800 }}>{s.stat}</p>
+                    <p className="text-xs mt-1 leading-tight" style={{ color: 'hsl(220 15% 60%)' }}>{s.label}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
         <section className="relative py-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
