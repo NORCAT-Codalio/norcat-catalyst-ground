@@ -454,9 +454,6 @@ export default function Index() {
                         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(220 15% 92%) 0%, hsl(220 15% 92% / 0.4) 50%, transparent 100%)' }} />
                       </div>
                       <div className="p-7 -mt-20 relative">
-                        <div className="size-12 rounded-lg flex items-center justify-center mb-4" style={{ background: 'hsl(168, 100%, 35%)', boxShadow: '0 8px 24px hsl(168 100% 35% / 0.35)' }}>
-                          <program.icon className="size-6 text-white" />
-                        </div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-2" style={{ color: 'hsl(168, 100%, 28%)' }}>
                           0{i + 1}
                         </p>
