@@ -437,9 +437,9 @@ export default function Index() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {[
-                { ...upcomingPrograms[0], icon: Rocket, img: ctaPhoto1 },
-                { ...upcomingPrograms[1], icon: Target, img: ctaPhoto2 },
-                { ...upcomingPrograms[2], icon: DollarSign, img: ctaPhoto3 },
+                { ...upcomingPrograms[0], img: ctaPhoto1 },
+                { ...upcomingPrograms[1], img: ctaPhoto2 },
+                { ...upcomingPrograms[2], img: ctaPhoto3 },
               ].map((program, i) => (
                 <ScrollReveal key={program.title} delay={i * 0.1}>
                   <Link to={program.link} className="group block h-full">
