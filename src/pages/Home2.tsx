@@ -131,12 +131,7 @@ export default function Home2() {
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
-          <div className="absolute inset-0">
-            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
-            <div className="absolute inset-0" style={{ background: 'rgba(0,26,77,0.55)', mixBlendMode: 'multiply' }} />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${NAVY}b3 0%, ${NAVY}66 50%, ${NAVY} 100%)` }} />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(90deg, ${NAVY} 0%, ${NAVY}99 40%, transparent 100%)` }} />
-          </div>
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 50%, ${NAVY} 100%)` }} />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
