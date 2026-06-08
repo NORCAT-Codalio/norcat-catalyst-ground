@@ -191,7 +191,7 @@ export default function Home2() {
             src={heroModel.url}
             alt=""
             aria-hidden="true"
-            className="hidden lg:block absolute right-0 bottom-0 h-[90%] w-auto pointer-events-none select-none"
+            className="hidden lg:block absolute right-16 bottom-0 h-[90%] w-auto pointer-events-none select-none"
             style={{ transform: 'scaleX(-1)' }}
           />
         </section>
