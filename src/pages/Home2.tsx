@@ -29,7 +29,7 @@ import norcatLogo from '@/assets/logos/norcat.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import tedcLogo from '@/assets/logos/tedc.png';
 
-const FONT = "'Montserrat', system-ui, sans-serif";
+const FONT = "'Open Sans', system-ui, sans-serif";
 
 const audiences = [
   { icon: Rocket, title: 'Founders', body: 'World-class mentorship, hands-on support, and access to the capital and infrastructure to scale your tech-enabled, IP-driven startup.' },
@@ -96,13 +96,18 @@ const partners = [
   { name: 'TEDC', logo: tedcLogo },
 ];
 
-// Style tokens (Venture North palette)
-const NAVY = 'hsl(220 45% 6%)';
-const NAVY_SURFACE = 'hsl(220 40% 9%)';
-const NAVY_ELEV = 'hsl(220 35% 12%)';
-const TEAL = 'hsl(171 100% 35%)';
-const BORDER = 'hsl(220 25% 18%)';
-const FG_MUTED = 'hsl(220 12% 70%)';
+// Style tokens — NORCAT Innovation Brand V1.0 (2026)
+const NAVY = '#001A4D';          // Deep Navy
+const NAVY_SURFACE = '#001233';  // deeper navy surface
+const NAVY_ELEV = '#002766';     // elevated navy card
+const BLUE = '#003DA5';          // Innovation Blue
+const SKY = '#2F6FD6';           // Sky
+const TEAL = '#00B398';          // Momentum Teal (accent)
+const MINT = '#7FE3D3';          // Mint
+const PAPER = '#F2F3F6';         // Paper (surface)
+const BORDER = 'rgba(255,255,255,0.10)';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
@@ -128,14 +133,14 @@ export default function Home2() {
         <section className="relative overflow-hidden min-h-[80vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="absolute inset-0">
             <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
-            <div className="absolute inset-0" style={{ background: 'hsl(220 60% 10% / 0.55)', mixBlendMode: 'multiply' }} />
+            <div className="absolute inset-0" style={{ background: 'rgba(0,26,77,0.55)', mixBlendMode: 'multiply' }} />
             <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${NAVY}b3 0%, ${NAVY}66 50%, ${NAVY} 100%)` }} />
             <div className="absolute inset-0" style={{ background: `linear-gradient(90deg, ${NAVY} 0%, ${NAVY}99 40%, transparent 100%)` }} />
           </div>
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, hsl(171 100% 35% / 0.18), transparent 45%), radial-gradient(circle at 80% 90%, hsl(199 85% 60% / 0.12), transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
@@ -155,7 +160,7 @@ export default function Home2() {
                 {sectors.map((s) => (
                   <span key={s.label}
                         className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-                        style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'hsl(171 100% 35% / 0.08)' }}>
+                        style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)' }}>
                     <s.icon className="w-3.5 h-3.5" />
                     {s.label}
                   </span>
@@ -165,7 +170,7 @@ export default function Home2() {
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
                 <Link to="/apply"
                       className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px hsl(171 100% 35% / 0.55)' }}>
+                      style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
                   Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link to="/about"
@@ -179,7 +184,7 @@ export default function Home2() {
         </section>
 
         {/* ───── WHAT IS NORCAT INNOVATION (light section) ───── */}
-        <section className="py-20 md:py-32" style={{ background: 'hsl(0 0% 100%)', color: 'hsl(220 45% 8%)' }}>
+        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
               <div className="lg:col-span-5">
@@ -195,13 +200,13 @@ export default function Home2() {
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:pt-4">
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: 'hsl(220 15% 35%)' }}>
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre — a one-stop shop for founders building tough-tech, IP-driven companies. We pair world-class mentorship and capital access with the only operating mine on the planet built for innovation.
                 </p>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'hsl(220 15% 35%)' }}>
+                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem can match.
                 </p>
-                <div className="mt-10 hidden md:grid grid-cols-3 gap-6 py-7" style={{ borderTop: '1px solid hsl(220 15% 88%)', borderBottom: '1px solid hsl(220 15% 88%)' }}>
+                <div className="mt-10 hidden md:grid grid-cols-3 gap-6 py-7" style={{ borderTop: '1px solid #d9dde5', borderBottom: '1px solid #d9dde5' }}>
                   {[
                     { icon: Calendar, label: 'Established', value: '1995' },
                     { icon: MapPin, label: 'Headquarters', value: 'Sudbury, ON' },
@@ -210,8 +215,8 @@ export default function Home2() {
                     <div key={m.label} className="flex items-center gap-4">
                       <m.icon className="w-7 h-7" style={{ color: TEAL }} />
                       <div>
-                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: 'hsl(220 15% 50%)' }}>{m.label}</p>
-                        <p className="text-base md:text-lg font-bold" style={{ color: 'hsl(220 45% 8%)' }}>{m.value}</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{m.label}</p>
+                        <p className="text-base md:text-lg font-bold" style={{ color: '#001A4D' }}>{m.value}</p>
                       </div>
                     </div>
                   ))}
@@ -224,7 +229,7 @@ export default function Home2() {
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, hsl(171 100% 35% / 0.12), transparent 40%), radial-gradient(circle at 80% 90%, hsl(199 85% 60% / 0.10), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
@@ -252,7 +257,7 @@ export default function Home2() {
                   </div>
                   <div className="p-7 -mt-20 relative">
                     <div className="size-12 rounded-lg flex items-center justify-center mb-4"
-                         style={{ background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px hsl(171 100% 35% / 0.55)' }}>
+                         style={{ background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
                       <h.icon className="size-6" />
                     </div>
                     <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
@@ -277,9 +282,9 @@ export default function Home2() {
 
         {/* ───── WHO IT'S FOR (light) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
-                 style={{ background: 'hsl(210 25% 97%)', color: 'hsl(220 45% 8%)' }}>
+                 style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(ellipse at top right, hsl(171 100% 35% / 0.10), transparent 55%), radial-gradient(ellipse at bottom left, hsl(199 85% 60% / 0.08), transparent 55%)`,
+            backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.12), transparent 55%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.12), transparent 55%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
@@ -297,13 +302,13 @@ export default function Home2() {
             <div className="grid gap-6 md:grid-cols-3">
               {audiences.map((a) => (
                 <div key={a.title} className="relative p-7 md:p-10 rounded-xl bg-white"
-                     style={{ border: '1px solid hsl(220 15% 88%)' }}>
+                     style={{ border: '1px solid #d9dde5' }}>
                   <div className="size-14 rounded-lg flex items-center justify-center mb-6"
-                       style={{ background: 'hsl(171 100% 35% / 0.10)', color: TEAL }}>
+                       style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>
                     <a.icon className="size-7" strokeWidth={2} />
                   </div>
                   <h3 className="font-black uppercase text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
-                  <p className="leading-relaxed" style={{ color: 'hsl(220 15% 35%)' }}>{a.body}</p>
+                  <p className="leading-relaxed" style={{ color: '#475068' }}>{a.body}</p>
                 </div>
               ))}
             </div>
@@ -311,7 +316,7 @@ export default function Home2() {
             <div className="mt-12 md:mt-16 flex justify-center">
               <Link to="/apply"
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px hsl(171 100% 35% / 0.55)' }}>
+                    style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
                 Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
@@ -373,7 +378,7 @@ export default function Home2() {
         </section>
 
         {/* ───── TESTIMONIALS (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: 'hsl(0 0% 100%)', color: 'hsl(220 45% 8%)' }}>
+        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
@@ -387,7 +392,7 @@ export default function Home2() {
                   The founders behind<br />the momentum.
                 </h2>
               </div>
-              <p className="text-sm md:max-w-xs" style={{ color: 'hsl(220 15% 45%)' }}>
+              <p className="text-sm md:max-w-xs" style={{ color: '#5b6478' }}>
                 Hear from the companies who've come through the NORCAT pipeline — and the milestones they've hit since.
               </p>
             </div>
@@ -395,12 +400,12 @@ export default function Home2() {
             <div className="grid lg:grid-cols-3 gap-6">
               {testimonials.map((t) => (
                 <figure key={t.name} className="h-full p-7 sm:p-9 rounded-xl flex flex-col bg-white transition-colors hover:border-primary/40"
-                        style={{ border: '1px solid hsl(220 15% 88%)' }}>
+                        style={{ border: '1px solid #d9dde5' }}>
                   <Quote className="size-8 mb-4" style={{ color: TEAL }} />
-                  <blockquote className="leading-relaxed flex-1 text-sm sm:text-base" style={{ color: 'hsl(220 25% 18%)' }}>"{t.quote}"</blockquote>
-                  <figcaption className="mt-8 pt-6" style={{ borderTop: '1px solid hsl(220 15% 88%)' }}>
+                  <blockquote className="leading-relaxed flex-1 text-sm sm:text-base" style={{ color: '#1a2440' }}>"{t.quote}"</blockquote>
+                  <figcaption className="mt-8 pt-6" style={{ borderTop: '1px solid #d9dde5' }}>
                     <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT }}>{t.name}</p>
-                    <p className="text-xs md:text-sm mt-1" style={{ color: 'hsl(220 15% 45%)' }}>{t.role}</p>
+                    <p className="text-xs md:text-sm mt-1" style={{ color: '#5b6478' }}>{t.role}</p>
                     <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] mt-3" style={{ fontFamily: FONT, color: TEAL }}>{t.year}</p>
                   </figcaption>
                 </figure>
@@ -449,9 +454,9 @@ export default function Home2() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: SIGNATURE_GRADIENT }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(ellipse at center, hsl(171 100% 35% / 0.15), transparent 60%)`,
+            backgroundImage: `radial-gradient(ellipse at center, rgba(127,227,211,0.20), transparent 60%)`,
           }} />
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
             <Eyebrow>Your move</Eyebrow>
@@ -463,7 +468,7 @@ export default function Home2() {
             </p>
             <Link to="/apply"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px hsl(171 100% 35% / 0.55)' }}>
+                  style={{ fontFamily: FONT, background: 'white', color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,0,0,0.45)' }}>
               Apply to NORCAT Innovation <ArrowUpRight className="w-5 h-5" />
             </Link>
           </div>
