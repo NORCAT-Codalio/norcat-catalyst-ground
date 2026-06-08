@@ -286,7 +286,7 @@ export default function Home2() {
                         </span>
                       </div>
                       <div className="relative mt-auto">
-                        <p className="text-xs mb-3 leading-relaxed text-white/85 max-w-[26ch]">{h.desc}</p>
+                        <p className="text-xs mb-3 leading-relaxed text-white/85">{h.desc}</p>
                         <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                           {first} <span style={{ color: TEAL }}>{last}.</span>
                         </h3>
