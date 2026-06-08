@@ -140,7 +140,7 @@ export default function Home2() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>Sudbury · Northern Ontario · Est. 1995</Eyebrow>
+              <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
                 Build. Test.<br />
