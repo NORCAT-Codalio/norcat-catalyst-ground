@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import heroImage from '@/assets/hero-header-bg.png';
+
 import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
