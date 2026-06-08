@@ -333,9 +333,12 @@ export default function Home2() {
                       </h3>
                       <p className="text-xs mb-5 leading-relaxed text-white/90 max-w-[28ch]">{h.desc}</p>
                       <Link to="/programs/venture-growth-services"
-                            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-white hover:text-[#0a2a6b]"
-                            style={{ fontFamily: FONT, border: '1.5px solid rgba(255,255,255,0.9)' }}>
-                        RSVP <ArrowUpRight className="w-3.5 h-3.5" />
+                            className="inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                            style={{ background: 'white', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
+                        RSVP
+                        <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </span>
                       </Link>
                     </div>
                   </article>
