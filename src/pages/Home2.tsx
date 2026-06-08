@@ -299,7 +299,7 @@ export default function Home2() {
                              className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-white"
                              style={{ border: '1px solid #e3e6ec' }}>
                       <img src={founderSpotlight.url} alt="Underground Centre"
-                           className="absolute right-0 bottom-0 h-[95%] w-auto object-contain object-bottom pointer-events-none select-none" />
+                           className="absolute right-0 bottom-0 h-[105%] w-auto object-contain object-bottom pointer-events-none select-none" />
                       <div className="absolute inset-0 p-6 md:p-7 flex flex-col">
                         <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
                           {eyebrowRight}
