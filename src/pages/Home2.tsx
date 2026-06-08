@@ -468,7 +468,7 @@ export default function Home2() {
             </p>
             <Link to="/apply"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
+                  style={{ fontFamily: FONT, background: 'white', color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,0,0,0.45)' }}>
               Apply to NORCAT Innovation <ArrowUpRight className="w-5 h-5" />
             </Link>
           </div>
