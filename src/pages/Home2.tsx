@@ -264,7 +264,7 @@ export default function Home2() {
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
                 const num = `0${i + 1}`;
-                const eyebrowRight = ['CircuitIQ', 'FOUNDER SPOTLIGHT', 'EVENT · THU 7PM'][i];
+                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'EVENT · THU 7PM'][i];
 
                 if (i === 0) {
                   // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
