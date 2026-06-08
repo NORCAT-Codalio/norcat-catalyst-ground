@@ -7,7 +7,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
-import norcatHalfLogo from '@/assets/norcat-half-logo-square.png.asset.json';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
