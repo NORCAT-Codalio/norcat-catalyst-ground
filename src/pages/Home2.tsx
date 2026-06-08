@@ -304,7 +304,7 @@ export default function Home2() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
                           {eyebrowRight}
                         </p>
-                        <div className="mt-12 max-w-[60%]">
+                        <div className="mt-12 max-w-[50%]">
                           <h3 className="font-black text-3xl md:text-4xl leading-[1.02]" style={{ fontFamily: FONT, color: '#0a1a3a', letterSpacing: '-0.02em' }}>
                             {h.label}.
                           </h3>
