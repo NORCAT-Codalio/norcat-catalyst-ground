@@ -16,6 +16,7 @@ const programsMenu = {
       { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
       { name: 'Mentorship Services', href: '/programs/mentorship-services' },
       { name: 'Capital Navigation', href: '/programs/capital-navigation' },
+      { name: 'Home-2', href: '/home-2' },
     ],
   },
   funding: {

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
+import Home2 from "./pages/Home2";
 import About from "./pages/About";
 import MiningInnovation from "./pages/MiningInnovation";
 import Ecosystem from "./pages/Ecosystem";
@@ -76,6 +77,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/home-2" element={<Home2 />} />
             <Route path="/about" element={<About />} />
             <Route path="/mining-innovation" element={<MiningInnovation />} />
             <Route path="/ecosystem" element={<Ecosystem />} />
