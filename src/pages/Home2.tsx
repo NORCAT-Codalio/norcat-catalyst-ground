@@ -7,6 +7,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
