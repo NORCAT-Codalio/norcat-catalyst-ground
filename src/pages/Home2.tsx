@@ -9,6 +9,8 @@ import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
+import founderSpotlight from '@/assets/founder-spotlight.png.asset.json';
+import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
@@ -260,27 +262,89 @@ export default function Home2() {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-3">
-              {highlights.map((h, i) => (
-                <article key={h.label} className="group relative overflow-hidden rounded-xl"
-                         style={{ background: NAVY_ELEV, border: `1px solid ${BORDER}` }}>
-                  <div className="aspect-[4/3] overflow-hidden relative">
-                    <img src={h.img} alt={h.label} loading="lazy"
-                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${NAVY_ELEV} 0%, ${NAVY_ELEV}66 40%, transparent 100%)` }} />
-                  </div>
-                  <div className="p-7 -mt-20 relative">
-                    <div className="size-12 rounded-lg flex items-center justify-center mb-4"
-                         style={{ background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
-                      <h.icon className="size-6" />
+              {highlights.map((h, i) => {
+                const num = `0${i + 1}`;
+                const eyebrowRight = ['COHORT 12', 'FOUNDER SPOTLIGHT', 'EVENT · THU 7PM'][i];
+
+                if (i === 0) {
+                  // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
+                  const words = h.label.split(' ');
+                  const last = words.pop();
+                  const first = words.join(' ');
+                  return (
+                    <article key={h.label}
+                             className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col p-6 md:p-7"
+                             style={{ background: 'linear-gradient(180deg, #c9ced6 0%, #6c7689 45%, #0a2a6b 100%)' }}>
+                      <div className="flex items-start justify-between">
+                        <img src={norcatWhiteLogo} alt="NORCAT" className="h-5 w-auto opacity-95" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/85" style={{ fontFamily: FONT }}>
+                          {eyebrowRight}
+                        </span>
+                      </div>
+                      <div className="mt-auto">
+                        <p className="text-xs mb-3 leading-relaxed text-white/85 max-w-[26ch]">{h.desc}</p>
+                        <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                          {first} <span style={{ color: TEAL }}>{last}.</span>
+                        </h3>
+                      </div>
+                    </article>
+                  );
+                }
+
+                if (i === 1) {
+                  // Box 2 — white card, teal eyebrow, quote-style title, founder photo right
+                  return (
+                    <article key={h.label}
+                             className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-white"
+                             style={{ border: '1px solid #e3e6ec' }}>
+                      <img src={founderSpotlight.url} alt="Founder spotlight"
+                           className="absolute right-0 bottom-0 h-[88%] w-auto object-contain object-bottom pointer-events-none select-none" />
+                      <div className="absolute inset-0 p-6 md:p-7 flex flex-col">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
+                          {eyebrowRight}
+                        </p>
+                        <div className="mt-12 max-w-[60%]">
+                          <h3 className="font-black text-xl md:text-2xl leading-[1.15]" style={{ fontFamily: FONT, color: '#0a1a3a' }}>
+                            "{h.label}."
+                          </h3>
+                          <p className="mt-3 text-xs leading-relaxed" style={{ color: '#475068' }}>{h.desc}</p>
+                        </div>
+                        <p className="mt-auto text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: '#6b7387' }}>
+                          — Portfolio Founder
+                        </p>
+                      </div>
+                    </article>
+                  );
+                }
+
+                // Box 3 — teal background, half logo right @ 20% opacity, big title + RSVP
+                return (
+                  <article key={h.label}
+                           className="relative overflow-hidden rounded-2xl aspect-[4/5] p-6 md:p-7 flex flex-col"
+                           style={{ background: TEAL }}>
+                    <img src={norcatHalfLogo.url} alt=""
+                         aria-hidden="true"
+                         className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
+                         style={{ opacity: 0.2 }} />
+                    <p className="relative text-[10px] font-bold uppercase tracking-[0.22em] text-white" style={{ fontFamily: FONT }}>
+                      {eyebrowRight}
+                    </p>
+                    <div className="relative mt-auto">
+                      <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-5" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                        {h.label}.
+                      </h3>
+                      <p className="text-xs mb-5 leading-relaxed text-white/90 max-w-[28ch]">{h.desc}</p>
+                      <Link to="/programs/venture-growth-services"
+                            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-white hover:text-[#0a2a6b]"
+                            style={{ fontFamily: FONT, border: '1.5px solid rgba(255,255,255,0.9)' }}>
+                        RSVP <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
-                       style={{ fontFamily: FONT, color: TEAL }}>0{i + 1}</p>
-                    <h3 className="font-black uppercase text-2xl mb-2 text-white" style={{ fontFamily: FONT }}>{h.label}</h3>
-                    <p style={{ color: 'rgba(255,255,255,0.75)' }}>{h.desc}</p>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
+
 
 
             <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
