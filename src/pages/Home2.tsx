@@ -454,9 +454,9 @@ export default function Home2() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: SIGNATURE_GRADIENT }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(ellipse at center, rgba(0,179,152,0.15), transparent 60%)`,
+            backgroundImage: `radial-gradient(ellipse at center, rgba(127,227,211,0.20), transparent 60%)`,
           }} />
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
             <Eyebrow>Your move</Eyebrow>
