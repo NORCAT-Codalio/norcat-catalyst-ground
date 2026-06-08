@@ -151,8 +151,9 @@ export default function Home2() {
               <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                Build. Test.<br />
-                <span style={{ color: TEAL }}>Scale in the North.</span>
+                Build.<br />
+                Test.<br />
+                <span style={{ color: TEAL }}>Scale.</span>
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
