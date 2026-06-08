@@ -274,14 +274,18 @@ export default function Home2() {
                   return (
                     <article key={h.label}
                              className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col p-6 md:p-7"
-                             style={{ background: 'linear-gradient(180deg, #c9ced6 0%, #6c7689 45%, #0a2a6b 100%)' }}>
-                      <div className="flex items-start justify-between">
+                             style={{ background: '#0a2a6b' }}>
+                      <img src={h.img} alt={h.label} loading="lazy"
+                           className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0 pointer-events-none"
+                           style={{ background: 'linear-gradient(180deg, transparent 0%, transparent 35%, rgba(10,42,107,0.85) 75%, #0a2a6b 100%)' }} />
+                      <div className="relative flex items-start justify-between">
                         <img src={norcatWhiteLogo} alt="NORCAT" className="h-5 w-auto opacity-95" />
                         <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/85" style={{ fontFamily: FONT }}>
                           {eyebrowRight}
                         </span>
                       </div>
-                      <div className="mt-auto">
+                      <div className="relative mt-auto">
                         <p className="text-xs mb-3 leading-relaxed text-white/85 max-w-[26ch]">{h.desc}</p>
                         <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                           {first} <span style={{ color: TEAL }}>{last}.</span>
