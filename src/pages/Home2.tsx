@@ -96,13 +96,18 @@ const partners = [
   { name: 'TEDC', logo: tedcLogo },
 ];
 
-// Style tokens (Venture North palette)
-const NAVY = 'hsl(220 45% 6%)';
-const NAVY_SURFACE = 'hsl(220 40% 9%)';
-const NAVY_ELEV = 'hsl(220 35% 12%)';
-const TEAL = 'hsl(171 100% 35%)';
-const BORDER = 'hsl(220 25% 18%)';
-const FG_MUTED = 'hsl(220 12% 70%)';
+// Style tokens — NORCAT Innovation Brand V1.0 (2026)
+const NAVY = '#001A4D';          // Deep Navy
+const NAVY_SURFACE = '#001233';  // deeper navy surface
+const NAVY_ELEV = '#002766';     // elevated navy card
+const BLUE = '#003DA5';          // Innovation Blue
+const SKY = '#2F6FD6';           // Sky
+const TEAL = '#00B398';          // Momentum Teal (accent)
+const MINT = '#7FE3D3';          // Mint
+const PAPER = '#F2F3F6';         // Paper (surface)
+const BORDER = 'rgba(255,255,255,0.10)';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
