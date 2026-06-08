@@ -305,8 +305,8 @@ export default function Home2() {
                           {eyebrowRight}
                         </p>
                         <div className="mt-12 max-w-[60%]">
-                          <h3 className="font-black text-xl md:text-2xl leading-[1.15]" style={{ fontFamily: FONT, color: '#0a1a3a' }}>
-                            "{h.label}."
+                          <h3 className="font-black text-3xl md:text-4xl leading-[1.02]" style={{ fontFamily: FONT, color: '#0a1a3a', letterSpacing: '-0.02em' }}>
+                            {h.label}.
                           </h3>
                           <p className="mt-3 text-xs leading-relaxed" style={{ color: '#475068' }}>{h.desc}</p>
                         </div>
