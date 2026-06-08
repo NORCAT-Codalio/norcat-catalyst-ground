@@ -9,7 +9,7 @@ import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
-import founderSpotlight from '@/assets/founder-spotlight.png.asset.json';
+import founderSpotlight from '@/assets/nickunderground.png.asset.json';
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 // Portfolio logos
@@ -264,7 +264,7 @@ export default function Home2() {
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
                 const num = `0${i + 1}`;
-                const eyebrowRight = ['CircuitIQ', 'FOUNDER SPOTLIGHT', 'EVENT · THU 7PM'][i];
+                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'EVENT · THU 7PM'][i];
 
                 if (i === 0) {
                   // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
@@ -298,8 +298,8 @@ export default function Home2() {
                     <article key={h.label}
                              className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-white"
                              style={{ border: '1px solid #e3e6ec' }}>
-                      <img src={founderSpotlight.url} alt="Founder spotlight"
-                           className="absolute right-0 bottom-0 h-[88%] w-auto object-contain object-bottom pointer-events-none select-none" />
+                      <img src={founderSpotlight.url} alt="Underground Centre"
+                           className="absolute right-0 bottom-0 h-[95%] w-auto object-contain object-bottom pointer-events-none select-none" />
                       <div className="absolute inset-0 p-6 md:p-7 flex flex-col">
                         <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
                           {eyebrowRight}
@@ -310,9 +310,6 @@ export default function Home2() {
                           </h3>
                           <p className="mt-3 text-xs leading-relaxed" style={{ color: '#475068' }}>{h.desc}</p>
                         </div>
-                        <p className="mt-auto text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: '#6b7387' }}>
-                          — Portfolio Founder
-                        </p>
                       </div>
                     </article>
                   );
