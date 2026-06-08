@@ -233,6 +233,17 @@ export default function Home2() {
                     </div>
                   ))}
                 </div>
+
+                {/* quote box */}
+                <div className="mt-8 rounded-xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
+                  <p className="text-base sm:text-lg leading-relaxed font-medium" style={{ color: '#001A4D' }}>
+                    "Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025."
+                  </p>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-wider" style={{ color: '#6b7387' }}>
+                    — National Angel Capital Organization
+                  </p>
+                </div>
               </div>
             </div>
           </div>
