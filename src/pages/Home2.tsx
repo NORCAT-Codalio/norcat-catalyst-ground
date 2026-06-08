@@ -240,7 +240,7 @@ export default function Home2() {
         </section>
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: SIGNATURE_GRADIENT }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
           }} />
