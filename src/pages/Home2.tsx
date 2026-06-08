@@ -264,7 +264,7 @@ export default function Home2() {
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
                 const num = `0${i + 1}`;
-                const eyebrowRight = ['COHORT 12', 'FOUNDER SPOTLIGHT', 'EVENT · THU 7PM'][i];
+                const eyebrowRight = ['CircuitIQ', 'FOUNDER SPOTLIGHT', 'EVENT · THU 7PM'][i];
 
                 if (i === 0) {
                   // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
@@ -279,12 +279,9 @@ export default function Home2() {
                            className="absolute inset-0 w-full h-full object-cover" />
                       <div className="absolute inset-0 pointer-events-none"
                            style={{ background: 'linear-gradient(180deg, transparent 0%, transparent 35%, rgba(10,42,107,0.85) 75%, #0a2a6b 100%)' }} />
-                      <div className="relative flex items-start justify-between">
-                        <img src={norcatWhiteLogo} alt="NORCAT" className="h-5 w-auto opacity-95" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/85" style={{ fontFamily: FONT }}>
-                          {eyebrowRight}
-                        </span>
-                      </div>
+                      <span className="relative text-[10px] font-bold uppercase tracking-[0.22em] text-white/85" style={{ fontFamily: FONT }}>
+                        {eyebrowRight}
+                      </span>
                       <div className="relative mt-auto">
                         <p className="text-xs mb-3 leading-relaxed text-white/85">{h.desc}</p>
                         <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
@@ -308,8 +305,8 @@ export default function Home2() {
                           {eyebrowRight}
                         </p>
                         <div className="mt-12 max-w-[60%]">
-                          <h3 className="font-black text-xl md:text-2xl leading-[1.15]" style={{ fontFamily: FONT, color: '#0a1a3a' }}>
-                            "{h.label}."
+                          <h3 className="font-black text-3xl md:text-4xl leading-[1.02]" style={{ fontFamily: FONT, color: '#0a1a3a', letterSpacing: '-0.02em' }}>
+                            {h.label}.
                           </h3>
                           <p className="mt-3 text-xs leading-relaxed" style={{ color: '#475068' }}>{h.desc}</p>
                         </div>
