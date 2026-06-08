@@ -9,7 +9,7 @@ import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
-import founderSpotlight from '@/assets/nickunderground.png.asset.json';
+import founderSpotlight from '@/assets/underground-centre.png.asset.json';
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 // Portfolio logos
