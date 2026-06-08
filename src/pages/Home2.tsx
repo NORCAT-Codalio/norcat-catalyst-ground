@@ -184,7 +184,7 @@ export default function Home2() {
         </section>
 
         {/* ───── WHAT IS NORCAT INNOVATION (light section) ───── */}
-        <section className="py-20 md:py-32" style={{ background: 'hsl(0 0% 100%)', color: '#001A4D' }}>
+        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
               <div className="lg:col-span-5">
@@ -378,7 +378,7 @@ export default function Home2() {
         </section>
 
         {/* ───── TESTIMONIALS (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: 'hsl(0 0% 100%)', color: '#001A4D' }}>
+        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
