@@ -264,7 +264,7 @@ export default function Home2() {
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
                 const num = `0${i + 1}`;
-                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Northern Ontario Angels'][i];
+                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
 
                 if (i === 0) {
                   // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
@@ -334,7 +334,7 @@ export default function Home2() {
                       <p className="text-xs mb-5 leading-relaxed text-white/90 max-w-[28ch]">{h.desc}</p>
                       <Link to="/programs/venture-growth-services"
                             className="inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                            style={{ background: 'white', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
+                            style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
                         RSVP
                         <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                           <ArrowUpRight className="w-4 h-4" />
