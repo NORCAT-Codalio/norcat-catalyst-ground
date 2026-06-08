@@ -9,6 +9,8 @@ import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
+import founderSpotlight from '@/assets/founder-spotlight.png.asset.json';
+import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
