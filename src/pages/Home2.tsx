@@ -7,6 +7,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
@@ -132,6 +133,12 @@ export default function Home2() {
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+
+          {/* logo background */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.2 }}
+          />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
