@@ -8,6 +8,7 @@ import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
@@ -320,7 +321,7 @@ export default function Home2() {
                   <article key={h.label}
                            className="relative overflow-hidden rounded-2xl aspect-[4/5] p-6 md:p-7 flex flex-col"
                            style={{ background: TEAL }}>
-                    <img src={norcatHalfLogo.url} alt=""
+                    <img src={norcatHalfLogoSquare.url} alt=""
                          aria-hidden="true"
                          className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                          style={{ opacity: 0.2 }} />
