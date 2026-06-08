@@ -29,7 +29,7 @@ import norcatLogo from '@/assets/logos/norcat.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import tedcLogo from '@/assets/logos/tedc.png';
 
-const FONT = "'Montserrat', system-ui, sans-serif";
+const FONT = "'Open Sans', system-ui, sans-serif";
 
 const audiences = [
   { icon: Rocket, title: 'Founders', body: 'World-class mentorship, hands-on support, and access to the capital and infrastructure to scale your tech-enabled, IP-driven startup.' },
