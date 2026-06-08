@@ -8,6 +8,7 @@ import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import heroModel from '@/assets/hero-model.png.asset.json';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
@@ -183,6 +184,15 @@ export default function Home2() {
               </div>
             </div>
           </div>
+
+          {/* hero model image */}
+          <img
+            src={heroModel.url}
+            alt=""
+            aria-hidden="true"
+            className="hidden lg:block absolute right-0 bottom-0 h-[90%] w-auto pointer-events-none select-none"
+            style={{ transform: 'scaleX(-1)' }}
+          />
         </section>
 
         {/* ───── WHAT IS NORCAT INNOVATION (light section) ───── */}
