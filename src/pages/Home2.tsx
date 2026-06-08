@@ -313,37 +313,64 @@ export default function Home2() {
               </h2>
             </div>
 
-            {/* quote box */}
-            <div className="mt-8 mb-8 rounded-xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-              <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
-              <p className="text-base sm:text-lg leading-relaxed font-medium" style={{ color: '#001A4D' }}>
-                "Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025."
-              </p>
-              <p className="mt-3 text-xs font-bold uppercase tracking-wider" style={{ color: '#6b7387' }}>
-                — National Angel Capital Organization
-              </p>
-            </div>
+            {/* Bento grid: tall quote left, founders/industry top, investors + CTA bottom */}
+            <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2 lg:auto-rows-fr">
+              {/* Tall quote box (left, spans 2 rows) */}
+              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:row-span-2 min-h-[420px] lg:min-h-[560px] flex flex-col justify-end"
+                   style={{
+                     background: `linear-gradient(135deg, ${TEAL} 0%, #0b6fb8 45%, #0a3a8c 100%)`,
+                   }}>
+                <div className="absolute inset-0 pointer-events-none opacity-40"
+                     style={{
+                       backgroundImage: 'repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 18px)',
+                     }} />
+                <Quote className="relative w-8 h-8 mb-4 text-white/90" />
+                <p className="relative text-xl sm:text-2xl md:text-3xl leading-snug font-semibold text-white">
+                  "Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025."
+                </p>
+                <p className="relative mt-5 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
+                  — National Angel Capital Organization
+                </p>
+              </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
+              {/* Three audience cards: Founders (top-mid), Industry (top-right), Investors (bottom-mid) */}
               {audiences.map((a) => (
-                <div key={a.title} className="relative p-7 md:p-10 rounded-xl bg-white"
+                <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white"
                      style={{ border: '1px solid #d9dde5' }}>
-                  <div className="size-14 rounded-lg flex items-center justify-center mb-6"
+                  <div className="size-12 rounded-lg flex items-center justify-center mb-5"
                        style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>
-                    <a.icon className="size-7" strokeWidth={2} />
+                    <a.icon className="size-6" strokeWidth={2} />
                   </div>
-                  <h3 className="font-black uppercase text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
-                  <p className="leading-relaxed" style={{ color: '#475068' }}>{a.body}</p>
+                  <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
+                  <p className="leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>{a.body}</p>
                 </div>
               ))}
-            </div>
 
-            <div className="mt-12 md:mt-16 flex justify-center">
-              <Link to="/apply"
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
-                Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              {/* Bottom-right CTA box */}
+              <div className="relative rounded-2xl p-7 md:p-9 flex flex-col justify-end"
+                   style={{ background: '#E6F5F1', border: '1px solid #cfe7df' }}>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-auto" style={{ color: TEAL, fontFamily: FONT }}>
+                  Get involved
+                </p>
+                <div className="flex flex-wrap items-center gap-3 mt-6">
+                  <Link to="/apply"
+                        className="inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                        style={{ background: TEAL, color: NAVY }}>
+                    Apply
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                  <Link to="/about"
+                        className="inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                        style={{ background: 'white', color: NAVY, border: '1px solid #001A4D' }}>
+                    Learn more
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
