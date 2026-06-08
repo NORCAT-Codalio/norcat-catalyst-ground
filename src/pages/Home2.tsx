@@ -157,7 +157,7 @@ export default function Home2() {
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                NORCAT Innovation is the launchpad for tech-enabled, IP-driven startups — bringing together world-class mentorship, capital access, and the only operating mine on the planet built for innovation.
+                NORCAT Innovation is the launchpad for tech-enabled, IP-driven startups, bringing together world-class mentorship, capital access, and the only operating mine on the planet built for tech testing.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2.5">
