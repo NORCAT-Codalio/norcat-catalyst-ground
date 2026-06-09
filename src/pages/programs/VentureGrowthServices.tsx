@@ -211,20 +211,12 @@ export default function VentureGrowthServices() {
                             transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.5, 1)',
                           }}
                         >
-                          <svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
-                            <path d="M22 14 L42 14 L46 22 L18 22 Z" fill="#5a3a1a" />
-                            <path
-                              d="M18 22 Q8 36 12 48 Q16 58 32 58 Q48 58 52 48 Q56 36 46 22 Z"
-                              fill={TEAL}
-                              stroke="#003d33"
-                              strokeWidth="1.5"
-                            />
-                            <text
-                              x="32" y="46" textAnchor="middle"
-                              fontFamily="Arial Black, sans-serif" fontWeight="900"
-                              fontSize="20" fill="#003d33"
-                            >$</text>
-                          </svg>
+                          <DollarSign
+                            size={44}
+                            strokeWidth={2.5}
+                            className="text-white"
+                            aria-hidden="true"
+                          />
                         </div>
                       </div>
                     )}
