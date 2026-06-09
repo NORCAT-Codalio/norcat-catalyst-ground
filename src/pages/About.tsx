@@ -318,12 +318,10 @@ export default function About() {
                     onClick={() => setExpandedMember(isExpanded ? null : member.name)}
                     transition={{ type: 'spring', stiffness: 260, damping: 28 }}
                     whileHover={isExpanded ? undefined : { y: -6 }}
-                    className={`group text-left rounded-2xl overflow-hidden cursor-pointer relative ${
-                      isExpanded ? 'col-span-2 lg:col-span-4' : ''
-                    }`}
+                    className="group text-left rounded-2xl overflow-hidden cursor-pointer relative"
                     style={{ background: 'white', border: '1px solid #d9dde5' }}
                   >
-                    <motion.div layout className={isExpanded ? 'flex flex-col sm:flex-row items-start gap-6 p-6 sm:p-8' : ''}>
+                    <motion.div layout className={isExpanded ? 'p-6' : ''}>
                       <motion.div
                         layout
                         className={`relative overflow-hidden ${
