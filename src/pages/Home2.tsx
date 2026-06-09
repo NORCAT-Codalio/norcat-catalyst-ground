@@ -187,9 +187,9 @@ export default function Home2() {
                   Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
                 <Link to="/about"
-                      className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                      className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
                       style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}>
-                  Learn More <ArrowRight className="w-4 h-4" />
+                  Learn More <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
               </div>
             </div>
