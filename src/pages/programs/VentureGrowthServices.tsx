@@ -167,6 +167,16 @@ export default function VentureGrowthServices() {
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
           }} />
+          <style>{`
+            @keyframes drone-rotor { from { transform: scaleX(1); } 50% { transform: scaleX(0.15); } to { transform: scaleX(1); } }
+            @keyframes drone-fly {
+              0% { transform: translate(-50%, 10px); opacity: 0; }
+              25% { transform: translate(-50%, -20px); opacity: 1; }
+              50% { transform: translate(-60%, -55px) rotate(-4deg); }
+              75% { transform: translate(-40%, -85px) rotate(3deg); }
+              100% { transform: translate(-50%, -110px) rotate(0deg); opacity: 1; }
+            }
+          `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Your Journey</Eyebrow>
@@ -179,13 +189,63 @@ export default function VentureGrowthServices() {
               {programStructure.map((phase) => {
                 const isScale = phase.phase === '03';
                 const isOnboarding = phase.phase === '01';
-                const needsOverflow = isScale || isOnboarding;
+                const isBuild = phase.phase === '02';
+                const needsOverflow = isScale || isOnboarding || isBuild;
                 return (
                   <article
                     key={phase.phase}
-                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale ? 'hover:rounded-t-none' : ''} ${isOnboarding ? 'hover:rounded-t-none' : ''}`}
+                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale || isOnboarding || isBuild ? 'hover:rounded-t-none' : ''}`}
                     style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                   >
+                    {isBuild && (
+                      <>
+                        {/* Box flaps opening — left */}
+                        <div
+                          className="pointer-events-none absolute bottom-full left-0 w-1/2 h-[26px] origin-bottom transition-transform duration-700 ease-out group-hover:[transform:perspective(500px)_rotateX(-135deg)]"
+                          style={{
+                            background: '#0a2a6b',
+                            borderTop: `1px solid ${BORDER}`,
+                            borderLeft: `1px solid ${BORDER}`,
+                            borderBottom: `1px solid ${BORDER}`,
+                            borderTopLeftRadius: '14px',
+                            transform: 'perspective(500px) rotateX(0deg)',
+                          }}
+                        />
+                        {/* Box flaps opening — right */}
+                        <div
+                          className="pointer-events-none absolute bottom-full right-0 w-1/2 h-[26px] origin-bottom transition-transform duration-700 ease-out group-hover:[transform:perspective(500px)_rotateX(-135deg)]"
+                          style={{
+                            background: '#0a2a6b',
+                            borderTop: `1px solid ${BORDER}`,
+                            borderRight: `1px solid ${BORDER}`,
+                            borderBottom: `1px solid ${BORDER}`,
+                            borderTopRightRadius: '14px',
+                            transform: 'perspective(500px) rotateX(0deg)',
+                          }}
+                        />
+                        {/* Drone flies up out of the box */}
+                        <div
+                          className="pointer-events-none absolute left-1/2 opacity-0 group-hover:opacity-100 group-hover:animate-[drone-fly_1100ms_ease-out_300ms_both]"
+                          style={{ bottom: '0px', transform: 'translate(-50%, 10px)' }}
+                        >
+                          <svg width="56" height="36" viewBox="0 0 56 36" aria-hidden="true">
+                            {/* Arms */}
+                            <line x1="14" y1="12" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            <line x1="42" y1="12" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            <line x1="14" y1="28" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            <line x1="42" y1="28" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            {/* Body */}
+                            <rect x="22" y="15" width="12" height="10" rx="2" fill="#0a0a0a" />
+                            <circle cx="28" cy="20" r="1.6" fill={TEAL} />
+                            {/* Rotors (spin) */}
+                            <ellipse cx="14" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '14px 12px', animation: 'drone-rotor 180ms linear infinite' }} />
+                            <ellipse cx="42" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '42px 12px', animation: 'drone-rotor 180ms linear infinite' }} />
+                            <ellipse cx="14" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '14px 28px', animation: 'drone-rotor 180ms linear infinite' }} />
+                            <ellipse cx="42" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '42px 28px', animation: 'drone-rotor 180ms linear infinite' }} />
+                          </svg>
+                        </div>
+                      </>
+                    )}
                     {isOnboarding && (
                       <>
                         {/* Monitor bezel + webcam (grows up from top of card) */}
