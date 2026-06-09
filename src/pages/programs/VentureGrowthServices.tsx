@@ -185,25 +185,25 @@ export default function VentureGrowthServices() {
                     style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                   >
                     {isScale && (
-                      <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full w-[180px] h-[120px] mb-1">
-                        {/* Step 1 (shortest) */}
+                      <div className="pointer-events-none absolute left-0 right-0 bottom-full h-[120px]">
+                        {/* Step 1 (shortest, left third) */}
                         <div
-                          className="absolute bottom-0 left-0 w-[60px] origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '40px', background: TEAL, borderTopLeftRadius: 4, transitionDelay: '0ms' }}
+                          className="absolute bottom-0 left-0 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                          style={{ height: '40px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}`, borderRight: `1px solid ${BORDER}`, transitionDelay: '0ms' }}
                         />
-                        {/* Step 2 */}
+                        {/* Step 2 (middle third) */}
                         <div
-                          className="absolute bottom-0 left-[60px] w-[60px] origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '70px', background: TEAL, transitionDelay: '140ms' }}
+                          className="absolute bottom-0 left-1/3 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                          style={{ height: '70px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}`, borderRight: `1px solid ${BORDER}`, transitionDelay: '140ms' }}
                         />
-                        {/* Step 3 (tallest) */}
+                        {/* Step 3 (tallest, right third) */}
                         <div
-                          className="absolute bottom-0 left-[120px] w-[60px] origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '100px', background: TEAL, borderTopRightRadius: 4, transitionDelay: '280ms' }}
+                          className="absolute bottom-0 left-2/3 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                          style={{ height: '100px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}`, borderRight: `1px solid ${BORDER}`, transitionDelay: '280ms' }}
                         />
                         {/* Money bag drops onto top step */}
                         <div
-                          className="absolute left-[120px] w-[60px] flex items-end justify-center opacity-0 -translate-y-24 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                          className="absolute left-2/3 w-1/3 flex items-end justify-center opacity-0 -translate-y-24 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
                           style={{
                             bottom: '100px',
                             height: '56px',
