@@ -1,487 +1,356 @@
 import { useState } from 'react';
-import { Layout } from '@/components/Layout';
-import { ScrollReveal } from '@/components/ScrollReveal';
-import { ServicesExplorer, AudienceTabs, type Audience } from '@/components/ServicesExplorer';
 import { Link } from 'react-router-dom';
-import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
-import signatureLines from '@/assets/signature-lines.png';
-import linesTeal from '@/assets/lines-teal.png';
-import ventureHeroBg from '@/assets/venture-growth-hero-bg.png';
-import circuitiqTeam from '@/assets/circuitiq-team.png';
-import { 
-  ArrowRight, 
-  Rocket, 
-  Target, 
+import { motion } from 'framer-motion';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Rocket,
+  Target,
   Compass,
   Zap,
-  MessageCircle,
+  Quote,
+  DollarSign,
+  Building2,
   Clock,
   MapPin,
-  Quote,
-  BarChart3,
-  Globe,
-  DollarSign,
-  Building2
 } from 'lucide-react';
 
-const allServices = [
-  {
-    type: 'Program',
-    title: 'Venture Growth Services',
-    applyBy: 'Rolling Intake',
-    duration: 'Ongoing',
-    location: 'Greater Sudbury (Virtual Available)',
-    link: '/programs/venture-growth-services',
-  },
-  {
-    type: 'Program',
-    title: 'Mentorship Services',
-    applyBy: 'Rolling Intake',
-    duration: '12+ Month Journey',
-    location: 'Northern Ontario',
-    link: '/programs/mentorship-services',
-  },
-  {
-    type: 'Program',
-    title: 'Capital Navigation',
-    applyBy: 'Rolling Intake',
-    duration: 'Ongoing',
-    location: 'Greater Sudbury',
-    link: '/programs/capital-navigation',
-  },
-  {
-    type: 'Funding',
-    title: 'Sudbury Catalyst Fund',
-    applyBy: 'Always Open',
-    duration: '$5M Fund',
-    location: 'Greater Sudbury',
-    link: '/funding/sudbury-catalyst-fund',
-  },
-  {
-    type: 'Funding',
-    title: 'Innovation Acceleration Program',
-    applyBy: 'Rolling Intake',
-    duration: 'Up to $50K',
-    location: 'Greater Sudbury',
-    link: '/funding/innovation-acceleration-program',
-  },
-  {
-    type: 'Funding',
-    title: 'Regional AI Program',
-    applyBy: 'Program Based',
-    duration: 'Variable',
-    location: 'Northern Ontario',
-    link: '/funding/regional-ai-program',
-  },
-  {
-    type: 'Facility',
-    title: 'NORCAT Underground Centre',
-    applyBy: 'Contact Us',
-    duration: 'On-Demand',
-    location: 'Onaping, ON',
-    link: '/mining/norcat-underground',
-  },
-  {
-    type: 'Facility',
-    title: 'Labs & Facilities',
-    applyBy: 'Contact Us',
-    duration: 'Flexible Access',
-    location: 'Greater Sudbury',
-    link: '/mining/labs',
-  },
-  {
-    type: 'Program',
-    title: 'Critical Industrial Tech',
-    applyBy: 'Rolling Intake',
-    duration: 'Ongoing',
-    location: 'Greater Sudbury',
-    link: '/mining/critical-industrial-tech',
-  },
-];
+import { Layout } from '@/components/Layout';
+import { ServicesExplorer, AudienceTabs, type Audience } from '@/components/ServicesExplorer';
+import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
+import signatureLines from '@/assets/signature-lines.png';
+import circuitiqTeam from '@/assets/circuitiq-team.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
+// ── Brand tokens (mirrors About / Home2) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const allServices = [
+  { type: 'Program', title: 'Venture Growth Services', duration: 'Ongoing', location: 'Greater Sudbury (Virtual Available)', link: '/programs/venture-growth-services' },
+  { type: 'Program', title: 'Mentorship Services', duration: '12+ Month Journey', location: 'Northern Ontario', link: '/programs/mentorship-services' },
+  { type: 'Program', title: 'Capital Navigation', duration: 'Ongoing', location: 'Greater Sudbury', link: '/programs/capital-navigation' },
+  { type: 'Program', title: 'Critical Industrial Tech', duration: 'Ongoing', location: 'Greater Sudbury', link: '/mining/critical-industrial-tech' },
+  { type: 'Funding', title: 'Sudbury Catalyst Fund', duration: '$5M Fund', location: 'Greater Sudbury', link: '/funding/sudbury-catalyst-fund' },
+  { type: 'Funding', title: 'Innovation Acceleration Program', duration: 'Up to $50K', location: 'Greater Sudbury', link: '/funding/innovation-acceleration-program' },
+  { type: 'Funding', title: 'Regional AI Program', duration: 'Variable', location: 'Northern Ontario', link: '/funding/regional-ai-program' },
+  { type: 'Facility', title: 'NORCAT Underground Centre', duration: 'On-Demand', location: 'Onaping, ON', link: '/mining/norcat-underground' },
+  { type: 'Facility', title: 'Labs & Facilities', duration: 'Flexible Access', location: 'Greater Sudbury', link: '/mining/labs' },
+];
 
 const programStructure = [
   { phase: '01', title: 'Onboarding', description: 'Deep dive into your business, assign your advisor, and create a tailored growth plan.' },
   { phase: '02', title: 'Build & Validate', description: 'Work with your mentorship team on product-market fit and early traction.' },
   { phase: '03', title: 'Scale & Raise', description: 'Focus on growth metrics, team building, and fundraising preparation.' },
-  { phase: '04', title: 'Ongoing Support', description: 'Continued access to network, resources, and advisor support as you scale.' }
+  { phase: '04', title: 'Ongoing Support', description: 'Continued access to network, resources, and advisor support as you scale.' },
 ];
 
 const differentiators = [
-  { icon: Compass, title: 'Hands-On, Not Hands-Off', description: 'We roll up our sleeves and work alongside you. This isn\'t passive mentorship—it\'s active partnership in your success.' },
+  { icon: Compass, title: 'Hands-On, Not Hands-Off', description: "We roll up our sleeves and work alongside you. This isn't passive mentorship — it's active partnership in your success." },
   { icon: Target, title: 'Industry-Connected', description: 'Deep relationships with mining, industrial, and technology sectors mean real customer introductions, not just advice.' },
-  { icon: Zap, title: 'Northern Advantage', description: 'Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada\'s most established mining ecosystems.' }
+  { icon: Zap, title: 'Northern Advantage', description: "Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada's most established mining ecosystems." },
 ];
 
-// Shared glass card style
-const glassCardStyle = {
-  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-};
+const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
+  <p
+    className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+    style={{ fontFamily: FONT, color: light ? TEAL : TEAL }}
+  >
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
 
-const neumorphicBadgeStyle = {
-  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-  color: 'hsl(168, 40%, 30%)',
-  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-};
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As
+    className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
+  >
+    {children}
+  </As>
+);
 
-const iconContainerStyle = {
-  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-};
-
-const VentureGrowthServices = () => {
+export default function VentureGrowthServices() {
   const [activeAudience, setActiveAudience] = useState<Audience>('Startup Support');
+
   return (
     <Layout>
-      <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative pt-32 pb-20 overflow-hidden min-h-[500px] flex items-center">
-          <img src={ventureHeroBg} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
-          
-          <div className="absolute inset-0 pointer-events-none">
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.15] pointer-events-none" style={{ width: '30%' }} />
-          </div>
+        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)',
+            }}
+          />
+          <img
+            src={signatureLines}
+            alt=""
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay"
+          />
 
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.3)', color: 'hsl(0, 0%, 100%)' }}>
-                  <Rocket className="w-3.5 h-3.5" />
-                  Core Program
-                </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(0, 0%, 100%)' }}>
-                  Venture Growth{' '}
-                  <span className="block" style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                    Services
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <Eyebrow>Core Program</Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                Venture Growth<br /><span style={{ color: TEAL }}>Services.</span>
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                The operating system for ambitious founders. Hands-on support, education, network,
+                and resources to build a category-defining company.
+              </p>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
+              </p>
+              <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: NAVY }}
+                >
+                  Apply to NORCAT Innovation
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
-                </h1>
-                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4" style={{ color: 'hsl(0, 0%, 100%)' }}>
-                  The operating system for ambitious founders. We provide the hands-on support, 
-                  education, network, and resources you need to build a category-defining company.
-                </p>
-                <p className="font-light leading-relaxed max-w-2xl mb-10" style={{ color: 'hsla(0, 0%, 100%, 0.8)' }}>
-                  We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/apply" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'linear-gradient(145deg, hsla(168, 100%, 35%, 0.9) 0%, hsla(168, 100%, 28%, 0.9) 100%)',
-                    border: '1.5px solid hsla(168, 100%, 50%, 0.4)',
-                    color: 'hsl(0, 0%, 100%)',
-                    boxShadow: '0 4px 16px hsla(168, 100%, 25%, 0.3), 0 1px 3px hsla(0, 0%, 0%, 0.1)',
-                  }}>
-                    Apply to Join
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <Link to="/insights/success-stories" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
-                    background: 'hsla(0, 0%, 100%, 0.15)',
-                    border: '1.5px solid hsla(0, 0%, 100%, 0.3)',
-                    color: 'hsl(0, 0%, 100%)',
-                    boxShadow: '0 4px 12px hsla(0, 0%, 0%, 0.15)',
-                  }}>
-                    See Our Portfolio
-                  </Link>
-                </div>
+                </Link>
+                <Link
+                  to="/insights/success-stories"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold transition-colors"
+                  style={{ fontFamily: FONT, color: 'white', border: '1px solid rgba(255,255,255,0.35)' }}
+                >
+                  See Our Portfolio
+                </Link>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
         </section>
 
-
-        {/* ───── SERVICES EXPLORER ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
-          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
-
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-               <div className="mb-14">
-                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
+        {/* ───── SERVICES EXPLORER (light) ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+              <div className="max-w-2xl">
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   What's Included
-                </span>
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                  <div>
-                    <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                      Everything you need to{' '}
-                      <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                        accelerate.
-                      </span>
-                    </h2>
-                    <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
-                      Comprehensive support designed to accelerate your path from early stage to scale.
-                    </p>
-                  </div>
-                  <AudienceTabs active={activeAudience} onChange={setActiveAudience} />
-                </div>
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
+                </h2>
               </div>
-            </ScrollReveal>
+              <AudienceTabs active={activeAudience} onChange={setActiveAudience} />
+            </div>
 
             <ServicesExplorer activeAudience={activeAudience} />
           </div>
         </section>
 
-        {/* ───── HOW IT WORKS ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-          </div>
+        {/* ───── HOW IT WORKS (dark) ───── */}
+        <section className="py-20 md:py-32 relative overflow-hidden"
+                 style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
+          }} />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>Your Journey</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                How it<br /><span style={{ color: TEAL }}>works.</span>
+              </Display>
+            </div>
 
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="text-center mb-14">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={neumorphicBadgeStyle}>
-                  <BarChart3 className="w-3.5 h-3.5" />
-                  Your Journey
-                </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                  How it{' '}
-                  <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                    works.
-                  </span>
-                </h2>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {programStructure.map((phase, i) => (
-                <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
-                    <div className="text-4xl font-black mb-3" style={{ color: 'hsl(168, 100%, 35%)', opacity: 0.25 }}>{phase.phase}</div>
-                    <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{phase.title}</h3>
-                    <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{phase.description}</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {programStructure.map((phase) => (
+                <article
+                  key={phase.phase}
+                  className="group relative rounded-2xl overflow-hidden p-7 transition-transform hover:-translate-y-1"
+                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                >
+                  <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.35, fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    {phase.phase}
                   </div>
-                </ScrollReveal>
+                  <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
+                      style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{phase.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{phase.description}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
         {/* ───── TESTIMONIAL ───── */}
-        <section className="relative py-28 overflow-hidden">
+        <section className="relative py-20 md:py-28 overflow-hidden">
           <div className="absolute inset-0">
             <img src={circuitiqTeam} alt="" aria-hidden="true" className="w-full h-full object-cover" />
-            <div className="absolute inset-0" style={{ background: 'hsla(220, 25%, 8%, 0.8)' }} />
+            <div className="absolute inset-0" style={{ background: 'rgba(0,12,38,0.82)' }} />
           </div>
-
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <ScrollReveal>
-                <div className="liquid-glass-strong glass-shimmer rounded-3xl p-10 md:p-14 text-center">
-                  <Quote className="w-10 h-10 mx-auto mb-8 opacity-30" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                  <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/80 mb-10">
-                    "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been instrumental in our decision to relocate our team to Sudbury."
-                  </blockquote>
-                  <div className="flex items-center justify-center gap-4">
-                    <img src={lukeBegleyPhoto} alt="Luke Begley" className="w-14 h-14 rounded-full object-cover" style={{ border: '1px solid hsl(168 100% 35% / 0.3)' }} />
-                    <div className="text-left">
-                      <p className="font-semibold text-white">Luke Begley</p>
-                      <p className="text-white/35 text-sm font-light">CEO and Co-Founder of CircuitIQ</p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
+          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
+            <Quote className="w-10 h-10 mx-auto mb-8" style={{ color: TEAL, opacity: 0.6 }} />
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/90 mb-10"
+                        style={{ fontFamily: FONT }}>
+              "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been
+              instrumental in our decision to relocate our team to Sudbury."
+            </blockquote>
+            <div className="flex items-center justify-center gap-4">
+              <img src={lukeBegleyPhoto} alt="Luke Begley"
+                   className="w-14 h-14 rounded-full object-cover"
+                   style={{ border: `3px solid ${TEAL}` }} />
+              <div className="text-left">
+                <p className="font-black uppercase text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>Luke Begley</p>
+                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: TEAL, fontFamily: FONT }}>
+                  CEO & Co-Founder, CircuitIQ
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ───── WHAT MAKES US DIFFERENT ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-          </div>
+        {/* ───── WHAT MAKES US DIFFERENT (light) ───── */}
+        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-start">
+              <div className="lg:col-span-5">
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Why NORCAT
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  What makes us<br /><span style={{ color: TEAL }}>different?</span>
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  There are a lot of accelerators and programs out there. Here's why founders choose to build with us.
+                </p>
+              </div>
 
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <ScrollReveal>
-                <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={neumorphicBadgeStyle}>
-                    <Globe className="w-3.5 h-3.5" />
-                    Why NORCAT
-                  </span>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    What makes us{' '}
-                    <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                      different?
-                    </span>
-                  </h2>
-                  <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                    There are a lot of accelerators and programs out there. Here's why founders choose to build with us.
-                  </p>
-                </div>
-              </ScrollReveal>
-              
-              <div className="flex flex-col gap-5">
-                {differentiators.map((item, i) => (
-                  <ScrollReveal key={i} delay={i * 0.1}>
-                    <div className="rounded-[20px] p-7 hover:scale-[1.03] transition-transform duration-300" style={glassCardStyle}>
-                      <div className="flex gap-4">
-                        <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0" style={iconContainerStyle}>
-                          <item.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-bold mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h3>
-                          <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.description}</p>
-                        </div>
-                      </div>
+              <div className="lg:col-span-7 flex flex-col gap-4">
+                {differentiators.map((item) => (
+                  <div key={item.title} className="rounded-2xl p-6 md:p-7 flex gap-5 transition-transform hover:-translate-y-0.5"
+                       style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
+                         style={{ background: NAVY }}>
+                      <item.icon className="w-5 h-5" style={{ color: TEAL }} />
                     </div>
-                  </ScrollReveal>
+                    <div>
+                      <h3 className="font-black uppercase text-base md:text-lg mb-1"
+                          style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{item.title}</h3>
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{item.description}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* ───── EXPLORE OUR SERVICES ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
-          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
-
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-                <div>
-                  <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
-                    All Services
-                  </span>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                    Explore our{' '}
-                    <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                      services.
-                    </span>
-                  </h2>
-                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
-                    From hands-on advisory to funding and world-class facilities — everything you need under one roof.
-                  </p>
-                </div>
-                <Link to="/apply" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                  Apply now
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+        {/* ───── EXPLORE OUR SERVICES (dark) ───── */}
+        <section className="py-20 md:py-32 relative overflow-hidden"
+                 style={{ background: 'linear-gradient(180deg, #001a4d 0%, #00133d 100%)' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 80% 0%, rgba(0,179,152,0.15), transparent 45%)',
+          }} />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
+              <div className="max-w-2xl">
+                <Eyebrow>All Services</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  Explore our<br /><span style={{ color: TEAL }}>services.</span>
+                </Display>
+                <p className="mt-5 text-base md:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
+                  From hands-on advisory to funding and world-class facilities — everything you need under one roof.
+                </p>
               </div>
-            </ScrollReveal>
+              <Link to="/apply"
+                    className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.18em] text-xs group shrink-0"
+                    style={{ color: TEAL, fontFamily: FONT }}>
+                Apply Now
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
-              {(['Program', 'Funding', 'Facility'] as const).map((type, colIdx) => {
+            <div className="grid lg:grid-cols-3 gap-6">
+              {(['Program', 'Funding', 'Facility'] as const).map((type) => {
                 const typeServices = allServices.filter(s => s.type === type);
                 const typeLabel = type === 'Program' ? 'Programs' : type === 'Funding' ? 'Funding' : 'Facilities';
-                const typeIcon = type === 'Program' ? Rocket : type === 'Funding' ? DollarSign : Building2;
-                const TypeIcon = typeIcon;
+                const TypeIcon = type === 'Program' ? Rocket : type === 'Funding' ? DollarSign : Building2;
                 return (
-                  <ScrollReveal key={type} delay={colIdx * 0.1}>
-                    <div className="h-full">
-                      <div className="flex items-center gap-3 mb-5">
-                        <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={iconContainerStyle}>
-                          <TypeIcon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 28%)' }} />
-                        </div>
-                        <h3 className="text-lg font-bold" style={{ color: 'hsl(220, 15%, 20%)' }}>{typeLabel}</h3>
+                  <div key={type} className="rounded-2xl p-6 md:p-7"
+                       style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}>
+                    <div className="flex items-center gap-3 mb-5 pb-5" style={{ borderBottom: `1px solid ${BORDER}` }}>
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: NAVY }}>
+                        <TypeIcon className="w-5 h-5" style={{ color: TEAL }} />
                       </div>
-                      <div className="flex flex-col gap-3">
-                        {typeServices.map((service) => (
-                          <Link key={service.title} to={service.link} className="group block">
-                            <div 
-                              className="rounded-[16px] p-5 hover:scale-[1.02] transition-all duration-300"
-                              style={glassCardStyle}
-                            >
-                              <h4 className="font-bold text-base mb-2 group-hover:text-[hsl(168,100%,28%)] transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                                {service.title}
-                              </h4>
-                              <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-light mb-3" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                                <span className="flex items-center gap-1">
-                                  <Clock className="w-3 h-3" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                                  {service.duration}
-                                </span>
-                                <span className="flex items-center gap-1">
-                                  <MapPin className="w-3 h-3" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                                  {service.location}
-                                </span>
-                              </div>
-                              <div className="flex items-center gap-1.5 text-xs font-semibold group-hover:translate-x-1 transition-transform" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                                Learn more
-                                <ArrowRight className="w-3.5 h-3.5" />
-                              </div>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
+                      <h3 className="font-black uppercase text-lg text-white"
+                          style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{typeLabel}</h3>
                     </div>
-                  </ScrollReveal>
+                    <div className="flex flex-col gap-2">
+                      {typeServices.map((service) => (
+                        <Link key={service.title} to={service.link}
+                              className="group block rounded-xl p-4 transition-colors"
+                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                          <h4 className="font-bold text-white mb-2 group-hover:text-[color:var(--teal,#00B398)] transition-colors"
+                              style={{ fontFamily: FONT }}>
+                            {service.title}
+                          </h4>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-3" style={{ color: FG_MUTED }}>
+                            <span className="inline-flex items-center gap-1"><Clock className="w-3 h-3" style={{ color: TEAL }} />{service.duration}</span>
+                            <span className="inline-flex items-center gap-1"><MapPin className="w-3 h-3" style={{ color: TEAL }} />{service.location}</span>
+                          </div>
+                          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] group-hover:translate-x-1 transition-transform"
+                               style={{ color: TEAL, fontFamily: FONT }}>
+                            Learn more
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 );
               })}
             </div>
           </div>
         </section>
 
-        {/* ───── FINAL CTA ───── */}
-        <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
-          <img 
-            src={signatureLines} 
-            alt="" 
-            aria-hidden="true"
-            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
-            style={{ transform: 'scaleX(-1)' }}
-          />
-          <div className="container mx-auto px-6 relative z-10 text-center">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
-                Ready to{' '}
-                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>accelerate?</span>
-              </h2>
-              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
-                Join the next cohort of ambitious founders building category-defining 
-                companies. Applications are open.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link 
-                  to="/apply" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                  style={{
-                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    color: 'white',
-                    border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
-                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
-                  }}
-                >
-                  Apply Now
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-                <a 
-                  href="mailto:ventures@norcat.org" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                  style={{
-                    background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.08) 0%, hsla(0, 0%, 100%, 0.04) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    color: 'hsla(0, 0%, 100%, 0.8)',
-                    border: '0.5px solid hsla(0, 0%, 100%, 0.2)',
-                    boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.15), 0 4px 16px hsla(168, 100%, 20%, 0.2)',
-                  }}
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Book a Call
-                </a>
-              </div>
-            </ScrollReveal>
+        {/* ───── FINAL CTA (light) ───── */}
+        <section className="pt-20 md:pt-28 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
+          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
+            <Eyebrow>Your move</Eyebrow>
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+              Ready to<br /><span style={{ color: TEAL }}>accelerate?</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
+              Join the next cohort of ambitious founders building category-defining companies. Applications are open.
+            </p>
+            <Link to="/apply"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
+              Apply to NORCAT Innovation
+              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+              </span>
+            </Link>
           </div>
         </section>
 
       </div>
     </Layout>
   );
-};
-
-export default VentureGrowthServices;
+}
