@@ -464,9 +464,12 @@ export default function Home2() {
                 </p>
               </div>
               <Link to="/insights/reports"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-md text-sm font-bold uppercase tracking-wider self-start md:self-end transition-colors hover:bg-white/5"
-                    style={{ fontFamily: FONT, color: TEAL, border: `2px solid ${TEAL}` }}>
-                View all reports <ArrowUpRight className="w-4 h-4" />
+                    className="inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
+                    style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
+                View all reports
+                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowUpRight className="w-4 h-4" />
+                </span>
               </Link>
             </div>
           </div>
