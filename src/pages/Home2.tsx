@@ -38,10 +38,8 @@ import fednorLogo from '@/assets/logos/fednor.png';
 import ontarioLogo from '@/assets/logos/ontario.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import noaLogoAsset from '@/assets/logos/noa.png.asset.json';
-import rogersLogoAsset from '@/assets/logos/rogers.png.asset.json';
 
 const noaLogo = noaLogoAsset.url;
-const rogersLogo = rogersLogoAsset.url;
 
 const FONT = "'Open Sans', system-ui, sans-serif";
 
