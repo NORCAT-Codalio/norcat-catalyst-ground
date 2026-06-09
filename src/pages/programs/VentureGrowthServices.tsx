@@ -175,21 +175,68 @@ export default function VentureGrowthServices() {
               </Display>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {programStructure.map((phase) => (
-                <article
-                  key={phase.phase}
-                  className="group relative rounded-2xl overflow-hidden p-7 transition-transform hover:-translate-y-1"
-                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
-                >
-                  <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.35, fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                    {phase.phase}
-                  </div>
-                  <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
-                      style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{phase.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{phase.description}</p>
-                </article>
-              ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:pt-32">
+              {programStructure.map((phase) => {
+                const isScale = phase.phase === '03';
+                return (
+                  <article
+                    key={phase.phase}
+                    className={`group relative rounded-2xl p-7 transition-transform hover:-translate-y-1 ${isScale ? 'overflow-visible' : 'overflow-hidden'}`}
+                    style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                  >
+                    {isScale && (
+                      <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full w-[180px] h-[120px] mb-1">
+                        {/* Step 1 (shortest) */}
+                        <div
+                          className="absolute bottom-0 left-0 w-[60px] origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                          style={{ height: '40px', background: TEAL, borderTopLeftRadius: 4, transitionDelay: '0ms' }}
+                        />
+                        {/* Step 2 */}
+                        <div
+                          className="absolute bottom-0 left-[60px] w-[60px] origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                          style={{ height: '70px', background: TEAL, transitionDelay: '140ms' }}
+                        />
+                        {/* Step 3 (tallest) */}
+                        <div
+                          className="absolute bottom-0 left-[120px] w-[60px] origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
+                          style={{ height: '100px', background: TEAL, borderTopRightRadius: 4, transitionDelay: '280ms' }}
+                        />
+                        {/* Money bag drops onto top step */}
+                        <div
+                          className="absolute left-[120px] w-[60px] flex items-end justify-center opacity-0 -translate-y-24 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                          style={{
+                            bottom: '100px',
+                            height: '56px',
+                            transitionDelay: '720ms',
+                            transitionTimingFunction: 'cubic-bezier(0.5, 1.8, 0.5, 1)',
+                          }}
+                        >
+                          <svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
+                            <path d="M22 14 L42 14 L46 22 L18 22 Z" fill="#5a3a1a" />
+                            <path
+                              d="M18 22 Q8 36 12 48 Q16 58 32 58 Q48 58 52 48 Q56 36 46 22 Z"
+                              fill={TEAL}
+                              stroke="#003d33"
+                              strokeWidth="1.5"
+                            />
+                            <text
+                              x="32" y="46" textAnchor="middle"
+                              fontFamily="Arial Black, sans-serif" fontWeight="900"
+                              fontSize="20" fill="#003d33"
+                            >$</text>
+                          </svg>
+                        </div>
+                      </div>
+                    )}
+                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.35, fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                      {phase.phase}
+                    </div>
+                    <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
+                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{phase.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{phase.description}</p>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
