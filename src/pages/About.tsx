@@ -11,6 +11,11 @@ import communityFocusedGif from '@/assets/values/community-focused.gif';
 import executionFocusedGif from '@/assets/values/execution-focused.gif';
 import impactDrivenGif from '@/assets/values/impact-driven.gif';
 
+import founderFirstImg from '@/assets/values/founder-first.png';
+import communityFocusedImg from '@/assets/values/community-focused.png';
+import executionFocusedImg from '@/assets/values/execution-focused.png';
+import impactDrivenImg from '@/assets/values/impact-driven.png';
+
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
 import shashankImage from '@/assets/team/shashank.png';
