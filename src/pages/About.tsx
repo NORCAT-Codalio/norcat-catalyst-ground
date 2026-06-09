@@ -453,44 +453,24 @@ export default function About() {
         </section>
 
         {/* ───── RIC NETWORK (light) ───── */}
-        <section className="pb-20 md:pb-32" style={{ background: PAPER, color: NAVY }}>
+        <section className="pb-10 md:pb-16" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 md:gap-16">
               <div>
                 <img src={innovateonLogo} alt="InnovateON - Regional Innovation Centre Network"
                      className="h-8 object-contain mb-4" />
-                <p className="text-base leading-relaxed mb-6" style={{ color: '#475068' }}>
+                <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
                   We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs
                   with resources, mentorship, and funding to start and scale businesses.
                 </p>
-                <div className="flex gap-10 pt-6" style={{ borderTop: '1px solid #d9dde5' }}>
-                  <div>
-                    <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: TEAL }}>17</p>
-                    <p className="text-[10px] font-bold tracking-[0.18em] uppercase mt-1" style={{ color: '#6b7387' }}>Centres</p>
-                  </div>
-                  <div>
-                    <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: TEAL }}>1000+</p>
-                    <p className="text-[10px] font-bold tracking-[0.18em] uppercase mt-1" style={{ color: '#6b7387' }}>Startups / Year</p>
-                  </div>
-                </div>
               </div>
 
               <div>
                 <img src={ontarioLogo} alt="Government of Ontario" className="h-10 object-contain mb-4" />
-                <p className="text-base leading-relaxed mb-6" style={{ color: '#475068' }}>
+                <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
                   Funded by the <strong style={{ color: NAVY }}>Ministry of Economic Development, Job Creation and Trade</strong>,
                   enabling free and subsidized services for Northern Ontario entrepreneurs.
                 </p>
-                <div className="flex flex-wrap gap-2 pt-6" style={{ borderTop: '1px solid #d9dde5' }}>
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider"
-                        style={{ background: 'rgba(0,179,152,0.12)', color: TEAL, fontFamily: FONT }}>
-                    Not-for-Profit
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider"
-                        style={{ background: 'rgba(0,179,152,0.12)', color: TEAL, fontFamily: FONT }}>
-                    Ontario Funded
-                  </span>
-                </div>
               </div>
             </div>
           </div>
