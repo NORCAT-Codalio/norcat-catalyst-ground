@@ -209,12 +209,12 @@ export default function VentureGrowthServices() {
                   >
                     {isBuild && (
                       <div
-                        className="pointer-events-none absolute left-0 right-0 bottom-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out"
+                        className="pointer-events-none absolute left-0 right-0 bottom-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"
                         style={{ height: '120px' }}
                       >
-                        <svg viewBox="0 0 200 100" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                        <svg viewBox="0 0 200 93" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
                           {/* Workshop floor */}
-                          <line x1="0" y1="93" x2="200" y2="93" stroke={TEAL} strokeWidth="0.4" opacity="0.6" />
+                          <line x1="0" y1="92.5" x2="200" y2="92.5" stroke={TEAL} strokeWidth="0.5" opacity="0.6" />
 
                           {/* ── 3D PRINTER (left) ── */}
                           {/* Frame posts */}
