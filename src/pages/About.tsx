@@ -138,7 +138,6 @@ function TeamModal({ member, onClose }: { member: typeof team[0] | null; onClose
 
 export default function About() {
   const [expandedMember, setExpandedMember] = useState<string | null>(null);
-  const selectedMember = team.find(m => m.name === expandedMember) || null;
 
   return (
     <Layout>
