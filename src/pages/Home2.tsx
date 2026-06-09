@@ -639,11 +639,11 @@ export default function Home2() {
               Whether you're validating an idea or scaling a series-A company, NORCAT Innovation has a seat at the table for you.
             </p>
             <Link to="/apply"
-                  className="inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                   style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
               Apply to NORCAT Innovation
               <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
               </span>
             </Link>
           </div>
