@@ -448,22 +448,25 @@ export default function Home2() {
         </section>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
+        <section className="relative py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-              <div>
-                <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: FONT, fontWeight: 500 }}>
-                  <span className="text-white">Real Stories. </span>
-                  <span className="text-white" style={{ fontWeight: 700 }}>Unique Insights.</span>
-                </h2>
-                <p className="font-light text-white/70 max-w-xl">Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+              <div className="max-w-2xl">
+                <Eyebrow>Insights</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  Real Stories.<br />Unique Insights.
+                </Display>
+                <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
+                  Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
+                </p>
               </div>
-              <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
-                View all reports
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <Link to="/insights/reports"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-md text-sm font-bold uppercase tracking-wider self-start md:self-end transition-colors hover:bg-white/5"
+                    style={{ fontFamily: FONT, color: TEAL, border: `2px solid ${TEAL}` }}>
+                View all reports <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
