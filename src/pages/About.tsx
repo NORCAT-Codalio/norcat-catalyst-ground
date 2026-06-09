@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Linkedin, X, Users, Target, Globe, TrendingUp, DollarSign, Calendar, MapPin, Trophy } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Linkedin, X, Users, TrendingUp, DollarSign, Calendar, MapPin, Trophy } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -45,10 +45,10 @@ const partnerLogos = [
 ];
 
 const values = [
-  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', icon: Users, bgGif: founderFirstGif },
-  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', icon: TrendingUp, bgGif: impactDrivenGif },
-  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', icon: Globe, bgGif: communityFocusedGif },
-  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', icon: Target, bgGif: executionFocusedGif },
+  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', bgGif: founderFirstGif },
+  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', bgGif: impactDrivenGif },
+  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', bgGif: communityFocusedGif },
+  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', bgGif: executionFocusedGif },
 ];
 
 const team = [
@@ -206,7 +206,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  Helping founders build <span style={{ color: TEAL }}>world-changing companies.</span>
+                  Helping founders build <span style={{ color: TEAL }}>world-changing</span>{' '}<span style={{ color: NAVY }}>companies.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
                   Through mentorship, capital access, and our unique underground testing facility,
@@ -256,7 +256,7 @@ export default function About() {
                          className="group relative rounded-2xl overflow-hidden aspect-[3/4] flex flex-col"
                          style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}>
                   <img src={value.bgGif} alt=""
-                       className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none"
+                       className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none"
                        style={value.title === 'Execution Focused'
                          ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' }
                          : value.title === 'Impact Driven'
@@ -265,7 +265,6 @@ export default function About() {
                   <div className="absolute inset-0 pointer-events-none"
                        style={{ background: 'linear-gradient(180deg, rgba(0,26,77,0) 35%, rgba(0,26,77,0.85) 75%, #001a4d 100%)' }} />
                   <div className="relative mt-auto p-6">
-                    <value.icon className="w-7 h-7 mb-4" style={{ color: TEAL }} />
                     <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-2"
                         style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{value.title}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{value.description}</p>
