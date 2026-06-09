@@ -502,9 +502,9 @@ export default function VentureGrowthServices() {
                 {differentiators.map((item) => (
                   <div key={item.title} className="rounded-2xl p-6 md:p-7 flex gap-5 transition-transform hover:-translate-y-0.5"
                        style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-                         style={{ background: NAVY }}>
-                      <item.icon className="w-5 h-5" style={{ color: TEAL }} />
+                    <div className="size-12 rounded-lg flex items-center justify-center shrink-0"
+                         style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>
+                      <item.icon className="size-6" strokeWidth={2} />
                     </div>
                     <div>
                       <h3 className="font-black uppercase text-base md:text-lg mb-1"
