@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog } from 'lucide-react';
+import { useRef } from 'react';
+import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
+import signatureLines from '@/assets/signature-lines.png';
+import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
+import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
+import ctaPhoto5 from '@/assets/cta-photo-5.png';
 
 import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
