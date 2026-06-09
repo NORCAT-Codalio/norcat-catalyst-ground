@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Linkedin, X, Users, Target, Globe, TrendingUp, DollarSign, Calendar, MapPin, Trophy } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Linkedin, X, Users, TrendingUp, DollarSign, Calendar, MapPin, Trophy } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
