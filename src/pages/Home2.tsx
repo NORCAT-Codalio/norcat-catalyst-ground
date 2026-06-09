@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
@@ -572,8 +573,33 @@ export default function Home2() {
           </div>
         </section>
 
+        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolio, ...portfolio].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* ───── PORTFOLIO / PARTNERS ───── */}
         <section className="py-20 md:py-24" style={{ background: NAVY_SURFACE }}>
+
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center mb-10 md:mb-12">
               <p className="inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
