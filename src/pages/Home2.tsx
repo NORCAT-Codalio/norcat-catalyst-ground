@@ -574,7 +574,7 @@ export default function Home2() {
         </section>
 
         {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
-        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="relative py-10 overflow-hidden" style={{ background: 'white' }}>
           <div className="relative overflow-hidden">
             <motion.div
               className="flex gap-8"
