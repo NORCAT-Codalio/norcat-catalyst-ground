@@ -211,7 +211,8 @@ export default function VentureGrowthServices() {
                 const isScale = phase.phase === '03';
                 const isOnboarding = phase.phase === '01';
                 const isBuild = phase.phase === '02';
-                const needsOverflow = isScale || isOnboarding || isBuild;
+                const isOngoing = phase.phase === '04';
+                const needsOverflow = isScale || isOnboarding || isBuild || isOngoing;
                 return (
                   <article
                     key={phase.phase}
