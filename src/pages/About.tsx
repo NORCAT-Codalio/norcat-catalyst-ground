@@ -353,14 +353,12 @@ export default function About() {
                           {member.role}
                         </motion.p>
 
-                        <AnimatePresence>
-                          {isExpanded && (
-                            <motion.div
-                              initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: 8 }}
-                              transition={{ duration: 0.25, delay: 0.1 }}
-                            >
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.25, delay: 0.1 }}
+                          >
                               <p className="mt-4 leading-relaxed text-sm" style={{ color: '#475068' }}>
                                 {member.bio}
                               </p>
@@ -378,9 +376,8 @@ export default function About() {
                                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover/btn:rotate-[360deg]" />
                                 </span>
                               </a>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                          </motion.div>
+                        )}
                       </motion.div>
 
                       {isExpanded && (
