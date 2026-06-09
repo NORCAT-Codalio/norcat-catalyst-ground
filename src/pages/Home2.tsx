@@ -502,7 +502,7 @@ export default function Home2() {
                       }}>{post.category}</span>
                       <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: FONT }}>{post.title}</h3>
                       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
-                        Read More <ArrowRight className="w-3.5 h-3.5" />
+                        Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                       </span>
                     </div>
                   </div>
