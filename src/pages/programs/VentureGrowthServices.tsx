@@ -178,12 +178,81 @@ export default function VentureGrowthServices() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:pt-32">
               {programStructure.map((phase) => {
                 const isScale = phase.phase === '03';
+                const isOnboarding = phase.phase === '01';
+                const needsOverflow = isScale || isOnboarding;
                 return (
                   <article
                     key={phase.phase}
-                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${isScale ? 'overflow-visible hover:rounded-t-none' : 'overflow-hidden'}`}
+                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale ? 'hover:rounded-t-none' : ''} ${isOnboarding ? 'hover:rounded-t-none hover:rounded-b-none' : ''}`}
                     style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                   >
+                    {isOnboarding && (
+                      <>
+                        {/* Monitor bezel + webcam (grows up from top of card) */}
+                        <div
+                          className="pointer-events-none absolute -left-px -right-px bottom-full origin-bottom scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-center"
+                          style={{
+                            height: '22px',
+                            background: '#0a2a6b',
+                            borderTop: `1px solid ${BORDER}`,
+                            borderLeft: `1px solid ${BORDER}`,
+                            borderRight: `1px solid ${BORDER}`,
+                            borderTopLeftRadius: '14px',
+                            borderTopRightRadius: '14px',
+                          }}
+                        >
+                          <div
+                            className="relative size-2.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            style={{
+                              background: 'radial-gradient(circle at 35% 35%, #4ade80 0%, #064e3b 70%)',
+                              boxShadow: '0 0 6px rgba(74,222,128,0.7)',
+                              transitionDelay: '500ms',
+                            }}
+                          >
+                            <span
+                              className="absolute -right-1 -top-1 size-1.5 rounded-full animate-pulse"
+                              style={{ background: '#ef4444', boxShadow: '0 0 4px #ef4444' }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Monitor neck + base (grows down from bottom of card) */}
+                        <div
+                          className="pointer-events-none absolute -left-px -right-px top-full h-[34px] flex flex-col items-center origin-top scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 transition-all duration-500 ease-out"
+                          style={{ transitionDelay: '150ms' }}
+                        >
+                          <div
+                            className="w-10 h-3"
+                            style={{
+                              background: '#0a2a6b',
+                              borderLeft: `1px solid ${BORDER}`,
+                              borderRight: `1px solid ${BORDER}`,
+                            }}
+                          />
+                          <div
+                            className="w-2/3 h-2 rounded-b-lg"
+                            style={{
+                              background: '#0a2a6b',
+                              border: `1px solid ${BORDER}`,
+                              borderTop: 'none',
+                            }}
+                          />
+                        </div>
+
+                        {/* Video-call "LIVE" tile overlay inside card */}
+                        <div
+                          className="pointer-events-none absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          style={{
+                            background: 'rgba(0,0,0,0.45)',
+                            border: '1px solid rgba(255,255,255,0.12)',
+                            transitionDelay: '650ms',
+                          }}
+                        >
+                          <span className="size-1.5 rounded-full animate-pulse" style={{ background: '#ef4444' }} />
+                          <span className="text-[9px] font-bold tracking-widest text-white/90" style={{ fontFamily: FONT }}>LIVE</span>
+                        </div>
+                      </>
+                    )}
                     {isScale && (
                       <div className="pointer-events-none absolute -left-px -right-px bottom-full h-[120px]">
                         {/* Step 1 (shortest, left third) */}
