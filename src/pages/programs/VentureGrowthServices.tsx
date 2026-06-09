@@ -179,11 +179,12 @@ export default function VentureGrowthServices() {
               {programStructure.map((phase) => {
                 const isScale = phase.phase === '03';
                 const isOnboarding = phase.phase === '01';
-                const needsOverflow = isScale || isOnboarding;
+                const isBuild = phase.phase === '02';
+                const needsOverflow = isScale || isOnboarding || isBuild;
                 return (
                   <article
                     key={phase.phase}
-                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale ? 'hover:rounded-t-none' : ''} ${isOnboarding ? 'hover:rounded-t-none' : ''}`}
+                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale || isOnboarding || isBuild ? 'hover:rounded-t-none' : ''}`}
                     style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                   >
                     {isOnboarding && (
