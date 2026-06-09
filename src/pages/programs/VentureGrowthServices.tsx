@@ -168,13 +168,23 @@ export default function VentureGrowthServices() {
             backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
           }} />
           <style>{`
-            @keyframes drone-rotor { from { transform: scaleX(1); } 50% { transform: scaleX(0.15); } to { transform: scaleX(1); } }
-            @keyframes drone-fly {
-              0% { transform: translate(-50%, 10px); opacity: 0; }
-              25% { transform: translate(-50%, -20px); opacity: 1; }
-              50% { transform: translate(-60%, -55px) rotate(-4deg); }
-              75% { transform: translate(-40%, -85px) rotate(3deg); }
-              100% { transform: translate(-50%, -110px) rotate(0deg); opacity: 1; }
+            @keyframes printer-head {
+              from { transform: translateX(-18px); }
+              to   { transform: translateX(18px); }
+            }
+            @keyframes printer-build {
+              0%   { transform: scaleY(0); }
+              85%  { transform: scaleY(1); }
+              95%  { transform: scaleY(1); }
+              100% { transform: scaleY(0); }
+            }
+            @keyframes arm-shoulder {
+              0%   { transform: rotate(-18deg); }
+              100% { transform: rotate(22deg); }
+            }
+            @keyframes arm-elbow {
+              0%   { transform: rotate(-25deg); }
+              100% { transform: rotate(40deg); }
             }
           `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
