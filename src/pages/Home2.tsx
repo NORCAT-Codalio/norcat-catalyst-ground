@@ -135,6 +135,7 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 export default function Home2() {
+  const storiesScrollRef = useRef<HTMLDivElement>(null);
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
