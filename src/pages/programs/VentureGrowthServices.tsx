@@ -204,36 +204,28 @@ export default function VentureGrowthServices() {
                 return (
                   <article
                     key={phase.phase}
-                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale || isOnboarding || isBuild ? 'hover:rounded-t-none' : ''}`}
+                    className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale || isOnboarding ? 'hover:rounded-t-none' : ''}`}
                     style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                   >
                     {isBuild && (
                       <div
-                        className="pointer-events-none absolute -left-px -right-px bottom-full origin-bottom scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden"
-                        style={{
-                          height: '120px',
-                          background: '#0a2a6b',
-                          borderTop: `1px solid ${BORDER}`,
-                          borderLeft: `1px solid ${BORDER}`,
-                          borderRight: `1px solid ${BORDER}`,
-                          borderTopLeftRadius: '14px',
-                          borderTopRightRadius: '14px',
-                        }}
+                        className="pointer-events-none absolute left-0 right-0 bottom-full opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out"
+                        style={{ height: '120px' }}
                       >
                         <svg viewBox="0 0 200 100" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
                           {/* Workshop floor */}
-                          <line x1="0" y1="93" x2="200" y2="93" stroke={TEAL} strokeWidth="0.4" opacity="0.5" />
+                          <line x1="0" y1="93" x2="200" y2="93" stroke={TEAL} strokeWidth="0.4" opacity="0.6" />
 
                           {/* ── 3D PRINTER (left) ── */}
                           {/* Frame posts */}
-                          <rect x="14" y="20" width="2.5" height="70" fill="#e5e7eb" />
-                          <rect x="83.5" y="20" width="2.5" height="70" fill="#e5e7eb" />
-                          <rect x="14" y="20" width="72" height="2.5" fill="#e5e7eb" />
+                          <rect x="14" y="20" width="2.5" height="70" fill={NAVY} />
+                          <rect x="83.5" y="20" width="2.5" height="70" fill={NAVY} />
+                          <rect x="14" y="20" width="72" height="2.5" fill={NAVY} />
                           {/* Print bed */}
-                          <rect x="20" y="86" width="60" height="3" fill="#cbd5e1" />
-                          <rect x="18" y="89" width="64" height="2" fill="#94a3b8" />
+                          <rect x="20" y="86" width="60" height="3" fill={NAVY} />
+                          <rect x="18" y="89" width="64" height="2" fill={TEAL} opacity="0.7" />
                           {/* Gantry rail */}
-                          <rect x="16" y="34" width="68" height="1.5" fill="#94a3b8" />
+                          <rect x="16" y="34" width="68" height="1.5" fill={TEAL} opacity="0.7" />
                           {/* Printed object growing */}
                           <rect
                             x="38"
@@ -241,31 +233,30 @@ export default function VentureGrowthServices() {
                             width="24"
                             height="40"
                             fill={TEAL}
-                            opacity="0.9"
                             style={{ transformOrigin: '50px 86px', animation: 'printer-build 3.6s ease-out infinite' }}
                           />
                           {/* Print head sliding along gantry */}
                           <g style={{ animation: 'printer-head 1.8s ease-in-out infinite alternate' }}>
-                            <rect x="44" y="32" width="12" height="7" rx="1" fill={TEAL} />
+                            <rect x="44" y="32" width="12" height="7" rx="1" fill={NAVY} />
                             <polygon points="48,39 52,39 50,44" fill={TEAL} />
                           </g>
 
                           {/* ── ROBOTIC ARM (right) ── */}
                           {/* Base */}
-                          <rect x="138" y="84" width="34" height="9" rx="1" fill="#e5e7eb" />
-                          <rect x="148" y="80" width="14" height="4" fill="#cbd5e1" />
+                          <rect x="138" y="84" width="34" height="9" rx="1" fill={NAVY} />
+                          <rect x="148" y="80" width="14" height="4" fill={NAVY} />
                           {/* Shoulder rotates */}
                           <g style={{ transformOrigin: '155px 82px', animation: 'arm-shoulder 3s ease-in-out infinite alternate' }}>
-                            <rect x="152" y="48" width="6" height="34" rx="1.5" fill="#f1f5f9" />
+                            <rect x="152" y="48" width="6" height="34" rx="1.5" fill={NAVY} />
                             <circle cx="155" cy="82" r="3" fill={TEAL} />
                             <circle cx="155" cy="48" r="3" fill={TEAL} />
                             {/* Elbow / forearm rotates */}
                             <g style={{ transformOrigin: '155px 48px', animation: 'arm-elbow 2.2s ease-in-out infinite alternate' }}>
-                              <rect x="155" y="45" width="32" height="6" rx="1.5" fill="#f1f5f9" />
+                              <rect x="155" y="45" width="32" height="6" rx="1.5" fill={NAVY} />
                               <circle cx="186" cy="48" r="2.5" fill={TEAL} />
                               {/* Gripper claws */}
-                              <rect x="186" y="42" width="2" height="9" fill="#cbd5e1" />
-                              <rect x="190" y="42" width="2" height="9" fill="#cbd5e1" />
+                              <rect x="186" y="42" width="2" height="9" fill={TEAL} />
+                              <rect x="190" y="42" width="2" height="9" fill={TEAL} />
                             </g>
                           </g>
                         </svg>
