@@ -100,9 +100,9 @@ const portfolio = [
 const partners = [
   { name: 'FedNor', logo: fednorLogo },
   { name: 'Ontario', logo: ontarioLogo },
-  { name: 'NORCAT', logo: norcatLogo },
+  { name: 'Northern Ontario Angels', logo: noaLogo },
   { name: 'City of Greater Sudbury', logo: sudburyLogo },
-  { name: 'TEDC', logo: tedcLogo },
+  { name: 'Rogers', logo: rogersLogo },
 ];
 
 // Style tokens — NORCAT Innovation Brand V1.0 (2026)
