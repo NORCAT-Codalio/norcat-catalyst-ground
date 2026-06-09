@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog } from 'lucide-react';
+import { useRef } from 'react';
+import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
+import signatureLines from '@/assets/signature-lines.png';
+import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
+import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
+import ctaPhoto5 from '@/assets/cta-photo-5.png';
 
 import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
@@ -130,6 +135,7 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 export default function Home2() {
+  const storiesScrollRef = useRef<HTMLDivElement>(null);
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
@@ -441,56 +447,80 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── AWARDS / SIGNATURE CALLOUT ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY_SURFACE }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-12">
-              <div className="lg:col-span-6">
-                <div className="relative rounded-2xl overflow-hidden" style={{ border: `1px solid ${BORDER}` }}>
-                  <img src={ctaPhoto1} alt="NORCAT Underground Centre" loading="lazy"
-                       className="w-full h-auto aspect-[4/3] object-cover" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 pt-20 text-white"
-                       style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6) 60%, transparent)' }}>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1" style={{ fontFamily: FONT, color: TEAL }}>The NORCAT Underground Centre</p>
-                    <p className="font-black uppercase text-base" style={{ fontFamily: FONT }}>The Global One-Stop Shop</p>
-                    <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.75)' }}>3km of operating tunnels. Real ground. Real conditions.</p>
-                  </div>
-                </div>
+        {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[600px] opacity-100" />
+          </div>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+              <div>
+                <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: FONT, fontWeight: 500 }}>
+                  <span className="text-white">Real Stories. </span>
+                  <span className="text-white" style={{ fontWeight: 700 }}>Unique Insights.</span>
+                </h2>
+                <p className="font-light text-white/70 max-w-xl">Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.</p>
               </div>
-              <div className="lg:col-span-6">
-                <Eyebrow>Infrastructure that scales</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Real ground. Real momentum.{' '}
-                  <span style={{ color: TEAL }}>Real outcomes.</span>
-                </Display>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                  We don't simulate. NORCAT-backed founders test their technology in operating environments, validate with industry, and de-risk before they raise.
-                </p>
-              </div>
+              <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
+                View all reports
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
+          </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+          {/* Horizontally scrollable cards */}
+          <div ref={storiesScrollRef} className="pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide">
+            <div className="flex gap-5 pr-6 items-stretch" style={{ width: 'max-content' }}>
               {[
-                { icon: Trophy, title: 'Venture Growth Services', value: 'Mentorship & Micro-Grants', desc: 'For early-stage founders ready for 1-on-1 support, IP strategy, and the fundamentals of building a defensible business.' },
-                { icon: Star, title: 'Capital Navigation', value: 'Dilutive & Non-Dilutive', desc: 'From the Sudbury Catalyst Fund to SR&ED, IRAP, and the Regional AI Program — we help you raise the right money at the right time.' },
-              ].map((a) => (
-                <div key={a.title} className="group relative p-6 sm:p-7 rounded-xl transition-all"
-                     style={{ background: NAVY_ELEV, border: `1px solid ${BORDER}` }}>
-                  <div className="flex items-start gap-5">
-                    <div className="size-12 shrink-0 rounded-lg flex items-center justify-center"
-                         style={{ background: TEAL, color: NAVY }}>
-                      <a.icon className="size-6" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-baseline justify-between gap-4 flex-wrap">
-                        <h3 className="font-black uppercase text-lg md:text-xl text-white" style={{ fontFamily: FONT }}>{a.title}</h3>
-                        <p className="font-black text-base md:text-lg" style={{ fontFamily: FONT, color: TEAL }}>{a.value}</p>
-                      </div>
-                      <p className="mt-2 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>{a.desc}</p>
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories', wide: false },
+                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news', wide: true },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports', wide: false },
+                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: ctaPhoto4, link: '/ecosystem', wide: false },
+                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories', wide: false },
+                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news', wide: false },
+                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports', wide: false },
+              ].map((post) => (
+                <Link key={post.title} to={post.link} className="group block h-full">
+                  <div className={`relative rounded-2xl overflow-hidden h-[420px] hover:scale-[1.02] transition-transform duration-300 ${post.wide ? 'w-[700px]' : 'w-[380px]'}`}>
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
+                        background: 'hsla(168, 100%, 35%, 0.2)',
+                        color: 'hsl(168, 100%, 60%)',
+                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                        backdropFilter: 'blur(8px)',
+                      }}>{post.category}</span>
+                      <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: FONT }}>{post.title}</h3>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
+                        Read More <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Navigation arrows */}
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
+            <div className="flex justify-end mt-8 gap-3">
+              <button
+                onClick={() => storiesScrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
+                aria-label="Scroll left"
+              >
+                <ChevronRight className="w-5 h-5 text-white/80 rotate-180" />
+              </button>
+              <button
+                onClick={() => storiesScrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-5 h-5 text-white/80" />
+              </button>
             </div>
           </div>
         </section>
