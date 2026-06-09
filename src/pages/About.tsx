@@ -45,10 +45,10 @@ const partnerLogos = [
 ];
 
 const values = [
-  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', icon: Users, bgGif: founderFirstGif },
-  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', icon: TrendingUp, bgGif: impactDrivenGif },
-  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', icon: Globe, bgGif: communityFocusedGif },
-  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', icon: Target, bgGif: executionFocusedGif },
+  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', bgGif: founderFirstGif },
+  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', bgGif: impactDrivenGif },
+  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', bgGif: communityFocusedGif },
+  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', bgGif: executionFocusedGif },
 ];
 
 const team = [
