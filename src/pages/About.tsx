@@ -276,7 +276,7 @@ export default function About() {
                          : {}} />
                     <div className="absolute inset-0 pointer-events-none"
                          style={{ background: `linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.85) 75%, #000000 100%)` }} />
-                  <div className="relative mt-auto p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 h-[200px] flex flex-col justify-end z-10">
                     <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-2"
                         style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{value.title}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{value.description}</p>
