@@ -550,7 +550,7 @@ export default function VentureGrowthServices() {
                 const TypeIcon = type === 'Program' ? Rocket : type === 'Funding' ? DollarSign : Building2;
                 return (
                   <div key={type} className="rounded-2xl p-6 md:p-7"
-                       style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}>
+                       style={{ background: 'rgba(0, 179, 152, 0.06)', border: `1px solid rgba(0, 179, 152, 0.15)`, backdropFilter: 'blur(14px)' }}>
                     <div className="flex items-center gap-3 mb-5 pb-5" style={{ borderBottom: `1px solid ${BORDER}` }}>
                       <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: NAVY }}>
                         <TypeIcon className="w-5 h-5" style={{ color: TEAL }} />
