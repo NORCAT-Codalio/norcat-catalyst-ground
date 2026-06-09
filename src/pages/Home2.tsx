@@ -556,14 +556,19 @@ export default function Home2() {
 
             <div className="grid lg:grid-cols-3 gap-6">
               {testimonials.map((t) => (
-                <figure key={t.name} className="h-full p-7 sm:p-9 rounded-xl flex flex-col bg-white transition-colors hover:border-primary/40"
-                        style={{ border: '1px solid #d9dde5' }}>
-                  <Quote className="size-8 mb-4" style={{ color: TEAL }} />
-                  <blockquote className="leading-relaxed flex-1 text-sm sm:text-base" style={{ color: '#1a2440' }}>"{t.quote}"</blockquote>
-                  <figcaption className="mt-8 pt-6" style={{ borderTop: '1px solid #d9dde5' }}>
-                    <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT }}>{t.name}</p>
-                    <p className="text-xs md:text-sm mt-1" style={{ color: '#5b6478' }}>{t.role}</p>
-                    <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] mt-3" style={{ fontFamily: FONT, color: TEAL }}>{t.year}</p>
+                <figure key={t.name}
+                        className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
+                        style={{ background: TEAL }}>
+                  <img src={norcatHalfLogoSquare.url} alt=""
+                       aria-hidden="true"
+                       className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
+                       style={{ opacity: 0.2 }} />
+                  <Quote className="relative size-8 mb-4 text-white" />
+                  <blockquote className="relative leading-relaxed flex-1 text-sm sm:text-base text-white">"{t.quote}"</blockquote>
+                  <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
+                    <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
+                    <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
+                    <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] mt-3 text-white" style={{ fontFamily: FONT }}>{t.year}</p>
                   </figcaption>
                 </figure>
               ))}
