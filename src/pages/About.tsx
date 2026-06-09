@@ -11,6 +11,11 @@ import communityFocusedGif from '@/assets/values/community-focused.gif';
 import executionFocusedGif from '@/assets/values/execution-focused.gif';
 import impactDrivenGif from '@/assets/values/impact-driven.gif';
 
+import founderFirstImg from '@/assets/values/founder-first.png';
+import communityFocusedImg from '@/assets/values/community-focused.png';
+import executionFocusedImg from '@/assets/values/execution-focused.png';
+import impactDrivenImg from '@/assets/values/impact-driven.png';
+
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
 import shashankImage from '@/assets/team/shashank.png';
@@ -45,10 +50,10 @@ const partnerLogos = [
 ];
 
 const values = [
-  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', bgGif: founderFirstGif },
-  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', bgGif: impactDrivenGif },
-  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', bgGif: communityFocusedGif },
-  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', bgGif: executionFocusedGif },
+  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', bgImage: founderFirstImg, bgGif: founderFirstGif },
+  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', bgImage: impactDrivenImg, bgGif: impactDrivenGif },
+  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', bgImage: communityFocusedImg, bgGif: communityFocusedGif },
+  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', bgImage: executionFocusedImg, bgGif: executionFocusedGif },
 ];
 
 const team = [
@@ -255,6 +260,13 @@ export default function About() {
                 <article key={value.title}
                          className="group relative rounded-2xl overflow-hidden aspect-[3/4] flex flex-col"
                          style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}>
+                  <img src={value.bgImage} alt=""
+                       className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
+                       style={value.title === 'Execution Focused'
+                         ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' }
+                         : value.title === 'Impact Driven'
+                         ? { transform: 'scale(1.15)' }
+                         : {}} />
                   <img src={value.bgGif} alt=""
                        className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none"
                        style={value.title === 'Execution Focused'
