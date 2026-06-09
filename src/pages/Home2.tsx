@@ -612,21 +612,19 @@ export default function Home2() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: SIGNATURE_GRADIENT }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(ellipse at center, rgba(127,227,211,0.20), transparent 60%)`,
-          }} />
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white' }}>
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
             <Eyebrow>Your move</Eyebrow>
-            <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
               Ready to build<br /><span style={{ color: TEAL }}>something real?</span>
-            </Display>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.8)' }}>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
               Whether you're validating an idea or scaling a series-A company, NORCAT Innovation has a seat at the table for you.
             </p>
             <Link to="/apply"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'white', color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,0,0,0.45)' }}>
+                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
               Apply to NORCAT Innovation <ArrowUpRight className="w-5 h-5" />
             </Link>
           </div>
