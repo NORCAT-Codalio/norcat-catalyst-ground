@@ -623,18 +623,6 @@ export default function Home2() {
               ))}
             </div>
 
-            <p className="text-center text-[10px] font-bold uppercase tracking-[0.25em] mb-6" style={{ fontFamily: FONT, color: TEAL }}>
-              Portfolio Companies
-            </p>
-            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-              {portfolio.map((c) => (
-                <div key={c.name}
-                     className="aspect-[3/2] rounded-lg flex items-center justify-center p-4"
-                     style={{ background: 'white', border: `1px solid ${BORDER}` }}>
-                  <img src={c.logo} alt={c.name} loading="lazy" className="max-h-10 max-w-full object-contain" />
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
