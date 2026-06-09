@@ -167,6 +167,16 @@ export default function VentureGrowthServices() {
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
           }} />
+          <style>{`
+            @keyframes drone-rotor { from { transform: scaleX(1); } 50% { transform: scaleX(0.15); } to { transform: scaleX(1); } }
+            @keyframes drone-fly {
+              0% { transform: translate(-50%, 10px); opacity: 0; }
+              25% { transform: translate(-50%, -20px); opacity: 1; }
+              50% { transform: translate(-60%, -55px) rotate(-4deg); }
+              75% { transform: translate(-40%, -85px) rotate(3deg); }
+              100% { transform: translate(-50%, -110px) rotate(0deg); opacity: 1; }
+            }
+          `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Your Journey</Eyebrow>
