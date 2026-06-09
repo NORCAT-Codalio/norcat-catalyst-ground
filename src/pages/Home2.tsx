@@ -182,9 +182,9 @@ export default function Home2() {
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
                 <Link to="/apply"
-                      className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                      className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                       style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
-                  Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4" />
+                  Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
                 <Link to="/about"
                       className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
