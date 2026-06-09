@@ -251,7 +251,7 @@ export default function About() {
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Our Values</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Principles that<br /><span style={{ color: TEAL }}>guide us.</span>
+                Principles that<br />guide us.
               </Display>
             </div>
 
