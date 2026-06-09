@@ -148,14 +148,15 @@ export default function About() {
         <section className="relative overflow-hidden min-h-[78vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
-          {/* hero background image (preserved content) */}
-          <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-            <img src={aboutHeroBg} alt="" className="h-full max-w-none object-contain object-right opacity-90" />
-          </div>
+          {/* logo background (matches Home2 hero) */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.2 }}
+          />
 
-          {/* radial glow */}
+          {/* radial glow (matches Home2 hero) */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.20), transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
           {/* signature lines */}
