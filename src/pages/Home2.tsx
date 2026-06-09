@@ -598,7 +598,7 @@ export default function Home2() {
         </section>
 
         {/* ───── PORTFOLIO / PARTNERS ───── */}
-        <section className="py-20 md:py-24" style={{ background: '#F2F3F6' }}>
+        <section className="pt-20 md:pt-24 pb-10 md:pb-12" style={{ background: '#F2F3F6' }}>
 
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center mb-10 md:mb-12">
@@ -627,7 +627,7 @@ export default function Home2() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+        <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
             <Eyebrow>Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
