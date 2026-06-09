@@ -309,35 +309,99 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-              {team.map((member) => (
-                <motion.button
-                  key={member.name}
-                  onClick={() => setExpandedMember(member.name)}
-                  whileHover={{ y: -6 }}
-                  transition={{ duration: 0.25 }}
-                  className="group text-left rounded-2xl overflow-hidden"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
-                >
-                  <div className="relative overflow-hidden">
-                    <img src={member.image} alt={member.name}
-                         className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 transition-colors"
-                         style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-black uppercase text-base md:text-lg mb-1"
-                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{member.name}</h3>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: TEAL, fontFamily: FONT }}>
-                      {member.role}
-                    </p>
-                  </div>
-                </motion.button>
-              ))}
-            </div>
-          </div>
+            <motion.div layout className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+              {team.map((member) => {
+                const isExpanded = expandedMember === member.name;
+                return (
+                  <motion.div
+                    key={member.name}
+                    layout
+                    onClick={() => setExpandedMember(isExpanded ? null : member.name)}
+                    transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+                    whileHover={isExpanded ? undefined : { y: -6 }}
+                    className={`group text-left rounded-2xl overflow-hidden cursor-pointer relative ${
+                      isExpanded ? 'col-span-2 lg:col-span-4' : ''
+                    }`}
+                    style={{ background: 'white', border: '1px solid #d9dde5' }}
+                  >
+                    <motion.div layout className={isExpanded ? 'flex flex-col sm:flex-row items-start gap-6 p-6 sm:p-8' : ''}>
+                      <motion.div
+                        layout
+                        className={`relative overflow-hidden ${
+                          isExpanded
+                            ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-full flex-shrink-0'
+                            : 'w-full aspect-square'
+                        }`}
+                        style={isExpanded ? { border: `3px solid ${TEAL}` } : undefined}
+                      >
+                        <motion.img
+                          layout
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {!isExpanded && (
+                          <div className="absolute inset-0"
+                               style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
+                        )}
+                      </motion.div>
 
-          <TeamModal member={selectedMember} onClose={() => setExpandedMember(null)} />
+                      <motion.div layout className={isExpanded ? 'flex-1 min-w-0' : 'p-5'}>
+                        <motion.h3 layout className="font-black uppercase text-base md:text-lg mb-1"
+                            style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                          {member.name}
+                        </motion.h3>
+                        <motion.p layout className="text-xs font-bold uppercase tracking-[0.18em]"
+                           style={{ color: TEAL, fontFamily: FONT }}>
+                          {member.role}
+                        </motion.p>
+
+                        <AnimatePresence>
+                          {isExpanded && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 8 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: 8 }}
+                              transition={{ duration: 0.25, delay: 0.1 }}
+                            >
+                              <p className="mt-4 leading-relaxed text-sm" style={{ color: '#475068' }}>
+                                {member.bio}
+                              </p>
+                              <a
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="mt-5 group/btn inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                              >
+                                <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                                <span className="inline-flex items-center justify-center size-7 rounded-full"
+                                      style={{ background: NAVY, color: 'white' }}>
+                                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover/btn:rotate-[360deg]" />
+                                </span>
+                              </a>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+
+                      {isExpanded && (
+                        <button
+                          onClick={(e) => { e.stopPropagation(); setExpandedMember(null); }}
+                          className="absolute top-4 right-4 size-9 rounded-full flex items-center justify-center transition-colors"
+                          style={{ background: PAPER, color: NAVY }}
+                          aria-label="Close"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      )}
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
         </section>
 
         {/* ───── PARTNERS — Powered by ───── */}
