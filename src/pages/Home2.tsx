@@ -18,6 +18,7 @@ import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
+import peekingDog from '@/assets/peeking-dog.png';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
@@ -639,8 +640,14 @@ export default function Home2() {
               Whether you're validating an idea or scaling a series-A company, NORCAT Innovation has a seat at the table for you.
             </p>
             <Link to="/apply"
-                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  className="group relative inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                   style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
+              <img
+                src={peekingDog}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-2 -right-4 w-16 h-16 origin-bottom opacity-0 translate-y-4 scale-75 rotate-6 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-top-12 group-hover:translate-y-0 group-hover:scale-100 group-hover:rotate-0"
+              />
               Apply to NORCAT Innovation
               <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
