@@ -562,9 +562,9 @@ export default function Home2() {
                   <img src={norcatHalfLogoSquare.url} alt=""
                        aria-hidden="true"
                        className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
-                       style={{ opacity: 0.2 }} />
+                       style={{ opacity: 0.08 }} />
                   <Quote className="relative size-8 mb-4 text-white" />
-                  <blockquote className="relative leading-relaxed flex-1 text-sm sm:text-base text-white">"{t.quote}"</blockquote>
+                  <blockquote className="relative leading-relaxed flex-1 text-sm sm:text-base text-white font-medium">"{t.quote}"</blockquote>
                   <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
                     <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
                     <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
