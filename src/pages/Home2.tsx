@@ -565,7 +565,6 @@ export default function Home2() {
                   <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
                     <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
                     <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
-                    <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] mt-3 text-white" style={{ fontFamily: FONT }}>{t.year}</p>
                   </figcaption>
                 </figure>
               ))}
