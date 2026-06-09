@@ -428,8 +428,32 @@ export default function About() {
           </div>
         </section>
 
+
+        {/* ───── FINAL CTA ───── */}
+        <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
+          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
+            <Eyebrow>Your move</Eyebrow>
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+              Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
+              Whether you're just starting out or ready to scale, we're here to help
+              you build something extraordinary.
+            </p>
+            <Link to="/apply"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
+              Apply to NORCAT Innovation
+              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+              </span>
+            </Link>
+          </div>
+        </section>
+
         {/* ───── RIC NETWORK (light) ───── */}
-        <section className="py-20 md:py-24" style={{ background: PAPER, color: NAVY }}>
+        <section className="pb-20 md:pb-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-6">
               <div className="rounded-2xl p-8 md:p-10" style={{ background: 'white', border: '1px solid #d9dde5' }}>
@@ -469,29 +493,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* ───── FINAL CTA ───── */}
-        <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
-          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <Eyebrow>Your move</Eyebrow>
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-              Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              Whether you're just starting out or ready to scale, we're here to help
-              you build something extraordinary.
-            </p>
-            <Link to="/apply"
-                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
-              Apply to NORCAT Innovation
-              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-              </span>
-            </Link>
           </div>
         </section>
 
