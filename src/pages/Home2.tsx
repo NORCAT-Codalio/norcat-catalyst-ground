@@ -607,9 +607,10 @@ export default function Home2() {
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 Powered by partners
               </p>
-              <Display className="text-2xl sm:text-3xl md:text-4xl">
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 Made possible by those who believe in the North.
-              </Display>
+              </h2>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto mb-14">
