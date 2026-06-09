@@ -223,51 +223,55 @@ export default function VentureGrowthServices() {
                         className="pointer-events-none absolute left-0 right-0 bottom-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"
                         style={{ height: '120px' }}
                       >
-                        <svg viewBox="0 0 200 93" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                        <svg viewBox="0 0 200 93" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" aria-hidden="true" className="build-scene">
                           {/* Workshop floor */}
                           <line x1="0" y1="92.5" x2="200" y2="92.5" stroke={TEAL} strokeWidth="0.5" opacity="0.6" />
 
-                          {/* ── 3D PRINTER (left) ── */}
-                          {/* Frame posts */}
-                          <rect x="14" y="20" width="2.5" height="70" fill={NAVY} />
-                          <rect x="83.5" y="20" width="2.5" height="70" fill={NAVY} />
-                          <rect x="14" y="20" width="72" height="2.5" fill={NAVY} />
-                          {/* Print bed */}
-                          <rect x="20" y="86" width="60" height="3" fill={NAVY} />
-                          <rect x="18" y="89" width="64" height="2" fill={TEAL} opacity="0.7" />
-                          {/* Gantry rail */}
-                          <rect x="16" y="34" width="68" height="1.5" fill={TEAL} opacity="0.7" />
-                          {/* Printed object growing */}
-                          <rect
-                            x="38"
-                            y="46"
-                            width="24"
-                            height="40"
-                            fill={TEAL}
-                            style={{ transformOrigin: '50px 86px', animation: 'printer-build 3.6s ease-out infinite' }}
-                          />
-                          {/* Print head sliding along gantry */}
-                          <g style={{ animation: 'printer-head 1.8s ease-in-out infinite alternate' }}>
-                            <rect x="44" y="32" width="12" height="7" rx="1" fill={NAVY} />
-                            <polygon points="48,39 52,39 50,44" fill={TEAL} />
+                          {/* ── 3D PRINTER (left) — morphs in from base ── */}
+                          <g className="printer-rig">
+                            {/* Frame posts */}
+                            <rect x="14" y="20" width="2.5" height="70" fill={NAVY} />
+                            <rect x="83.5" y="20" width="2.5" height="70" fill={NAVY} />
+                            <rect x="14" y="20" width="72" height="2.5" fill={NAVY} />
+                            {/* Print bed */}
+                            <rect x="20" y="86" width="60" height="3" fill={NAVY} />
+                            <rect x="18" y="89" width="64" height="2" fill={TEAL} opacity="0.7" />
+                            {/* Gantry rail */}
+                            <rect x="16" y="34" width="68" height="1.5" fill={TEAL} opacity="0.7" />
+                            {/* Printed object growing */}
+                            <rect
+                              x="38"
+                              y="46"
+                              width="24"
+                              height="40"
+                              fill={TEAL}
+                              style={{ transformOrigin: '50px 86px', animation: 'printer-build 3.6s ease-out infinite' }}
+                            />
+                            {/* Print head sliding along gantry */}
+                            <g style={{ animation: 'printer-head 1.8s ease-in-out infinite alternate' }}>
+                              <rect x="44" y="32" width="12" height="7" rx="1" fill={NAVY} />
+                              <polygon points="48,39 52,39 50,44" fill={TEAL} />
+                            </g>
                           </g>
 
-                          {/* ── ROBOTIC ARM (right) ── */}
-                          {/* Base */}
-                          <rect x="138" y="84" width="34" height="9" rx="1" fill={NAVY} />
-                          <rect x="148" y="80" width="14" height="4" fill={NAVY} />
-                          {/* Shoulder rotates */}
-                          <g style={{ transformOrigin: '155px 82px', animation: 'arm-shoulder 3s ease-in-out infinite alternate' }}>
-                            <rect x="152" y="48" width="6" height="34" rx="1.5" fill={NAVY} />
-                            <circle cx="155" cy="82" r="3" fill={TEAL} />
-                            <circle cx="155" cy="48" r="3" fill={TEAL} />
-                            {/* Elbow / forearm rotates */}
-                            <g style={{ transformOrigin: '155px 48px', animation: 'arm-elbow 2.2s ease-in-out infinite alternate' }}>
-                              <rect x="155" y="45" width="32" height="6" rx="1.5" fill={NAVY} />
-                              <circle cx="186" cy="48" r="2.5" fill={TEAL} />
-                              {/* Gripper claws */}
-                              <rect x="186" y="42" width="2" height="9" fill={TEAL} />
-                              <rect x="190" y="42" width="2" height="9" fill={TEAL} />
+                          {/* ── ROBOTIC ARM (right) — morphs in from base ── */}
+                          <g className="arm-rig">
+                            {/* Base */}
+                            <rect x="138" y="84" width="34" height="9" rx="1" fill={NAVY} />
+                            <rect x="148" y="80" width="14" height="4" fill={NAVY} />
+                            {/* Shoulder rotates */}
+                            <g style={{ transformOrigin: '155px 82px', animation: 'arm-shoulder 3s ease-in-out infinite alternate' }}>
+                              <rect x="152" y="48" width="6" height="34" rx="1.5" fill={NAVY} />
+                              <circle cx="155" cy="82" r="3" fill={TEAL} />
+                              <circle cx="155" cy="48" r="3" fill={TEAL} />
+                              {/* Elbow / forearm rotates */}
+                              <g style={{ transformOrigin: '155px 48px', animation: 'arm-elbow 2.2s ease-in-out infinite alternate' }}>
+                                <rect x="155" y="45" width="32" height="6" rx="1.5" fill={NAVY} />
+                                <circle cx="186" cy="48" r="2.5" fill={TEAL} />
+                                {/* Gripper claws */}
+                                <rect x="186" y="42" width="2" height="9" fill={TEAL} />
+                                <rect x="190" y="42" width="2" height="9" fill={TEAL} />
+                              </g>
                             </g>
                           </g>
                         </svg>
