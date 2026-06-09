@@ -376,9 +376,8 @@ export default function About() {
                                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover/btn:rotate-[360deg]" />
                                 </span>
                               </a>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                          </motion.div>
+                        )}
                       </motion.div>
 
                       {isExpanded && (
