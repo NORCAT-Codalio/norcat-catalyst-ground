@@ -197,6 +197,11 @@ export default function VentureGrowthServices() {
             .build-scene .arm-rig { transform-origin: 155px 92.5px; }
             .group:hover .build-scene .printer-rig { transform: scaleY(1); transition-delay: 80ms; }
             .group:hover .build-scene .arm-rig { transform: scaleY(1); transition-delay: 260ms; }
+            /* iMessage bubbles for Ongoing Support */
+            @keyframes bubble-typing {
+              0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+              30% { transform: translateY(-2px); opacity: 1; }
+            }
           `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
