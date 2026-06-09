@@ -228,31 +228,21 @@ export default function VentureGrowthServices() {
                           className="pointer-events-none absolute left-1/2 opacity-0 group-hover:opacity-100 group-hover:animate-[drone-fly_1100ms_ease-out_300ms_both]"
                           style={{ bottom: '0px', transform: 'translate(-50%, 10px)' }}
                         >
-                          <div className="group-hover:animate-[drone-fly_900ms_ease-out_450ms_both]">
-                            <svg width="56" height="36" viewBox="0 0 56 36" aria-hidden="true">
-                              {/* Arms */}
-                              <line x1="14" y1="12" x2="28" y2="20" stroke="#1a1a1a" strokeWidth="2" />
-                              <line x1="42" y1="12" x2="28" y2="20" stroke="#1a1a1a" strokeWidth="2" />
-                              <line x1="14" y1="28" x2="28" y2="20" stroke="#1a1a1a" strokeWidth="2" />
-                              <line x1="42" y1="28" x2="28" y2="20" stroke="#1a1a1a" strokeWidth="2" />
-                              {/* Body */}
-                              <rect x="22" y="15" width="12" height="10" rx="2" fill="#1a1a1a" />
-                              <circle cx="28" cy="20" r="1.6" fill={TEAL} />
-                              {/* Rotors (spin) */}
-                              <g style={{ transformOrigin: '14px 12px', animation: 'drone-rotor 180ms linear infinite' }}>
-                                <ellipse cx="14" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.55)" />
-                              </g>
-                              <g style={{ transformOrigin: '42px 12px', animation: 'drone-rotor 180ms linear infinite' }}>
-                                <ellipse cx="42" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.55)" />
-                              </g>
-                              <g style={{ transformOrigin: '14px 28px', animation: 'drone-rotor 180ms linear infinite' }}>
-                                <ellipse cx="14" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.55)" />
-                              </g>
-                              <g style={{ transformOrigin: '42px 28px', animation: 'drone-rotor 180ms linear infinite' }}>
-                                <ellipse cx="42" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.55)" />
-                              </g>
-                            </svg>
-                          </div>
+                          <svg width="56" height="36" viewBox="0 0 56 36" aria-hidden="true">
+                            {/* Arms */}
+                            <line x1="14" y1="12" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            <line x1="42" y1="12" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            <line x1="14" y1="28" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            <line x1="42" y1="28" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
+                            {/* Body */}
+                            <rect x="22" y="15" width="12" height="10" rx="2" fill="#0a0a0a" />
+                            <circle cx="28" cy="20" r="1.6" fill={TEAL} />
+                            {/* Rotors (spin) */}
+                            <ellipse cx="14" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '14px 12px', animation: 'drone-rotor 180ms linear infinite' }} />
+                            <ellipse cx="42" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '42px 12px', animation: 'drone-rotor 180ms linear infinite' }} />
+                            <ellipse cx="14" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '14px 28px', animation: 'drone-rotor 180ms linear infinite' }} />
+                            <ellipse cx="42" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '42px 28px', animation: 'drone-rotor 180ms linear infinite' }} />
+                          </svg>
                         </div>
                       </>
                     )}
