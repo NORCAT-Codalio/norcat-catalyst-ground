@@ -225,12 +225,8 @@ export default function VentureGrowthServices() {
                         />
                         {/* Drone flies up out of the box */}
                         <div
-                          className="pointer-events-none absolute left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out"
-                          style={{
-                            bottom: '0px',
-                            transitionDelay: '450ms',
-                            transform: 'translate(-50%, 0)',
-                          }}
+                          className="pointer-events-none absolute left-1/2 opacity-0 group-hover:opacity-100 group-hover:animate-[drone-fly_1100ms_ease-out_300ms_both]"
+                          style={{ bottom: '0px', transform: 'translate(-50%, 10px)' }}
                         >
                           <div className="group-hover:animate-[drone-fly_900ms_ease-out_450ms_both]">
                             <svg width="56" height="36" viewBox="0 0 56 36" aria-hidden="true">
