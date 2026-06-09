@@ -349,17 +349,17 @@ export default function VentureGrowthServices() {
                         {/* Step 1 (shortest, left third) */}
                         <div
                           className="absolute bottom-0 left-0 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '40px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}`, transitionDelay: '0ms' }}
+                          style={{ height: '40px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}`, borderTopLeftRadius: '18px', transitionDelay: '0ms' }}
                         />
                         {/* Step 2 (middle third) */}
                         <div
                           className="absolute bottom-0 left-1/3 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '70px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, transitionDelay: '140ms' }}
+                          style={{ height: '70px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderTopLeftRadius: '12px', transitionDelay: '140ms' }}
                         />
                         {/* Step 3 (tallest, right third) */}
                         <div
                           className="absolute bottom-0 left-2/3 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '100px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderRight: `1px solid ${BORDER}`, transitionDelay: '280ms' }}
+                          style={{ height: '100px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderRight: `1px solid ${BORDER}`, borderTopLeftRadius: '12px', borderTopRightRadius: '12px', transitionDelay: '280ms' }}
                         />
                         {/* Money bag drops onto top step */}
                         <div
