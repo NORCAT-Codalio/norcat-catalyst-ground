@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 import signatureLines from '@/assets/signature-lines.png';
-import aboutHeroBg from '@/assets/about-hero-bg.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import founderFirstGif from '@/assets/values/founder-first.gif';
 import communityFocusedGif from '@/assets/values/community-focused.gif';
 import executionFocusedGif from '@/assets/values/execution-focused.gif';
