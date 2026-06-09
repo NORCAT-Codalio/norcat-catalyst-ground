@@ -206,7 +206,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  Helping founders build <span style={{ color: TEAL }}>world-changing companies.</span>
+                  Helping founders build <span style={{ color: TEAL }}>world-changing</span>{' '}<span style={{ color: NAVY }}>companies.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
                   Through mentorship, capital access, and our unique underground testing facility,
