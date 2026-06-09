@@ -186,6 +186,17 @@ export default function VentureGrowthServices() {
               0%   { transform: rotate(-25deg); }
               100% { transform: rotate(40deg); }
             }
+            /* Morph-in for Build & Validate scene */
+            .build-scene .printer-rig,
+            .build-scene .arm-rig {
+              transform: scaleY(0);
+              transform-box: view-box;
+              transition: transform 750ms cubic-bezier(0.5, 1.5, 0.4, 1);
+              transform-origin: 50px 92.5px;
+            }
+            .build-scene .arm-rig { transform-origin: 155px 92.5px; }
+            .group:hover .build-scene .printer-rig { transform: scaleY(1); transition-delay: 80ms; }
+            .group:hover .build-scene .arm-rig { transform: scaleY(1); transition-delay: 260ms; }
           `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
