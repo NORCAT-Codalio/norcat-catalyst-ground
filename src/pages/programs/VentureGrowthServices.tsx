@@ -198,53 +198,68 @@ export default function VentureGrowthServices() {
                     style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                   >
                     {isBuild && (
-                      <>
-                        {/* Box flaps opening — left */}
-                        <div
-                          className="pointer-events-none absolute bottom-full left-0 w-1/2 h-[26px] origin-bottom transition-transform duration-700 ease-out group-hover:[transform:perspective(500px)_rotateX(-135deg)]"
-                          style={{
-                            background: '#0a2a6b',
-                            borderTop: `1px solid ${BORDER}`,
-                            borderLeft: `1px solid ${BORDER}`,
-                            borderBottom: `1px solid ${BORDER}`,
-                            borderTopLeftRadius: '14px',
-                            transform: 'perspective(500px) rotateX(0deg)',
-                          }}
-                        />
-                        {/* Box flaps opening — right */}
-                        <div
-                          className="pointer-events-none absolute bottom-full right-0 w-1/2 h-[26px] origin-bottom transition-transform duration-700 ease-out group-hover:[transform:perspective(500px)_rotateX(-135deg)]"
-                          style={{
-                            background: '#0a2a6b',
-                            borderTop: `1px solid ${BORDER}`,
-                            borderRight: `1px solid ${BORDER}`,
-                            borderBottom: `1px solid ${BORDER}`,
-                            borderTopRightRadius: '14px',
-                            transform: 'perspective(500px) rotateX(0deg)',
-                          }}
-                        />
-                        {/* Drone flies up out of the box */}
-                        <div
-                          className="pointer-events-none absolute left-1/2 opacity-0 group-hover:opacity-100 group-hover:animate-[drone-fly_1100ms_ease-out_300ms_both]"
-                          style={{ bottom: '0px', transform: 'translate(-50%, 10px)' }}
-                        >
-                          <svg width="56" height="36" viewBox="0 0 56 36" aria-hidden="true">
-                            {/* Arms */}
-                            <line x1="14" y1="12" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
-                            <line x1="42" y1="12" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
-                            <line x1="14" y1="28" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
-                            <line x1="42" y1="28" x2="28" y2="20" stroke="#0a0a0a" strokeWidth="2" />
-                            {/* Body */}
-                            <rect x="22" y="15" width="12" height="10" rx="2" fill="#0a0a0a" />
-                            <circle cx="28" cy="20" r="1.6" fill={TEAL} />
-                            {/* Rotors (spin) */}
-                            <ellipse cx="14" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '14px 12px', animation: 'drone-rotor 180ms linear infinite' }} />
-                            <ellipse cx="42" cy="12" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '42px 12px', animation: 'drone-rotor 180ms linear infinite' }} />
-                            <ellipse cx="14" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '14px 28px', animation: 'drone-rotor 180ms linear infinite' }} />
-                            <ellipse cx="42" cy="28" rx="7" ry="1.2" fill="rgba(255,255,255,0.65)" style={{ transformOrigin: '42px 28px', animation: 'drone-rotor 180ms linear infinite' }} />
-                          </svg>
-                        </div>
-                      </>
+                      <div
+                        className="pointer-events-none absolute -left-px -right-px bottom-full origin-bottom scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden"
+                        style={{
+                          height: '120px',
+                          background: '#0a2a6b',
+                          borderTop: `1px solid ${BORDER}`,
+                          borderLeft: `1px solid ${BORDER}`,
+                          borderRight: `1px solid ${BORDER}`,
+                          borderTopLeftRadius: '14px',
+                          borderTopRightRadius: '14px',
+                        }}
+                      >
+                        <svg viewBox="0 0 200 100" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                          {/* Workshop floor */}
+                          <line x1="0" y1="93" x2="200" y2="93" stroke={TEAL} strokeWidth="0.4" opacity="0.5" />
+
+                          {/* ── 3D PRINTER (left) ── */}
+                          {/* Frame posts */}
+                          <rect x="14" y="20" width="2.5" height="70" fill="#e5e7eb" />
+                          <rect x="83.5" y="20" width="2.5" height="70" fill="#e5e7eb" />
+                          <rect x="14" y="20" width="72" height="2.5" fill="#e5e7eb" />
+                          {/* Print bed */}
+                          <rect x="20" y="86" width="60" height="3" fill="#cbd5e1" />
+                          <rect x="18" y="89" width="64" height="2" fill="#94a3b8" />
+                          {/* Gantry rail */}
+                          <rect x="16" y="34" width="68" height="1.5" fill="#94a3b8" />
+                          {/* Printed object growing */}
+                          <rect
+                            x="38"
+                            y="46"
+                            width="24"
+                            height="40"
+                            fill={TEAL}
+                            opacity="0.9"
+                            style={{ transformOrigin: '50px 86px', animation: 'printer-build 3.6s ease-out infinite' }}
+                          />
+                          {/* Print head sliding along gantry */}
+                          <g style={{ animation: 'printer-head 1.8s ease-in-out infinite alternate' }}>
+                            <rect x="44" y="32" width="12" height="7" rx="1" fill={TEAL} />
+                            <polygon points="48,39 52,39 50,44" fill={TEAL} />
+                          </g>
+
+                          {/* ── ROBOTIC ARM (right) ── */}
+                          {/* Base */}
+                          <rect x="138" y="84" width="34" height="9" rx="1" fill="#e5e7eb" />
+                          <rect x="148" y="80" width="14" height="4" fill="#cbd5e1" />
+                          {/* Shoulder rotates */}
+                          <g style={{ transformOrigin: '155px 82px', animation: 'arm-shoulder 3s ease-in-out infinite alternate' }}>
+                            <rect x="152" y="48" width="6" height="34" rx="1.5" fill="#f1f5f9" />
+                            <circle cx="155" cy="82" r="3" fill={TEAL} />
+                            <circle cx="155" cy="48" r="3" fill={TEAL} />
+                            {/* Elbow / forearm rotates */}
+                            <g style={{ transformOrigin: '155px 48px', animation: 'arm-elbow 2.2s ease-in-out infinite alternate' }}>
+                              <rect x="155" y="45" width="32" height="6" rx="1.5" fill="#f1f5f9" />
+                              <circle cx="186" cy="48" r="2.5" fill={TEAL} />
+                              {/* Gripper claws */}
+                              <rect x="186" y="42" width="2" height="9" fill="#cbd5e1" />
+                              <rect x="190" y="42" width="2" height="9" fill="#cbd5e1" />
+                            </g>
+                          </g>
+                        </svg>
+                      </div>
                     )}
                     {isOnboarding && (
                       <>
