@@ -387,68 +387,57 @@ export default function VentureGrowthServices() {
                       </div>
                     )}
                     {isOngoing && (
-                      <>
-                        <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
-                          <defs>
-                            <filter id="goo-msg-04">
-                              <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-                              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -11" result="goo" />
-                              <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                            </filter>
-                          </defs>
-                        </svg>
+                      <div className="pointer-events-none absolute left-0 right-0 bottom-full h-[160px] px-4 flex flex-col justify-end gap-1.5 pb-2">
+                        {/* Incoming bubble (left, navy) — iMessage style */}
                         <div
-                          className="pointer-events-none absolute left-0 right-0 bottom-full px-4 flex flex-col justify-end gap-2 pb-0"
-                          style={{ height: '170px', filter: 'url(#goo-msg-04)' }}
+                          className="relative self-start max-w-[85%] origin-bottom-left scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500"
+                          style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 1)', transitionDelay: '120ms' }}
                         >
-                          {/* Incoming bubble (left, navy) */}
-                          <div className="relative self-start max-w-[85%]">
-                            {/* slime tail dripping from card edge */}
-                            <div
-                              className="absolute left-3 -bottom-2 w-5 h-5 rounded-full origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-700"
-                              style={{ background: NAVY, transitionTimingFunction: 'cubic-bezier(0.5, 1.4, 0.4, 1)', transitionDelay: '0ms' }}
-                            />
-                            <div
-                              className="origin-bottom-left scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700"
-                              style={{ transitionTimingFunction: 'cubic-bezier(0.55, 1.7, 0.35, 1)', transitionDelay: '180ms' }}
-                            >
-                              <div
-                                className="relative px-3.5 py-2 text-[13px] leading-snug text-white"
-                                style={{
-                                  background: NAVY,
-                                  borderRadius: '18px 18px 18px 4px',
-                                  fontFamily: FONT,
-                                }}
-                              >
-                                How did last week go?
-                              </div>
-                            </div>
+                          <div
+                            className="relative px-3.5 py-2 text-[13px] leading-snug text-white"
+                            style={{
+                              background: NAVY,
+                              borderRadius: '18px 18px 18px 18px',
+                              fontFamily: FONT,
+                            }}
+                          >
+                            How did last week go?
                           </div>
-                          {/* Outgoing bubble (right, teal) */}
-                          <div className="relative self-end max-w-[90%]">
-                            <div
-                              className="absolute right-3 -bottom-2 w-5 h-5 rounded-full origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-700"
-                              style={{ background: TEAL, transitionTimingFunction: 'cubic-bezier(0.5, 1.4, 0.4, 1)', transitionDelay: '600ms' }}
-                            />
-                            <div
-                              className="origin-bottom-right scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700"
-                              style={{ transitionTimingFunction: 'cubic-bezier(0.55, 1.7, 0.35, 1)', transitionDelay: '820ms' }}
-                            >
-                              <div
-                                className="relative px-3.5 py-2 text-[13px] leading-snug font-semibold"
-                                style={{
-                                  background: TEAL,
-                                  color: NAVY,
-                                  borderRadius: '18px 18px 4px 18px',
-                                  fontFamily: FONT,
-                                }}
-                              >
-                                Onboarded 12 new customers!!!
-                              </div>
-                            </div>
-                          </div>
+                          {/* iMessage tail (left) */}
+                          <span
+                            className="absolute -left-0.5 bottom-0 w-3 h-3"
+                            style={{
+                              background: NAVY,
+                              borderBottomRightRadius: '14px',
+                              clipPath: 'path("M12 12 Q 12 0, 0 12 Z")',
+                            }}
+                          />
                         </div>
-                      </>
+                        {/* Outgoing bubble (right, teal) — iMessage style */}
+                        <div
+                          className="relative self-end max-w-[90%] origin-bottom-right scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500"
+                          style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 1)', transitionDelay: '720ms' }}
+                        >
+                          <div
+                            className="relative px-3.5 py-2 text-[13px] leading-snug text-white font-semibold"
+                            style={{
+                              background: TEAL,
+                              borderRadius: '18px 18px 18px 18px',
+                              fontFamily: FONT,
+                            }}
+                          >
+                            Onboarded 12 new customers!!!
+                          </div>
+                          {/* iMessage tail (right) */}
+                          <span
+                            className="absolute -right-0.5 bottom-0 w-3 h-3"
+                            style={{
+                              background: TEAL,
+                              clipPath: 'path("M0 12 Q 0 0, 12 12 Z")',
+                            }}
+                          />
+                        </div>
+                      </div>
                     )}
                     <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.35, fontFamily: FONT, letterSpacing: '-0.02em' }}>
                       {phase.phase}
