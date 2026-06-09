@@ -163,7 +163,7 @@ export default function VentureGrowthServices() {
 
         {/* ───── HOW IT WORKS (dark) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
-                 style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
           }} />
@@ -262,7 +262,7 @@ export default function VentureGrowthServices() {
 
         {/* ───── EXPLORE OUR SERVICES (dark) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
-                 style={{ background: 'linear-gradient(180deg, #001a4d 0%, #00133d 100%)' }}>
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(circle at 80% 0%, rgba(0,179,152,0.15), transparent 45%)',
           }} />
