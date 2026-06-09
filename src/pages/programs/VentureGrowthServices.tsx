@@ -197,6 +197,11 @@ export default function VentureGrowthServices() {
             .build-scene .arm-rig { transform-origin: 155px 92.5px; }
             .group:hover .build-scene .printer-rig { transform: scaleY(1); transition-delay: 80ms; }
             .group:hover .build-scene .arm-rig { transform: scaleY(1); transition-delay: 260ms; }
+            /* iMessage bubbles for Ongoing Support */
+            @keyframes bubble-typing {
+              0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+              30% { transform: translateY(-2px); opacity: 1; }
+            }
           `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
@@ -211,7 +216,8 @@ export default function VentureGrowthServices() {
                 const isScale = phase.phase === '03';
                 const isOnboarding = phase.phase === '01';
                 const isBuild = phase.phase === '02';
-                const needsOverflow = isScale || isOnboarding || isBuild;
+                const isOngoing = phase.phase === '04';
+                const needsOverflow = isScale || isOnboarding || isBuild || isOngoing;
                 return (
                   <article
                     key={phase.phase}
@@ -377,6 +383,42 @@ export default function VentureGrowthServices() {
                             className="text-white"
                             aria-hidden="true"
                           />
+                        </div>
+                      </div>
+                    )}
+                    {isOngoing && (
+                      <div className="pointer-events-none absolute left-0 right-0 bottom-full h-[150px] px-4 flex flex-col justify-end gap-2 pb-2">
+                        {/* Incoming bubble (left, grey) */}
+                        <div
+                          className="self-start max-w-[80%] origin-bottom-left scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500"
+                          style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 1)', transitionDelay: '120ms' }}
+                        >
+                          <div
+                            className="relative px-3 py-2 text-[11px] leading-tight text-white"
+                            style={{
+                              background: '#3a3a3c',
+                              borderRadius: '16px 16px 16px 4px',
+                              fontFamily: FONT,
+                            }}
+                          >
+                            How did last week go?
+                          </div>
+                        </div>
+                        {/* Outgoing bubble (right, iMessage blue) */}
+                        <div
+                          className="self-end max-w-[85%] origin-bottom-right scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500"
+                          style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 1)', transitionDelay: '720ms' }}
+                        >
+                          <div
+                            className="relative px-3 py-2 text-[11px] leading-tight text-white font-semibold"
+                            style={{
+                              background: '#0a84ff',
+                              borderRadius: '16px 16px 4px 16px',
+                              fontFamily: FONT,
+                            }}
+                          >
+                            Onboarded 12 new customers!!!
+                          </div>
                         </div>
                       </div>
                     )}
