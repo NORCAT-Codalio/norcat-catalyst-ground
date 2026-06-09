@@ -275,7 +275,7 @@ export default function About() {
                          ? { transform: 'scale(1.15)' }
                          : {}} />
                   <div className="absolute inset-0 pointer-events-none"
-                       style={{ background: 'linear-gradient(180deg, rgba(0,26,77,0) 35%, rgba(0,26,77,0.85) 75%, #001a4d 100%)' }} />
+                       style={{ background: 'linear-gradient(180deg, rgba(0,179,152,0) 35%, rgba(0,179,152,0.85) 75%, #00B398 100%)' }} />
                   <div className="relative mt-auto p-6">
                     <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-2"
                         style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{value.title}</h3>
