@@ -598,7 +598,7 @@ export default function Home2() {
         </section>
 
         {/* ───── PORTFOLIO / PARTNERS ───── */}
-        <section className="py-20 md:py-24" style={{ background: NAVY_SURFACE }}>
+        <section className="py-20 md:py-24" style={{ background: '#F2F3F6' }}>
 
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center mb-10 md:mb-12">
