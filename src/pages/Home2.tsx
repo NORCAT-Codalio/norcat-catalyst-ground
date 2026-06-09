@@ -73,19 +73,16 @@ const testimonials = [
     quote: "My first pitch with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and grown our team from 7 to 26 in just two years.",
     name: 'Luke Begley',
     role: 'Founder, CircuitIQ',
-    year: 'NORCAT INNOVATION',
   },
   {
     quote: 'Securing this level of trust and expertise from Northern Ontario through the NORCAT ecosystem has acted as a true catalyst, opening doors for us to bring in additional capital and scale our laboratory operations.',
-    name: 'Myomar Molecular',
-    role: 'Judges\' Choice & Peter Dal Bianco Award',
-    year: 'PITCH 2025',
+    name: 'Rafaela Andrade',
+    role: 'CEO, Myomar Molecular',
   },
   {
     quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada.',
     name: 'Karen Hastie',
     role: 'Founder/CEO, Chamber Perks App',
-    year: 'PITCH 2024',
   },
 ];
 
@@ -568,7 +565,6 @@ export default function Home2() {
                   <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
                     <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
                     <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
-                    <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] mt-3 text-white" style={{ fontFamily: FONT }}>{t.year}</p>
                   </figcaption>
                 </figure>
               ))}
