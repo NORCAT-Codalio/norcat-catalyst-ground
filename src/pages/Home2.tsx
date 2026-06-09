@@ -18,6 +18,7 @@ import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
+import peekingDog from '@/assets/peeking-dog.png';
 
 // Portfolio logos
 import turnkeyLogo from '@/assets/logos/turnkey.png';
