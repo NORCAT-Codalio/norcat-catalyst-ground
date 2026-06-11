@@ -202,14 +202,14 @@ export default function VentureGrowthServices() {
             }
           `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
+            <div className="max-w-2xl mb-6 md:mb-8">
               <Eyebrow>Your Journey</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 How it<br /><span style={{ color: TEAL }}>works.</span>
               </Display>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:pt-32">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:pt-16">
               {programStructure.map((phase) => {
                 const isScale = phase.phase === '03';
                 const isOnboarding = phase.phase === '01';
