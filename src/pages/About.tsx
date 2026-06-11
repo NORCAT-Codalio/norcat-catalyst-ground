@@ -4,6 +4,7 @@ import { Layout } from '@/components/Layout';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
+import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import founderFirstGif from '@/assets/values/founder-first.gif';
@@ -199,7 +200,7 @@ export default function About() {
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6">
                 <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: '1px solid #d9dde5' }}>
-                  <img src={foundersImage} alt="NORCAT Innovation team working with founders"
+                  <img src={norcatBuilding.url} alt="NORCAT Innovation headquarters building in Sudbury"
                        className="w-full h-full object-cover" />
                 </div>
               </div>
