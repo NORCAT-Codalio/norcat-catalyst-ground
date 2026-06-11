@@ -338,45 +338,34 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
               transition={{ duration: 0.2 }}
               className="space-y-1"
             >
-              {currentCategories.map((cat, i) => {
-                const CatIcon = cat.icon;
-                return (
-                  <button
-                    key={cat.title}
-                    onClick={() => setActiveCategory(i)}
-                    className="w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-2xl text-left transition-all duration-200"
+              {currentCategories.map((cat, i) => (
+                <button
+                  key={cat.title}
+                  onClick={() => setActiveCategory(i)}
+                  className="w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-2xl text-left transition-all duration-200"
+                  style={{
+                    background: activeCategory === i ? 'rgba(0, 179, 152, 0.14)' : 'transparent',
+                    border: activeCategory === i ? `1px solid ${TEAL}` : `1px solid transparent`,
+                  }}
+                >
+                  <span
+                    className="text-sm font-semibold"
                     style={{
-                      background: activeCategory === i ? 'rgba(0, 179, 152, 0.14)' : 'transparent',
-                      border: activeCategory === i ? `1px solid ${TEAL}` : `1px solid transparent`,
+                      fontFamily: FONT,
+                      color: activeCategory === i ? NAVY : (light ? 'rgba(0,26,77,0.65)' : 'rgba(255,255,255,0.65)'),
                     }}
                   >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="size-9 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}
-                      >
-                        <CatIcon className="size-5" strokeWidth={2} />
-                      </div>
-                      <span
-                        className="text-sm font-black uppercase"
-                        style={{
-                          fontFamily: FONT,
-                          color: activeCategory === i ? NAVY : (light ? 'rgba(0,26,77,0.65)' : 'rgba(255,255,255,0.65)'),
-                        }}
-                      >
-                        {cat.title}
-                      </span>
-                    </div>
-                    <div
-                      className="w-2.5 h-2.5 rounded-full transition-all duration-300"
-                      style={{
-                        background: activeCategory === i ? TEAL : (light ? 'rgba(0,26,77,0.25)' : 'rgba(255,255,255,0.25)'),
-                        boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
-                      }}
-                    />
-                  </button>
-                );
-              })}
+                    {cat.title}
+                  </span>
+                  <div
+                    className="w-2.5 h-2.5 rounded-full transition-all duration-300 shrink-0"
+                    style={{
+                      background: activeCategory === i ? TEAL : (light ? 'rgba(0,26,77,0.25)' : 'rgba(255,255,255,0.25)'),
+                      boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
+                    }}
+                  />
+                </button>
+              ))}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -430,34 +419,42 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
 
             {/* Content area */}
             <div className="p-8 md:p-10">
-              {/* Icon + headline */}
+              {/* Icon + title + headline */}
               <div className="flex items-start gap-4 mb-5">
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-                  style={iconContainerStyle}
+                  className="size-12 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}` }}
                 >
-                  <Icon className="w-5 h-5" style={{ color: TEAL }} />
+                  <Icon className="size-6" style={{ color: TEAL }} strokeWidth={2} />
                 </div>
-                <h3
-                  className="text-xl md:text-2xl leading-tight"
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 500,
-                    color: light ? NAVY : 'white',
-                  }}
-                >
-                  {activeItem.headline}{' '}
-                  <span
+                <div className="flex-1 min-w-0">
+                  <div
+                    className="text-xs font-black uppercase tracking-wider mb-2"
+                    style={{ fontFamily: FONT, color: TEAL, letterSpacing: '0.08em' }}
+                  >
+                    {activeItem.title}
+                  </div>
+                  <h3
+                    className="text-xl md:text-2xl leading-tight"
                     style={{
-                      color: TEAL,
                       fontFamily: FONT,
-                      fontWeight: 700,
-                      fontSize: 'inherit',
+                      fontWeight: 500,
+                      color: light ? NAVY : 'white',
                     }}
                   >
-                    {activeItem.headlineItalic}
-                  </span>
-                </h3>
+                    {activeItem.headline}{' '}
+                    <span
+                      style={{
+                        color: TEAL,
+                        fontFamily: FONT,
+                        fontWeight: 700,
+                        fontSize: 'inherit',
+                      }}
+                    >
+                      {activeItem.headlineItalic}
+                    </span>
+                  </h3>
+                </div>
               </div>
 
               {/* Description */}
