@@ -223,49 +223,50 @@ const categories: Record<Audience, CategoryItem[]> = {
   ],
 };
 
+/* ── Brand tokens (match VentureGrowthServices) ── */
+const NAVY = '#001A4D';
+const TEAL = '#00B398';
+const CARD_BG = '#0a2a6b';
+const BORDER = 'rgba(255,255,255,0.10)';
+const BORDER_STRONG = 'rgba(255,255,255,0.22)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
 /* ── Shared styles ── */
 const glassCardStyle: React.CSSProperties = {
-  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+  background: CARD_BG,
+  border: `1px solid ${BORDER}`,
 };
 
 const iconContainerStyle: React.CSSProperties = {
-  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+  background: 'rgba(0, 179, 152, 0.12)',
+  border: `1px solid ${TEAL}`,
 };
 
 /* Placeholder gradient backgrounds for each category */
 const placeholderImages: Record<Audience, string[]> = {
   'Startup Support': [
-    'linear-gradient(135deg, hsla(168,60%,70%,0.4) 0%, hsla(200,50%,75%,0.3) 50%, hsla(168,40%,85%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(200,60%,70%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(220,40%,85%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,50%,65%,0.4) 0%, hsla(190,60%,75%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(190,55%,68%,0.4) 0%, hsla(168,45%,72%,0.3) 50%, hsla(200,35%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(210,48%,66%,0.4) 0%, hsla(168,52%,70%,0.3) 50%, hsla(190,38%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,56%,62%,0.4) 0%, hsla(200,46%,74%,0.3) 50%, hsla(220,32%,84%,0.2) 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
   'Funding Support': [
-    'linear-gradient(135deg, hsla(210,50%,65%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(200,40%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,60%,60%,0.4) 0%, hsla(220,40%,70%,0.3) 50%, hsla(168,30%,85%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(190,55%,65%,0.4) 0%, hsla(168,50%,70%,0.3) 50%, hsla(210,40%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(200,52%,62%,0.4) 0%, hsla(168,48%,72%,0.3) 50%, hsla(220,36%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,58%,58%,0.4) 0%, hsla(200,44%,68%,0.3) 50%, hsla(190,34%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(220,46%,64%,0.4) 0%, hsla(168,54%,70%,0.3) 50%, hsla(200,38%,78%,0.2) 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
   'Labs': [
-    'linear-gradient(135deg, hsla(220,50%,60%,0.4) 0%, hsla(168,40%,70%,0.3) 50%, hsla(200,30%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,45%,65%,0.4) 0%, hsla(210,50%,70%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(200,55%,60%,0.4) 0%, hsla(168,45%,72%,0.3) 50%, hsla(220,35%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(190,50%,62%,0.4) 0%, hsla(168,42%,68%,0.3) 50%, hsla(210,38%,78%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,55%,58%,0.4) 0%, hsla(200,48%,72%,0.3) 50%, hsla(190,32%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(210,48%,64%,0.4) 0%, hsla(168,52%,68%,0.3) 50%, hsla(200,36%,80%,0.2) 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
 };
 
@@ -275,9 +276,8 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
     <div
       className="inline-flex rounded-full p-1.5"
       style={{
-        background: 'linear-gradient(145deg, hsla(220, 15%, 95%, 0.8) 0%, hsla(220, 15%, 90%, 0.5) 100%)',
-        border: '1px solid hsla(220, 15%, 100%, 0.6)',
-        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.06), 0 2px 8px hsla(0, 0%, 0%, 0.04)',
+        background: 'rgba(255,255,255,0.06)',
+        border: `1px solid ${BORDER}`,
       }}
     >
       {audiences.map((audience) => (
@@ -285,16 +285,18 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
           key={audience}
           onClick={() => onChange(audience)}
           className="relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
-          style={{ color: active === audience ? 'hsl(168, 40%, 25%)' : 'hsl(220, 15%, 45%)' }}
+          style={{
+            color: active === audience ? NAVY : 'rgba(255,255,255,0.75)',
+            fontFamily: FONT,
+          }}
         >
           {active === audience && (
             <motion.div
               layoutId="audience-pill"
               className="absolute inset-0 rounded-full"
               style={{
-                background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12)',
+                background: TEAL,
+                boxShadow: '0 4px 16px rgba(0,179,152,0.35)',
               }}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
             />
@@ -339,21 +341,15 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   onClick={() => setActiveCategory(i)}
                   className="w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-2xl text-left transition-all duration-200"
                   style={{
-                    background: activeCategory === i
-                      ? 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.45) 0%, hsla(168, 20%, 82%, 0.2) 100%)'
-                      : 'transparent',
-                    border: activeCategory === i
-                      ? '1px solid hsla(168, 30%, 90%, 0.5)'
-                      : '1px solid transparent',
-                    boxShadow: activeCategory === i
-                      ? 'inset 0 1px 2px 0 hsla(168, 30%, 95%, 0.3), 0 2px 8px hsla(168, 20%, 30%, 0.08)'
-                      : 'none',
+                    background: activeCategory === i ? 'rgba(0, 179, 152, 0.14)' : 'transparent',
+                    border: activeCategory === i ? `1px solid ${TEAL}` : `1px solid transparent`,
                   }}
                 >
                   <span
                     className="text-sm font-semibold"
                     style={{
-                      color: activeCategory === i ? 'hsl(168, 40%, 25%)' : 'hsl(220, 15%, 40%)',
+                      fontFamily: FONT,
+                      color: activeCategory === i ? 'white' : 'rgba(255,255,255,0.65)',
                     }}
                   >
                     {cat.title}
@@ -361,8 +357,8 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   <div
                     className="w-2.5 h-2.5 rounded-full transition-all duration-300"
                     style={{
-                      background: activeCategory === i ? 'hsl(168, 100%, 35%)' : 'hsla(220, 15%, 80%, 0.5)',
-                      boxShadow: activeCategory === i ? '0 0 8px hsl(168 100% 35% / 0.4)' : 'none',
+                      background: activeCategory === i ? TEAL : 'rgba(255,255,255,0.25)',
+                      boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
                     }}
                   />
                 </button>
@@ -400,12 +396,12 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center"
                     style={{
-                      background: 'hsla(0, 0%, 100%, 0.15)',
+                      background: 'rgba(255, 255, 255, 0.10)',
                       backdropFilter: 'blur(12px)',
-                      border: '1px solid hsla(0, 0%, 100%, 0.2)',
+                      border: '1px solid rgba(255, 255, 255, 0.25)',
                     }}
                   >
-                    <Icon className="w-10 h-10" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }} />
+                    <Icon className="w-10 h-10" style={{ color: 'white' }} />
                   </div>
                 </div>
               )}
@@ -413,7 +409,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               <div
                 className="absolute bottom-0 left-0 right-0 h-20"
                 style={{
-                  background: 'linear-gradient(to top, hsla(168, 15%, 82%, 0.4) 0%, transparent 100%)',
+                  background: `linear-gradient(to top, ${CARD_BG} 0%, transparent 100%)`,
                 }}
               />
             </div>
@@ -426,21 +422,21 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                   style={iconContainerStyle}
                 >
-                  <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                  <Icon className="w-5 h-5" style={{ color: TEAL }} />
                 </div>
                 <h3
                   className="text-xl md:text-2xl leading-tight"
                   style={{
-                    fontFamily: "'Open Sans', sans-serif",
+                    fontFamily: FONT,
                     fontWeight: 500,
-                    color: 'hsl(220, 15%, 20%)',
+                    color: 'white',
                   }}
                 >
                   {activeItem.headline}{' '}
                   <span
                     style={{
-                      color: 'hsl(168, 100%, 28%)',
-                      fontFamily: "'Open Sans', sans-serif",
+                      color: TEAL,
+                      fontFamily: FONT,
                       fontWeight: 700,
                       fontSize: 'inherit',
                     }}
@@ -453,7 +449,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               {/* Description */}
               <p
                 className="text-base font-light leading-relaxed mb-7 max-w-2xl"
-                style={{ color: 'hsl(220, 20%, 10%)' }}
+                style={{ color: 'rgba(255,255,255,0.78)', fontFamily: FONT }}
               >
                 {activeItem.description}
               </p>
@@ -462,8 +458,8 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               <div className="grid sm:grid-cols-2 gap-2.5 mb-8">
                 {activeItem.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                    <span className="text-sm" style={{ color: 'hsl(220, 15%, 30%)' }}>{feature}</span>
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                    <span className="text-sm" style={{ color: 'rgba(255,255,255,0.82)', fontFamily: FONT }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -475,10 +471,10 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                     to={activeItem.link}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                     style={{
-                      background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                      border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                      color: 'hsl(168, 40%, 25%)',
-                      boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15)',
+                      background: 'transparent',
+                      border: `1px solid ${BORDER_STRONG}`,
+                      color: 'white',
+                      fontFamily: FONT,
                     }}
                   >
                     {activeItem.linkText}
@@ -489,10 +485,11 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   to="/apply"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                   style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 20%, 0.9) 0%, hsla(220, 15%, 15%, 0.95) 100%)',
-                    border: '1px solid hsla(220, 15%, 30%, 0.5)',
-                    color: 'white',
-                    boxShadow: '0 4px 16px hsla(220, 15%, 10%, 0.25), 0 1px 3px hsla(0, 0%, 0%, 0.1)',
+                    background: TEAL,
+                    border: `1px solid ${TEAL}`,
+                    color: NAVY,
+                    fontFamily: FONT,
+                    boxShadow: '0 4px 16px rgba(0,179,152,0.35)',
                   }}
                 >
                   Apply Now
