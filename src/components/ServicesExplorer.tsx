@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight,
+  ArrowUpRight,
   UserCheck,
   GraduationCap,
   Handshake,
@@ -467,33 +468,35 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
                 {activeItem.link && (
-                <Link
+                  <Link
                     to={activeItem.link}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
+                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{
-                      background: 'transparent',
-                      border: `1px solid ${BORDER_STRONG}`,
-                      color: light ? NAVY : 'white',
                       fontFamily: FONT,
+                      background: 'transparent',
+                      border: `2px solid ${TEAL}`,
+                      color: NAVY,
                     }}
                   >
                     {activeItem.linkText}
-                    <ArrowRight className="w-4 h-4" />
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
                   </Link>
                 )}
                 <Link
                   to="/apply"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                   style={{
-                    background: TEAL,
-                    border: `1px solid ${TEAL}`,
-                    color: NAVY,
                     fontFamily: FONT,
-                    boxShadow: '0 4px 16px rgba(0,179,152,0.35)',
+                    background: TEAL,
+                    color: 'white',
                   }}
                 >
-                  Apply Now
-                  <ArrowRight className="w-4 h-4" />
+                  Apply to NORCAT Innovation
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
                 </Link>
               </div>
             </div>
