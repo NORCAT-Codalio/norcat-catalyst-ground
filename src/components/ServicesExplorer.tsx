@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import entrepreneurialCoursesImg from '@/assets/entrepreneurial-courses.png';
 import core5PreviewImg from '@/assets/core5-preview.png';
+import ventureGrowthTeamAsset from '@/assets/venture-growth-team.png.asset.json';
 
 /* ── Audience tabs ── */
 const audiences = ['Startup Support', 'Funding Support', 'Labs'] as const;
@@ -45,6 +46,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       features: ['Dedicated advisor relationship', 'Strategic planning support', 'Operational guidance', 'Leadership development'],
       link: '/programs/venture-growth-services',
       linkText: 'Learn More',
+      image: ventureGrowthTeamAsset.url,
     },
     {
       icon: Users,
