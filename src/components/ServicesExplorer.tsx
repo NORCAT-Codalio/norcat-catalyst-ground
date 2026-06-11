@@ -341,21 +341,15 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   onClick={() => setActiveCategory(i)}
                   className="w-full flex items-center justify-between gap-3 px-4 py-3.5 rounded-2xl text-left transition-all duration-200"
                   style={{
-                    background: activeCategory === i
-                      ? 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.45) 0%, hsla(168, 20%, 82%, 0.2) 100%)'
-                      : 'transparent',
-                    border: activeCategory === i
-                      ? '1px solid hsla(168, 30%, 90%, 0.5)'
-                      : '1px solid transparent',
-                    boxShadow: activeCategory === i
-                      ? 'inset 0 1px 2px 0 hsla(168, 30%, 95%, 0.3), 0 2px 8px hsla(168, 20%, 30%, 0.08)'
-                      : 'none',
+                    background: activeCategory === i ? 'rgba(0, 179, 152, 0.14)' : 'transparent',
+                    border: activeCategory === i ? `1px solid ${TEAL}` : `1px solid transparent`,
                   }}
                 >
                   <span
                     className="text-sm font-semibold"
                     style={{
-                      color: activeCategory === i ? 'hsl(168, 40%, 25%)' : 'hsl(220, 15%, 40%)',
+                      fontFamily: FONT,
+                      color: activeCategory === i ? 'white' : 'rgba(255,255,255,0.65)',
                     }}
                   >
                     {cat.title}
@@ -363,8 +357,8 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   <div
                     className="w-2.5 h-2.5 rounded-full transition-all duration-300"
                     style={{
-                      background: activeCategory === i ? 'hsl(168, 100%, 35%)' : 'hsla(220, 15%, 80%, 0.5)',
-                      boxShadow: activeCategory === i ? '0 0 8px hsl(168 100% 35% / 0.4)' : 'none',
+                      background: activeCategory === i ? TEAL : 'rgba(255,255,255,0.25)',
+                      boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
                     }}
                   />
                 </button>
