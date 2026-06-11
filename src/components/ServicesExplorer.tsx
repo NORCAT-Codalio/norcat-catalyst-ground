@@ -226,9 +226,9 @@ const categories: Record<Audience, CategoryItem[]> = {
 /* ── Brand tokens (match VentureGrowthServices) ── */
 const NAVY = '#001A4D';
 const TEAL = '#00B398';
-const CARD_BG = '#0a2a6b';
-const BORDER = 'rgba(255,255,255,0.10)';
-const BORDER_STRONG = 'rgba(255,255,255,0.22)';
+const CARD_BG = '#ffffff';
+const BORDER = 'rgba(0,26,77,0.10)';
+const BORDER_STRONG = 'rgba(0,26,77,0.22)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 /* ── Shared styles ── */

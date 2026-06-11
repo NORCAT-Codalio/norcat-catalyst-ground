@@ -139,26 +139,23 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── SERVICES EXPLORER (dark) ───── */}
+        {/* ───── SERVICES EXPLORER (light) ───── */}
         <section
           className="py-20 md:py-28 relative overflow-hidden"
-          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}
+          style={{ background: PAPER, color: NAVY }}
         >
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
-          }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
                 <Eyebrow>What's Included</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
                 </Display>
               </div>
-              <AudienceTabs active={activeAudience} onChange={setActiveAudience} />
+              <AudienceTabs light active={activeAudience} onChange={setActiveAudience} />
             </div>
 
-            <ServicesExplorer activeAudience={activeAudience} />
+            <ServicesExplorer light activeAudience={activeAudience} />
           </div>
         </section>
 
