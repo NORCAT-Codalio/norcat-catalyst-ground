@@ -271,12 +271,12 @@ const placeholderImages: Record<Audience, string[]> = {
 };
 
 /* ── Audience Tabs (standalone) ── */
-export function AudienceTabs({ active, onChange }: { active: Audience; onChange: (a: Audience) => void }) {
+export function AudienceTabs({ active, onChange, light = false }: { active: Audience; onChange: (a: Audience) => void; light?: boolean }) {
   return (
     <div
       className="inline-flex rounded-full p-1.5"
       style={{
-        background: 'rgba(255,255,255,0.06)',
+        background: light ? 'rgba(0,26,77,0.06)' : 'rgba(255,255,255,0.06)',
         border: `1px solid ${BORDER}`,
       }}
     >
@@ -286,13 +286,13 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
           onClick={() => onChange(audience)}
           className="relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
           style={{
-            color: active === audience ? NAVY : 'rgba(255,255,255,0.75)',
+            color: active === audience ? NAVY : (light ? 'rgba(0,26,77,0.65)' : 'rgba(255,255,255,0.75)'),
             fontFamily: FONT,
           }}
         >
           {active === audience && (
             <motion.div
-              layoutId="audience-pill"
+              layoutId={light ? 'audience-pill-light' : 'audience-pill'}
               className="absolute inset-0 rounded-full"
               style={{
                 background: TEAL,
@@ -308,7 +308,7 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
   );
 }
 
-export function ServicesExplorer({ activeAudience }: { activeAudience: Audience }) {
+export function ServicesExplorer({ activeAudience, light = false }: { activeAudience: Audience; light?: boolean }) {
   const [activeCategory, setActiveCategory] = useState(0);
 
   const currentCategories = categories[activeAudience];
