@@ -396,12 +396,12 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center"
                     style={{
-                      background: 'hsla(0, 0%, 100%, 0.15)',
+                      background: 'rgba(255, 255, 255, 0.10)',
                       backdropFilter: 'blur(12px)',
-                      border: '1px solid hsla(0, 0%, 100%, 0.2)',
+                      border: '1px solid rgba(255, 255, 255, 0.25)',
                     }}
                   >
-                    <Icon className="w-10 h-10" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }} />
+                    <Icon className="w-10 h-10" style={{ color: 'white' }} />
                   </div>
                 </div>
               )}
@@ -409,7 +409,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               <div
                 className="absolute bottom-0 left-0 right-0 h-20"
                 style={{
-                  background: 'linear-gradient(to top, hsla(168, 15%, 82%, 0.4) 0%, transparent 100%)',
+                  background: `linear-gradient(to top, ${CARD_BG} 0%, transparent 100%)`,
                 }}
               />
             </div>
@@ -422,21 +422,21 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                   style={iconContainerStyle}
                 >
-                  <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                  <Icon className="w-5 h-5" style={{ color: TEAL }} />
                 </div>
                 <h3
                   className="text-xl md:text-2xl leading-tight"
                   style={{
-                    fontFamily: "'Open Sans', sans-serif",
+                    fontFamily: FONT,
                     fontWeight: 500,
-                    color: 'hsl(220, 15%, 20%)',
+                    color: 'white',
                   }}
                 >
                   {activeItem.headline}{' '}
                   <span
                     style={{
-                      color: 'hsl(168, 100%, 28%)',
-                      fontFamily: "'Open Sans', sans-serif",
+                      color: TEAL,
+                      fontFamily: FONT,
                       fontWeight: 700,
                       fontSize: 'inherit',
                     }}
@@ -449,7 +449,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               {/* Description */}
               <p
                 className="text-base font-light leading-relaxed mb-7 max-w-2xl"
-                style={{ color: 'hsl(220, 20%, 10%)' }}
+                style={{ color: 'rgba(255,255,255,0.78)', fontFamily: FONT }}
               >
                 {activeItem.description}
               </p>
@@ -458,8 +458,8 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               <div className="grid sm:grid-cols-2 gap-2.5 mb-8">
                 {activeItem.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                    <span className="text-sm" style={{ color: 'hsl(220, 15%, 30%)' }}>{feature}</span>
+                    <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                    <span className="text-sm" style={{ color: 'rgba(255,255,255,0.82)', fontFamily: FONT }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -471,10 +471,10 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                     to={activeItem.link}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                     style={{
-                      background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                      border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                      color: 'hsl(168, 40%, 25%)',
-                      boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15)',
+                      background: 'transparent',
+                      border: `1px solid ${BORDER_STRONG}`,
+                      color: 'white',
+                      fontFamily: FONT,
                     }}
                   >
                     {activeItem.linkText}
@@ -485,10 +485,11 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   to="/apply"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                   style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 20%, 0.9) 0%, hsla(220, 15%, 15%, 0.95) 100%)',
-                    border: '1px solid hsla(220, 15%, 30%, 0.5)',
-                    color: 'white',
-                    boxShadow: '0 4px 16px hsla(220, 15%, 10%, 0.25), 0 1px 3px hsla(0, 0%, 0%, 0.1)',
+                    background: TEAL,
+                    border: `1px solid ${TEAL}`,
+                    color: NAVY,
+                    fontFamily: FONT,
+                    boxShadow: '0 4px 16px rgba(0,179,152,0.35)',
                   }}
                 >
                   Apply Now
