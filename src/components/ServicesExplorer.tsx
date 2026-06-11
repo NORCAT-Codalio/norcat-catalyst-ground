@@ -349,18 +349,18 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
                     className="text-sm font-semibold"
                     style={{
                       fontFamily: FONT,
-                      color: activeCategory === i ? 'white' : 'rgba(255,255,255,0.65)',
+                      color: activeCategory === i ? NAVY : (light ? 'rgba(0,26,77,0.65)' : 'rgba(255,255,255,0.65)'),
                     }}
                   >
                     {cat.title}
                   </span>
-                  <div
-                    className="w-2.5 h-2.5 rounded-full transition-all duration-300"
-                    style={{
-                      background: activeCategory === i ? TEAL : 'rgba(255,255,255,0.25)',
-                      boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
-                    }}
-                  />
+                    <div
+                      className="w-2.5 h-2.5 rounded-full transition-all duration-300"
+                      style={{
+                        background: activeCategory === i ? TEAL : (light ? 'rgba(0,26,77,0.25)' : 'rgba(255,255,255,0.25)'),
+                        boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
+                      }}
+                    />
                 </button>
               ))}
             </motion.div>
@@ -392,18 +392,18 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.10)',
-                      backdropFilter: 'blur(12px)',
-                      border: '1px solid rgba(255, 255, 255, 0.25)',
-                    }}
-                  >
-                    <Icon className="w-10 h-10" style={{ color: 'white' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div
+                      className="w-20 h-20 rounded-full flex items-center justify-center"
+                      style={{
+                        background: light ? 'rgba(0, 26, 77, 0.08)' : 'rgba(255, 255, 255, 0.10)',
+                        backdropFilter: 'blur(12px)',
+                        border: light ? '1px solid rgba(0, 26, 77, 0.15)' : '1px solid rgba(255, 255, 255, 0.25)',
+                      }}
+                    >
+                      <Icon className="w-10 h-10" style={{ color: light ? NAVY : 'white' }} />
+                    </div>
                   </div>
-                </div>
               )}
               {/* Bottom fade */}
               <div
@@ -429,7 +429,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
                   style={{
                     fontFamily: FONT,
                     fontWeight: 500,
-                    color: 'white',
+                    color: light ? NAVY : 'white',
                   }}
                 >
                   {activeItem.headline}{' '}
@@ -449,7 +449,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
               {/* Description */}
               <p
                 className="text-base font-light leading-relaxed mb-7 max-w-2xl"
-                style={{ color: 'rgba(255,255,255,0.78)', fontFamily: FONT }}
+                style={{ color: light ? 'rgba(0,26,77,0.75)' : 'rgba(255,255,255,0.78)', fontFamily: FONT }}
               >
                 {activeItem.description}
               </p>
@@ -459,7 +459,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
                 {activeItem.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                    <span className="text-sm" style={{ color: 'rgba(255,255,255,0.82)', fontFamily: FONT }}>{feature}</span>
+                    <span className="text-sm" style={{ color: light ? 'rgba(0,26,77,0.80)' : 'rgba(255,255,255,0.82)', fontFamily: FONT }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -467,13 +467,13 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
                 {activeItem.link && (
-                  <Link
+                <Link
                     to={activeItem.link}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                     style={{
                       background: 'transparent',
                       border: `1px solid ${BORDER_STRONG}`,
-                      color: 'white',
+                      color: light ? NAVY : 'white',
                       fontFamily: FONT,
                     }}
                   >
