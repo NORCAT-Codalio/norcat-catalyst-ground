@@ -139,20 +139,21 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── SERVICES EXPLORER (light) ───── */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        {/* ───── SERVICES EXPLORER (dark) ───── */}
+        <section
+          className="py-20 md:py-28 relative overflow-hidden"
+          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}
+        >
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)',
+          }} />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                  What's Included
-                </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                <Eyebrow>What's Included</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
-                </h2>
+                </Display>
               </div>
               <AudienceTabs active={activeAudience} onChange={setActiveAudience} />
             </div>
