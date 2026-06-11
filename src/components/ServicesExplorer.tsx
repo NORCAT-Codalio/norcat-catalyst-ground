@@ -223,49 +223,50 @@ const categories: Record<Audience, CategoryItem[]> = {
   ],
 };
 
+/* ── Brand tokens (match VentureGrowthServices) ── */
+const NAVY = '#001A4D';
+const TEAL = '#00B398';
+const CARD_BG = '#0a2a6b';
+const BORDER = 'rgba(255,255,255,0.10)';
+const BORDER_STRONG = 'rgba(255,255,255,0.22)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
 /* ── Shared styles ── */
 const glassCardStyle: React.CSSProperties = {
-  background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-  borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-  borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-  borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-  boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
+  background: CARD_BG,
+  border: `1px solid ${BORDER}`,
 };
 
 const iconContainerStyle: React.CSSProperties = {
-  background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-  border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+  background: 'rgba(0, 179, 152, 0.12)',
+  border: `1px solid ${TEAL}`,
 };
 
 /* Placeholder gradient backgrounds for each category */
 const placeholderImages: Record<Audience, string[]> = {
   'Startup Support': [
-    'linear-gradient(135deg, hsla(168,60%,70%,0.4) 0%, hsla(200,50%,75%,0.3) 50%, hsla(168,40%,85%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(200,60%,70%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(220,40%,85%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,50%,65%,0.4) 0%, hsla(190,60%,75%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(190,55%,68%,0.4) 0%, hsla(168,45%,72%,0.3) 50%, hsla(200,35%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(210,48%,66%,0.4) 0%, hsla(168,52%,70%,0.3) 50%, hsla(190,38%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,56%,62%,0.4) 0%, hsla(200,46%,74%,0.3) 50%, hsla(220,32%,84%,0.2) 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
   'Funding Support': [
-    'linear-gradient(135deg, hsla(210,50%,65%,0.4) 0%, hsla(168,50%,75%,0.3) 50%, hsla(200,40%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,60%,60%,0.4) 0%, hsla(220,40%,70%,0.3) 50%, hsla(168,30%,85%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(190,55%,65%,0.4) 0%, hsla(168,50%,70%,0.3) 50%, hsla(210,40%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(200,52%,62%,0.4) 0%, hsla(168,48%,72%,0.3) 50%, hsla(220,36%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,58%,58%,0.4) 0%, hsla(200,44%,68%,0.3) 50%, hsla(190,34%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(220,46%,64%,0.4) 0%, hsla(168,54%,70%,0.3) 50%, hsla(200,38%,78%,0.2) 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
   'Labs': [
-    'linear-gradient(135deg, hsla(220,50%,60%,0.4) 0%, hsla(168,40%,70%,0.3) 50%, hsla(200,30%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,45%,65%,0.4) 0%, hsla(210,50%,70%,0.3) 50%, hsla(168,30%,80%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(200,55%,60%,0.4) 0%, hsla(168,45%,72%,0.3) 50%, hsla(220,35%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(190,50%,62%,0.4) 0%, hsla(168,42%,68%,0.3) 50%, hsla(210,38%,78%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(168,55%,58%,0.4) 0%, hsla(200,48%,72%,0.3) 50%, hsla(190,32%,82%,0.2) 100%)',
-    'linear-gradient(135deg, hsla(210,48%,64%,0.4) 0%, hsla(168,52%,68%,0.3) 50%, hsla(200,36%,80%,0.2) 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
+    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
 };
 
