@@ -392,7 +392,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
                 <img
                   src={activeItem.image}
                   alt={activeItem.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
