@@ -276,9 +276,8 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
     <div
       className="inline-flex rounded-full p-1.5"
       style={{
-        background: 'linear-gradient(145deg, hsla(220, 15%, 95%, 0.8) 0%, hsla(220, 15%, 90%, 0.5) 100%)',
-        border: '1px solid hsla(220, 15%, 100%, 0.6)',
-        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.06), 0 2px 8px hsla(0, 0%, 0%, 0.04)',
+        background: 'rgba(255,255,255,0.06)',
+        border: `1px solid ${BORDER}`,
       }}
     >
       {audiences.map((audience) => (
@@ -286,16 +285,18 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
           key={audience}
           onClick={() => onChange(audience)}
           className="relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
-          style={{ color: active === audience ? 'hsl(168, 40%, 25%)' : 'hsl(220, 15%, 45%)' }}
+          style={{
+            color: active === audience ? NAVY : 'rgba(255,255,255,0.75)',
+            fontFamily: FONT,
+          }}
         >
           {active === audience && (
             <motion.div
               layoutId="audience-pill"
               className="absolute inset-0 rounded-full"
               style={{
-                background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12)',
+                background: TEAL,
+                boxShadow: '0 4px 16px rgba(0,179,152,0.35)',
               }}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
             />
