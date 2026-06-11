@@ -226,9 +226,9 @@ const categories: Record<Audience, CategoryItem[]> = {
 /* ── Brand tokens (match VentureGrowthServices) ── */
 const NAVY = '#001A4D';
 const TEAL = '#00B398';
-const CARD_BG = '#0a2a6b';
-const BORDER = 'rgba(255,255,255,0.10)';
-const BORDER_STRONG = 'rgba(255,255,255,0.22)';
+const CARD_BG = '#ffffff';
+const BORDER = 'rgba(0,26,77,0.10)';
+const BORDER_STRONG = 'rgba(0,26,77,0.22)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 /* ── Shared styles ── */
@@ -271,12 +271,12 @@ const placeholderImages: Record<Audience, string[]> = {
 };
 
 /* ── Audience Tabs (standalone) ── */
-export function AudienceTabs({ active, onChange }: { active: Audience; onChange: (a: Audience) => void }) {
+export function AudienceTabs({ active, onChange, light = false }: { active: Audience; onChange: (a: Audience) => void; light?: boolean }) {
   return (
     <div
       className="inline-flex rounded-full p-1.5"
       style={{
-        background: 'rgba(255,255,255,0.06)',
+        background: light ? 'rgba(0,26,77,0.06)' : 'rgba(255,255,255,0.06)',
         border: `1px solid ${BORDER}`,
       }}
     >
@@ -286,13 +286,13 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
           onClick={() => onChange(audience)}
           className="relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
           style={{
-            color: active === audience ? NAVY : 'rgba(255,255,255,0.75)',
+            color: active === audience ? NAVY : (light ? 'rgba(0,26,77,0.65)' : 'rgba(255,255,255,0.75)'),
             fontFamily: FONT,
           }}
         >
           {active === audience && (
             <motion.div
-              layoutId="audience-pill"
+              layoutId={light ? 'audience-pill-light' : 'audience-pill'}
               className="absolute inset-0 rounded-full"
               style={{
                 background: TEAL,
@@ -308,7 +308,7 @@ export function AudienceTabs({ active, onChange }: { active: Audience; onChange:
   );
 }
 
-export function ServicesExplorer({ activeAudience }: { activeAudience: Audience }) {
+export function ServicesExplorer({ activeAudience, light = false }: { activeAudience: Audience; light?: boolean }) {
   const [activeCategory, setActiveCategory] = useState(0);
 
   const currentCategories = categories[activeAudience];
@@ -349,18 +349,18 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                     className="text-sm font-semibold"
                     style={{
                       fontFamily: FONT,
-                      color: activeCategory === i ? 'white' : 'rgba(255,255,255,0.65)',
+                      color: activeCategory === i ? NAVY : (light ? 'rgba(0,26,77,0.65)' : 'rgba(255,255,255,0.65)'),
                     }}
                   >
                     {cat.title}
                   </span>
-                  <div
-                    className="w-2.5 h-2.5 rounded-full transition-all duration-300"
-                    style={{
-                      background: activeCategory === i ? TEAL : 'rgba(255,255,255,0.25)',
-                      boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
-                    }}
-                  />
+                    <div
+                      className="w-2.5 h-2.5 rounded-full transition-all duration-300"
+                      style={{
+                        background: activeCategory === i ? TEAL : (light ? 'rgba(0,26,77,0.25)' : 'rgba(255,255,255,0.25)'),
+                        boxShadow: activeCategory === i ? `0 0 8px ${TEAL}` : 'none',
+                      }}
+                    />
                 </button>
               ))}
             </motion.div>
@@ -392,18 +392,18 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.10)',
-                      backdropFilter: 'blur(12px)',
-                      border: '1px solid rgba(255, 255, 255, 0.25)',
-                    }}
-                  >
-                    <Icon className="w-10 h-10" style={{ color: 'white' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div
+                      className="w-20 h-20 rounded-full flex items-center justify-center"
+                      style={{
+                        background: light ? 'rgba(0, 26, 77, 0.08)' : 'rgba(255, 255, 255, 0.10)',
+                        backdropFilter: 'blur(12px)',
+                        border: light ? '1px solid rgba(0, 26, 77, 0.15)' : '1px solid rgba(255, 255, 255, 0.25)',
+                      }}
+                    >
+                      <Icon className="w-10 h-10" style={{ color: light ? NAVY : 'white' }} />
+                    </div>
                   </div>
-                </div>
               )}
               {/* Bottom fade */}
               <div
@@ -429,7 +429,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                   style={{
                     fontFamily: FONT,
                     fontWeight: 500,
-                    color: 'white',
+                    color: light ? NAVY : 'white',
                   }}
                 >
                   {activeItem.headline}{' '}
@@ -449,7 +449,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               {/* Description */}
               <p
                 className="text-base font-light leading-relaxed mb-7 max-w-2xl"
-                style={{ color: 'rgba(255,255,255,0.78)', fontFamily: FONT }}
+                style={{ color: light ? 'rgba(0,26,77,0.75)' : 'rgba(255,255,255,0.78)', fontFamily: FONT }}
               >
                 {activeItem.description}
               </p>
@@ -459,7 +459,7 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
                 {activeItem.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                    <span className="text-sm" style={{ color: 'rgba(255,255,255,0.82)', fontFamily: FONT }}>{feature}</span>
+                    <span className="text-sm" style={{ color: light ? 'rgba(0,26,77,0.80)' : 'rgba(255,255,255,0.82)', fontFamily: FONT }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -467,13 +467,13 @@ export function ServicesExplorer({ activeAudience }: { activeAudience: Audience 
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
                 {activeItem.link && (
-                  <Link
+                <Link
                     to={activeItem.link}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                     style={{
                       background: 'transparent',
                       border: `1px solid ${BORDER_STRONG}`,
-                      color: 'white',
+                      color: light ? NAVY : 'white',
                       fontFamily: FONT,
                     }}
                   >
