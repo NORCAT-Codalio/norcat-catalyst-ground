@@ -63,6 +63,7 @@ const SudburyCatalystFund = () => {
     { name: 'Kinmetrix', logo: kinmetrixLogo },
     { name: 'Myomar', logo: myomarLogo },
     { name: 'Codalio', logo: codalioLogo },
+    { name: 'Waive', logo: waiveLogo.url },
   ];
 
   const investmentCriteria = [
