@@ -10,6 +10,7 @@ import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import myomarLogo from '@/assets/logos/myomar.png';
 import codalioLogo from '@/assets/logos/codalio.png';
+import waiveLogo from '@/assets/waive-logo.png.asset.json';
 
 // Fund partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
