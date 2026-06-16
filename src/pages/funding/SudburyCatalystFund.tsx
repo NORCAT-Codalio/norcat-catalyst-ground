@@ -10,6 +10,7 @@ import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import myomarLogo from '@/assets/logos/myomar.png';
 import codalioLogo from '@/assets/logos/codalio.png';
+import waiveLogo from '@/assets/waive-logo.png.asset.json';
 
 // Fund partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
@@ -62,6 +63,7 @@ const SudburyCatalystFund = () => {
     { name: 'Kinmetrix', logo: kinmetrixLogo },
     { name: 'Myomar', logo: myomarLogo },
     { name: 'Codalio', logo: codalioLogo },
+    { name: 'Waive', logo: waiveLogo.url },
   ];
 
   const investmentCriteria = [
@@ -202,7 +204,7 @@ const SudburyCatalystFund = () => {
               <div className="mb-8">
                 <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: '#6b7387' }}>Portfolio Companies</p>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
                 {portfolioCompanies.map((c) => (
                   <div
                     key={c.name}
