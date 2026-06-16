@@ -56,7 +56,7 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 const SudburyCatalystFund = () => {
   const portfolioCompanies = [
-    { name: 'IRegained', logo: iregainedLogo },
+    { name: 'IRegained', logo: iregainedLogo.url },
     { name: 'Verv', logo: vervLogo },
     { name: 'Rep Health', logo: rephealthLogo },
     { name: 'Circuit IQ', logo: circuitiqLogo },
