@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, Zap, DollarSign, Target, BarChart3, TrendingUp, Users, Briefcase, Coins, Globe, Rocket } from 'lucide-react';
 
 // Portfolio company logos
-import iregainedLogo from '@/assets/logos/iregained.png';
+import iregainedLogo from '@/assets/i-regained-logo.png.asset.json';
 import vervLogo from '@/assets/logos/verv.png';
 import rephealthLogo from '@/assets/logos/rephealth.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
