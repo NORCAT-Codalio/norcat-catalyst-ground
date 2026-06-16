@@ -143,64 +143,63 @@ const SudburyCatalystFund = () => {
         {/* ───── FUND OVERVIEW (light) ───── */}
         <section id="overview" className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-end">
-              <div className="lg:col-span-6">
-                <Eyebrow>Fund Overview</Eyebrow>
-                <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
-                >
-                  Capital for founders<br /><span style={{ color: TEAL }}>solving big problems.</span>
-                </h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                  The Sudbury Catalyst Fund provides critical early-stage capital to
-                  high-potential startups with a connection to Northern Ontario. We invest
-                  in founders solving big problems with innovative technology.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {overviewStats.map((s) => (
-                    <div
-                      key={s.label}
-                      className="p-5 rounded-xl"
-                      style={{ background: 'white', border: '1px solid #d9dde5' }}
-                    >
-                      <s.icon className="w-6 h-6 mb-3" style={{ color: TEAL }} />
-                      <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-1" style={{ color: '#6b7387' }}>{s.label}</p>
-                      <p className="text-base md:text-lg font-bold" style={{ color: NAVY }}>{s.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              <div className="lg:col-span-6">
-                <div className="flex flex-col gap-4">
+            {/* Heading */}
+            <div className="max-w-3xl mb-14 md:mb-20">
+              <Eyebrow>Fund Overview</Eyebrow>
+              <h2
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+              >
+                Capital for founders<br /><span style={{ color: TEAL }}>solving big problems.</span>
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
+                The Sudbury Catalyst Fund provides critical early-stage capital to
+                high-potential startups with a connection to Northern Ontario. We invest
+                in founders solving big problems with innovative technology.
+              </p>
+            </div>
+
+            {/* Featured stats — 3 big cards */}
+            <div className="grid sm:grid-cols-3 gap-4 mb-14 md:mb-20">
+              <div
+                className="rounded-2xl p-8 md:p-10 text-center"
+                style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 100%)`, border: `1px solid ${BORDER}` }}
+              >
+                <div className="font-black text-5xl md:text-6xl lg:text-7xl mb-3" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>$5M</div>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold" style={{ color: 'rgba(255,255,255,0.75)' }}>In Deployable Capital</p>
+              </div>
+              <div className="rounded-2xl p-8 md:p-10 text-center" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                <div className="font-black text-5xl md:text-6xl lg:text-7xl mb-3" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>$3M</div>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold" style={{ color: '#6b7387' }}>Deployed To Date</p>
+              </div>
+              <div className="rounded-2xl p-8 md:p-10 text-center" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                <div className="font-black text-5xl md:text-6xl lg:text-7xl mb-3" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>60+</div>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold" style={{ color: '#6b7387' }}>Jobs Created in Sudbury</p>
+              </div>
+            </div>
+
+            {/* Detail stats — horizontal bar */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 px-6 md:px-10 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+              {overviewStats.map((s) => (
+                <div key={s.label} className="flex items-center gap-4">
                   <div
-                    className="rounded-2xl p-12 text-center"
-                    style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 100%)`, border: `1px solid ${BORDER}` }}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
                   >
-                    <div className="bg-white/5 inline-block rounded-2xl px-6 py-4 mb-6" style={{ border: `1px solid ${BORDER}` }}>
-                      <img src={scfLogo} alt="Sudbury Catalyst Fund" className="h-16 md:h-20 object-contain" />
-                    </div>
-                    <div className="font-black text-6xl md:text-7xl mb-3" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>$5M</div>
-                    <p className="text-sm uppercase tracking-[0.2em] font-bold" style={{ color: 'rgba(255,255,255,0.75)' }}>In Deployable Capital</p>
+                    <s.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-xl p-6 text-center" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                      <div className="text-3xl font-black mb-1" style={{ color: TEAL, fontFamily: FONT }}>$3M</div>
-                      <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ color: '#6b7387' }}>Deployed To Date</p>
-                    </div>
-                    <div className="rounded-xl p-6 text-center" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                      <div className="text-3xl font-black mb-1" style={{ color: TEAL, fontFamily: FONT }}>60+</div>
-                      <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ color: '#6b7387' }}>Jobs Created in Sudbury</p>
-                    </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-0.5" style={{ color: '#6b7387' }}>{s.label}</p>
+                    <p className="text-base md:text-lg font-bold" style={{ color: NAVY }}>{s.value}</p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             {/* Portfolio logos */}
             <div className="mt-16 md:mt-20">
-              <div className="text-center mb-8">
+              <div className="mb-8">
                 <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: '#6b7387' }}>Portfolio Companies</p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
