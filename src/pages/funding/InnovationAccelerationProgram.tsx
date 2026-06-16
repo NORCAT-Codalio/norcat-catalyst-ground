@@ -379,7 +379,7 @@ const InnovationAccelerationProgram = () => {
           </div>
         </section>
 
-        {/* ───── PROGRAM REQUIREMENTS (light) ───── */}
+        {/* ───── PROGRAM REQUIREMENTS (timeline) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
@@ -389,18 +389,49 @@ const InnovationAccelerationProgram = () => {
               </h2>
             </div>
 
-            <div className="max-w-4xl space-y-4">
-              {programRequirements.map((req, i) => (
-                <div key={i} className="flex gap-5 md:gap-6 p-6 md:p-7 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                    <span className="font-black" style={{ color: TEAL, fontFamily: FONT }}>{i + 1}</span>
+            <div className="relative max-w-4xl">
+              {/* Vertical spine */}
+              <div
+                className="absolute left-6 md:left-8 top-0 bottom-0 w-px"
+                style={{ background: `linear-gradient(180deg, ${TEAL} 0%, ${BLUE} 100%)` }}
+              />
+
+              <div className="space-y-8 md:space-y-10">
+                {programRequirements.map((req, i) => (
+                  <div key={i} className="relative flex gap-5 md:gap-8 items-start">
+                    {/* Timeline node */}
+                    <div className="relative z-10 flex-shrink-0">
+                      <div
+                        className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-sm"
+                        style={{
+                          background: i === 0 ? `linear-gradient(135deg, ${TEAL}, ${BLUE})` : 'white',
+                          border: `2px solid ${TEAL}`,
+                        }}
+                      >
+                        <span
+                          className="font-black text-sm md:text-lg"
+                          style={{ color: i === 0 ? 'white' : TEAL, fontFamily: FONT }}
+                        >
+                          {i + 1}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Card */}
+                    <div
+                      className="flex-1 p-6 md:p-8 rounded-2xl transition-shadow hover:shadow-lg"
+                      style={{ background: 'white', border: '1px solid #d9dde5' }}
+                    >
+                      <h3 className="font-black uppercase text-base md:text-lg mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                        {req.title}
+                      </h3>
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                        {req.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-black uppercase text-base md:text-lg mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{req.title}</h3>
-                    <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{req.description}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
