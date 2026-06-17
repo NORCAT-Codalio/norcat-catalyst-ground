@@ -253,8 +253,17 @@ const InnovationAccelerationProgram = () => {
                 0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
                 100% { transform: translate(320px,-340px) rotate(-30deg) scale(0.1); opacity: 0; }
               }
+              @keyframes magnify-look {
+                0%   { transform: translate(0,0) rotate(0deg); }
+                20%  { transform: translate(-6px, -3px) rotate(-18deg); }
+                45%  { transform: translate(8px, -2px) rotate(15deg); }
+                70%  { transform: translate(-3px, 5px) rotate(-10deg); }
+                100% { transform: translate(0,0) rotate(0deg); }
+              }
               .plane-icon { transition: transform 0.3s ease; }
-              .group:hover .plane-icon { animation: paper-plane-fly 0.9s ease-out forwards; }
+              .group:hover .plane-icon { animation: paper-plane-fly 1.5s ease-out forwards; }
+              .search-icon { transition: transform 0.3s ease; }
+              .group:hover .search-icon { animation: magnify-look 0.9s ease-in-out infinite; }
             `}</style>
             <div className="grid md:grid-cols-3 gap-5">
               {applicationSteps.map((s, i) => (
@@ -268,7 +277,7 @@ const InnovationAccelerationProgram = () => {
                     className={`${i === 0 ? '' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
-                    <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : ''}`} style={{ color: TEAL }} />
+                    <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : i === 1 ? 'search-icon' : ''}`} style={{ color: TEAL }} />
                   </div>
                   <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     {s.title}
