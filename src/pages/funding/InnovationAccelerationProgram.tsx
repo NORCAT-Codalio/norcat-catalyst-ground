@@ -269,10 +269,10 @@ const InnovationAccelerationProgram = () => {
                 >
                   <div className="font-black text-5xl mb-6" style={{ color: 'rgba(0,179,152,0.35)', fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.step}</div>
                   <div
-                    className={`${i === 0 ? 'plane-icon-wrap' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
+                    className={`${i === 0 ? '' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
-                    <s.icon className="w-7 h-7" style={{ color: TEAL }} />
+                    <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : ''}`} style={{ color: TEAL }} />
                   </div>
                   <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     {s.title}
