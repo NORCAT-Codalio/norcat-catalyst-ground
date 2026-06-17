@@ -260,10 +260,20 @@ const InnovationAccelerationProgram = () => {
                 70%  { transform: translate(-3px, 5px) rotate(-10deg); }
                 100% { transform: translate(0,0) rotate(0deg); }
               }
+              @keyframes draw-stroke {
+                to { stroke-dashoffset: 0; }
+              }
               .plane-icon { transition: transform 0.3s ease; }
               .group:hover .plane-icon { animation: paper-plane-fly 1.5s ease-out forwards; }
               .search-icon { transition: transform 0.3s ease; }
               .group:hover .search-icon { animation: magnify-look 0.9s ease-in-out infinite; }
+              .check-draw-icon circle,
+              .check-draw-icon path {
+                stroke-dasharray: 80;
+                stroke-dashoffset: 80;
+              }
+              .group:hover .check-draw-icon circle { animation: draw-stroke 0.5s ease-out forwards; }
+              .group:hover .check-draw-icon path  { animation: draw-stroke 0.35s 0.4s ease-out forwards; }
             `}</style>
             <div className="grid md:grid-cols-3 gap-5">
               {applicationSteps.map((s, i) => (
