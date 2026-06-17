@@ -287,7 +287,14 @@ const InnovationAccelerationProgram = () => {
                     className={`${i === 0 ? '' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
-                    <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : i === 1 ? 'search-icon' : ''}`} style={{ color: TEAL }} />
+                    {i === 2 ? (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 check-draw-icon" style={{ color: TEAL }}>
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9 12l2 2 4-4" />
+                      </svg>
+                    ) : (
+                      <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : i === 1 ? 'search-icon' : ''}`} style={{ color: TEAL }} />
+                    )}
                   </div>
                   <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     {s.title}
