@@ -248,16 +248,28 @@ const InnovationAccelerationProgram = () => {
               </Display>
             </div>
 
+            <style>{`
+              @keyframes paper-plane-fly {
+                0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+                20%  { transform: translate(40px,-30px) rotate(20deg) scale(1); opacity: 1; }
+                40%  { transform: translate(90px,-90px) rotate(180deg) scale(0.95); opacity: 1; }
+                55%  { transform: translate(120px,-140px) rotate(360deg) scale(0.9); opacity: 1; }
+                75%  { transform: translate(200px,-200px) rotate(380deg) scale(0.7); opacity: 0.85; }
+                100% { transform: translate(420px,-360px) rotate(395deg) scale(0.2); opacity: 0; }
+              }
+              .plane-icon-wrap { transition: transform 0.3s ease; }
+              .group:hover .plane-icon-wrap { animation: paper-plane-fly 1.4s cubic-bezier(0.45,0.05,0.55,0.95) forwards; }
+            `}</style>
             <div className="grid md:grid-cols-3 gap-5">
-              {applicationSteps.map((s) => (
+              {applicationSteps.map((s, i) => (
                 <article
                   key={s.step}
-                  className="group relative rounded-2xl p-8 transition-colors h-full"
+                  className="group relative rounded-2xl p-8 transition-colors h-full overflow-visible"
                   style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                 >
                   <div className="font-black text-5xl mb-6" style={{ color: 'rgba(0,179,152,0.35)', fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.step}</div>
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+                    className={`${i === 0 ? 'plane-icon-wrap' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
                     <s.icon className="w-7 h-7" style={{ color: TEAL }} />
@@ -269,6 +281,7 @@ const InnovationAccelerationProgram = () => {
                 </article>
               ))}
             </div>
+
           </div>
         </section>
 
