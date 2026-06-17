@@ -251,19 +251,10 @@ const InnovationAccelerationProgram = () => {
             <style>{`
               @keyframes paper-plane-fly {
                 0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
-                7%   { transform: translate(6px,-14px) rotate(-8deg) scale(1); opacity: 1; }
-                18%  { transform: translate(-18px,-55px) rotate(-55deg) scale(1); opacity: 1; }
-                28%  { transform: translate(-48px,-95px) rotate(-130deg) scale(0.98); opacity: 1; }
-                38%  { transform: translate(-38px,-120px) rotate(-195deg) scale(0.96); opacity: 1; }
-                48%  { transform: translate(8px,-118px) rotate(-280deg) scale(0.94); opacity: 1; }
-                56%  { transform: translate(48px,-100px) rotate(-345deg) scale(0.92); opacity: 1; }
-                65%  { transform: translate(90px,-130px) rotate(-365deg) scale(0.8); opacity: 0.95; }
-                78%  { transform: translate(160px,-190px) rotate(-375deg) scale(0.6); opacity: 0.75; }
-                88%  { transform: translate(230px,-255px) rotate(-390deg) scale(0.35); opacity: 0.4; }
-                100% { transform: translate(320px,-340px) rotate(-405deg) scale(0.1); opacity: 0; }
+                100% { transform: translate(320px,-340px) rotate(-30deg) scale(0.1); opacity: 0; }
               }
               .plane-icon { transition: transform 0.3s ease; }
-              .group:hover .plane-icon { animation: paper-plane-fly 1.8s cubic-bezier(0.45,0.05,0.55,0.95) forwards; }
+              .group:hover .plane-icon { animation: paper-plane-fly 0.9s ease-out forwards; }
             `}</style>
             <div className="grid md:grid-cols-3 gap-5">
               {applicationSteps.map((s, i) => (
