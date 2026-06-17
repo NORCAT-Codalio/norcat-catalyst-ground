@@ -372,7 +372,7 @@ const InnovationAccelerationProgram = () => {
                   </p>
                 </div>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-8" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                  What's not<br />covered.
+                  What's not covered.
                 </h2>
                 <ul className="space-y-3">
                   {ineligibleActivities.map((item, i) => (
