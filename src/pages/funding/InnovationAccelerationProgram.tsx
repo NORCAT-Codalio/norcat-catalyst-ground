@@ -251,14 +251,14 @@ const InnovationAccelerationProgram = () => {
             <style>{`
               @keyframes paper-plane-fly {
                 0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
-                20%  { transform: translate(40px,-30px) rotate(20deg) scale(1); opacity: 1; }
-                40%  { transform: translate(90px,-90px) rotate(180deg) scale(0.95); opacity: 1; }
-                55%  { transform: translate(120px,-140px) rotate(360deg) scale(0.9); opacity: 1; }
-                75%  { transform: translate(200px,-200px) rotate(380deg) scale(0.7); opacity: 0.85; }
-                100% { transform: translate(420px,-360px) rotate(395deg) scale(0.2); opacity: 0; }
+                12%  { transform: translate(10px,-20px) rotate(-10deg) scale(1); opacity: 1; }
+                38%  { transform: translate(-45px,-85px) rotate(-180deg) scale(0.95); opacity: 1; }
+                58%  { transform: translate(25px,-145px) rotate(-360deg) scale(0.9); opacity: 1; }
+                78%  { transform: translate(120px,-210px) rotate(-380deg) scale(0.6); opacity: 0.8; }
+                100% { transform: translate(300px,-300px) rotate(-405deg) scale(0.1); opacity: 0; }
               }
-              .plane-icon-wrap { transition: transform 0.3s ease; }
-              .group:hover .plane-icon-wrap { animation: paper-plane-fly 1.4s cubic-bezier(0.45,0.05,0.55,0.95) forwards; }
+              .plane-icon { transition: transform 0.3s ease; }
+              .group:hover .plane-icon { animation: paper-plane-fly 1.8s cubic-bezier(0.45,0.05,0.55,0.95) forwards; }
             `}</style>
             <div className="grid md:grid-cols-3 gap-5">
               {applicationSteps.map((s, i) => (
@@ -269,10 +269,10 @@ const InnovationAccelerationProgram = () => {
                 >
                   <div className="font-black text-5xl mb-6" style={{ color: 'rgba(0,179,152,0.35)', fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.step}</div>
                   <div
-                    className={`${i === 0 ? 'plane-icon-wrap' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
+                    className={`${i === 0 ? '' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
-                    <s.icon className="w-7 h-7" style={{ color: TEAL }} />
+                    <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : ''}`} style={{ color: TEAL }} />
                   </div>
                   <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     {s.title}
