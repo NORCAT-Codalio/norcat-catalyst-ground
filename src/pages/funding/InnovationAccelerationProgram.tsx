@@ -253,8 +253,17 @@ const InnovationAccelerationProgram = () => {
                 0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
                 100% { transform: translate(320px,-340px) rotate(-30deg) scale(0.1); opacity: 0; }
               }
+              @keyframes magnify-look {
+                0%   { transform: translate(0,0) rotate(0deg); }
+                20%  { transform: translate(-6px, -3px) rotate(-18deg); }
+                45%  { transform: translate(8px, -2px) rotate(15deg); }
+                70%  { transform: translate(-3px, 5px) rotate(-10deg); }
+                100% { transform: translate(0,0) rotate(0deg); }
+              }
               .plane-icon { transition: transform 0.3s ease; }
-              .group:hover .plane-icon { animation: paper-plane-fly 0.9s ease-out forwards; }
+              .group:hover .plane-icon { animation: paper-plane-fly 1.5s ease-out forwards; }
+              .search-icon { transition: transform 0.3s ease; }
+              .group:hover .search-icon { animation: magnify-look 0.9s ease-in-out infinite; }
             `}</style>
             <div className="grid md:grid-cols-3 gap-5">
               {applicationSteps.map((s, i) => (
