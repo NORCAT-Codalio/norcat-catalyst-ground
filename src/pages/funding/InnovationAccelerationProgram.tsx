@@ -311,10 +311,13 @@ const InnovationAccelerationProgram = () => {
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
                     {i === 2 ? (
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 check-draw-icon" style={{ color: TEAL }}>
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9 12l2 2 4-4" />
-                      </svg>
+                      <div className="relative w-7 h-7 flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 decision-icon absolute inset-0" style={{ color: TEAL }}>
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9 12l2 2 4-4" />
+                        </svg>
+                        <div className="absolute inset-0 rounded-full border-2 decision-ring" style={{ borderColor: TEAL }} />
+                      </div>
                     ) : (
                       <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : i === 1 ? 'search-icon' : ''}`} style={{ color: TEAL }} />
                     )}
