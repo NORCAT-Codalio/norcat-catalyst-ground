@@ -260,20 +260,43 @@ const InnovationAccelerationProgram = () => {
                 70%  { transform: translate(-3px, 5px) rotate(-10deg); }
                 100% { transform: translate(0,0) rotate(0deg); }
               }
-              @keyframes draw-stroke {
-                to { stroke-dashoffset: 0; }
+              @keyframes decision-stamp {
+                0%   { transform: scale(1); }
+                35%  { transform: scale(1.35); }
+                55%  { transform: scale(0.92); }
+                75%  { transform: scale(1.08); }
+                100% { transform: scale(1); }
+              }
+              @keyframes decision-fill {
+                0%   { fill-opacity: 0; }
+                100% { fill-opacity: 1; }
+              }
+              @keyframes decision-ring {
+                0%   { transform: scale(1); opacity: 0.55; }
+                100% { transform: scale(2.2); opacity: 0; }
               }
               .plane-icon { transition: transform 0.3s ease; }
               .group:hover .plane-icon { animation: paper-plane-fly 1.5s ease-out forwards; }
               .search-icon { transition: transform 0.3s ease; }
               .group:hover .search-icon { animation: magnify-look 0.9s ease-in-out infinite; }
-              .check-draw-icon circle,
-              .check-draw-icon path {
-                stroke-dasharray: 80;
-                stroke-dashoffset: 80;
+              .decision-icon circle {
+                fill: #00B398;
+                fill-opacity: 0;
+                transition: fill-opacity 0.4s ease;
               }
-              .group:hover .check-draw-icon circle { animation: draw-stroke 0.5s ease-out forwards; }
-              .group:hover .check-draw-icon path  { animation: draw-stroke 0.35s 0.4s ease-out forwards; }
+              .decision-icon path {
+                transform-origin: center;
+              }
+              .group:hover .decision-icon circle {
+                fill-opacity: 1;
+                transition: fill-opacity 0.3s ease;
+              }
+              .group:hover .decision-icon path {
+                animation: decision-stamp 0.55s ease-out forwards;
+              }
+              .group:hover .decision-ring {
+                animation: decision-ring 0.6s ease-out forwards;
+              }
             `}</style>
             <div className="grid md:grid-cols-3 gap-5">
               {applicationSteps.map((s, i) => (
@@ -288,10 +311,13 @@ const InnovationAccelerationProgram = () => {
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
                     {i === 2 ? (
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 check-draw-icon" style={{ color: TEAL }}>
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9 12l2 2 4-4" />
-                      </svg>
+                      <div className="relative w-7 h-7 flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 decision-icon absolute inset-0" style={{ color: TEAL }}>
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9 12l2 2 4-4" />
+                        </svg>
+                        <div className="absolute inset-0 rounded-full border-2 decision-ring" style={{ borderColor: TEAL }} />
+                      </div>
                     ) : (
                       <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : i === 1 ? 'search-icon' : ''}`} style={{ color: TEAL }} />
                     )}
