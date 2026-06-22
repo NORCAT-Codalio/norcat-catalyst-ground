@@ -130,7 +130,7 @@ const SuccessStories = () => {
         <img
           src={signatureLines}
           alt=""
-          aria-hidden="true"="true"
+          aria-hidden="true"
           className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
         />
 
