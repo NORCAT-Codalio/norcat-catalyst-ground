@@ -152,8 +152,8 @@ const News = () => {
         {/* Signature lines */}
         <img
           src={signatureLines}
-          alt="" aria-hidden="true"
-          aria-hidden="true"
+          alt=""
+          aria-hidden="true"="true"
           className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
         />
 

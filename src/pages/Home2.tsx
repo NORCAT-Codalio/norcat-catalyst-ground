@@ -198,8 +198,8 @@ export default function Home2() {
           {/* hero model image */}
           <img
             src={heroModel.url}
-            alt="" aria-hidden="true"
-            aria-hidden="true"
+            alt=""
+            aria-hidden="true"="true"
             className="hidden lg:block absolute right-16 bottom-0 h-[90%] w-auto pointer-events-none select-none"
             style={{ transform: 'scaleX(-1)' }}
           />
@@ -330,8 +330,8 @@ export default function Home2() {
                   <article key={h.label}
                            className="relative overflow-hidden rounded-2xl aspect-[4/5] p-6 md:p-7 flex flex-col"
                            style={{ background: TEAL }}>
-                    <img src={norcatHalfLogoSquare.url} alt="" aria-hidden="true"
-                         aria-hidden="true"
+                    <img src={norcatHalfLogoSquare.url} alt=""
+                         aria-hidden="true"="true"
                          className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                          style={{ opacity: 0.2 }} />
                     <p className="relative text-[10px] font-bold uppercase tracking-[0.22em] text-white" style={{ fontFamily: FONT }}>
@@ -559,8 +559,8 @@ export default function Home2() {
                 <figure key={t.name}
                         className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
                         style={{ background: TEAL }}>
-                  <img src={norcatHalfLogoSquare.url} alt="" aria-hidden="true"
-                       aria-hidden="true"
+                  <img src={norcatHalfLogoSquare.url} alt=""
+                       aria-hidden="true"="true"
                        className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                        style={{ opacity: 0.08 }} />
                   <Quote className="relative size-8 mb-4 text-white" />
