@@ -269,9 +269,10 @@ export default function Dashboard() {
                 onClick={handleCreatePost}
                 disabled={!newPost.trim()}
                 size="icon"
+                aria-label="Post update"
                 className="bg-primary hover:bg-primary/90"
               >
-                <Send size={18} />
+                <Send size={18} aria-hidden="true" />
               </Button>
             </div>
           </div>
