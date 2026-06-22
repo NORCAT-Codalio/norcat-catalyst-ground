@@ -87,18 +87,18 @@ const stats = [
 
 const upcomingPrograms = [
   {
-    title: 'Venture Growth Services',
-    description: 'For early-stage founders looking for 1-on-1 support, mentorship, IP strategy, and micro-grants.',
+    title: 'Step 1: Engage a Mentor',
+    description: 'Work 1-on-1 with experienced tech advisors to bulletproof your business model, refine your IP strategy, and capture initial micro-grants.',
     link: '/programs/venture-growth-services',
   },
   {
-    title: 'Product Testing and Validation',
-    description: 'Gain access to the Fortin Discovery Lab to build your prototype, or the NORCAT Underground Centre to test your technology in an operating mine.',
+    title: 'Step 2: Validate Your Solution',
+    description: 'De-risk your product and build out market validation using our specialized software labs, prototyping facilities, or active field-testing environments.',
     link: '/programs/mentorship-services',
   },
   {
-    title: 'Growth & Investment',
-    description: 'Get help navigating both dilutive and non-dilutive funding opportunities.',
+    title: 'Step 3: Navigate Investment',
+    description: 'Stop guessing at capital structures. Get dedicated support navigating dilutive venture capital, matching program grants, and regional funding opportunities.',
     link: '/funding/sudbury-catalyst-fund',
   },
 ];
@@ -138,7 +138,7 @@ function useCounter(end: number, duration = 2000, inView = false) {
   return count;
 }
 
-export default function Index() {
+export default function Home3() {
   const heroRef = useRef<HTMLDivElement>(null);
   const storiesScrollRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -223,9 +223,9 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Build. Test.{' '}
+                Build, Test, and Scale Your{' '}
                 <span style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontWeight: 700 }}>
-                  Scale.
+                  Tech Venture.
                 </span>
               </motion.h1>
 
@@ -257,7 +257,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.8 }}
               >
-                World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
+                Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
               </motion.p>
 
               {/* CTAs */}
@@ -275,7 +275,7 @@ export default function Index() {
                   border: '0.5px solid hsla(168, 100%, 50%, 0.4)',
                   boxShadow: 'inset 0 1px 0 0 hsla(168, 100%, 60%, 0.3), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
                 }}>
-                  Work With Us
+                  Apply to Become a Client
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 group hover:scale-[1.02] active:scale-[0.98]" style={{
@@ -286,7 +286,7 @@ export default function Index() {
                   border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
                   boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
                 }}>
-                  Learn More
+                  Explore Our Ecosystem
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </motion.div>
@@ -356,7 +356,7 @@ export default function Index() {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
-                    Programs & Funding
+                    The Commercialization Pathway
                   </span>
                    <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                     Support that adapts as your <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>company grows.</span>
@@ -423,10 +423,10 @@ export default function Index() {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
                    <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                     <span className="text-white">Real Stories. </span>
-                     <span className="text-white" style={{ fontWeight: 700 }}>Unique Insights.</span>
-                   </h2>
-                  <p className="font-light text-white/70 max-w-xl">No xing preve tlalt, your sve can, and olead innovatioie what it takes to ltes for oe you to the programmeve of olor grentis.</p>
+                      <span className="text-white">Real Stories. </span>
+                      <span className="text-white" style={{ fontWeight: 700 }}>Unique Insights.</span>
+                    </h2>
+                   <p className="font-light text-white/70 max-w-xl">See how 150+ startups utilized Northern Ontario's tech landscape to scale into global industry leaders.</p>
                 </div>
                 <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
                   View all reports
@@ -528,7 +528,7 @@ export default function Index() {
                     A Thriving <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Innovation Ecosystem</span>
                   </h2>
                   <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                    Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
+                    Brilliant innovations shouldn't die just because a founder lacks corporate connections. Greater Sudbury provides a rich landscape of post-secondary talent, major industry clusters, and collaborative institutional support—giving our clients an ecosystem built to scale.
                   </p>
                   <Link 
                     to="/ecosystem" 
@@ -611,12 +611,11 @@ export default function Index() {
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-6" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                Ready to join our{' '}
-                <span style={{ color: 'hsl(168, 100%, 28%)' }}>community?</span>
+                Ready to Commercialize Your{' '}
+                <span style={{ color: 'hsl(168, 100%, 28%)' }}>Innovation?</span>
               </h2>
               <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                Whether you're just starting out or ready to scale, we're here to help 
-                you build something extraordinary.
+                Stop letting market isolation stall your growth. Partner with Canada's most connected regional innovation hub and start scaling today.
               </p>
               <Link 
                 to="/apply" 
@@ -628,7 +627,7 @@ export default function Index() {
                   boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                 }}
               >
-                Apply for Venture Growth Services
+                Apply to Become a Client
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </ScrollReveal>
