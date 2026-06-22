@@ -51,9 +51,9 @@ const audiences = [
 ];
 
 const highlights = [
-  { icon: Sparkles, label: 'Venture Growth', desc: '1-on-1 mentorship, IP strategy, and micro-grants for early-stage founders ready to move fast.', img: circuitiqTeam },
-  { icon: Cpu, label: 'Test & Validate', desc: 'Access the Fortin Discovery Lab and the NORCAT Underground Centre to test technology in a real operating mine.', img: ctaPhoto2 },
-  { icon: TrendingUp, label: 'Capital Access', desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund.', img: loopxTeam },
+  { icon: Sparkles, label: 'Engage a Mentor', desc: 'Work 1-on-1 with experienced tech advisors to bulletproof your business model, refine your IP strategy, and capture initial micro-grants.', img: circuitiqTeam },
+  { icon: Cpu, label: 'Validate Your Solution', desc: 'De-risk your product and build market validation in our specialized software labs, prototyping facilities, and active field-testing environments.', img: ctaPhoto2 },
+  { icon: TrendingUp, label: 'Navigate Investment', desc: 'Get dedicated support navigating dilutive venture capital, matching program grants, and regional funding opportunities.', img: loopxTeam },
 ];
 
 const stats = [
@@ -160,13 +160,13 @@ export default function Home3() {
               <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                Build.<br />
-                Test.<br />
-                <span style={{ color: TEAL }}>Scale.</span>
+                Build, Test, and<br />
+                Scale Your<br />
+                <span style={{ color: TEAL }}>Tech Venture.</span>
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                NORCAT Innovation is the launchpad for tech-enabled, IP-driven startups, bringing together world-class mentorship, capital access, and the only operating mine on the planet built for tech testing.
+                Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2.5">
@@ -184,12 +184,12 @@ export default function Home3() {
                 <Link to="/apply"
                       className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                       style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
-                  Apply to NORCAT Innovation <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  Apply to Become a Client <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
-                <Link to="/about"
+                <Link to="/ecosystem"
                       className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
                       style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}>
-                  Learn More <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  Explore Our Ecosystem <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
               </div>
             </div>
@@ -256,9 +256,9 @@ export default function Home3() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
-                <Eyebrow>What we do</Eyebrow>
+                <Eyebrow>The Commercialization Pathway</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  One ecosystem.<br />Three ways to grow.
+                  Support that adapts<br />as your <span style={{ color: TEAL }}>company grows.</span>
                 </Display>
               </div>
               <Link to="/programs/venture-growth-services"
@@ -274,7 +274,7 @@ export default function Home3() {
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
                 const num = `0${i + 1}`;
-                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
+                const eyebrowRight = ['Step 01 · Mentorship', 'Step 02 · Validation', 'Step 03 · Capital'][i];
 
                 if (i === 0) {
                   // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
@@ -463,7 +463,7 @@ export default function Home3() {
                   Real Stories.<br />Unique Insights.
                 </Display>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
-                  Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
+                  See how 150+ startups utilized Northern Ontario's tech landscape to scale into global industry leaders.
                 </p>
               </div>
               <Link to="/insights/reports"
@@ -634,15 +634,15 @@ export default function Home3() {
             <Eyebrow>Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-              Ready to build<br /><span style={{ color: TEAL }}>something real?</span>
+              Ready to commercialize<br /><span style={{ color: TEAL }}>your innovation?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              Whether you're validating an idea or scaling a series-A company, NORCAT Innovation has a seat at the table for you.
+              Stop letting market isolation stall your growth. Partner with Canada's most connected regional innovation hub and start scaling today.
             </p>
             <Link to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                   style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
-              Apply to NORCAT Innovation
+              Apply to Become a Client
               <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
               </span>
