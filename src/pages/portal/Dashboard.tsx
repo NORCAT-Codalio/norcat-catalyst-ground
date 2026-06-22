@@ -362,7 +362,7 @@ export default function Dashboard() {
                   {post.image_url && (
                     <img
                       src={post.image_url}
-                      alt=""
+                      alt="" aria-hidden="true"
                       className="rounded-xl w-full max-h-96 object-cover mb-3"
                     />
                   )}
