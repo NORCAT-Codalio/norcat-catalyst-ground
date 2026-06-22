@@ -226,7 +226,7 @@ export function Navigation() {
         )}
       >
       <div className="container mx-auto px-4 lg:px-8">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between" aria-label="Main Menu">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
