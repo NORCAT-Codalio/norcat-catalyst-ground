@@ -347,8 +347,8 @@ export default function Dashboard() {
                       >
                         {postTypeLabels[post.post_type] || post.post_type}
                       </Badge>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <MoreHorizontal size={16} />
+                      <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Post options">
+                        <MoreHorizontal size={16} aria-hidden="true" />
                       </Button>
                     </div>
                   </div>
