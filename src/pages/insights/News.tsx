@@ -146,7 +146,7 @@ const News = () => {
       <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
         {/* Background image */}
         <div className="absolute inset-0 flex items-center justify-end">
-          <img src={newsHeroBg} alt="" className="h-full max-w-none object-contain object-right" />
+          <img src={newsHeroBg} alt="" aria-hidden="true" className="h-full max-w-none object-contain object-right" />
         </div>
 
         {/* Signature lines */}

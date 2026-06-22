@@ -231,8 +231,8 @@ export default function VentureWorkspace() {
         <div className="flex items-start justify-between">
           <div className="flex items-start gap-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link to="/mentor/ventures">
-                <ArrowLeft className="h-5 w-5" />
+              <Link to="/mentor/ventures" aria-label="Back to ventures">
+                <ArrowLeft className="h-5 w-5" aria-hidden="true" />
               </Link>
             </Button>
             <div>

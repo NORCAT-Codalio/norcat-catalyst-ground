@@ -370,7 +370,7 @@ const InvestorHub = () => {
         <div className="absolute inset-0">
           <img 
             src={vnpBackground} 
-            alt="" 
+            alt="" aria-hidden="true" 
             className="w-full h-full object-cover blur-sm"
           />
           <div className="absolute inset-0 bg-gray-950/80" />

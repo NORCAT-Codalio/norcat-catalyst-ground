@@ -181,9 +181,10 @@ export function PortalSidebar() {
               variant="ghost"
               size="icon"
               onClick={signOut}
+              aria-label="Sign out"
               className="h-8 w-8 flex-shrink-0 text-muted-foreground hover:text-destructive"
             >
-              <LogOut size={16} />
+              <LogOut size={16} aria-hidden="true" />
             </Button>
           )}
         </div>
@@ -192,9 +193,11 @@ export function PortalSidebar() {
           variant="ghost"
           size="sm"
           onClick={() => setCollapsed(!collapsed)}
+          aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          aria-expanded={!collapsed}
           className="w-full mt-2 text-muted-foreground hover:text-foreground"
         >
-          {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+          {collapsed ? <ChevronRight size={18} aria-hidden="true" /> : <ChevronLeft size={18} aria-hidden="true" />}
           {!collapsed && <span className="ml-2">Collapse</span>}
         </Button>
       </div>

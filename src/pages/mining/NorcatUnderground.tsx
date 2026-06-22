@@ -127,7 +127,7 @@ const NorcatUnderground = () => {
           <img
             src={signatureLines}
             alt=""
-            aria-hidden
+            aria-hidden="true"
             className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay"
           />
 
@@ -290,7 +290,7 @@ const NorcatUnderground = () => {
           <img
             src={norcatHalfLogo.url}
             alt=""
-            aria-hidden
+            aria-hidden="true"
             className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">

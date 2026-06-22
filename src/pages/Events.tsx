@@ -348,7 +348,7 @@ export default function Events() {
         {/* Signature lines */}
         <img
           src={signatureLines}
-          alt=""
+          alt="" aria-hidden="true"
           className="absolute bottom-0 left-0 w-full opacity-[0.03] pointer-events-none"
         />
       </section>

@@ -453,7 +453,7 @@ export default function Home2() {
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[600px] opacity-100" />
+            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">

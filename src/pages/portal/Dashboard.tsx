@@ -269,9 +269,10 @@ export default function Dashboard() {
                 onClick={handleCreatePost}
                 disabled={!newPost.trim()}
                 size="icon"
+                aria-label="Post update"
                 className="bg-primary hover:bg-primary/90"
               >
-                <Send size={18} />
+                <Send size={18} aria-hidden="true" />
               </Button>
             </div>
           </div>
@@ -346,8 +347,8 @@ export default function Dashboard() {
                       >
                         {postTypeLabels[post.post_type] || post.post_type}
                       </Badge>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <MoreHorizontal size={16} />
+                      <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Post options">
+                        <MoreHorizontal size={16} aria-hidden="true" />
                       </Button>
                     </div>
                   </div>
@@ -362,7 +363,7 @@ export default function Dashboard() {
                   {post.image_url && (
                     <img
                       src={post.image_url}
-                      alt=""
+                      alt="" aria-hidden="true"
                       className="rounded-xl w-full max-h-96 object-cover mb-3"
                     />
                   )}

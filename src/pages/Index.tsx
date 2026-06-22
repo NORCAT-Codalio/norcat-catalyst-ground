@@ -349,7 +349,7 @@ export default function Index() {
           {/* Subtle teal orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
-          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
+          <img src={linesTeal} alt="" aria-hidden="true" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -416,7 +416,7 @@ export default function Index() {
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
         <section className="relative py-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[600px] opacity-100" />
+            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -508,7 +508,7 @@ export default function Index() {
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
+            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">

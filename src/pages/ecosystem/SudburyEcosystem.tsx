@@ -320,12 +320,12 @@ const SudburyEcosystem = () => {
         {/* Signature lines - top right */}
         <img 
           src={signatureLines} 
-          alt="" 
+          alt="" aria-hidden="true" 
           className="absolute -top-10 -right-10 w-[550px] opacity-[0.07] pointer-events-none" 
         />
         <img 
           src={linesTeal} 
-          alt="" 
+          alt="" aria-hidden="true" 
           className="absolute -top-10 -right-10 w-[60%] pointer-events-none" 
           style={{ transform: 'scaleX(-1)', opacity: 0.35 }}
         />
@@ -664,7 +664,7 @@ const SudburyEcosystem = () => {
       }}>
         <img 
           src={signatureLines} 
-          alt="" 
+          alt="" aria-hidden="true" 
           className="absolute top-0 right-0 w-[500px] opacity-10 pointer-events-none" 
         />
         
