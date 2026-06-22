@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { AccessibilityWidget } from "@/components/accessibility/AccessibilityWidget";
 import Index from "./pages/Index";
 import Home2 from "./pages/Home2";
 import About from "./pages/About";
@@ -137,6 +138,7 @@ const App = () => (
             
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <AccessibilityWidget />
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>

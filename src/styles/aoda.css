@@ -1,0 +1,201 @@
+/* AODA Accessibility Widget — global state classes applied to <html> */
+
+/* --- Contrast modes --- */
+html.aoda-dark-contrast,
+html.aoda-dark-contrast body {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+html.aoda-dark-contrast *:not(svg):not(path):not(circle):not(rect) {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #444 !important;
+}
+html.aoda-dark-contrast a,
+html.aoda-dark-contrast button {
+  color: #66d9ef !important;
+}
+
+html.aoda-light-contrast,
+html.aoda-light-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+html.aoda-light-contrast *:not(svg):not(path):not(circle):not(rect) {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border-color: #888 !important;
+}
+html.aoda-light-contrast a,
+html.aoda-light-contrast button {
+  color: #0033cc !important;
+}
+
+html.aoda-monochrome {
+  filter: grayscale(100%) !important;
+}
+
+/* --- Reference high-contrast variant from spec --- */
+html.aoda-high-contrast,
+html.aoda-high-contrast body {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+html.aoda-high-contrast a,
+html.aoda-high-contrast button {
+  color: #00ffff !important;
+}
+
+/* --- Typography scaling (root font-size cascades through rem) --- */
+html.aoda-text-scale-125 { font-size: 112.5%; }
+html.aoda-text-scale-150 { font-size: 125%; }
+html.aoda-text-scale-175 { font-size: 137.5%; }
+html.aoda-text-scale-200 { font-size: 150%; }
+
+/* Spec fallback bumps for px-based text */
+html.aoda-large-text p,
+html.aoda-large-text span,
+html.aoda-large-text li {
+  font-size: 1.25rem !important;
+}
+html.aoda-large-text h1,
+html.aoda-large-text h2,
+html.aoda-large-text h3 {
+  font-size: 2rem !important;
+}
+
+/* --- Readable typography --- */
+html.aoda-readable-font,
+html.aoda-readable-font * {
+  font-family: Arial, Helvetica, Verdana, sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* --- Highlight links / buttons --- */
+html.aoda-highlight-links a,
+html.aoda-highlight-links button {
+  outline: 2px dashed #ff0000 !important;
+  outline-offset: 2px !important;
+  background-color: rgba(255, 255, 0, 0.15) !important;
+}
+
+/* --- Highlight headings --- */
+html.aoda-highlight-headings :is(h1, h2, h3, h4, h5, h6) {
+  outline: 2px solid #2b6cb0 !important;
+  outline-offset: 4px !important;
+  background-color: rgba(43, 108, 176, 0.08) !important;
+}
+
+/* --- Enhanced keyboard focus --- */
+html.aoda-focus-ring :focus-visible {
+  outline: 3px solid #2b6cb0 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 5px rgba(43, 108, 176, 0.35) !important;
+}
+
+/* --- Widget UI (always scoped so contrast modes don't break it) --- */
+.aoda-widget-root,
+.aoda-widget-root * {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+}
+.aoda-widget-root {
+  position: fixed;
+  z-index: 2147483000;
+  right: 1rem;
+  bottom: 1rem;
+}
+.aoda-widget-trigger {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: #0a66c2 !important;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ffffff !important;
+  cursor: pointer;
+}
+.aoda-widget-trigger:hover { filter: brightness(1.05); }
+.aoda-widget-panel {
+  position: absolute;
+  right: 0;
+  bottom: 72px;
+  width: 340px;
+  max-width: calc(100vw - 2rem);
+  max-height: 70vh;
+  overflow-y: auto;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e5e7eb !important;
+  padding: 1rem;
+}
+.aoda-widget-panel h2 {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.25rem 0 !important;
+  color: #111111 !important;
+}
+.aoda-widget-panel h3 {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0.85rem 0 0.4rem 0 !important;
+  color: #555 !important;
+}
+.aoda-widget-panel p.aoda-sub {
+  font-size: 0.78rem !important;
+  margin: 0 0 0.5rem 0 !important;
+  color: #555 !important;
+}
+.aoda-widget-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+.aoda-widget-btn {
+  appearance: none;
+  border: 1px solid #d1d5db !important;
+  background: #f9fafb !important;
+  color: #111111 !important;
+  border-radius: 8px;
+  padding: 0.55rem 0.6rem;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.2;
+}
+.aoda-widget-btn:hover { background: #eef2ff !important; }
+.aoda-widget-btn[aria-pressed="true"] {
+  background: #0a66c2 !important;
+  color: #ffffff !important;
+  border-color: #0a66c2 !important;
+}
+.aoda-widget-reset {
+  margin-top: 0.85rem;
+  width: 100%;
+  border: 1px solid #ef4444 !important;
+  background: #ffffff !important;
+  color: #b91c1c !important;
+  border-radius: 8px;
+  padding: 0.55rem;
+  font-weight: 700 !important;
+  cursor: pointer;
+}
+.aoda-widget-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent !important;
+  border: none !important;
+  color: #555 !important;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+.aoda-widget-close:hover { background: #f3f4f6 !important; }

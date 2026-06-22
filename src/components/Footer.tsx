@@ -110,7 +110,7 @@ export function Footer() {
       </div>
 
       {/* Link Columns */}
-      <div className="container mx-auto px-4 lg:px-8 py-12">
+      <nav className="container mx-auto px-4 lg:px-8 py-12" aria-label="Footer Menu">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
           {/* Programs */}
           <div>
@@ -174,7 +174,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Bottom Bar */}
       <div className="container mx-auto px-4 lg:px-8 pb-8">
