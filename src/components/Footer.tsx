@@ -39,7 +39,7 @@ export function Footer() {
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
 
       {/* Skyline banner */}
-      <div className="w-full bg-white/100">
+      <div className="w-full" style={{ background: 'hsl(220 15% 92%)' }}>
         <img
           src={skylineBanner.url}
           alt="Sudbury skyline banner"
