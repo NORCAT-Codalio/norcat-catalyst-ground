@@ -159,9 +159,18 @@ export default function Index() {
 
         {/* ───── HERO ───── */}
         <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-          {/* Parallax background image */}
+          {/* Parallax background video */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
-            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
+            <video
+              src={heroVideo.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover object-right"
+              aria-label="NORCAT Innovation"
+            />
             {/* Dark overlay at 20% opacity */}
             <div className="absolute inset-0 bg-black/20" />
           </motion.div>
