@@ -497,7 +497,7 @@ export default function Index() {
                   boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                 }}
               >
-                Apply for Venture Growth Services
+                The Innovation Space
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </ScrollReveal>
