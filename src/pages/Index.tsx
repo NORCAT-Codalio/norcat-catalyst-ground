@@ -411,22 +411,20 @@ export default function Index() {
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative pt-16 pb-0" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
-          </div>
+        <section className="relative pt-16 pb-0" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
-                   <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                     <span className="text-white">MEET THE </span>
-                     <span className="text-white" style={{ fontWeight: 700 }}>INNOVATION TEAM</span>
-                   </h2>
-                   </div>
-                 </div>
+                  <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+                    <span>MEET THE </span>
+                    <span style={{ fontWeight: 700 }}>INNOVATION TEAM</span>
+                  </h2>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
+
 
           {/* Two full-width photo columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 w-full">
