@@ -479,7 +479,7 @@ export default function Index() {
         </div>
       </section>
 
-        {/* ───── FINAL CTA ───── */}
+        {/* ───── FINAL CTA + LATEST NEWS ───── */}
         <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
@@ -506,31 +506,8 @@ export default function Index() {
               </Link>
             </ScrollReveal>
           </div>
-        </section>
 
-        {/* ───── LATEST NEWS ───── */}
-        <section className="py-24 md:py-32" style={{ background: 'hsl(220 15% 96%)' }}>
-          <div className="container mx-auto px-6">
-            <ScrollReveal>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-                <div>
-                  <div className="text-sm font-bold uppercase tracking-[0.2em] mb-3" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                    Latest News
-                  </div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                    What's Happening at NORCAT
-                  </h2>
-                </div>
-                <Link
-                  to="/insights/news"
-                  className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
-                  style={{ color: 'hsl(168, 100%, 28%)' }}
-                >
-                  View all news <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </ScrollReveal>
-
+          <div className="container mx-auto px-6 mt-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { img: newsBev.url, tag: 'Event', title: 'Sudbury: Mining the Future', date: 'Jun 2026', alt: 'Sudbury Mining the Future event with humanoid robot' },
