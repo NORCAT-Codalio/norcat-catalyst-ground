@@ -16,6 +16,7 @@ import newsCim from '@/assets/news-cim.jpg.asset.json';
 import newsEnabledTalent from '@/assets/news-enabledtalent.jpg.asset.json';
 import newsRakion from '@/assets/news-rakion.jpg.asset.json';
 import newsBev from '@/assets/news-bev.jpg.asset.json';
+import sudburySkyline from '@/assets/sudbury-skyline.png.asset.json';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
@@ -535,6 +536,18 @@ export default function Index() {
                   </Link>
                 </ScrollReveal>
               ))}
+            </div>
+          </div>
+
+          {/* Sudbury skyline banner */}
+          <div className="container mx-auto px-6 mt-16">
+            <div className="rounded-2xl overflow-hidden bg-white/95 shadow-sm">
+              <img
+                src={sudburySkyline.url}
+                alt="Sudbury skyline featuring Science North, the Big Nickel, NORCAT, the Bridge of Nations, and the Superstack"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
