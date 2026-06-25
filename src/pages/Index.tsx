@@ -13,6 +13,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
 import ctaPhoto5 from '@/assets/cta-photo-5.png';
+import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
