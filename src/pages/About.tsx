@@ -41,12 +41,6 @@ const partnerLogos = [
   { name: 'TEDC', logo: tedcLogo },
 ];
 
-const values = [
-  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', bgImage: founderFirstImg, bgGif: founderFirstGif },
-  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', bgImage: impactDrivenImg, bgGif: impactDrivenGif },
-  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', bgImage: communityFocusedImg, bgGif: communityFocusedGif },
-  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', bgImage: executionFocusedImg, bgGif: executionFocusedGif },
-];
 
 const team = [
   { name: 'Brendan Skiffington', role: 'Manager', image: brendanImage, bio: 'Brendan leads the innovation team with a focus on helping startups navigate the early stages of growth. With extensive experience in venture development and ecosystem building, he connects founders with the resources they need to succeed.', linkedin: 'https://linkedin.com/in/' },
