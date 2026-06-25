@@ -91,19 +91,25 @@ const upcomingPrograms = [
     title: 'Accessible Funding',
     description: 'We help you make the connections with venture capital and government funding.',
     cta: 'Explore Funding',
-    link: '/programs/venture-growth-services',
+    link: '/funding/investor-hub',
+    image: bev2026Photo.url,
+    alt: 'NORCAT funding team',
   },
   {
     title: 'Real-World Validation',
     description: 'We mitigate the risk and cost of scientific, industrial, and technological innovation.',
     cta: 'Explore Facilities',
-    link: '/programs/mentorship-services',
+    link: '/mining/norcat-underground',
+    image: miningUndergroundHero,
+    alt: 'NORCAT Underground test facility',
   },
   {
     title: 'Innovative Advisory',
     description: 'We connect you with a broad network of sector experts, seasoned mentors, and city support.',
     cta: 'Explore Ecosystem',
-    link: '/funding/sudbury-catalyst-fund',
+    link: '/ecosystem',
+    image: ctaPhoto4,
+    alt: 'NORCAT ecosystem networking event',
   },
 ];
 
@@ -367,61 +373,34 @@ export default function Index() {
 
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-                <div>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
-                    Non-profit. no fee. no equity.
-                  </span>
-                   <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                     NORCAT Innovation is Built on <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>3 Proven Pillars</span> of Success
-                   </h2>
-                </div>
-                <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                  View all
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="mb-14">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-4 glass-frosted-btn-teal">
+                  Non-profit. no fee. no equity.
+                </span>
+                 <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+                   NORCAT Innovation is Built on <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>3 Proven Pillars</span> of Success
+                 </h2>
               </div>
             </ScrollReveal>
+          </div>
 
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div className="flex flex-col gap-5">
-                {upcomingPrograms.map((program, i) => (
-                  <ScrollReveal key={program.title} delay={i * 0.1}>
-                    <Link to={program.link} className="group block">
-                      <div 
-                        className="rounded-[20px] p-7 hover:scale-[1.03] transition-transform duration-300"
-                        style={{
-                          background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                          backdropFilter: 'blur(20px)',
-                          WebkitBackdropFilter: 'blur(20px)',
-                          borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                          borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                          borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                          borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                          boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                        }}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <h3 className="text-xl font-bold transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
-                            <p className="text-sm font-light mt-2" style={{ color: 'hsl(220, 15%, 40%)' }}>{program.description}</p>
-                            <span className="inline-flex items-center mt-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase border transition-colors" style={{ borderColor: 'hsl(168, 100%, 35%)', color: 'hsl(168, 100%, 28%)' }}>
-                              {program.cta}
-                            </span>
-                          </div>
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                        </div>
-                      </div>
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </div>
-              <ScrollReveal delay={0.2} className="flex items-center">
-                <div className="rounded-[20px] overflow-hidden shadow-lg w-[90%] ml-auto">
-                  <img src={loopxTeam} alt="LoopX team photo" className="w-full h-auto object-cover" />
-                </div>
+          {/* Three full-width photo panels */}
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+            {upcomingPrograms.map((program, i) => (
+              <ScrollReveal key={program.title} delay={i * 0.1}>
+                <Link to={program.link} className="group relative block w-full h-[520px] overflow-hidden">
+                  <img src={program.image} alt={program.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{program.title}</h3>
+                    <p className="text-sm md:text-base text-white/85 mb-5 font-light leading-relaxed max-w-sm">{program.description}</p>
+                    <span className="inline-flex items-center px-5 py-2.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300 bg-[hsl(220,40%,15%)] text-white border border-white/20 group-hover:bg-[hsl(168,100%,35%)] group-hover:border-[hsl(168,100%,35%)]">
+                      {program.cta}
+                    </span>
+                  </div>
+                </Link>
               </ScrollReveal>
-            </div>
+            ))}
           </div>
         </section>
 
