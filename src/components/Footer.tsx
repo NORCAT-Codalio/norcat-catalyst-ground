@@ -189,7 +189,8 @@ export function Footer() {
       <img
         src={skyline.url}
         alt="Sudbury skyline silhouette"
-        className="w-full h-auto object-cover object-bottom opacity-95 pointer-events-none"
+        className="w-full h-auto object-cover object-bottom opacity-95 brightness-0 invert pointer-events-none"
+        loading="lazy"
       />
     </footer>
   );
