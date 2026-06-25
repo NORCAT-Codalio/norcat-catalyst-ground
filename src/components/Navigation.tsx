@@ -240,7 +240,7 @@ export function Navigation() {
             <Link
               to="/about"
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                'px-4 py-2 text-base font-medium transition-colors rounded-md',
                 location.pathname === '/about'
                   ? 'text-primary bg-secondary'
                   : useLightText 
@@ -259,7 +259,7 @@ export function Navigation() {
             >
               <button
                 className={cn(
-                  'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                  'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
                   activeDropdown === 'programs'
                     ? 'text-primary bg-secondary'
                     : useLightText 
@@ -354,7 +354,7 @@ export function Navigation() {
             >
               <button
                 className={cn(
-                  'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                  'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
                   activeDropdown === 'ecosystem'
                     ? 'text-primary bg-secondary'
                     : useLightText 
@@ -414,7 +414,7 @@ export function Navigation() {
             >
               <button
                 className={cn(
-                  'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                  'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
                   activeDropdown === 'insights'
                     ? 'text-primary bg-secondary'
                     : useLightText 
@@ -470,7 +470,7 @@ export function Navigation() {
             <Link
               to="/events"
               className={cn(
-                'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
                 location.pathname === '/events'
                   ? 'text-primary bg-secondary'
                   : useLightText 
@@ -485,7 +485,7 @@ export function Navigation() {
             <Link
               to="/portal/auth"
               className={cn(
-                'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-md',
+                'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
                 location.pathname.startsWith('/portal')
                   ? 'text-primary bg-secondary'
                   : useLightText 
