@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import signatureLines from '@/assets/signature-lines.png';
+import skyline from '@/assets/sudbury-skyline.png.asset.json';
 import { useState } from 'react';
 
 const footerLinks = {
@@ -36,13 +36,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-      {/* Signature lines - bottom left */}
-      <img 
-        src={signatureLines} 
-        alt="" 
-        aria-hidden="true" 
-        className="absolute bottom-0 left-0 w-[800px] opacity-80 pointer-events-none rotate-180"
-      />
+
 
       {/* Top Section - CTA + Newsletter */}
       <div className="container mx-auto px-4 lg:px-8 pt-16 pb-10">
@@ -177,7 +171,7 @@ export function Footer() {
       </nav>
 
       {/* Bottom Bar */}
-      <div className="container mx-auto px-4 lg:px-8 pb-8">
+      <div className="container mx-auto px-4 lg:px-8 pb-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6 text-xs text-white/40">
             <span>© {new Date().getFullYear()} NORCAT Innovation</span>
@@ -190,6 +184,14 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Sudbury skyline silhouette — footer graphic */}
+      <img
+        src={skyline.url}
+        alt="Sudbury skyline silhouette"
+        className="w-full h-auto object-cover object-bottom opacity-95 brightness-0 invert pointer-events-none"
+        loading="lazy"
+      />
     </footer>
   );
 }
