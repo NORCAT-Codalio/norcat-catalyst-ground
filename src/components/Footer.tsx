@@ -171,7 +171,7 @@ export function Footer() {
       </nav>
 
       {/* Bottom Bar */}
-      <div className="container mx-auto px-4 lg:px-8 pb-8">
+      <div className="container mx-auto px-4 lg:px-8 pb-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6 text-xs text-white/40">
             <span>© {new Date().getFullYear()} NORCAT Innovation</span>
@@ -184,6 +184,13 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Sudbury skyline silhouette — footer graphic */}
+      <img
+        src={skyline.url}
+        alt="Sudbury skyline silhouette"
+        className="w-full h-auto object-cover object-bottom opacity-95 pointer-events-none"
+      />
     </footer>
   );
 }
