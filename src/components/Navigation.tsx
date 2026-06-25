@@ -229,7 +229,7 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src={norcatInnovationLogo.url}
+              src="/norcat-innovation-logo.png"
               alt="NORCAT Innovation"
               className="h-9 w-auto rounded-md"
             />
