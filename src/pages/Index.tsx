@@ -491,8 +491,8 @@ export default function Index() {
                 Whether you're just starting out or ready to scale, we're here to help 
                 you build something extraordinary.
               </p>
-              <Link 
-                to="/apply" 
+              <Link
+                to="/insights/news"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                 style={{
                   background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
@@ -501,9 +501,71 @@ export default function Index() {
                   boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
                 }}
               >
-                The Innovation Space
+                Explore All News
                 <ArrowRight className="h-5 w-5" />
               </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ───── LATEST NEWS ───── */}
+        <section className="py-24 md:py-32" style={{ background: 'hsl(220 15% 96%)' }}>
+          <div className="container mx-auto px-6">
+            <ScrollReveal>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                <div>
+                  <div className="text-sm font-bold uppercase tracking-[0.2em] mb-3" style={{ color: 'hsl(168, 100%, 28%)' }}>
+                    Latest News
+                  </div>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                    What's Happening at NORCAT
+                  </h2>
+                </div>
+                <Link
+                  to="/insights/news"
+                  className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
+                  style={{ color: 'hsl(168, 100%, 28%)' }}
+                >
+                  View all news <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { img: newsBev.url, tag: 'Event', title: 'Sudbury: Mining the Future', date: 'Jun 2026', alt: 'Sudbury Mining the Future event with humanoid robot' },
+                { img: newsCim.url, tag: 'Panel', title: 'NORCAT at CIM Connect', date: 'May 2026', alt: 'Don Duval on panel at CIM Connect conference' },
+                { img: newsEnabledTalent.url, tag: 'Launch', title: 'EnabledTalent Launches at NORCAT', date: 'Apr 2026', alt: 'EnabledTalent launch event at NORCAT' },
+                { img: newsRakion.url, tag: 'Innovation', title: 'Rakion R100 BEV at the Underground Centre', date: 'Mar 2026', alt: 'Rakion R100 battery electric vehicle at NORCAT Underground' },
+              ].map((item, i) => (
+                <ScrollReveal key={i} delay={i * 0.08}>
+                  <Link to="/insights/news" className="group block h-full">
+                    <article className="h-full bg-white rounded-2xl overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                      <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                        <img
+                          src={item.img}
+                          alt={item.alt}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider mb-3">
+                          <span style={{ color: 'hsl(168, 100%, 28%)' }}>{item.tag}</span>
+                          <span style={{ color: 'hsl(220, 15%, 55%)' }}>•</span>
+                          <span style={{ color: 'hsl(220, 15%, 55%)' }}>{item.date}</span>
+                        </div>
+                        <h3 className="text-lg font-bold leading-snug group-hover:text-[hsl(168,100%,28%)] transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                          {item.title}
+                        </h3>
+                      </div>
+                    </article>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
             </ScrollReveal>
           </div>
         </section>
