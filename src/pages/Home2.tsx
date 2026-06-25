@@ -160,13 +160,11 @@ export default function Home2() {
               <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                Build.<br />
-                Test.<br />
-                <span style={{ color: TEAL }}>Scale.</span>
+                Enter the North
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                NORCAT Innovation is the launchpad for tech-enabled, IP-driven startups, bringing together world-class mentorship, capital access, and the only operating mine on the planet built for tech testing.
+                For more than 30 years, NORCAT has been an engine of creative problem solving by putting brilliant people together with advanced technology. The Innovation hub designed to support your small-and-medium-sized business secure capital, validate, and commercialize with the Northern Ontario advantage.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2.5">
