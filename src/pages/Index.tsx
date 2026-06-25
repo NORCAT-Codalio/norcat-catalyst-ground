@@ -412,7 +412,7 @@ export default function Index() {
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative pt-0 pb-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
+        <section className="relative pt-16 pb-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
