@@ -432,13 +432,7 @@ export default function Index() {
                      <span className="text-white">MEET THE </span>
                      <span className="text-white" style={{ fontWeight: 700 }}>INNOVATION TEAM</span>
                    </h2>
-                  <p className="font-light text-white/70 max-w-xl">No xing preve tlalt, your sve can, and olead innovatioie what it takes to ltes for oe you to the programmeve of olor grentis.</p>
-                </div>
-                <Link to="/insights/reports" className="inline-flex items-center gap-2 font-semibold group shrink-0 text-white/60 hover:text-white transition-colors">
-                  View all reports
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
+                   </div>
             </ScrollReveal>
           </div>
 
