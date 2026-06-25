@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import heroUnderground from '@/assets/hero-underground.jpg';
 import undergroundWorkers from '@/assets/underground-workers.png';
@@ -8,7 +8,6 @@ import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import {
   ArrowUpRight,
-  ChevronDown,
   Mountain,
   Pickaxe,
   Bot,
@@ -75,10 +74,10 @@ const capabilities = [
 ];
 
 const stats = [
-  { value: '3', unit: 'KM', label: 'Operational Underground Tunnels' },
-  { value: '300', unit: '+', label: 'Technology Tests Hosted' },
-  { value: '50', unit: '+', label: 'Countries Reached' },
-  { value: '15', unit: '+', label: 'Years of Real-World Validation' },
+  { icon: Pickaxe, number: '3 KM', label: 'Operational Underground Tunnels' },
+  { icon: Zap, number: '300+', label: 'Technology Tests Hosted' },
+  { icon: Globe, number: '50+', label: 'Countries Reached' },
+  { icon: Award, number: '15+', label: 'Years of Real-World Validation' },
 ];
 
 const benefits = [
@@ -97,121 +96,92 @@ const useCases = [
 
 const NorcatUnderground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
-
-  // cinematic adit entrance — preserved as the page's signature moment
-  const vignetteOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.25], [1, 1.12]);
-  const heroOpacity = useTransform(scrollYProgress, [0.1, 0.22], [1, 0]);
 
   return (
     <Layout>
       <div ref={containerRef} style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
-        {/* ───── HERO — cinematic descent ───── */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
-            <img src={heroUnderground} alt="NORCAT Underground Centre tunnel" className="w-full h-full object-cover" />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${NAVY}cc 0%, ${NAVY}99 40%, ${NAVY} 100%)` }} />
-          </motion.div>
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden min-h-[80vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
-          {/* adit vignette — closes in as you scroll, like entering the mine */}
-          <motion.div
+          {/* logo background */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+
+          {/* radial glow */}
+          <div
             className="absolute inset-0 pointer-events-none"
-            style={{
-              opacity: vignetteOpacity,
-              background: `radial-gradient(ellipse 55% 55% at 50% 50%, transparent 0%, ${NAVY} 100%)`,
-            }}
+            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)` }}
           />
 
           <img
             src={signatureLines}
             alt=""
             aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay"
+            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay"
           />
 
-          <motion.div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 text-center" style={{ opacity: heroOpacity }}>
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }}>
-              <span
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.18em] uppercase mb-8"
-                style={{ background: 'rgba(255,255,255,0.08)', border: `1px solid ${BORDER}`, color: TEAL, fontFamily: FONT, backdropFilter: 'blur(8px)' }}
-              >
-                <Mountain className="w-3.5 h-3.5" />
-                The Global One-Stop Shop for the Future of Mining
-              </span>
-            </motion.div>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <Eyebrow>The Global One-Stop Shop for the Future of Mining</Eyebrow>
 
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.7 }}>
-              <Display as="h1" className="text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
                 NORCAT<br /><span style={{ color: TEAL }}>Underground.</span>
               </Display>
-            </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
-              style={{ color: 'rgba(255,255,255,0.85)' }}
-            >
-              A fully operational, working mine — purpose-built for industry to test, validate and
-              prove next-generation mining technology in real underground conditions.
-            </motion.p>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                A fully operational, working mine — purpose-built for industry to test, validate and
+                prove next-generation mining technology in real underground conditions.
+              </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.6 }}
-              className="mt-10 flex flex-wrap gap-3 justify-center"
-            >
-              <Link
-                to="/apply"
-                className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
-              >
-                Book a Tour
-                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </span>
-              </Link>
-              <a
-                href="#capabilities"
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transition-colors"
-                style={{ border: `1px solid ${BORDER}`, color: 'white', fontFamily: FONT, backdropFilter: 'blur(8px)' }}
-              >
-                Explore the Facility
-              </a>
-            </motion.div>
+              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                >
+                  Book a Tour <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </Link>
+                <a
+                  href="#capabilities"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                  style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                >
+                  Explore the Facility
+                </a>
+              </div>
+            </div>
+          </div>
 
-            <motion.div
-              className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
-              style={{ color: 'rgba(255,255,255,0.55)' }}
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-            >
-              <span className="text-[10px] uppercase tracking-[0.25em] font-bold">Enter the mine</span>
-              <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
-                <ChevronDown className="w-4 h-4" />
-              </motion.div>
-            </motion.div>
-          </motion.div>
+          {/* underground hero image */}
+          <img
+            src={heroUnderground}
+            alt=""
+            aria-hidden="true"
+            className="hidden lg:block absolute right-0 bottom-0 h-[85%] w-auto pointer-events-none select-none opacity-80"
+            style={{ maskImage: 'linear-gradient(to left, black 40%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to left, black 40%, transparent 100%)' }}
+          />
         </section>
 
-        {/* ───── STATS BAR ───── */}
-        <section className="relative py-16 md:py-20 overflow-hidden" style={{ background: NAVY }}>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 20% 0%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 100%, rgba(47,111,214,0.18), transparent 50%)` }}
-          />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden" style={{ background: BORDER }}>
+        {/* ───── STATS STRIP ───── */}
+        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((s, i) => (
                 <motion.div
-                  key={i}
+                  key={s.label}
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  className="p-8 md:p-10 text-center"
-                  style={{ background: '#02153d' }}
+                  className="flex items-center gap-4 pl-4"
+                  style={{ borderLeft: `2px solid ${TEAL}` }}
                 >
-                  <div className="font-black text-5xl md:text-6xl lg:text-7xl mb-2" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                    {s.value}<span className="text-3xl md:text-4xl lg:text-5xl align-top ml-1">{s.unit}</span>
+                  <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
+                  <div>
+                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                    <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
                   </div>
-                  <p className="text-[10px] uppercase tracking-[0.22em] font-bold" style={{ color: FG_MUTED }}>{s.label}</p>
                 </motion.div>
               ))}
             </div>
