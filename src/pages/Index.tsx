@@ -3,7 +3,6 @@ import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight,
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroVideo from '@/assets/vnp-hero.mp4.asset.json';
-import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
