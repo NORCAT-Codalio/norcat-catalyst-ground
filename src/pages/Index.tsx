@@ -223,7 +223,8 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Enter the North
+                <span style={{ color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontWeight: 700 }}>ENTER THE</span>{' '}
+                NORTH
               </motion.h1>
 
               {/* Sector tags */}
@@ -254,7 +255,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.8 }}
               >
-                World-class mentorship, capital access, and infrastructure for tech-enabled, IP-driven startups ready to scale.
+                For more than 30 years, NORCAT has been an engine of creative problem-solving by putting brilliant people together with advanced technology. Our design was built from the ground up to support your small-and-medium-sized business demonstrate, fund, validate, and scale with the innovative advantage only found in Northern Ontario.
               </motion.p>
 
               {/* CTAs */}
