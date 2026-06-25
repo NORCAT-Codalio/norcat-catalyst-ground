@@ -2,7 +2,6 @@ import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import heroUnderground from '@/assets/hero-underground.jpg';
 import undergroundWorkers from '@/assets/underground-workers.png';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
@@ -156,18 +155,6 @@ const NorcatUnderground = () => {
             </div>
           </div>
 
-          {/* underground hero image — constrained to content margins */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="relative mx-auto w-full h-full max-w-7xl px-5 sm:px-6 md:px-10">
-              <img
-                src={heroUnderground}
-                alt=""
-                aria-hidden="true"
-                className="hidden lg:block absolute right-6 md:right-10 bottom-0 h-[85%] w-auto max-w-[45%] select-none opacity-80"
-                style={{ maskImage: 'linear-gradient(to left, black 40%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to left, black 40%, transparent 100%)' }}
-              />
-            </div>
-          </div>
         </section>
 
         {/* ───── STATS STRIP ───── */}
