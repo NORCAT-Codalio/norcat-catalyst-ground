@@ -566,9 +566,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-            </ScrollReveal>
-          </div>
-        </section>
 
         {/* ───── Community Photo Strip ───── */}
         <section style={{ background: 'hsl(220 15% 92%)' }}>
