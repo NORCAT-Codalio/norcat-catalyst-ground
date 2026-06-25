@@ -13,6 +13,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
 import ctaPhoto5 from '@/assets/cta-photo-5.png';
+import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
@@ -437,11 +438,10 @@ export default function Index() {
             </ScrollReveal>
           </div>
 
-          {/* Three full-width photo columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+          {/* Two full-width photo columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
             {[
-              { image: ctaPhoto1, label: 'Connect With Us', link: '/contact' },
-              { image: ctaPhoto3, label: 'Explore Our Facilities', link: '/mining/norcat-underground' },
+              { image: bev2026Photo.url, label: 'Connect With Us', link: '/contact' },
               { image: ctaPhoto4, label: 'Meet Our Ecosystem', link: '/ecosystem' },
             ].map((post, i) => (
               <ScrollReveal key={post.label} delay={i * 0.1}>
