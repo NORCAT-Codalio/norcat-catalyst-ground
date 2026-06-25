@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Mountain, Handshake, Globe, Lightbulb, Calendar, LogIn, Phone } from 'lucide-react';
-import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import norcatLogoWhite from '@/assets/logos/norcat-white.png';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -230,9 +228,9 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src={useLightText ? norcatLogoWhite : norcatLogoBlack}
+              src="/norcat-innovation-logo.png"
               alt="NORCAT Innovation"
-              className="h-6 w-auto"
+              className="h-9 w-auto rounded-md"
             />
           </Link>
 
