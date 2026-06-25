@@ -7,14 +7,9 @@ import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
-import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
-import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
-import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
-import circuitIQTunnelPhoto from '@/assets/MT0226_CircuitIQ.jpg.asset.json';
 import ovinMayorSudburyPhoto from '@/assets/OVIN_MayorSudbury.jpg.asset.json';
 import exploreFacilitiesPhoto from '@/assets/MT0226_CircuitIQ_Facilities.jpg.asset.json';
-import ctaPhoto5 from '@/assets/cta-photo-5.png';
 import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
 import accessibleFundingPhoto from '@/assets/1771528887277.jpg.asset.json';
 import newsCim from '@/assets/news-cim.jpg.asset.json';
@@ -544,26 +539,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── Community Photo Strip ───── */}
-        <section style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="grid grid-cols-5 gap-3 px-3 py-3">
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto1} alt="Speaker presenting" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto2} alt="Audience at event" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto3} alt="Group celebration" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto4} alt="Industry event" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={ctaPhoto5} alt="Tech showcase" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </section>
 
       </div>
     </Layout>
