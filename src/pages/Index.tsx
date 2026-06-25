@@ -143,7 +143,7 @@ function useCounter(end: number, duration = 2000, inView = false) {
 
 export default function Index() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const storiesScrollRef = useRef<HTMLDivElement>(null);
+  
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
