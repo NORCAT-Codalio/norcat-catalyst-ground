@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe, FileText } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import heroImage from '@/assets/hero-header-bg.png';
+import heroVideo from '@/assets/vnp-hero.mp4.asset.json';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
@@ -159,9 +159,18 @@ export default function Index() {
 
         {/* ───── HERO ───── */}
         <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-          {/* Parallax background image */}
+          {/* Parallax background video */}
           <motion.div className="absolute inset-0" style={{ y: heroY }}>
-            <img src={heroImage} alt="NORCAT Innovation" className="w-full h-full object-cover object-right" />
+            <video
+              src={heroVideo.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover object-right"
+              aria-label="NORCAT Innovation"
+            />
             {/* Dark overlay at 20% opacity */}
             <div className="absolute inset-0 bg-black/20" />
           </motion.div>
