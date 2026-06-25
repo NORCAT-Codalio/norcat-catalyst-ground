@@ -85,6 +85,7 @@ const stats = [
   { value: '500+', label: 'Ecosystem Members', icon: Users },
   { value: '150+', label: 'Innovative Startups Supported', icon: Rocket },
   { value: '2,000+', label: 'Sector-Diverse Jobs Created', icon: Activity },
+  { value: '30+', label: 'Years of Building Innovation', icon: Calendar },
 ];
 
 const upcomingPrograms = [
