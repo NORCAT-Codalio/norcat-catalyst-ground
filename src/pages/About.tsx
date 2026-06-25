@@ -165,13 +165,12 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>About NORCAT Innovation</Eyebrow>
+              <Eyebrow className="text-lg">About NORCAT Innovation</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Sudbury's Regional<br /><span style={{ color: TEAL }}>Innovation Centre.</span>
+                The Innovation Engine<br /><span style={{ color: TEAL }}>of the North.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                A not-for-profit Innovation Centre funded by the Government of Ontario,
-                supporting tech-enabled, IP-driven startups across Northern Ontario.
+                Designed by-and-for the builders of innovative technology and scientific discovery, NORCAT Innovation provides you with the Sudbury Advantage: land, resources, talent, capital, and an unparalleled appeal to wanting to see others succeed.
               </p>
             </div>
           </div>
