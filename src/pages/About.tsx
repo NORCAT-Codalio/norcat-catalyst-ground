@@ -167,7 +167,7 @@ export default function About() {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="text-lg">About NORCAT Innovation</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                The Innovation Engine<br /><span style={{ color: TEAL }}>of the North.</span>
+                <span style={{ color: TEAL }}>The Innovation Engine</span><br />of the North.
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Designed by-and-for the builders of innovative technology and scientific discovery, NORCAT Innovation provides you with the Sudbury Advantage: land, resources, talent, capital, and an unparalleled appeal to wanting to see others succeed.
