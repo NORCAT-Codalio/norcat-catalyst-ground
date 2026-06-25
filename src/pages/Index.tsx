@@ -3,7 +3,6 @@ import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight,
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroVideo from '@/assets/vnp-hero.mp4.asset.json';
-import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import signatureLines from '@/assets/signature-lines.png';
 import linesTeal from '@/assets/lines-teal.png';
 import loopxTeam from '@/assets/loopx-team.jpg';
@@ -13,6 +12,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
 import circuitIQTunnelPhoto from '@/assets/MT0226_CircuitIQ.jpg.asset.json';
+import exploreFacilitiesPhoto from '@/assets/MT0226_CircuitIQ_Facilities.jpg.asset.json';
 import ctaPhoto5 from '@/assets/cta-photo-5.png';
 import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
 
@@ -101,8 +101,8 @@ const upcomingPrograms = [
     description: 'We mitigate the risk and cost of scientific, industrial, and technological innovation.',
     cta: 'Explore Facilities',
     link: '/mining/norcat-underground',
-    image: miningUndergroundHero,
-    alt: 'NORCAT Underground test facility',
+    image: exploreFacilitiesPhoto.url,
+    alt: 'CircuitIQ team demonstrating technology in the NORCAT Underground mine',
   },
   {
     title: 'Innovative Advisory',
