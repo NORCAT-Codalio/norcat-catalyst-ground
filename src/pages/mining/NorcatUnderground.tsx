@@ -75,10 +75,10 @@ const capabilities = [
 ];
 
 const stats = [
-  { value: '3', unit: 'KM', label: 'Operational Underground Tunnels' },
-  { value: '300', unit: '+', label: 'Technology Tests Hosted' },
-  { value: '50', unit: '+', label: 'Countries Reached' },
-  { value: '15', unit: '+', label: 'Years of Real-World Validation' },
+  { icon: Pickaxe, number: '3 KM', label: 'Operational Underground Tunnels' },
+  { icon: Zap, number: '300+', label: 'Technology Tests Hosted' },
+  { icon: Globe, number: '50+', label: 'Countries Reached' },
+  { icon: Award, number: '15+', label: 'Years of Real-World Validation' },
 ];
 
 const benefits = [
