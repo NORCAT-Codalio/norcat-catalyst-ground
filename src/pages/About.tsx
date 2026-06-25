@@ -4,7 +4,9 @@ import { Layout } from '@/components/Layout';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
+import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
