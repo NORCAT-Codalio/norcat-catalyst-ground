@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import skylineBanner from '@/assets/skyline-banner-hd.png.asset.json';
 import { useState } from 'react';
 
 const footerLinks = {
@@ -37,15 +36,6 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
 
-      {/* Skyline banner */}
-      <div className="w-full" style={{ background: 'hsl(220 15% 92%)' }}>
-        <img
-          src={skylineBanner.url}
-          alt="Sudbury skyline banner"
-          className="w-full h-auto object-cover object-center"
-          loading="lazy"
-        />
-      </div>
 
       {/* Top Section - CTA + Newsletter */}
       <div className="container mx-auto px-4 lg:px-8 pt-16 pb-10">
