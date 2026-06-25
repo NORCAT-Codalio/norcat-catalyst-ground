@@ -80,9 +80,9 @@ const sectors = [
 
 const stats = [
   { value: '$75M+', label: 'Capital Raised by Startups', icon: TrendingUp },
-  { value: '150+', label: 'Startups Supported', icon: Rocket },
-  { value: '18', label: 'Mentors & Advisors in Your Corner', icon: Users },
-  { value: '2,000+', label: 'Jobs Created', icon: Activity },
+  { value: '500+', label: 'Ecosystem Members', icon: Users },
+  { value: '150+', label: 'Innovative Startups Supported', icon: Rocket },
+  { value: '2,000+', label: 'Sector-Diverse Jobs Created', icon: Activity },
 ];
 
 const upcomingPrograms = [
