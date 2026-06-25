@@ -360,9 +360,9 @@ export default function Index() {
                     Non-profit. no fee. no equity.
                   </span>
                    <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    Support that adapts as your <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>company grows.</span>
-                  </h2>
-                  <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}>We help you turn a rough idea into something real—with hands-on support, hard conversations, and access to the stuff that actually moves the needle.</p>
+                     NORCAT Innovation is built on <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>3 proven pillars</span> of success:
+                   </h2>
+                   <p className="font-light max-w-xl" style={{ color: 'hsl(220, 20%, 10%)' }}></p>
                 </div>
                 <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
                   View all
