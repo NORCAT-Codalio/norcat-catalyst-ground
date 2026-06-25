@@ -433,6 +433,7 @@ export default function Index() {
                      <span className="text-white" style={{ fontWeight: 700 }}>INNOVATION TEAM</span>
                    </h2>
                    </div>
+                 </div>
             </ScrollReveal>
           </div>
 
