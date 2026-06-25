@@ -87,18 +87,18 @@ const stats = [
 
 const upcomingPrograms = [
   {
-    title: 'Venture Growth Services',
-    description: 'For early-stage founders looking for 1-on-1 support, mentorship, IP strategy, and micro-grants.',
+    title: 'Capital',
+    description: 'We help you make the connections with venture capital and government funding.',
     link: '/programs/venture-growth-services',
   },
   {
-    title: 'Product Testing and Validation',
-    description: 'Gain access to the Fortin Discovery Lab to build your prototype, or the NORCAT Underground Centre to test your technology in an operating mine.',
+    title: 'Rugged Validation',
+    description: 'We mitigate the risk and cost of scientific, industrial, and technological innovation.',
     link: '/programs/mentorship-services',
   },
   {
-    title: 'Growth & Investment',
-    description: 'Get help navigating both dilutive and non-dilutive funding opportunities.',
+    title: 'Innovative Advisory',
+    description: 'We connect you with a broad network of sector experts, seasoned mentors, and city support.',
     link: '/funding/sudbury-catalyst-fund',
   },
 ];
