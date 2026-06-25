@@ -160,7 +160,7 @@ export default function Home2() {
               <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                <span style={{ color: TEAL }}>Open The</span>{' '}
+                <span style={{ color: TEAL }}>Enter The</span>{' '}
                 North
               </Display>
 
