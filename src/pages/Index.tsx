@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe, FileText } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, FileText } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroVideo from '@/assets/vnp-hero.mp4.asset.json';
