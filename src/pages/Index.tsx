@@ -91,19 +91,25 @@ const upcomingPrograms = [
     title: 'Accessible Funding',
     description: 'We help you make the connections with venture capital and government funding.',
     cta: 'Explore Funding',
-    link: '/programs/venture-growth-services',
+    link: '/funding/investor-hub',
+    image: bev2026Photo.url,
+    alt: 'NORCAT funding team',
   },
   {
     title: 'Real-World Validation',
     description: 'We mitigate the risk and cost of scientific, industrial, and technological innovation.',
     cta: 'Explore Facilities',
-    link: '/programs/mentorship-services',
+    link: '/mining/norcat-underground',
+    image: miningUndergroundHero,
+    alt: 'NORCAT Underground test facility',
   },
   {
     title: 'Innovative Advisory',
     description: 'We connect you with a broad network of sector experts, seasoned mentors, and city support.',
     cta: 'Explore Ecosystem',
-    link: '/funding/sudbury-catalyst-fund',
+    link: '/ecosystem',
+    image: ctaPhoto4,
+    alt: 'NORCAT ecosystem networking event',
   },
 ];
 
