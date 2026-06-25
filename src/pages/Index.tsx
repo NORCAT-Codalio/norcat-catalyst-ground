@@ -110,8 +110,8 @@ const upcomingPrograms = [
     description: 'We connect you with a broad network of sector experts, seasoned mentors, and city support.',
     cta: 'Explore Ecosystem',
     link: '/ecosystem',
-    image: circuitIQTunnelPhoto.url,
-    alt: 'CircuitIQ team demonstrating technology in the NORCAT Underground mine',
+    image: ovinMayorSudburyPhoto.url,
+    alt: 'Mayor of Sudbury with NORCAT and OVIN partners at an innovation event',
   },
 ];
 
