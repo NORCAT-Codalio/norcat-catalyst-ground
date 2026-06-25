@@ -412,7 +412,7 @@ export default function Index() {
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative pt-16 pb-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
+        <section className="relative pt-16 pb-0" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
@@ -449,28 +449,29 @@ export default function Index() {
           ))}
         </div>
 
-        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
-        <div className="relative py-10 overflow-hidden">
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-8"
-              animate={{ x: [0, -1200] }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            >
-              {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
-                <div
-                  key={`${company.name}-${i}`}
-                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
-                >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="max-h-10 max-w-full object-contain"
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </div>
+      </section>
+
+      {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+      <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex gap-8"
+            animate={{ x: [0, -1200] }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          >
+            {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
+              <div
+                key={`${company.name}-${i}`}
+                className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+              >
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="max-h-10 max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -479,8 +480,8 @@ export default function Index() {
           <div className="container mx-auto px-6 relative z-10 text-center">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-6" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                Ready to join our{' '}
-                <span style={{ color: 'hsl(168, 100%, 28%)' }}>community?</span>
+                Learn More About{' '}
+                <span style={{ color: 'hsl(168, 100%, 28%)' }}>Northern Innovation</span>
               </h2>
               <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
                 Whether you're just starting out or ready to scale, we're here to help 
