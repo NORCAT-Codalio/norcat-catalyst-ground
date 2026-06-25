@@ -7,15 +7,6 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import founderFirstGif from '@/assets/values/founder-first.gif';
-import communityFocusedGif from '@/assets/values/community-focused.gif';
-import executionFocusedGif from '@/assets/values/execution-focused.gif';
-import impactDrivenGif from '@/assets/values/impact-driven.gif';
-
-import founderFirstImg from '@/assets/values/founder-first.png';
-import communityFocusedImg from '@/assets/values/community-focused.png';
-import executionFocusedImg from '@/assets/values/execution-focused.png';
-import impactDrivenImg from '@/assets/values/impact-driven.png';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -50,12 +41,6 @@ const partnerLogos = [
   { name: 'TEDC', logo: tedcLogo },
 ];
 
-const values = [
-  { title: 'Founder First', description: 'Everything we do centers on helping founders succeed. We support people, not just companies.', bgImage: founderFirstImg, bgGif: founderFirstGif },
-  { title: 'Impact Driven', description: 'We measure success by the jobs created, capital raised, and innovations brought to market.', bgImage: impactDrivenImg, bgGif: impactDrivenGif },
-  { title: 'Community Focused', description: 'We believe in the power of community and connections to accelerate growth.', bgImage: communityFocusedImg, bgGif: communityFocusedGif },
-  { title: 'Execution Focused', description: 'We prioritize real-world testing, validation, and practical outcomes, with support grounded in execution.', bgImage: executionFocusedImg, bgGif: executionFocusedGif },
-];
 
 const team = [
   { name: 'Brendan Skiffington', role: 'Manager', image: brendanImage, bio: 'Brendan leads the innovation team with a focus on helping startups navigate the early stages of growth. With extensive experience in venture development and ecosystem building, he connects founders with the resources they need to succeed.', linkedin: 'https://linkedin.com/in/' },
@@ -225,48 +210,67 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── VALUES (dark) ───── */}
+        {/* ───── STORY OF NORCAT (dark) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Our Values</Eyebrow>
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>Our Story</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Principles that<br />guide us.
+                The Story of <span style={{ color: TEAL }}>NORCAT.</span>
               </Display>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {values.map((value) => (
-                <article key={value.title}
-                         className="group relative rounded-2xl overflow-hidden aspect-[3/4] flex flex-col"
-                         style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}>
-                  <img src={value.bgImage} alt="" aria-hidden="true"
-                       className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
-                       style={value.title === 'Execution Focused'
-                         ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' }
-                         : value.title === 'Impact Driven'
-                         ? { transform: 'scale(1.15)' }
-                         : {}} />
-                  <img src={value.bgGif} alt="" aria-hidden="true"
-                       className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none"
-                       style={value.title === 'Execution Focused'
-                         ? { objectPosition: 'left center', transform: 'scale(1.15)', transformOrigin: 'left center' }
-                         : value.title === 'Impact Driven'
-                         ? { transform: 'scale(1.15)' }
-                         : {}} />
-                    <div className="absolute inset-0 pointer-events-none"
-                         style={{ background: `linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.85) 75%, #000000 100%)` }} />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 h-[200px] flex flex-col justify-end z-10">
-                    <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-2"
-                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{value.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{value.description}</p>
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+              <div className="lg:col-span-7 flex flex-col gap-6">
+                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Greater Sudbury’s narrative is forged deep in ancient rock, where a rich mining heritage laid the foundation for a global industrial hub. However, by the early 2000s, a profound challenge emerged: too many talented young people and promising startups were leaving the North.
+                </p>
+                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  The necessary answer to this regional talent drain was established in 1995 when the Northern Centre for Advanced Technology (NORCAT) was founded by Darryl Lake in a modest Cambrian College basement. Driven by a vision to retain local genius, Lake’s mission was simple: create jobs so students could stay. Alongside co-founders Ed Wisniewski and Jason Bubba, they built an ethos rooted in safety, training, and innovation. By the late 1990s, the team pioneered digital training via CD-ROMs—a technological leap that introduced AR/VR capabilities and evolved into today’s internationally award-winning programs.
+                </p>
+                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  A pivotal moment arrived in 1997 with the establishment of an underground training mine at the Falconbridge Onaping Adit, putting NORCAT on the map as a global one-stop-shop “living laboratory” for mining tech. Rapid growth followed. After outgrowing its basement in 1998, a transformative $14 million expansion in 2009 enabled a move to a 70,000-square-foot headquarters on Maley Drive, anchoring ecosystem pillars under one roof.
+                </p>
+                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Innovation is Greater Sudbury's heritage; NORCAT Innovation is a direct response to the entrepreneurs and builders who needed a place to come together — a hub where resources and ideation have a place to come together.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 flex flex-col gap-8">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: `1px solid ${BORDER}` }}>
+                  <img src={foundersImage} alt="NORCAT founders collaborating in the early years"
+                       className="w-full h-full object-cover" />
+                </div>
+
+                <div className="relative">
+                  <div className="absolute left-[15px] top-3 bottom-3 w-px" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                  <div className="space-y-6">
+                    {[
+                      { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
+                      { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit.' },
+                      { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
+                      { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive.' },
+                      { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together.' },
+                    ].map((milestone) => (
+                      <div key={milestone.year} className="relative flex gap-5 pl-1">
+                        <div className="relative z-10 w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+                             style={{ background: TEAL, border: `2px solid ${TEAL}` }}>
+                          <div className="w-2.5 h-2.5 rounded-full" style={{ background: NAVY }} />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-[0.18em] mb-1" style={{ color: TEAL, fontFamily: FONT }}>{milestone.year}</p>
+                          <h3 className="font-black uppercase text-lg mb-1 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{milestone.title}</h3>
+                          <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{milestone.desc}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </article>
-              ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
