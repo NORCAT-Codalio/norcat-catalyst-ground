@@ -89,16 +89,19 @@ const upcomingPrograms = [
   {
     title: 'Accessible Funding',
     description: 'We help you make the connections with venture capital and government funding.',
+    cta: 'Explore Funding',
     link: '/programs/venture-growth-services',
   },
   {
     title: 'Real-World Validation',
     description: 'We mitigate the risk and cost of scientific, industrial, and technological innovation.',
+    cta: 'Explore Facilities',
     link: '/programs/mentorship-services',
   },
   {
     title: 'Innovative Advisory',
     description: 'We connect you with a broad network of sector experts, seasoned mentors, and city support.',
+    cta: 'Explore Ecosystem',
     link: '/funding/sudbury-catalyst-fund',
   },
 ];
@@ -392,6 +395,9 @@ export default function Index() {
                           <div>
                             <h3 className="text-xl font-bold transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>{program.title}</h3>
                             <p className="text-sm font-light mt-2" style={{ color: 'hsl(220, 15%, 40%)' }}>{program.description}</p>
+                            <span className="inline-flex items-center mt-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase border transition-colors" style={{ borderColor: 'hsl(168, 100%, 35%)', color: 'hsl(168, 100%, 28%)' }}>
+                              {program.cta}
+                            </span>
                           </div>
                           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 shrink-0" style={{ color: 'hsl(168, 100%, 35%)' }} />
                         </div>
