@@ -445,14 +445,12 @@ export default function Index() {
                     </span>
                   </div>
                 </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </section>
-
+            </ScrollReveal>
+          ))}
+        </div>
 
         {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
-        <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <div className="relative py-10 overflow-hidden">
           <div className="relative overflow-hidden">
             <motion.div
               className="flex gap-8"
@@ -473,7 +471,8 @@ export default function Index() {
               ))}
             </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* ───── FINAL CTA ───── */}
         <section className="pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
