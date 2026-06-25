@@ -160,11 +160,12 @@ export default function Home2() {
               <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                Enter the North
+                <span style={{ color: TEAL }}>Enter The</span>{' '}
+                North
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                For more than 30 years, NORCAT has been an engine of creative problem solving by putting brilliant people together with advanced technology. The Innovation hub designed to support your small-and-medium-sized business secure capital, validate, and commercialize with the Northern Ontario advantage.
+                For more than 30 years, NORCAT has been an engine of creative problem-solving by putting brilliant people together with advanced technology. Our design was built from the ground up to support your small-and-medium-sized business demonstrate, fund, validate, and scale with the innovative advantage only found in Northern Ontario.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2.5">
