@@ -17,6 +17,10 @@ import exploreFacilitiesPhoto from '@/assets/MT0226_CircuitIQ_Facilities.jpg.ass
 import ctaPhoto5 from '@/assets/cta-photo-5.png';
 import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
 import accessibleFundingPhoto from '@/assets/1771528887277.jpg.asset.json';
+import newsCim from '@/assets/news-cim.jpg.asset.json';
+import newsEnabledTalent from '@/assets/news-enabledtalent.jpg.asset.json';
+import newsRakion from '@/assets/news-rakion.jpg.asset.json';
+import newsBev from '@/assets/news-bev.jpg.asset.json';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
