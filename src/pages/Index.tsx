@@ -438,11 +438,10 @@ export default function Index() {
             </ScrollReveal>
           </div>
 
-          {/* Three full-width photo columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+          {/* Two full-width photo columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
             {[
-              { image: ctaPhoto1, label: 'Connect With Us', link: '/contact' },
-              { image: ctaPhoto3, label: 'Explore Our Facilities', link: '/mining/norcat-underground' },
+              { image: bev2026Photo.url, label: 'Connect With Us', link: '/contact' },
               { image: ctaPhoto4, label: 'Meet Our Ecosystem', link: '/ecosystem' },
             ].map((post, i) => (
               <ScrollReveal key={post.label} delay={i * 0.1}>
