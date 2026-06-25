@@ -16,6 +16,7 @@ import newsCim from '@/assets/news-cim.jpg.asset.json';
 import newsEnabledTalent from '@/assets/news-enabledtalent.jpg.asset.json';
 import newsRakion from '@/assets/news-rakion.jpg.asset.json';
 import newsBev from '@/assets/news-bev.jpg.asset.json';
+import sudburySkyline from '@/assets/sudbury-skyline.png.asset.json';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
