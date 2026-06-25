@@ -229,9 +229,9 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src={useLightText ? norcatLogoWhite : norcatLogoBlack}
+              src={norcatInnovationLogo.url}
               alt="NORCAT Innovation"
-              className="h-6 w-auto"
+              className="h-9 w-auto rounded-md"
             />
           </Link>
 
