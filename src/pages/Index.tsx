@@ -16,6 +16,7 @@ import ovinMayorSudburyPhoto from '@/assets/OVIN_MayorSudbury.jpg.asset.json';
 import exploreFacilitiesPhoto from '@/assets/MT0226_CircuitIQ_Facilities.jpg.asset.json';
 import ctaPhoto5 from '@/assets/cta-photo-5.png';
 import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
+import accessibleFundingPhoto from '@/assets/1771528887277.jpg.asset.json';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
@@ -94,8 +95,8 @@ const upcomingPrograms = [
     description: 'We help you make the connections with venture capital and government funding.',
     cta: 'Explore Funding',
     link: '/funding/investor-hub',
-    image: bev2026Photo.url,
-    alt: 'NORCAT funding team',
+    image: accessibleFundingPhoto.url,
+    alt: 'NORCAT Innovation partner discussing funding support at a FedNor announcement event',
   },
   {
     title: 'Real-World Validation',
