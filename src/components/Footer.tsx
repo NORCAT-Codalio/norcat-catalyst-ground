@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import skyline from '@/assets/sudbury-skyline.png.asset.json';
 import skylineBanner from '@/assets/sudbury-skyline-banner.png.asset.json';
 import { useState } from 'react';
 
@@ -194,14 +193,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Sudbury skyline silhouette — footer graphic */}
-      <img
-        src={skyline.url}
-        alt="Sudbury skyline silhouette"
-        className="w-full h-auto object-cover object-bottom opacity-95 brightness-0 invert pointer-events-none"
-        loading="lazy"
-      />
     </footer>
   );
 }
