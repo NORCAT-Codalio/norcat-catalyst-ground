@@ -360,7 +360,7 @@ export default function Index() {
                     Non-profit. no fee. no equity.
                   </span>
                    <h2 className="text-3xl md:text-4xl mb-2" style={{ color: 'hsl(220, 20%, 15%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                     NORCAT Innovation is built on <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>3 proven pillars</span> of success:
+                     NORCAT Innovation is built on <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>3 proven pillars</span> of success
                    </h2>
                 </div>
                 <Link to="/events" className="inline-flex items-center gap-2 font-semibold group shrink-0 transition-colors" style={{ color: 'hsl(168, 100%, 28%)' }}>
