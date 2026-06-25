@@ -316,7 +316,10 @@ export default function Index() {
 
         {/* ───── STATS Strip ───── */}
         <div className="relative z-20" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="container mx-auto px-4 py-12">
+          <div className="container mx-auto px-4 pt-12 pb-6">
+            <p className="text-center text-sm md:text-base uppercase tracking-widest font-black mb-10" style={{ color: 'hsl(220, 15%, 25%)' }}>
+              NORCAT Innovation supports creative solutions globally
+            </p>
             <div className="flex flex-wrap justify-between items-center gap-x-4 gap-y-8">
               {stats.map((stat, i) => (
                 <div key={stat.label} className="flex items-center gap-4">
