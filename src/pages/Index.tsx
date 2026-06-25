@@ -454,19 +454,19 @@ export default function Index() {
       <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="relative overflow-hidden">
           <motion.div
-            className="flex gap-8"
-            animate={{ x: [0, -1200] }}
+            className="flex gap-10"
+            animate={{ x: [0, -1440] }}
             transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
           >
             {[...portfolioCompanies, ...portfolioCompanies].map((company, i) => (
               <div
                 key={`${company.name}-${i}`}
-                className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                className="flex-shrink-0 flex items-center justify-center w-48 h-20 px-4"
               >
                 <img
                   src={company.logo}
                   alt={company.name}
-                  className="max-h-10 max-w-full object-contain"
+                  className="max-h-12 max-w-full object-contain"
                 />
               </div>
             ))}
