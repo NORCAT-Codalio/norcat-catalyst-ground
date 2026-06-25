@@ -368,7 +368,7 @@ export default function Index() {
         </div>
 
         {/* ───── PROGRAMS — Insight Cards Grid ───── */}
-        <section className="relative pt-12 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+        <section className="relative pt-12 pb-0 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           {/* Subtle teal orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.06) 0%, transparent 60%)' }} />
@@ -412,7 +412,7 @@ export default function Index() {
 
 
         {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
-        <section className="relative py-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
+        <section className="relative pt-0 pb-28" style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
           </div>
