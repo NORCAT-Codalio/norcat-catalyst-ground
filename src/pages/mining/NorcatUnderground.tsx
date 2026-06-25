@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import heroUnderground from '@/assets/hero-underground.jpg';
 import undergroundWorkers from '@/assets/underground-workers.png';
