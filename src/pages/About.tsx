@@ -4,18 +4,7 @@ import { Layout } from '@/components/Layout';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
-import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
-import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import founderFirstGif from '@/assets/values/founder-first.gif';
-import communityFocusedGif from '@/assets/values/community-focused.gif';
-import executionFocusedGif from '@/assets/values/execution-focused.gif';
-import impactDrivenGif from '@/assets/values/impact-driven.gif';
-
-import founderFirstImg from '@/assets/values/founder-first.png';
-import communityFocusedImg from '@/assets/values/community-focused.png';
-import executionFocusedImg from '@/assets/values/execution-focused.png';
-import impactDrivenImg from '@/assets/values/impact-driven.png';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
