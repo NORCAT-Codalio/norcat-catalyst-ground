@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, GraduationCap, Handshake, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, Pickaxe, FileText } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, FileText } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroVideo from '@/assets/vnp-hero.mp4.asset.json';
@@ -450,75 +450,6 @@ export default function Index() {
           </div>
         </section>
 
-        {/* ───── THE SUDBURY ADVANTAGE ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Left column — text */}
-              <ScrollReveal>
-                <div>
-                  <h2 className="text-3xl md:text-4xl leading-[1.1] mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                    <span style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Why Not Here?</span> The Greater Sudbury Advantage
-                  </h2>
-                  <p className="font-light text-lg leading-relaxed mb-8" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                    Greater Sudbury is home to the largest mining supply cluster in Canada, world-renowned research institutions, and a community built on innovation. Join an ecosystem where startups and industry connect.
-                  </p>
-                  <Link 
-                    to="/ecosystem" 
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
-                    style={{
-                      background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                      border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                      color: 'hsl(168, 40%, 25%)',
-                      boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                    }}
-                  >
-                    Explore the Ecosystem
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </ScrollReveal>
-
-              {/* Right column — 2×2 cards */}
-              <div className="grid grid-cols-2 gap-5">
-                {[
-                  { icon: Pickaxe, title: 'Mining Hub', desc: 'Nine operating mines and 300+ mining supply companies' },
-                  { icon: TrendingUp, title: 'A City Built to Scale', desc: 'Major investments and growing population' },
-                  { icon: GraduationCap, title: 'Talent', desc: 'Five post-secondary institutions' },
-                  { icon: Handshake, title: 'The Sudbury Model', desc: 'Industry, academia, and government working as one' },
-                ].map((item, i) => (
-                  <ScrollReveal key={item.title} delay={i * 0.1}>
-                    <div className="rounded-[20px] p-7 h-full hover:scale-[1.03] transition-transform duration-300" style={{
-                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                    }}>
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{
-                        background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
-                        border: '1.5px solid hsla(220, 15%, 100%, 0.5)',
-                        boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 100%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                      }}>
-                        <item.icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                      </div>
-                      <h3 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{item.title}</h3>
-                      <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>{item.desc}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
         <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
