@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
+import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
 import { useState } from 'react';
+
 
 const footerLinks = {
   programs: [
@@ -34,7 +36,12 @@ export function Footer() {
   const [email, setEmail] = useState('');
 
   return (
-    <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
+    <>
+      <div style={{ background: 'hsl(220 15% 92%)' }} className="pt-16">
+        <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
+      </div>
+      <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
+
 
 
       {/* Top Section - CTA + Newsletter */}
@@ -184,5 +191,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
