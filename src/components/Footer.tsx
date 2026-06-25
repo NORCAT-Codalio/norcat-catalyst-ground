@@ -38,6 +38,15 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
 
+      {/* Skyline banner */}
+      <div className="w-full bg-white/100">
+        <img
+          src={skylineBanner.url}
+          alt="Sudbury skyline banner"
+          className="w-full h-auto object-cover object-center"
+          loading="lazy"
+        />
+      </div>
 
       {/* Top Section - CTA + Newsletter */}
       <div className="container mx-auto px-4 lg:px-8 pt-16 pb-10">
