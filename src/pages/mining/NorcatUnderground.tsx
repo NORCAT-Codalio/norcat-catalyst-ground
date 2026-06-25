@@ -2,7 +2,6 @@ import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import heroUnderground from '@/assets/hero-underground.jpg';
 import undergroundWorkers from '@/assets/underground-workers.png';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
