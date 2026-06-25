@@ -8,7 +8,6 @@ import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import {
   ArrowUpRight,
-  ChevronDown,
   Mountain,
   Pickaxe,
   Bot,
