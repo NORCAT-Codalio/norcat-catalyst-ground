@@ -541,14 +541,12 @@ export default function Index() {
 
           {/* Sudbury skyline banner */}
           <div className="container mx-auto px-6 mt-16">
-            <div className="rounded-2xl overflow-hidden bg-white/95 shadow-sm">
-              <img
-                src={sudburySkyline.url}
-                alt="Sudbury skyline featuring Science North, the Big Nickel, NORCAT, the Bridge of Nations, and the Superstack"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
-            </div>
+            <img
+              src={sudburySkyline.url}
+              alt="Sudbury skyline featuring Science North, the Big Nickel, NORCAT, the Bridge of Nations, and the Superstack"
+              className="w-full h-auto"
+              loading="lazy"
+            />
           </div>
         </section>
 
