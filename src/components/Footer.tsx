@@ -36,12 +36,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-      {/* Sudbury skyline silhouette - full width footer graphic */}
-      <img
-        src={skyline.url}
-        alt="Sudbury skyline silhouette"
-        className="absolute bottom-0 left-0 w-full h-auto object-cover object-bottom opacity-90 pointer-events-none"
-      />
+
 
       {/* Top Section - CTA + Newsletter */}
       <div className="container mx-auto px-4 lg:px-8 pt-16 pb-10">
