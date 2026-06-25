@@ -429,8 +429,8 @@ export default function Index() {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
                 <div>
                    <h2 className="text-3xl md:text-4xl mb-2" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                     <span className="text-white">Real Stories. </span>
-                     <span className="text-white" style={{ fontWeight: 700 }}>Unique Insights.</span>
+                     <span className="text-white">MEET THE </span>
+                     <span className="text-white" style={{ fontWeight: 700 }}>INNOVATION TEAM</span>
                    </h2>
                   <p className="font-light text-white/70 max-w-xl">No xing preve tlalt, your sve can, and olead innovatioie what it takes to ltes for oe you to the programmeve of olor grentis.</p>
                 </div>
