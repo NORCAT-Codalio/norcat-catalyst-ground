@@ -87,12 +87,12 @@ const stats = [
 
 const upcomingPrograms = [
   {
-    title: 'Capital',
+    title: 'Accessible Funding',
     description: 'We help you make the connections with venture capital and government funding.',
     link: '/programs/venture-growth-services',
   },
   {
-    title: 'Rugged Validation',
+    title: 'Real-World Validation',
     description: 'We mitigate the risk and cost of scientific, industrial, and technological innovation.',
     link: '/programs/mentorship-services',
   },
