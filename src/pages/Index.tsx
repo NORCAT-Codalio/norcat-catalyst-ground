@@ -12,6 +12,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
 import circuitIQTunnelPhoto from '@/assets/MT0226_CircuitIQ.jpg.asset.json';
+import ovinMayorSudburyPhoto from '@/assets/OVIN_MayorSudbury.jpg.asset.json';
 import exploreFacilitiesPhoto from '@/assets/MT0226_CircuitIQ_Facilities.jpg.asset.json';
 import ctaPhoto5 from '@/assets/cta-photo-5.png';
 import bev2026Photo from '@/assets/BEV2026.jpg.asset.json';
@@ -109,8 +110,8 @@ const upcomingPrograms = [
     description: 'We connect you with a broad network of sector experts, seasoned mentors, and city support.',
     cta: 'Explore Ecosystem',
     link: '/ecosystem',
-    image: circuitIQTunnelPhoto.url,
-    alt: 'CircuitIQ team demonstrating technology in the NORCAT Underground mine',
+    image: ovinMayorSudburyPhoto.url,
+    alt: 'Mayor of Sudbury with NORCAT and OVIN partners at an innovation event',
   },
 ];
 
