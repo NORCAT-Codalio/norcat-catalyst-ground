@@ -230,7 +230,7 @@ export function Navigation() {
             <img
               src="/norcat-innovation-logo.png"
               alt="NORCAT Innovation"
-              className="h-9 w-auto rounded-md"
+              className="h-12 w-auto rounded-md"
             />
           </Link>
 
