@@ -1,482 +1,501 @@
 import { Layout } from '@/components/Layout';
-import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Rocket, 
-  Target, 
-  Users, 
-  Presentation, 
-  Trophy,
-  Sparkles,
-  TrendingUp,
-  Calendar,
-  Star,
-  Zap,
-  Crown,
-  Building2,
-  ChevronRight,
+import {
+  ArrowUpRight,
   AlertTriangle,
-  DollarSign,
+  TrendingUp,
   Handshake,
   Shield,
-  Compass
+  Target,
+  Star,
+  Zap,
+  Compass,
+  Calendar,
+  MapPin,
+  Trophy,
+  Users,
+  Presentation,
+  Sparkles,
+  Crown,
 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import noaLogo from '@/assets/logos/northern-ontario-angels.png';
 import vnpBackground from '@/assets/vnp-background.png';
 import vnpLogo from '@/assets/logos/venture-north-pitch.png';
+import signatureLines from '@/assets/signature-lines.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+
+// ── Brand tokens (mirrors About / Home2 / IAP / RAII) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const Eyebrow = ({ children, center = false }: { children: React.ReactNode; center?: boolean }) => (
+  <p
+    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
+    style={{ fontFamily: FONT, color: TEAL }}
+  >
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
+
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As
+    className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
+  >
+    {children}
+  </As>
+);
 
 const InvestorHub = () => {
   const capitalPlaybook = [
-    { 
-      step: '01', 
-      title: 'Revenue-Led Growth', 
-      desc: 'Build a durable business with sustainable unit economics, not growth at all costs',
-      icon: TrendingUp
-    },
-    { 
-      step: '02', 
-      title: 'Strategic Partnerships', 
-      desc: 'Establish enterprise partnerships early for validation, revenue, and strategic value',
-      icon: Handshake
-    },
-    { 
-      step: '03', 
-      title: 'Non-Dilutive Funding', 
-      desc: 'Navigate grants, SR&ED, and government programs with intentional capital strategy',
-      icon: Shield
-    },
-    { 
-      step: '04', 
-      title: 'Right Capital, Right Time', 
-      desc: 'When equity makes sense, connect with investors aligned to your stage and vision',
-      icon: Target
-    },
+    { step: '01', title: 'Revenue-Led Growth', desc: 'Build a durable business with sustainable unit economics, not growth at all costs.', icon: TrendingUp },
+    { step: '02', title: 'Strategic Partnerships', desc: 'Establish enterprise partnerships early for validation, revenue, and strategic value.', icon: Handshake },
+    { step: '03', title: 'Non-Dilutive Funding', desc: 'Navigate grants, SR&ED, and government programs with intentional capital strategy.', icon: Shield },
+    { step: '04', title: 'Right Capital, Right Time', desc: 'When equity makes sense, connect with investors aligned to your stage and vision.', icon: Target },
+  ];
+
+  const realityStats = [
+    { value: '$2.1B', label: 'Raised in 2025', sublabel: 'Lowest since 2016' },
+    { value: '83%', label: 'To Top 5 Funds', sublabel: 'Capital concentration' },
+    { value: '42%', label: 'For New Startups', sublabel: 'Rest held in reserve' },
+    { value: '$249M', label: 'Emerging Managers', sublabel: 'Record low' },
+  ];
+
+  const noaStats = [
+    { value: '50+', label: 'Active Investors' },
+    { value: '$250M+', label: 'Invested' },
+    { value: '40+', label: 'Portfolio Companies' },
+    { value: '20+', label: 'Years Active' },
+  ];
+
+  const pitchEvents = [
+    { icon: Users, title: 'Curated Audience', desc: 'Present to engaged investors actively looking to deploy capital in the region.' },
+    { icon: Presentation, title: 'Pitch Coaching', desc: 'Receive expert coaching and feedback to refine your presentation before the event.' },
+    { icon: Sparkles, title: 'Direct Introductions', desc: 'Get warm introductions to investors aligned with your stage and sector.' },
+  ];
+
+  const vnpStats = [
+    { value: '11', label: 'Years of VNP' },
+    { value: '250+', label: 'Attendees' },
+    { value: '$350K', label: 'In Prizes Awarded' },
   ];
 
   return (
     <Layout>
-      {/* Hero - Ultra Modern */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 via-transparent to-purple-500/20" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-teal-500/30 rounded-full blur-[150px] animate-pulse" />
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[120px]" />
-        </div>
-        
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        
-        {/* Floating elements */}
-        <motion.div 
-          className="absolute top-32 right-20 w-20 h-20 border border-teal-500/30 rounded-xl"
-          animate={{ rotate: 360, y: [0, -20, 0] }}
-          transition={{ rotate: { duration: 20, repeat: Infinity }, y: { duration: 4, repeat: Infinity } }}
-        />
-        <motion.div 
-          className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-br from-teal-500/40 to-purple-500/40 rounded-lg"
-          animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-          transition={{ rotate: { duration: 15, repeat: Infinity }, scale: { duration: 3, repeat: Infinity } }}
-        />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <div className="max-w-5xl">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-sm mb-8"
-            >
-              <AlertTriangle className="w-4 h-4 text-amber-400" />
-              <span className="text-sm text-amber-300">The Capital Landscape Has Changed</span>
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-[0.95]"
-            >
-              The New
-              <br />
-              <span className="bg-gradient-to-r from-teal-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Capital Playbook
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-white/60 max-w-2xl mb-10 leading-relaxed"
-            >
-              The capital environment founders were trained for no longer exists. 
-              This isn't a market correction—it's a structural shift. We help you 
-              navigate the new era of raising capital.
-            </motion.p>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Button asChild size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white border-0 px-8 py-6 text-lg rounded-xl shadow-lg shadow-teal-500/25">
-                <Link to="/apply">
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)` }}
+          />
+          <img
+            src={signatureLines}
+            alt=""
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay"
+          />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <p
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+                style={{ background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.35)', color: '#fbbf24', fontFamily: FONT }}
+              >
+                <AlertTriangle className="w-3.5 h-3.5" />
+                The Capital Landscape Has Changed
+              </p>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                The New<br />
+                <span style={{ color: TEAL }}>Capital Playbook.</span>
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                The capital environment founders were trained for no longer exists.
+                This isn't a market correction — it's a structural shift. We help
+                you navigate the new era of raising capital.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                >
                   Navigate Your Path
-                  <Compass className="w-5 h-5 ml-2" />
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
                 </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl">
-                <a href="#new-playbook">
+                <a
+                  href="#new-playbook"
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transition-colors"
+                  style={{ border: `1px solid ${BORDER}`, color: 'white', fontFamily: FONT }}
+                >
                   Learn the New Playbook
-                  <ChevronRight className="w-5 h-5 ml-1" />
                 </a>
-              </Button>
-            </motion.div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-2 bg-white/40 rounded-full" />
-          </div>
-        </motion.div>
-      </section>
+        </section>
 
-      {/* The Reality Section */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[100px]" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            <ScrollReveal>
-              <div>
-                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-medium mb-6">
-                  <AlertTriangle className="w-4 h-4" />
+        {/* ───── THE REALITY (light) ───── */}
+        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-6">
+                <p
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                  style={{ background: 'rgba(245,158,11,0.12)', color: '#b45309', fontFamily: FONT }}
+                >
+                  <AlertTriangle className="w-3.5 h-3.5" />
                   The Reality
-                </span>
-                <h2 className="headline-lg mb-6">2025: The Worst Year for Canadian VC Since 2016</h2>
-                <p className="body-lg text-muted-foreground mb-6">
-                  Only $2.1B raised by 21 funds—the lowest since 2016. 83% of capital concentrated 
-                  in Canada's five largest funds. Emerging managers at record lows. LPs pulling back 
-                  due to lack of exits.
                 </p>
-                <p className="body-lg text-muted-foreground">
-                  This isn't a downturn. It's a fundamental restructuring of how capital flows. 
-                  The playbook that worked in 2021 won't work today. Founders need a new approach.
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
+                  2025: The worst year<br /><span style={{ color: TEAL }}>for Canadian VC since 2016.</span>
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
+                  Only $2.1B raised by 21 funds — the lowest since 2016. 83% of capital
+                  concentrated in Canada's five largest funds. Emerging managers at record
+                  lows. LPs pulling back due to lack of exits.
+                </p>
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  This isn't a downturn. It's a fundamental restructuring of how capital
+                  flows. The playbook that worked in 2021 won't work today. Founders need
+                  a new approach.
                 </p>
               </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: '$2.1B', label: 'Raised in 2025', sublabel: 'Lowest since 2016' },
-                  { value: '83%', label: 'To Top 5 Funds', sublabel: 'Capital concentration' },
-                  { value: '42%', label: 'For New Startups', sublabel: 'Rest held in reserve' },
-                  { value: '$249M', label: 'Emerging Managers', sublabel: 'Record low' },
-                ].map((stat, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-card border border-border">
-                    <div className="text-2xl md:text-3xl font-display font-bold text-foreground mb-1">{stat.value}</div>
-                    <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
-                    <p className="text-xs text-muted-foreground/60">{stat.sublabel}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
 
-      {/* The New Playbook */}
-      <section id="new-playbook" className="py-24 lg:py-32 bg-secondary/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                The New VC Playbook
-              </span>
-              <h2 className="headline-lg mb-4">Capital Navigation for the New Era</h2>
-              <p className="body-lg text-muted-foreground max-w-3xl mx-auto">
-                We don't just help you raise investment—we help you build a durable company. 
-                Revenue-led growth, strategic partnerships, intentional non-dilutive funding. 
-                We explore all options and guide you to the best path forward.
+              <div className="lg:col-span-6">
+                <div className="grid grid-cols-2 gap-4">
+                  {realityStats.map((s) => (
+                    <div key={s.label} className="p-6 md:p-7 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                      <div className="font-black text-3xl md:text-4xl mb-2" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.value}</div>
+                      <p className="text-sm font-bold" style={{ color: NAVY }}>{s.label}</p>
+                      <p className="text-xs mt-1" style={{ color: '#6b7387' }}>{s.sublabel}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── THE NEW PLAYBOOK (dark) ───── */}
+        <section
+          id="new-playbook"
+          className="py-20 md:py-32 relative overflow-hidden"
+          style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>The New VC Playbook</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Capital navigation<br /><span style={{ color: TEAL }}>for the new era.</span>
+              </Display>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                We don't just help you raise investment — we help you build a durable
+                company. Revenue-led growth, strategic partnerships, intentional
+                non-dilutive funding. We explore all options and guide you forward.
               </p>
             </div>
-          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {capitalPlaybook.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="group relative h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-teal-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative p-8 rounded-2xl border border-border bg-card h-full transition-all duration-300 group-hover:border-primary/30 group-hover:-translate-y-1">
-                    <span className="text-6xl font-display font-bold text-primary/10 absolute top-4 right-4">
-                      {item.step}
-                    </span>
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <h3 className="headline-sm mb-3">{item.title}</h3>
-                    <p className="body-md text-muted-foreground">{item.desc}</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {capitalPlaybook.map((item) => (
+                <article
+                  key={item.step}
+                  className="group relative rounded-2xl p-8 h-full overflow-hidden transition-transform hover:-translate-y-1"
+                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                >
+                  <div className="font-black text-5xl mb-6" style={{ color: 'rgba(0,179,152,0.35)', fontFamily: FONT, letterSpacing: '-0.02em' }}>{item.step}</div>
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                  >
+                    <item.icon className="w-7 h-7" style={{ color: TEAL }} />
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                  <h3 className="font-black uppercase text-xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{item.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Northern Ontario Angels Partnership */}
-      <section className="py-24 lg:py-32 bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[100px] -translate-y-1/2" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal>
-              <div>
-                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 text-teal-400 text-sm font-medium mb-6">
-                  <Star className="w-4 h-4" />
+        {/* ───── NORTHERN ONTARIO ANGELS (light) ───── */}
+        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-6">
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: FONT, color: TEAL }}>
+                  <Star className="w-3.5 h-3.5" />
                   Strategic Partner
-                </span>
-                <img 
-                  src={noaLogo} 
-                  alt="Northern Ontario Angels" 
-                  className="h-12 md:h-16 object-contain mb-6"
-                />
-                <p className="text-lg text-white/60 mb-8 leading-relaxed">
-                  Our exclusive partnership with Northern Ontario Angels connects 
-                  investment-ready founders with a network of active angel investors 
-                  across the region. Together, we're building the future of Northern 
-                  Ontario's startup ecosystem.
                 </p>
-                <ul className="space-y-4 mb-8">
+                <div className="rounded-xl p-5 mb-6 inline-block" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <img src={noaLogo} alt="Northern Ontario Angels" className="h-10 md:h-12 object-contain" />
+                </div>
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
+                  Connecting founders<br /><span style={{ color: TEAL }}>to active capital.</span>
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
+                  Our exclusive partnership with Northern Ontario Angels connects
+                  investment-ready founders with a network of active angel investors
+                  across the region.
+                </p>
+                <ul className="space-y-3 mb-8">
                   {[
                     'Access to 50+ accredited angel investors',
                     'Private pitch sessions with investor feedback',
                     'Syndicated investment opportunities',
-                    'Ongoing mentorship from successful entrepreneurs'
+                    'Ongoing mentorship from successful entrepreneurs',
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-white/80">
-                      <div className="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0">
-                        <Zap className="w-3 h-3 text-teal-400" />
-                      </div>
-                      {item}
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="size-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(0,179,152,0.15)' }}>
+                        <Zap className="w-3 h-3" style={{ color: TEAL }} />
+                      </span>
+                      <span className="text-sm md:text-base" style={{ color: '#2a3245' }}>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="bg-white/10 hover:bg-white/20 text-white border border-white/10">
-                  <a href="https://noangels.ca" target="_blank" rel="noopener noreferrer">
-                    Learn About NOA
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
+                <a
+                  href="https://noangels.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ background: TEAL, color: 'white', fontFamily: FONT }}
+                >
+                  Learn About NOA
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </a>
               </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center p-6 rounded-2xl bg-white/5">
-                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">50+</div>
-                      <p className="text-white/60 text-sm">Active Investors</p>
-                    </div>
-                    <div className="text-center p-6 rounded-2xl bg-white/5">
-                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">$250M+</div>
-                      <p className="text-white/60 text-sm">Invested</p>
-                    </div>
-                    <div className="text-center p-6 rounded-2xl bg-white/5">
-                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">40+</div>
-                      <p className="text-white/60 text-sm">Portfolio Companies</p>
-                    </div>
-                    <div className="text-center p-6 rounded-2xl bg-white/5">
-                      <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">20+</div>
-                      <p className="text-white/60 text-sm">Years Active</p>
-                    </div>
+
+              <div className="lg:col-span-6">
+                <div
+                  className="rounded-2xl p-8 md:p-10 relative overflow-hidden"
+                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 100%)`, border: `1px solid ${BORDER}` }}
+                >
+                  <div className="absolute inset-0 pointer-events-none" style={{
+                    backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.25), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.20), transparent 50%)`,
+                  }} />
+                  <div className="relative grid grid-cols-2 gap-4">
+                    {noaStats.map((s) => (
+                      <div key={s.label} className="text-center p-5 md:p-6 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <div className="font-black text-4xl md:text-5xl mb-2" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.value}</div>
+                        <p className="text-xs uppercase tracking-[0.16em] font-bold" style={{ color: 'rgba(255,255,255,0.7)' }}>{s.label}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Private Pitch Events */}
-      <section className="py-24 lg:py-32 bg-background relative">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                <Calendar className="w-4 h-4" />
-                Exclusive Access
-              </span>
-              <h2 className="headline-lg mb-4">Private Pitch Events</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Invitation-only pitch sessions connecting our top portfolio companies 
+        {/* ───── PRIVATE PITCH EVENTS (dark) ───── */}
+        <section
+          className="py-20 md:py-32 relative overflow-hidden"
+          style={{ background: 'linear-gradient(180deg, #001a4d 0%, #003da5 100%)' }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>Exclusive Access</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Private<br /><span style={{ color: TEAL }}>pitch events.</span>
+              </Display>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                Invitation-only pitch sessions connecting our top portfolio companies
                 with Northern Ontario Angels and select investors.
               </p>
             </div>
-          </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: Users, 
-                title: 'Curated Audience', 
-                desc: 'Present to engaged investors actively looking to deploy capital in the region.' 
-              },
-              { 
-                icon: Presentation, 
-                title: 'Pitch Coaching', 
-                desc: 'Receive expert coaching and feedback to refine your presentation before the event.' 
-              },
-              { 
-                icon: Sparkles, 
-                title: 'Direct Introductions', 
-                desc: 'Get warm introductions to investors aligned with your stage and sector.' 
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="p-8 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 h-full">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-teal-500/20 flex items-center justify-center mb-6">
-                    <item.icon className="w-7 h-7 text-primary" />
+            <div className="grid md:grid-cols-3 gap-5">
+              {pitchEvents.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl p-8 h-full transition-transform hover:-translate-y-1"
+                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                >
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(0,179,152,0.18)' }}>
+                    <item.icon className="w-7 h-7" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="headline-sm mb-3">{item.title}</h3>
-                  <p className="body-md text-muted-foreground">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+                  <h3 className="font-black uppercase text-xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{item.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Venture North Pitch - Flagship Event */}
-      <section id="venture-north" className="py-24 lg:py-32 relative overflow-hidden">
-        {/* Background image with blur and overlay */}
-        <div className="absolute inset-0">
-          <img 
-            src={vnpBackground} 
-            alt="" aria-hidden="true" 
-            className="w-full h-full object-cover blur-sm"
-          />
-          <div className="absolute inset-0 bg-gray-950/80" />
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 to-cyan-900/30" />
-        </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 border border-teal-500/20 rounded-full" />
-          <div className="absolute bottom-20 right-10 w-48 h-48 border border-teal-500/10 rounded-full" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[100px]" />
-        </div>
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 mb-8">
-                <Crown className="w-5 h-5 text-teal-400" />
-                <span className="text-teal-400 font-medium">Flagship Event</span>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.1}>
-              <img 
-                src={vnpLogo} 
-                alt="Venture North Pitch" 
-                className="h-24 md:h-32 lg:h-40 object-contain mx-auto mb-6"
-              />
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.2}>
-              <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Northern Ontario's premier pitch competition in partnership with Northern Ontario Angels. 
-                Think Dragon's Den, but for the innovators building the future of our region. 
-                Compete for investment, mentorship, and the spotlight.
+        {/* ───── VENTURE NORTH PITCH — Flagship Event (VNA style) ───── */}
+        <section
+          id="venture-north"
+          className="relative pt-24 pb-20 md:pt-36 md:pb-28 overflow-hidden min-h-[80vh] flex items-center"
+        >
+          {/* Hero image with brand tint, mirroring Venture North Accelerator */}
+          <div className="absolute inset-0">
+            <img
+              src={vnpBackground}
+              alt="Founder pitching live at Venture North PITCH"
+              className="w-full h-full object-cover object-right"
+            />
+            <div className="absolute inset-0" style={{ background: 'hsl(220 60% 10% / 0.55)', mixBlendMode: 'multiply' }} />
+            <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(0,26,77,0.70) 0%, rgba(0,26,77,0.40) 40%, rgba(0,26,77,0.95) 100%)` }} />
+            <div className="absolute inset-0" style={{ background: `linear-gradient(90deg, rgba(0,26,77,1) 0%, rgba(0,26,77,0.55) 55%, transparent 100%)` }} />
+          </div>
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <p
+                className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+                style={{ fontFamily: FONT, color: TEAL }}
+              >
+                <span className="size-1.5 rounded-full bg-current animate-pulse" />
+                <Crown className="w-3.5 h-3.5" />
+                Flagship Event · Thursday, October 1, 2026 · Sudbury, ON
               </p>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.3}>
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                {[
-                  { value: '11', label: 'Years of VNP' },
-                  { value: '250+', label: 'Attendees' },
-                  { value: '$350K', label: 'In Prizes Awarded' },
-                ].map((stat, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-1">
-                      {stat.value}
-                    </div>
-                    <p className="text-white/50 text-sm">{stat.label}</p>
+
+              <h2 className="mb-6">
+                <span className="sr-only">Venture North PITCH</span>
+                <img
+                  src={vnpLogo}
+                  alt="Venture North PITCH"
+                  className="h-auto w-full max-w-[18rem] sm:max-w-md md:max-w-2xl lg:max-w-[34rem] object-contain"
+                />
+              </h2>
+
+              <p className="mt-5 md:mt-7 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                Northern Ontario's premier pitch event. Think Dragon's Den, but for the
+                innovators building the future of our region — connecting bold founders
+                with the investors, partners, and capital ready to back what's next.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center justify-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                >
+                  Apply to Compete
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </Link>
+                <Link
+                  to="/events"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full text-sm font-bold"
+                  style={{ border: `1px solid ${TEAL}66`, color: 'white', fontFamily: FONT }}
+                >
+                  View Past Events
+                </Link>
+              </div>
+
+              {/* Event meta */}
+              <div className="mt-10 hidden md:grid grid-cols-3 gap-6 border-y py-7" style={{ borderColor: 'rgba(255,255,255,0.12)' }}>
+                <div className="flex items-center gap-4">
+                  <Calendar className="size-7" style={{ color: TEAL }} />
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-black" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: FONT }}>Date</p>
+                    <p className="text-base md:text-lg font-semibold text-white">October 1, 2026</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <MapPin className="size-7" style={{ color: TEAL }} />
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-black" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: FONT }}>Venue</p>
+                    <p className="text-base md:text-lg font-semibold text-white">Collège Boréal, Sudbury</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Trophy className="size-7" style={{ color: TEAL }} />
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-black" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: FONT }}>Prize Pool</p>
+                    <p className="text-base md:text-lg font-semibold text-white">$15,000 in Awards</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stats — VNA border-left treatment */}
+              <div className="mt-10 grid grid-cols-3 gap-6">
+                {vnpStats.map((s) => (
+                  <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
+                    <p className="font-black text-3xl md:text-4xl" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.value}</p>
+                    <p className="text-xs mt-1 leading-tight" style={{ color: 'rgba(255,255,255,0.7)' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={0.4}>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-teal-500/25">
-                  <Link to="/apply">
-                    Apply to Compete
-                    <Trophy className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-teal-500/50 text-teal-300 hover:bg-teal-500/10 px-8 py-6 text-lg rounded-xl">
-                  <Link to="/events">
-                    View Past Events
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-              </div>
-            </ScrollReveal>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal>
-              <Compass className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h2 className="headline-lg mb-6">Ready to Navigate the New Era?</h2>
-              <p className="body-lg text-muted-foreground mb-10">
-                Whether you're exploring non-dilutive funding, building strategic partnerships, 
-                or preparing for the right investor conversation—we're here to help you find 
-                the best path for your company.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild className="btn-primary-lg">
-                  <Link to="/apply">
-                    Start Your Journey
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="btn-outline-lg">
-                  <Link to="/programs/capital-navigation">
-                    Explore Capital Navigation
-                  </Link>
-                </Button>
-              </div>
-            </ScrollReveal>
+        {/* ───── FINAL CTA ───── */}
+        <section className="pt-20 md:pt-32 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
+          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
+            <Eyebrow center>Your move</Eyebrow>
+            <Compass className="w-12 h-12 mx-auto mb-6" style={{ color: TEAL }} />
+            <h2
+              className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+              style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+            >
+              Ready to navigate<br /><span style={{ color: TEAL }}>the new era?</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
+              Whether you're exploring non-dilutive funding, building strategic
+              partnerships, or preparing for the right investor conversation — we're
+              here to help you find the best path for your company.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link
+                to="/apply"
+                className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ fontFamily: FONT, background: TEAL, color: 'white' }}
+              >
+                Apply to NORCAT Innovation
+                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </span>
+              </Link>
+              <Link
+                to="/programs/capital-navigation"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold"
+                style={{ border: `1px solid ${NAVY}33`, color: NAVY, fontFamily: FONT }}
+              >
+                Explore Capital Navigation
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+      </div>
     </Layout>
   );
 };
