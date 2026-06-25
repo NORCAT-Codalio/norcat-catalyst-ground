@@ -227,12 +227,22 @@ export default function Index() {
                 NORTH
               </motion.h1>
 
-              {/* Sector tags */}
-              <motion.div
-                className="flex flex-wrap gap-2 mb-8"
-                initial={{ opacity: 0, y: 20 }}
+              {/* Description */}
+              <motion.p
+                className="text-xl md:text-2xl text-white leading-relaxed mb-8 max-w-2xl font-light"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 0.8 }}
+              >
+                For more than 30 years, NORCAT has been an engine of creative problem-solving by putting brilliant people together with advanced technology. Our design was built from the ground up to support your small-and-medium-sized business demonstrate, fund, validate, and scale with the innovative advantage only found in Northern Ontario.
+              </motion.p>
+
+              {/* Sector tags */}
+              <motion.div
+                className="flex flex-wrap gap-2 mb-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.8 }}
               >
                 {sectors.map((sector, i) => (
                   <motion.span
@@ -240,23 +250,13 @@ export default function Index() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white/70 text-sm liquid-glass hover:text-white/90 transition-colors duration-300"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.55 + i * 0.06 }}
+                    transition={{ delay: 0.75 + i * 0.06 }}
                   >
                     <sector.icon className="w-4 h-4" />
                     {sector.label}
                   </motion.span>
                 ))}
               </motion.div>
-
-              {/* Description */}
-              <motion.p
-                className="text-xl md:text-2xl text-white leading-relaxed mb-10 max-w-2xl font-light"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.65, duration: 0.8 }}
-              >
-                For more than 30 years, NORCAT has been an engine of creative problem-solving by putting brilliant people together with advanced technology. Our design was built from the ground up to support your small-and-medium-sized business demonstrate, fund, validate, and scale with the innovative advantage only found in Northern Ontario.
-              </motion.p>
 
               {/* CTAs */}
               <motion.div
