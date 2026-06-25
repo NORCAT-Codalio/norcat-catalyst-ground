@@ -223,10 +223,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                Build. Test.{' '}
-                <span style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(168, 100%, 35%)', textShadow: '0 0 60px hsl(168 100% 35% / 0.4), 0 0 120px hsl(168 100% 35% / 0.15)', fontWeight: 700 }}>
-                  Scale.
-                </span>
+                Enter the North
               </motion.h1>
 
               {/* Sector tags */}
