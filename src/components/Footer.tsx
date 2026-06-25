@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import skylineBanner from '@/assets/sudbury-skyline-banner.png.asset.json';
+import skylineBanner from '@/assets/skyline-banner-hd.png.asset.json';
 import { useState } from 'react';
 
 const footerLinks = {
