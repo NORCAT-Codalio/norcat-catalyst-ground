@@ -451,7 +451,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 w-full">
             {[
               { image: bev2026Photo.url, label: 'Connect With Us', link: '/contact' },
-              { image: ctaPhoto4, label: 'Meet Our Ecosystem', link: '/ecosystem' },
+              { image: ctaPhoto4, label: 'Learn More About Us', link: '/about' },
             ].map((post, i) => (
               <ScrollReveal key={post.label} delay={i * 0.1}>
                 <Link to={post.link} className="group relative block w-full h-[520px] overflow-hidden">
