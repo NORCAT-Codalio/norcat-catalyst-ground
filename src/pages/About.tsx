@@ -7,7 +7,7 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import locationsMap from '@/assets/locations-map.png.asset.json';
+import { LocationsMap } from '@/components/LocationsMap';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -212,66 +212,8 @@ export default function About() {
               </p>
             </div>
 
-            {/* Map with connected labels */}
-            <div className="relative w-full" style={{ aspectRatio: '768 / 460' }}>
-              <img
-                src={locationsMap.url}
-                alt="Map showing NORCAT Innovation locations across Ontario, Manitoba, Nevada and Peru"
-                className="absolute inset-0 w-full h-full object-contain"
-              />
-
-              {/* SVG connection lines + labels overlay */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                {[
-                  // marker tip (mx,my) -> label anchor (lx,ly) in % of container
-                  { mx: 17.5, my: 58, lx: 4,  ly: 30 },   // Thunder Bay
-                  { mx: 34.5, my: 58, lx: 28, ly: 16 },   // Timmins
-                  { mx: 41,   my: 71, lx: 60, ly: 60 },   // Sudbury HQ (teal)
-                  { mx: 34.5, my: 72, lx: 4,  ly: 80 },   // Onaping
-                  { mx: 40,   my: 89, lx: 28, ly: 98 },   // Toronto
-                  { mx: 76,   my: 63, lx: 96, ly: 96 },   // Elko
-                ].map((p, i) => (
-                  <line
-                    key={i}
-                    x1={p.mx} y1={p.my} x2={p.lx} y2={p.ly}
-                    stroke={TEAL}
-                    strokeWidth="0.25"
-                    strokeDasharray="0.8 0.8"
-                    vectorEffect="non-scaling-stroke"
-                  />
-                ))}
-              </svg>
-
-              {/* Labels (absolutely positioned at the SAME label anchors) */}
-              {[
-                { city: 'Thunder Bay, ON', tag: 'Regional Presence', lx: 4,  ly: 30, align: 'left' },
-                { city: 'Timmins, ON',     tag: 'Regional Presence', lx: 28, ly: 16, align: 'left' },
-                { city: 'Sudbury, ON',     tag: 'Headquarters',      lx: 60, ly: 60, align: 'left' },
-                { city: 'Onaping, ON',     tag: 'Underground Centre',lx: 4,  ly: 80, align: 'left' },
-                { city: 'Toronto, ON',     tag: 'Regional Presence', lx: 28, ly: 98, align: 'left' },
-                { city: 'Elko, NV, USA',   tag: 'International',     lx: 96, ly: 96, align: 'right' },
-              ].map((loc) => (
-                <div
-                  key={loc.city}
-                  className="absolute bg-white rounded-lg px-3 py-2 shadow-md"
-                  style={{
-                    left: `${loc.lx}%`,
-                    top: `${loc.ly}%`,
-                    transform: loc.align === 'right' ? 'translate(-100%, -50%)' : 'translate(0, -50%)',
-                    border: `1px solid ${TEAL}33`,
-                    fontFamily: FONT,
-                  }}
-                >
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-bold leading-tight"
-                     style={{ color: TEAL }}>{loc.tag}</p>
-                  <p className="text-xs sm:text-sm font-bold leading-tight" style={{ color: NAVY }}>{loc.city}</p>
-                </div>
-              ))}
-            </div>
+            {/* Interactive map */}
+            <LocationsMap />
           </div>
         </section>
 
