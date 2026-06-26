@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Linkedin, X, Users, TrendingUp, DollarSign, Calendar, MapPin, Trophy } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Linkedin, X, Users, TrendingUp, DollarSign, MapPin } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -182,29 +182,12 @@ export default function About() {
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   About NORCAT Innovation
                 </h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
-                  Through mentorship, capital access, and our unique underground testing facility,
-                  we provide everything ambitious entrepreneurs need to start, grow, and scale.
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission:
+                  keep talented founders and builders in the North by giving them the resources, mentorship,
+                  and capital access they need to grow. We believe innovation thrives when community comes first,
+                  safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                  Our specialization in mining technology makes us unique — offering founders
-                  access to a real operational mine for testing and validation.
-                </p>
-                <div className="grid grid-cols-3 gap-6 pt-7" style={{ borderTop: '1px solid #d9dde5' }}>
-                  {[
-                    { icon: Calendar, label: 'Established', value: '1995' },
-                    { icon: MapPin, label: 'Headquarters', value: 'Sudbury, ON' },
-                    { icon: Trophy, label: 'Capital Catalyzed', value: '$50M+' },
-                  ].map((m) => (
-                    <div key={m.label} className="flex items-start gap-3">
-                      <m.icon className="w-6 h-6 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                      <div>
-                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{m.label}</p>
-                        <p className="text-base md:text-lg font-bold" style={{ color: NAVY }}>{m.value}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
