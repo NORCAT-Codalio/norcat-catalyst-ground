@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 // World atlas topojson (countries) via CDN
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+const ONTARIO_GEO_URL = '/maps/ontario.json';
 
 const NAVY = '#001A4D';
 const TEAL = '#00B398';
@@ -40,13 +41,16 @@ type MapPanelProps = {
     parallels: [number, number];
     scale: number;
   };
-  filterCountries: string[];
+  geographyUrl?: string;
+  width?: number;
+  height?: number;
+  filterNames: string[];
   showArcs?: boolean;
   label: string;
   aspectRatio: string;
 };
 
-function MapPanel({ locations, active, setActive, projectionConfig, filterCountries, showArcs, label, aspectRatio }: MapPanelProps) {
+function MapPanel({ locations, active, setActive, projectionConfig, geographyUrl = GEO_URL, width = 800, height = 1000, filterNames, showArcs, label, aspectRatio }: MapPanelProps) {
   return (
     <div className="relative rounded-2xl overflow-hidden"
          style={{ background: 'linear-gradient(180deg,#f7f9fc 0%,#eef2f8 100%)', border: '1px solid #d9dde5' }}>
@@ -64,28 +68,30 @@ function MapPanel({ locations, active, setActive, projectionConfig, filterCountr
       </div>
       <div className="relative" style={{ aspectRatio }}>
         <ComposableMap
+          width={width}
+          height={height}
           projection="geoAlbers"
           projectionConfig={projectionConfig}
           style={{ width: '100%', height: '100%' }}
         >
-          <Geographies geography={GEO_URL}>
+          <Geographies geography={geographyUrl}>
             {({ geographies }) =>
               geographies
-                .filter((g) => filterCountries.includes(g.properties.name))
+                .filter((g) => filterNames.includes(g.properties.name))
                 .map((geo) => {
-                  const isCA = geo.properties.name === 'Canada';
+                  const isMain = filterNames.includes(geo.properties.name);
                   return (
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
                       style={{
                         default: {
-                          fill: isCA ? '#d6dde8' : '#e3e7ee',
+                          fill: isMain ? '#d6dde8' : '#e3e7ee',
                           stroke: '#ffffff',
                           strokeWidth: 0.75,
                           outline: 'none',
                         },
-                        hover:   { fill: isCA ? '#cbd4e2' : '#dae0e9', outline: 'none' },
+                        hover:   { fill: isMain ? '#cbd4e2' : '#dae0e9', outline: 'none' },
                         pressed: { fill: '#cbd4e2', outline: 'none' },
                       }}
                     />
@@ -128,6 +134,10 @@ function MapPanel({ locations, active, setActive, projectionConfig, filterCountr
                   r={loc.highlight ? 10 : 8}
                   fill={color}
                   opacity={0.3}
+                  initial={{
+                    r: loc.highlight ? 10 : 8,
+                    opacity: 0.35,
+                  }}
                   animate={{
                     r: [loc.highlight ? 10 : 8, loc.highlight ? 18 : 14, loc.highlight ? 10 : 8],
                     opacity: [0.35, 0, 0.35],
@@ -178,10 +188,13 @@ export function LocationsMap() {
           locations={caLocations}
           active={active}
           setActive={setActive}
-          projectionConfig={{ rotate: [95, 0, 0], center: [0, 55], parallels: [40, 60], scale: 850 }}
-          filterCountries={['Canada']}
+          geographyUrl={ONTARIO_GEO_URL}
+          width={800}
+          height={1000}
+          projectionConfig={{ rotate: [85, 0, 0], center: [0, 51], parallels: [45, 55], scale: 3200 }}
+          filterNames={['Ontario']}
           showArcs
-          label="Canada"
+          label="Ontario"
           aspectRatio="4 / 5"
         />
         <MapPanel
@@ -189,7 +202,7 @@ export function LocationsMap() {
           active={active}
           setActive={setActive}
           projectionConfig={{ rotate: [115, 0, 0], center: [0, 39], parallels: [34, 44], scale: 1600 }}
-          filterCountries={['United States of America']}
+          filterNames={['United States of America']}
           label="Nevada, USA"
           aspectRatio="4 / 5"
         />
