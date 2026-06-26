@@ -134,6 +134,10 @@ function MapPanel({ locations, active, setActive, projectionConfig, geographyUrl
                   r={loc.highlight ? 10 : 8}
                   fill={color}
                   opacity={0.3}
+                  initial={{
+                    r: loc.highlight ? 10 : 8,
+                    opacity: 0.35,
+                  }}
                   animate={{
                     r: [loc.highlight ? 10 : 8, loc.highlight ? 18 : 14, loc.highlight ? 10 : 8],
                     opacity: [0.35, 0, 0.35],
