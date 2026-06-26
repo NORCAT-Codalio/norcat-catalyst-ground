@@ -7,7 +7,7 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import locationsMap from '@/assets/locations-map.png.asset.json';
+import { LocationsMap } from '@/components/LocationsMap';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
