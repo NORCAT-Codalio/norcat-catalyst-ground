@@ -210,6 +210,52 @@ export default function About() {
           </div>
         </section>
 
+        {/* ───── LOCATIONS ───── */}
+        <section className="py-20 md:py-28" style={{ background: '#f4f6fa', color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl mb-12 md:mb-14">
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
+                Where We Operate
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                Our <span style={{ color: TEAL }}>Locations.</span>
+              </h2>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                A Northern Ontario-rooted network with reach across Canada and into the United States.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                { city: 'Sudbury, ON', tag: 'Headquarters' },
+                { city: 'Onaping, ON', tag: 'Underground Centre' },
+                { city: 'Toronto, ON', tag: 'Regional Presence' },
+                { city: 'Timmins, ON', tag: 'Regional Presence' },
+                { city: 'Thunder Bay, ON', tag: 'Regional Presence' },
+                { city: 'Elko, NV, USA', tag: 'International' },
+              ].map((loc) => (
+                <div key={loc.city}
+                     className="group relative bg-white rounded-2xl p-6 flex items-start gap-4 transition-all hover:-translate-y-1 hover:shadow-lg"
+                     style={{ border: '1px solid #d9dde5' }}>
+                  <div className="size-11 rounded-xl flex items-center justify-center shrink-0"
+                       style={{ background: 'rgba(0,179,152,0.10)' }}>
+                    <MapPin className="w-5 h-5" style={{ color: TEAL }} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-1"
+                       style={{ fontFamily: FONT, color: TEAL }}>{loc.tag}</p>
+                    <p className="text-lg md:text-xl font-bold" style={{ color: NAVY, fontFamily: FONT }}>{loc.city}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* ───── STORY OF NORCAT (dark) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
