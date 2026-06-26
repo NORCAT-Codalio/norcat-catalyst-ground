@@ -7,7 +7,6 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import locationsMap from '@/assets/norcat-locations-map.png';
 
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
@@ -205,59 +204,36 @@ export default function About() {
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                NORCAT and Partner <span style={{ color: TEAL }}>Locations.</span>
+                Our <span style={{ color: TEAL }}>Locations.</span>
               </h2>
               <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 A Northern Ontario-rooted network with reach across Canada and into the United States.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5"
-                      style={{ color: TEAL, fontFamily: FONT }}>NORCAT Offices</h3>
-                  <ul className="space-y-3">
-                    {[
-                      { city: 'Sudbury, ON', tag: 'Headquarters' },
-                      { city: 'Onaping, ON', tag: 'Underground Centre' },
-                      { city: 'Toronto, ON', tag: 'Regional Presence' },
-                      { city: 'Timmins, ON', tag: 'Regional Presence' },
-                      { city: 'Thunder Bay, ON', tag: 'Regional Presence' },
-                      { city: 'Elko, NV, USA', tag: 'International' },
-                    ].map((loc) => (
-                      <li key={loc.city} className="flex items-start gap-3">
-                        <MapPin className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
-                        <div>
-                          <span className="text-sm font-bold block" style={{ fontFamily: FONT, color: NAVY }}>{loc.city}</span>
-                          <span className="text-[11px] uppercase tracking-[0.15em] font-semibold" style={{ color: '#475068' }}>{loc.tag}</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                { city: 'Sudbury, ON', tag: 'Headquarters' },
+                { city: 'Onaping, ON', tag: 'Underground Centre' },
+                { city: 'Toronto, ON', tag: 'Regional Presence' },
+                { city: 'Timmins, ON', tag: 'Regional Presence' },
+                { city: 'Thunder Bay, ON', tag: 'Regional Presence' },
+                { city: 'Elko, NV, USA', tag: 'International' },
+              ].map((loc) => (
+                <div key={loc.city}
+                     className="group relative bg-white rounded-2xl p-6 flex items-start gap-4 transition-all hover:-translate-y-1 hover:shadow-lg"
+                     style={{ border: '1px solid #d9dde5' }}>
+                  <div className="size-11 rounded-xl flex items-center justify-center shrink-0"
+                       style={{ background: 'rgba(0,179,152,0.10)' }}>
+                    <MapPin className="w-5 h-5" style={{ color: TEAL }} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-1"
+                       style={{ fontFamily: FONT, color: TEAL }}>{loc.tag}</p>
+                    <p className="text-lg md:text-xl font-bold" style={{ color: NAVY, fontFamily: FONT }}>{loc.city}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5"
-                      style={{ color: TEAL, fontFamily: FONT }}>Partner Locations</h3>
-                  <ul className="space-y-3">
-                    {[
-                      { city: 'North Bay, ON' },
-                      { city: 'UCN – Manitoba' },
-                      { city: 'Hub Innovación Minera del Perú' },
-                    ].map((loc) => (
-                      <li key={loc.city} className="flex items-start gap-3">
-                        <MapPin className="w-4 h-4 shrink-0 mt-0.5" style={{ color: BLUE }} />
-                        <span className="text-sm font-bold" style={{ fontFamily: FONT, color: NAVY }}>{loc.city}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-5 md:p-7 shadow-sm" style={{ border: '1px solid #d9dde5' }}>
-                <img src={locationsMap} alt="Map showing NORCAT office and partner locations across Ontario, Manitoba, Nevada, and Peru"
-                     className="w-full h-auto" width={1280} height={1024} loading="lazy" />
-              </div>
+              ))}
             </div>
           </div>
         </section>
