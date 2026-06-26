@@ -50,7 +50,7 @@ type MapPanelProps = {
   aspectRatio: string;
 };
 
-function MapPanel({ locations, active, setActive, projectionConfig, geographyUrl = GEO_URL, width = 800, height = 600, filterNames, showArcs, label, aspectRatio }: MapPanelProps) {
+function MapPanel({ locations, active, setActive, projectionConfig, geographyUrl = GEO_URL, width = 800, height = 1000, filterNames, showArcs, label, aspectRatio }: MapPanelProps) {
   return (
     <div className="relative rounded-2xl overflow-hidden"
          style={{ background: 'linear-gradient(180deg,#f7f9fc 0%,#eef2f8 100%)', border: '1px solid #d9dde5' }}>
