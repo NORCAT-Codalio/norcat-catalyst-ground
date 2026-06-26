@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
-import { motion, AnimatePresence } from 'framer-motion';
+import { ComposableMap, Geographies, Geography, Marker, Line } from 'react-simple-maps';
+import { motion } from 'framer-motion';
 
 // World atlas topojson (countries) via CDN
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
@@ -19,21 +19,22 @@ type Location = {
 };
 
 const LOCATIONS: Location[] = [
-  { id: 'sudbury',   name: 'Sudbury',     region: 'Ontario',  tag: 'Headquarters',       coords: [-80.9930, 46.4917], highlight: true },
-  { id: 'onaping',   name: 'Onaping',     region: 'Ontario',  tag: 'Underground Centre', coords: [-81.4167, 46.6167], highlight: true },
-  { id: 'toronto',   name: 'Toronto',     region: 'Ontario',  tag: 'Regional Presence',  coords: [-79.3832, 43.6532] },
-  { id: 'timmins',   name: 'Timmins',     region: 'Ontario',  tag: 'Regional Presence',  coords: [-81.3370, 48.4758] },
-  { id: 'thunder',   name: 'Thunder Bay', region: 'Ontario',  tag: 'Regional Presence',  coords: [-89.2477, 48.3809] },
-  { id: 'elko',      name: 'Elko',        region: 'Nevada, USA', tag: 'International',   coords: [-115.7631, 40.8324] },
+  { id: 'sudbury',   name: 'Sudbury',     region: 'ON',          tag: 'Headquarters',       coords: [-80.9930, 46.4917], highlight: true },
+  { id: 'onaping',   name: 'Onaping',     region: 'ON',          tag: 'Underground Centre', coords: [-81.4167, 46.6167], highlight: true },
+  { id: 'toronto',   name: 'Toronto',     region: 'ON',          tag: 'Regional Presence',  coords: [-79.3832, 43.6532] },
+  { id: 'timmins',   name: 'Timmins',     region: 'ON',          tag: 'Regional Presence',  coords: [-81.3370, 48.4758] },
+  { id: 'thunder',   name: 'Thunder Bay', region: 'ON',          tag: 'Regional Presence',  coords: [-89.2477, 48.3809] },
+  { id: 'elko',      name: 'Elko',        region: 'NV, USA',     tag: 'International',      coords: [-115.7631, 40.8324] },
 ];
 
+const HQ = LOCATIONS[0];
+
 export function LocationsMap() {
-  const [active, setActive] = useState<string | null>('sudbury');
+  const [active, setActive] = useState<string>('sudbury');
 
   return (
     <div className="relative w-full rounded-3xl overflow-hidden"
          style={{ background: 'linear-gradient(180deg,#f7f9fc 0%,#eef2f8 100%)', border: '1px solid #d9dde5' }}>
-      {/* subtle grid */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.35]"
         style={{
@@ -43,7 +44,7 @@ export function LocationsMap() {
         }}
       />
 
-      <div className="grid lg:grid-cols-[1fr_280px] gap-0">
+      <div className="grid lg:grid-cols-[1fr_280px] gap-0 relative">
         {/* MAP */}
         <div className="relative" style={{ aspectRatio: '16 / 11' }}>
           <ComposableMap
@@ -82,47 +83,77 @@ export function LocationsMap() {
               }
             </Geographies>
 
-            {/* connection arcs between Sudbury HQ and other markers */}
-            {LOCATIONS.filter((l) => l.id !== 'sudbury').map((loc) => (
-              <ArcLine key={loc.id} from={LOCATIONS[0].coords} to={loc.coords} />
-            ))}
+            {/* Arcs from HQ to every other location */}
+            {LOCATIONS.filter((l) => l.id !== HQ.id).map((loc) => {
+              const mid: [number, number] = [
+                (HQ.coords[0] + loc.coords[0]) / 2,
+                (HQ.coords[1] + loc.coords[1]) / 2 + 5,
+              ];
+              return (
+                <Line
+                  key={loc.id}
+                  coordinates={[HQ.coords, mid, loc.coords]}
+                  stroke={TEAL}
+                  strokeWidth={1.2}
+                  strokeDasharray="3 3"
+                  strokeLinecap="round"
+                  fill="none"
+                  opacity={active === loc.id || active === HQ.id ? 0.9 : 0.4}
+                />
+              );
+            })}
 
-            {LOCATIONS.map((loc) => (
-              <Marker
-                key={loc.id}
-                coordinates={loc.coords}
-                onMouseEnter={() => setActive(loc.id)}
-                onClick={() => setActive(loc.id)}
-                style={{ default: { cursor: 'pointer' }, hover: { cursor: 'pointer' }, pressed: {} }}
-              >
-                <g>
-                  {/* pulse */}
+            {LOCATIONS.map((loc) => {
+              const isActive = active === loc.id;
+              const color = loc.highlight ? TEAL : BLUE;
+              return (
+                <Marker
+                  key={loc.id}
+                  coordinates={loc.coords}
+                  onMouseEnter={() => setActive(loc.id)}
+                  onClick={() => setActive(loc.id)}
+                  style={{ default: { cursor: 'pointer' }, hover: { cursor: 'pointer' }, pressed: {} }}
+                >
                   <motion.circle
                     r={loc.highlight ? 10 : 8}
-                    fill={loc.highlight ? TEAL : BLUE}
-                    opacity={0.25}
-                    animate={{ r: [loc.highlight ? 10 : 8, loc.highlight ? 18 : 14, loc.highlight ? 10 : 8], opacity: [0.35, 0, 0.35] }}
+                    fill={color}
+                    opacity={0.3}
+                    animate={{
+                      r: [loc.highlight ? 10 : 8, loc.highlight ? 18 : 14, loc.highlight ? 10 : 8],
+                      opacity: [0.35, 0, 0.35],
+                    }}
                     transition={{ duration: 2.4, repeat: Infinity, delay: Math.random() * 1.5 }}
                   />
-                  <circle r={loc.highlight ? 5.5 : 4.5} fill={loc.highlight ? TEAL : BLUE} stroke="#fff" strokeWidth={1.5} />
-                  {active === loc.id && (
-                    <g transform="translate(8, -6)">
-                      <rect x={0} y={-10} rx={4} ry={4} width={loc.name.length * 6.5 + 14} height={18}
-                            fill={NAVY} />
-                      <text x={7} y={3} fill="#fff" fontSize={10} fontWeight={700}
-                            style={{ fontFamily: "'Open Sans', system-ui, sans-serif", letterSpacing: '0.04em' }}>
+                  <circle r={loc.highlight ? 5.5 : 4.5} fill={color} stroke="#fff" strokeWidth={1.5} />
+                  {isActive && (
+                    <g transform="translate(10, -8)">
+                      <rect
+                        x={0} y={-11}
+                        rx={4} ry={4}
+                        width={loc.name.length * 6.5 + 16}
+                        height={20}
+                        fill={NAVY}
+                      />
+                      <text
+                        x={8} y={3}
+                        fill="#fff"
+                        fontSize={10}
+                        fontWeight={700}
+                        style={{ fontFamily: "'Open Sans', system-ui, sans-serif", letterSpacing: '0.06em' }}
+                      >
                         {loc.name.toUpperCase()}
                       </text>
                     </g>
                   )}
-                </g>
-              </Marker>
-            ))}
+                </Marker>
+              );
+            })}
           </ComposableMap>
         </div>
 
         {/* SIDE PANEL */}
-        <div className="relative bg-white/70 backdrop-blur-sm border-l" style={{ borderColor: '#d9dde5' }}>
+        <div className="relative bg-white/70 backdrop-blur-sm lg:border-l border-t lg:border-t-0"
+             style={{ borderColor: '#d9dde5' }}>
           <div className="p-5 sm:p-6">
             <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-4" style={{ color: TEAL }}>
               6 Locations
@@ -149,7 +180,7 @@ export function LocationsMap() {
                           {loc.tag}
                         </span>
                         <span className="block text-sm font-bold truncate" style={{ color: NAVY }}>
-                          {loc.name}, {loc.region.includes(',') ? loc.region : loc.region === 'Ontario' ? 'ON' : loc.region}
+                          {loc.name}, {loc.region}
                         </span>
                       </span>
                     </button>
@@ -171,45 +202,5 @@ export function LocationsMap() {
         </div>
       </div>
     </div>
-  );
-}
-
-// Curved arc between two geo points using a quadratic bezier in projected space
-function ArcLine({ from, to }: { from: [number, number]; to: [number, number] }) {
-  // react-simple-maps provides projection via context; we approximate by using
-  // a Marker pair with a Line component. Simpler: render in projected coords via <g>.
-  // We'll use a path with great-circle-ish midpoint offset in lon/lat.
-  const mid: [number, number] = [(from[0] + to[0]) / 2, (from[1] + to[1]) / 2 + 4];
-  return (
-    <g>
-      <PathArc points={[from, mid, to]} />
-    </g>
-  );
-}
-
-function PathArc({ points }: { points: [number, number][] }) {
-  // Use d3-geo projection consistent with ComposableMap — but simplest:
-  // wrap each point in a Marker so RSM projects it, then connect via SVG line.
-  // To avoid 3 markers per arc, we use a Line component-less approach by
-  // leveraging Marker's projection: render an invisible Marker that yields g transform.
-  // Implementation: render two markers (from, to) connected with a <line> using
-  // CSS-positioned overlay isn't possible inside SVG without coordinates.
-  // Workaround: use <Line> from react-simple-maps which auto-projects.
-  // Falls back to a curved path through "mid".
-  return <LineProjected points={points} />;
-}
-
-import { Line } from 'react-simple-maps';
-function LineProjected({ points }: { points: [number, number][] }) {
-  return (
-    <Line
-      coordinates={points}
-      stroke={TEAL}
-      strokeWidth={1.2}
-      strokeDasharray="3 3"
-      strokeLinecap="round"
-      fill="none"
-      opacity={0.55}
-    />
   );
 }
