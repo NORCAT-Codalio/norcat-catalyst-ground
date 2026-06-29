@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import norcatLogo from '@/assets/logos/norcat-black.png';
 
 type MenuEntry = {
   name: string;
