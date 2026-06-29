@@ -406,7 +406,117 @@ export default function About() {
           </div>
         </section>
 
+        {/* ───── VALUES (dark) ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden"
+                 style={{ background: NAVY }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.15), transparent 45%)`,
+          }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute bottom-0 left-0 w-auto h-1/3 object-contain object-left-bottom opacity-30 pointer-events-none select-none mix-blend-overlay" />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>What We Stand For</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Our <span style={{ color: TEAL }}>Values.</span>
+              </Display>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+              {[
+                {
+                  icon: Target,
+                  title: 'Quality, Results and Impact',
+                  desc: 'Our impact is measured by the success of our customers, partners, and community stakeholders. Achieving excellence demands we define a path of continuous improvement. We listen, learn, build, measure, and repeat.',
+                },
+                {
+                  icon: Zap,
+                  title: 'Agile and Adaptive',
+                  desc: 'We celebrate creativity, innovation, and challenging constraints. We are bold. We move fast. We are open. We recognize that day one will never look like day two — and we thrive in that environment. Many people dislike change, but remember — change is the only thing that has brought progress.',
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Do What's Right",
+                  desc: 'Trust is the belief and confidence in integrity, reliability and fairness. Without integrity, nothing else matters. We always pause, reflect, and ask: what is the right thing to do? Then we do it and we do it proudly.',
+                },
+                {
+                  icon: Users2,
+                  title: 'Teamwork and Collaboration',
+                  desc: 'We must collaborate to compete and winning must always be celebrated as a team. We can do hard things and we must do them together.',
+                },
+              ].map((v) => (
+                <div key={v.title}
+                     className="rounded-2xl p-7 md:p-8 transition hover:-translate-y-1"
+                     style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
+                  <div className="inline-flex items-center justify-center size-12 rounded-xl mb-5"
+                       style={{ background: `${TEAL}22`, color: TEAL, border: `1px solid ${TEAL}55` }}>
+                    <v.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-black uppercase text-xl md:text-2xl mb-3 text-white"
+                      style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                    {v.title}
+                  </h3>
+                  <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                    {v.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── AWARDS BANNER (light) ───── */}
+        <section className="py-20 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Recognition
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                Awards & <span style={{ color: TEAL }}>Accolades.</span>
+              </h2>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                Recognized nationally and globally for building a world-class innovation ecosystem in the North.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {[
+                { title: 'Best Place to Work', org: 'Bell Business Awards' },
+                { title: 'Best Innovation Ecosystem', org: 'Bell Business Awards' },
+                { title: 'NASA Group Achievement Award', org: 'NASA' },
+                { title: 'Indigenous Partnership Award', org: 'De Beers' },
+                { title: 'Executive of the Year Award', org: 'Industry Recognition' },
+                { title: 'Consistent Business Growth', org: 'Academy of Extended Reality (AIXR)' },
+              ].map((a) => (
+                <div key={a.title}
+                     className="group flex items-center gap-4 rounded-2xl p-5 md:p-6 transition hover:-translate-y-0.5 hover:shadow-lg"
+                     style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <div className="inline-flex items-center justify-center size-12 md:size-14 rounded-xl shrink-0"
+                       style={{ background: `${TEAL}1A`, color: TEAL }}>
+                    <Trophy className="w-6 h-6" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-black uppercase text-sm md:text-base leading-tight mb-1"
+                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      {a.title}
+                    </h3>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em]" style={{ color: TEAL }}>
+                      {a.org}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ───── PARTNERS — Powered by ───── */}
+
         <section className="pt-20 md:pt-24 pb-10 md:pb-12" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center mb-10 md:mb-12">
