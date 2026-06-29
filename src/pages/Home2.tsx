@@ -201,8 +201,8 @@ export default function Home2() {
               </div>
 
               {/* Photo collage — spans full height of hero section */}
-              <div className="lg:w-[41.667%] hidden lg:block min-h-0">
-                <div className="grid grid-cols-2 gap-4 h-full overflow-hidden">
+              <div className="lg:w-[41.667%] hidden lg:block min-h-0 relative">
+                <div className="absolute inset-0 grid grid-cols-2 gap-4 overflow-hidden">
                   {/* Left column — extends above and below the section edge */}
                   <div className="flex flex-col gap-4 -mt-20 -mb-20">
                     <div className="rounded-2xl overflow-hidden flex-[1.2] shadow-2xl ring-1 ring-white/10">
