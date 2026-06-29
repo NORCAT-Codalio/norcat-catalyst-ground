@@ -50,11 +50,6 @@ const team = [
   { name: 'Jie Chen', role: 'Associate', image: jieImage, bio: 'Jie supports founders through research, analysis, and program delivery. Her attention to detail and commitment to excellence ensures startups receive the highest quality support.', linkedin: 'https://linkedin.com/in/' },
 ];
 
-const stats = [
-  { number: '150+', label: 'Startups Supported', icon: Users },
-  { number: '15+', label: 'Years of Impact', icon: TrendingUp },
-  { number: '$50M+', label: 'Capital Raised', icon: DollarSign },
-];
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
