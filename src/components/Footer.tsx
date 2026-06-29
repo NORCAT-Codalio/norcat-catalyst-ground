@@ -37,7 +37,7 @@ export function Footer() {
 
   return (
     <>
-      <div style={{ background: 'hsl(220 15% 92%)' }} className="pt-16">
+      <div style={{ background: '#F2F3F6' }} className="pt-16">
         <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
       </div>
       <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
