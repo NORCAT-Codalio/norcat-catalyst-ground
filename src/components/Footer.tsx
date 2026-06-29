@@ -8,26 +8,29 @@ import { useState } from 'react';
 const footerLinks = {
   programs: [
     { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-    { name: 'Capital Navigation', href: '/programs/capital-navigation' },
-    { name: 'Non-Dilutive Funding', href: '/funding/innovation-acceleration-program' },
+    { name: 'Mentorship', href: '/programs/mentorship-services' },
+    { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
+    { name: 'Core5', href: '/mining/core5' },
+    { name: 'Underground Centre', href: '/mining/norcat-underground' },
+    { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
+    { name: 'Innovation Space', href: '/mining/labs' },
+  ],
+  funding: [
+    { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
+    { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
     { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
   ],
   resources: [
-    { name: 'Mining Innovation', href: '/mining-innovation' },
-    { name: 'Underground Centre', href: '/mining/norcat-underground' },
-    { name: 'Ecosystem Map', href: '/ecosystem' },
-    { name: 'Impact Dashboard', href: '/impact' },
-  ],
-  events: [
-    { name: 'Mining Transformed', href: '/events#mining-transformed' },
-    { name: 'Venture North PITCH', href: '/events#venture-north' },
-    { name: 'Demo Days', href: '/events#demo-days' },
-    { name: 'All Events', href: '/events' },
+    { name: 'Ecosystem', href: '/ecosystem/sudbury' },
+    { name: 'Impact', href: '/impact' },
+    { name: 'Stories', href: '/insights/success-stories' },
+    { name: 'News', href: '/insights/news' },
+    { name: 'Events', href: '/events' },
   ],
   company: [
     { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
     { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/careers' },
+    { name: 'Client Portal', href: '/portal/auth' },
     { name: 'Contact', href: '/contact' },
   ],
 };
@@ -140,11 +143,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Events */}
+          {/* Funding */}
           <div>
-            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Events</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Funding</h4>
             <ul className="space-y-3">
-              {footerLinks.events.map((link) => (
+              {footerLinks.funding.map((link) => (
                 <li key={link.name}>
                   <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
