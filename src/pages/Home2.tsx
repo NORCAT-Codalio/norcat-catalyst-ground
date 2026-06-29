@@ -141,7 +141,7 @@ export default function Home2() {
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[80vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
+        <section className="relative overflow-hidden min-h-[80vh] flex flex-col">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
           {/* logo background */}
@@ -155,9 +155,9 @@ export default function Home2() {
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-7">
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 flex-1 flex items-center min-h-0">
+            <div className="flex flex-col lg:flex-row gap-10 items-stretch w-full h-full min-h-0">
+              <div className="lg:w-[58.333%] flex flex-col justify-center py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
                 <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
@@ -200,34 +200,31 @@ export default function Home2() {
                 </div>
               </div>
 
-              {/* Photo collage */}
-              <div className="lg:col-span-5 hidden lg:block">
-                <div className="grid grid-cols-3 gap-4 h-[560px]">
-                  <div className="flex flex-col gap-4 pt-10">
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
-                      <img src={circuitiqTeam} alt="" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
-                      <img src={ctaPhoto3} alt="" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+              {/* Photo collage — spans full height of hero section */}
+              <div className="lg:w-[41.667%] hidden lg:block min-h-0">
+                <div className="grid grid-cols-2 gap-4 h-full overflow-hidden">
+                  {/* Left column — extends above and below the section edge */}
+                  <div className="flex flex-col gap-4 -mt-20 -mb-20">
+                    <div className="rounded-2xl overflow-hidden flex-[1.2] shadow-2xl ring-1 ring-white/10">
                       <img src={ctaPhoto1} alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
                       <img src={loopxTeam} alt="" className="w-full h-full object-cover" />
                     </div>
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                    <div className="rounded-2xl overflow-hidden flex-[0.8] shadow-2xl ring-1 ring-white/10">
                       <img src={ctaPhoto2} alt="" className="w-full h-full object-cover" />
                     </div>
                   </div>
-                  <div className="flex flex-col gap-4 pt-16">
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
-                      <img src={ctaPhoto4} alt="" className="w-full h-full object-cover" />
+                  {/* Right column — offset to extend past the section edge */}
+                  <div className="flex flex-col gap-4 -mt-32 -mb-8">
+                    <div className="rounded-2xl overflow-hidden flex-[0.9] shadow-2xl ring-1 ring-white/10">
+                      <img src={circuitiqTeam} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden flex-[1.3] shadow-2xl ring-1 ring-white/10">
+                      <img src={ctaPhoto3} alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
-                      <img src={miningUndergroundHero} alt="" className="w-full h-full object-cover" />
+                      <img src={ctaPhoto4} alt="" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
