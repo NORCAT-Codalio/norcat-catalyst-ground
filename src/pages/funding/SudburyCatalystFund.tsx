@@ -67,14 +67,14 @@ const SudburyCatalystFund = () => {
   ];
 
   const investmentCriteria = [
-    { icon: Briefcase, title: 'Sectors', description: 'Co-invest in early-stage tech across multiple sectors including mining tech, cleantech, AI, health, and more.' },
-    { icon: Coins, title: 'Funding', description: 'Co-invest up to $250,000 on a 1:1 matching basis alongside angel investors and other funds.' },
-    { icon: Globe, title: 'Geography', description: 'Must have commitment to operate majority of operations in Greater Sudbury.' },
-    { icon: TrendingUp, title: 'Stage', description: 'Cumulative revenues and capital raised equating to less than $1M since company inception.' },
+    { icon: Briefcase, title: 'Sectors', description: 'Co-invest in early-stage tech companies across mining, construction, forestry, MedTech, software, and advanced manufacturing.' },
+    { icon: Coins, title: 'Funding', description: 'Invest in two to three ventures per year, co-investing up to $250,000 on a 1:1 matching basis alongside qualified angel investors.' },
+    { icon: Globe, title: 'Geography', description: 'The founder must be committed to establishing at least 51% of the company’s operations and staffing in the City of Greater Sudbury.' },
+    { icon: TrendingUp, title: 'Stage', description: 'High-potential ventures with cumulative revenues and capital raised equating to less than $1M since company inception.' },
   ];
 
   const overviewStats = [
-    { icon: DollarSign, label: 'Investment Size', value: '$25K – $250K' },
+    { icon: DollarSign, label: 'Investment Size', value: 'Up to $250K' },
     { icon: Target, label: 'Focus', value: 'Seed Stage' },
     { icon: BarChart3, label: 'Portfolio', value: '7 Companies' },
     { icon: Zap, label: 'Decision Time', value: '4–6 Weeks' },
@@ -86,6 +86,25 @@ const SudburyCatalystFund = () => {
   ];
 
   const committee = Array.from({ length: 6 }).map(() => ({ name: 'Committee Member', role: 'Investment Committee' }));
+
+  const applicationSteps = [
+    {
+      step: '01',
+      title: 'Join Mentorship',
+      description: 'Be involved with and participating in the NORCAT Innovation sponsored mentorship program.',
+      link: { label: 'Submit Discovery Document', to: '/apply' },
+    },
+    {
+      step: '02',
+      title: 'Gain Endorsement',
+      description: 'Be supported and endorsed through that mentorship to make an application to the fund.',
+    },
+    {
+      step: '03',
+      title: 'Secure Angel Commitment',
+      description: 'Successfully acquire a written commitment of investment from one or more angel investors.',
+    },
+  ];
 
   return (
     <Layout>
@@ -113,11 +132,10 @@ const SudburyCatalystFund = () => {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow>Sudbury Catalyst Fund</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Early-stage capital,<br /><span style={{ color: TEAL }}>built for Sudbury.</span>
+                Investing in Sudbury’s<br /><span style={{ color: TEAL }}>tech-based entrepreneurial ecosystem.</span>
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Investment capital for innovative companies building transformative
-                solutions in Northern Ontario.
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                The Sudbury Catalyst Fund (SCF) is a unique $5 million venture capital fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City of Greater Sudbury, FedNor, and NORCAT.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -153,12 +171,10 @@ const SudburyCatalystFund = () => {
                 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
-                Capital for founders<br /><span style={{ color: TEAL }}>solving big problems.</span>
+                Investing in scalable<br /><span style={{ color: TEAL }}>tech start-ups.</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
-                The Sudbury Catalyst Fund provides critical early-stage capital to
-                high-potential startups with a connection to Northern Ontario. We invest
-                in founders solving big problems with innovative technology.
+                Established with the goal to accelerate the growth of scalable tech start-ups, SCF brings together a variety of partners and angel investors eager to build Northern Ontario’s entrepreneurial ecosystem by investing in and supporting a diversified portfolio of high-growth companies.
               </p>
             </div>
 
@@ -285,6 +301,9 @@ const SudburyCatalystFund = () => {
                   Ontario's entrepreneurial ecosystem by investing in and supporting a diversified
                   portfolio of high-growth companies.
                 </p>
+                <p className="text-base sm:text-lg leading-relaxed mt-5" style={{ color: '#475068' }}>
+                  To qualify for consideration by the SCF Investment Committee, interested companies must have qualified investment interest from angel investors. The Sudbury Catalyst Fund will invest in two to three ventures per year, co-investing up to a maximum of $250,000 on a 1:1 matching basis.
+                </p>
               </div>
 
               <div className="lg:col-span-6">
@@ -301,6 +320,61 @@ const SudburyCatalystFund = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── NORCAT INNOVATION MENTORS (dark) ───── */}
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>NORCAT Innovation Mentors</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                The front line<br />of the SCF process.
+              </Display>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                Our mentors put the NORCAT “stamp of approval” on eligible investment candidates. They work hands-on with each investment candidate to ensure they meet the required eligibility and are worthy of consideration for investment.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {applicationSteps.map((s) => (
+                <article
+                  key={s.step}
+                  className="relative rounded-2xl p-8 h-full"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${BORDER}` }}
+                >
+                  <span
+                    className="font-black text-5xl mb-4 block"
+                    style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}
+                  >
+                    {s.step}
+                  </span>
+                  <h3
+                    className="font-black uppercase text-xl md:text-2xl text-white mb-3"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: FG_MUTED }}>
+                    {s.description}
+                  </p>
+                  {s.link && (
+                    <Link
+                      to={s.link.to}
+                      className="inline-flex items-center gap-2 text-sm font-bold transition-colors"
+                      style={{ color: TEAL }}
+                    >
+                      {s.link.label}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </article>
+              ))}
             </div>
           </div>
         </section>
