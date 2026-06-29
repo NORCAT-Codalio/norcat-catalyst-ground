@@ -280,19 +280,13 @@ export function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-2">
             <Link
-              to="/validate-idea"
-              className="text-[15px] font-medium text-foreground/70 hover:text-primary transition-colors px-3 py-2"
-            >
-              Validate idea
-            </Link>
-            <Link
               to="/apply"
               className="group inline-flex items-center gap-1.5 text-[13px] font-semibold px-4 py-2 rounded-full text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)]"
               style={{
                 background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)',
               }}
             >
-              Apply
+              Validate my Idea
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
