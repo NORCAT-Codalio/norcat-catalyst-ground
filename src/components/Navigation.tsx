@@ -6,56 +6,30 @@ import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Menu structure
-const programsMenu = {
-  programs: {
-    title: 'Programs',
-    icon: Rocket,
-    items: [
-      { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-      { name: 'Mentorship Services', href: '/programs/mentorship-services' },
-      { name: 'Capital Navigation', href: '/programs/capital-navigation' },
-      { name: 'Home-2', href: '/home-2' },
-    ],
-  },
-  funding: {
-    title: 'Funding & Capital',
-    icon: DollarSign,
-    items: [
-      { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
-      { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
-      { name: 'Regional AI Program', href: '/funding/regional-ai-program' },
-      { name: 'Investor Hub', href: '/funding/investor-hub' },
-    ],
-  },
-  mining: {
-    title: 'Mining & Tough Tech',
-    icon: Mountain,
-    items: [
-      { name: 'NORCAT Underground Centre', href: '/mining/norcat-underground' },
-      { name: 'Core5', href: '/mining/core5' },
-      { name: 'Critical Industrial Technologies Initiative', href: '/mining/critical-industrial-tech' },
-      { name: 'Labs', href: '/mining/labs' },
-    ],
-  },
-  partners: {
-    title: 'Partner Programs',
-    icon: Handshake,
-    items: [
-      { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-    ],
-  },
-};
+const programsItems = [
+  { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
+  { name: 'Mentorship', href: '/programs/mentorship-services' },
+  { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
+  { name: 'Core5', href: '/mining/core5' },
+  { name: 'Underground Centre', href: '/mining/norcat-underground' },
+  { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
+  { name: 'Innovation Space', href: '/mining/labs' },
+];
 
-const ecosystemItems = [
-  { name: 'Sudbury Innovation Ecosystem', href: '/ecosystem/sudbury' },
+const fundingItems = [
+  { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
+  { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
+  { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
+];
+
+const resourcesItems = [
+  { name: 'Ecosystem', href: '/ecosystem/sudbury' },
   { name: 'Impact', href: '/impact' },
+  { name: 'Stories', href: '/insights/success-stories' },
+  { name: 'News', href: '/insights/news' },
+  { name: 'Events', href: '/events' },
 ];
 
-const insightsItems = [
-  { name: 'News', href: '/insights/news' },
-  { name: 'Success Stories', href: '/insights/success-stories' },
-  { name: 'Reports', href: '/insights/reports' },
-];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
