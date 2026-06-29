@@ -8,10 +8,14 @@ import {
   Zap,
   Quote,
   DollarSign,
+  UserCheck,
+  Briefcase,
+  Handshake,
+  Users,
+  BarChart3,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
-import { ServicesExplorer } from '@/components/ServicesExplorer';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
@@ -32,6 +36,34 @@ const programStructure = [
   { phase: '02', title: 'Build & Validate', description: 'Work with your mentorship team on product-market fit and early traction.' },
   { phase: '03', title: 'Scale & Raise', description: 'Focus on growth metrics, team building, and fundraising preparation.' },
   { phase: '04', title: 'Ongoing Support', description: 'Continued access to network, resources, and advisor support as you scale.' },
+];
+
+const includedCards = [
+  {
+    icon: UserCheck,
+    title: '1-on-1 Advisory',
+    description: 'A dedicated advisor works alongside you on strategy, product-market fit, and scaling decisions tailored to your stage.',
+  },
+  {
+    icon: Briefcase,
+    title: 'MaRS Startup Toolkit',
+    description: 'Access curated tools, templates, and resources from the MaRS ecosystem to structure, plan, and grow your venture.',
+  },
+  {
+    icon: Handshake,
+    title: 'Mentorship',
+    description: 'Get matched with experienced operators and founders who have built, scaled, and exited companies in your sector.',
+  },
+  {
+    icon: Users,
+    title: 'Small Group Advisory Sessions',
+    description: 'Learn alongside peers in focused, small-group sessions that surface shared challenges and collective insights.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Data & Market Intelligence Services',
+    description: 'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market and product decisions.',
+  },
 ];
 
 const differentiators = [
@@ -121,7 +153,7 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── SERVICES EXPLORER (light) ───── */}
+        {/* ───── SERVICES INCLUDED (light) ───── */}
         <section
           className="py-20 md:py-28 relative overflow-hidden"
           style={{ background: PAPER, color: NAVY }}
@@ -134,7 +166,29 @@ export default function VentureGrowthServices() {
               </Display>
             </div>
 
-            <ServicesExplorer light activeAudience="Startup Support" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {includedCards.map((card) => (
+                <div
+                  key={card.title}
+                  className="rounded-2xl p-6 md:p-7 transition-transform hover:-translate-y-0.5"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <div
+                    className="size-12 rounded-lg flex items-center justify-center mb-5"
+                    style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}
+                  >
+                    <card.icon className="size-6" strokeWidth={2} />
+                  </div>
+                  <h3 className="font-black uppercase text-base md:text-lg mb-2"
+                      style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                    {card.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
