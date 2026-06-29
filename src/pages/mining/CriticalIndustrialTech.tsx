@@ -59,84 +59,74 @@ const Display = ({ children, className = '', as: As = 'h2' as any, color = 'whit
 );
 
 const technologies = [
-  { icon: Network, name: '5G & Advanced Networks' },
-  { icon: Cpu, name: 'Artificial Intelligence' },
-  { icon: Blocks, name: 'Blockchain' },
-  { icon: Bot, name: 'Robotics' },
-  { icon: Shield, name: 'Cybersecurity' },
-  { icon: Atom, name: 'Quantum' },
+  { icon: Network, name: '5G & Advanced Networks', tags: ['Advanced Mfg', 'Agri-Food', 'Construction', 'Mining'] },
+  { icon: Cpu, name: 'Artificial Intelligence', tags: ['Advanced Mfg', 'Agri-Food', 'Construction', 'Mining'] },
+  { icon: Blocks, name: 'Blockchain', tags: ['Advanced Mfg', 'Agri-Food', 'Construction', 'Mining'] },
+  { icon: Bot, name: 'Robotics', tags: ['Advanced Mfg', 'Agri-Food', 'Construction', 'Mining'] },
+  { icon: Shield, name: 'Cybersecurity', tags: ['Advanced Mfg', 'Agri-Food', 'Construction', 'Mining'] },
+  { icon: Atom, name: 'Quantum', tags: ['Advanced Mfg', 'Agri-Food', 'Construction', 'Mining'] },
 ];
 
-const programs = [
-  {
-    title: 'Development & Commercialization Program',
-    description: 'New SME solutions can commercialize faster through exclusive, no-cost access to the NORCAT Underground Technology Development Site and up to $100k of support from OCI.',
-    ideal: 'Accelerated Product Development',
-    icon: FlaskConical,
-    expandedDetails: {
-      funding: 'Up to $100,000',
-      benefits: [
-        'No-cost access to NORCAT Underground Technology Development Site',
-        'Real-world mining environment for testing and validation',
-        'Expert mentorship from industry professionals',
-        'Accelerated path from prototype to market-ready product',
-      ],
-      eligibility: 'Ontario-based SMEs developing new critical technology solutions for the mining sector',
-      link: 'https://www.citinnovation.ca/program/development-and-commercialization-program/',
-    },
-  },
-  {
-    title: 'Technology Access Program',
-    description: 'SMEs with an existing critical technology product or service can break into new markets faster through exclusive, no-cost access to our Technology Development Site.',
-    ideal: 'Product Validation',
-    icon: Target,
-    expandedDetails: {
-      funding: 'No-cost site access',
-      benefits: [
-        'Exclusive access to Technology Development Site facilities',
-        'Opportunity to validate products in real mining conditions',
-        'Connect with potential industry customers and partners',
-        'Faster market penetration in the mining sector',
-      ],
-      eligibility: 'Ontario SMEs with existing critical technology products seeking market expansion',
-      link: 'https://www.citinnovation.ca/program/technology-access-program/',
-    },
-  },
-  {
-    title: 'Talent Development Internships',
-    description: 'Eligible SMEs can invest in the industrial workforce of tomorrow by hiring new talent for Critical Technology internships, with up to $20k in OCI support.',
-    ideal: 'New Talent Hiring',
-    icon: GraduationCap,
-    expandedDetails: {
-      funding: 'Up to $20,000 ($10k per 4-month unit)',
-      benefits: [
-        'Financial support for hiring critical technology interns',
-        'Build your pipeline of future talent',
-        'Contribute to workforce development in Ontario',
-        'Flexible 4-month internship units',
-      ],
-      eligibility: 'Ontario SMEs looking to hire interns for critical technology roles',
-      link: 'https://www.citinnovation.ca/program/talent-development-internships/',
-    },
-  },
-  {
-    title: 'Future Ready Program',
-    description: 'Eligible SMEs can equip their employees for the challenges of today through upskilling initiatives with up to $10k of OCI support.',
-    ideal: 'Talent Development',
-    icon: Briefcase,
-    expandedDetails: {
-      funding: 'Up to $10,000',
-      benefits: [
-        'Support for employee upskilling initiatives',
-        'Training in critical technology areas',
-        "Enhance your team's competitive capabilities",
-        'Prepare workforce for emerging industrial challenges',
-      ],
-      eligibility: 'Ontario SMEs seeking to upskill existing employees in critical technologies',
-      link: 'https://www.citinnovation.ca/program/future-ready-program/',
-    },
-  },
+const sectors = [
+  { name: 'Advanced Manufacturing', icon: Factory },
+  { name: 'Agri-Food', icon: Briefcase },
+  { name: 'Construction', icon: Building2 },
+  { name: 'Mining', icon: TrendingUp },
 ];
+
+const streams = {
+  dc: {
+    code: 'DC',
+    name: 'Development & Commercialization',
+    icon: FlaskConical,
+    tagline: 'Develop, test, validate, and showcase new Ontario-made solutions.',
+    funding: '$50,000 – $200,000',
+    match: '1:1 minimum match',
+    duration: 'Max 6 months',
+    overview:
+      "The DC Program enables Ontario-based, standalone SMEs to access technology facilities and capabilities across the province to develop, test, validate and showcase products and services that integrate critical technologies — helping disruptive innovations hit the market faster.",
+    eligibility: [
+      { title: 'Small or Medium Enterprise', desc: 'Fewer than 500 global full-time employees.' },
+      { title: 'Ontario Operations', desc: 'Registered operations (R&D, manufacturing, product management, etc.) in Ontario with a valid CRA business number.' },
+      { title: 'OCI Funding History', desc: 'Applicants who have received over $500,000 of OCI-administered funding (excluding TalentEdge) must obtain OCI approval before applying. Your BDM can guide you through this.' },
+      { title: 'Commercialization Intent', desc: 'Has the intent, expertise and resources to apply, exploit and/or commercialize results for the economic benefit of Ontario within an appropriate timeframe.' },
+      { title: 'Good Standing with OCI', desc: 'Must be in good financial and reporting standing with OCI.' },
+      { title: 'Critical Tech Roadmap', desc: 'Adoption of critical technologies is part of the applicant\'s long-term product roadmap.' },
+    ],
+    projectRules: [
+      { title: 'Critical Technology Integration', description: 'Projects must support critical technology integration, adoption, demonstration, prototyping, or testing by the SME.' },
+      { title: 'Technology Development Site Use', description: 'Projects must utilize at least one Technology Development Site for a minimum of 2 hours per test bed. Multiple sites may be leveraged where applicable.' },
+      { title: 'Critical Technology Focus', description: 'Solutions must involve the acceleration, development, or integration of at least one of the six critical technologies: 5G & Advanced Networks, AI, Blockchain, Robotics, Cybersecurity, or Quantum.' },
+      { title: 'Ontario-Based Commercial Outcome', description: 'Projects must result in a new solution, product, or service with strong commercial opportunity in one or more of the four key sectors. Activities must be carried out in Ontario, with a minimum 1:1 contribution match, max 6 months, and all required certifications already in place.' },
+      { title: 'Strong ROI for Ontario', description: 'Project must form the basis of a highly competitive business and offer good return on investment and clear benefits to Ontario — new revenues, job creation/retention, new customers, follow-on investment, productivity improvement.' },
+      { title: 'IP Managed by Applicant', description: 'IP arising from the project is managed by the Applicant. OCI does not claim IP rights. Successful applicants execute OCI\'s funding agreement, including an Intellectual Property Statement outlining IP arrangements among project partners.' },
+    ],
+  },
+  tap: {
+    code: 'TAP',
+    name: 'Technology Access Program',
+    icon: Target,
+    tagline: 'No-cost access to NORCAT Underground for market validation.',
+    funding: 'No-cost site access',
+    match: 'No match required',
+    duration: 'Project-dependent',
+    overview:
+      'TAP gives Ontario SMEs with an existing critical-technology product or service exclusive, no-cost access to the NORCAT Underground Centre Technology Development Site — accelerating validation, customer discovery, and entry into the mining sector.',
+    eligibility: [
+      { title: 'Ontario SME', desc: 'Ontario-based small or medium enterprise with an existing critical-technology product or service.' },
+      { title: 'Market-Ready Solution', desc: 'Solution is past prototype with all necessary certifications required to operate on a Technology Development Site.' },
+      { title: 'Mining-Sector Fit', desc: 'Clear use case for the underground mining environment and intent to validate, demonstrate, or commercialize the offering.' },
+      { title: 'Good Standing with OCI', desc: 'Must be in good financial and reporting standing with OCI.' },
+    ],
+    projectRules: [
+      { title: 'Critical Technology Solution', description: 'Solution must involve one of the six critical technologies: 5G & Advanced Networks, AI, Blockchain, Robotics, Cybersecurity, or Quantum.' },
+      { title: 'TDS Utilization', description: 'Use of the NORCAT Underground Technology Development Site to validate the product in a real-world mining environment.' },
+      { title: 'Certifications In Place', description: 'Solution MUST already hold all certifications required for the on-site project to be executed safely.' },
+      { title: 'Ontario-Based Activity', description: 'Project activities are carried out in Ontario, with clear commercial benefit (e.g. new revenues, customers, follow-on investment).' },
+      { title: 'IP Managed by Applicant', description: 'IP remains with the Applicant. OCI does not claim or manage IP rights.' },
+    ],
+  },
+} as const;
 
 const stats = [
   { value: '$55.8M', label: 'Total Investment', icon: DollarSign },
@@ -145,15 +135,9 @@ const stats = [
   { value: '194+', label: 'Ontario Companies', icon: Users },
 ];
 
-const eligibility = [
-  { title: 'Small-and-Medium Enterprise', desc: 'Less than 500 employees' },
-  { title: 'For-Profit Organization', desc: 'Registered as a for-profit entity' },
-  { title: 'Ontario Operations', desc: 'Registered operations in Ontario' },
-  { title: 'Critical Technology Focus', desc: 'Adoption of Critical Technologies as part of your roadmap' },
-];
-
 const CriticalIndustrialTech = () => {
-  const [expandedProgram, setExpandedProgram] = useState<number | null>(null);
+  const [activeStream, setActiveStream] = useState<'dc' | 'tap'>('dc');
+  const stream = streams[activeStream];
 
   return (
     <Layout>
@@ -303,7 +287,7 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── CRITICAL TECHNOLOGY AREAS (dark) ───── */}
+        {/* ───── CRITICAL TECHNOLOGY AREAS + KEY SECTORS (dark) ───── */}
         <section
           className="py-20 md:py-32 relative overflow-hidden"
           style={{ background: `linear-gradient(180deg, ${NAVY} 0%, ${BLUE} 100%)` }}
@@ -322,15 +306,41 @@ const CriticalIndustrialTech = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Focus Areas</Eyebrow>
+              <Eyebrow>Key Sectors</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Critical technology<br /><span style={{ color: TEAL }}>areas.</span>
+                Four sectors<br /><span style={{ color: TEAL }}>powering Ontario.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                The initiative focuses on technologies essential to industrial competitiveness in the mining sector.
+                CIT funds the development and commercialization of Ontario-made products and services that integrate critical technologies across four key sectors.
               </p>
             </div>
 
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
+              {sectors.map((s, i) => (
+                <motion.div
+                  key={s.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl p-6 flex flex-col items-start gap-4"
+                  style={{ background: 'rgba(10,42,107,0.6)', border: `1px solid ${BORDER}` }}
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.18)', border: `1px solid ${TEAL}33` }}>
+                    <s.icon className="w-5 h-5" style={{ color: TEAL }} />
+                  </div>
+                  <h3 className="font-bold text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{s.name}</h3>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4 mb-8 md:mb-10">
+              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,179,152,0.4))' }} />
+              <p className="text-[10px] uppercase tracking-[0.22em] font-bold" style={{ color: TEAL }}>
+                Technology Streams
+              </p>
+              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(0,179,152,0.4), transparent)' }} />
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {technologies.map((tech, i) => (
                 <motion.div
@@ -339,7 +349,7 @@ const CriticalIndustrialTech = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl p-6 transition-colors"
+                  className="group rounded-2xl p-6 transition-colors flex flex-col"
                   style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
                 >
                   <div
@@ -348,207 +358,229 @@ const CriticalIndustrialTech = () => {
                   >
                     <tech.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="text-sm md:text-[15px] font-bold text-white leading-snug" style={{ fontFamily: FONT }}>
+                  <h3 className="text-sm md:text-[15px] font-bold text-white leading-snug mb-4" style={{ fontFamily: FONT }}>
                     {tech.name}
                   </h3>
+                  <div className="mt-auto flex flex-wrap gap-1.5">
+                    {tech.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
+                        style={{ background: 'rgba(0,179,152,0.12)', color: TEAL, border: `1px solid rgba(0,179,152,0.25)` }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ───── PROGRAM STREAMS (light) ───── */}
+        {/* ───── PROGRAM STREAMS — TABS (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow color={TEAL}>Program Streams</Eyebrow>
-              <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
-              >
-                Multiple pathways to<br /><span style={{ color: TEAL }}>support.</span>
+            <div className="max-w-2xl mb-10">
+              <Eyebrow color={TEAL}>Two Program Streams</Eyebrow>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                Choose your<br /><span style={{ color: TEAL }}>pathway.</span>
               </h2>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                CIT delivers two distinct streams through NORCAT's Technology Development Site — pick the one that matches where your solution is today.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-5">
-              {programs.map((program, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-6 md:p-8 transition-shadow hover:shadow-lg cursor-pointer"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
-                  onMouseEnter={() => setExpandedProgram(i)}
-                  onMouseLeave={() => setExpandedProgram(null)}
-                >
-                  <div className="flex items-start gap-4">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
-                    >
-                      <program.icon className="w-6 h-6" style={{ color: TEAL }} />
-                    </div>
-                    <div className="flex-1">
-                      <span
-                        className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.12em] mb-3"
-                        style={{ background: 'rgba(0,179,152,0.10)', color: TEAL, border: `1px solid ${TEAL}33` }}
-                      >
-                        Ideal for: {program.ideal}
+            {/* Tab buttons */}
+            <div className="inline-flex p-1.5 rounded-2xl mb-10" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+              {(['dc', 'tap'] as const).map((key) => {
+                const s = streams[key];
+                const active = activeStream === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setActiveStream(key)}
+                    className="flex items-center gap-3 px-5 md:px-7 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all"
+                    style={{
+                      background: active ? `linear-gradient(135deg, ${NAVY}, ${BLUE})` : 'transparent',
+                      color: active ? 'white' : '#475068',
+                      fontFamily: FONT,
+                    }}
+                  >
+                    <s.icon className="w-4 h-4" style={{ color: active ? TEAL : '#6b7387' }} />
+                    <span>{s.code} — {s.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeStream}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25 }}
+              >
+                {/* Header card */}
+                <div className="rounded-2xl p-8 md:p-10 mb-6" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 100%)`, border: `1px solid ${BORDER}` }}>
+                  <div className="grid lg:grid-cols-12 gap-8 items-center">
+                    <div className="lg:col-span-7">
+                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.16em] mb-4" style={{ background: 'rgba(0,179,152,0.18)', color: TEAL }}>
+                        Stream · {stream.code}
                       </span>
-                      <h3 className="font-black uppercase text-lg mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                        {program.title}
+                      <h3 className="font-black uppercase text-2xl md:text-3xl lg:text-4xl text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                        {stream.name}
                       </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>{program.description}</p>
+                      <p className="text-base md:text-lg leading-relaxed mb-2" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                        {stream.tagline}
+                      </p>
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                        {stream.overview}
+                      </p>
+                    </div>
+                    <div className="lg:col-span-5 grid grid-cols-3 gap-3">
+                      {[
+                        { label: 'Funding', value: stream.funding },
+                        { label: 'Match', value: stream.match },
+                        { label: 'Duration', value: stream.duration },
+                      ].map((m) => (
+                        <div key={m.label} className="rounded-xl p-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}>
+                          <p className="text-[10px] uppercase tracking-[0.16em] font-bold mb-1.5" style={{ color: TEAL }}>{m.label}</p>
+                          <p className="text-sm md:text-base font-black text-white" style={{ fontFamily: FONT }}>{m.value}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
+                </div>
 
-                  <AnimatePresence>
-                    {expandedProgram === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-6 mt-6 space-y-4" style={{ borderTop: '1px solid #d9dde5' }}>
-                          <div className="flex items-center gap-2">
-                            <span className="text-sm font-bold" style={{ color: NAVY }}>Funding:</span>
-                            <span className="text-sm font-black" style={{ color: TEAL }}>{program.expandedDetails.funding}</span>
+                {/* Eligibility + Project Rules */}
+                <div className="grid lg:grid-cols-2 gap-5">
+                  <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                    <Eyebrow color={TEAL}>Eligibility</Eyebrow>
+                    <h4 className="font-black uppercase text-xl md:text-2xl mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                      Who qualifies.
+                    </h4>
+                    <ul className="space-y-3">
+                      {stream.eligibility.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
+                            <span className="font-black text-xs" style={{ color: TEAL }}>{i + 1}</span>
                           </div>
-
                           <div>
-                            <span className="text-sm font-bold block mb-2" style={{ color: NAVY }}>Key Benefits:</span>
-                            <ul className="space-y-2">
-                              {program.expandedDetails.benefits.map((benefit, idx) => (
-                                <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#475068' }}>
-                                  <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                                  <span>{benefit}</span>
-                                </li>
-                              ))}
-                            </ul>
+                            <p className="font-bold text-sm" style={{ color: NAVY }}>{item.title}</p>
+                            <p className="text-sm leading-relaxed mt-0.5" style={{ color: '#475068' }}>{item.desc}</p>
                           </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
+                  <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                    <Eyebrow color={TEAL}>Project Requirements</Eyebrow>
+                    <h4 className="font-black uppercase text-xl md:text-2xl mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                      What projects look like.
+                    </h4>
+                    <ul className="space-y-3">
+                      {stream.projectRules.map((req, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Check className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} />
                           <div>
-                            <span className="text-sm font-bold" style={{ color: NAVY }}>Eligibility: </span>
-                            <span className="text-sm" style={{ color: '#475068' }}>{program.expandedDetails.eligibility}</span>
+                            <p className="font-bold text-sm" style={{ color: NAVY }}>{req.title}</p>
+                            <p className="text-sm leading-relaxed mt-0.5" style={{ color: '#475068' }}>{req.description}</p>
                           </div>
-
-                          <a
-                            href={program.expandedDetails.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm font-bold hover:gap-3 transition-all"
-                            style={{ color: TEAL }}
-                          >
-                            Learn more at OCI <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </section>
 
-        {/* ───── MINIMUM ELIGIBILITY (dark) ───── */}
+        {/* ───── HOW TO APPLY + VIDEO (dark) ───── */}
         <section
           className="py-20 md:py-32 relative overflow-hidden"
           style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 10% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 90% 90%, rgba(47,111,214,0.15), transparent 45%)`,
-            }}
+            style={{ backgroundImage: `radial-gradient(circle at 10% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 90% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12 md:mb-16">
-                <Eyebrow>Requirements</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Minimum eligibility<br /><span style={{ color: TEAL }}>criteria.</span>
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-6">
+                <Eyebrow>How to Apply</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl mb-6">
+                  Start with the<br /><span style={{ color: TEAL }}>NORCAT team.</span>
                 </Display>
-                <p className="mt-6 text-base md:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: FG_MUTED }}>
-                  The Critical Industrial Technology programs are a good fit for companies that meet these minimum criteria.
+                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: FG_MUTED }}>
+                  CIT is <strong style={{ color: 'white' }}>open for applications on a rolling basis.</strong> Applications MUST be initiated in AccessOCI by an OCI Business Development Manager (BDM) or CIT Sector Manager.
                 </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
-                {eligibility.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06 }}
-                    className="rounded-2xl p-6 h-full flex items-start gap-4"
-                    style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                <ul className="space-y-3 mb-8">
+                  {[
+                    'Contact the NORCAT Innovation team to discuss your technology.',
+                    'NORCAT facilitates your introduction to an OCI BDM.',
+                    'Your BDM initiates the application in AccessOCI on your behalf.',
+                    'Receive tailored support matching your tech to the right mining applications.',
+                  ].map((step, i) => (
+                    <li key={i} className="flex items-start gap-3" style={{ color: FG_MUTED }}>
+                      <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 font-black text-xs" style={{ background: 'rgba(0,179,152,0.18)', color: TEAL }}>{i + 1}</span>
+                      <span className="text-sm md:text-base">{step}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://www.oc-innovation.ca/programs/cit/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: TEAL, color: NAVY }}
                   >
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(0,179,152,0.18)', border: `1px solid ${TEAL}33` }}
-                    >
-                      <span className="font-black text-sm" style={{ color: TEAL }}>{i + 1}</span>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-white mb-1" style={{ fontFamily: FONT }}>{item.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                    Visit CIT on OCI <ExternalLink className="w-4 h-4" />
+                  </a>
+                  <Link
+                    to="/apply"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                  >
+                    Contact NORCAT Innovation <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
 
-              <p className="text-sm text-center mt-8" style={{ color: FG_MUTED }}>
-                Please note that each program has their own set of eligibility criteria. For details on each program, please view the full set of eligibility criteria in the program guidelines.
-              </p>
+              <div className="lg:col-span-6">
+                <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `1px solid ${BORDER}`, background: '#0a2a6b' }}>
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src="https://www.youtube.com/embed/NFXQFdgoE0E"
+                      title="Critical Industrial Technologies Initiative"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-5 flex items-center justify-between gap-4">
+                    <p className="text-xs uppercase tracking-[0.18em] font-bold" style={{ color: TEAL }}>CIT Initiative · Overview</p>
+                    <a
+                      href="https://www.oc-innovation.ca/programs/cit/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
+                      style={{ color: 'white' }}
+                    >
+                      OCI website <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ───── FINAL CTA ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: TEAL }}>
-          <img
-            src={signatureLines}
-            alt=""
-            aria-hidden="true"
-            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-30 pointer-events-none select-none mix-blend-overlay"
-            style={{ transform: 'scaleX(-1)' }}
-          />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 text-center">
-            <h2
-              className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6"
-              style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
-            >
-              Ready to develop your<br /><span style={{ color: NAVY }}>critical technology?</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: 'rgba(0,26,77,0.85)' }}>
-              Access the NORCAT Underground Centre as your Technology Development Site and accelerate your path to commercialization in the mining sector.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://www.oc-innovation.ca/programs/cit/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                style={{ fontFamily: FONT, background: NAVY, color: 'white' }}
-              >
-                Visit OCI Program Page <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-              </a>
-              <Link
-                to="/apply"
-                className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/10"
-                style={{ fontFamily: FONT, color: NAVY, border: `2px solid ${NAVY}` }}
-              >
-                Apply Through NORCAT <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-              </Link>
-            </div>
-          </div>
-        </section>
 
       </div>
     </Layout>
