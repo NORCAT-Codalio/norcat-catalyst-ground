@@ -239,93 +239,33 @@ export function Navigation() {
               About
             </Link>
 
-            {/* Programs / Funding / Resources Dropdowns */}
-            {([
-              { key: 'programs', label: 'Programs', items: programsItems, icon: Rocket },
-              { key: 'funding', label: 'Funding', items: fundingItems, icon: DollarSign },
-              { key: 'resources', label: 'Resources', items: resourcesItems, icon: Lightbulb },
-            ] as const).map((menu) => (
-              <div
-                key={menu.key}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(menu.key)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  className={cn(
-                    'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
-                    activeDropdown === menu.key
-                      ? 'text-primary bg-secondary'
-                      : useLightText
-                        ? 'text-white hover:text-white/80 hover:bg-white/10'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  )}
+            {/* Programs / Funding / Resources Triggers */}
+            {(['programs', 'funding', 'resources'] as const).map((key) => {
+              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : 'Resources';
+              return (
+                <div
+                  key={key}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(key)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  {menu.label}
-                  <ChevronDown className={cn('w-4 h-4 transition-transform duration-300', activeDropdown === menu.key && 'rotate-180')} />
-                </button>
+                  <button
+                    className={cn(
+                      'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
+                      activeDropdown === key
+                        ? 'text-primary bg-secondary'
+                        : useLightText
+                          ? 'text-white hover:text-white/80 hover:bg-white/10'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    )}
+                  >
+                    {label}
+                    <ChevronDown className={cn('w-4 h-4 transition-transform duration-300', activeDropdown === key && 'rotate-180')} />
+                  </button>
+                </div>
+              );
+            })}
 
-                <AnimatePresence>
-                  {activeDropdown === menu.key && (
-                    <motion.div
-                      variants={smallBlobVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      className={cn(
-                        'absolute top-full mt-3 p-4 shadow-2xl overflow-hidden rounded-2xl',
-                        menu.items.length > 4
-                          ? 'left-1/2 -translate-x-1/2 w-[720px] grid grid-cols-2 gap-1'
-                          : 'left-0 w-[380px]'
-                      )}
-                      style={{
-                        background: 'linear-gradient(145deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 50%, rgba(240,253,250,0.97) 100%)',
-                        backdropFilter: 'blur(24px) saturate(200%)',
-                        WebkitBackdropFilter: 'blur(24px) saturate(200%)',
-                        border: '1px solid rgba(255,255,255,0.6)',
-                        boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(20,184,166,0.05) inset',
-                      }}
-                    >
-                      <motion.div
-                        className="absolute -top-20 -right-20 w-40 h-40 rounded-full pointer-events-none"
-                        style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.18) 0%, transparent 70%)' }}
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                      />
-                      {menu.items.length > 4 && (
-                        <div className="col-span-2 px-3 pt-1 pb-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-muted-foreground/70">
-                          {menu.label}
-                        </div>
-                      )}
-                      {menu.items.map((item) => {
-                        const ItemIcon = item.icon;
-                        return (
-                          <motion.div key={item.name} variants={itemVariants} className="relative">
-                            <Link
-                              to={item.href}
-                              className="group flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 transition-all duration-200"
-                            >
-                              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 group-hover:border-primary/40 transition-all">
-                                <ItemIcon className="w-5 h-5 text-primary" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                                  {item.name}
-                                </div>
-                                <div className="text-xs text-muted-foreground mt-0.5 leading-snug">
-                                  {item.description}
-                                </div>
-                              </div>
-                            </Link>
-                          </motion.div>
-                        );
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-              </div>
-            ))}
 
             {/* Client Portal */}
             <Link
