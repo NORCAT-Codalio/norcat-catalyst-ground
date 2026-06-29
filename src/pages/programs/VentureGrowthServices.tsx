@@ -153,7 +153,7 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── SERVICES EXPLORER (light) ───── */}
+        {/* ───── SERVICES INCLUDED (light) ───── */}
         <section
           className="py-20 md:py-28 relative overflow-hidden"
           style={{ background: PAPER, color: NAVY }}
@@ -166,7 +166,29 @@ export default function VentureGrowthServices() {
               </Display>
             </div>
 
-            <ServicesExplorer light activeAudience="Startup Support" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {includedCards.map((card) => (
+                <div
+                  key={card.title}
+                  className="rounded-2xl p-6 md:p-7 transition-transform hover:-translate-y-0.5"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <div
+                    className="size-12 rounded-lg flex items-center justify-center mb-5"
+                    style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}
+                  >
+                    <card.icon className="size-6" strokeWidth={2} />
+                  </div>
+                  <h3 className="font-black uppercase text-base md:text-lg mb-2"
+                      style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                    {card.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
