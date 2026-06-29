@@ -428,7 +428,7 @@ export default function About() {
               ].map((v) => (
                 <div key={v.title}
                      className="rounded-2xl p-7 md:p-8 transition hover:-translate-y-1"
-                     style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
+                     style={{ background: 'rgba(255,255,255,0.10)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
                   <div className="inline-flex items-center justify-center size-12 rounded-xl mb-5"
                        style={{ background: `${TEAL}22`, color: TEAL, border: `1px solid ${TEAL}55` }}>
                     <v.icon className="w-6 h-6" />
