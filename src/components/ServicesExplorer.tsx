@@ -5,11 +5,10 @@ import {
   ArrowRight,
   ArrowUpRight,
   UserCheck,
-  GraduationCap,
+  Briefcase,
   Handshake,
   Users,
-  Network,
-  Building2,
+  BarChart3,
   Check,
   type LucideIcon,
 } from 'lucide-react';
