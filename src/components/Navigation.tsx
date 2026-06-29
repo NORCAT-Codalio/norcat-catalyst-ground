@@ -488,16 +488,9 @@ export function Navigation() {
                 </Link>
 
                 <div className="pt-4 border-t border-border mt-4 space-y-3">
-                  <Button asChild variant="outline" className="w-full relative border-primary/50 text-primary hover:text-primary hover:bg-primary/5 overflow-hidden">
-                    <Link to="/validate-idea">
-                      <span className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-pulse" />
-                      <Lightbulb className="mr-2 h-4 w-4" />
-                      <span className="relative">Validate My Idea</span>
-                    </Link>
-                  </Button>
                   <Button asChild variant="default" className="w-full btn-primary">
                     <Link to="/apply">
-                      Work With Us
+                      Validate my Idea
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
