@@ -222,8 +222,7 @@ export default function Home2() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* ───── IMPACT STATS ───── */}
         <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
