@@ -219,7 +219,7 @@ export function Navigation() {
             <img
               src={norcatLogo}
               alt="NORCAT Innovation"
-              className={cn('w-auto transition-all duration-300', isScrolled ? 'h-9' : 'h-10')}
+              className={cn('w-auto transition-all duration-300', isScrolled ? 'h-4.5' : 'h-5')}
             />
           </Link>
 
