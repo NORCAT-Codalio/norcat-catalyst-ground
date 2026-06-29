@@ -78,7 +78,8 @@ const App = () => (
         <AuthProvider>
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Home2 />} />
+            <Route path="/home-original" element={<Index />} />
             <Route path="/home-2" element={<Home2 />} />
             <Route path="/home-3" element={<Home3 />} />
             <Route path="/about" element={<About />} />
