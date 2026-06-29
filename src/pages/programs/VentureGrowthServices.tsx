@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -9,14 +8,10 @@ import {
   Compass,
   Zap,
   Quote,
-  DollarSign,
-  Building2,
-  Clock,
-  MapPin,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
-import { ServicesExplorer, AudienceTabs, type Audience } from '@/components/ServicesExplorer';
+import { ServicesExplorer } from '@/components/ServicesExplorer';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
