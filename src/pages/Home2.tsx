@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
