@@ -171,12 +171,10 @@ const SudburyCatalystFund = () => {
                 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
-                Capital for founders<br /><span style={{ color: TEAL }}>solving big problems.</span>
+                Investing in scalable<br /><span style={{ color: TEAL }}>tech start-ups.</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
-                The Sudbury Catalyst Fund provides critical early-stage capital to
-                high-potential startups with a connection to Northern Ontario. We invest
-                in founders solving big problems with innovative technology.
+                Established with the goal to accelerate the growth of scalable tech start-ups, SCF brings together a variety of partners and angel investors eager to build Northern Ontario’s entrepreneurial ecosystem by investing in and supporting a diversified portfolio of high-growth companies.
               </p>
             </div>
 
