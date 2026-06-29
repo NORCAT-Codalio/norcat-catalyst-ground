@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   ArrowUpRight,
-  Rocket,
   Target,
   Compass,
   Zap,
@@ -27,17 +26,6 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const allServices = [
-  { type: 'Program', title: 'Venture Growth Services', duration: 'Ongoing', location: 'Greater Sudbury (Virtual Available)', link: '/programs/venture-growth-services' },
-  { type: 'Program', title: 'Mentorship Services', duration: '12+ Month Journey', location: 'Northern Ontario', link: '/programs/mentorship-services' },
-  { type: 'Program', title: 'Capital Navigation', duration: 'Ongoing', location: 'Greater Sudbury', link: '/programs/capital-navigation' },
-  { type: 'Program', title: 'Critical Industrial Tech', duration: 'Ongoing', location: 'Greater Sudbury', link: '/mining/critical-industrial-tech' },
-  { type: 'Funding', title: 'Sudbury Catalyst Fund', duration: '$5M Fund', location: 'Greater Sudbury', link: '/funding/sudbury-catalyst-fund' },
-  { type: 'Funding', title: 'Innovation Acceleration Program', duration: 'Up to $50K', location: 'Greater Sudbury', link: '/funding/innovation-acceleration-program' },
-  { type: 'Funding', title: 'Regional AI Program', duration: 'Variable', location: 'Northern Ontario', link: '/funding/regional-ai-program' },
-  { type: 'Facility', title: 'NORCAT Underground Centre', duration: 'On-Demand', location: 'Onaping, ON', link: '/mining/norcat-underground' },
-  { type: 'Facility', title: 'Labs & Facilities', duration: 'Flexible Access', location: 'Greater Sudbury', link: '/mining/labs' },
-];
 
 const programStructure = [
   { phase: '01', title: 'Onboarding', description: 'Deep dive into your business, assign your advisor, and create a tailored growth plan.' },
