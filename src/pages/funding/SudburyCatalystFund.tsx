@@ -324,6 +324,61 @@ const SudburyCatalystFund = () => {
           </div>
         </section>
 
+        {/* ───── NORCAT INNOVATION MENTORS (dark) ───── */}
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>NORCAT Innovation Mentors</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                The front line<br />of the SCF process.
+              </Display>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                Our mentors put the NORCAT “stamp of approval” on eligible investment candidates. They work hands-on with each investment candidate to ensure they meet the required eligibility and are worthy of consideration for investment.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {applicationSteps.map((s) => (
+                <article
+                  key={s.step}
+                  className="relative rounded-2xl p-8 h-full"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${BORDER}` }}
+                >
+                  <span
+                    className="font-black text-5xl mb-4 block"
+                    style={{ color: TEAL, fontFamily: FONT, letterSpacing: '-0.02em' }}
+                  >
+                    {s.step}
+                  </span>
+                  <h3
+                    className="font-black uppercase text-xl md:text-2xl text-white mb-3"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: FG_MUTED }}>
+                    {s.description}
+                  </p>
+                  {s.link && (
+                    <Link
+                      to={s.link.to}
+                      className="inline-flex items-center gap-2 text-sm font-bold transition-colors"
+                      style={{ color: TEAL }}
+                    >
+                      {s.link.label}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ───── LEADERSHIP TEAM (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
