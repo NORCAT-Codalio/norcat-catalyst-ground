@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, Lightbulb, LogIn, Phone,
+  Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, LogIn, Phone,
   TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
   Sparkles, Brain, Banknote,
   Network, BarChart3, Star, Newspaper, Calendar,
