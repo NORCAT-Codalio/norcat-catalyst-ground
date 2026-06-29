@@ -13,7 +13,6 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
-import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
@@ -144,20 +143,14 @@ export default function Home2() {
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
-          {/* logo background */}
-          <div
-            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.2 }}
-          />
-
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 flex-1 flex items-stretch">
-            <div className="flex flex-col lg:flex-row gap-10 items-stretch w-full">
-              <div className="lg:w-[58.333%] flex flex-col justify-center py-10 md:py-16">
+            <div className="flex flex-col lg:flex-row gap-6 items-stretch w-full">
+              <div className="lg:w-[55%] flex flex-col justify-center py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
                 <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
@@ -201,7 +194,7 @@ export default function Home2() {
               </div>
 
               {/* Photo collage — spans full height of hero section */}
-              <div className="lg:w-[41.667%] hidden lg:block relative">
+              <div className="lg:w-[45%] hidden lg:block relative">
                 <div className="absolute inset-0 grid grid-cols-2 gap-4 overflow-hidden">
                   {/* Left column — extends above and below the section edge */}
                   <div className="flex flex-col gap-4 -mt-20 -mb-20">
