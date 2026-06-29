@@ -9,6 +9,14 @@ import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
+// Award badges
+import awardBestPlace from '@/assets/award-best-place-to-work.png';
+import awardInnovationEco from '@/assets/award-best-innovation-ecosystem.png';
+import awardNasa from '@/assets/award-nasa-achievement.png';
+import awardIndigenous from '@/assets/award-indigenous-partnership.png';
+import awardExecutive from '@/assets/award-executive-of-the-year.png';
+import awardBusinessGrowth from '@/assets/award-business-growth.png';
+
 // Team headshots
 import brendanImage from '@/assets/team/brendan.png';
 import shashankImage from '@/assets/team/shashank.png';
@@ -456,31 +464,27 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-end">
               {[
-                { title: 'Best Place to Work', org: 'Bell Business Awards' },
-                { title: 'Best Innovation Ecosystem', org: 'Bell Business Awards' },
-                { title: 'NASA Group Achievement Award', org: 'NASA' },
-                { title: 'Indigenous Partnership Award', org: 'De Beers' },
-                { title: 'Executive of the Year Award', org: 'Industry Recognition' },
-                { title: 'Consistent Business Growth', org: 'Academy of Extended Reality (AIXR)' },
+                { title: 'Best Place to Work', org: 'Bell Business Awards', img: awardBestPlace },
+                { title: 'Best Innovation Ecosystem', org: 'Bell Business Awards', img: awardInnovationEco },
+                { title: 'NASA Group Achievement Award', org: 'NASA', img: awardNasa },
+                { title: 'Indigenous Partnership Award', org: 'De Beers', img: awardIndigenous },
+                { title: 'Executive of the Year Award', org: 'Industry Recognition', img: awardExecutive },
+                { title: 'Consistent Business Growth', org: 'Academy of Extended Reality (AIXR)', img: awardBusinessGrowth },
               ].map((a) => (
-                <div key={a.title}
-                     className="group flex items-center gap-4 rounded-2xl p-5 md:p-6 transition hover:-translate-y-0.5 hover:shadow-lg"
-                     style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <div className="inline-flex items-center justify-center size-12 md:size-14 rounded-xl shrink-0"
-                       style={{ background: `${TEAL}1A`, color: TEAL }}>
-                    <Trophy className="w-6 h-6" />
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="font-black uppercase text-sm md:text-base leading-tight mb-1"
-                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                      {a.title}
-                    </h3>
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em]" style={{ color: TEAL }}>
-                      {a.org}
-                    </p>
-                  </div>
+                <div key={a.title} className="group flex flex-col items-center text-center transition hover:-translate-y-1">
+                  <img
+                    src={a.img}
+                    alt={`${a.title} — ${a.org}`}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="w-full h-auto max-w-[180px] drop-shadow-sm"
+                  />
+                  <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: TEAL }}>
+                    {a.org}
+                  </p>
                 </div>
               ))}
             </div>
