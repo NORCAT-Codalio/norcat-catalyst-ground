@@ -363,118 +363,46 @@ export function Navigation() {
                   About
                 </Link>
 
-                {/* Mobile Programs Accordion */}
-                <div>
-                  <button
-                    onClick={() => toggleMobileAccordion('mobile-programs')}
-                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    Programs
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-programs' && 'rotate-180')} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileAccordion === 'mobile-programs' && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-4 py-2 space-y-4">
-                          {Object.entries(programsMenu).map(([key, section]) => (
-                            <div key={key}>
-                              <p className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                                {section.title}
-                              </p>
-                              {section.items.map((item) => (
-                                <Link
-                                  key={item.name}
-                                  to={item.href}
-                                  className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
-                                >
-                                  {item.name}
-                                </Link>
-                              ))}
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                {/* Mobile Programs / Funding / Resources */}
+                {([
+                  { key: 'mobile-programs', label: 'Programs', items: programsItems },
+                  { key: 'mobile-funding', label: 'Funding', items: fundingItems },
+                  { key: 'mobile-resources', label: 'Resources', items: resourcesItems },
+                ] as const).map((menu) => (
+                  <div key={menu.key}>
+                    <button
+                      onClick={() => toggleMobileAccordion(menu.key)}
+                      className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                    >
+                      {menu.label}
+                      <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === menu.key && 'rotate-180')} />
+                    </button>
+                    <AnimatePresence>
+                      {mobileAccordion === menu.key && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pl-4 py-2">
+                            {menu.items.map((item) => (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
 
-                {/* Mobile Ecosystem */}
-                <div>
-                  <button
-                    onClick={() => toggleMobileAccordion('mobile-ecosystem')}
-                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    Ecosystem
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-ecosystem' && 'rotate-180')} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileAccordion === 'mobile-ecosystem' && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-4 py-2">
-                          {ecosystemItems.map((item) => (
-                            <Link
-                              key={item.name}
-                              to={item.href}
-                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
-                {/* Mobile Insights */}
-                <div>
-                  <button
-                    onClick={() => toggleMobileAccordion('mobile-insights')}
-                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    Insights
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-insights' && 'rotate-180')} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileAccordion === 'mobile-insights' && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-4 py-2">
-                          {insightsItems.map((item) => (
-                            <Link
-                              key={item.name}
-                              to={item.href}
-                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                <Link
-                  to="/events"
-                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                >
-                  Events
-                </Link>
 
                 <Link
                   to="/portal/auth"
