@@ -72,8 +72,6 @@ const Display = ({ children, className = '', light = false, as: As = 'h2' as any
 );
 
 export default function VentureGrowthServices() {
-  const [activeAudience, setActiveAudience] = useState<Audience>('Startup Support');
-
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
