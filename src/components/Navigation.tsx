@@ -206,35 +206,33 @@ export function Navigation() {
 
       <header
         className={cn(
-          'fixed left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-xl border-b border-border/50',
+          'fixed left-0 right-0 z-50 transition-all duration-300 bg-white/85 backdrop-blur-xl border-b',
           isScrolled
-            ? 'top-0 shadow-lg py-3'
-            : 'top-[34px] py-5'
+            ? 'top-0 shadow-[0_1px_0_0_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.12)] border-border/40 py-2.5'
+            : 'top-[34px] py-3.5 border-border/30'
         )}
       >
       <div className="container mx-auto px-4 lg:px-8">
-        <nav className="flex items-center justify-between" aria-label="Main Menu">
+        <nav className="flex items-center justify-between gap-6" aria-label="Main Menu">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group shrink-0">
             <img
-              src="/norcat-innovation-logo.png"
+              src={norcatLogo}
               alt="NORCAT Innovation"
-              className="h-16 w-auto rounded-md"
+              className={cn('w-auto transition-all duration-300', isScrolled ? 'h-9' : 'h-10')}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {/* About */}
             <Link
               to="/about"
               className={cn(
-                'px-4 py-2 text-base font-medium transition-colors rounded-md',
+                'px-3 py-2 text-[14px] font-medium transition-colors rounded-md',
                 location.pathname === '/about'
-                  ? 'text-primary bg-secondary'
-                  : useLightText 
-                    ? 'text-white hover:text-white/80 hover:bg-white/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
               )}
             >
               About
@@ -252,65 +250,53 @@ export function Navigation() {
                 >
                   <button
                     className={cn(
-                      'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
+                      'flex items-center gap-1 px-3 py-2 text-[14px] font-medium transition-colors rounded-md',
                       activeDropdown === key
-                        ? 'text-primary bg-secondary'
-                        : useLightText
-                          ? 'text-white hover:text-white/80 hover:bg-white/10'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                        ? 'text-primary'
+                        : 'text-foreground/70 hover:text-foreground'
                     )}
                   >
                     {label}
-                    <ChevronDown className={cn('w-4 h-4 transition-transform duration-300', activeDropdown === key && 'rotate-180')} />
+                    <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
                   </button>
                 </div>
               );
             })}
 
-
             {/* Client Portal */}
             <Link
               to="/portal/auth"
               className={cn(
-                'flex items-center gap-1 px-4 py-2 text-base font-medium transition-colors rounded-md',
+                'px-3 py-2 text-[14px] font-medium transition-colors rounded-md',
                 location.pathname.startsWith('/portal')
-                  ? 'text-primary bg-secondary'
-                  : useLightText 
-                    ? 'text-white hover:text-white/80 hover:bg-white/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
               )}
             >
-              <LogIn className={cn("w-4 h-4 mr-1", useLightText && "text-white")} />
               Client Portal
             </Link>
           </div>
 
-
-
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Validate Idea - Glass Button */}
+          <div className="hidden lg:flex items-center gap-2">
             <Link
               to="/validate-idea"
-              className="group relative flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl bg-white/40 backdrop-blur-[18px] border border-white/60 shadow-[0_2px_12px_-2px_hsl(var(--primary)/0.15)] text-primary transition-all duration-300 hover:bg-white/55 hover:shadow-[0_4px_18px_-2px_hsl(var(--primary)/0.25)] hover:border-white/80"
-              style={{ borderTop: '1px solid hsla(0,0%,100%,0.7)' }}
+              className="text-[14px] font-medium text-foreground/70 hover:text-primary transition-colors px-3 py-2"
             >
-              <Lightbulb className="h-4 w-4 group-hover:animate-bounce" />
-              Validate My Idea
+              Validate idea
             </Link>
-
-            {/* Work With Us - Sage Green Glass Button */}
             <Link
               to="/apply"
-              className="group relative flex items-center gap-2 text-sm font-bold px-6 py-2.5 rounded-xl border border-white/20 text-white transition-all duration-300 shadow-[0_4px_20px_-4px_hsla(168,100%,35%,0.4)] hover:shadow-[0_6px_28px_-4px_hsla(168,100%,35%,0.55)] hover:scale-[1.03]"
+              className="group inline-flex items-center gap-1.5 text-[13px] font-semibold px-4 py-2 rounded-full text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)]"
               style={{
                 background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)',
               }}
             >
-              Work With Us
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              Apply
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
+
 
           {/* Mobile Menu Button */}
           <button
