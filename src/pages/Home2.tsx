@@ -149,7 +149,7 @@ export default function Home2() {
           }} />
 
           <div className="relative w-full flex-1 flex flex-col lg:flex-row items-stretch">
-            <div className="lg:w-[55%] flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-12 py-10 md:py-16">
+            <div className="lg:w-[75%] flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-12 py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
                 <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
@@ -193,7 +193,7 @@ export default function Home2() {
               </div>
 
               {/* Photo collage — spans full height of hero section */}
-              <div className="lg:w-[45%] hidden lg:block relative">
+              <div className="lg:w-[25%] hidden lg:block relative">
                 <div className="absolute inset-0 grid grid-cols-2 gap-4 overflow-hidden">
                   {/* Left column — extends above and below the section edge */}
                   <div className="flex flex-col gap-4 -mt-20 -mb-20">
