@@ -155,7 +155,7 @@ export default function Home2() {
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 flex-1 flex items-center min-h-0">
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 flex-1 flex items-stretch min-h-0">
             <div className="flex flex-col lg:flex-row gap-10 items-stretch w-full h-full min-h-0">
               <div className="lg:w-[58.333%] flex flex-col justify-center py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
