@@ -140,91 +140,93 @@ const News = () => {
     ? newsItems 
     : newsItems.filter(item => item.category === activeCategory);
 
+  // Brand tokens (mirrors About)
+  const NAVY = '#001A4D';
+  const BLUE = '#003DA5';
+  const TEAL = '#00B398';
+  const PAPER = '#F2F3F6';
+  const FONT = "'Open Sans', system-ui, sans-serif";
+
   return (
     <Layout>
-      {/* ── Hero (matches About page) ── */}
-      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
-        {/* Background image */}
-        <div className="absolute inset-0 flex items-center justify-end">
-          <img src={newsHeroBg} alt="" aria-hidden="true" className="h-full max-w-none object-contain object-right" />
-        </div>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
-        {/* Signature lines */}
-        <img
-          src={signatureLines}
-          alt=""
-          aria-hidden="true"
-          className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
-        />
+        {/* ───── HERO (About-style) ───── */}
+        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+          }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
-            <ScrollReveal>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 <Sparkles className="w-3.5 h-3.5" />
                 News & Updates
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.08] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                Ecosystem{' '}
-                <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Newsroom</span>
+              </p>
+              <h1 className="font-black uppercase leading-[0.95] tracking-tight text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                Ecosystem<br /><span style={{ color: TEAL }}>Newsroom.</span>
               </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-xl md:text-2xl leading-relaxed text-white max-w-2xl font-light">
-                The latest from NORCAT Innovation and our portfolio companies—funding rounds, 
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                The latest from NORCAT Innovation and our portfolio companies—funding rounds,
                 partnerships, program launches, and ecosystem milestones.
               </p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Category Filters ── */}
-      <section className="sticky top-16 z-30 bg-background/90 backdrop-blur-xl border-b border-border">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={cn(
-                  "px-5 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap relative",
-                  activeCategory === cat
-                    ? "text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {activeCategory === cat && (
-                  <motion.div
-                    layoutId="news-cat-pill"
-                    className="absolute inset-0 rounded-full"
-                    style={{ background: 'linear-gradient(135deg, hsl(172 100% 30%) 0%, hsl(168 100% 35%) 50%, hsl(164 70% 55%) 100%)' }}
-                    transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
-                  />
-                )}
-                <span className="relative z-10">{cat}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── News Grid ── */}
-      <section className="py-28 relative" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl tracking-tight" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                <span className="text-foreground">Latest </span>
-                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168 100% 35%)' }}>Updates</span>
-              </h2>
-              <p className="body-md mt-2">{filteredNews.length} {filteredNews.length === 1 ? 'story' : 'stories'}</p>
             </div>
           </div>
+        </section>
 
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* ── Category Filters ── */}
+        <section className="sticky top-16 z-30 backdrop-blur-xl" style={{ background: 'rgba(242,243,246,0.92)', borderBottom: '1px solid rgba(0,26,77,0.08)' }}>
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.14em] transition-all whitespace-nowrap relative"
+                  style={{ color: activeCategory === cat ? NAVY : '#5b6478' }}
+                >
+                  {activeCategory === cat && (
+                    <motion.div
+                      layoutId="news-cat-pill"
+                      className="absolute inset-0 rounded-full"
+                      style={{ background: TEAL }}
+                      transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-10">{cat}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── News Grid ── */}
+        <section className="py-20 md:py-28 relative" style={{ background: PAPER, color: NAVY }}>
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="flex items-end justify-between mb-12 md:mb-16">
+              <div className="max-w-2xl">
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Latest Stories
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                  Fresh from <span style={{ color: TEAL }}>the North.</span>
+                </h2>
+                <p className="mt-4 text-base sm:text-lg" style={{ color: '#475068' }}>
+                  {filteredNews.length} {filteredNews.length === 1 ? 'story' : 'stories'}
+                </p>
+              </div>
+            </div>
+
+            <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredNews.map((item) => {
               const Icon = item.icon;
               const isExpanded = selectedNews === item.id;
@@ -359,64 +361,60 @@ const News = () => {
         </div>
       </section>
 
-      {/* ── Newsletter CTA ── */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>
-              Never Miss an{' '}
-              <span style={{ color: 'hsl(168, 100%, 28%)' }}>Update</span>
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
-              Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.
+        {/* ───── Newsletter CTA (paper) ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+               style={{ fontFamily: FONT, color: TEAL }}>
+              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+              Stay in the Loop
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input 
-                type="email" 
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+              Never Miss<br /><span style={{ color: TEAL }}>an Update.</span>
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: '#475068' }}>
+              Get weekly insights on Sudbury's innovation ecosystem delivered straight to your inbox.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-5 py-3.5 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                style={{
-                  background: 'hsla(220, 15%, 100%, 0.7)',
-                  border: '1.5px solid hsla(220, 15%, 80%, 0.5)',
-                  color: 'hsl(220, 15%, 20%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.1)',
-                }}
+                className="flex-1 px-5 py-3 rounded-full text-sm focus:outline-none focus:ring-2"
+                style={{ background: 'white', border: '1px solid rgba(0,26,77,0.12)', color: NAVY }}
               />
-              <button 
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03] whitespace-nowrap"
-                style={{
-                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                  color: 'hsl(168, 40%, 25%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                }}
+              <button
+                type="submit"
+                className="group inline-flex items-center justify-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
               >
                 Subscribe
+                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+                </span>
               </button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── External Links ── */}
-      <section className="py-12 bg-secondary/50 border-t border-border">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">Also Featured In:</span>
-            {['Northern Ontario Business', 'Mining.com', 'BetaKit', 'Sudbury Star', 'CBC North'].map((pub) => (
-              <a 
-                key={pub} 
-                href="#" 
-                className="link-fancy hover:text-primary transition-colors flex items-center gap-1"
-              >
-                {pub} <ExternalLink className="w-3 h-3" />
-              </a>
-            ))}
+            </form>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ── External Links ── */}
+        <section className="py-12" style={{ background: PAPER, borderTop: '1px solid rgba(0,26,77,0.08)' }}>
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm" style={{ color: '#5b6478' }}>
+              <span className="font-bold uppercase tracking-[0.14em] text-xs" style={{ color: NAVY }}>Also Featured In</span>
+              {['Northern Ontario Business', 'Mining.com', 'BetaKit', 'Sudbury Star', 'CBC North'].map((pub) => (
+                <a key={pub} href="#" className="hover:text-foreground transition-colors flex items-center gap-1" style={{ color: NAVY }}>
+                  {pub} <ExternalLink className="w-3 h-3" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
     </Layout>
   );
 };
+
 
 export default News;
