@@ -361,64 +361,60 @@ const News = () => {
         </div>
       </section>
 
-      {/* ── Newsletter CTA ── */}
-      <section className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-6" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>
-              Never Miss an{' '}
-              <span style={{ color: 'hsl(168, 100%, 28%)' }}>Update</span>
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
-              Get weekly insights on Sudbury's innovation ecosystem delivered to your inbox.
+        {/* ───── Newsletter CTA (paper) ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+               style={{ fontFamily: FONT, color: TEAL }}>
+              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+              Stay in the Loop
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input 
-                type="email" 
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+              Never Miss<br /><span style={{ color: TEAL }}>an Update.</span>
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: '#475068' }}>
+              Get weekly insights on Sudbury's innovation ecosystem delivered straight to your inbox.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-5 py-3.5 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                style={{
-                  background: 'hsla(220, 15%, 100%, 0.7)',
-                  border: '1.5px solid hsla(220, 15%, 80%, 0.5)',
-                  color: 'hsl(220, 15%, 20%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 50%, 0.1)',
-                }}
+                className="flex-1 px-5 py-3 rounded-full text-sm focus:outline-none focus:ring-2"
+                style={{ background: 'white', border: '1px solid rgba(0,26,77,0.12)', color: NAVY }}
               />
-              <button 
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-[1.03] whitespace-nowrap"
-                style={{
-                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                  color: 'hsl(168, 40%, 25%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 16px hsla(168, 20%, 30%, 0.15), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                }}
+              <button
+                type="submit"
+                className="group inline-flex items-center justify-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
               >
                 Subscribe
+                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+                </span>
               </button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── External Links ── */}
-      <section className="py-12 bg-secondary/50 border-t border-border">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">Also Featured In:</span>
-            {['Northern Ontario Business', 'Mining.com', 'BetaKit', 'Sudbury Star', 'CBC North'].map((pub) => (
-              <a 
-                key={pub} 
-                href="#" 
-                className="link-fancy hover:text-primary transition-colors flex items-center gap-1"
-              >
-                {pub} <ExternalLink className="w-3 h-3" />
-              </a>
-            ))}
+            </form>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* ── External Links ── */}
+        <section className="py-12" style={{ background: PAPER, borderTop: '1px solid rgba(0,26,77,0.08)' }}>
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm" style={{ color: '#5b6478' }}>
+              <span className="font-bold uppercase tracking-[0.14em] text-xs" style={{ color: NAVY }}>Also Featured In</span>
+              {['Northern Ontario Business', 'Mining.com', 'BetaKit', 'Sudbury Star', 'CBC North'].map((pub) => (
+                <a key={pub} href="#" className="hover:text-foreground transition-colors flex items-center gap-1" style={{ color: NAVY }}>
+                  {pub} <ExternalLink className="w-3 h-3" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
     </Layout>
   );
 };
+
 
 export default News;
