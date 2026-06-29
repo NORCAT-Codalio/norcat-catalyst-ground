@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
@@ -408,6 +408,11 @@ export default function Home2() {
           </div>
         </section>
 
+        {/* ───── WHAT WE DO — ACCORDION (duplicate, alt layout) ───── */}
+        <WhatWeDoAccordion />
+
+
+
         {/* ───── WHO IT'S FOR (light) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
                  style={{ background: '#F2F3F6', color: '#001A4D' }}>
@@ -693,3 +698,123 @@ export default function Home2() {
     </Layout>
   );
 }
+
+// ───── What We Do — Accordion variant (mirrors the highlights content above) ─────
+function WhatWeDoAccordion() {
+  const items = [
+    {
+      key: 'venture-growth',
+      title: 'Venture Growth',
+      desc: '1-on-1 mentorship, IP strategy, and micro-grants for early-stage founders ready to move fast. World-class support designed to take rough ideas to market-ready ventures.',
+      href: '/programs/venture-growth-services',
+    },
+    {
+      key: 'test-validate',
+      title: 'Test & Validate',
+      desc: 'Access the Fortin Discovery Lab and the NORCAT Underground Centre to test technology in a real operating mine — the only one of its kind on the planet.',
+      href: '/mining/norcat-underground',
+    },
+    {
+      key: 'capital-access',
+      title: 'Capital Access',
+      desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund — with hands-on support from a team that has raised $75M+ for founders.',
+      href: '/funding/sudbury-catalyst-fund',
+    },
+  ];
+
+  const [open, setOpen] = useState(items[0].key);
+
+  return (
+    <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: PAPER, color: NAVY }}>
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: `radial-gradient(ellipse at top left, rgba(0,179,152,0.10), transparent 55%), radial-gradient(ellipse at bottom right, rgba(47,111,214,0.10), transparent 55%)`,
+      }} />
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        <div className="grid gap-8 lg:gap-10 lg:grid-cols-12 items-stretch">
+
+          {/* Left — copy + CTA */}
+          <div className="lg:col-span-4 flex flex-col justify-center">
+            <p className="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-6"
+               style={{ fontFamily: FONT, color: NAVY, background: 'rgba(0,26,77,0.08)' }}>
+              About Us
+            </p>
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+              One ecosystem.<br />Three ways to grow.
+            </h2>
+            <p className="mt-6 text-sm md:text-base leading-relaxed" style={{ color: '#475068', maxWidth: '36ch' }}>
+              From first sketch to scaled venture, NORCAT Innovation gives founders the mentorship, infrastructure, and capital access to build, test, and scale tech ventures in Northern Ontario.
+            </p>
+            <Link to="/programs/venture-growth-services"
+                  className="mt-8 group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold self-start transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
+              Learn More
+              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+              </span>
+            </Link>
+          </div>
+
+          {/* Middle — image */}
+          <div className="lg:col-span-4">
+            <div className="relative overflow-hidden rounded-2xl h-full min-h-[360px] lg:min-h-[440px]">
+              <img src={miningUndergroundHero} alt="NORCAT Underground Centre"
+                   className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 pointer-events-none"
+                   style={{ background: `linear-gradient(180deg, transparent 55%, rgba(0,26,77,0.45) 100%)` }} />
+            </div>
+          </div>
+
+          {/* Right — accordion stack */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
+            {items.map((it) => {
+              const isOpen = open === it.key;
+              return (
+                <button
+                  type="button"
+                  key={it.key}
+                  onClick={() => setOpen(it.key)}
+                  aria-expanded={isOpen}
+                  className={`text-left rounded-2xl transition-all duration-300 ease-out overflow-hidden border ${isOpen ? 'shadow-lg' : 'shadow-sm hover:shadow-md'}`}
+                  style={{
+                    background: isOpen ? TEAL : '#FFFFFF',
+                    color: isOpen ? '#FFFFFF' : NAVY,
+                    borderColor: isOpen ? 'transparent' : 'rgba(0,26,77,0.08)',
+                    fontFamily: FONT,
+                  }}
+                >
+                  <div className="flex items-center justify-between gap-4 px-5 md:px-6 py-4 md:py-5">
+                    <h3 className="font-black text-lg md:text-xl tracking-tight" style={{ letterSpacing: '-0.01em' }}>
+                      {it.title}
+                    </h3>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full transition-transform duration-300"
+                          style={{
+                            background: isOpen ? 'rgba(255,255,255,0.18)' : 'rgba(0,26,77,0.08)',
+                            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                          }}>
+                      <ChevronRight className="w-4 h-4 rotate-90" />
+                    </span>
+                  </div>
+                  <div
+                    className="grid transition-all duration-300 ease-out"
+                    style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 md:px-6 pb-5 md:pb-6">
+                        <p className="text-sm leading-relaxed" style={{ color: isOpen ? 'rgba(255,255,255,0.92)' : '#475068' }}>
+                          {it.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
