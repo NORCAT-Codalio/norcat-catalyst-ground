@@ -408,6 +408,11 @@ export default function Home2() {
           </div>
         </section>
 
+        {/* ───── WHAT WE DO — ACCORDION (duplicate, alt layout) ───── */}
+        <WhatWeDoAccordion />
+
+
+
         {/* ───── WHO IT'S FOR (light) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
                  style={{ background: '#F2F3F6', color: '#001A4D' }}>
