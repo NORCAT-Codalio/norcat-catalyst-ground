@@ -143,11 +143,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Events */}
+          {/* Funding */}
           <div>
-            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Events</h4>
+            <h4 className="font-display font-bold text-white text-base tracking-wider uppercase mb-5">Funding</h4>
             <ul className="space-y-3">
-              {footerLinks.events.map((link) => (
+              {footerLinks.funding.map((link) => (
                 <li key={link.name}>
                   <Link to={link.href} className="text-sm text-white/80 hover:text-teal-300 transition-colors">
                     {link.name}
