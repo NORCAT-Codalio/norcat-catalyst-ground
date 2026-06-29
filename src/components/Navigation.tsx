@@ -1,34 +1,48 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Mountain, Handshake, Globe, Lightbulb, Calendar, LogIn, Phone } from 'lucide-react';
+import {
+  Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, Lightbulb, LogIn, Phone,
+  TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
+  Sparkles, Brain, Banknote,
+  Network, BarChart3, Star, Newspaper, Calendar,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
+type MenuEntry = {
+  name: string;
+  href: string;
+  icon: typeof Rocket;
+  description: string;
+};
+
 // Menu structure
-const programsItems = [
-  { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-  { name: 'Mentorship', href: '/programs/mentorship-services' },
-  { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
-  { name: 'Core5', href: '/mining/core5' },
-  { name: 'Underground Centre', href: '/mining/norcat-underground' },
-  { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-  { name: 'Innovation Space', href: '/mining/labs' },
+const programsItems: MenuEntry[] = [
+  { name: 'Venture Growth Services', href: '/programs/venture-growth-services', icon: TrendingUp, description: 'Hands-on support to take your venture from idea to scale.' },
+  { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
+  { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
+  { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
+  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
+  { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
+  { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
 ];
 
-const fundingItems = [
-  { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
-  { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
-  { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
+const fundingItems: MenuEntry[] = [
+  { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program', icon: Sparkles, description: 'Non-dilutive funding to accelerate market entry.' },
+  { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program', icon: Brain, description: 'Funding and support for AI-driven ventures in the North.' },
+  { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
 ];
 
-const resourcesItems = [
-  { name: 'Ecosystem', href: '/ecosystem/sudbury' },
-  { name: 'Impact', href: '/impact' },
-  { name: 'Stories', href: '/insights/success-stories' },
-  { name: 'News', href: '/insights/news' },
-  { name: 'Events', href: '/events' },
+const resourcesItems: MenuEntry[] = [
+  { name: 'Ecosystem', href: '/ecosystem/sudbury', icon: Network, description: 'The partners, programs, and people of the region.' },
+  { name: 'Impact', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
+  { name: 'Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the ecosystem.' },
+  { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest announcements, press, and updates.' },
+  { name: 'Events', href: '/events', icon: Calendar, description: 'Upcoming pitches, workshops, and convenings.' },
 ];
+
+
 
 
 export function Navigation() {
@@ -258,37 +272,58 @@ export function Navigation() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute top-full left-0 mt-2 w-72 p-3 shadow-xl overflow-hidden"
+                      className={cn(
+                        'absolute top-full mt-3 p-4 shadow-2xl overflow-hidden rounded-2xl',
+                        menu.items.length > 4
+                          ? 'left-1/2 -translate-x-1/2 w-[720px] grid grid-cols-2 gap-1'
+                          : 'left-0 w-[380px]'
+                      )}
                       style={{
-                        background: 'linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 50%, rgba(240,253,250,0.95) 100%)',
+                        background: 'linear-gradient(145deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 50%, rgba(240,253,250,0.97) 100%)',
                         backdropFilter: 'blur(24px) saturate(200%)',
                         WebkitBackdropFilter: 'blur(24px) saturate(200%)',
                         border: '1px solid rgba(255,255,255,0.6)',
-                        boxShadow: '0 20px 40px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.5) inset',
+                        boxShadow: '0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(20,184,166,0.05) inset',
                       }}
                     >
                       <motion.div
-                        className="absolute -top-16 -right-16 w-32 h-32 rounded-full pointer-events-none"
-                        style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 70%)' }}
+                        className="absolute -top-20 -right-20 w-40 h-40 rounded-full pointer-events-none"
+                        style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.18) 0%, transparent 70%)' }}
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                       />
-                      <ul className="relative space-y-0.5">
-                        {menu.items.map((item) => (
-                          <motion.li key={item.name} variants={itemVariants}>
+                      {menu.items.length > 4 && (
+                        <div className="col-span-2 px-3 pt-1 pb-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-muted-foreground/70">
+                          {menu.label}
+                        </div>
+                      )}
+                      {menu.items.map((item) => {
+                        const ItemIcon = item.icon;
+                        return (
+                          <motion.div key={item.name} variants={itemVariants} className="relative">
                             <Link
                               to={item.href}
-                              className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                              className="group flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 transition-all duration-200"
                             >
-                              <menu.icon className="w-4 h-4" />
-                              {item.name}
+                              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 group-hover:border-primary/40 transition-all">
+                                <ItemIcon className="w-5 h-5 text-primary" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                                  {item.name}
+                                </div>
+                                <div className="text-xs text-muted-foreground mt-0.5 leading-snug">
+                                  {item.description}
+                                </div>
+                              </div>
                             </Link>
-                          </motion.li>
-                        ))}
-                      </ul>
+                          </motion.div>
+                        );
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>
+
               </div>
             ))}
 
