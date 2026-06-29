@@ -38,6 +38,34 @@ const programStructure = [
   { phase: '04', title: 'Ongoing Support', description: 'Continued access to network, resources, and advisor support as you scale.' },
 ];
 
+const includedCards = [
+  {
+    icon: UserCheck,
+    title: '1-on-1 Advisory',
+    description: 'A dedicated advisor works alongside you on strategy, product-market fit, and scaling decisions tailored to your stage.',
+  },
+  {
+    icon: Briefcase,
+    title: 'MaRS Startup Toolkit',
+    description: 'Access curated tools, templates, and resources from the MaRS ecosystem to structure, plan, and grow your venture.',
+  },
+  {
+    icon: Handshake,
+    title: 'Mentorship',
+    description: 'Get matched with experienced operators and founders who have built, scaled, and exited companies in your sector.',
+  },
+  {
+    icon: Users,
+    title: 'Small Group Advisory Sessions',
+    description: 'Learn alongside peers in focused, small-group sessions that surface shared challenges and collective insights.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Data & Market Intelligence Services',
+    description: 'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market and product decisions.',
+  },
+];
+
 const differentiators = [
   { icon: Compass, title: 'Hands-On, Not Hands-Off', description: "We roll up our sleeves and work alongside you. This isn't passive mentorship — it's active partnership in your success." },
   { icon: Target, title: 'Industry-Connected', description: 'Deep relationships with mining, industrial, and technology sectors mean real customer introductions, not just advice.' },
