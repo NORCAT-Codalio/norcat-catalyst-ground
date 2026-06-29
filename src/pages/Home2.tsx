@@ -155,8 +155,8 @@ export default function Home2() {
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 flex-1 flex items-center min-h-0">
-            <div className="flex flex-col lg:flex-row gap-10 items-stretch w-full h-full min-h-0">
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 flex-1 flex items-stretch">
+            <div className="flex flex-col lg:flex-row gap-10 items-stretch w-full">
               <div className="lg:w-[58.333%] flex flex-col justify-center py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
@@ -201,8 +201,8 @@ export default function Home2() {
               </div>
 
               {/* Photo collage — spans full height of hero section */}
-              <div className="lg:w-[41.667%] hidden lg:block min-h-0">
-                <div className="grid grid-cols-2 gap-4 h-full overflow-hidden">
+              <div className="lg:w-[41.667%] hidden lg:block relative">
+                <div className="absolute inset-0 grid grid-cols-2 gap-4 overflow-hidden">
                   {/* Left column — extends above and below the section edge */}
                   <div className="flex flex-col gap-4 -mt-20 -mb-20">
                     <div className="rounded-2xl overflow-hidden flex-[1.2] shadow-2xl ring-1 ring-white/10">
