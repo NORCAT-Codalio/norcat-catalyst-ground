@@ -301,6 +301,9 @@ const SudburyCatalystFund = () => {
                   Ontario's entrepreneurial ecosystem by investing in and supporting a diversified
                   portfolio of high-growth companies.
                 </p>
+                <p className="text-base sm:text-lg leading-relaxed mt-5" style={{ color: '#475068' }}>
+                  To qualify for consideration by the SCF Investment Committee, interested companies must have qualified investment interest from angel investors. The Sudbury Catalyst Fund will invest in two to three ventures per year, co-investing up to a maximum of $250,000 on a 1:1 matching basis.
+                </p>
               </div>
 
               <div className="lg:col-span-6">
