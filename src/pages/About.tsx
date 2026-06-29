@@ -163,17 +163,54 @@ export default function About() {
         </section>
 
 
-        {/* ───── MISSION (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        {/* ───── IMPACT STATS ───── */}
+        <section className="py-16 md:py-20" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Our Impact
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                Built to <span style={{ color: TEAL }}>move the needle.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+              {[
+                { number: '30+', label: 'Years of Building Innovation', icon: TrendingUp },
+                { number: '150+', label: 'Startups Supported', icon: Users },
+                { number: '500+', label: 'Ecosystem Members', icon: Building2 },
+                { number: '2,000+', label: 'Sector-Diverse Jobs Created', icon: Briefcase },
+                { number: '$50M+', label: 'Capital Raised', icon: DollarSign },
+              ].map((s) => (
+                <div key={s.label}
+                     className="rounded-2xl p-6 text-center transition hover:-translate-y-1"
+                     style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <div className="inline-flex items-center justify-center size-11 rounded-full mb-4"
+                       style={{ background: `${TEAL}1A`, color: TEAL }}>
+                    <s.icon className="w-5 h-5" />
+                  </div>
+                  <div className="font-black text-3xl md:text-4xl mb-1.5"
+                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                    {s.number}
+                  </div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] leading-snug" style={{ color: '#5b6478' }}>
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── MISSION (light, text left / video right) ───── */}
+        <section className="py-20 md:py-28" style={{ background: '#f4f6fa', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
-              <div className="lg:col-span-6">
-                <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: '1px solid #d9dde5' }}>
-                  <img src={norcatBuilding.url} alt="NORCAT Innovation headquarters building in Sudbury"
-                       className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="lg:col-span-6">
+              <div className="lg:col-span-6 order-2 lg:order-1">
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
@@ -181,7 +218,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  About NORCAT Innovation
+                  About <span style={{ color: TEAL }}>NORCAT Innovation.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission:
@@ -190,35 +227,24 @@ export default function About() {
                   safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
                 </p>
               </div>
+              <div className="lg:col-span-6 order-1 lg:order-2">
+                <div className="rounded-2xl overflow-hidden aspect-video shadow-xl"
+                     style={{ border: '1px solid #d9dde5' }}>
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="About NORCAT Innovation"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ───── LOCATIONS ───── */}
-        <section className="py-20 md:py-28" style={{ background: '#f4f6fa', color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-12 md:mb-14">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
-                Where We Operate
-              </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                Our <span style={{ color: TEAL }}>Locations.</span>
-              </h2>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                A Northern Ontario-rooted network with reach across Canada and into the United States.
-              </p>
-            </div>
-
-            {/* Interactive map */}
-            <LocationsMap />
-          </div>
-        </section>
-
-
-        {/* ───── STORY OF NORCAT (dark) ───── */}
+        {/* ───── STORY OF NORCAT (dark, visual timeline) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
@@ -227,63 +253,47 @@ export default function About() {
           <img src={signatureLines} alt="" aria-hidden="true"
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-40 pointer-events-none select-none mix-blend-overlay" />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-12 md:mb-16">
-              <Eyebrow>Our Story</Eyebrow>
+            <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+              <Eyebrow className="justify-center">Our Story</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 The Story of <span style={{ color: TEAL }}>NORCAT.</span>
               </Display>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub — built on a single belief: keep Northern talent in the North.
+              </p>
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Greater Sudbury’s narrative is forged deep in ancient rock, where a rich mining heritage laid the foundation for a global industrial hub. However, by the early 2000s, a profound challenge emerged: too many talented young people and promising startups were leaving the North.
-                </p>
-                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  The necessary answer to this regional talent drain was established in 1995 when the Northern Centre for Advanced Technology (NORCAT) was founded by Darryl Lake in a modest Cambrian College basement. Driven by a vision to retain local genius, Lake’s mission was simple: create jobs so students could stay. Alongside co-founders Ed Wisniewski and Jason Bubba, they built an ethos rooted in safety, training, and innovation. By the late 1990s, the team pioneered digital training via CD-ROMs—a technological leap that introduced AR/VR capabilities and evolved into today’s internationally award-winning programs.
-                </p>
-                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  A pivotal moment arrived in 1997 with the establishment of an underground training mine at the Falconbridge Onaping Adit, putting NORCAT on the map as a global one-stop-shop “living laboratory” for mining tech. Rapid growth followed. After outgrowing its basement in 1998, a transformative $14 million expansion in 2009 enabled a move to a 70,000-square-foot headquarters on Maley Drive, anchoring ecosystem pillars under one roof.
-                </p>
-                <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Innovation is Greater Sudbury's heritage; NORCAT Innovation is a direct response to the entrepreneurs and builders who needed a place to come together — a hub where resources and ideation have a place to come together.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5 flex flex-col gap-8">
-                <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: `1px solid ${BORDER}` }}>
-                  <img src={foundersImage} alt="NORCAT founders collaborating in the early years"
-                       className="w-full h-full object-cover" />
-                </div>
-
-                <div className="relative">
-                  <div className="absolute left-[15px] top-3 bottom-3 w-px" style={{ background: 'rgba(255,255,255,0.15)' }} />
-                  <div className="space-y-6">
-                    {[
-                      { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
-                      { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit.' },
-                      { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
-                      { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive.' },
-                      { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together.' },
-                    ].map((milestone) => (
-                      <div key={milestone.year} className="relative flex gap-5 pl-1">
-                        <div className="relative z-10 w-8 h-8 rounded-full flex items-center justify-center shrink-0"
-                             style={{ background: TEAL, border: `2px solid ${TEAL}` }}>
-                          <div className="w-2.5 h-2.5 rounded-full" style={{ background: NAVY }} />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold uppercase tracking-[0.18em] mb-1" style={{ color: TEAL, fontFamily: FONT }}>{milestone.year}</p>
-                          <h3 className="font-black uppercase text-lg mb-1 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{milestone.title}</h3>
-                          <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{milestone.desc}</p>
-                        </div>
+            {/* Horizontal milestone rail */}
+            <div className="relative">
+              <div className="hidden lg:block absolute left-0 right-0 top-[44px] h-px" style={{ background: 'rgba(255,255,255,0.18)' }} />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+                {[
+                  { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
+                  { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit — putting Sudbury on the global mining-tech map.' },
+                  { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
+                  { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive — ecosystem pillars under one roof.' },
+                  { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
+                ].map((m, i) => (
+                  <div key={m.year} className="relative">
+                    <div className="flex lg:flex-col items-start lg:items-center gap-4 lg:gap-0">
+                      <div className="relative z-10 w-[88px] h-[88px] rounded-full flex items-center justify-center shrink-0 lg:mb-5"
+                           style={{ background: NAVY, border: `2px solid ${TEAL}`, boxShadow: `0 0 0 6px rgba(0,26,77,0.6), 0 0 30px rgba(0,179,152,0.35)` }}>
+                        <span className="font-black text-sm" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '0.04em' }}>{m.year}</span>
                       </div>
-                    ))}
+                      <div className="flex-1 lg:text-center">
+                        <h3 className="font-black uppercase text-base md:text-lg mb-2 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                          {m.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{m.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
+
 
         {/* ───── TEAM (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
