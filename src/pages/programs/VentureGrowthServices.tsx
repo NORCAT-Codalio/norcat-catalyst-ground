@@ -8,10 +8,14 @@ import {
   Zap,
   Quote,
   DollarSign,
+  UserCheck,
+  Briefcase,
+  Handshake,
+  Users,
+  BarChart3,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
-import { ServicesExplorer } from '@/components/ServicesExplorer';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
