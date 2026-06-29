@@ -427,26 +427,38 @@ export default function About() {
         </section>
 
 
-        {/* ───── FINAL CTA ───── */}
-        <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
-          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <Eyebrow>Your move</Eyebrow>
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+        {/* ───── FINAL CTA (dark, Home2 pattern) ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden"
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
+          }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
+
+          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
+            <Eyebrow className="justify-center">Your move</Eyebrow>
+            <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              Whether you're just starting out or ready to scale, we're here to help
-              you build something extraordinary.
+            </Display>
+            <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: FG_MUTED }}>
+              Whether you're just starting out or ready to scale, we're here to help you build something extraordinary.
             </p>
-            <Link to="/apply"
-                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}>
-              Apply to NORCAT Innovation
-              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-              </span>
-            </Link>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/apply"
+                    className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
+                Apply to NORCAT Innovation
+                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </span>
+              </Link>
+              <Link to="/ecosystem/sudbury"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', fontFamily: FONT }}>
+                Explore the Ecosystem
+              </Link>
+            </div>
           </div>
         </section>
 
