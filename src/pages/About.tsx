@@ -7,6 +7,9 @@ import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import storyLake from '@/assets/story/story-lake.jpg.asset.json';
+import storyMine from '@/assets/story/story-mine.jpg.asset.json';
+import storyHorse from '@/assets/story/story-horse.jpg.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
 // Award badges
@@ -244,6 +247,21 @@ export default function About() {
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub — built on a single belief: keep Northern talent in the North.
                 </p>
+
+                {/* Three-box image collage */}
+                <div className="mt-8 grid grid-cols-2 gap-3 h-72 md:h-96">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex-1 overflow-hidden rounded-2xl ring-1 ring-white/15">
+                      <img src={storyLake.url} alt="NORCAT founder conversation" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 overflow-hidden rounded-2xl ring-1 ring-white/15">
+                      <img src={storyHorse.url} alt="NORCAT building entrance" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-2xl ring-1 ring-white/15">
+                    <img src={storyMine.url} alt="Underground mining technology testing" className="w-full h-full object-cover" />
+                  </div>
+                </div>
               </div>
 
               {/* Right: vertical timeline */}
