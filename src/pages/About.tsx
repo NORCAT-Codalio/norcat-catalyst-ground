@@ -164,42 +164,19 @@ export default function About() {
 
 
         {/* ───── IMPACT STATS ───── */}
-        <section className="py-16 md:py-20" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Our Impact
-              </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                Built to <span style={{ color: TEAL }}>move the needle.</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                { number: '30+', label: 'Years of Building Innovation', icon: TrendingUp },
-                { number: '150+', label: 'Startups Supported', icon: Users },
-                { number: '500+', label: 'Ecosystem Members', icon: Building2 },
-                { number: '2,000+', label: 'Sector-Diverse Jobs Created', icon: Briefcase },
-                { number: '$50M+', label: 'Capital Raised', icon: DollarSign },
+                { number: '30+', label: 'Years of Building Innovation' },
+                { number: '150+', label: 'Startups Supported' },
+                { number: '500+', label: 'Ecosystem Members' },
+                { number: '2,000+', label: 'Sector-Diverse Jobs Created' },
+                { number: '$50M+', label: 'Capital Raised' },
               ].map((s) => (
-                <div key={s.label}
-                     className="rounded-2xl p-6 text-center transition hover:-translate-y-1"
-                     style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <div className="inline-flex items-center justify-center size-11 rounded-full mb-4"
-                       style={{ background: `${TEAL}1A`, color: TEAL }}>
-                    <s.icon className="w-5 h-5" />
-                  </div>
-                  <div className="font-black text-3xl md:text-4xl mb-1.5"
-                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                    {s.number}
-                  </div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] leading-snug" style={{ color: '#5b6478' }}>
-                    {s.label}
-                  </p>
+                <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
                 </div>
               ))}
             </div>
