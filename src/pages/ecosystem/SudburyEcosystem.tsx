@@ -137,8 +137,7 @@ const SudburyEcosystem = () => {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="text-lg">Greater Sudbury Innovation Ecosystem</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Everything You Need to<br />
-                <span style={{ color: TEAL }}>Build and Scale.</span>
+                Everything You Need to <span className="whitespace-nowrap" style={{ color: TEAL }}>Build and Scale.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Explore the complete network of support organizations, funding programs, research institutions, and industry partners that make Greater Sudbury one of Canada's most connected innovation ecosystems.
