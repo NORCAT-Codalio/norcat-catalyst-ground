@@ -320,6 +320,126 @@ export function Navigation() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
+      </div>
+
+      {/* Full-width Mega Menu Panel */}
+      <AnimatePresence>
+        {activeDropdown && (
+          <motion.div
+            key={activeDropdown}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            onMouseEnter={() => handleMouseEnter(activeDropdown)}
+            onMouseLeave={handleMouseLeave}
+            className="absolute left-0 right-0 top-full border-t border-border/40 shadow-2xl"
+            style={{
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(240,253,250,0.98) 100%)',
+              backdropFilter: 'blur(24px) saturate(200%)',
+              WebkitBackdropFilter: 'blur(24px) saturate(200%)',
+            }}
+          >
+            {/* Decorative glow */}
+            <div
+              className="absolute top-0 right-0 w-[40%] h-full pointer-events-none opacity-60"
+              style={{ background: 'radial-gradient(ellipse at top right, rgba(20,184,166,0.12) 0%, transparent 70%)' }}
+            />
+
+            <div className="container mx-auto px-4 lg:px-8 py-10 relative">
+              {(() => {
+                const menus = {
+                  programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
+                  funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity — we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
+                  resources: { label: 'Resources', items: resourcesItems, eyebrow: 'Inside the ecosystem', featured: { title: 'Venture North Pitch', body: 'Our flagship event spotlighting Northern Ontario\'s most ambitious founders.', href: '/events', cta: 'See upcoming events' } },
+                } as const;
+                const menu = menus[activeDropdown as keyof typeof menus];
+                if (!menu) return null;
+
+                return (
+                  <div className="grid grid-cols-12 gap-8">
+                    {/* Eyebrow column */}
+                    <div className="col-span-12 lg:col-span-3">
+                      <div className="text-[11px] font-semibold tracking-[0.22em] uppercase text-primary/80 mb-3">
+                        {menu.label}
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground leading-tight">
+                        {menu.eyebrow}
+                      </h3>
+                      <div className="mt-4 h-px w-12 bg-gradient-to-r from-primary to-transparent" />
+                      <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                        Explore the full {menu.label.toLowerCase()} stack — built for tough-tech founders.
+                      </p>
+                    </div>
+
+                    {/* Items grid */}
+                    <div className="col-span-12 lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-1">
+                      {menu.items.map((item) => {
+                        const ItemIcon = item.icon;
+                        return (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className="group flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 transition-all duration-200"
+                          >
+                            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 group-hover:border-primary/40 transition-all">
+                              <ItemIcon className="w-5 h-5 text-primary" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-xs text-muted-foreground mt-0.5 leading-snug">
+                                {item.description}
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+
+                    {/* Featured CTA card */}
+                    <div className="col-span-12 lg:col-span-3">
+                      <Link
+                        to={menu.featured.href}
+                        className="group block h-full rounded-2xl p-6 relative overflow-hidden border border-white/20 text-white transition-all hover:scale-[1.02]"
+                        style={{
+                          background: 'linear-gradient(135deg, #003da5 0%, #00b398 100%)',
+                          boxShadow: '0 12px 32px -8px hsla(168,100%,35%,0.45)',
+                        }}
+                      >
+                        <div
+                          className="absolute -top-12 -right-12 w-40 h-40 rounded-full opacity-40"
+                          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%)' }}
+                        />
+                        <div className="relative">
+                          <div className="text-[10px] font-semibold tracking-[0.22em] uppercase text-white/80 mb-3">
+                            Featured
+                          </div>
+                          <h4 className="text-lg font-bold leading-tight mb-2">
+                            {menu.featured.title}
+                          </h4>
+                          <p className="text-sm text-white/85 leading-snug mb-6">
+                            {menu.featured.body}
+                          </p>
+                          <div className="inline-flex items-center gap-1.5 text-sm font-semibold border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">
+                            {menu.featured.cta}
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="container mx-auto px-4 lg:px-8">
+
+
 
         {/* Mobile Menu */}
         <AnimatePresence>
