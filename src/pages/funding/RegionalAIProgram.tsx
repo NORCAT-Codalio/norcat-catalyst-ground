@@ -1,11 +1,10 @@
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
+import GrantFAQSection from '@/components/GrantFAQSection';
 import {
   ArrowUpRight,
   Rocket,
   Check,
-  Search,
-  CheckCircle,
   DollarSign,
   Target,
   Cpu,
@@ -13,16 +12,14 @@ import {
   ClipboardList,
   GraduationCap,
   Briefcase,
-  Send,
-  Zap,
   Layers,
   Cog,
   BarChart3,
+  FileText,
+  Calendar,
 } from 'lucide-react';
 
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
-import signatureLines from '@/assets/signature-lines.png';
-import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import raiiLogo from '@/assets/logos/raii-logo.png.asset.json';
 
 // ── Brand tokens (mirrors IAP / About / Home2) ──
@@ -54,17 +51,13 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 const RegionalAIProgram = () => {
-  const applicationSteps = [
-    { step: '01', title: 'Apply', description: 'Submit application form; initial review within 2 business days.', icon: Send },
-    { step: '02', title: 'Evaluation', description: 'Eligible applications reviewed by the Mentorship Committee.', icon: Search },
-    { step: '03', title: 'Decision', description: 'Receive outcome within 1 month.', icon: CheckCircle },
-  ];
 
   const eligibilityCriteria = [
-    'The applicant must be a NORCAT Innovation client',
+    'Must be a registered NORCAT Innovation client (complete the Discovery Document Form to begin intake)',
     'Must be a growth-oriented and for-profit entity (registered sole proprietor, partnership, or corporation)',
+    'Operate primarily in Mining Supply, Health Sciences, Advanced Manufacturing, Forestry, or Agriculture',
     'Demonstrate a clear need for AI integration to enhance productivity, commercialization, and competitiveness',
-    'Provide an AI commercialization or integration project proposal at TRL 7 or higher (prototype stage or beyond)',
+    'AI commercialization or integration project proposal at Technology Readiness Level (TRL) 4 or higher (prototype stage or beyond)',
   ];
 
   const ineligibleActivities = [
@@ -97,75 +90,24 @@ const RegionalAIProgram = () => {
   ];
 
   const programRequirements = [
-    { title: 'Client Intake & Discovery', description: 'The applicant must be a NORCAT Innovation client. If not, complete the Discovery Document Form.' },
-    { title: 'Proposal Submission', description: 'Submit a proposal outlining the AI integration plan, your current TRL level, and business value.' },
-    { title: 'Quotations for Project Work', description: 'Submit a minimum of two competitive quotes from independent and unrelated service providers with scope of work, hourly rate or total cost, and estimated hours required.' },
-    { title: 'Project Feedback Requirements', description: 'Upon completion, submit a formal exit survey describing project impact on business operations, outcomes, or future plans.' },
-    { title: 'Long-Term Reporting', description: 'Applicants may be contacted for follow-up feedback for up to five years post-completion.' },
+    { title: 'Client Intake & Discovery', description: 'The applicant must be a NORCAT Innovation client. If not, complete the Discovery Document Form to begin the intake process.' },
+    { title: 'Proposal Submission', description: 'Submit a proposal outlining the AI integration plan, your current TRL level, and the business value the project will deliver.' },
+    { title: 'Quotations for Project Work', description: 'With the exception of IP Research and Protection projects, submit a minimum of two competitive quotes from independent and unrelated service providers — each detailing scope of work, hourly rate or total cost, and estimated hours required.' },
+    { title: 'Contribution & Reimbursement', description: 'SMEs pay project service providers 100% of invoiced costs (including HST) prior to submitting for reimbursement. Funding covers up to 50% of approved Total Eligible Project Costs, up to $20,000 per SME.' },
+    { title: 'Project Feedback', description: 'Upon project completion, recipients must submit formal feedback describing the project\'s impact on business operations, outcomes, and future plans.' },
+    { title: 'Final Survey & Long-Term Reporting', description: 'Complete a final project survey capturing business outcomes and ongoing commercialization activity. Applicants may be contacted for follow-up feedback for up to five years post-completion.' },
   ];
 
   const overviewStats = [
     { icon: DollarSign, label: 'Max Grant', value: '$20,000' },
     { icon: Target, label: 'Match Ratio', value: '1:1 / 50%' },
-    { icon: Zap, label: 'Decision Time', value: '~1 Month' },
-    { icon: BarChart3, label: 'Focus', value: 'TRL 7+' },
+    { icon: Calendar, label: 'Open Window', value: '2025–2027' },
+    { icon: BarChart3, label: 'Eligibility', value: 'TRL 4+' },
   ];
 
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
-
-        {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
-          <div
-            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
-          />
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)` }}
-          />
-          <img
-            src={signatureLines}
-            alt=""
-            aria-hidden="true"
-            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay"
-          />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>Funding &amp; Capital</Eyebrow>
-              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Regional Artificial<br />
-                <span style={{ color: TEAL }}>Intelligence Initiative.</span>
-              </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Matching grants of up to $20,000 for Northern Ontario SMEs integrating
-                AI technologies — accelerate adoption, productivity, and competitiveness.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  to="/apply"
-                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
-                >
-                  Apply to NORCAT Innovation
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                </Link>
-                <a
-                  href="#overview"
-                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transition-colors"
-                  style={{ border: `1px solid ${BORDER}`, color: 'white', fontFamily: FONT }}
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ───── PROGRAM OVERVIEW (light) ───── */}
         <section id="overview" className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
@@ -182,15 +124,18 @@ const RegionalAIProgram = () => {
                   Fueling AI<br /><span style={{ color: TEAL }}>across the North.</span>
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5" style={{ color: '#475068' }}>
-                  NORCAT Innovation proudly supports Greater Sudbury's small and
-                  medium-sized enterprises through targeted grant programs that fuel
-                  innovation, accelerate commercialization, and drive regional growth.
+                  RAII empowers Northern Ontario SMEs to integrate artificial
+                  intelligence into their operations — enhancing productivity,
+                  innovation, and commercialization across the region.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  Through the RAII program, eligible businesses can access matching
-                  funds of up to $20,000 per project on a 1:1 basis — helping local
-                  innovators bring bold AI solutions to market with greater speed,
-                  efficiency, and impact.
+                <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
+                  The program pairs matching funds of up to $20,000 with AI and IT
+                  mentorship, hands-on AI training workshops, and direct connections
+                  to regional leaders driving Northern Ontario's AI capabilities.
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: '#6b7387' }}>
+                  Applications are open from <strong style={{ color: NAVY }}>2025 to 2027</strong>.
+                  Approved projects must reach completion within <strong style={{ color: NAVY }}>6 months</strong> of approval.
                 </p>
               </div>
 
@@ -240,150 +185,7 @@ const RegionalAIProgram = () => {
           </div>
         </section>
 
-        {/* ───── APPLICATION PROCESS (dark) ───── */}
-        <section
-          className="py-20 md:py-32 relative overflow-hidden"
-          style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
-          />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Application Process</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                A straight path<br />from apply to approved.
-              </Display>
-            </div>
-
-            <style>{`
-              @keyframes paper-plane-fly {
-                0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
-                100% { transform: translate(320px,-340px) rotate(-30deg) scale(0.1); opacity: 0; }
-              }
-              @keyframes magnify-look {
-                0%   { transform: translate(0,0) rotate(0deg); }
-                20%  { transform: translate(-6px, -3px) rotate(-18deg); }
-                45%  { transform: translate(8px, -2px) rotate(15deg); }
-                70%  { transform: translate(-3px, 5px) rotate(-10deg); }
-                100% { transform: translate(0,0) rotate(0deg); }
-              }
-              @keyframes decision-stamp {
-                0%   { transform: scale(1); }
-                35%  { transform: scale(1.35); }
-                55%  { transform: scale(0.92); }
-                75%  { transform: scale(1.08); }
-                100% { transform: scale(1); }
-              }
-              @keyframes decision-ring {
-                0%   { transform: scale(1); opacity: 0.55; }
-                100% { transform: scale(2.2); opacity: 0; }
-              }
-              .plane-icon { transition: transform 0.3s ease; }
-              .group:hover .plane-icon { animation: paper-plane-fly 1.5s ease-out forwards; }
-              .search-icon { transition: transform 0.3s ease; }
-              .group:hover .search-icon { animation: magnify-look 0.9s ease-in-out infinite; }
-              .decision-icon circle {
-                fill: #00B398;
-                fill-opacity: 0;
-                transition: fill-opacity 0.4s ease;
-              }
-              .decision-icon path { transform-origin: center; }
-              .group:hover .decision-icon circle { fill-opacity: 1; transition: fill-opacity 0.3s ease; }
-              .group:hover .decision-icon path { animation: decision-stamp 0.55s ease-out forwards; }
-              .group:hover .decision-ring { animation: decision-ring 0.6s ease-out forwards; }
-            `}</style>
-            <div className="grid md:grid-cols-3 gap-5">
-              {applicationSteps.map((s, i) => (
-                <article
-                  key={s.step}
-                  className="group relative rounded-2xl p-8 transition-colors h-full overflow-visible"
-                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
-                >
-                  <div className="font-black text-5xl mb-6" style={{ color: 'rgba(0,179,152,0.35)', fontFamily: FONT, letterSpacing: '-0.02em' }}>{s.step}</div>
-                  <div
-                    className={`${i === 0 ? '' : 'transition-transform duration-300 group-hover:scale-110'} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
-                  >
-                    {i === 2 ? (
-                      <div className="relative w-7 h-7 flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 decision-icon absolute inset-0" style={{ color: TEAL }}>
-                          <circle cx="12" cy="12" r="10" />
-                          <path d="M9 12l2 2 4-4" />
-                        </svg>
-                        <div className="absolute inset-0 rounded-full border-2 decision-ring" style={{ borderColor: TEAL }} />
-                      </div>
-                    ) : (
-                      <s.icon className={`w-7 h-7 ${i === 0 ? 'plane-icon' : i === 1 ? 'search-icon' : ''}`} style={{ color: TEAL }} />
-                    )}
-                  </div>
-                  <h3 className="font-black uppercase text-xl md:text-2xl text-white mb-3" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{s.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ───── ELIGIBILITY (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-2">
-
-              <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                    <ClipboardList className="w-6 h-6" style={{ color: TEAL }} />
-                  </div>
-                  <Eyebrow>Eligibility Criteria</Eyebrow>
-                </div>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-8" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                  Who qualifies.
-                </h2>
-                <ul className="space-y-3">
-                  {eligibilityCriteria.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                      <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: TEAL }} />
-                      <span className="text-sm md:text-base" style={{ color: '#2a3245' }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 text-sm" style={{ color: '#6b7387' }}>
-                  <strong style={{ color: NAVY }}>Note:</strong> Retail and service-based businesses will not be considered under this program.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(220,38,38,0.10)', border: '1px solid rgba(220,38,38,0.25)' }}>
-                    <XCircle className="w-6 h-6" style={{ color: '#dc2626' }} />
-                  </div>
-                  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-0" style={{ fontFamily: FONT, color: '#dc2626' }}>
-                    <span className="size-1.5 rounded-full inline-block" style={{ background: '#dc2626' }} />
-                    Ineligible Activities
-                  </p>
-                </div>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-8" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                  What's not covered.
-                </h2>
-                <ul className="space-y-3">
-                  {ineligibleActivities.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #f1d1d1' }}>
-                      <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#dc2626' }} />
-                      <span className="text-sm md:text-base" style={{ color: '#2a3245' }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* ───── ELIGIBLE ACTIVITIES (dark) ───── */}
+        {/* ───── ELIGIBLE ACTIVITIES / TWO PILLARS (dark) ───── */}
         <section
           className="py-20 md:py-32 relative overflow-hidden"
           style={{ background: 'linear-gradient(180deg, #001a4d 0%, #003da5 100%)' }}
@@ -454,8 +256,64 @@ const RegionalAIProgram = () => {
           </div>
         </section>
 
+        {/* ───── ELIGIBILITY (light) ───── */}
+        <section className="pt-20 pb-10 md:pt-32 md:pb-20" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid gap-10 lg:gap-16 lg:grid-cols-2">
+
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
+                    <ClipboardList className="w-6 h-6" style={{ color: TEAL }} />
+                  </div>
+                  <Eyebrow>Eligibility Criteria</Eyebrow>
+                </div>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-8" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                  Who qualifies.
+                </h2>
+                <ul className="space-y-3">
+                  {eligibilityCriteria.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                      <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: TEAL }} />
+                      <span className="text-sm md:text-base" style={{ color: '#2a3245' }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-sm" style={{ color: '#6b7387' }}>
+                  <strong style={{ color: NAVY }}>Note:</strong> Retail and service-based businesses will not be considered under this program.
+                </p>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(220,38,38,0.10)', border: '1px solid rgba(220,38,38,0.25)' }}>
+                    <XCircle className="w-6 h-6" style={{ color: '#dc2626' }} />
+                  </div>
+                  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-0" style={{ fontFamily: FONT, color: '#dc2626' }}>
+                    <span className="size-1.5 rounded-full inline-block" style={{ background: '#dc2626' }} />
+                    Ineligible Activities
+                  </p>
+                </div>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-8" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                  What's not covered.
+                </h2>
+                <ul className="space-y-3">
+                  {ineligibleActivities.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #f1d1d1' }}>
+                      <XCircle className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#dc2626' }} />
+                      <span className="text-sm md:text-base" style={{ color: '#2a3245' }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
         {/* ───── PROGRAM REQUIREMENTS (timeline) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-10 pb-20 md:pt-20 md:pb-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Program Requirements</Eyebrow>
@@ -508,16 +366,6 @@ const RegionalAIProgram = () => {
           </div>
         </section>
 
-        {/* ───── FUNDED BY (light) ───── */}
-        <section className="py-16" style={{ background: PAPER }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-5 text-center" style={{ color: '#6b7387' }}>Funded by</p>
-            <div className="max-w-md mx-auto rounded-xl p-6 flex items-center justify-center min-h-[110px]" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-              <img src={fednorFullLogo} alt="Federal Economic Development Agency for Northern Ontario" className="max-h-14 max-w-full object-contain" />
-            </div>
-          </div>
-        </section>
-
         {/* ───── FINAL CTA ───── */}
         <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
@@ -529,20 +377,47 @@ const RegionalAIProgram = () => {
             >
               Ready to <span style={{ color: TEAL }}>integrate AI?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              Applications are open. Take the first step toward AI-powered growth —
-              with NORCAT in your corner.
-            </p>
-            <Link
-              to="/apply"
-              className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-              style={{ fontFamily: FONT, background: TEAL, color: 'white' }}
-            >
-              Apply to NORCAT Innovation
-              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-              </span>
-            </Link>
+            <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+              <div className="rounded-2xl p-8 text-left" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                <p className="text-sm font-semibold mb-4" style={{ color: '#475068' }}>Not yet a NORCAT Innovation client?</p>
+                <Link
+                  to="/validate-idea"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: NAVY, color: 'white' }}
+                >
+                  Submit your Discovery Document
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                    <FileText className="w-4 h-4" />
+                  </span>
+                </Link>
+              </div>
+              <div className="rounded-2xl p-8 text-left" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                <p className="text-sm font-semibold mb-4" style={{ color: '#475068' }}>Already a NORCAT client?</p>
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}
+                >
+                  Submit your RAII now
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── FAQ ───── */}
+        <GrantFAQSection program="raii" />
+
+        {/* ───── FUNDED BY (light) ───── */}
+        <section className="py-16" style={{ background: PAPER }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-5 text-center" style={{ color: '#6b7387' }}>Funded by</p>
+            <div className="max-w-md mx-auto rounded-xl p-6 flex items-center justify-center min-h-[110px]" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+              <img src={fednorFullLogo} alt="Federal Economic Development Agency for Northern Ontario" className="max-h-14 max-w-full object-contain" />
+            </div>
           </div>
         </section>
 
