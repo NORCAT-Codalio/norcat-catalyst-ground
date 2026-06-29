@@ -132,11 +132,10 @@ const SudburyCatalystFund = () => {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow>Sudbury Catalyst Fund</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Early-stage capital,<br /><span style={{ color: TEAL }}>built for Sudbury.</span>
+                Investing in Sudbury’s<br /><span style={{ color: TEAL }}>tech-based entrepreneurial ecosystem.</span>
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Investment capital for innovative companies building transformative
-                solutions in Northern Ontario.
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                The Sudbury Catalyst Fund (SCF) is a unique $5 million venture capital fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City of Greater Sudbury, FedNor, and NORCAT.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
