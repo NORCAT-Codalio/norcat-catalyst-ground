@@ -156,58 +156,84 @@ export default function Home2() {
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
+            <div className="grid lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7">
+                <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
-              <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                Build, Test, and Scale Your{' '}
-                <span style={{ color: TEAL }}>Tech Venture</span>
-              </Display>
+                <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
+                  Build, Test, and Scale Your{' '}
+                  <span style={{ color: TEAL }}>Tech Venture</span>
+                </Display>
 
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
-              </p>
+                <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
+                </p>
 
-              <div className="mt-8 flex flex-wrap gap-2.5">
-                {sectors.map((s) => (
-                  <span key={s.label}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-                        style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)' }}>
-                    <s.icon className="w-3.5 h-3.5" />
-                    {s.label}
-                  </span>
-                ))}
+                <div className="mt-8 flex flex-wrap gap-2.5">
+                  {sectors.map((s) => (
+                    <span key={s.label}
+                          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold"
+                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)' }}>
+                      <s.icon className="w-3.5 h-3.5" />
+                      {s.label}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                  <Link to="/apply"
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
+                    Apply to NORCAT Innovation
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </Link>
+                  <Link to="/about"
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
+                    Learn More
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </Link>
+                </div>
               </div>
 
-              <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                <Link to="/apply"
-                      className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
-                  Apply to NORCAT Innovation
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                </Link>
-                <Link to="/about"
-                      className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
-                  Learn More
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                </Link>
+              {/* Photo collage */}
+              <div className="lg:col-span-5 hidden lg:block">
+                <div className="grid grid-cols-3 gap-4 h-[560px]">
+                  <div className="flex flex-col gap-4 pt-10">
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={circuitiqTeam} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={ctaPhoto3} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={ctaPhoto1} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={loopxTeam} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={ctaPhoto2} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-4 pt-16">
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={ctaPhoto4} alt="" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
+                      <img src={miningUndergroundHero} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* hero model image */}
-          <img
-            src={heroModel.url}
-            alt=""
-            aria-hidden="true"
-            className="hidden lg:block absolute right-16 bottom-0 h-[90%] w-auto pointer-events-none select-none"
-            style={{ transform: 'scaleX(-1)' }}
-          />
         </section>
 
         {/* ───── IMPACT STATS ───── */}
