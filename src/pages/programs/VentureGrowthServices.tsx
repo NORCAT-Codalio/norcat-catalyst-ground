@@ -139,17 +139,14 @@ export default function VentureGrowthServices() {
           style={{ background: PAPER, color: NAVY }}
         >
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
-              <div className="max-w-2xl">
-                <Eyebrow>What's Included</Eyebrow>
-                <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
-                </Display>
-              </div>
-              <AudienceTabs light active={activeAudience} onChange={setActiveAudience} />
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>What's Included</Eyebrow>
+              <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
+              </Display>
             </div>
 
-            <ServicesExplorer light activeAudience={activeAudience} />
+            <ServicesExplorer light activeAudience="Startup Support" />
           </div>
         </section>
 
