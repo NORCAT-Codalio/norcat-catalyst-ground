@@ -1,34 +1,48 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Mountain, Handshake, Globe, Lightbulb, Calendar, LogIn, Phone } from 'lucide-react';
+import {
+  Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, Lightbulb, LogIn, Phone,
+  TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
+  Sparkles, Brain, Banknote,
+  Network, BarChart3, Star, Newspaper, Calendar,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
+type MenuEntry = {
+  name: string;
+  href: string;
+  icon: typeof Rocket;
+  description: string;
+};
+
 // Menu structure
-const programsItems = [
-  { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-  { name: 'Mentorship', href: '/programs/mentorship-services' },
-  { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
-  { name: 'Core5', href: '/mining/core5' },
-  { name: 'Underground Centre', href: '/mining/norcat-underground' },
-  { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-  { name: 'Innovation Space', href: '/mining/labs' },
+const programsItems: MenuEntry[] = [
+  { name: 'Venture Growth Services', href: '/programs/venture-growth-services', icon: TrendingUp, description: 'Hands-on support to take your venture from idea to scale.' },
+  { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
+  { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
+  { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
+  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
+  { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
+  { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
 ];
 
-const fundingItems = [
-  { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
-  { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
-  { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
+const fundingItems: MenuEntry[] = [
+  { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program', icon: Sparkles, description: 'Non-dilutive funding to accelerate market entry.' },
+  { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program', icon: Brain, description: 'Funding and support for AI-driven ventures in the North.' },
+  { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
 ];
 
-const resourcesItems = [
-  { name: 'Ecosystem', href: '/ecosystem/sudbury' },
-  { name: 'Impact', href: '/impact' },
-  { name: 'Stories', href: '/insights/success-stories' },
-  { name: 'News', href: '/insights/news' },
-  { name: 'Events', href: '/events' },
+const resourcesItems: MenuEntry[] = [
+  { name: 'Ecosystem', href: '/ecosystem/sudbury', icon: Network, description: 'The partners, programs, and people of the region.' },
+  { name: 'Impact', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
+  { name: 'Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the ecosystem.' },
+  { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest announcements, press, and updates.' },
+  { name: 'Events', href: '/events', icon: Calendar, description: 'Upcoming pitches, workshops, and convenings.' },
 ];
+
+
 
 
 export function Navigation() {
