@@ -8,6 +8,7 @@ import {
   Compass,
   Zap,
   Quote,
+  DollarSign,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
