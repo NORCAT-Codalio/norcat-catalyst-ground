@@ -1,12 +1,34 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Play, BarChart3, Quote } from 'lucide-react';
+import { ArrowRight, TrendingUp, Play, BarChart3 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import { ScrollReveal } from '@/components/ScrollReveal';
 import EcosystemDashboard from '@/components/dashboard/EcosystemDashboard';
 import { StoryModal, storyData } from '@/components/StoryModal';
 import signatureLines from '@/assets/signature-lines.png';
-import linesTeal from '@/assets/lines-teal.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+
+// ── Brand tokens (mirrors About) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const PAPER = '#F2F3F6';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+     style={{ fontFamily: FONT, color: TEAL }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
+
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+    {children}
+  </As>
+);
 
 const successStories = [
   {
@@ -29,169 +51,174 @@ const successStories = [
   },
 ];
 
+const impactStats = [
+  { number: '187', label: 'Active Companies' },
+  { number: '$92M', label: 'Capital Invested' },
+  { number: '2,000+', label: 'Jobs Created' },
+  { number: '127', label: 'Partnerships' },
+  { number: '$48M', label: 'Export Revenue' },
+];
 
 export default function Impact() {
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
   return (
     <Layout>
-      <div style={{ background: 'hsl(220 15% 92%)' }} className="min-h-screen">
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative pt-40 pb-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          {/* Subtle teal orbs */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 80%, 0.4) 0%, transparent 70%)' }} />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, hsla(220, 15%, 85%, 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-            <img src={linesTeal} alt="" aria-hidden="true" className="absolute top-0 right-0 opacity-[0.12] pointer-events-none" style={{ width: '60%' }} />
-          </div>
+        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+          }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-6" style={{
-                  background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
-                  border: '1.5px solid hsla(168, 30%, 90%, 0.5)',
-                  color: 'hsl(168, 40%, 30%)',
-                  boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
-                }}>
-                  <BarChart3 className="w-3.5 h-3.5" />
-                  Greater Sudbury Innovation Ecosystem
-                </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                  Real-Time{' '}
-                  <span className="text-5xl md:text-6xl lg:text-7xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>
-                    Impact Dashboard
-                  </span>
-                </h1>
-                <p className="text-lg md:text-xl font-light leading-relaxed max-w-2xl" style={{ color: 'hsl(220, 20%, 10%)' }}>
-                  Explore the growth, innovation, and economic impact of Greater Sudbury's 
-                  thriving startup ecosystem through interactive data visualization.
-                </p>
-              </div>
-            </ScrollReveal>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <Eyebrow className="text-lg">
+                <BarChart3 className="w-3.5 h-3.5" />
+                Greater Sudbury Innovation Ecosystem
+              </Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                Real-Time<br /><span style={{ color: TEAL }}>Impact Dashboard.</span>
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Explore the growth, innovation, and economic impact of Greater Sudbury's thriving startup ecosystem through interactive data visualization.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* ───── MAIN DASHBOARD ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
-          <img src={linesTeal} alt="" className="absolute bottom-0 right-0 w-[1000px] opacity-[0.15] pointer-events-none" style={{ transform: 'scaleY(-1)' }} />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <EcosystemDashboard />
-          </div>
-        </section>
-
-        {/* ───── SUCCESS STORIES ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full" style={{ background: 'radial-gradient(circle, hsl(220 10% 80% / 0.3) 0%, transparent 70%)' }} />
-            <img src={signatureLines} alt="" className="absolute top-0 right-0 w-[400px] opacity-[0.07]" style={{ filter: 'sepia(1) saturate(3) hue-rotate(120deg) brightness(0.8)' }} />
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <ScrollReveal>
-              <div className="max-w-2xl mb-14">
-                <span className="glass-frosted-btn-teal inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.15em] uppercase mb-5">
-                  Portfolio Highlights
-                </span>
-                <h2 className="text-3xl md:text-4xl leading-[1.1] tracking-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
-                  Recent <span className="text-4xl md:text-5xl" style={{ color: 'hsl(168, 100%, 28%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Wins</span>
-                </h2>
-                <p className="font-light" style={{ color: 'hsl(220, 20%, 10%)' }}>
-                  Celebrating the achievements of our portfolio companies. Click to explore each story.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {successStories.map((story, index) => (
-                <ScrollReveal key={story.company} delay={index * 100}>
-                  <button 
-                    onClick={() => setSelectedStory(story.company)}
-                    className="w-full text-left rounded-[20px] p-7 h-full group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
-                    style={{
-                      background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                      borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
-                      borderLeft: '1px solid hsla(168, 25%, 85%, 0.35)',
-                      borderRight: '0.5px solid hsla(168, 20%, 75%, 0.15)',
-                      borderBottom: '0.5px solid hsla(168, 15%, 65%, 0.1)',
-                      boxShadow: 'inset 0 1px 1px 0 hsla(168, 30%, 95%, 0.25), inset 0 0 20px 0 hsla(168, 25%, 85%, 0.08), 0 8px 32px hsla(168, 20%, 30%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.03)',
-                    }}
-                  >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-4" style={{
-                      background: 'hsl(168 100% 35% / 0.1)',
-                      color: 'hsl(168, 100%, 28%)',
-                      border: '0.5px solid hsl(168 100% 35% / 0.15)',
-                    }}>
-                      <TrendingUp className="h-3.5 w-3.5" />
-                      {story.outcome}
-                    </div>
-                    <div className="text-4xl font-black mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>
-                      {story.amount}
-                    </div>
-                    <div className="font-bold text-lg mb-2" style={{ color: 'hsl(220, 15%, 20%)' }}>{story.company}</div>
-                    <p className="text-sm font-light mb-4" style={{ color: 'hsl(220, 15%, 40%)' }}>{story.description}</p>
-                    
-                    {/* Play indicator */}
-                    <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: 'hsl(168, 100%, 28%)' }}>
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'hsl(168 100% 35% / 0.1)', border: '0.5px solid hsl(168 100% 35% / 0.2)' }}>
-                        <Play className="h-4 w-4 fill-current" />
-                      </div>
-                      <span className="text-sm font-medium">View Story</span>
-                    </div>
-                  </button>
-                </ScrollReveal>
+        {/* ───── IMPACT STATS ───── */}
+        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {impactStats.map((s) => (
+                <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Story Modal */}
-        <StoryModal 
+        {/* ───── DASHBOARD (light) ───── */}
+        <section className="py-20 md:py-28" style={{ background: '#f4f6fa', color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Ecosystem Metrics
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                The Numbers <span style={{ color: TEAL }}>Behind the North.</span>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                A live look at the founders, capital, and partnerships shaping Greater Sudbury's innovation economy.
+              </p>
+            </div>
+            <EcosystemDashboard />
+          </div>
+        </section>
+
+        {/* ───── SUCCESS STORIES (dark gradient) ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden"
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
+          }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-60 pointer-events-none select-none mix-blend-overlay" />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow>Portfolio Highlights</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Recent <span style={{ color: TEAL }}>Wins.</span>
+              </Display>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Celebrating the achievements of our portfolio companies. Click to explore each story.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {successStories.map((story) => (
+                <button
+                  key={story.company}
+                  onClick={() => setSelectedStory(story.company)}
+                  className="w-full text-left rounded-2xl p-7 h-full group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                  }}
+                >
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-[0.14em] mb-5"
+                       style={{ background: 'rgba(0,179,152,0.18)', color: TEAL, border: '1px solid rgba(0,179,152,0.35)' }}>
+                    <TrendingUp className="h-3.5 w-3.5" />
+                    {story.outcome}
+                  </div>
+                  <p className="font-black text-4xl md:text-5xl mb-3 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    {story.amount}
+                  </p>
+                  <h3 className="font-black uppercase text-lg md:text-xl mb-2 text-white"
+                      style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                    {story.company}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: FG_MUTED }}>{story.description}</p>
+
+                  <div className="flex items-center gap-2 text-sm font-bold" style={{ color: TEAL }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full"
+                          style={{ background: 'rgba(0,179,152,0.18)', border: '1px solid rgba(0,179,152,0.35)' }}>
+                      <Play className="h-3 w-3 fill-current" />
+                    </span>
+                    View Story
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <StoryModal
           story={selectedStory ? storyData[selectedStory] : null}
           open={!!selectedStory}
           onClose={() => setSelectedStory(null)}
         />
 
-        {/* ───── CTA ───── */}
-        <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)' }}>
-          <img 
-            src={signatureLines} 
-            alt="" 
-            aria-hidden="true"
-            className="absolute top-0 right-0 h-1/2 w-auto object-contain object-right opacity-50 pointer-events-none select-none mix-blend-overlay"
-            style={{ transform: 'scaleX(-1)' }}
-          />
-          <div className="container mx-auto px-6 relative z-10 text-center">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-6">
-                Be Part of Our{' '}
-                <span style={{ color: 'hsla(0, 0%, 100%, 0.85)' }}>Next Chapter</span>
-              </h2>
-              <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 text-white/60">
-                Join the founders who are building the future of mining and industrial 
-                technology. Your success could be our next headline.
-              </p>
-              <Link 
-                to="/apply" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(145deg, hsla(0, 0%, 100%, 0.2) 0%, hsla(0, 0%, 100%, 0.1) 100%)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  color: 'white',
-                  border: '0.5px solid hsla(0, 0%, 100%, 0.35)',
-                  boxShadow: 'inset 0 1px 0 0 hsla(0, 0%, 100%, 0.4), inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.1), 0 4px 16px hsla(168, 100%, 20%, 0.3), 0 8px 32px hsla(168, 100%, 20%, 0.15)',
-                }}
-              >
-                Apply for Venture Growth Services
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </ScrollReveal>
+        {/* ───── CTA (light paper) ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+               style={{ fontFamily: FONT, color: TEAL }}>
+              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+              Join the Ecosystem
+            </p>
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+              Be Part of Our<br /><span style={{ color: TEAL }}>Next Chapter.</span>
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: '#475068' }}>
+              Join the founders who are building the future of mining and industrial technology. Your success could be our next headline.
+            </p>
+            <Link to="/apply"
+                  className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+              Validate my Idea
+              <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+              </span>
+            </Link>
           </div>
         </section>
 
