@@ -67,14 +67,14 @@ const SudburyCatalystFund = () => {
   ];
 
   const investmentCriteria = [
-    { icon: Briefcase, title: 'Sectors', description: 'Co-invest in early-stage tech across multiple sectors including mining tech, cleantech, AI, health, and more.' },
-    { icon: Coins, title: 'Funding', description: 'Co-invest up to $250,000 on a 1:1 matching basis alongside angel investors and other funds.' },
-    { icon: Globe, title: 'Geography', description: 'Must have commitment to operate majority of operations in Greater Sudbury.' },
-    { icon: TrendingUp, title: 'Stage', description: 'Cumulative revenues and capital raised equating to less than $1M since company inception.' },
+    { icon: Briefcase, title: 'Sectors', description: 'Co-invest in early-stage tech companies across mining, construction, forestry, MedTech, software, and advanced manufacturing.' },
+    { icon: Coins, title: 'Funding', description: 'Invest in two to three ventures per year, co-investing up to $250,000 on a 1:1 matching basis alongside qualified angel investors.' },
+    { icon: Globe, title: 'Geography', description: 'The founder must be committed to establishing at least 51% of the company’s operations and staffing in the City of Greater Sudbury.' },
+    { icon: TrendingUp, title: 'Stage', description: 'High-potential ventures with cumulative revenues and capital raised equating to less than $1M since company inception.' },
   ];
 
   const overviewStats = [
-    { icon: DollarSign, label: 'Investment Size', value: '$25K – $250K' },
+    { icon: DollarSign, label: 'Investment Size', value: 'Up to $250K' },
     { icon: Target, label: 'Focus', value: 'Seed Stage' },
     { icon: BarChart3, label: 'Portfolio', value: '7 Companies' },
     { icon: Zap, label: 'Decision Time', value: '4–6 Weeks' },
@@ -86,6 +86,25 @@ const SudburyCatalystFund = () => {
   ];
 
   const committee = Array.from({ length: 6 }).map(() => ({ name: 'Committee Member', role: 'Investment Committee' }));
+
+  const applicationSteps = [
+    {
+      step: '01',
+      title: 'Join Mentorship',
+      description: 'Be involved with and participating in the NORCAT Innovation sponsored mentorship program.',
+      link: { label: 'Submit Discovery Document', to: '/apply' },
+    },
+    {
+      step: '02',
+      title: 'Gain Endorsement',
+      description: 'Be supported and endorsed through that mentorship to make an application to the fund.',
+    },
+    {
+      step: '03',
+      title: 'Secure Angel Commitment',
+      description: 'Successfully acquire a written commitment of investment from one or more angel investors.',
+    },
+  ];
 
   return (
     <Layout>
