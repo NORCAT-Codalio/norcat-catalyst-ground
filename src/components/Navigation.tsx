@@ -281,7 +281,7 @@ export function Navigation() {
           <div className="hidden lg:flex items-center gap-2">
             <Link
               to="/validate-idea"
-              className="text-[14px] font-medium text-foreground/70 hover:text-primary transition-colors px-3 py-2"
+              className="text-[15px] font-medium text-foreground/70 hover:text-primary transition-colors px-3 py-2"
             >
               Validate idea
             </Link>
