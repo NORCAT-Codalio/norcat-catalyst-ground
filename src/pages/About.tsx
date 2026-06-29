@@ -247,8 +247,8 @@ export default function About() {
               </div>
 
               {/* Right: vertical timeline */}
-              <div className="relative pl-8 md:pl-10">
-                <div className="absolute left-0 md:left-1 top-2 bottom-2 w-px" style={{ background: 'rgba(255,255,255,0.18)' }} />
+              <div className="relative pl-14">
+                <div className="absolute left-6 top-1 bottom-1 w-px" style={{ background: TEAL }} />
                 <div className="space-y-10 md:space-y-12">
                   {[
                     { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
@@ -258,10 +258,8 @@ export default function About() {
                     { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
                   ].map((m) => (
                     <div key={m.year} className="relative">
-                      <div className="absolute -left-8 md:-left-10 top-1.5 translate-x-[-50%]">
-                        <div className="w-3 h-3 rounded-full"
-                             style={{ background: TEAL, boxShadow: `0 0 0 4px ${NAVY}, 0 0 0 6px ${TEAL}` }} />
-                      </div>
+                      <div className="absolute -left-8 top-1.5 w-3 h-3 rounded-full -translate-x-1/2"
+                           style={{ background: TEAL }} />
                       <p className="text-xs font-bold tracking-[0.18em] uppercase mb-2"
                          style={{ color: TEAL, fontFamily: FONT }}>
                         {m.year}
