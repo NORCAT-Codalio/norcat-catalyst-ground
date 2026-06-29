@@ -229,7 +229,7 @@ export function Navigation() {
             <Link
               to="/about"
               className={cn(
-                'px-3 py-2 text-[14px] font-medium transition-colors rounded-md',
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
                 location.pathname === '/about'
                   ? 'text-primary'
                   : 'text-foreground/70 hover:text-foreground'
@@ -250,7 +250,7 @@ export function Navigation() {
                 >
                   <button
                     className={cn(
-                      'flex items-center gap-1 px-3 py-2 text-[14px] font-medium transition-colors rounded-md',
+                      'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
                       activeDropdown === key
                         ? 'text-primary'
                         : 'text-foreground/70 hover:text-foreground'
@@ -267,7 +267,7 @@ export function Navigation() {
             <Link
               to="/portal/auth"
               className={cn(
-                'px-3 py-2 text-[14px] font-medium transition-colors rounded-md',
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
                 location.pathname.startsWith('/portal')
                   ? 'text-primary'
                   : 'text-foreground/70 hover:text-foreground'
@@ -281,7 +281,7 @@ export function Navigation() {
           <div className="hidden lg:flex items-center gap-2">
             <Link
               to="/validate-idea"
-              className="text-[14px] font-medium text-foreground/70 hover:text-primary transition-colors px-3 py-2"
+              className="text-[15px] font-medium text-foreground/70 hover:text-primary transition-colors px-3 py-2"
             >
               Validate idea
             </Link>
