@@ -224,51 +224,58 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── STORY OF NORCAT (dark, visual timeline) ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden"
+        {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
           }} />
           <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-40 pointer-events-none select-none mix-blend-overlay" />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
-              <Eyebrow className="justify-center">Our Story</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                The Story of <span style={{ color: TEAL }}>NORCAT.</span>
-              </Display>
-              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub — built on a single belief: keep Northern talent in the North.
-              </p>
-            </div>
+               className="absolute bottom-0 left-0 w-auto h-1/3 object-contain object-left-bottom opacity-30 pointer-events-none select-none mix-blend-overlay" />
 
-            {/* Horizontal milestone rail */}
-            <div className="relative">
-              <div className="hidden lg:block absolute left-0 right-0 top-[44px] h-px" style={{ background: 'rgba(255,255,255,0.18)' }} />
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
-                {[
-                  { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
-                  { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit — putting Sudbury on the global mining-tech map.' },
-                  { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
-                  { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive — ecosystem pillars under one roof.' },
-                  { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
-                ].map((m, i) => (
-                  <div key={m.year} className="relative">
-                    <div className="flex lg:flex-col items-start lg:items-center gap-4 lg:gap-0">
-                      <div className="relative z-10 w-[88px] h-[88px] rounded-full flex items-center justify-center shrink-0 lg:mb-5"
-                           style={{ background: NAVY, border: `2px solid ${TEAL}`, boxShadow: `0 0 0 6px rgba(0,26,77,0.6), 0 0 30px rgba(0,179,152,0.35)` }}>
-                        <span className="font-black text-sm" style={{ color: TEAL, fontFamily: FONT, letterSpacing: '0.04em' }}>{m.year}</span>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+              {/* Left: section header */}
+              <div className="max-w-xl lg:sticky lg:top-32">
+                <Eyebrow>Our Story</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  The Story of <span style={{ color: TEAL }}>NORCAT.</span>
+                </Display>
+                <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub — built on a single belief: keep Northern talent in the North.
+                </p>
+              </div>
+
+              {/* Right: vertical timeline */}
+              <div className="relative pl-8 md:pl-10">
+                <div className="absolute left-0 md:left-1 top-2 bottom-2 w-px" style={{ background: 'rgba(255,255,255,0.18)' }} />
+                <div className="space-y-10 md:space-y-12">
+                  {[
+                    { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
+                    { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit — putting Sudbury on the global mining-tech map.' },
+                    { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
+                    { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive — ecosystem pillars under one roof.' },
+                    { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
+                  ].map((m) => (
+                    <div key={m.year} className="relative">
+                      <div className="absolute -left-8 md:-left-10 top-1.5 translate-x-[-50%]">
+                        <div className="w-3 h-3 rounded-full"
+                             style={{ background: TEAL, boxShadow: `0 0 0 4px ${NAVY}, 0 0 0 6px ${TEAL}` }} />
                       </div>
-                      <div className="flex-1 lg:text-center">
-                        <h3 className="font-black uppercase text-base md:text-lg mb-2 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                          {m.title}
-                        </h3>
-                        <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{m.desc}</p>
-                      </div>
+                      <p className="text-xs font-bold tracking-[0.18em] uppercase mb-2"
+                         style={{ color: TEAL, fontFamily: FONT }}>
+                        {m.year}
+                      </p>
+                      <h3 className="font-black uppercase text-lg md:text-xl mb-2 text-white"
+                          style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                        {m.title}
+                      </h3>
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                        {m.desc}
+                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
