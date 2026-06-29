@@ -441,33 +441,6 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── TESTIMONIAL ───── */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
-          <div className="absolute inset-0">
-            <img src={circuitiqTeam} alt="" aria-hidden="true" className="w-full h-full object-cover" />
-            <div className="absolute inset-0" style={{ background: 'rgba(0,12,38,0.82)' }} />
-          </div>
-          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <Quote className="w-10 h-10 mx-auto mb-8" style={{ color: TEAL, opacity: 0.6 }} />
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/90 mb-10"
-                        style={{ fontFamily: FONT }}>
-              "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been
-              instrumental in our decision to relocate our team to Sudbury."
-            </blockquote>
-            <div className="flex items-center justify-center gap-4">
-              <img src={lukeBegleyPhoto} alt="Luke Begley"
-                   className="w-14 h-14 rounded-full object-cover"
-                   style={{ border: `3px solid ${TEAL}` }} />
-              <div className="text-left">
-                <p className="font-black uppercase text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>Luke Begley</p>
-                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: TEAL, fontFamily: FONT }}>
-                  CEO & Co-Founder, CircuitIQ
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ───── WHAT MAKES US DIFFERENT (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
@@ -507,70 +480,29 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── EXPLORE OUR SERVICES (dark) ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden"
-                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: 'radial-gradient(circle at 80% 0%, rgba(0,179,152,0.15), transparent 45%)',
-          }} />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
-              <div className="max-w-2xl">
-                <Eyebrow>All Services</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Explore our<br /><span style={{ color: TEAL }}>services.</span>
-                </Display>
-                <p className="mt-5 text-base md:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
-                  From hands-on advisory to funding and world-class facilities — everything you need under one roof.
+        {/* ───── TESTIMONIAL ───── */}
+        <section className="relative py-20 md:py-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={circuitiqTeam} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+            <div className="absolute inset-0" style={{ background: 'rgba(0,12,38,0.82)' }} />
+          </div>
+          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
+            <Quote className="w-10 h-10 mx-auto mb-8" style={{ color: TEAL, opacity: 0.6 }} />
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/90 mb-10"
+                        style={{ fontFamily: FONT }}>
+              "The unwavering support we have received from the Sudbury Catalyst Fund and NORCAT has been
+              instrumental in our decision to relocate our team to Sudbury."
+            </blockquote>
+            <div className="flex items-center justify-center gap-4">
+              <img src={lukeBegleyPhoto} alt="Luke Begley"
+                   className="w-14 h-14 rounded-full object-cover"
+                   style={{ border: `3px solid ${TEAL}` }} />
+              <div className="text-left">
+                <p className="font-black uppercase text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>Luke Begley</p>
+                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: TEAL, fontFamily: FONT }}>
+                  CEO & Co-Founder, CircuitIQ
                 </p>
               </div>
-              <Link to="/apply"
-                    className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.18em] text-xs group shrink-0"
-                    style={{ color: TEAL, fontFamily: FONT }}>
-                Apply Now
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            <div className="grid lg:grid-cols-3 gap-6">
-              {(['Program', 'Funding', 'Facility'] as const).map((type) => {
-                const typeServices = allServices.filter(s => s.type === type);
-                const typeLabel = type === 'Program' ? 'Programs' : type === 'Funding' ? 'Funding' : 'Facilities';
-                const TypeIcon = type === 'Program' ? Rocket : type === 'Funding' ? DollarSign : Building2;
-                return (
-                  <div key={type} className="rounded-2xl p-6 md:p-7"
-                       style={{ background: 'rgba(0, 179, 152, 0.06)', border: `1px solid rgba(0, 179, 152, 0.15)`, backdropFilter: 'blur(14px)' }}>
-                    <div className="flex items-center gap-3 mb-5 pb-5" style={{ borderBottom: `1px solid ${BORDER}` }}>
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: NAVY }}>
-                        <TypeIcon className="w-5 h-5" style={{ color: TEAL }} />
-                      </div>
-                      <h3 className="font-black uppercase text-lg text-white"
-                          style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{typeLabel}</h3>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      {typeServices.map((service) => (
-                        <Link key={service.title} to={service.link}
-                              className="group block rounded-xl p-4 transition-colors"
-                              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                          <h4 className="font-bold text-white mb-2 group-hover:text-[color:var(--teal,#00B398)] transition-colors"
-                              style={{ fontFamily: FONT }}>
-                            {service.title}
-                          </h4>
-                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-3" style={{ color: FG_MUTED }}>
-                            <span className="inline-flex items-center gap-1"><Clock className="w-3 h-3" style={{ color: TEAL }} />{service.duration}</span>
-                            <span className="inline-flex items-center gap-1"><MapPin className="w-3 h-3" style={{ color: TEAL }} />{service.location}</span>
-                          </div>
-                          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] group-hover:translate-x-1 transition-transform"
-                               style={{ color: TEAL, fontFamily: FONT }}>
-                            Learn more
-                            <ArrowRight className="w-3.5 h-3.5" />
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </section>
