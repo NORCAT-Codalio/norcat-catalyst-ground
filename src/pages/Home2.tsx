@@ -101,6 +101,11 @@ const testimonials = [
     name: 'Stephen Podrucky',
     role: 'CEO and Founder, Podco',
   },
+  {
+    quote: "At some point I realised the need to shake hands of the people in the mining sector, and that's more than just a virtual conversation,\" he recalls. \"NORCAT was the place that we find a very high density of end users, companies, and a network that has helped a lot to accelerate the process from having an idea to having a technology.",
+    name: 'Mashoud Aali',
+    role: 'Founder and CEO, Scient Analytic',
+  },
 ];
 
 const portfolio = [
