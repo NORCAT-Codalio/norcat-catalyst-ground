@@ -82,7 +82,7 @@ const testimonials = [
     role: 'COO, Myomar Molecular',
   },
   {
-    quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada',
+    quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada.',
     name: 'Karen Hastie',
     role: 'Founder/CEO, Chamber Perks App',
   },
