@@ -72,17 +72,17 @@ const sectors = [
 
 const testimonials = [
   {
-    quote: "My first pitch with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and grown our team from 7 to 26 in just two years.",
+    quote: "My first pitch with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and grown our team from 7 to 26 in just two years",
     name: 'Luke Begley',
     role: 'Founder, CircuitIQ',
   },
   {
-    quote: 'Securing this level of trust and expertise from Northern Ontario through the NORCAT ecosystem has acted as a true catalyst, opening doors for us to bring in additional capital and scale our laboratory operations.',
+    quote: 'Securing this level of trust and expertise from Northern Ontario through the NORCAT ecosystem has acted as a true catalyst, opening doors for us to bring in additional capital and scale our laboratory operations',
     name: 'Rafaela Andrade',
     role: 'CEO, Myomar Molecular',
   },
   {
-    quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada.',
+    quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada',
     name: 'Karen Hastie',
     role: 'Founder/CEO, Chamber Perks App',
   },
