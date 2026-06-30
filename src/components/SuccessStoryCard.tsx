@@ -11,6 +11,7 @@ export interface SuccessStory {
   status: 'piloting' | 'scaling' | 'commercial' | 'acquired';
   metrics: {
     capitalRaised?: string;
+    publicValuation?: string;
     jobsCreated?: number;
     marketsReached?: number;
   };
@@ -99,10 +100,10 @@ export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {
 
         {/* Metrics */}
         <div className="flex items-center gap-4 text-sm">
-          {story.metrics.capitalRaised && (
+          {(story.metrics.publicValuation || story.metrics.capitalRaised) && (
             <div className="flex items-center gap-1.5 text-foreground">
               <DollarSign className="w-4 h-4 text-emerald-500" />
-              <span className="font-medium">{story.metrics.capitalRaised}</span>
+              <span className="font-medium">{story.metrics.publicValuation || story.metrics.capitalRaised}</span>
             </div>
           )}
           {story.metrics.jobsCreated && (

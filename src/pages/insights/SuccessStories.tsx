@@ -269,10 +269,12 @@ const SuccessStories = () => {
                           <h3 className="text-xl font-bold mt-2 mb-2" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{story.company}</h3>
                           <p className="text-sm font-light line-clamp-2 mb-4" style={{ color: 'hsl(220, 15%, 40%)' }}>{story.tagline}</p>
                           <div className="flex items-center gap-4 text-sm">
-                            {story.metrics.capitalRaised && (
+                            {(story.metrics.publicValuation || story.metrics.capitalRaised) && (
                               <div className="flex items-center gap-1.5">
                                 <DollarSign className="w-4 h-4" style={{ color: 'hsl(152, 69%, 40%)' }} />
-                                <span className="font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>{story.metrics.capitalRaised}</span>
+                                <span className="font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                                  {story.metrics.publicValuation || story.metrics.capitalRaised}
+                                </span>
                               </div>
                             )}
                             {story.metrics.jobsCreated && (
@@ -383,7 +385,7 @@ const SuccessStories = () => {
                                 <div className="grid grid-cols-2 gap-4">
                                   {[
                                     { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
-                                    { icon: DollarSign, label: 'Capital Raised', value: details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
+                                    { icon: DollarSign, label: details.impactMetrics.publicValuation ? 'Public Valuation' : 'Capital Raised', value: details.impactMetrics.publicValuation || details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
                                     { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
                                   ].map((metric) => (
                                     <div key={metric.label} className="rounded-xl p-4" style={{
