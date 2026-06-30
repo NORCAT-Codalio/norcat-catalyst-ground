@@ -13,6 +13,8 @@ import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderAsset from '@/assets/hero-website-header.png.asset.json';
+import whatwedo2Asset from '@/assets/whatwedo-2.png.asset.json';
+import whatwedo3Asset from '@/assets/whatwedo-3.png.asset.json';
 
 const norcatBuilding = norcatBuildingAsset.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
@@ -286,6 +288,7 @@ export default function Home2() {
               {highlights.map((h, i) => {
                 const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
+                const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
                 const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding/sudbury-catalyst-fund'][i];
                 const linkText = ['Explore mentorship', 'Tour the facility', 'See funding'][i];
                 const words = h.label.split(' ');
@@ -296,23 +299,23 @@ export default function Home2() {
                   <article key={h.label}
                            className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col p-6 md:p-7"
                            style={{ background: bg }}>
-                    {/* Diagonal stripe texture */}
+                    {/* Background image */}
+                    <img src={image} alt="" aria-hidden="true"
+                         className="absolute inset-0 w-full h-full object-cover opacity-60" />
+                    {/* Gradient overlay for legibility */}
                     <div className="absolute inset-0 pointer-events-none"
-                         style={{
-                           backgroundImage: `repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 2px, transparent 2px, transparent 24px)`,
-                           opacity: 0.7,
-                         }} />
+                         style={{ background: `linear-gradient(180deg, ${bg}33 0%, ${bg}cc 60%, ${bg} 100%)` }} />
                     {/* Tag */}
                     <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
-                          style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.35)' }}>
+                          style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
                       {eyebrowRight}
                     </span>
                     {/* Content */}
                     <div className="relative mt-auto">
                       <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                        {first} <span style={{ color: TEAL }}>{last}.</span>
+                        {first} <span style={{ color: i === 2 ? '#001A4D' : TEAL }}>{last}.</span>
                       </h3>
-                      <p className="text-sm leading-relaxed text-white/85 mb-6">{h.desc}</p>
+                      <p className="text-sm leading-relaxed text-white/90 mb-6">{h.desc}</p>
                       <Link to={link}
                             className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1"
                             style={{ fontFamily: FONT }}>
