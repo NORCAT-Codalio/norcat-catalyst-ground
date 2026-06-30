@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { SuccessStory } from '@/components/SuccessStoryCard';
 import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
+import { NewsFeed } from '@/components/NewsFeed';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
