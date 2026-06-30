@@ -86,6 +86,11 @@ const testimonials = [
     name: 'Karen Hastie',
     role: 'Founder/CEO, Chamber Perks App',
   },
+  {
+    quote: 'Working within the NORCAT ecosystem as a mentor, as a contributor, and as an investor, I realized that there is a hunger for growth and innovation and has a strong talent pool coming from Cambrian College, College Boreal, and Laurentian University.',
+    name: 'Ehsan Mirdamadi',
+    role: 'CEO/Founder, Codalio',
+  },
 ];
 
 const portfolio = [
