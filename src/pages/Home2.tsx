@@ -139,7 +139,14 @@ export default function Home2() {
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col">
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #001a4d 0%, #003da5 100%)' }} />
+          {/* Background image positioned on the right */}
+          <div className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat"
+               style={{ backgroundImage: `url(${heroHeaderImg})` }} />
+
+          {/* Gradient overlay across the image */}
+          <div className="absolute inset-0" style={{
+            background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY}e6 35%, ${BLUE}80 65%, transparent 100%)`,
+          }} />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
