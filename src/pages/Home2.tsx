@@ -159,7 +159,7 @@ export default function Home2() {
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">BUILD, TEST</div>
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
                     <span className="text-white">& </span>
-                    <span style={{ color: TEAL }}>SCALE</span>
+                    <span className="text-white">SCALE</span>
                     <span className="text-white"> YOUR</span>
                   </div>
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
