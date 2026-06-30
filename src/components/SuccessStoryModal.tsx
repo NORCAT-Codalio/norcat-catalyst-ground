@@ -265,6 +265,18 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                   </p>
                 </div>
 
+                {story.impactMetrics.patents !== undefined && (
+                  <div className="text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-rose-500/20 flex items-center justify-center mx-auto mb-4">
+                      <Award className="w-8 h-8 text-rose-400" />
+                    </div>
+                    <div className="stat-number text-4xl mb-2">
+                      <AnimatedCounter value={story.impactMetrics.patents} />
+                    </div>
+                    <p className="text-white/60 text-sm">Patents</p>
+                  </div>
+                )}
+
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
                     <Building2 className="w-8 h-8 text-purple-400" />
