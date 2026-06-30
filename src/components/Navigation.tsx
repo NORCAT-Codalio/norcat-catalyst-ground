@@ -35,10 +35,8 @@ const fundingItems: MenuEntry[] = [
   { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
 ];
 
-const resourcesItems: MenuEntry[] = [
-  { name: 'Ecosystem', href: '/ecosystem/sudbury', icon: Network, description: 'The partners, programs, and people of the region.' },
-  { name: 'Events', href: '/events', icon: Calendar, description: 'Upcoming pitches, workshops, and convenings.' },
-];
+
+
 
 const impactItems: MenuEntry[] = [
   { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
@@ -240,9 +238,9 @@ export function Navigation() {
               About
             </Link>
 
-            {/* Programs / Funding / Resources Triggers */}
-            {(['programs', 'funding', 'resources', 'impact'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : key === 'resources' ? 'Resources' : 'Innovation Updates';
+            {/* Programs / Funding Triggers */}
+            {(['programs', 'funding', 'impact'] as const).map((key) => {
+              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : 'Innovation Updates';
               return (
                 <div
                   key={key}
@@ -264,6 +262,32 @@ export function Navigation() {
                 </div>
               );
             })}
+
+            {/* Ecosystem */}
+            <Link
+              to="/ecosystem/sudbury"
+              className={cn(
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                location.pathname.startsWith('/ecosystem')
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
+              )}
+            >
+              Ecosystem
+            </Link>
+
+            {/* Events */}
+            <Link
+              to="/events"
+              className={cn(
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                location.pathname.startsWith('/events')
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
+              )}
+            >
+              Events
+            </Link>
 
             {/* Client Portal */}
             <Link
@@ -334,7 +358,6 @@ export function Navigation() {
                 const menus = {
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
                   funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity — we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
-                  resources: { label: 'Resources', items: resourcesItems, eyebrow: 'Inside the ecosystem', featured: { title: 'Venture North Pitch', body: 'Our flagship event spotlighting Northern Ontario\'s most ambitious founders.', href: '/events', cta: 'See upcoming events' } },
                   impact: { label: 'Innovation Updates', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: '30+ years of building Northern innovation — by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
                 const menu = menus[activeDropdown as keyof typeof menus];
@@ -442,11 +465,10 @@ export function Navigation() {
                   About
                 </Link>
 
-                {/* Mobile Programs / Funding / Resources */}
+                {/* Mobile Programs / Funding / Innovation Updates */}
                 {([
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
-                  { key: 'mobile-resources', label: 'Resources', items: resourcesItems },
                   { key: 'mobile-impact', label: 'Innovation Updates', items: impactItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
@@ -481,6 +503,19 @@ export function Navigation() {
                     </AnimatePresence>
                   </div>
                 ))}
+
+                <Link
+                  to="/ecosystem/sudbury"
+                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  Ecosystem
+                </Link>
+                <Link
+                  to="/events"
+                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  Events
+                </Link>
 
 
 
