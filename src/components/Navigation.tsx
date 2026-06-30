@@ -35,10 +35,8 @@ const fundingItems: MenuEntry[] = [
   { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
 ];
 
-const resourcesItems: MenuEntry[] = [
-  { name: 'Ecosystem', href: '/ecosystem/sudbury', icon: Network, description: 'The partners, programs, and people of the region.' },
-  { name: 'Events', href: '/events', icon: Calendar, description: 'Upcoming pitches, workshops, and convenings.' },
-];
+
+
 
 const impactItems: MenuEntry[] = [
   { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
