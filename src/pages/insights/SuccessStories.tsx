@@ -25,11 +25,11 @@ const allStories: SuccessStory[] = [
   {
     id: 'circuitiq',
     company: 'CircuitIQ',
-    tagline: 'Professional electrical circuit mapping system with 100% accuracy.',
+    tagline: 'Wireless digital circuit mapping that turns hours of guesswork into moments of precision.',
     sector: 'Cleantech',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$4M', jobsCreated: 43, marketsReached: 2 },
+    metrics: { capitalRaised: '$4M', jobsCreated: 65, marketsReached: 2 },
     programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'RAI', 'UG Centre'],
     image: circuitiqTeam,
     founded: '2022',
