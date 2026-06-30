@@ -313,7 +313,7 @@ export default function Home2() {
                     {/* Content */}
                     <div className="relative flex-1 flex flex-col p-6 md:p-7 overflow-hidden">
                       <img src={norcatHalfLogo} alt="" aria-hidden="true"
-                           className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-20 pointer-events-none" />
+                           className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-10 pointer-events-none" />
                       <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                         {first} <span style={{ color: i === 2 ? '#001A4D' : TEAL }}>{last}.</span>
                       </h3>
@@ -524,8 +524,7 @@ export default function Home2() {
                         style={{ background: TEAL }}>
                   <img src={norcatHalfLogo} alt=""
                        aria-hidden="true"
-                       className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
-                       style={{ opacity: 0.08 }} />
+                       className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none opacity-10" />
                   <Quote className="relative size-8 mb-4 text-white" />
                   <blockquote className="relative leading-relaxed flex-1 text-sm sm:text-base text-white font-medium">"{t.quote}"</blockquote>
                   <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
