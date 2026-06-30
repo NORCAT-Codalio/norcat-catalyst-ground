@@ -202,7 +202,6 @@ export function Footer() {
             <Link to="/terms" className="hover:text-white/70 transition-colors">Terms of Use</Link>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-white/30">Funded by the Government of Ontario</span>
             <img src={norcatLogoBlack} alt="NORCAT" className="h-6 w-auto brightness-0 invert opacity-60" />
           </div>
         </div>
