@@ -140,6 +140,11 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 export default function Home2() {
   const storiesScrollRef = useRef<HTMLDivElement>(null);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const visibleCount = 3;
+  const maxIndex = Math.max(0, testimonials.length - visibleCount);
+  const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
+  const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
