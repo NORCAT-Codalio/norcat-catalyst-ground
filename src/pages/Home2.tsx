@@ -373,20 +373,17 @@ export default function Home2() {
               })}
 
               {/* Bottom-left data card */}
-              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[280px] lg:min-h-[340px] flex flex-col justify-end"
+              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[260px] lg:min-h-[320px] flex flex-col justify-end"
                    style={{
                      background: `linear-gradient(135deg, ${TEAL} 0%, #0b6fb8 45%, #0a3a8c 100%)`,
                    }}>
-                <div className="absolute inset-0 pointer-events-none opacity-40"
-                     style={{
-                       backgroundImage: 'repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 18px)',
-                     }} />
+                <img src={norcatHalfLogo} alt="" aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 w-[45%] max-w-[280px] opacity-10 pointer-events-none" />
                 <span className="absolute top-7 left-7 md:top-10 md:left-10 text-[10px] font-bold tracking-[0.18em] uppercase text-white/90"
                       style={{ fontFamily: FONT }}>
                   [ DATA · NACO 2025 ]
                 </span>
                 <Quote className="relative w-8 h-8 mb-4 text-white/90" />
-                <p className="relative text-xl sm:text-2xl md:text-3xl leading-snug font-semibold text-white">
+                <p className="relative text-lg sm:text-xl md:text-2xl leading-snug font-semibold text-white">
                   "Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025."
                 </p>
                 <p className="relative mt-5 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
