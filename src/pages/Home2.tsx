@@ -284,82 +284,40 @@ export default function Home2() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
-                const num = `0${i + 1}`;
                 const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
+                const bg = ['#001A4D', '#003DA5', TEAL][i];
+                const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding/sudbury-catalyst-fund'][i];
+                const linkText = ['Explore mentorship', 'Tour the facility', 'See funding'][i];
+                const words = h.label.split(' ');
+                const last = words.pop();
+                const first = words.join(' ');
 
-                if (i === 0) {
-                  // Box 1 — gray→navy gradient, NORCAT logo + cohort tag, big bottom headline
-                  const words = h.label.split(' ');
-                  const last = words.pop();
-                  const first = words.join(' ');
-                  return (
-                    <article key={h.label}
-                             className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col p-6 md:p-7"
-                             style={{ background: '#0a2a6b' }}>
-                      <img src={h.img} alt={h.label} loading="lazy"
-                           className="absolute inset-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0 pointer-events-none"
-                           style={{ background: 'linear-gradient(180deg, transparent 0%, transparent 35%, rgba(10,42,107,0.85) 75%, #0a2a6b 100%)' }} />
-                      <span className="relative text-[10px] font-bold uppercase tracking-[0.22em] text-white/85" style={{ fontFamily: FONT }}>
-                        {eyebrowRight}
-                      </span>
-                      <div className="relative mt-auto">
-                        <p className="text-xs mb-3 leading-relaxed text-white/85">{h.desc}</p>
-                        <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                          {first} <span style={{ color: TEAL }}>{last}.</span>
-                        </h3>
-                      </div>
-                    </article>
-                  );
-                }
-
-                if (i === 1) {
-                  // Box 2 — white card, teal eyebrow, quote-style title, founder photo right
-                  return (
-                    <article key={h.label}
-                             className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-white"
-                             style={{ border: '1px solid #e3e6ec' }}>
-                      <img src={founderSpotlightImg} alt="Underground Centre"
-                           className="absolute right-0 bottom-0 h-[105%] w-auto object-contain object-bottom pointer-events-none select-none" />
-                      <div className="absolute inset-0 p-6 md:p-7 flex flex-col">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
-                          {eyebrowRight}
-                        </p>
-                        <div className="mt-6 max-w-[50%]">
-                          <h3 className="font-black text-3xl md:text-4xl leading-[1.02]" style={{ fontFamily: FONT, color: '#0a1a3a', letterSpacing: '-0.02em' }}>
-                            {h.label}.
-                          </h3>
-                          <p className="mt-3 text-xs leading-relaxed" style={{ color: '#475068' }}>{h.desc}</p>
-                        </div>
-                      </div>
-                    </article>
-                  );
-                }
-
-                // Box 3 — teal background, half logo right @ 20% opacity, big title + RSVP
                 return (
                   <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl aspect-[4/5] p-6 md:p-7 flex flex-col"
-                           style={{ background: TEAL }}>
-                    <img src={norcatHalfLogo} alt=""
-                         aria-hidden="true"
-                         className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
-                         style={{ opacity: 0.2 }} />
-                    <p className="relative text-[10px] font-bold uppercase tracking-[0.22em] text-white" style={{ fontFamily: FONT }}>
+                           className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col p-6 md:p-7"
+                           style={{ background: bg }}>
+                    {/* Diagonal stripe texture */}
+                    <div className="absolute inset-0 pointer-events-none"
+                         style={{
+                           backgroundImage: `repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 2px, transparent 2px, transparent 24px)`,
+                           opacity: 0.7,
+                         }} />
+                    {/* Tag */}
+                    <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
+                          style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.35)' }}>
                       {eyebrowRight}
-                    </p>
+                    </span>
+                    {/* Content */}
                     <div className="relative mt-auto">
-                      <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-5" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                        {h.label}.
+                      <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                        {first} <span style={{ color: TEAL }}>{last}.</span>
                       </h3>
-                      <p className="text-xs mb-5 leading-relaxed text-white/90 max-w-[28ch]">{h.desc}</p>
-                      <Link to="/programs/venture-growth-services"
-                            className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                            style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
-                        Learn More
-                        <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                          <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                        </span>
+                      <p className="text-sm leading-relaxed text-white/85 mb-6">{h.desc}</p>
+                      <Link to={link}
+                            className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1"
+                            style={{ fontFamily: FONT }}>
+                        {linkText}
+                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </Link>
                     </div>
                   </article>
