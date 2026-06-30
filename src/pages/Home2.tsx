@@ -119,7 +119,12 @@ const testimonials = [
   {
     quote: "From a small business perspective, being part of a larger high-end innovation centre and team is invaluable to a start-up innovation firm. Working with NORCAT and its connections, has taught us about what we don't know, and we learned how to do what we don't know.",
     name: 'Clara Steele',
-    role: 'Co-Founder',
+    role: 'Co-Founder, TesMan',
+  },
+  {
+    quote: "Support from NORCAT was critical in our decision to relocate our company to Sudbury, and Venture North PITCH really launched us into the ecosystem that led us to our first angel investor.",
+    name: 'Tabassum Pasha',
+    role: 'Co-Founder, Waive',
   },
 ];
 
