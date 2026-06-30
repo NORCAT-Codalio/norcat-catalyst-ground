@@ -514,15 +514,15 @@ export default function Home2() {
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                  Voices from founders
+                  MOMENTUM IN ACTION&nbsp;
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  The founders behind<br />the momentum.
+                  OUR FOUNDERS' EXPERIENCE&nbsp;
                 </h2>
               </div>
               <p className="text-sm md:max-w-xs" style={{ color: '#5b6478' }}>
-                Hear from the companies who've come through the NORCAT pipeline — and the milestones they've hit since.
+                Hear from the founders who leveraged NORCAT Innovation's Venture Growth Services and the milestones they've hit since!
               </p>
             </div>
 
