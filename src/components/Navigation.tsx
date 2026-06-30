@@ -239,8 +239,8 @@ export function Navigation() {
             </Link>
 
             {/* Programs / Funding Triggers */}
-            {(['programs', 'funding', 'impact'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : 'Innovation Updates';
+            {(['programs', 'funding'] as const).map((key) => {
+              const label = key === 'programs' ? 'Programs' : 'Funding';
               return (
                 <div
                   key={key}
@@ -275,6 +275,25 @@ export function Navigation() {
             >
               Ecosystem
             </Link>
+
+            {/* Innovation Updates */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('impact')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                className={cn(
+                  'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                  activeDropdown === 'impact'
+                    ? 'text-primary'
+                    : 'text-foreground/70 hover:text-foreground'
+                )}
+              >
+                Innovation Updates
+                <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === 'impact' && 'rotate-180 opacity-100')} />
+              </button>
+            </div>
 
             {/* Events */}
             <Link
@@ -465,11 +484,10 @@ export function Navigation() {
                   About
                 </Link>
 
-                {/* Mobile Programs / Funding / Innovation Updates */}
+                {/* Mobile Programs / Funding */}
                 {([
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
-                  { key: 'mobile-impact', label: 'Innovation Updates', items: impactItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
                     <button
@@ -510,6 +528,39 @@ export function Navigation() {
                 >
                   Ecosystem
                 </Link>
+
+                {/* Mobile Innovation Updates */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileAccordion('mobile-impact')}
+                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                  >
+                    Innovation Updates
+                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-impact' && 'rotate-180')} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileAccordion === 'mobile-impact' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 py-2">
+                          {impactItems.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 <Link
                   to="/events"
                   className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
