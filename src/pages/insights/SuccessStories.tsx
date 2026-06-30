@@ -136,7 +136,7 @@ const SuccessStories = () => {
             <ScrollReveal>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
                 <Sparkles className="w-3.5 h-3.5" />
-                Portfolio Companies
+                PORTFOLIO SUCCESS STORIES&nbsp;
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
