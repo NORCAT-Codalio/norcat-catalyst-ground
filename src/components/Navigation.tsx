@@ -41,9 +41,8 @@ const resourcesItems: MenuEntry[] = [
 ];
 
 const impactItems: MenuEntry[] = [
-  { name: 'Impact', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
-  { name: 'Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the ecosystem.' },
-  { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest announcements, press, and updates.' },
+  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
+  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys, case studies, and the latest news from the ecosystem.' },
 ];
 
 
