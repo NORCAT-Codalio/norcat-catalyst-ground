@@ -16,6 +16,7 @@ import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
 import maestroUnderground from '@/assets/maestro-underground.jpg';
+import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
 
 
 // All stories data
@@ -92,10 +93,22 @@ const allStories: SuccessStory[] = [
     image: maestroUnderground,
     founded: '2011',
   },
+  {
+    id: 'chamber-perks',
+    company: 'Chamber Perks App',
+    tagline: 'What happens when local business gets the tech it deserves.',
+    sector: 'SMB Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['VGS', 'Mentorship'],
+    image: karenHastie.url,
+    founded: '2020',
+  },
 ];
 
 // Filter options
-const sectors = ['All', 'Mining Tech', 'AI & Automation', 'Cleantech', 'Medtech'];
+const sectors = ['All', 'Mining Tech', 'AI & Automation', 'Cleantech', 'Medtech', 'SMB Tech'];
 
 // Ecosystem stats
 const ecosystemStats = [
