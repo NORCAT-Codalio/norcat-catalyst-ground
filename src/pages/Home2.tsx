@@ -521,7 +521,7 @@ export default function Home2() {
                   OUR FOUNDERS' EXPERIENCE&nbsp;
                 </h2>
               </div>
-              <p className="text-sm md:max-w-xs" style={{ color: '#5b6478' }}>
+              <p className="text-base md:text-lg md:max-w-sm" style={{ color: '#5b6478' }}>
                 Hear from the founders who leveraged NORCAT Innovation's Venture Growth Services and the milestones they've hit since!
               </p>
             </div>
