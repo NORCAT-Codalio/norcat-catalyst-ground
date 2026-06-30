@@ -45,7 +45,7 @@ export function Footer() {
         {/* Ontario Funding Banner */}
         <div className="relative w-full bg-black overflow-hidden h-16 md:h-20">
           <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full flex items-center">
-            <span className="text-white text-sm md:text-base font-semibold tracking-wide">
+            <span className="text-white text-sm md:text-base font-semibold tracking-wide max-w-[65%] md:max-w-[75%]">
               Funded by the Government of Ontario
             </span>
           </div>
