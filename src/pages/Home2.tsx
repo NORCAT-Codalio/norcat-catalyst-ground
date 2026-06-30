@@ -297,28 +297,27 @@ export default function Home2() {
 
                 return (
                   <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col p-6 md:p-7"
-                           style={{ background: bg }}>
-                    {/* Background image */}
-                    <img src={image} alt="" aria-hidden="true"
-                         className="absolute inset-0 w-full h-full object-cover opacity-60" />
-                    {/* Gradient overlay for legibility */}
-                    <div className="absolute inset-0 pointer-events-none"
-                         style={{ background: `linear-gradient(180deg, ${bg}33 0%, ${bg}cc 60%, ${bg} 100%)` }} />
-                    {eyebrowRight && (
-                      <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
-                            style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
-                        {eyebrowRight}
-                      </span>
-                    )}
+                           className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col"
+                           style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
+                    {/* Top image */}
+                    <div className="relative w-full h-[45%] overflow-hidden">
+                      <img src={image} alt="" aria-hidden="true"
+                           className="w-full h-full object-cover" />
+                      {eyebrowRight && (
+                        <span className="absolute top-4 left-4 inline-flex px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
+                              style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
+                          {eyebrowRight}
+                        </span>
+                      )}
+                    </div>
                     {/* Content */}
-                    <div className="relative mt-auto">
+                    <div className="relative flex-1 flex flex-col p-6 md:p-7">
                       <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                         {first} <span style={{ color: i === 2 ? '#001A4D' : TEAL }}>{last}.</span>
                       </h3>
                       <p className="text-sm leading-relaxed text-white/90 mb-6">{h.desc}</p>
                       <Link to={link}
-                            className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1"
+                            className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1 mt-auto"
                             style={{ fontFamily: FONT }}>
                         {linkText}
                         <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
