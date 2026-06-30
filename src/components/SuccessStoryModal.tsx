@@ -24,11 +24,9 @@ interface StoryDetails extends SuccessStory {
     event: string;
   }[];
   impactMetrics: {
-    jobs: number;
-    revenue?: string;
-    capital: string;
-    pilots: number;
-    markets: number;
+    teamSize: number;
+    preRevenue: string;
+    servingLocations: string;
   };
   founderQuote: {
     text: string;
@@ -228,47 +226,25 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                 By The Numbers
               </h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-blue-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    <AnimatedCounter value={story.impactMetrics.jobs} />
+                    <AnimatedCounter value={story.impactMetrics.teamSize} />
                   </div>
-                  <p className="text-white/60 text-sm">Jobs Created</p>
-                </div>
-
-                {story.impactMetrics.revenue && (
-                  <div className="text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="w-8 h-8 text-emerald-400" />
-                    </div>
-                    <div className="stat-number text-4xl mb-2">
-                      {story.impactMetrics.revenue}
-                    </div>
-                    <p className="text-white/60 text-sm">Revenue</p>
-                  </div>
-                )}
-
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center mx-auto mb-4">
-                    <DollarSign className="w-8 h-8 text-amber-400" />
-                  </div>
-                  <div className="stat-number text-4xl mb-2">
-                    {story.impactMetrics.capital}
-                  </div>
-                  <p className="text-white/60 text-sm">Capital Raised</p>
+                  <p className="text-white/60 text-sm">Team Size</p>
                 </div>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
-                    <Building2 className="w-8 h-8 text-purple-400" />
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-8 h-8 text-emerald-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    <AnimatedCounter value={story.impactMetrics.pilots} />
+                    {story.impactMetrics.preRevenue}
                   </div>
-                  <p className="text-white/60 text-sm">Pilots Completed</p>
+                  <p className="text-white/60 text-sm">Pre Revenue or Not</p>
                 </div>
 
                 <div className="text-center">
@@ -276,9 +252,9 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                     <Globe className="w-8 h-8 text-teal-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    <AnimatedCounter value={story.impactMetrics.markets} />
+                    {story.impactMetrics.servingLocations}
                   </div>
-                  <p className="text-white/60 text-sm">Markets Entered</p>
+                  <p className="text-white/60 text-sm">Serving Locations</p>
                 </div>
               </div>
             </div>
@@ -377,7 +353,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2025', event: 'Secured funding from Sudbury Catalyst Fund, FedNor, NOHFC, and angel investors' },
       { year: '2026', event: 'Team of 43 staff, expanded HQ to Downtown Sudbury, mapped 400+ buildings across Canada and the USA' },
     ],
-    impactMetrics: { jobs: 43, capital: '$4M', pilots: 3, markets: 2 },
+    impactMetrics: { teamSize: 43, preRevenue: 'Revenue', servingLocations: 'Canada, USA' },
     founderQuote: {
       text: "My first pitch with NORCAT Innovation was a night I'll never forget. Not only did I conquer my stage fright, but I also won! This unexpected victory caught the eye of a major investor—one who had never invested in a startup before. His investment of over $1 million, my largest yet, changed everything. Since that night in Sudbury, our company has taken off.",
       author: 'Luke Begley',
@@ -412,7 +388,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2025', event: 'Received $2M OCI investment for digital tire management platform with Yokohama and Fountain Tire' },
       { year: '2026', event: 'Centerpiece of Ontario innovation economy, deploying tire platform across global sites' },
     ],
-    impactMetrics: { jobs: 25, capital: '$2M+', pilots: 3, markets: 8 },
+    impactMetrics: { teamSize: 25, preRevenue: 'Revenue', servingLocations: 'Global' },
     founderQuote: {
       text: "NORCAT Innovation has enabled SYMX.AI to be a global leader and innovator in underground communications and real-time data gathering technologies. NORCAT's ability and influence has allowed our company to access funding, market exposure, and grow into a leading-edge technology provider. Demonstrating products in an operating mine setting is an opportunity few others in the world have—it has played a key role in the development and success SYMX.AI enjoys today.",
       author: 'Kirk Petroski',
@@ -447,7 +423,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2025', event: 'Landmark adoption by The Mount Sinai Hospital in New York City' },
       { year: '2026', event: 'Secured major contract with Vizient, expanding to thousands of U.S. hospitals' },
     ],
-    impactMetrics: { jobs: 40, capital: '$20M+ USD', pilots: 1, markets: 2 },
+    impactMetrics: { teamSize: 40, preRevenue: 'Revenue', servingLocations: 'North America' },
     founderQuote: {
       text: "NORCAT was a true partner; they were instrumental in launching our company. From prototyping to formal fundraising, the NORCAT Innovation team provided the experience, know how, and credibility we needed to develop a world-class start-up in the North.",
       author: 'Dr. Joe Eibl',
@@ -481,7 +457,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2024', event: 'Opened permanent office at newly expanded NORCAT Underground Centre in Onaping Falls' },
       { year: '2025', event: 'Expanded into Nevada mining market through MineConnect partnership' },
     ],
-    impactMetrics: { jobs: 30, capital: '25 yrs', pilots: 4, markets: 3 },
+    impactMetrics: { teamSize: 30, preRevenue: 'Revenue', servingLocations: 'Canada, Nevada, Global' },
     founderQuote: {
       text: "From Jannatec's perspective, the best thing NORCAT Innovation has to offer us is their staff. From IT to administration, they've been extremely helpful to us in all our endeavors. They bend over backwards to assist us with showcasing our products and help to exhibit our company on the global stage.",
       author: 'Wayne Ablitt',
@@ -515,7 +491,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2024', event: 'Expanded to support over 900 nursing homes across Canada' },
       { year: '2026', event: 'Team of 18 operating nationally from Greater Sudbury' },
     ],
-    impactMetrics: { jobs: 18, capital: '900+', pilots: 2, markets: 1 },
+    impactMetrics: { teamSize: 18, preRevenue: 'Revenue', servingLocations: 'Canada' },
     founderQuote: {
       text: "I got involved with NORCAT, and I was a really passionate business owner, but I needed help. I was running on a dream, a positive attitude, and a belief I was going to get this done. Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without somebody like Peter.",
       author: 'Sheri Tomchick',
@@ -549,7 +525,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2025', event: 'Solutions deployed in mines around the world' },
       { year: '2026', event: '82% of workforce are newcomers to Canada building new lives in Sudbury' },
     ],
-    impactMetrics: { jobs: 50, capital: 'Global', pilots: 6, markets: 10 },
+    impactMetrics: { teamSize: 50, preRevenue: 'Revenue', servingLocations: 'Global' },
     founderQuote: {
       text: "There was a significant gap between what mines had access to and what was possible. That's what we set out to solve. For decades, my father worked for mining companies with dangerous air quality and poor systems to measure the amounts of dangerous gasses he breathed in every day. These working conditions caused him severe lung damage. Maestro's core purpose was, and still is, to enhance lives by the pursuit of safety and productivity excellence.",
       author: 'Michael Gribbons',
@@ -582,7 +558,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2024', event: 'Joined NORCAT Innovation programs to accelerate growth and product strategy' },
       { year: '2026', event: 'Scaling across chambers nationally, powering everyday support for local business' },
     ],
-    impactMetrics: { jobs: 5, capital: 'Bootstrapped', pilots: 10, markets: 1 },
+    impactMetrics: { teamSize: 5, preRevenue: 'Pre-Revenue', servingLocations: 'Canada' },
     founderQuote: {
       text: "Karen Hastie wasn't built for retirement. She was built to build—and Chamber Perks App is proof that when local business gets the technology it deserves, entire main streets come back to life.",
       author: 'Karen Hastie',
@@ -615,7 +591,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2024', event: 'Codalio relocates to Sudbury; Sudbury Catalyst Fund invests $250,000 to accelerate the platform' },
       { year: '2025', event: 'Co-hosts hands-on MVP workshop with NORCAT Innovation; expands full-stack AI development platform across Canada' },
     ],
-    impactMetrics: { jobs: 0, capital: '$250K', pilots: 0, markets: 1 },
+    impactMetrics: { teamSize: 0, preRevenue: 'Pre-Revenue', servingLocations: 'Canada' },
     founderQuote: {
       text: "We're lying to founders about how easy it is to build software with AI. AI gets you 70% of the way there—the UI and the prototype. The final 30%—logic, security, backend, integration—is where founders get stranded. Codalio is the MVP builder that finishes the job and hands you full code ownership.",
       author: 'Ehsan Mirdamadi',
