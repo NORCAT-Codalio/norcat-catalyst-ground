@@ -257,9 +257,11 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                     <DollarSign className="w-8 h-8 text-amber-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    {story.impactMetrics.capital}
+                    {story.impactMetrics.publicValuation || story.impactMetrics.capital}
                   </div>
-                  <p className="text-white/60 text-sm">Capital Raised</p>
+                  <p className="text-white/60 text-sm">
+                    {story.impactMetrics.publicValuation ? 'Public Valuation' : 'Capital Raised'}
+                  </p>
                 </div>
 
                 <div className="text-center">
