@@ -305,11 +305,12 @@ export default function Home2() {
                     {/* Gradient overlay for legibility */}
                     <div className="absolute inset-0 pointer-events-none"
                          style={{ background: `linear-gradient(180deg, ${bg}33 0%, ${bg}cc 60%, ${bg} 100%)` }} />
-                    {/* Tag */}
-                    <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
-                          style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
-                      {eyebrowRight}
-                    </span>
+                    {eyebrowRight && (
+                      <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
+                            style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
+                        {eyebrowRight}
+                      </span>
+                    )}
                     {/* Content */}
                     <div className="relative mt-auto">
                       <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
