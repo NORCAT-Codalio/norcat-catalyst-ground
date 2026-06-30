@@ -137,7 +137,7 @@ export default function Home2() {
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col">
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #001a4d 0%, #003da5 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #001a4d 0%, #003da5 100%)' }} />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
