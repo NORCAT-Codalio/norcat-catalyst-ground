@@ -11,6 +11,7 @@ export interface SuccessStory {
   status: 'piloting' | 'scaling' | 'commercial' | 'acquired';
   metrics: {
     capitalRaised?: string;
+    publicValuation?: string;
     jobsCreated?: number;
     marketsReached?: number;
   };
