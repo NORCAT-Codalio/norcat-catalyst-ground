@@ -17,6 +17,7 @@ import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
 import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
+import codalioLogo from '@/assets/codalio-logo.png.asset.json';
 
 
 // All stories data
