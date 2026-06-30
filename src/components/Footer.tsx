@@ -36,8 +36,6 @@ const footerLinks = {
 };
 
 export function Footer() {
-  const [email, setEmail] = useState('');
-
   return (
     <>
       <div style={{ background: '#F2F3F6' }} className="pt-16">
