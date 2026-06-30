@@ -140,8 +140,8 @@ export default function Home2() {
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col">
           {/* Background image positioned on the right */}
-          <div className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat"
-               style={{ backgroundImage: `url(${heroHeaderImg})` }} />
+          <div className="absolute inset-0 bg-no-repeat"
+               style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: '80%', backgroundPosition: 'right bottom' }} />
 
 
           {/* radial glow */}
