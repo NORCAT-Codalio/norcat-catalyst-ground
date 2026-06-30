@@ -373,7 +373,7 @@ export default function Home2() {
               })}
 
               {/* Bottom-left data card */}
-              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[420px] lg:min-h-[480px] flex flex-col justify-end"
+              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[280px] lg:min-h-[340px] flex flex-col justify-end"
                    style={{
                      background: `linear-gradient(135deg, ${TEAL} 0%, #0b6fb8 45%, #0a3a8c 100%)`,
                    }}>
