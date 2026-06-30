@@ -484,11 +484,10 @@ export function Navigation() {
                   About
                 </Link>
 
-                {/* Mobile Programs / Funding / Innovation Updates */}
+                {/* Mobile Programs / Funding */}
                 {([
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
-                  { key: 'mobile-impact', label: 'Innovation Updates', items: impactItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
                     <button
@@ -529,6 +528,39 @@ export function Navigation() {
                 >
                   Ecosystem
                 </Link>
+
+                {/* Mobile Innovation Updates */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileAccordion('mobile-impact')}
+                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                  >
+                    Innovation Updates
+                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-impact' && 'rotate-180')} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileAccordion === 'mobile-impact' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 py-2">
+                          {impactItems.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 <Link
                   to="/events"
                   className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
