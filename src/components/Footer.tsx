@@ -52,7 +52,7 @@ export function Footer() {
           <img 
             src={ontarioLogoAsset.url} 
             alt="Government of Ontario" 
-            className="absolute inset-0 w-full h-full object-cover object-right"
+            className="absolute inset-0 w-full h-full object-contain object-right"
           />
         </div>
         <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
