@@ -5,12 +5,7 @@ import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, H
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
-import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
-import ctaPhoto5 from '@/assets/cta-photo-5.png';
-
-import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
-import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
