@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
+import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
 import { useState } from 'react';
 
 
@@ -41,6 +42,19 @@ export function Footer() {
   return (
     <>
       <div style={{ background: '#F2F3F6' }} className="pt-16">
+        {/* Ontario Funding Banner */}
+        <div className="relative w-full bg-black overflow-hidden h-16 md:h-20">
+          <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full flex items-center">
+            <span className="text-white text-sm md:text-base font-semibold tracking-wide max-w-[65%] md:max-w-[75%]">
+              Funded by the Government of Ontario
+            </span>
+          </div>
+          <img 
+            src={ontarioLogoAsset.url} 
+            alt="Government of Ontario" 
+            className="absolute inset-0 w-full h-full object-contain object-right"
+          />
+        </div>
         <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
       </div>
       <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
@@ -188,7 +202,6 @@ export function Footer() {
             <Link to="/terms" className="hover:text-white/70 transition-colors">Terms of Use</Link>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-white/30">Funded by the Government of Ontario</span>
             <img src={norcatLogoBlack} alt="NORCAT" className="h-6 w-auto brightness-0 invert opacity-60" />
           </div>
         </div>
