@@ -17,6 +17,7 @@ import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
 import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
+import codalioLogo from '@/assets/codalio-logo.png.asset.json';
 
 
 // All stories data
@@ -104,6 +105,18 @@ const allStories: SuccessStory[] = [
     programs: ['VGS', 'Mentorship'],
     image: karenHastie.url,
     founded: '2020',
+  },
+  {
+    id: 'codalio',
+    company: 'Codalio',
+    tagline: 'AI-powered MVP builder solving the 70% problem for non-technical founders.',
+    sector: 'AI & Automation',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 0, marketsReached: 1 },
+    programs: ['SCF', 'VGS', 'Mentorship', 'RAI'],
+    image: codalioLogo.url,
+    founded: '2023',
   },
 ];
 
