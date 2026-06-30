@@ -57,7 +57,7 @@ const audiences = [
 const highlights = [
   { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
   { icon: Cpu, label: 'Test and Validate', desc: 'Accelerate your development with our world-exclusive underground testing centre and advanced prototyping space to design, build, and validate global solutions.', img: ctaPhoto2 },
-  { icon: TrendingUp, label: 'Capital Access', desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund.', img: loopxTeam },
+  { icon: TrendingUp, label: 'Funding Opportunities', desc: 'We simplify the journey to funding, connecting you with government funding, venture capital, and a network of angel investors to fuel your innovation.', img: loopxTeam },
 ];
 
 
