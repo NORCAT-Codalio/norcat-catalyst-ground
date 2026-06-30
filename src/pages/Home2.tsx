@@ -252,7 +252,7 @@ export default function Home2() {
               <p className="md:col-start-3 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre — a one-stop shop for founders building tough-tech, IP-driven companies, pairing world-class mentorship with capital access.
               </p>
-              <p className="md:col-start-9 md:col-span-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+              <p className="md:col-start-8 md:col-span-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem on Earth can match.
               </p>
             </div>
