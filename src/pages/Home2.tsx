@@ -12,11 +12,13 @@ import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
+import heroHeaderAsset from '@/assets/hero-website-header.png.asset.json';
 
 const norcatBuilding = norcatBuildingAsset.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
 const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
+const heroHeaderImg = heroHeaderAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
@@ -137,7 +139,14 @@ export default function Home2() {
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col">
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #001a4d 0%, #003da5 100%)' }} />
+          {/* Background image positioned on the right */}
+          <div className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat"
+               style={{ backgroundImage: `url(${heroHeaderImg})` }} />
+
+          {/* Gradient overlay across the image */}
+          <div className="absolute inset-0" style={{
+            background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY}dd 45%, ${NAVY}88 70%, transparent 100%)`,
+          }} />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
