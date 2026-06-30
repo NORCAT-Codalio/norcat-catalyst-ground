@@ -240,9 +240,9 @@ export function Navigation() {
               About
             </Link>
 
-            {/* Programs / Funding / Resources Triggers */}
-            {(['programs', 'funding', 'resources', 'impact'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : key === 'resources' ? 'Resources' : 'Innovation Updates';
+            {/* Programs / Funding Triggers */}
+            {(['programs', 'funding', 'impact'] as const).map((key) => {
+              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : 'Innovation Updates';
               return (
                 <div
                   key={key}
@@ -264,6 +264,32 @@ export function Navigation() {
                 </div>
               );
             })}
+
+            {/* Ecosystem */}
+            <Link
+              to="/ecosystem/sudbury"
+              className={cn(
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                location.pathname.startsWith('/ecosystem')
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
+              )}
+            >
+              Ecosystem
+            </Link>
+
+            {/* Events */}
+            <Link
+              to="/events"
+              className={cn(
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                location.pathname.startsWith('/events')
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
+              )}
+            >
+              Events
+            </Link>
 
             {/* Client Portal */}
             <Link
