@@ -36,7 +36,7 @@ const allStories: SuccessStory[] = [
     id: 'symx-ai',
     company: 'SYMX.AI',
     tagline: 'Revolutionizing mining with AI, Industrial IoT, and predictive analytics.',
-    sector: 'AI',
+    sector: 'AI and Automation',
     stage: 'growth',
     status: 'commercial',
     metrics: { capitalRaised: '$2M+', jobsCreated: 25, marketsReached: 8 },
