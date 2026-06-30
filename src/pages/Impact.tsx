@@ -96,6 +96,27 @@ export default function Impact() {
           </div>
         </section>
 
+        {/* ───── LATEST NEWS ───── */}
+        <section className="py-24 md:py-28 relative" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Newsroom
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                Latest <span style={{ color: TEAL }}>News.</span>
+              </h2>
+              <p className="mt-4 text-base sm:text-lg" style={{ color: '#475068' }}>
+                Funding rounds, partnerships, program launches, and ecosystem milestones from NORCAT Innovation and our portfolio companies.
+              </p>
+            </div>
+            <NewsFeed />
+          </div>
+        </section>
+
         {/* ───── IMPACT STATS ───── */}
         <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
