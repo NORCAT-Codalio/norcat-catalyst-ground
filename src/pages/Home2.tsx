@@ -12,6 +12,7 @@ import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
+import heroHeaderAsset from '@/assets/hero-website-header.png.asset.json';
 
 const norcatBuilding = norcatBuildingAsset.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
