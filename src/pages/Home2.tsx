@@ -111,6 +111,11 @@ const testimonials = [
     name: 'Avalon Lupini',
     role: 'CEO and Founder, SmartyPrints',
   },
+  {
+    quote: "I got involved with NORCAT, and I was a really passionate business owner, but I wasn't doing very 'good'. I was running on a dream, a positive attitude, and a belief I was going to get this done. Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without somebody like Peter.",
+    name: 'Sheri Tomchick',
+    role: 'CEO and Founder, PlanA & StaffStat',
+  },
 ];
 
 const portfolio = [
