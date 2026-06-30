@@ -55,7 +55,7 @@ const audiences = [
 ];
 
 const highlights = [
-  { icon: Sparkles, label: 'Venture Growth', desc: '1-on-1 mentorship, IP strategy, and micro-grants for early-stage founders ready to move fast.', img: circuitiqTeam },
+  { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
   { icon: Cpu, label: 'Test & Validate', desc: 'Access the Fortin Discovery Lab and the NORCAT Underground Centre to test technology in a real operating mine.', img: ctaPhoto2 },
   { icon: TrendingUp, label: 'Capital Access', desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund.', img: loopxTeam },
 ];
@@ -286,11 +286,11 @@ export default function Home2() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
-                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
+                const eyebrowRight = [null, 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
                 const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding/sudbury-catalyst-fund'][i];
-                const linkText = ['Explore mentorship', 'Tour the facility', 'See funding'][i];
+                const linkText = ['Explore Programs', 'Tour the facility', 'See funding'][i];
                 const words = h.label.split(' ');
                 const last = words.pop();
                 const first = words.join(' ');
@@ -305,11 +305,12 @@ export default function Home2() {
                     {/* Gradient overlay for legibility */}
                     <div className="absolute inset-0 pointer-events-none"
                          style={{ background: `linear-gradient(180deg, ${bg}33 0%, ${bg}cc 60%, ${bg} 100%)` }} />
-                    {/* Tag */}
-                    <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
-                          style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
-                      {eyebrowRight}
-                    </span>
+                    {eyebrowRight && (
+                      <span className="relative inline-flex self-start px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
+                            style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
+                        {eyebrowRight}
+                      </span>
+                    )}
                     {/* Content */}
                     <div className="relative mt-auto">
                       <h3 className="font-black text-3xl md:text-4xl leading-[1.02] text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
