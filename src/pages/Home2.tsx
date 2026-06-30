@@ -393,7 +393,7 @@ export default function Home2() {
               {/* Bottom-right CTA box */}
               <div className="relative rounded-2xl p-7 md:p-9 flex flex-col justify-end overflow-hidden"
                    style={{ background: TEAL, border: `1px solid ${TEAL}` }}>
-                <img src={norcatHalfLogo} alt="" aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 w-[55%] max-w-[220px] opacity-10 pointer-events-none" />
+                <img src={norcatHalfLogo} alt="" aria-hidden="true" className="absolute top-0 right-0 h-full w-auto opacity-10 pointer-events-none" />
                 <p className="relative text-xs font-bold uppercase tracking-[0.18em] mb-auto" style={{ color: NAVY, fontFamily: FONT }}>
                   Get involved
                 </p>
