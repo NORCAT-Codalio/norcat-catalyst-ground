@@ -332,22 +332,32 @@ export default function Home2() {
             backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.12), transparent 55%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.12), transparent 55%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Built for
-              </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                Built for the builders of the North.
-              </h2>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
-                Right here in Greater Sudbury, we shape the innovation ecosystem from both ends of the spectrum.
-              </p>
-              <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
-                We have spent decades forging a reputation and a global network that allows us to bridge the gap between raw talent and commercial reality for founders, investors, and solution-seeking adopters.
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-12 md:mb-16">
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Built for
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  <span className="block" style={{ color: NAVY }}>
+                    Built for the builders of the
+                  </span>
+                  <span className="block"
+                        style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
+                    North.
+                  </span>
+                </h2>
+              </div>
+              <div className="flex flex-col justify-end lg:pb-2">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+                  Right here in Greater Sudbury, we shape the innovation ecosystem from both ends of the spectrum.
+                </p>
+                <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+                  We have spent decades forging a reputation and a global network that allows us to bridge the gap between raw talent and commercial reality for founders, investors, and solution-seeking adopters.
+                </p>
+              </div>
             </div>
 
             {/* Bento grid: three audience cards on top, quote + CTA on bottom */}
