@@ -113,7 +113,7 @@ const allStories: SuccessStory[] = [
     sector: 'AI & Automation',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$250K', jobsCreated: 0, marketsReached: 1 },
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 1 },
     programs: ['SCF', 'VGS', 'Mentorship', 'RAI'],
     image: codalioLogo.url,
     founded: '2023',
