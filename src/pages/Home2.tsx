@@ -385,7 +385,7 @@ export default function Home2() {
                 </span>
                 <Quote className="relative w-8 h-8 mb-4 text-white/90" />
                 <p className="relative text-lg sm:text-xl md:text-2xl leading-snug font-semibold text-white">
-                  "Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025."
+                  Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025
                 </p>
                 <p className="relative mt-5 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
                   — National Angel Capital Organization
