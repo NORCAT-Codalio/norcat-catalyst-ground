@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Calendar, ArrowRight, Building2, Users, DollarSign, Award, Sparkles, X } from 'lucide-react';
+import { Calendar, ArrowRight, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { newsItems } from '@/pages/insights/News';
 
 const iconContainerStyle: React.CSSProperties = {
   background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
@@ -9,73 +10,11 @@ const iconContainerStyle: React.CSSProperties = {
     'inset 0 2px 4px 0 hsla(0, 0%, 100%, 0.7), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.15), 0 4px 8px -2px hsla(220, 15%, 30%, 0.15), 0 2px 4px -2px hsla(220, 15%, 30%, 0.1)',
 };
 
-export const newsItems = [
-  {
-    id: 'mining-transformed-2026-sponsors',
-    title: 'Becker Mining Systems Canada and Turnkey Communications Named Title Sponsors of Mining Transformed 2026',
-    date: 'March 28, 2026',
-    excerpt: 'The two industry leaders join forces to co-sponsor the world\'s only mining technology exhibition hosted within an operating underground mine, taking place May 25–27 at the NORCAT Underground Centre.',
-    category: 'Event',
-    icon: Award,
-    fullContent: `Greater Sudbury, ON – Becker Mining Systems Canada and Turnkey Communications have joined forces as Title Sponsors of Mining Transformed 2026, taking place May 25–27, 2026, at the NORCAT Underground Centre in Sudbury, Ontario.\n\nNow in its third iteration, Mining Transformed remains the world's only mining technology exhibition hosted within an operating underground mine. The event will bring together more than 50 technology companies and 250 global mining leaders to demonstrate, evaluate, and accelerate the adoption of next-generation mining innovation.`,
-    aboutSections: [] as { title: string; text: string }[],
-  },
-  {
-    id: 'don-duval-honorary-chair',
-    title: 'Don Duval Appointed Honorary Chair for Mining Transformed 2026',
-    date: 'February 6, 2026',
-    excerpt: 'NORCAT welcomes Don Duval, Principal at Evok Innovations, as the Honorary Chair for Mining Transformed 2026, bringing nearly three decades of venture capital and mining innovation experience.',
-    category: 'Event',
-    icon: Award,
-    fullContent: `Greater Sudbury, ON | February 6, 2026 – NORCAT is pleased to announce Don Duval, Principal at Evok Innovations, as the Honorary Chair for Mining Transformed 2026.`,
-    aboutSections: [],
-  },
-  {
-    id: 'pejman-salehi-ceo',
-    title: 'NORCAT Appoints Pejman Salehi as Chief Executive Officer',
-    date: 'March 2, 2026',
-    excerpt: 'Pejman Salehi, formerly Vice President, Academic at Conestoga College, takes the helm as NORCAT CEO, succeeding Don Duval after thirteen years of leadership.',
-    category: 'Leadership',
-    icon: Users,
-    fullContent: `Sudbury, Ontario — The Board of Directors of NORCAT is pleased to announce the appointment of Pejman Salehi as Chief Executive Officer, effective March 2, 2026.`,
-    aboutSections: [],
-  },
-  {
-    id: 'norcat-cim-mining-transformed',
-    title: 'NORCAT and CIM Join Forces to Host Mining Transformed 2026',
-    date: 'January 20, 2026',
-    excerpt: 'NORCAT and the Canadian Institute of Mining, Metallurgy and Petroleum (CIM) partner to lead the world\'s only technology exhibition hosted in an operating underground mine, May 25–27, 2026.',
-    category: 'Partnership',
-    icon: Building2,
-    fullContent: `Greater Sudbury, Ontario | January 20, 2026 – NORCAT and the Canadian Institute of Mining, Metallurgy and Petroleum (CIM) are joining forces to lead the next edition of Mining Transformed.`,
-    aboutSections: [],
-  },
-  {
-    id: 'norcat-30th-anniversary',
-    title: 'NORCAT Marks 30 Years of Advancing Safety, Skilled Labour, and Innovation in Mining',
-    date: 'January 15, 2026',
-    excerpt: 'NORCAT celebrates three decades of growth and impact in advancing safety, skilled labour training, innovation and applied research in mining across Northern Ontario and internationally.',
-    category: 'Milestone',
-    icon: Sparkles,
-    fullContent: `Greater Sudbury, Ontario — NORCAT marked its 30th anniversary this year, celebrating three decades of growth and impact.`,
-    aboutSections: [],
-  },
-  {
-    id: 'fednor-investment',
-    title: 'Government of Canada Invests Over $1 Million in Innovation in Northern Ontario',
-    date: 'December 15, 2025',
-    excerpt: 'NORCAT Innovation, in partnership with FedNor, announces a $1.05 million investment to help Northern Ontario start-ups scale, adopt new technologies, and compete globally.',
-    category: 'Funding',
-    icon: DollarSign,
-    fullContent: `Greater Sudbury, Ontario — NORCAT Innovation, in partnership with FedNor, is pleased to announce a $1.05 million investment to help Northern Ontario's start-ups scale, adopt new technologies, and compete globally.`,
-    aboutSections: [],
-  },
-];
-
 const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.category)))];
 
 const NAVY = '#001A4D';
 const TEAL = '#00B398';
+
 
 export function NewsFeed() {
   const [activeCategory, setActiveCategory] = useState('All');
