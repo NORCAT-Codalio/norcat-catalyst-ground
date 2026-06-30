@@ -72,7 +72,7 @@ const sectors = [
 
 const testimonials = [
   {
-    quote: "My first pitch with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and grown our team from 7 to 26 in just two years",
+    quote: "My first PITCH with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and grown our team from 7 to 26 in just two years",
     name: 'Luke Begley',
     role: 'Founder, CircuitIQ',
   },
