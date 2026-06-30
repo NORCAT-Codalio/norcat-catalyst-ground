@@ -226,47 +226,25 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                 By The Numbers
               </h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-blue-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    <AnimatedCounter value={story.impactMetrics.jobs} />
+                    <AnimatedCounter value={story.impactMetrics.teamSize} />
                   </div>
-                  <p className="text-white/60 text-sm">Jobs Created</p>
-                </div>
-
-                {story.impactMetrics.revenue && (
-                  <div className="text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
-                      <TrendingUp className="w-8 h-8 text-emerald-400" />
-                    </div>
-                    <div className="stat-number text-4xl mb-2">
-                      {story.impactMetrics.revenue}
-                    </div>
-                    <p className="text-white/60 text-sm">Revenue</p>
-                  </div>
-                )}
-
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-amber-500/20 flex items-center justify-center mx-auto mb-4">
-                    <DollarSign className="w-8 h-8 text-amber-400" />
-                  </div>
-                  <div className="stat-number text-4xl mb-2">
-                    {story.impactMetrics.capital}
-                  </div>
-                  <p className="text-white/60 text-sm">Capital Raised</p>
+                  <p className="text-white/60 text-sm">Team Size</p>
                 </div>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
-                    <Building2 className="w-8 h-8 text-purple-400" />
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-8 h-8 text-emerald-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    <AnimatedCounter value={story.impactMetrics.pilots} />
+                    {story.impactMetrics.preRevenue}
                   </div>
-                  <p className="text-white/60 text-sm">Pilots Completed</p>
+                  <p className="text-white/60 text-sm">Pre Revenue or Not</p>
                 </div>
 
                 <div className="text-center">
@@ -274,9 +252,9 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
                     <Globe className="w-8 h-8 text-teal-400" />
                   </div>
                   <div className="stat-number text-4xl mb-2">
-                    <AnimatedCounter value={story.impactMetrics.markets} />
+                    {story.impactMetrics.servingLocations}
                   </div>
-                  <p className="text-white/60 text-sm">Markets Entered</p>
+                  <p className="text-white/60 text-sm">Serving Locations</p>
                 </div>
               </div>
             </div>
