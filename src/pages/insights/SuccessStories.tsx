@@ -9,7 +9,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { SuccessStory } from '@/components/SuccessStoryCard';
 import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
-import { NewsFeed } from '@/components/NewsFeed';
 import successStoriesHeroBg from '@/assets/success-stories-hero-bg.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
@@ -483,26 +482,6 @@ const SuccessStories = () => {
         </div>
       </section>
 
-      {/* News & Updates Section (merged from News page) */}
-      <section className="py-24 md:py-28 relative" style={{ background: '#F2F3F6' }}>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mb-12 md:mb-16">
-            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-               style={{ fontFamily: "'Open Sans', sans-serif", color: '#00B398' }}>
-              <span className="size-1.5 rounded-full inline-block" style={{ background: '#00B398' }} />
-              Newsroom
-            </p>
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                style={{ fontFamily: "'Open Sans', sans-serif", letterSpacing: '-0.02em', color: '#001A4D' }}>
-              Latest <span style={{ color: '#00B398' }}>News.</span>
-            </h2>
-            <p className="mt-4 text-base sm:text-lg" style={{ color: '#475068' }}>
-              Funding rounds, partnerships, program launches, and ecosystem milestones from NORCAT Innovation and our portfolio companies.
-            </p>
-          </div>
-          <NewsFeed />
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>

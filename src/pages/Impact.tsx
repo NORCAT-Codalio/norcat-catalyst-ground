@@ -4,6 +4,7 @@ import { ArrowRight, TrendingUp, Play, BarChart3 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import EcosystemDashboard from '@/components/dashboard/EcosystemDashboard';
 import { StoryModal, storyData } from '@/components/StoryModal';
+import { NewsFeed } from '@/components/NewsFeed';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
@@ -92,6 +93,27 @@ export default function Impact() {
                 Explore the growth, innovation, and economic impact of Greater Sudbury's thriving startup ecosystem through interactive data visualization.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* ───── LATEST NEWS ───── */}
+        <section className="py-24 md:py-28 relative" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Newsroom
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                Latest <span style={{ color: TEAL }}>News.</span>
+              </h2>
+              <p className="mt-4 text-base sm:text-lg" style={{ color: '#475068' }}>
+                Funding rounds, partnerships, program launches, and ecosystem milestones from NORCAT Innovation and our portfolio companies.
+              </p>
+            </div>
+            <NewsFeed />
           </div>
         </section>
 
