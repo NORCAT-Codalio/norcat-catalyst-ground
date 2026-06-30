@@ -600,7 +600,7 @@ export const detailedStories: Record<string, StoryDetails> = {
     sector: 'AI & Automation',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$250K', jobsCreated: 0, marketsReached: 1 },
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 1 },
     programs: ['SCF', 'VGS', 'Mentorship', 'RAI'],
     image: codalioLogo.url,
     founded: '2023',
@@ -615,7 +615,7 @@ export const detailedStories: Record<string, StoryDetails> = {
       { year: '2024', event: 'Codalio relocates to Sudbury; Sudbury Catalyst Fund invests $250,000 to accelerate the platform' },
       { year: '2025', event: 'Co-hosts hands-on MVP workshop with NORCAT Innovation; expands full-stack AI development platform across Canada' },
     ],
-    impactMetrics: { jobs: 0, capital: '$250K', pilots: 0, markets: 1 },
+    impactMetrics: { jobs: 8, capital: '$250K', pilots: 0, markets: 1 },
     founderQuote: {
       text: "We're lying to founders about how easy it is to build software with AI. AI gets you 70% of the way there—the UI and the prototype. The final 30%—logic, security, backend, integration—is where founders get stranded. Codalio is the MVP builder that finishes the job and hands you full code ownership.",
       author: 'Ehsan Mirdamadi',
