@@ -37,10 +37,13 @@ const fundingItems: MenuEntry[] = [
 
 const resourcesItems: MenuEntry[] = [
   { name: 'Ecosystem', href: '/ecosystem/sudbury', icon: Network, description: 'The partners, programs, and people of the region.' },
+  { name: 'Events', href: '/events', icon: Calendar, description: 'Upcoming pitches, workshops, and convenings.' },
+];
+
+const impactItems: MenuEntry[] = [
   { name: 'Impact', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
   { name: 'Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the ecosystem.' },
   { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest announcements, press, and updates.' },
-  { name: 'Events', href: '/events', icon: Calendar, description: 'Upcoming pitches, workshops, and convenings.' },
 ];
 
 
@@ -239,8 +242,8 @@ export function Navigation() {
             </Link>
 
             {/* Programs / Funding / Resources Triggers */}
-            {(['programs', 'funding', 'resources'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : 'Resources';
+            {(['programs', 'funding', 'resources', 'impact'] as const).map((key) => {
+              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : key === 'resources' ? 'Resources' : 'Impact & Insight';
               return (
                 <div
                   key={key}
@@ -333,6 +336,7 @@ export function Navigation() {
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
                   funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity — we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
                   resources: { label: 'Resources', items: resourcesItems, eyebrow: 'Inside the ecosystem', featured: { title: 'Venture North Pitch', body: 'Our flagship event spotlighting Northern Ontario\'s most ambitious founders.', href: '/events', cta: 'See upcoming events' } },
+                  impact: { label: 'Impact & Insight', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: '30+ years of building Northern innovation — by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
                 const menu = menus[activeDropdown as keyof typeof menus];
                 if (!menu) return null;
@@ -444,6 +448,7 @@ export function Navigation() {
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
                   { key: 'mobile-resources', label: 'Resources', items: resourcesItems },
+                  { key: 'mobile-impact', label: 'Impact & Insight', items: impactItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
                     <button
