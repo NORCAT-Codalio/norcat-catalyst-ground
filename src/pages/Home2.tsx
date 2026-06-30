@@ -57,7 +57,7 @@ const audiences = [
 const highlights = [
   { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
   { icon: Cpu, label: 'Test and Validate', desc: 'Accelerate your development with our world-exclusive underground testing centre and advanced prototyping space to design, build, and validate global solutions.', img: ctaPhoto2 },
-  { icon: TrendingUp, label: 'Capital Access', desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund.', img: loopxTeam },
+  { icon: TrendingUp, label: 'Funding Opportunities', desc: 'We simplify the journey to funding, connecting you with government funding, venture capital, and a network of angel investors to fuel your innovation.', img: loopxTeam },
 ];
 
 
@@ -286,11 +286,10 @@ export default function Home2() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
-                const eyebrowRight = [null, 'Test and Validate', 'Raising Capital?'][i];
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
                 const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding/sudbury-catalyst-fund'][i];
-                const linkText = ['Explore Programs', 'Discover Our Facilities', 'See funding'][i];
+                const linkText = ['Explore Programs', 'Discover Our Facilities', 'Explore Funding Pathways'][i];
                 const words = h.label.split(' ');
                 const last = words.pop();
                 const first = words.join(' ');
@@ -303,12 +302,6 @@ export default function Home2() {
                     <div className="relative w-full h-[45%] overflow-hidden">
                       <img src={image} alt="" aria-hidden="true"
                            className="w-full h-full object-cover" />
-                      {eyebrowRight && (
-                        <span className="absolute top-4 left-4 inline-flex px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
-                              style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
-                          {eyebrowRight}
-                        </span>
-                      )}
                     </div>
                     {/* Content */}
                     <div className="relative flex-1 flex flex-col p-6 md:p-7 overflow-hidden">
