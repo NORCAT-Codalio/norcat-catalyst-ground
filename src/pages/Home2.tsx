@@ -286,11 +286,11 @@ export default function Home2() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
-                const eyebrowRight = ['CircuitIQ', 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
+                const eyebrowRight = [null, 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
                 const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding/sudbury-catalyst-fund'][i];
-                const linkText = ['Explore mentorship', 'Tour the facility', 'See funding'][i];
+                const linkText = ['Explore Programs', 'Tour the facility', 'See funding'][i];
                 const words = h.label.split(' ');
                 const last = words.pop();
                 const first = words.join(' ');
