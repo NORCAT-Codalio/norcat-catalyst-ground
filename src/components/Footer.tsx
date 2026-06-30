@@ -43,17 +43,17 @@ export function Footer() {
     <>
       <div style={{ background: '#F2F3F6' }} className="pt-16">
         {/* Ontario Funding Banner */}
-        <div className="relative w-full bg-black overflow-hidden h-16 md:h-20">
-          <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full flex items-center">
-            <span className="text-white text-sm md:text-base font-semibold tracking-wide max-w-[65%] md:max-w-[75%]">
+        <div className="w-full py-5 md:py-6" style={{ background: '#F2F3F6' }}>
+          <div className="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+            <span className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#001A4D' }}>
               Funded by the Government of Ontario
             </span>
+            <img
+              src={ontarioLogoAsset.url}
+              alt="Government of Ontario"
+              className="h-8 md:h-10 w-auto object-contain"
+            />
           </div>
-          <img 
-            src={ontarioLogoAsset.url} 
-            alt="Government of Ontario" 
-            className="absolute inset-0 w-full h-full object-contain object-right"
-          />
         </div>
         <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
       </div>
