@@ -56,7 +56,7 @@ const audiences = [
 
 const highlights = [
   { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
-  { icon: Cpu, label: 'Test & Validate', desc: 'Access the Fortin Discovery Lab and the NORCAT Underground Centre to test technology in a real operating mine.', img: ctaPhoto2 },
+  { icon: Cpu, label: 'Test and Validate', desc: 'Accelerate your development with our world-exclusive underground testing centre and advanced prototyping space to design, build, and validate global solutions.', img: ctaPhoto2 },
   { icon: TrendingUp, label: 'Capital Access', desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund.', img: loopxTeam },
 ];
 
@@ -286,11 +286,11 @@ export default function Home2() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {highlights.map((h, i) => {
-                const eyebrowRight = [null, 'UNDERGROUND CENTRE', 'Raising Capital?'][i];
+                const eyebrowRight = [null, 'Test and Validate', 'Raising Capital?'][i];
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
                 const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding/sudbury-catalyst-fund'][i];
-                const linkText = ['Explore Programs', 'Tour the facility', 'See funding'][i];
+                const linkText = ['Explore Programs', 'Discover Our Facilities', 'See funding'][i];
                 const words = h.label.split(' ');
                 const last = words.pop();
                 const first = words.join(' ');
