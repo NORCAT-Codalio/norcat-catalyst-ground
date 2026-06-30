@@ -342,6 +342,12 @@ export default function Home2() {
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Built for the builders of the North.
               </h2>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+                Right here in Greater Sudbury, we shape the innovation ecosystem from both ends of the spectrum.
+              </p>
+              <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+                We have spent decades forging a reputation and a global network that allows us to bridge the gap between raw talent and commercial reality for founders, investors, and solution-seeking adopters.
+              </p>
             </div>
 
             {/* Bento grid: three audience cards on top, quote + CTA on bottom */}
