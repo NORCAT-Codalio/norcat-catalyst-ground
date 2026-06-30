@@ -9,6 +9,8 @@ import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
 import jannatecProduct from '@/assets/jannatec-product.jpg';
 import planaTeam from '@/assets/plana-team.jpg';
 import maestroUnderground from '@/assets/maestro-underground.jpg';
+import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
+import chamberPerksLogo from '@/assets/chamber-perks-logo.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -556,5 +558,38 @@ export const detailedStories: Record<string, StoryDetails> = {
     whatsNext: "Maestro's solutions are used around the world, bringing clarity and confidence to underground environments. 82% of the workforce are newcomers to Canada—building new lives, securing permanent residency, and purchasing first homes.",
     globalPresence: ['Sudbury', 'Canada', 'Global'],
     fullStory: "Michael Gribbons carried a deeply personal understanding of what was at stake. \"For decades, my father worked for mining companies with dangerous air quality and poor systems to measure the amounts of dangerous and illness-causing gasses he breathed in every day,\" he says. \"These working conditions caused him severe lung damage and ultimately led to open-chest surgery.\"\n\nFrom the beginning, Michael envisioned a mine where workers, supervisors, and operators could finally know what was happening in the air around them and on the ground beneath them. A core principle drove development: safety and productivity are inseparable.\n\nMaestro's relationship with NORCAT became a turning point. Early support from Tom Fortin and the Tom Fortin Discovery Centre played a meaningful role by providing Maestro with the environment required to test, refine, and prove out initial concepts. Subsequently, Maestro was one of the first companies invited to install its technology at the NORCAT Underground Centre.\n\nThis foundation led directly into Maestro's role in the inaugural Mining Transformed event in 2022, where the company was asked to implement a full digital network throughout the underground mine. \"We accepted the challenge and the result—accomplished in two weeks with only two workers who had two hours of training—was a clear demonstration of what integrated IIoT can accomplish,\" says Michael.\n\nToday, Maestro Digital Mine's solutions are used around the world. Yet despite the company's growth and technical success, Michael has never measured progress solely through products. \"Today, around 82% of Maestro's workforce are newcomers to Canada,\" Michael explains. \"I've had the joy of watching them build new lives in Canada—securing permanent residency, purchasing their first home, getting married and having children. To me, that's the most meaningful measure of success.\"",
+  },
+  'chamber-perks': {
+    id: 'chamber-perks',
+    company: 'Chamber Perks App',
+    tagline: 'What happens when local business gets the tech it deserves.',
+    sector: 'SMB Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['VGS', 'Mentorship'],
+    image: karenHastie.url,
+    founded: '2020',
+    problem: 'Local chambers of commerce and the small businesses they serve were stuck with outdated tools to deliver member value—paper coupons, PDF directories, and disconnected loyalty programs that no one actually used.',
+    breakthrough: {
+      text: 'Chamber Perks App gives chambers a modern, mobile-first platform that turns member benefits into a living, daily-use product—driving real foot traffic to local businesses and proving the value of chamber membership in a way members can see and measure.',
+      image: chamberPerksLogo.url,
+    },
+    timeline: [
+      { year: '2020', event: 'Karen Hastie founds Chamber Perks App to modernize how chambers deliver member value' },
+      { year: '2022', event: 'First chambers onboarded; platform validated across multiple communities' },
+      { year: '2024', event: 'Joined NORCAT Innovation programs to accelerate growth and product strategy' },
+      { year: '2026', event: 'Scaling across chambers nationally, powering everyday support for local business' },
+    ],
+    impactMetrics: { jobs: 5, capital: 'Bootstrapped', pilots: 10, markets: 1 },
+    founderQuote: {
+      text: "Karen Hastie wasn't built for retirement. She was built to build—and Chamber Perks App is proof that when local business gets the technology it deserves, entire main streets come back to life.",
+      author: 'Karen Hastie',
+      role: 'Founder & CEO, Chamber Perks App',
+    },
+    currentStage: 'Scaling Nationally',
+    whatsNext: 'Expanding to more chambers across Canada and continuing to build features that turn chamber membership into measurable, daily value for local businesses.',
+    globalPresence: ['Sudbury', 'Canada'],
+    fullStory: "Karen Hastie wasn't built for retirement. After decades of championing small business, she saw a gap that no one else was fixing: chambers of commerce—the original local-business networks—were running on tools that hadn't kept up with how people actually live, shop, and connect.\n\nChamber Perks App is her answer. It gives chambers a modern, mobile-first way to deliver member benefits, drive foot traffic to local businesses, and make the value of membership tangible. Instead of paper coupons and PDFs no one opens, members get a daily-use app that puts their community in their pocket.\n\nThrough NORCAT Innovation's Venture Growth Services and mentorship programs, Karen has sharpened her go-to-market, expanded the platform, and onboarded chambers across the country—proving that when local business gets the technology it deserves, the whole community wins.",
   },
 };
