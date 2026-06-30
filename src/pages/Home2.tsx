@@ -377,7 +377,6 @@ export default function Home2() {
                    style={{
                      background: `linear-gradient(135deg, ${TEAL} 0%, #0b6fb8 45%, #0a3a8c 100%)`,
                    }}>
-                <img src={norcatHalfLogo} alt="" aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 w-[45%] max-w-[280px] opacity-10 pointer-events-none" />
                 <span className="absolute top-7 left-7 md:top-10 md:left-10 text-[10px] font-bold tracking-[0.18em] uppercase text-white/90"
                       style={{ fontFamily: FONT }}>
                   [ DATA · NACO 2025 ]
@@ -392,17 +391,18 @@ export default function Home2() {
               </div>
 
               {/* Bottom-right CTA box */}
-              <div className="relative rounded-2xl p-7 md:p-9 flex flex-col justify-end"
-                   style={{ background: '#E6F5F1', border: '1px solid #cfe7df' }}>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-auto" style={{ color: TEAL, fontFamily: FONT }}>
+              <div className="relative rounded-2xl p-7 md:p-9 flex flex-col justify-end overflow-hidden"
+                   style={{ background: TEAL, border: `1px solid ${TEAL}` }}>
+                <img src={norcatHalfLogo} alt="" aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 w-[55%] max-w-[220px] opacity-10 pointer-events-none" />
+                <p className="relative text-xs font-bold uppercase tracking-[0.18em] mb-auto" style={{ color: NAVY, fontFamily: FONT }}>
                   Get involved
                 </p>
-                <div className="flex flex-wrap items-center gap-3 mt-6">
+                <div className="relative flex flex-wrap items-center gap-3 mt-6">
                   <Link to="/apply"
                         className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: TEAL, color: NAVY }}>
+                        style={{ background: NAVY, color: 'white' }}>
                     Apply
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
