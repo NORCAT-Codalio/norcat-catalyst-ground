@@ -148,10 +148,19 @@ export default function Home2() {
             <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
-                <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl max-w-4xl">
-                  Build, Test, and Scale Your{' '}
-                  <span style={{ color: TEAL }}>Tech Venture</span>
-                </Display>
+                <div className="font-black uppercase leading-[0.9] tracking-tight text-white max-w-5xl"
+                     style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">BUILD, TEST</div>
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                    <span className="text-white">& </span>
+                    <span style={{ color: TEAL }}>SCALE</span>
+                  </div>
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">YOUR</div>
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                       style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
+                    TECH VENTURE.
+                  </div>
+                </div>
 
                 <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
