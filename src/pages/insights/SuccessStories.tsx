@@ -447,10 +447,7 @@ const SuccessStories = () => {
                 variant="ghost" 
                 className="mt-4"
                 style={{ color: 'hsl(168, 100%, 28%)' }}
-                onClick={() => {
-                  setSelectedSector('All');
-                  setSelectedStage('All');
-                }}
+                onClick={() => setSelectedSector('All')}
               >
                 Clear filters
               </Button>
