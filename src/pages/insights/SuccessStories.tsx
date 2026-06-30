@@ -380,11 +380,12 @@ const SuccessStories = () => {
                               {/* Impact Metrics */}
                               <div className="mb-10">
                                 <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(168, 100%, 28%)' }}>Impact</span>
-                                <div className="grid grid-cols-1 gap-4">
+                                <div className="grid grid-cols-2 gap-4">
                                   {[
-                                    { icon: Users, label: 'Team Size', value: details.impactMetrics.teamSize, color: 'hsl(217, 91%, 60%)' },
-                                    { icon: TrendingUp, label: 'Pre Revenue or Not', value: details.impactMetrics.preRevenue, color: 'hsl(152, 69%, 40%)' },
-                                    { icon: Globe, label: 'Serving Locations', value: details.impactMetrics.servingLocations, color: 'hsl(168, 100%, 35%)' },
+                                    { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
+                                    { icon: DollarSign, label: 'Capital Raised', value: details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
+                                    { icon: Building2, label: 'Products', value: details.impactMetrics.pilots, color: 'hsl(270, 50%, 60%)' },
+                                    { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
                                   ].map((metric) => (
                                     <div key={metric.label} className="rounded-xl p-4" style={{
                                       background: 'hsla(220, 15%, 88%, 0.5)',
