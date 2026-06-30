@@ -137,57 +137,33 @@ export default function About() {
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
-                 style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-          {/* logo background */}
-          <div className="absolute inset-0 pointer-events-none bg-no-repeat"
-               style={{ backgroundImage: `url(${norcatHalfLogo.url})`, backgroundSize: '60%', backgroundPosition: 'right bottom', opacity: 0.18 }} />
+        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
-          {/* radial glow */}
+          {/* logo background (matches Home2 hero) */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+
+          {/* radial glow (matches Home2 hero) */}
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
           {/* signature lines */}
           <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
+               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
-          <div className="relative w-full flex-1 flex flex-col items-stretch">
-            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-10 md:py-16">
-              <Eyebrow>About NORCAT Innovation</Eyebrow>
-
-              <div className="font-black uppercase leading-[0.9] tracking-tight text-white max-w-5xl"
-                   style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">THE INNOVATION</div>
-                <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-                     style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                  ENGINE
-                </div>
-                <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">OF THE NORTH.</div>
-              </div>
-
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl xl:max-w-4xl">
+              <Eyebrow className="text-lg">About NORCAT Innovation</Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                <span style={{ color: TEAL }}>The Innovation Engine</span><br />of the North.
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Designed by-and-for the builders of innovative technology and scientific discovery, NORCAT Innovation provides you with the Sudbury Advantage: land, resources, talent, capital, and an unparalleled appeal to wanting to see others succeed.
               </p>
-
-              <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                <Link to="/apply"
-                      className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
-                  Apply to NORCAT Innovation
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                </Link>
-                <Link to="/ecosystem/sudbury"
-                      className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
-                  Explore the Ecosystem
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                </Link>
-              </div>
             </div>
           </div>
         </section>
@@ -213,33 +189,40 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── MISSION — big stacked headline (Home2 pattern) ───── */}
-        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: NAVY }}>
+        {/* ───── MISSION (light, text left / video right) ───── */}
+        <section className="py-20 md:py-28" style={{ background: '#f4f6fa', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-7xl">
-              <Eyebrow className="" >Our Mission</Eyebrow>
-              <h2 className="font-black uppercase leading-[0.9] tracking-tight"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
-                  Keep Northern
-                </span>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
-                  talent in
-                </span>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-                      style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                  the North.
-                </span>
-              </h2>
-            </div>
-
-            <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-12 max-w-7xl">
-              <p className="md:col-start-3 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission: keep talented founders and builders in the North by giving them the resources, mentorship, and capital access they need to grow.
-              </p>
-              <p className="md:col-start-8 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                We believe innovation thrives when community comes first, safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
-              </p>
+            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-6 order-2 lg:order-1">
+                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
+                  Our Mission
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  About <span style={{ color: TEAL }}>NORCAT Innovation.</span>
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission:
+                  keep talented founders and builders in the North by giving them the resources, mentorship,
+                  and capital access they need to grow. We believe innovation thrives when community comes first,
+                  safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
+                </p>
+              </div>
+              <div className="lg:col-span-6 order-1 lg:order-2">
+                <div className="rounded-2xl overflow-hidden aspect-video shadow-xl"
+                     style={{ border: '1px solid #d9dde5' }}>
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="About NORCAT Innovation"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
