@@ -96,6 +96,11 @@ const testimonials = [
     name: 'Matthew Gougeon',
     role: 'CEO and Founder, Perspic',
   },
+  {
+    quote: "We had a lot of references for work through the Fortin Discovery Lab and NORCAT, and such strong support turned out to be invaluable, especially when first getting started! You need get involved with your local ecosystem.",
+    name: 'Stephen Podrucky',
+    role: 'CEO and Founder, Podco',
+  },
 ];
 
 const portfolio = [
