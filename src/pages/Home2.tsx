@@ -77,9 +77,9 @@ const testimonials = [
     role: 'Founder, CircuitIQ',
   },
   {
-    quote: 'Securing this level of trust and expertise from Northern Ontario through the NORCAT ecosystem has acted as a true catalyst, opening doors for us to bring in additional capital and scale our laboratory operations',
-    name: 'Rafaela Andrade',
-    role: 'CEO, Myomar Molecular',
+    quote: "Sudbury's been amazing; we've already raised over $300,000 in angel investment and expect a match from the Sudbury Catalyst Fund, which brings us to over half a million—and we haven't even moved in yet.",
+    name: 'Ryan Marshall',
+    role: 'COO, Myomar Molecular',
   },
   {
     quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada',
