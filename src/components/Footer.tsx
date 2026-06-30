@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
+import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
 import { useState } from 'react';
 
 
