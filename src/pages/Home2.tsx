@@ -56,8 +56,8 @@ const audiences = [
 
 const highlights = [
   { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
-  { icon: Cpu, label: 'Test and Validate', desc: 'Accelerate your development with our world-exclusive underground testing centre and advanced prototyping space to design, build, and validate global solutions.', img: ctaPhoto2 },
-  { icon: TrendingUp, label: 'Funding Opportunities', desc: 'We simplify the journey to funding, connecting you with government funding, venture capital, and a network of angel investors to fuel your innovation.', img: loopxTeam },
+  { icon: Cpu, label: 'Testing & Validation', desc: 'Accelerate your development with our world-exclusive underground testing centre and advanced prototyping space to design, build, and validate global solutions.', img: ctaPhoto2 },
+  { icon: TrendingUp, label: 'Accessing Capital', desc: 'We simplify the journey to funding, connecting you with government funding, venture capital, and a network of angel investors to fuel your innovation.', img: loopxTeam },
 ];
 
 
