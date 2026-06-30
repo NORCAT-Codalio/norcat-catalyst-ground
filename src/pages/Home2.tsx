@@ -112,7 +112,7 @@ const testimonials = [
     role: 'CEO and Founder, SmartyPrints',
   },
   {
-    quote: "I got involved with NORCAT, and I was a really passionate business owner, but I wasn't doing very 'good'. I was running on a dream, a positive attitude, and a belief I was going to get this done. Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without somebody like Peter.",
+    quote: "I got involved with NORCAT as a really passionate business owner, but I was running on a dream, a positive attitude, and a belief I was going to get this done. However, once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without the mentorship of Peter.",
     name: 'Sheri Tomchick',
     role: 'CEO and Founder, PlanA & StaffStat',
   },
