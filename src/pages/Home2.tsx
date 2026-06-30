@@ -307,7 +307,7 @@ export default function Home2() {
                     <div className="relative flex-1 flex flex-col p-6 md:p-7 overflow-hidden">
                       <img src={norcatHalfLogo} alt="" aria-hidden="true"
                            className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-10 pointer-events-none" />
-                      <h3 className="font-black text-2xl md:text-3xl lg:text-4xl leading-tight text-white mb-4 whitespace-nowrap" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                      <h3 className="font-black text-xl md:text-2xl lg:text-3xl leading-tight text-white mb-4 whitespace-nowrap" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                         {first} {last}.
                       </h3>
                       <p className="text-sm leading-relaxed text-white/90 mb-6">{h.desc}</p>
