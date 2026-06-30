@@ -353,23 +353,16 @@ export default function Home2() {
             {/* Bento grid: three audience cards on top, quote + CTA on bottom */}
             <div className="grid gap-6 lg:grid-cols-3">
               {/* Three audience cards (top row) */}
-              {audiences.map((a, i) => {
-                const code = ['[ F-01 ]', '[ I-02 ]', '[ V-03 ]'][i];
-                return (
+              {audiences.map((a) => (
                   <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white"
                        style={{ border: '1px solid #d9dde5' }}>
-                    <div className="flex items-start justify-between mb-5">
-                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase"
-                            style={{ color: TEAL, fontFamily: FONT }}>
-                        {code}
-                      </span>
+                    <div className="flex items-start justify-end mb-3">
                       <a.icon className="size-5" strokeWidth={2} style={{ color: TEAL }} />
                     </div>
                     <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
                     <p className="leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>{a.body}</p>
                   </div>
-                );
-              })}
+                ))}
 
               {/* Bottom-left data card */}
               <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[260px] lg:min-h-[320px] flex flex-col justify-end"
