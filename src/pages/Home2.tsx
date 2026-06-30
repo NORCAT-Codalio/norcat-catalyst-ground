@@ -302,12 +302,6 @@ export default function Home2() {
                     <div className="relative w-full h-[45%] overflow-hidden">
                       <img src={image} alt="" aria-hidden="true"
                            className="w-full h-full object-cover" />
-                      {eyebrowRight && (
-                        <span className="absolute top-4 left-4 inline-flex px-3 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-[0.18em] text-white"
-                              style={{ fontFamily: FONT, background: 'rgba(0,26,77,0.45)' }}>
-                          {eyebrowRight}
-                        </span>
-                      )}
                     </div>
                     {/* Content */}
                     <div className="relative flex-1 flex flex-col p-6 md:p-7 overflow-hidden">
