@@ -24,11 +24,9 @@ interface StoryDetails extends SuccessStory {
     event: string;
   }[];
   impactMetrics: {
-    jobs: number;
-    revenue?: string;
-    capital: string;
-    pilots: number;
-    markets: number;
+    teamSize: number;
+    preRevenue: string;
+    servingLocations: string;
   };
   founderQuote: {
     text: string;
