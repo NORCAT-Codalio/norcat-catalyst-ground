@@ -360,7 +360,6 @@ export function Navigation() {
                 const menus = {
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
                   funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity — we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
-                  resources: { label: 'Resources', items: resourcesItems, eyebrow: 'Inside the ecosystem', featured: { title: 'Venture North Pitch', body: 'Our flagship event spotlighting Northern Ontario\'s most ambitious founders.', href: '/events', cta: 'See upcoming events' } },
                   impact: { label: 'Innovation Updates', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: '30+ years of building Northern innovation — by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
                 const menu = menus[activeDropdown as keyof typeof menus];
