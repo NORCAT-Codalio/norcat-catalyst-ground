@@ -147,8 +147,7 @@ const SuccessStories = () => {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-xl md:text-2xl leading-relaxed text-white max-w-2xl font-light">
-                These are the founders proving that world-changing mining and industrial technology 
-                can come from Northern Ontario. Real companies. Real impact. Real stories.
+                Learn more about the companies that are deploying world-class ventures with the Northern Ontario advantage&nbsp;&nbsp;
               </p>
             </ScrollReveal>
           </div>
