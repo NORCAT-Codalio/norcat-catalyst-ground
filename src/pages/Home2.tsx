@@ -116,6 +116,11 @@ const testimonials = [
     name: 'Sheri Tomchick',
     role: 'CEO and Founder, PlanA & StaffStat',
   },
+  {
+    quote: "The danger in going from entrepreneur/innovator to a business is there is a lot out there that you don't know. Working with NORCAT and its connections... we've learned more about what we don't know, and we learned how to do what we don't know. We've grown from innovator to a commercial business, and that's because of the leadership at NORCAT.",
+    name: 'Clara Steele',
+    role: 'Co-Founder',
+  },
 ];
 
 const portfolio = [
