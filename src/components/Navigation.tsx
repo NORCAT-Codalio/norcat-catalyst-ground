@@ -467,11 +467,10 @@ export function Navigation() {
                   About
                 </Link>
 
-                {/* Mobile Programs / Funding / Resources */}
+                {/* Mobile Programs / Funding / Innovation Updates */}
                 {([
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
-                  { key: 'mobile-resources', label: 'Resources', items: resourcesItems },
                   { key: 'mobile-impact', label: 'Innovation Updates', items: impactItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
@@ -506,6 +505,19 @@ export function Navigation() {
                     </AnimatePresence>
                   </div>
                 ))}
+
+                <Link
+                  to="/ecosystem/sudbury"
+                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  Ecosystem
+                </Link>
+                <Link
+                  to="/events"
+                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  Events
+                </Link>
 
 
 
