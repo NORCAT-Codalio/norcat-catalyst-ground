@@ -95,7 +95,7 @@ const allStories: SuccessStory[] = [
 ];
 
 // Filter options
-const sectors = ['All', 'Mining Tech', 'AI', 'Cleantech', 'Medtech'];
+const sectors = ['All', 'Mining Tech', 'AI and Automation', 'Cleantech', 'Medtech'];
 
 // Ecosystem stats
 const ecosystemStats = [
