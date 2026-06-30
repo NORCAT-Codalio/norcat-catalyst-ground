@@ -228,42 +228,33 @@ export default function Home2() {
         {/* ───── WHAT IS NORCAT INNOVATION (light section) ───── */}
         <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
-              <div className="lg:col-span-5">
-                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  What is NORCAT Innovation?
-                </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  Northern Ontario isn't <span className="whitespace-nowrap">just growing.</span>{' '}
-                  <span style={{ color: TEAL }}>We're redefining what's possible.</span>
-                </h2>
-              </div>
-              <div className="lg:col-span-7 lg:pt-4">
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre — a one-stop shop for founders building tough-tech, IP-driven companies. We pair world-class mentorship and capital access with the only operating mine on the planet built for innovation.
-                </p>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem can match.
-                </p>
-                <div className="mt-10 hidden md:grid grid-cols-3 gap-6 py-7" style={{ borderTop: '1px solid #d9dde5', borderBottom: '1px solid #d9dde5' }}>
-                  {[
-                    { icon: Calendar, label: 'Established', value: '1995' },
-                    { icon: MapPin, label: 'Headquarters', value: 'Sudbury, ON' },
-                    { icon: Trophy, label: 'Capital Catalyzed', value: '$75M+' },
-                  ].map((m) => (
-                    <div key={m.label} className="flex items-center gap-4">
-                      <m.icon className="w-7 h-7" style={{ color: TEAL }} />
-                      <div>
-                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{m.label}</p>
-                        <p className="text-base md:text-lg font-bold" style={{ color: '#001A4D' }}>{m.value}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <div className="max-w-7xl">
+              <h2 className="font-black uppercase leading-[0.9] tracking-tight"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
+                  Northern Ontario
+                </span>
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
+                  isn't just growing.
+                </span>
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                      style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
+                  We're redefining
+                </span>
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                      style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
+                  what's possible.
+                </span>
+              </h2>
+            </div>
 
-              </div>
+            <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-2 max-w-5xl">
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre — a one-stop shop for founders building tough-tech, IP-driven companies, pairing world-class mentorship with capital access.
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem on Earth can match.
+              </p>
             </div>
           </div>
         </section>
