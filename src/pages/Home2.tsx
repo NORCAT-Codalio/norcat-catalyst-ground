@@ -91,6 +91,11 @@ const testimonials = [
     name: 'Ehsan Mirdamadi',
     role: 'CEO/Founder, Codalio',
   },
+  {
+    quote: "It surprised me how much high technology there actually is in Sudbury… it is possible to be successful in building a technology company in Northern Ontario, which I think a lot of people don't realize.",
+    name: 'Matthew Gougeon',
+    role: 'CEO and Founder, Perspic',
+  },
 ];
 
 const portfolio = [
