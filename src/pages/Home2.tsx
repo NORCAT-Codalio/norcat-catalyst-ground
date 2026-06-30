@@ -477,8 +477,8 @@ export default function Home2() {
               {[
                 { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories', wide: false },
                 { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news', wide: true },
-                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlight, link: '/insights/reports', wide: false },
-                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModel, link: '/ecosystem', wide: false },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports', wide: false },
+                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem', wide: false },
                 { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories', wide: false },
                 { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news', wide: false },
                 { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports', wide: false },
