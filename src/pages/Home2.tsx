@@ -145,7 +145,7 @@ export default function Home2() {
 
           {/* Gradient overlay across the image */}
           <div className="absolute inset-0" style={{
-            background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY}e6 35%, ${BLUE}80 65%, transparent 100%)`,
+            background: `linear-gradient(315deg, transparent 0%, ${NAVY}00 30%, ${NAVY}cc 60%, ${NAVY} 100%)`,
           }} />
 
           {/* radial glow */}
