@@ -55,7 +55,7 @@ const audiences = [
 ];
 
 const highlights = [
-  { icon: Sparkles, label: 'Venture Growth', desc: '1-on-1 mentorship, IP strategy, and micro-grants for early-stage founders ready to move fast.', img: circuitiqTeam },
+  { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
   { icon: Cpu, label: 'Test & Validate', desc: 'Access the Fortin Discovery Lab and the NORCAT Underground Centre to test technology in a real operating mine.', img: ctaPhoto2 },
   { icon: TrendingUp, label: 'Capital Access', desc: 'Navigate dilutive and non-dilutive funding — from SR&ED and IRAP to the Sudbury Catalyst Fund.', img: loopxTeam },
 ];
