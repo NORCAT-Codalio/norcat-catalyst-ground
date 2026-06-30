@@ -248,11 +248,11 @@ export default function Home2() {
               </h2>
             </div>
 
-            <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-2 max-w-5xl">
-              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+            <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-12 lg:grid-cols-12 max-w-7xl">
+              <p className="md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre — a one-stop shop for founders building tough-tech, IP-driven companies, pairing world-class mentorship with capital access.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+              <p className="md:col-span-5 md:col-start-8 lg:col-span-5 lg:col-start-8 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem on Earth can match.
               </p>
             </div>
