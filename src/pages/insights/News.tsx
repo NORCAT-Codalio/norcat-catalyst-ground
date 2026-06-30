@@ -32,7 +32,7 @@ const featuredNews = {
 };
 
 // Main news items
-const newsItems = [
+export const newsItems = [
   {
     id: 'mining-transformed-2026-sponsors',
     title: 'Becker Mining Systems Canada and Turnkey Communications Named Title Sponsors of Mining Transformed 2026',
