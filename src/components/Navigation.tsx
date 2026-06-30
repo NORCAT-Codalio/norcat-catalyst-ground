@@ -239,8 +239,8 @@ export function Navigation() {
             </Link>
 
             {/* Programs / Funding Triggers */}
-            {(['programs', 'funding', 'impact'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : 'Innovation Updates';
+            {(['programs', 'funding'] as const).map((key) => {
+              const label = key === 'programs' ? 'Programs' : 'Funding';
               return (
                 <div
                   key={key}
@@ -275,6 +275,25 @@ export function Navigation() {
             >
               Ecosystem
             </Link>
+
+            {/* Innovation Updates */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('impact')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                className={cn(
+                  'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                  activeDropdown === 'impact'
+                    ? 'text-primary'
+                    : 'text-foreground/70 hover:text-foreground'
+                )}
+              >
+                Innovation Updates
+                <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === 'impact' && 'rotate-180 opacity-100')} />
+              </button>
+            </div>
 
             {/* Events */}
             <Link
