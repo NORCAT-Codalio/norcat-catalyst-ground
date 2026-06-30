@@ -351,10 +351,29 @@ export default function Home2() {
               </h2>
             </div>
 
-            {/* Bento grid: tall quote left, founders/industry top, investors + CTA bottom */}
-            <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2 lg:auto-rows-fr">
-              {/* Tall quote box (left, spans 2 rows) */}
-              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:row-span-2 min-h-[420px] lg:min-h-[560px] flex flex-col justify-end"
+            {/* Bento grid: three audience cards on top, quote + CTA on bottom */}
+            <div className="grid gap-6 lg:grid-cols-3">
+              {/* Three audience cards (top row) */}
+              {audiences.map((a, i) => {
+                const code = ['[ F-01 ]', '[ I-02 ]', '[ V-03 ]'][i];
+                return (
+                  <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white"
+                       style={{ border: '1px solid #d9dde5' }}>
+                    <div className="flex items-start justify-between mb-5">
+                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase"
+                            style={{ color: TEAL, fontFamily: FONT }}>
+                        {code}
+                      </span>
+                      <a.icon className="size-5" strokeWidth={2} style={{ color: TEAL }} />
+                    </div>
+                    <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
+                    <p className="leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>{a.body}</p>
+                  </div>
+                );
+              })}
+
+              {/* Bottom-left data card */}
+              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[420px] lg:min-h-[480px] flex flex-col justify-end"
                    style={{
                      background: `linear-gradient(135deg, ${TEAL} 0%, #0b6fb8 45%, #0a3a8c 100%)`,
                    }}>
@@ -362,6 +381,10 @@ export default function Home2() {
                      style={{
                        backgroundImage: 'repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 18px)',
                      }} />
+                <span className="absolute top-7 left-7 md:top-10 md:left-10 text-[10px] font-bold tracking-[0.18em] uppercase text-white/90"
+                      style={{ fontFamily: FONT }}>
+                  [ DATA · NACO 2025 ]
+                </span>
                 <Quote className="relative w-8 h-8 mb-4 text-white/90" />
                 <p className="relative text-xl sm:text-2xl md:text-3xl leading-snug font-semibold text-white">
                   "Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025."
@@ -370,19 +393,6 @@ export default function Home2() {
                   — National Angel Capital Organization
                 </p>
               </div>
-
-              {/* Three audience cards: Founders (top-mid), Industry (top-right), Investors (bottom-mid) */}
-              {audiences.map((a) => (
-                <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white"
-                     style={{ border: '1px solid #d9dde5' }}>
-                  <div className="size-12 rounded-lg flex items-center justify-center mb-5"
-                       style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>
-                    <a.icon className="size-6" strokeWidth={2} />
-                  </div>
-                  <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
-                  <p className="leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>{a.body}</p>
-                </div>
-              ))}
 
               {/* Bottom-right CTA box */}
               <div className="relative rounded-2xl p-7 md:p-9 flex flex-col justify-end"
