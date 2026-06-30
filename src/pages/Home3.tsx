@@ -102,6 +102,11 @@ const testimonials = [
     name: 'Mashoud Aali',
     role: 'Founder and CEO, Scient Analytic',
   },
+  {
+    quote: "I never felt that Sudbury wasn't the place to start a MedTech company,\" she adds. Testing and validating the system at HSN proved invaluable. \"I got to see firsthand what worked, what didn't, and where the gaps were,\" Lupini says. \"While support from NORCAT helped me navigate the startup landscape; they opened doors and remained incredibly supportive.",
+    name: 'Avalon Lupini',
+    role: 'CEO and Founder, SmartyPrints',
+  },
 ];
 
 const portfolio = [
