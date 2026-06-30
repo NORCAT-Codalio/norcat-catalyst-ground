@@ -76,19 +76,25 @@ export function Footer() {
           </div>
 
           {/* Right - Newsletter + Social */}
-          <div className="flex flex-col items-start lg:items-end gap-5">
+          <form
+            action="https://manage.kmail-lists.com/subscriptions/subscribe?a=WyGW3p&g=RMnA3j"
+            method="POST"
+            target="_blank"
+            className="w-full flex flex-col items-start lg:items-end gap-5"
+          >
             <span className="text-sm font-semibold tracking-widest uppercase text-white">
               Join Our Mailing List
             </span>
             <div className="flex items-center gap-2">
               <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                required
                 placeholder="Your email address"
                 className="h-11 w-64 rounded-md border border-white/30 bg-transparent px-4 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white/60"
               />
-              <button 
+              <button
+                type="submit"
                 className="h-11 px-5 rounded-full inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 hover:scale-[1.03]"
                 style={{
                   background: 'linear-gradient(145deg, hsla(168, 25%, 85%, 0.5) 0%, hsla(168, 20%, 80%, 0.25) 100%)',
@@ -100,7 +106,7 @@ export function Footer() {
                 <Send className="h-4 w-4" />
               </button>
             </div>
-            <div className="flex items-center gap-4">
+          </form>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
                 <Facebook className="h-6 w-6" />
               </a>
