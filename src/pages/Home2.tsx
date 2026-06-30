@@ -540,25 +540,32 @@ export default function Home2() {
               <div className="overflow-hidden">
                 <div
                   className="flex transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(calc(-${testimonialIndex} * (100% / ${visibleCount})))` }}
+                  style={{ transform: `translateX(calc(7% - ${testimonialIndex} * (86% / ${visibleCount})))` }}
                 >
-                  {testimonials.map((t) => (
-                    <div key={t.name} className="w-full lg:w-1/3 flex-shrink-0 px-3 first:pl-0 last:pr-0">
-                      <figure
-                        className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
-                        style={{ background: TEAL }}>
-                        <img src={norcatHalfLogo} alt=""
-                             aria-hidden="true"
-                             className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none opacity-10" />
-                        <Quote className="relative size-8 mb-4 text-white" />
-                        <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg text-white font-medium">"{t.quote}"</blockquote>
-                        <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
-                          <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
-                          <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  ))}
+                  {testimonials.map((t, idx) => {
+                    const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
+                    return (
+                      <div
+                        key={t.name}
+                        className="w-[85%] sm:w-[60%] lg:w-[28.667%] flex-shrink-0 px-3 transition-all duration-500"
+                        style={{ opacity: isVisible ? 1 : 0.35 }}
+                      >
+                        <figure
+                          className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
+                          style={{ background: TEAL }}>
+                          <img src={norcatHalfLogo} alt=""
+                               aria-hidden="true"
+                               className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none opacity-10" />
+                          <Quote className="relative size-8 mb-4 text-white" />
+                          <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg text-white font-medium">"{t.quote}"</blockquote>
+                          <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
+                            <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
+                            <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
