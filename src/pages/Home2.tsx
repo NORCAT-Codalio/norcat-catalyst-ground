@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
