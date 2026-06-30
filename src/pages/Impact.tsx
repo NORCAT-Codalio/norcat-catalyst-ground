@@ -86,7 +86,7 @@ export default function Impact() {
                 Greater Sudbury Innovation Ecosystem
               </Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Real-Time<br /><span style={{ color: TEAL }}>Impact Dashboard.</span>
+                News &<br /><span style={{ color: TEAL }}>Insight.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Explore the growth, innovation, and economic impact of Greater Sudbury's thriving startup ecosystem through interactive data visualization.
