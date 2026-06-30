@@ -96,7 +96,6 @@ const allStories: SuccessStory[] = [
 
 // Filter options
 const sectors = ['All', 'Mining Tech', 'AI', 'Cleantech', 'Medtech'];
-const stages = ['All', 'Early', 'Growth', 'Scale', 'Exit'];
 
 // Ecosystem stats
 const ecosystemStats = [
@@ -108,12 +107,10 @@ const ecosystemStats = [
 
 const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
-  const [selectedStage, setSelectedStage] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
   const filteredStories = allStories.filter((story) => {
     if (selectedSector !== 'All' && story.sector !== selectedSector) return false;
-    if (selectedStage !== 'All' && story.stage !== selectedStage.toLowerCase()) return false;
     return true;
   });
 
@@ -184,26 +181,6 @@ const SuccessStories = () => {
               </div>
             </div>
 
-            {/* Stage filter */}
-            <div className="flex items-center gap-2">
-              <span className="text-gray-600 text-sm font-medium">Stage:</span>
-              <div className="flex gap-1">
-                {stages.map((stage) => (
-                  <button
-                    key={stage}
-                    onClick={() => setSelectedStage(stage)}
-                    className={cn(
-                      "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
-                      selectedStage === stage
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                    )}
-                  >
-                    {stage}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             {/* Results count */}
             <div className="ml-auto text-sm text-gray-500">
@@ -470,10 +447,7 @@ const SuccessStories = () => {
                 variant="ghost" 
                 className="mt-4"
                 style={{ color: 'hsl(168, 100%, 28%)' }}
-                onClick={() => {
-                  setSelectedSector('All');
-                  setSelectedStage('All');
-                }}
+                onClick={() => setSelectedSector('All')}
               >
                 Clear filters
               </Button>
