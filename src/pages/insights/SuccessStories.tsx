@@ -386,6 +386,7 @@ const SuccessStories = () => {
                                   {[
                                     { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
                                     { icon: DollarSign, label: details.impactMetrics.publicValuation ? 'Public Valuation' : 'Capital Raised', value: details.impactMetrics.publicValuation || details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
+                                    ...(details.impactMetrics.patents !== undefined ? [{ icon: Award, label: 'Patents', value: details.impactMetrics.patents, color: 'hsl(340, 82%, 52%)' }] : []),
                                     { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
                                   ].map((metric) => (
                                     <div key={metric.label} className="rounded-xl p-4" style={{
