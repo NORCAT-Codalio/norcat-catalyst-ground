@@ -447,7 +447,7 @@ export function Navigation() {
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
                   { key: 'mobile-resources', label: 'Resources', items: resourcesItems },
-                  { key: 'mobile-impact', label: 'Impact & Insight', items: impactItems },
+                  { key: 'mobile-impact', label: 'Innovation Updates', items: impactItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
                     <button
