@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play } from 'lucide-react';
+import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -25,11 +25,11 @@ const allStories: SuccessStory[] = [
   {
     id: 'circuitiq',
     company: 'CircuitIQ',
-    tagline: 'Professional electrical circuit mapping system with 100% accuracy.',
+    tagline: 'Wireless digital circuit mapping that turns hours of guesswork into moments of precision.',
     sector: 'Cleantech',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$4M', jobsCreated: 43, marketsReached: 2 },
+    metrics: { capitalRaised: '$4M', jobsCreated: 65, marketsReached: 2 },
     programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'RAI', 'UG Centre'],
     image: circuitiqTeam,
     founded: '2022',
@@ -386,6 +386,7 @@ const SuccessStories = () => {
                                   {[
                                     { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
                                     { icon: DollarSign, label: details.impactMetrics.publicValuation ? 'Public Valuation' : 'Capital Raised', value: details.impactMetrics.publicValuation || details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
+                                    ...(details.impactMetrics.patents !== undefined ? [{ icon: Award, label: 'Patents', value: details.impactMetrics.patents, color: 'hsl(340, 82%, 52%)' }] : []),
                                     { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
                                   ].map((metric) => (
                                     <div key={metric.label} className="rounded-xl p-4" style={{
