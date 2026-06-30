@@ -49,9 +49,9 @@ const noaLogo = noaLogoAsset.url;
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const audiences = [
-  { icon: Rocket, title: 'Founders', body: 'World-class mentorship, hands-on support, and access to the capital and infrastructure to scale your tech-enabled, IP-driven startup.' },
-  { icon: Building2, title: 'Industry', body: 'Test, validate, and de-risk new technologies in the only operating mine on the planet built for innovation: the NORCAT Underground Centre.' },
-  { icon: Handshake, title: 'Investors', body: 'Discover high-potential companies across mining tech, clean tech, AI, and health sciences — all curated through the NORCAT pipeline.' },
+  { icon: Rocket, title: 'Are you a Founder?', body: 'Secure physical space, regional resources, elite talent, and direct funding to scale your venture, we give you the foundation. We unlock the access required to develop, test, and successfully sell technology-enabled innovation to global buyers.' },
+  { icon: Building2, title: 'Are you an Industry Leader?', body: 'When you need to solve mission-critical operational challenges, we connect you directly with our tech-builder clients to accelerate real-world development: test cutting-edge products live, and forge strategic business partnerships.' },
+  { icon: Handshake, title: 'Are you an Investor?', body: 'If you are looking to back high-potential, high-grit companies rooted in the industrial market, we introduce you to startups that are already operationally tested. We connect your capital with verified founders who possess the substance to scale.' },
 ];
 
 const highlights = [
