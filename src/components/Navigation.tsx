@@ -242,7 +242,7 @@ export function Navigation() {
 
             {/* Programs / Funding / Resources Triggers */}
             {(['programs', 'funding', 'resources', 'impact'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : key === 'resources' ? 'Resources' : 'Impact & Insight';
+              const label = key === 'programs' ? 'Programs' : key === 'funding' ? 'Funding' : key === 'resources' ? 'Resources' : 'Innovation Updates';
               return (
                 <div
                   key={key}
