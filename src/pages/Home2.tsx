@@ -143,10 +143,6 @@ export default function Home2() {
           <div className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat"
                style={{ backgroundImage: `url(${heroHeaderImg})` }} />
 
-          {/* Gradient overlay across the image */}
-          <div className="absolute inset-0" style={{
-            background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY}dd 45%, ${NAVY}88 70%, transparent 100%)`,
-          }} />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
@@ -163,8 +159,8 @@ export default function Home2() {
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
                     <span className="text-white">& </span>
                     <span style={{ color: TEAL }}>SCALE</span>
+                    <span className="text-white"> YOUR</span>
                   </div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">YOUR</div>
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
                        style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
                     TECH VENTURE.
