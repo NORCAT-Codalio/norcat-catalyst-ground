@@ -5,17 +5,18 @@ import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, H
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
-import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
-import ctaPhoto5 from '@/assets/cta-photo-5.png';
-
-import ctaPhoto1 from '@/assets/cta-photo-1.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
-import ctaPhoto3 from '@/assets/cta-photo-3.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
+import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
+
+const norcatBuilding = norcatBuildingAsset.url;
+const norcatHalfLogo = norcatHalfLogoSquare.url;
+const heroModelImg = heroModel.url;
+const founderSpotlightImg = founderSpotlight.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
@@ -143,16 +144,16 @@ export default function Home2() {
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
-          <div className="relative w-full flex-1 flex flex-col lg:flex-row items-stretch">
-            <div className="lg:w-[75%] flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-12 py-10 md:py-16">
+          <div className="relative w-full flex-1 flex flex-col items-stretch">
+            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-10 md:py-16">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
-                <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
+                <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl max-w-4xl">
                   Build, Test, and Scale Your{' '}
                   <span style={{ color: TEAL }}>Tech Venture</span>
                 </Display>
 
-                <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
                 </p>
 
@@ -184,36 +185,6 @@ export default function Home2() {
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
-                </div>
-              </div>
-
-              {/* Photo collage — spans full height of hero section */}
-              <div className="lg:w-[25%] hidden lg:block relative">
-                <div className="absolute inset-0 grid grid-cols-2 gap-4 overflow-hidden">
-                  {/* Left column — extends above and below the section edge */}
-                  <div className="flex flex-col gap-4 -mt-20 -mb-20">
-                    <div className="rounded-2xl overflow-hidden flex-[1.2] shadow-2xl ring-1 ring-white/10">
-                      <img src={ctaPhoto1} alt="" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
-                      <img src={loopxTeam} alt="" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden flex-[0.8] shadow-2xl ring-1 ring-white/10">
-                      <img src={ctaPhoto2} alt="" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  {/* Right column — offset to extend past the section edge */}
-                  <div className="flex flex-col gap-4 -mt-32 -mb-8">
-                    <div className="rounded-2xl overflow-hidden flex-[0.9] shadow-2xl ring-1 ring-white/10">
-                      <img src={circuitiqTeam} alt="" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden flex-[1.3] shadow-2xl ring-1 ring-white/10">
-                      <img src={ctaPhoto3} alt="" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="rounded-2xl overflow-hidden flex-1 shadow-2xl ring-1 ring-white/10">
-                      <img src={ctaPhoto4} alt="" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -342,7 +313,7 @@ export default function Home2() {
                     <article key={h.label}
                              className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-white"
                              style={{ border: '1px solid #e3e6ec' }}>
-                      <img src={founderSpotlight.url} alt="Underground Centre"
+                      <img src={founderSpotlightImg} alt="Underground Centre"
                            className="absolute right-0 bottom-0 h-[105%] w-auto object-contain object-bottom pointer-events-none select-none" />
                       <div className="absolute inset-0 p-6 md:p-7 flex flex-col">
                         <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
@@ -364,7 +335,7 @@ export default function Home2() {
                   <article key={h.label}
                            className="relative overflow-hidden rounded-2xl aspect-[4/5] p-6 md:p-7 flex flex-col"
                            style={{ background: TEAL }}>
-                    <img src={norcatHalfLogoSquare.url} alt=""
+                    <img src={norcatHalfLogo} alt=""
                          aria-hidden="true"
                          className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                          style={{ opacity: 0.2 }} />
@@ -504,12 +475,12 @@ export default function Home2() {
           <div ref={storiesScrollRef} className="pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide">
             <div className="flex gap-5 pr-6 items-stretch" style={{ width: 'max-content' }}>
               {[
-                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: ctaPhoto1, link: '/insights/success-stories', wide: false },
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories', wide: false },
                 { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news', wide: true },
-                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: ctaPhoto3, link: '/insights/reports', wide: false },
-                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: ctaPhoto4, link: '/ecosystem', wide: false },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports', wide: false },
+                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem', wide: false },
                 { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories', wide: false },
-                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto5, link: '/insights/news', wide: false },
+                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news', wide: false },
                 { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports', wide: false },
               ].map((post) => (
                 <Link key={post.title} to={post.link} className="group block h-full">
@@ -582,7 +553,7 @@ export default function Home2() {
                 <figure key={t.name}
                         className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
                         style={{ background: TEAL }}>
-                  <img src={norcatHalfLogoSquare.url} alt=""
+                  <img src={norcatHalfLogo} alt=""
                        aria-hidden="true"
                        className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                        style={{ opacity: 0.08 }} />
