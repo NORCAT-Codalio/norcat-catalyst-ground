@@ -3,7 +3,6 @@ import { ArrowRight, Linkedin, Twitter, Youtube, Mail, MapPin, Phone, Send, Face
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
 import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
-import { useState } from 'react';
 
 
 const footerLinks = {
