@@ -107,22 +107,23 @@ export function Footer() {
               </button>
             </div>
           </form>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Twitter">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="YouTube">
-                <Youtube className="h-6 w-6" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">
-                <Instagram className="h-6 w-6" />
-              </a>
-            </div>
+          <div className="flex items-center gap-4">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
+              <Facebook className="h-6 w-6" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Twitter">
+              <Twitter className="h-6 w-6" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="YouTube">
+              <Youtube className="h-6 w-6" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">
+              <Instagram className="h-6 w-6" />
+            </a>
+          </div>
           </div>
         </div>
       </div>
