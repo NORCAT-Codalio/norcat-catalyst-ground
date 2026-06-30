@@ -42,6 +42,19 @@ export function Footer() {
   return (
     <>
       <div style={{ background: '#F2F3F6' }} className="pt-16">
+        {/* Ontario Funding Banner */}
+        <div className="relative w-full bg-black overflow-hidden h-16 md:h-20">
+          <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full flex items-center">
+            <span className="text-white text-sm md:text-base font-semibold tracking-wide">
+              Funded by the Government of Ontario
+            </span>
+          </div>
+          <img 
+            src={ontarioLogoAsset.url} 
+            alt="Government of Ontario" 
+            className="absolute inset-0 w-full h-full object-cover object-right"
+          />
+        </div>
         <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
       </div>
       <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
