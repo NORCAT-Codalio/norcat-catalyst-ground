@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
@@ -86,6 +86,11 @@ const testimonials = [
     name: 'Karen Hastie',
     role: 'Founder/CEO, Chamber Perks App',
   },
+  {
+    quote: 'Working within the NORCAT ecosystem as a mentor, as a contributor, and as an investor, I realized that there is a hunger for growth and innovation and has a strong talent pool coming from Cambrian College, College Boreal, and Laurentian University.',
+    name: 'Ehsan Mirdamadi',
+    role: 'CEO/Founder, Codalio',
+  },
 ];
 
 const portfolio = [
@@ -135,6 +140,11 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 export default function Home2() {
   const storiesScrollRef = useRef<HTMLDivElement>(null);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const visibleCount = 3;
+  const maxIndex = Math.max(0, testimonials.length - visibleCount);
+  const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
+  const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
@@ -526,22 +536,48 @@ export default function Home2() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-6">
-              {testimonials.map((t) => (
-                <figure key={t.name}
+            <div className="relative">
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(calc(-${testimonialIndex} * (100% / ${visibleCount})))` }}
+                >
+                  {testimonials.map((t) => (
+                    <div key={t.name} className="w-full lg:w-1/3 flex-shrink-0 px-3 first:pl-0 last:pr-0">
+                      <figure
                         className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
                         style={{ background: TEAL }}>
-                  <img src={norcatHalfLogo} alt=""
-                       aria-hidden="true"
-                       className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none opacity-10" />
-                  <Quote className="relative size-8 mb-4 text-white" />
-                  <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg text-white font-medium">"{t.quote}"</blockquote>
-                  <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
-                    <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
-                    <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
-                  </figcaption>
-                </figure>
-              ))}
+                        <img src={norcatHalfLogo} alt=""
+                             aria-hidden="true"
+                             className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none opacity-10" />
+                        <Quote className="relative size-8 mb-4 text-white" />
+                        <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg text-white font-medium">"{t.quote}"</blockquote>
+                        <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
+                          <p className="font-bold uppercase tracking-wider text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
+                          <p className="text-xs md:text-sm mt-1 text-white/85">{t.role}</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={prevTestimonial}
+                aria-label="Previous testimonial"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+                style={{ background: NAVY, color: 'white' }}>
+                <ChevronLeft className="size-6" />
+              </button>
+              <button
+                type="button"
+                onClick={nextTestimonial}
+                aria-label="Next testimonial"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+                style={{ background: NAVY, color: 'white' }}>
+                <ChevronRight className="size-6" />
+              </button>
             </div>
           </div>
         </section>
