@@ -103,11 +103,7 @@ export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {
           {(story.metrics.publicValuation || story.metrics.capitalRaised) && (
             <div className="flex items-center gap-1.5 text-foreground">
               <DollarSign className="w-4 h-4 text-emerald-500" />
-              <span className="font-medium">
-                {story.metrics.publicValuation
-                  ? `${story.metrics.publicValuation} Public Valuation`
-                  : story.metrics.capitalRaised}
-              </span>
+              <span className="font-medium">{story.metrics.publicValuation || story.metrics.capitalRaised}</span>
             </div>
           )}
           {story.metrics.jobsCreated && (
