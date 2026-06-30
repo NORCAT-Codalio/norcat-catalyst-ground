@@ -28,6 +28,7 @@ interface StoryDetails extends SuccessStory {
     revenue?: string;
     capital: string;
     publicValuation?: string;
+    patents?: number;
     pilots: number;
     markets: number;
   };
