@@ -313,7 +313,7 @@ export default function Home2() {
                     <article key={h.label}
                              className="relative overflow-hidden rounded-2xl aspect-[4/5] bg-white"
                              style={{ border: '1px solid #e3e6ec' }}>
-                      <img src={founderSpotlight.url} alt="Underground Centre"
+                      <img src={founderSpotlightImg} alt="Underground Centre"
                            className="absolute right-0 bottom-0 h-[105%] w-auto object-contain object-bottom pointer-events-none select-none" />
                       <div className="absolute inset-0 p-6 md:p-7 flex flex-col">
                         <p className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ fontFamily: FONT, color: TEAL }}>
@@ -335,7 +335,7 @@ export default function Home2() {
                   <article key={h.label}
                            className="relative overflow-hidden rounded-2xl aspect-[4/5] p-6 md:p-7 flex flex-col"
                            style={{ background: TEAL }}>
-                    <img src={norcatHalfLogoSquare.url} alt=""
+                    <img src={norcatHalfLogo} alt=""
                          aria-hidden="true"
                          className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                          style={{ opacity: 0.2 }} />
@@ -553,7 +553,7 @@ export default function Home2() {
                 <figure key={t.name}
                         className="relative overflow-hidden rounded-2xl p-6 md:p-7 flex flex-col h-full min-h-[420px]"
                         style={{ background: TEAL }}>
-                  <img src={norcatHalfLogoSquare.url} alt=""
+                  <img src={norcatHalfLogo} alt=""
                        aria-hidden="true"
                        className="absolute right-0 top-1/2 -translate-y-1/2 h-[110%] w-auto pointer-events-none select-none"
                        style={{ opacity: 0.08 }} />
