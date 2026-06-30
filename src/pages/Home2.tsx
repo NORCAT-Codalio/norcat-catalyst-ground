@@ -144,8 +144,8 @@ export default function Home2() {
                style={{ backgroundImage: `url(${heroHeaderImg})` }} />
 
           {/* Gradient overlay across the image */}
-          <div className="absolute inset-0 hidden" style={{
-            background: `linear-gradient(315deg, transparent 0%, ${NAVY}00 30%, ${NAVY}cc 60%, ${NAVY} 100%)`,
+          <div className="absolute inset-0" style={{
+            background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY}dd 45%, ${NAVY}88 70%, transparent 100%)`,
           }} />
 
           {/* radial glow */}
