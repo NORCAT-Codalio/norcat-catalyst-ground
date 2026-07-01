@@ -579,8 +579,8 @@ export function Navigation() {
 
                 <div className="pt-4 border-t border-border mt-4 space-y-3">
                   <Button asChild variant="default" className="w-full btn-primary">
-                    <Link to="/apply">
-                      Validate my Idea
+                    <Link to="/portal/auth">
+                      Become a Client
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
