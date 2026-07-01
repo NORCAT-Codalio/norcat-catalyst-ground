@@ -187,9 +187,9 @@ export default function Home2() {
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-          {/* Background image positioned on the right */}
+          {/* Background image spanning the full banner width */}
           <div className="absolute inset-0 bg-no-repeat"
-               style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: '80%', backgroundPosition: 'right bottom' }} />
+               style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
 
 
           {/* radial glow */}
