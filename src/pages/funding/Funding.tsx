@@ -189,14 +189,14 @@ const Funding = () => {
               </div>
 
               {/* Core5 Card */}
-              <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: BLUE }}>
+              <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: NAVY }}>
                 <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
                   <img src={core5Placeholder.url} alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${BLUE} 100%)` }} />
+                  <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${NAVY} 100%)` }} />
                 </div>
                 <div className="relative p-6 md:p-8 flex flex-col flex-1">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.12)', color: 'white' }}>
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${TEAL}20`, color: TEAL }}>
                       <Layers className="w-6 h-6" />
                     </div>
                     <div>
