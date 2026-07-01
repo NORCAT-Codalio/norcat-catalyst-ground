@@ -281,41 +281,6 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── WHAT IS NORCAT INNOVATION (light section) ───── */}
-        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-7xl">
-              <h2 className="font-black uppercase leading-[0.9] tracking-tight"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ color: NAVY }}>
-                  NORTHERN ONTARIO
-                </span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ color: NAVY }}>
-                  ISN'T JUST GROWING.
-                </span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                      style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                  IT'S A LAUNCHPAD
-                </span>
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                      style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                  FOR WHAT'S NEXT.
-                </span>
-              </h2>
-            </div>
-
-            <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-12 lg:grid-cols-12 max-w-7xl">
-              <p className="md:col-start-1 md:col-span-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                NORCAT Innovation is a one-stop shop for tough-tech and IP-driven companies looking to move from idea to market with the right support, connections, and infrastructure behind them.
-              </p>
-              <p className="md:col-start-7 md:col-span-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                As Sudbury's Regional Innovation Centre, founders gain access to mentorship, capital connections, industry partners, prototyping support, and real-world validation, helping them grow here and compete anywhere.
-              </p>
-            </div>
-
-          </div>
-        </section>
-
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
