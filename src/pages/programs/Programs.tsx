@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket } from 'lucide-react';
+import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket, DollarSign } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
