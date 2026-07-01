@@ -62,6 +62,51 @@ const highlights = [
   { icon: TrendingUp, label: 'Accessing Capital', desc: 'We simplify the journey to funding, connecting you with government funding, venture capital, and a network of angel investors to fuel your innovation.', img: loopxTeam },
 ];
 
+const featuredPrograms = [
+  {
+    shortName: 'CIT',
+    name: 'Critical Industrial Technologies',
+    icon: Cpu,
+    description: 'Build and test mining, energy, and advanced manufacturing tech in real industrial conditions.',
+    highlights: ['Underground proving ground', 'FedNor & industry partnerships', 'From prototype to field trial'],
+    cta: 'Explore CIT',
+    href: '/mining/critical-industrial-tech',
+    bg: NAVY,
+    accent: TEAL,
+    text: 'white',
+    ctaBg: TEAL,
+    ctaText: NAVY,
+  },
+  {
+    shortName: 'Core5',
+    name: 'Core5',
+    icon: Layers,
+    description: 'A five-pillar growth framework for founders ready to move from prototype to commercial traction.',
+    highlights: ['Commercialization roadmap', 'Mentor & investor network', 'IP & go-to-market strategy'],
+    cta: 'Explore Core5',
+    href: '/mining/core5',
+    bg: BLUE,
+    accent: TEAL,
+    text: 'white',
+    ctaBg: TEAL,
+    ctaText: NAVY,
+  },
+  {
+    shortName: 'RAII',
+    name: 'RAII',
+    icon: Brain,
+    description: 'Accelerate applied AI/ML adoption with access to compute, data, and industry validation partners.',
+    highlights: ['Applied AI/ML focus', 'Compute & data access', 'Industry validation partners'],
+    cta: 'Explore RAII',
+    href: '/programs',
+    bg: TEAL,
+    accent: NAVY,
+    text: NAVY,
+    ctaBg: NAVY,
+    ctaText: 'white',
+  },
+];
+
 const sectors = [
   { icon: Cpu, label: 'Mining Tech' },
   { icon: Leaf, label: 'Clean Tech' },
