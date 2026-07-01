@@ -140,7 +140,7 @@ const Funding = () => {
 
 
         {/* INDUSTRY TRACKS */}
-        <section className="py-16 md:py-24" style={{ background: `linear-gradient(180deg, ${PAPER} 0%, white 100%)`, color: NAVY }}>
+        <section className="pt-10 pb-16 md:pt-14 md:pb-24" style={{ background: `linear-gradient(180deg, ${PAPER} 0%, white 100%)`, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-10 md:mb-12">
               <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Tracks</p>
