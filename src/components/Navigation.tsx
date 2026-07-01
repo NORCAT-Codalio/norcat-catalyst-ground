@@ -341,10 +341,13 @@ export function Navigation() {
             <div className="container mx-auto px-4 lg:px-8 py-10 relative">
               {(() => {
                 const menus = {
+                  about: { label: 'About', items: aboutItems, eyebrow: 'The story of the North\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
                   funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity - we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
-                  impact: { label: 'Innovation Updates', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
+                  services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/portal/auth', cta: 'Become a Client' } },
+                  insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
+
                 const menu = menus[activeDropdown as keyof typeof menus];
                 if (!menu) return null;
 
