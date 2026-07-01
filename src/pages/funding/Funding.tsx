@@ -3,8 +3,8 @@ import { Layout } from '@/components/Layout';
 import { ArrowRight, Sparkles, Brain, Banknote, Cpu, Layers, DollarSign, TrendingUp, Rocket, Compass } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import citPlaceholder from '@/assets/cit-loopx.jpg.asset.json';
-import core5Placeholder from '@/assets/core5-underground.jpg.asset.json';
+import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
+import core5Placeholder from '@/assets/core5-underground-wide.jpg.asset.json';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
