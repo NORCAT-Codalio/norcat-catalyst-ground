@@ -4,7 +4,7 @@ import {
   Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, LogIn, Phone,
   TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
   Sparkles, Brain, Banknote,
-  Network, BarChart3, Star, Newspaper, Calendar,
+  Network, BarChart3, Star, Newspaper, Calendar, BookOpen,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -19,14 +19,17 @@ type MenuEntry = {
 };
 
 // Menu structure
+const aboutItems: MenuEntry[] = [
+  { name: 'Our Story', href: '/about', icon: BookOpen, description: 'How NORCAT Innovation became the North\'s launchpad for tough-tech.' },
+  { name: 'Ecosystem Partners', href: '/ecosystem/sudbury', icon: Network, description: 'The industry, government, and community partners powering the ecosystem.' },
+  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the portfolio.' },
+];
+
 const programsItems: MenuEntry[] = [
   { name: 'Venture Growth Services', href: '/programs/venture-growth-services', icon: TrendingUp, description: 'Hands-on support to take your venture from idea to scale.' },
-  { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
   { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
   { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
-  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
   { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
-  { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
 ];
 
 const fundingItems: MenuEntry[] = [
@@ -35,13 +38,17 @@ const fundingItems: MenuEntry[] = [
   { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
 ];
 
-
-
-
-const impactItems: MenuEntry[] = [
-  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind the innovation happening across the ecosystem.' },
-  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys, case studies, and the latest news from the ecosystem.' },
+const servicesItems: MenuEntry[] = [
+  { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
+  { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
+  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
 ];
+
+const insightsItems: MenuEntry[] = [
+  { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest funding rounds, partnerships, and ecosystem announcements.' },
+  { name: 'Impact', href: '/impact', icon: BarChart3, description: 'The numbers behind the innovation happening across the ecosystem.' },
+];
+
 
 
 
@@ -225,75 +232,33 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">
-            {/* About */}
-            <Link
-              to="/about"
-              className={cn(
-                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                location.pathname === '/about'
-                  ? 'text-primary'
-                  : 'text-foreground/70 hover:text-foreground'
-              )}
-            >
-              About
-            </Link>
-
-            {/* Programs / Funding Triggers */}
-            {(['programs', 'funding'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : 'Funding';
-              return (
-                <div
-                  key={key}
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter(key)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <button
-                    className={cn(
-                      'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                      activeDropdown === key
-                        ? 'text-primary'
-                        : 'text-foreground/70 hover:text-foreground'
-                    )}
-                  >
-                    {label}
-                    <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
-                  </button>
-                </div>
-              );
-            })}
-
-            {/* Ecosystem */}
-            <Link
-              to="/ecosystem/sudbury"
-              className={cn(
-                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                location.pathname.startsWith('/ecosystem')
-                  ? 'text-primary'
-                  : 'text-foreground/70 hover:text-foreground'
-              )}
-            >
-              Ecosystem
-            </Link>
-
-            {/* Innovation Updates */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter('impact')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className={cn(
-                  'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                  activeDropdown === 'impact'
-                    ? 'text-primary'
-                    : 'text-foreground/70 hover:text-foreground'
-                )}
+            {/* About / Programs / Funding / Services / Insights Triggers */}
+            {([
+              { key: 'about', label: 'About' },
+              { key: 'programs', label: 'Programs' },
+              { key: 'funding', label: 'Funding' },
+              { key: 'services', label: 'Services' },
+              { key: 'insights', label: 'Insights' },
+            ] as const).map(({ key, label }) => (
+              <div
+                key={key}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(key)}
+                onMouseLeave={handleMouseLeave}
               >
-                Innovation Updates
-                <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === 'impact' && 'rotate-180 opacity-100')} />
-              </button>
-            </div>
+                <button
+                  className={cn(
+                    'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                    activeDropdown === key
+                      ? 'text-primary'
+                      : 'text-foreground/70 hover:text-foreground'
+                  )}
+                >
+                  {label}
+                  <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
+                </button>
+              </div>
+            ))}
 
             {/* Events */}
             <Link
@@ -307,6 +272,7 @@ export function Navigation() {
             >
               Events
             </Link>
+
 
             {/* Client Portal */}
             <Link
@@ -375,10 +341,13 @@ export function Navigation() {
             <div className="container mx-auto px-4 lg:px-8 py-10 relative">
               {(() => {
                 const menus = {
+                  about: { label: 'About', items: aboutItems, eyebrow: 'The story of the North\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
                   funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity - we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
-                  impact: { label: 'Innovation Updates', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
+                  services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/portal/auth', cta: 'Become a Client' } },
+                  insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
+
                 const menu = menus[activeDropdown as keyof typeof menus];
                 if (!menu) return null;
 
@@ -477,17 +446,13 @@ export function Navigation() {
               className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border shadow-lg overflow-hidden"
             >
               <div className="container mx-auto px-4 py-6 space-y-2">
-                <Link
-                  to="/about"
-                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                >
-                  About
-                </Link>
-
-                {/* Mobile Programs / Funding */}
+                {/* Mobile accordions */}
                 {([
+                  { key: 'mobile-about', label: 'About', items: aboutItems },
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
                   { key: 'mobile-funding', label: 'Funding', items: fundingItems },
+                  { key: 'mobile-services', label: 'Services', items: servicesItems },
+                  { key: 'mobile-insights', label: 'Insights', items: insightsItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
                     <button
@@ -523,50 +488,12 @@ export function Navigation() {
                 ))}
 
                 <Link
-                  to="/ecosystem/sudbury"
-                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                >
-                  Ecosystem
-                </Link>
-
-                {/* Mobile Innovation Updates */}
-                <div>
-                  <button
-                    onClick={() => toggleMobileAccordion('mobile-impact')}
-                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                  >
-                    Innovation Updates
-                    <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === 'mobile-impact' && 'rotate-180')} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileAccordion === 'mobile-impact' && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-4 py-2">
-                          {impactItems.map((item) => (
-                            <Link
-                              key={item.name}
-                              to={item.href}
-                              className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-                <Link
                   to="/events"
                   className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
                 >
                   Events
                 </Link>
+
 
 
 
