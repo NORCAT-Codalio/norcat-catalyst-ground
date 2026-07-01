@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, Brain, Stethoscope, Cog, Globe, Calendar, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, FileText } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, Mountain, Rocket, Cpu, Leaf, ChevronRight, Lightbulb, Building2, Brain, Stethoscope, Cog, Globe, MapPin, Clock, ExternalLink, Quote, TrendingUp, BarChart3, Activity, FileText } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import heroVideo from '@/assets/vnp-hero.mp4.asset.json';
@@ -85,7 +85,6 @@ const stats = [
   { value: '500+', label: 'Ecosystem Members', icon: Users },
   { value: '150+', label: 'Innovative Startups Supported', icon: Rocket },
   { value: '2,000+', label: 'Sector-Diverse Jobs Created', icon: Activity },
-  { value: '30+', label: 'Years of Building Innovation', icon: Calendar },
 ];
 
 const upcomingPrograms = [

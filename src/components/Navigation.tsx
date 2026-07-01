@@ -39,7 +39,7 @@ const fundingItems: MenuEntry[] = [
 
 
 const impactItems: MenuEntry[] = [
-  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
+  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind the innovation happening across the ecosystem.' },
   { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys, case studies, and the latest news from the ecosystem.' },
 ];
 
@@ -377,7 +377,7 @@ export function Navigation() {
                 const menus = {
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Apply to NORCAT Innovation', body: 'Non-profit. No fee. No equity. Join the North\'s flagship innovation engine.', href: '/apply', cta: 'Start application' } },
                   funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity - we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
-                  impact: { label: 'Innovation Updates', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: '30+ years of building Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
+                  impact: { label: 'Innovation Updates', items: impactItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
                 const menu = menus[activeDropdown as keyof typeof menus];
                 if (!menu) return null;
