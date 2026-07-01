@@ -282,18 +282,18 @@ export default function Home2() {
         </section>
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
                 <Eyebrow>What we do</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl !text-[#001A4D]">
                   One ecosystem.<br />Three ways to grow.
                 </Display>
               </div>
               <Link to="/programs"
                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
-                    style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
+                    style={{ fontFamily: FONT, background: TEAL, color: NAVY, border: '1px solid #00a38a' }}>
                 Explore Services
                 <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
