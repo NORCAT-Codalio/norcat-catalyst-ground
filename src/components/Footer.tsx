@@ -10,12 +10,7 @@ const footerLinks = {
     { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
     { name: 'Core5', href: '/mining/core5' },
     { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-  ],
-  funding: [
-    { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
-    { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
-    { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
-    { name: 'Capital Navigation', href: '/programs/capital-navigation' },
+    { name: 'Funding Programs', href: '/funding' },
   ],
   services: [
     { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
