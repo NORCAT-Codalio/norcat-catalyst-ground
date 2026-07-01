@@ -29,13 +29,7 @@ const programsItems: MenuEntry[] = [
   { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
   { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
   { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
-];
-
-const fundingItems: MenuEntry[] = [
-  { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program', icon: Sparkles, description: 'Non-dilutive funding to accelerate market entry.' },
-  { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program', icon: Brain, description: 'Funding and support for AI-driven ventures in the North.' },
-  { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
-  { name: 'Capital Navigation', href: '/programs/capital-navigation', icon: Compass, description: 'Strategic guidance to map, access, and stack the right capital.' },
+  { name: 'Funding Programs', href: '/funding', icon: Banknote, description: 'IAP, RAIP, Sudbury Catalyst Fund, Capital Navigation and more.' },
 ];
 
 const servicesItems: MenuEntry[] = [
@@ -236,13 +230,12 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">
             {/* About / Programs / Funding / Services / Insights Triggers */}
-            {([
-              { key: 'about', label: 'About' },
-              { key: 'programs', label: 'Programs' },
-              { key: 'funding', label: 'Funding' },
-              { key: 'services', label: 'Services' },
-              { key: 'insights', label: 'Insights' },
-            ] as const).map(({ key, label }) => (
+              {([
+                { key: 'about', label: 'About' },
+                { key: 'programs', label: 'Programs' },
+                { key: 'services', label: 'Services' },
+                { key: 'insights', label: 'Insights' },
+              ] as const).map(({ key, label }) => (
               <div
                 key={key}
                 className="relative"
@@ -345,8 +338,7 @@ export function Navigation() {
               {(() => {
                 const menus = {
                   about: { label: 'About', items: aboutItems, eyebrow: 'The story of the North\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
-                  programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Explore all programs', body: 'CIT, Core5, Rogers Cybersecure Catalyst - find the right pathway for your venture.', href: '/programs', cta: 'View programs overview' } },
-                  funding: { label: 'Funding', items: fundingItems, eyebrow: 'Capital for the North', featured: { title: 'Find the right capital', body: 'From non-dilutive grants to early-stage equity - we\'ll help you map your stack.', href: '/funding/investor-hub', cta: 'Explore Investor Hub' } },
+                  programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Explore all programs', body: 'CIT, Core5, Rogers Cybersecure Catalyst, and funding pathways - find the right fit for your venture.', href: '/programs', cta: 'View programs overview' } },
                   services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/portal/auth', cta: 'Become a Client' } },
                   insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
@@ -453,7 +445,6 @@ export function Navigation() {
                 {([
                   { key: 'mobile-about', label: 'About', items: aboutItems },
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
-                  { key: 'mobile-funding', label: 'Funding', items: fundingItems },
                   { key: 'mobile-services', label: 'Services', items: servicesItems },
                   { key: 'mobile-insights', label: 'Insights', items: insightsItems },
                 ] as const).map((menu) => (
