@@ -3,7 +3,7 @@ import { Layout } from '@/components/Layout';
 import { ArrowRight, Sparkles, Brain, Banknote, Cpu, Layers, DollarSign, TrendingUp, Rocket, Compass } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import citPlaceholder from '@/assets/cit-hero-bg.jpg';
+import citPlaceholder from '@/assets/cit-loopx.jpg.asset.json';
 import core5Placeholder from '@/assets/core5-underground.jpg.asset.json';
 
 const NAVY = '#001A4D';
@@ -156,7 +156,7 @@ const Funding = () => {
               {/* CIT Card */}
               <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: NAVY }}>
                 <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
-                  <img src={citPlaceholder} alt="Critical Industrial Technologies" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={citPlaceholder.url} alt="Critical Industrial Technologies" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${NAVY} 100%)` }} />
                 </div>
                 <div className="relative p-6 md:p-8 flex flex-col flex-1">
