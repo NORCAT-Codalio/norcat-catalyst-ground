@@ -161,7 +161,7 @@ const Funding = () => {
                 Capital that <span style={{ color: TEAL }}>compounds.</span>
               </Display>
               <p className="mt-5 text-base md:text-lg max-w-2xl" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                Real numbers from a 30+ year track record of building, funding, and scaling ventures in Northern Ontario.
+                Real numbers from a track record of building, funding, and scaling ventures in Northern Ontario.
               </p>
             </div>
 
