@@ -24,6 +24,7 @@ import MentorshipServices from "./pages/programs/MentorshipServices";
 import CapitalNavigation from "./pages/programs/CapitalNavigation";
 
 // Funding pages
+import Funding from "./pages/funding/Funding";
 import SudburyCatalystFund from "./pages/funding/SudburyCatalystFund";
 import InnovationAccelerationProgram from "./pages/funding/InnovationAccelerationProgram";
 import RegionalAIProgram from "./pages/funding/RegionalAIProgram";
@@ -96,6 +97,7 @@ const App = () => (
             <Route path="/programs/capital-navigation" element={<CapitalNavigation />} />
             
             {/* Funding Routes */}
+            <Route path="/funding" element={<Funding />} />
             <Route path="/funding/sudbury-catalyst-fund" element={<SudburyCatalystFund />} />
             <Route path="/funding/innovation-acceleration-program" element={<InnovationAccelerationProgram />} />
             <Route path="/funding/regional-ai-program" element={<RegionalAIProgram />} />
