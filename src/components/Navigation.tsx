@@ -26,10 +26,10 @@ const aboutItems: MenuEntry[] = [
 
 
 const programsItems: MenuEntry[] = [
+  { name: 'Funding Programs', href: '/funding', icon: Banknote, description: 'IAP, RAIP, Sudbury Catalyst Fund, Capital Navigation and more.' },
   { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
   { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
   { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
-  { name: 'Funding Programs', href: '/funding', icon: Banknote, description: 'IAP, RAIP, Sudbury Catalyst Fund, Capital Navigation and more.' },
 ];
 
 const servicesItems: MenuEntry[] = [

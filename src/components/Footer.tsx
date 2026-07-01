@@ -6,11 +6,11 @@ import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
 
 const footerLinks = {
   programs: [
+    { name: 'Funding Programs', href: '/funding' },
     { name: 'Programs Overview', href: '/programs' },
     { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
     { name: 'Core5', href: '/mining/core5' },
     { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-    { name: 'Funding Programs', href: '/funding' },
   ],
   services: [
     { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
