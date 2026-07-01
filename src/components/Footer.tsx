@@ -201,7 +201,7 @@ export function Footer() {
           <div className="flex items-center gap-6 text-xs text-white/40">
             <span>© {new Date().getFullYear()} NORCAT Innovation</span>
             <Link to="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white/70 transition-colors">Terms of Use</Link>
+            <a href="https://www.norcat.org/aoda-policy.html" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">AODA Policy</a>
           </div>
           <div className="flex items-center gap-3">
             <img src={norcatLogoBlack} alt="NORCAT" className="h-6 w-auto brightness-0 invert opacity-60" />
