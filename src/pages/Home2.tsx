@@ -223,6 +223,8 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 export default function Home2() {
   const storiesScrollRef = useRef<HTMLDivElement>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [activeProgramIndex, setActiveProgramIndex] = useState(0);
+  const activeProgram = featuredPrograms[activeProgramIndex];
   const visibleCount = 3;
   const maxIndex = Math.max(0, testimonials.length - visibleCount);
   const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
