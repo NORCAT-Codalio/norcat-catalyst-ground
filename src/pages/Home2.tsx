@@ -282,10 +282,7 @@ export default function Home2() {
         </section>
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
-          }} />
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
