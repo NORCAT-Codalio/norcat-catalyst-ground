@@ -6,21 +6,23 @@ import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
 
 const footerLinks = {
   programs: [
-    { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-    { name: 'Mentorship Services', href: '/programs/mentorship-services' },
     { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
     { name: 'Core5', href: '/mining/core5' },
-    { name: 'Underground Centre', href: '/mining/norcat-underground' },
     { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-    { name: 'Innovation Space', href: '/mining/labs' },
   ],
   funding: [
     { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
     { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
     { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
   ],
+  services: [
+    { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
+    { name: 'Mentorship Services', href: '/programs/mentorship-services' },
+    { name: 'Innovation Space', href: '/mining/labs' },
+    { name: 'Underground Centre', href: '/mining/norcat-underground' },
+  ],
   resources: [
-    { name: 'Ecosystem', href: '/ecosystem/sudbury' },
+    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
     { name: 'Impact', href: '/impact' },
     { name: 'Success Stories', href: '/insights/success-stories' },
     { name: 'News', href: '/insights/news' },
