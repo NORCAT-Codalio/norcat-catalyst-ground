@@ -36,11 +36,11 @@ const footerLinks = {
 export function Footer() {
   return (
     <>
-      <div className="bg-muted/30">
+      <div style={{ background: '#F2F3F6' }}>
         {/* Ontario Funding Banner */}
         <div className="w-full py-5 md:py-6">
           <div className="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-            <span className="text-sm md:text-base font-bold tracking-wide text-primary">
+            <span className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#001A4D' }}>
               Funded by the Government of Ontario
             </span>
             <img
