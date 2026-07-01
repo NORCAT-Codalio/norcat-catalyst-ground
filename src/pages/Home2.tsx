@@ -191,21 +191,21 @@ export default function Home2() {
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
           {/* Background image - no-person version on mobile/tablet, people version on desktop */}
           <div className="absolute inset-0 bg-no-repeat lg:hidden"
-               style={{ backgroundImage: `url(${heroHeaderNoPersonImg})`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
+               style={{ backgroundImage: `url(${heroHeaderNoPersonImg})`, backgroundSize: 'cover', backgroundPosition: 'left center' }} />
           <div className="absolute inset-0 bg-no-repeat hidden lg:block"
                style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
 
-          {/* Deep navy/teal readability gradient - stronger on mobile, left-weighted on desktop */}
+          {/* Deep navy/teal readability gradient - stronger teal weight on mobile/tablet */}
           <div className="absolute inset-0 pointer-events-none lg:hidden" style={{
-            background: 'linear-gradient(180deg, rgba(0,26,77,0.82) 0%, rgba(0,61,165,0.65) 55%, rgba(0,26,77,0.85) 100%)',
+            background: 'linear-gradient(180deg, rgba(0,26,77,0.92) 0%, rgba(0,61,120,0.78) 35%, rgba(0,179,152,0.55) 70%, rgba(0,179,152,0.35) 100%)',
           }} />
           <div className="absolute inset-0 pointer-events-none hidden lg:block" style={{
-            background: 'linear-gradient(90deg, rgba(0,26,77,0.88) 0%, rgba(0,61,165,0.55) 45%, rgba(0,61,165,0.15) 70%, transparent 100%)',
+            background: 'linear-gradient(90deg, rgba(0,26,77,0.92) 0%, rgba(0,61,120,0.72) 40%, rgba(0,179,152,0.40) 70%, rgba(0,179,152,0.12) 100%)',
           }} />
 
-          {/* radial glow */}
+          {/* radial glow with more teal */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.32), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
           <div className="relative w-full flex-1 flex flex-col items-stretch">
