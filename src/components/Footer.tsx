@@ -31,7 +31,6 @@ const footerLinks = {
     { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
     { name: 'About Us', href: '/about' },
     { name: 'Client Portal', href: '/portal/auth' },
-    { name: 'Contact', href: '/contact' },
   ],
 };
 
