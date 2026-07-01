@@ -287,17 +287,17 @@ export default function Home2() {
             <div className="max-w-7xl">
               <h2 className="font-black uppercase leading-[0.9] tracking-tight"
                   style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ color: NAVY }}>
                   NORTHERN ONTARIO
                 </span>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ color: NAVY }}>
                   ISN'T JUST GROWING.
                 </span>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                       style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
                   IT'S A LAUNCHPAD
                 </span>
-                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                       style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
                   FOR WHAT'S NEXT.
                 </span>
