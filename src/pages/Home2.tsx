@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Quote, Star, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
@@ -14,8 +14,6 @@ import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
-import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
-import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
 
 const norcatBuilding = norcatBuildingAsset.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
@@ -55,13 +53,6 @@ const audiences = [
   { icon: Building2, title: 'Are you an Industry Leader?', body: 'We connect you directly with our tech-builder clients to accelerate real-world development: test cutting-edge products live, and forge strategic business partnerships.' },
   { icon: Handshake, title: 'Are you an Investor?', body: 'If you are looking to back high-potential, high-grit companies rooted in the industrial market, we introduce you to startups that are already operationally tested.\u00a0' },
 ];
-
-const highlights = [
-  { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
-  { icon: Cpu, label: 'Testing & Validation', desc: 'Accelerate your development with our world-exclusive underground testing centre and advanced prototyping space to design, build, and validate global solutions.', img: ctaPhoto2 },
-  { icon: TrendingUp, label: 'Accessing Capital', desc: 'We simplify the journey to funding, connecting you with government funding, venture capital, and a network of angel investors to fuel your innovation.', img: loopxTeam },
-];
-
 
 const sectors = [
   { icon: Cpu, label: 'Mining Tech' },
@@ -282,55 +273,6 @@ export default function Home2() {
         </section>
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>What we do</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl !text-[#001A4D]">
-                One ecosystem.<br />Three ways to grow.
-              </Display>
-            </div>
-
-            <div className="grid gap-6 lg:grid-cols-3">
-              {highlights.map((h, i) => {
-                const bg = ['#001A4D', '#003DA5', TEAL][i];
-                const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
-                const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
-                const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
-                const words = h.label.split(' ');
-                const last = words.pop();
-                const first = words.join(' ');
-
-                return (
-                  <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col"
-                           style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
-                    {/* Top image */}
-                    <div className="relative w-full h-[45%] overflow-hidden">
-                      <img src={image} alt="" aria-hidden="true"
-                           className="w-full h-full object-cover" />
-                    </div>
-                    {/* Content */}
-                    <div className="relative flex-1 flex flex-col p-6 md:p-7 overflow-hidden">
-                      <img src={norcatHalfLogo} alt="" aria-hidden="true"
-                           className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-10 pointer-events-none" />
-                      <h3 className="font-black text-xl md:text-2xl lg:text-3xl leading-tight text-white mb-4 whitespace-nowrap" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                        {first} {last}.
-                      </h3>
-                      <p className="text-sm leading-relaxed text-white/90 mb-6">{h.desc}</p>
-                      <Link to={link}
-                            className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1 mt-auto"
-                            style={{ fontFamily: FONT }}>
-                        {linkText}
-                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
