@@ -160,6 +160,51 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
+const featuredPrograms = [
+  {
+    shortName: 'CIT',
+    name: 'Critical Industrial Technologies',
+    icon: Cpu,
+    description: 'Build and test mining, energy, and advanced manufacturing tech in real industrial conditions.',
+    highlights: ['Underground proving ground', 'FedNor & industry partnerships', 'From prototype to field trial'],
+    cta: 'Explore CIT',
+    href: '/mining/critical-industrial-tech',
+    bg: NAVY,
+    accent: TEAL,
+    text: 'white',
+    ctaBg: TEAL,
+    ctaText: NAVY,
+  },
+  {
+    shortName: 'Core5',
+    name: 'Core5',
+    icon: Layers,
+    description: 'A five-pillar growth framework for founders ready to move from prototype to commercial traction.',
+    highlights: ['Commercialization roadmap', 'Mentor & investor network', 'IP & go-to-market strategy'],
+    cta: 'Explore Core5',
+    href: '/mining/core5',
+    bg: BLUE,
+    accent: TEAL,
+    text: 'white',
+    ctaBg: TEAL,
+    ctaText: NAVY,
+  },
+  {
+    shortName: 'RAII',
+    name: 'RAII',
+    icon: Brain,
+    description: 'Accelerate applied AI/ML adoption with access to compute, data, and industry validation partners.',
+    highlights: ['Applied AI/ML focus', 'Compute & data access', 'Industry validation partners'],
+    cta: 'Explore RAII',
+    href: '/programs',
+    bg: TEAL,
+    accent: NAVY,
+    text: NAVY,
+    ctaBg: NAVY,
+    ctaText: 'white',
+  },
+];
+
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
      style={{ fontFamily: FONT, color: TEAL }}>
