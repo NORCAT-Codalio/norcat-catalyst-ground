@@ -196,7 +196,7 @@ const Funding = () => {
               </p>
             </div>
 
-            <div className="rounded-2xl p-8 bg-white border border-black/5 flex flex-col md:flex-row md:items-center gap-8">
+            <div className="rounded-2xl p-8 border border-black/5 flex flex-col md:flex-row md:items-center gap-8" style={{ background: PAPER }}>
               <div className="flex-1">
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
