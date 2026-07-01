@@ -12,7 +12,7 @@ import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
-import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop.png.asset.json';
+import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
@@ -193,7 +193,7 @@ export default function Home2() {
           <div className="absolute inset-0 bg-no-repeat lg:hidden"
                style={{ backgroundImage: `url(${heroHeaderNoPersonImg})`, backgroundSize: 'cover', backgroundPosition: 'left center' }} />
           <div className="absolute inset-0 bg-no-repeat hidden lg:block"
-               style={{ backgroundImage: `url(${heroHeaderDesktopImg})`, backgroundSize: 'cover', backgroundPosition: 'center bottom' }} />
+               style={{ backgroundImage: `url(${heroHeaderDesktopImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
 
           {/* Readability gradient - lighter on desktop because the new banner already has a clean left side */}
           <div className="absolute inset-0 pointer-events-none lg:hidden" style={{
