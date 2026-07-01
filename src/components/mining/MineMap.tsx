@@ -7,7 +7,7 @@ const chambers = [
   {
     id: 'testing',
     title: 'Real-World Testing',
-    description: 'Test your technology in actual mining conditions—not a simulation. Our 1.2km underground facility provides authentic operational environments.',
+    description: 'Test your technology in actual mining conditions-not a simulation. Our 1.2km underground facility provides authentic operational environments.',
     icon: Pickaxe,
     color: '#14b8a6',
     position: { x: 50, y: 25 },

@@ -60,7 +60,7 @@ const mockData = {
   problemClarity: {
     score: 4,
     statement: "Mining operators lose $180K+ per hour during unplanned equipment failures. Current predictive maintenance solutions require extensive sensor retrofitting and don't work well in harsh underground conditions.",
-    flag: "This problem is well-defined with clear economic impact — urgency is high in large mining operations.",
+    flag: "This problem is well-defined with clear economic impact - urgency is high in large mining operations.",
   },
   
   targetCustomer: {
@@ -282,7 +282,7 @@ export function IdeaValidationDashboard() {
             Here's What You'll Get
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive snapshot of your startup idea — market signals, problem clarity, customer fit, and founder readiness — all in one quick sanity check.
+            A comprehensive snapshot of your startup idea - market signals, problem clarity, customer fit, and founder readiness - all in one quick sanity check.
           </p>
         </motion.div>
 
@@ -422,7 +422,7 @@ export function IdeaValidationDashboard() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Search Interest Trend</h3>
-                    <p className="text-xs text-muted-foreground">"Mining predictive maintenance" — 12 months</p>
+                    <p className="text-xs text-muted-foreground">"Mining predictive maintenance" - 12 months</p>
                   </div>
                 </div>
                 <TrendGraph data={mockData.keywordTrends} />
@@ -676,7 +676,7 @@ export function IdeaValidationDashboard() {
                   </div>
                   <Button asChild size="lg" className="btn-primary px-8">
                     <Link to="/apply">
-                      Get the Full Report & Action Plan — It's Free!
+                      Get the Full Report & Action Plan - It's Free!
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>

@@ -56,7 +56,7 @@ const InnovationAccelerationProgram = () => {
     'Must be a growth-oriented and for-profit entity (registered sole proprietor, partnership, or corporation)',
     'Must be located within NORCAT Innovation\'s service area of Greater Sudbury, Ontario',
     'Seeking assistance to develop and commercialize an innovative tech-based service, product, or process with potential to contribute to increased sales and employment',
-    'Project must be a new, high-impact strategic initiative — not a duplicate of previously funded work or already underway',
+    'Project must be a new, high-impact strategic initiative - not a duplicate of previously funded work or already underway',
   ];
 
   const ineligibleActivities = [
@@ -94,7 +94,7 @@ const InnovationAccelerationProgram = () => {
 
   const programRequirements = [
     { title: 'Client Intake & Discovery', description: 'The applicant must be a NORCAT Innovation client. If not, complete the Discovery Document Form to begin the intake process.' },
-    { title: 'Quotations for Project Work', description: 'With the exception of IP Research and Protection projects, submit a minimum of two competitive quotes from independent and unrelated service providers — each detailing scope of work, hourly rate or total cost, and estimated hours required.' },
+    { title: 'Quotations for Project Work', description: 'With the exception of IP Research and Protection projects, submit a minimum of two competitive quotes from independent and unrelated service providers - each detailing scope of work, hourly rate or total cost, and estimated hours required.' },
     { title: 'Contribution & Reimbursement', description: 'SMEs pay project service providers 100% of invoiced costs (including HST) prior to submitting for reimbursement. Funding covers up to 50% of approved Total Eligible Project Costs, up to $20,000 per SME.' },
     { title: 'Project Feedback', description: 'Within three months of project completion, recipients must submit formal feedback describing the project\'s impact on their business operations, outcomes, and future.' },
     { title: 'Final Survey & Long-Term Reporting', description: 'Complete a final project survey capturing key success metrics. Applicants may be contacted for follow-up feedback for up to five years post-completion to support program evaluation.' },
@@ -204,7 +204,7 @@ const InnovationAccelerationProgram = () => {
                 Two pillars<br />driving growth.
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                Projects must represent a new, high-impact strategic initiative aimed at advancing development and commercialization — not duplicating prior funded work and not already underway.
+                Projects must represent a new, high-impact strategic initiative aimed at advancing development and commercialization - not duplicating prior funded work and not already underway.
               </p>
             </div>
 

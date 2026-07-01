@@ -53,7 +53,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       headline: 'Proven tools to',
       headlineItalic: 'structure and scale',
       description:
-        'Access the curated MaRS Startup Toolkit — frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
+        'Access the curated MaRS Startup Toolkit - frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
       features: ['Business model canvas', 'Financial planning templates', 'Investor pitch frameworks', 'Growth milestone trackers'],
     },
     {
@@ -142,7 +142,7 @@ const categories: Record<Audience, CategoryItem[]> = {
       headline: 'Expert guidance through the',
       headlineItalic: 'funding landscape',
       description:
-        'Our dedicated capital navigation team helps you identify, prepare for, and secure the right funding — from grants and loans to angel and venture capital.',
+        'Our dedicated capital navigation team helps you identify, prepare for, and secure the right funding - from grants and loans to angel and venture capital.',
       features: ['Funding strategy development', 'Grant & loan identification', 'Investor readiness coaching', 'Application support'],
       link: '/programs/capital-navigation',
       linkText: 'Learn More',
@@ -307,7 +307,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
 
       {/* ── Main Layout: Category sidebar (left) + Image & Content (right) ── */}
       <div className="grid lg:grid-cols-[240px_1fr] gap-8 mt-10">
-        {/* Left — Category list */}
+        {/* Left - Category list */}
         <div className="rounded-[20px] p-5 self-start" style={glassCardStyle}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -350,7 +350,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
           </AnimatePresence>
         </div>
 
-        {/* Right — Image + Content detail */}
+        {/* Right - Image + Content detail */}
         <AnimatePresence mode="wait">
           <motion.div
             key={`${activeAudience}-${activeCategory}`}

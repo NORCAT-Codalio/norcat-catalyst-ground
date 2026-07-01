@@ -77,7 +77,7 @@ const testimonials = [
     role: 'Founder, CircuitIQ',
   },
   {
-    quote: "Sudbury's been amazing; we've already raised over $300,000 in angel investment and expect a match from the Sudbury Catalyst Fund, which brings us to over half a million—and we haven't even moved in yet.",
+    quote: "Sudbury's been amazing; we've already raised over $300,000 in angel investment and expect a match from the Sudbury Catalyst Fund, which brings us to over half a million-and we haven't even moved in yet.",
     name: 'Ryan Marshall',
     role: 'COO, Myomar Molecular',
   },
@@ -145,7 +145,7 @@ const partners = [
   { name: 'Rogers', logo: rogersLogo },
 ];
 
-// Style tokens — NORCAT Innovation Brand V1.0 (2026)
+// Style tokens - NORCAT Innovation Brand V1.0 (2026)
 const NAVY = '#001A4D';          // Deep Navy
 const NAVY_SURFACE = '#001233';  // deeper navy surface
 const NAVY_ELEV = '#002766';     // elevated navy card
@@ -297,7 +297,7 @@ export default function Home2() {
 
             <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-12 lg:grid-cols-12 max-w-7xl">
               <p className="md:col-start-3 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre — a one-stop shop for founders building tough-tech, IP-driven companies, pairing world-class mentorship with capital access.
+                For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre - a one-stop shop for founders building tough-tech, IP-driven companies, pairing world-class mentorship with capital access.
               </p>
               <p className="md:col-start-8 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem on Earth can match.
@@ -433,7 +433,7 @@ export default function Home2() {
                   Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025
                 </p>
                 <p className="relative mt-5 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
-                  — National Angel Capital Organization
+                  - National Angel Capital Organization
                 </p>
               </div>
 
@@ -624,7 +624,7 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+        {/* ───── PORTFOLIO COMPANIES - Logo Carousel ───── */}
         <section className="relative py-10 overflow-hidden" style={{ background: 'white' }}>
           <div className="relative overflow-hidden">
             <motion.div

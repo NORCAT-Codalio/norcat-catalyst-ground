@@ -84,7 +84,7 @@ const streams = {
     match: '1:1 minimum match',
     duration: 'Max 6 months',
     overview:
-      "The DC Program enables Ontario-based, standalone SMEs to access technology facilities and capabilities across the province to develop, test, validate and showcase products and services that integrate critical technologies — helping disruptive innovations hit the market faster.",
+      "The DC Program enables Ontario-based, standalone SMEs to access technology facilities and capabilities across the province to develop, test, validate and showcase products and services that integrate critical technologies - helping disruptive innovations hit the market faster.",
     eligibility: [
       { title: 'Small or Medium Enterprise', desc: 'Fewer than 500 global full-time employees.' },
       { title: 'Ontario Operations', desc: 'Registered operations (R&D, manufacturing, product management, etc.) in Ontario with a valid CRA business number.' },
@@ -98,7 +98,7 @@ const streams = {
       { title: 'Technology Development Site Use', description: 'Projects must utilize at least one Technology Development Site for a minimum of 2 hours per test bed. Multiple sites may be leveraged where applicable.' },
       { title: 'Critical Technology Focus', description: 'Solutions must involve the acceleration, development, or integration of at least one of the six critical technologies: 5G & Advanced Networks, AI, Blockchain, Robotics, Cybersecurity, or Quantum.' },
       { title: 'Ontario-Based Commercial Outcome', description: 'Projects must result in a new solution, product, or service with strong commercial opportunity in one or more of the four key sectors. Activities must be carried out in Ontario, with a minimum 1:1 contribution match, max 6 months, and all required certifications already in place.' },
-      { title: 'Strong ROI for Ontario', description: 'Project must form the basis of a highly competitive business and offer good return on investment and clear benefits to Ontario — new revenues, job creation/retention, new customers, follow-on investment, productivity improvement.' },
+      { title: 'Strong ROI for Ontario', description: 'Project must form the basis of a highly competitive business and offer good return on investment and clear benefits to Ontario - new revenues, job creation/retention, new customers, follow-on investment, productivity improvement.' },
       { title: 'IP Managed by Applicant', description: 'IP arising from the project is managed by the Applicant. OCI does not claim IP rights. Successful applicants execute OCI\'s funding agreement, including an Intellectual Property Statement outlining IP arrangements among project partners.' },
     ],
   },
@@ -111,7 +111,7 @@ const streams = {
     match: 'No match required',
     duration: 'Project-dependent',
     overview:
-      'TAP gives Ontario SMEs with an existing critical-technology product or service exclusive, no-cost access to the NORCAT Underground Centre Technology Development Site — accelerating validation, customer discovery, and entry into the mining sector.',
+      'TAP gives Ontario SMEs with an existing critical-technology product or service exclusive, no-cost access to the NORCAT Underground Centre Technology Development Site - accelerating validation, customer discovery, and entry into the mining sector.',
     eligibility: [
       { title: 'Ontario SME', desc: 'Ontario-based small or medium enterprise with an existing critical-technology product or service.' },
       { title: 'Market-Ready Solution', desc: 'Solution is past prototype with all necessary certifications required to operate on a Technology Development Site.' },
@@ -378,7 +378,7 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── PROGRAM STREAMS — TABS (light) ───── */}
+        {/* ───── PROGRAM STREAMS - TABS (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-10">
@@ -387,7 +387,7 @@ const CriticalIndustrialTech = () => {
                 Choose your<br /><span style={{ color: TEAL }}>pathway.</span>
               </h2>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                CIT delivers two distinct streams through NORCAT's Technology Development Site — pick the one that matches where your solution is today.
+                CIT delivers two distinct streams through NORCAT's Technology Development Site - pick the one that matches where your solution is today.
               </p>
             </div>
 
@@ -409,7 +409,7 @@ const CriticalIndustrialTech = () => {
                     }}
                   >
                     <s.icon className="w-4 h-4" style={{ color: active ? TEAL : '#6b7387' }} />
-                    <span>{s.code} — {s.name}</span>
+                    <span>{s.code} - {s.name}</span>
                   </button>
                 );
               })}

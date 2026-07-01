@@ -148,7 +148,7 @@ export default function MiningInnovation() {
                   </span>
                 </h2>
                 <p className="text-gray-300 text-lg mb-8">
-                  The NORCAT Underground Centre isn't just a testing facility—it's your entry point
+                  The NORCAT Underground Centre isn't just a testing facility-it's your entry point
                   to the global mining industry. Our connections span six continents and include the
                   world's largest mining companies.
                 </p>

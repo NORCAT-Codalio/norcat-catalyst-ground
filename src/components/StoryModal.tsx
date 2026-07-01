@@ -554,7 +554,7 @@ export const storyData: Record<string, StoryData> = {
       },
       {
         type: 'quote',
-        quote: 'We knew the future of mining wasn\'t just safer—it was smarter.',
+        quote: 'We knew the future of mining wasn\'t just safer-it was smarter.',
         author: 'Sarah Chen, Co-founder',
       },
       {
@@ -676,7 +676,7 @@ export const storyData: Record<string, StoryData> = {
       },
       {
         type: 'quote',
-        quote: 'Fresh air underground shouldn\'t be a luxury—it should be intelligent.',
+        quote: 'Fresh air underground shouldn\'t be a luxury-it should be intelligent.',
         author: 'James Whitehorse, CEO',
       },
       {

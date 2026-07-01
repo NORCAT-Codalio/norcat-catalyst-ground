@@ -96,7 +96,7 @@ const Core5 = () => {
               className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto mb-10 leading-relaxed"
             >
               A Pan-Northern Ontario initiative supporting SMEs in developing Battery Electric Vehicle 
-              and EV technologies—from critical minerals extraction to manufacturing.
+              and EV technologies-from critical minerals extraction to manufacturing.
             </motion.p>
             
             <motion.div 

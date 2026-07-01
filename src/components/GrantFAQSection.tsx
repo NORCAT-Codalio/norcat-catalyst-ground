@@ -74,7 +74,7 @@ export const RAII_FAQS: FAQ[] = [
   },
   {
     q: 'What are the two eligible pillars?',
-    a: 'Pillar 1 — AI Productization & Commercialization (demonstration and commercialization of Canadian-made AI technologies; scale-up and capacity development). Pillar 2 — AI Adoption (strategic integration of AI technologies that drive innovation, growth, and productivity; process re-engineering and capacity development).',
+    a: 'Pillar 1 - AI Productization & Commercialization (demonstration and commercialization of Canadian-made AI technologies; scale-up and capacity development). Pillar 2 - AI Adoption (strategic integration of AI technologies that drive innovation, growth, and productivity; process re-engineering and capacity development).',
   },
   {
     q: 'What project costs are eligible?',
@@ -97,7 +97,7 @@ const GrantFAQSection = ({ program, eyebrow = 'FAQ', heading }: Props) => {
   const faqs = program === 'iap' ? IAP_FAQS : RAII_FAQS;
   const title =
     heading ??
-    (program === 'iap' ? 'IAP — Frequently Asked Questions' : 'RAII — Frequently Asked Questions');
+    (program === 'iap' ? 'IAP - Frequently Asked Questions' : 'RAII - Frequently Asked Questions');
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
@@ -116,8 +116,8 @@ const GrantFAQSection = ({ program, eyebrow = 'FAQ', heading }: Props) => {
             className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
             style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
           >
-            {title.split('—')[0]}—
-            <span style={{ color: TEAL }}>{title.split('—')[1]?.trim()}</span>
+            {title.split('-')[0]}-
+            <span style={{ color: TEAL }}>{title.split('-')[1]?.trim()}</span>
           </h2>
         </div>
 

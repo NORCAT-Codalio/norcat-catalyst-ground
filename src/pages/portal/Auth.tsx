@@ -173,7 +173,7 @@ export default function Auth() {
               transition={{ delay: 0.1 }}
               className="text-white/70 text-lg max-w-md"
             >
-              Access mentors, resources, events, and everything you need to scale your startup—all in one place.
+              Access mentors, resources, events, and everything you need to scale your startup-all in one place.
             </motion.p>
 
             <motion.div

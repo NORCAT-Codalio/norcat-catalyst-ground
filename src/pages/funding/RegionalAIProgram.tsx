@@ -92,7 +92,7 @@ const RegionalAIProgram = () => {
   const programRequirements = [
     { title: 'Client Intake & Discovery', description: 'The applicant must be a NORCAT Innovation client. If not, complete the Discovery Document Form to begin the intake process.' },
     { title: 'Proposal Submission', description: 'Submit a proposal outlining the AI integration plan, your current TRL level, and the business value the project will deliver.' },
-    { title: 'Quotations for Project Work', description: 'With the exception of IP Research and Protection projects, submit a minimum of two competitive quotes from independent and unrelated service providers — each detailing scope of work, hourly rate or total cost, and estimated hours required.' },
+    { title: 'Quotations for Project Work', description: 'With the exception of IP Research and Protection projects, submit a minimum of two competitive quotes from independent and unrelated service providers - each detailing scope of work, hourly rate or total cost, and estimated hours required.' },
     { title: 'Contribution & Reimbursement', description: 'SMEs pay project service providers 100% of invoiced costs (including HST) prior to submitting for reimbursement. Funding covers up to 50% of approved Total Eligible Project Costs, up to $20,000 per SME.' },
     { title: 'Project Feedback', description: 'Upon project completion, recipients must submit formal feedback describing the project\'s impact on business operations, outcomes, and future plans.' },
     { title: 'Final Survey & Long-Term Reporting', description: 'Complete a final project survey capturing business outcomes and ongoing commercialization activity. Applicants may be contacted for follow-up feedback for up to five years post-completion.' },
@@ -125,7 +125,7 @@ const RegionalAIProgram = () => {
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5" style={{ color: '#475068' }}>
                   RAII empowers Northern Ontario SMEs to integrate artificial
-                  intelligence into their operations — enhancing productivity,
+                  intelligence into their operations - enhancing productivity,
                   innovation, and commercialization across the region.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
@@ -201,7 +201,7 @@ const RegionalAIProgram = () => {
                 Two pillars<br />supporting AI.
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                Projects must drive measurable AI integration or commercialization outcomes — not activities already in progress.
+                Projects must drive measurable AI integration or commercialization outcomes - not activities already in progress.
               </p>
             </div>
 

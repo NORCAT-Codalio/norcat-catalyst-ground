@@ -9,13 +9,13 @@ const testimonials = [
     initials: "JE",
   },
   {
-    quote: "Tom Fortin provided me with invaluable, direct support—giving me time, resources, and the space to complete my critical first production run of 250 or 300 units. Tom coached me on purchasing the right equipment and instilled a foundational principle: 'We want to have the high-skilled labour and the high-skilled jobs here... keep that value chain mostly here.'",
+    quote: "Tom Fortin provided me with invaluable, direct support-giving me time, resources, and the space to complete my critical first production run of 250 or 300 units. Tom coached me on purchasing the right equipment and instilled a foundational principle: 'We want to have the high-skilled labour and the high-skilled jobs here... keep that value chain mostly here.'",
     name: "Matthew Gougeon",
     role: "Founder & CEO, Perspic",
     initials: "MG",
   },
   {
-    quote: "While the science was strong, the start-up world was unfamiliar; we are not trained for that space. Mentors like Peter Dal Bianco were vital for attracting many investors to the company—he has a tremendous attitude; you can't say no to the guy.",
+    quote: "While the science was strong, the start-up world was unfamiliar; we are not trained for that space. Mentors like Peter Dal Bianco were vital for attracting many investors to the company-he has a tremendous attitude; you can't say no to the guy.",
     name: "Dr. Amadeo Parissenti",
     role: "Co-Founder & CSO, RNA Diagnostics",
     initials: "AP",
