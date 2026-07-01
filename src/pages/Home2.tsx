@@ -288,30 +288,31 @@ export default function Home2() {
               <h2 className="font-black uppercase leading-[0.9] tracking-tight"
                   style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
-                  Northern Ontario
+                  NORTHERN ONTARIO
                 </span>
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
-                  isn't just growing.
+                  ISN'T JUST GROWING.
                 </span>
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
                       style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                  We're redefining
+                  IT'S A LAUNCHPAD
                 </span>
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
                       style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                  what's possible.
+                  FOR WHAT'S NEXT.
                 </span>
               </h2>
             </div>
 
             <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-12 lg:grid-cols-12 max-w-7xl">
-              <p className="md:col-start-3 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                For nearly three decades, NORCAT has been Sudbury's Regional Innovation Centre - a one-stop shop for founders building tough-tech, IP-driven companies, pairing world-class mentorship with capital access.
+              <p className="md:col-start-1 md:col-span-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                NORCAT Innovation is a one-stop shop for tough-tech and IP-driven companies looking to move from idea to market with the right support, connections, and infrastructure behind them.
               </p>
-              <p className="md:col-start-8 md:col-span-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                From the Fortin Discovery Lab to the NORCAT Underground Centre, our infrastructure lets founders build, test, and validate technology in environments no other ecosystem on Earth can match.
+              <p className="md:col-start-7 md:col-span-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                As Sudbury's Regional Innovation Centre, founders gain access to mentorship, capital connections, industry partners, prototyping support, and real-world validation, helping them grow here and compete anywhere.
               </p>
             </div>
+
           </div>
         </section>
 
