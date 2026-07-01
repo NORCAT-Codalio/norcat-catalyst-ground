@@ -39,7 +39,7 @@ const fundingItems: MenuEntry[] = [
 
 
 const impactItems: MenuEntry[] = [
-  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind 30+ years of building innovation.' },
+  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind the innovation happening across the ecosystem.' },
   { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys, case studies, and the latest news from the ecosystem.' },
 ];
 
