@@ -195,15 +195,15 @@ export default function Home2() {
           <div className="absolute inset-0 bg-no-repeat hidden lg:block"
                style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
 
-          {/* Deep navy/teal readability gradient - stronger teal weight on mobile/tablet */}
+          {/* Deep navy/teal readability gradient - heavier on the left where text lives */}
           <div className="absolute inset-0 pointer-events-none lg:hidden" style={{
             background: 'linear-gradient(180deg, rgba(0,26,77,0.92) 0%, rgba(0,61,120,0.78) 35%, rgba(0,179,152,0.55) 70%, rgba(0,179,152,0.35) 100%)',
           }} />
           <div className="absolute inset-0 pointer-events-none hidden lg:block" style={{
-            background: 'linear-gradient(90deg, rgba(0,26,77,0.92) 0%, rgba(0,61,120,0.72) 40%, rgba(0,179,152,0.40) 70%, rgba(0,179,152,0.12) 100%)',
+            background: 'linear-gradient(90deg, rgba(0,26,77,0.96) 0%, rgba(0,26,77,0.88) 25%, rgba(0,61,120,0.72) 50%, rgba(0,61,120,0.38) 75%, rgba(0,179,152,0.15) 100%)',
           }} />
 
-          {/* radial glow with more teal */}
+          {/* Top-left teal glow + bottom-right blue glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.32), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
