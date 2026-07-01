@@ -61,7 +61,7 @@ export function Footer() {
               <div>
                 <img src={norcatLogoBlack} alt="NORCAT" className="h-7 w-auto brightness-0 invert" />
                 <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-sm">
-                  Sudbury's Regional Innovation Centre — helping tech and mining ventures start, scale, and succeed.
+                  Sudbury's Regional Innovation Centre - helping tech and mining ventures start, scale, and succeed.
                 </p>
               </div>
 
