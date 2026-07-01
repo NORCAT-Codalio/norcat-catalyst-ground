@@ -289,6 +289,57 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
+        {/* ───── CIT PROGRAM ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7">
+                <Eyebrow>Critical Industrial Technologies</Eyebrow>
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
+                  The proving ground for<br /><span style={{ color: TEAL }}>CIT ventures.</span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6" style={{ color: '#475068' }}>
+                  NORCAT Underground is the test-and-validation backbone of our Critical Industrial Technologies (CIT) program. CIT companies use the facility to run structured trials, capture real-world performance data, and earn the credibility needed to sell into global mining and industrial markets.
+                </p>
+                <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
+                  From early-stage prototypes to production-ready systems, we help CIT participants move from lab to mine faster - with engineering support, customer introductions, and a facility no one else can replicate.
+                </p>
+              </div>
+              <div className="lg:col-span-5">
+                <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <h3 className="font-black uppercase text-lg mb-4" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    Why CIT companies use NORCAT Underground
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      'Real-world testing in active underground conditions',
+                      'Engineering and technologist support on-site',
+                      'Customer demos with global mining operators',
+                      'Structured TRL advancement pathways',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm" style={{ color: '#475068' }}>
+                        <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: TEAL }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to="/mining/critical-industrial-tech"
+                    className="group inline-flex items-center gap-2 mt-8 text-sm font-bold"
+                    style={{ fontFamily: FONT, color: TEAL }}
+                  >
+                    Learn about the CIT program
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ───── USE CASES (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
