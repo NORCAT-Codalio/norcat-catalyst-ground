@@ -187,7 +187,7 @@ export default function Home2() {
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
+        <section className="relative overflow-hidden min-h-[70vh] flex flex-col"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
           {/* Background image - no-person version on mobile/tablet, new people-right banner on desktop */}
           <div className="absolute inset-0 bg-no-repeat lg:hidden"
@@ -209,7 +209,7 @@ export default function Home2() {
           }} />
 
           <div className="relative w-full flex-1 flex flex-col items-stretch">
-            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-10 md:py-16">
+            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
                 <div className="font-black uppercase leading-[0.9] tracking-tight text-white max-w-5xl"
