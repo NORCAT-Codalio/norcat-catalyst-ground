@@ -187,7 +187,7 @@ export default function Home2() {
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
+        <section className="relative overflow-hidden min-h-[70vh] flex flex-col"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
           {/* Background image - no-person version on mobile/tablet, new people-right banner on desktop */}
           <div className="absolute inset-0 bg-no-repeat lg:hidden"
