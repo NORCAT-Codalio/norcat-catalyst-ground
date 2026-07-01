@@ -136,34 +136,6 @@ const Funding = () => {
           </div>
         </section>
 
-        {/* IMPACT STATS */}
-        <section className="py-20 md:py-28 relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 100%)` }} />
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 10% 20%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 90% 80%, rgba(47,111,214,0.22), transparent 45%)`,
-          }} />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-14">
-              <Eyebrow><TrendingUp className="w-3.5 h-3.5" />Funding Impact</Eyebrow>
-              <Display className="text-3xl md:text-5xl">
-                Capital that <span style={{ color: TEAL }}>compounds.</span>
-              </Display>
-              <p className="mt-5 text-base md:text-lg max-w-2xl" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                Real numbers from a track record of building, funding, and scaling ventures in Northern Ontario.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {impactStats.map((s) => (
-                <div key={s.label} className="rounded-2xl p-6 md:p-8 border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
-                  <div className="text-4xl md:text-5xl font-black mb-2" style={{ color: TEAL, letterSpacing: '-0.02em' }}>{s.number}</div>
-                  <div className="text-sm md:text-base font-semibold text-white mb-1">{s.label}</div>
-                  <div className="text-xs md:text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* INDUSTRY TRACK 1: CRITICAL INDUSTRIAL TECHNOLOGIES */}
         <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
