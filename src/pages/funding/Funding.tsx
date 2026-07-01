@@ -196,7 +196,7 @@ const Funding = () => {
                 </div>
                 <div className="relative p-6 md:p-8 flex flex-col flex-1">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.12)', color: 'white' }}>
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${TEAL}20`, color: TEAL }}>
                       <Layers className="w-6 h-6" />
                     </div>
                     <div>
