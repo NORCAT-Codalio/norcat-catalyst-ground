@@ -289,38 +289,54 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── CIT PROGRAM ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-7">
-                <Eyebrow>Critical Industrial Technologies</Eyebrow>
-                <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
-                >
+        {/* ───── CIT PROGRAM (dark) ───── */}
+        <section
+          className="py-20 md:py-32 relative overflow-hidden"
+          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)` }}
+          />
+          <img
+            src={norcatHalfLogo.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute -right-20 -top-20 w-[420px] opacity-[0.06] pointer-events-none select-none"
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+                className="lg:col-span-7"
+              >
+                <Eyebrow color="white">Critical Industrial Technologies</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   The proving ground for<br /><span style={{ color: TEAL }}>CIT ventures.</span>
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6" style={{ color: '#475068' }}>
+                </Display>
+                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
                   NORCAT Underground is the test-and-validation backbone of our Critical Industrial Technologies (CIT) program. CIT companies use the facility to run structured trials, capture real-world performance data, and earn the credibility needed to sell into global mining and industrial markets.
                 </p>
-                <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
+                <p className="mt-4 text-base leading-relaxed" style={{ color: FG_MUTED }}>
                   From early-stage prototypes to production-ready systems, we help CIT participants move from lab to mine faster - with engineering support, customer introductions, and a facility no one else can replicate.
                 </p>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <h3 className="font-black uppercase text-lg mb-4" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}
+                className="lg:col-span-5"
+              >
+                <div className="rounded-2xl p-7 md:p-9" style={{ background: 'rgba(0,26,77,0.45)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
+                  <h3 className="font-black uppercase text-lg mb-5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     Why CIT companies use NORCAT Underground
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3.5">
                     {[
                       'Real-world testing in active underground conditions',
                       'Engineering and technologist support on-site',
                       'Customer demos with global mining operators',
                       'Structured TRL advancement pathways',
                     ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm" style={{ color: '#475068' }}>
+                      <li key={i} className="flex items-start gap-3 text-sm" style={{ color: FG_MUTED }}>
                         <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: TEAL }} />
                         {item}
                       </li>
@@ -335,7 +351,7 @@ const NorcatUnderground = () => {
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
