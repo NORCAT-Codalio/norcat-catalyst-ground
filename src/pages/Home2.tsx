@@ -13,6 +13,7 @@ import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderAsset from '@/assets/hero-website-header.png.asset.json';
+import heroMobileAsset from '@/assets/hero-mobile-nopeople.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
 
@@ -21,6 +22,7 @@ const norcatHalfLogo = norcatHalfLogoSquare.url;
 const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderImg = heroHeaderAsset.url;
+const heroMobileImg = heroMobileAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
@@ -187,52 +189,63 @@ export default function Home2() {
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-          {/* Background image spanning the full banner width */}
-          <div className="absolute inset-0 bg-no-repeat"
+          {/* Desktop / large tablet background: people image on the right */}
+          <div className="absolute inset-0 bg-no-repeat hidden md:block"
                style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
+          {/* Mobile background: clean no-people image (window + Science North view + tech overlay) */}
+          <div className="absolute inset-0 bg-no-repeat md:hidden"
+               style={{ backgroundImage: `url(${heroMobileImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
 
+          {/* Deep navy → blue readability gradient — left side on desktop, full width on mobile */}
+          <div className="absolute inset-0 pointer-events-none hidden md:block"
+               style={{ background: `linear-gradient(90deg, ${NAVY} 0%, ${NAVY} 20%, rgba(0,61,165,0.92) 45%, rgba(0,61,165,0.55) 60%, rgba(0,61,165,0.15) 75%, rgba(0,61,165,0) 88%)` }} />
+          <div className="absolute inset-0 pointer-events-none md:hidden"
+               style={{ background: `linear-gradient(180deg, rgba(0,26,77,0.88) 0%, rgba(0,61,165,0.82) 60%, rgba(0,26,77,0.92) 100%)` }} />
 
-          {/* radial glow */}
+          {/* Oversized NORCAT half-mark overlay, low opacity, upper-left */}
+          <div className="absolute pointer-events-none hidden md:block"
+               style={{ top: '-8%', left: '-6%', width: '55%', height: '120%', backgroundImage: `url(${norcatHalfLogo})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'left center', opacity: 0.08 }} />
+
+          {/* subtle radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 15% 90%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 15%, rgba(47,111,214,0.15), transparent 55%)`,
           }} />
 
           <div className="relative w-full flex-1 flex flex-col items-stretch">
             <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-10 md:py-16">
+                <div className="max-w-full md:max-w-[60%] lg:max-w-[58%]">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
-                <div className="font-black uppercase leading-[0.9] tracking-tight text-white max-w-5xl"
+                <div className="font-black uppercase leading-[0.95] md:leading-[0.9] tracking-tight text-white"
                      style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">BUILD, TEST</div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-                    <span className="text-white">& </span>
-                    <span className="text-white">SCALE</span>
-                    <span className="text-white"> YOUR</span>
+                  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">BUILD, TEST</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                    &amp; SCALE YOUR
                   </div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                        style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
                     TECH VENTURE.
                   </div>
                 </div>
 
-                <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="mt-5 md:mt-8 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.92)' }}>
                   Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-2.5">
+                <div className="mt-6 md:mt-8 grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-2.5">
                   {sectors.map((s) => (
                     <span key={s.label}
-                          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)' }}>
+                          className="inline-flex items-center justify-center sm:justify-start gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.9)', border: `1px solid ${TEAL}80`, background: 'rgba(0,179,152,0.14)' }}>
                       <s.icon className="w-3.5 h-3.5" />
                       {s.label}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <div className="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link to="/apply"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                        className="group inline-flex w-full sm:w-auto items-center justify-between sm:justify-start gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                         style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
                     Apply to NORCAT Innovation
                     <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
@@ -240,13 +253,14 @@ export default function Home2() {
                     </span>
                   </Link>
                   <Link to="/about"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
+                        className="group inline-flex w-full sm:w-auto items-center justify-between sm:justify-start gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.92)', color: NAVY, border: '1px solid #001A4D' }}>
                     Learn More
                     <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
+                </div>
                 </div>
               </div>
             </div>
