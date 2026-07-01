@@ -209,7 +209,7 @@ export default function Home2() {
           }} />
 
           <div className="relative w-full flex-1 flex flex-col items-stretch">
-            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-10 md:py-16">
+            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
                 <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
 
                 <div className="font-black uppercase leading-[0.9] tracking-tight text-white max-w-5xl"
