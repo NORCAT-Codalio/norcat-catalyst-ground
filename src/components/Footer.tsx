@@ -23,16 +23,16 @@ const footerLinks = {
     { name: 'Innovation Space', href: '/mining/labs' },
     { name: 'Underground Centre', href: '/mining/norcat-underground' },
   ],
-  resources: [
-    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
-    { name: 'Impact', href: '/impact' },
+  insights: [
     { name: 'Success Stories', href: '/insights/success-stories' },
     { name: 'News', href: '/insights/news' },
+    { name: 'Impact', href: '/impact' },
     { name: 'Events', href: '/events' },
   ],
   company: [
     { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
     { name: 'About Us', href: '/about' },
+    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
     { name: 'Client Portal', href: '/portal/auth' },
   ],
 };
@@ -133,11 +133,11 @@ export function Footer() {
                 </ul>
               </div>
 
-              {/* Resources */}
+              {/* Insights */}
               <div>
-                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Resources</h4>
+                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Insights</h4>
                 <ul className="space-y-2.5">
-                  {footerLinks.resources.map((link) => (
+                  {footerLinks.insights.map((link) => (
                     <li key={link.name}>
                       <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
                         {link.name}

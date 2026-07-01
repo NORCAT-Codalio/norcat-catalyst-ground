@@ -22,8 +22,8 @@ type MenuEntry = {
 const aboutItems: MenuEntry[] = [
   { name: 'Our Story', href: '/about', icon: BookOpen, description: 'How NORCAT Innovation became the North\'s launchpad for tough-tech.' },
   { name: 'Ecosystem Partners', href: '/ecosystem/sudbury', icon: Network, description: 'The industry, government, and community partners powering the ecosystem.' },
-  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the portfolio.' },
 ];
+
 
 const programsItems: MenuEntry[] = [
   { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
@@ -46,9 +46,11 @@ const servicesItems: MenuEntry[] = [
 ];
 
 const insightsItems: MenuEntry[] = [
+  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the portfolio.' },
   { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest funding rounds, partnerships, and ecosystem announcements.' },
   { name: 'Impact', href: '/impact', icon: BarChart3, description: 'The numbers behind the innovation happening across the ecosystem.' },
 ];
+
 
 
 
