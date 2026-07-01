@@ -154,70 +154,62 @@ const Funding = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* CIT Card */}
-              <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: NAVY }}>
-                <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
+              <div className="group relative rounded-2xl overflow-hidden border border-black/5 bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div className="relative h-48 sm:h-56 md:h-52 overflow-hidden">
                   <img src={citPlaceholder.url} alt="Critical Industrial Technologies" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${NAVY} 100%)` }} />
+                  <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.25) 100%)` }} />
                 </div>
-                <div className="relative p-6 md:p-8 flex flex-col flex-1">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${TEAL}20`, color: TEAL }}>
-                      <Cpu className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold leading-tight text-white">Critical Industrial Technologies</h3>
-                      <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>Ontario mining & industrial tough-tech</p>
-                    </div>
+                <div className="relative px-6 pb-8 pt-0 -mt-7 flex flex-col flex-1">
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg mb-5 z-10" style={{ background: TEAL, color: 'white' }}>
+                    <Cpu className="w-7 h-7" />
                   </div>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  <h3 className="text-xl md:text-2xl font-bold leading-tight text-[#001A4D] mb-2">Critical Industrial Technologies</h3>
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: TEAL }}>Ontario mining & industrial tough-tech</p>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.72)' }}>
                     Build, test, and validate hard-tech for the mining and industrial sector with access to funding, facilities, and buyers.
                   </p>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2.5 mb-6">
                     {['Non-dilutive project funding', 'Real-world testing in the Underground Centre', 'Direct pathways to mining OEMs'].map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
+                      <li key={b} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
+                        <CheckCircle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
                         {b}
                       </li>
                     ))}
                   </ul>
                   <Link to="/mining/critical-industrial-tech"
-                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start"
-                        style={{ background: TEAL, color: NAVY }}>
+                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start border hover:bg-[#00B398] hover:text-white transition-colors"
+                        style={{ borderColor: TEAL, color: TEAL }}>
                     Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
 
               {/* Core5 Card */}
-              <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: NAVY }}>
-                <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
+              <div className="group relative rounded-2xl overflow-hidden border border-black/5 bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div className="relative h-48 sm:h-56 md:h-52 overflow-hidden">
                   <img src={core5Placeholder.url} alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${NAVY} 100%)` }} />
+                  <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.25) 100%)` }} />
                 </div>
-                <div className="relative p-6 md:p-8 flex flex-col flex-1">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${TEAL}20`, color: TEAL }}>
-                      <Layers className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold leading-tight text-white">Core5</h3>
-                      <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>BEV / EV ventures across Northern Ontario</p>
-                    </div>
+                <div className="relative px-6 pb-8 pt-0 -mt-7 flex flex-col flex-1">
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg mb-5 z-10" style={{ background: TEAL, color: 'white' }}>
+                    <Layers className="w-7 h-7" />
                   </div>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  <h3 className="text-xl md:text-2xl font-bold leading-tight text-[#001A4D] mb-2">Core5</h3>
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: TEAL }}>BEV / EV ventures across Northern Ontario</p>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.72)' }}>
                     The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.
                   </p>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2.5 mb-6">
                     {['Startup & SME funding support', 'Access to R&D and testing facilities', 'Buyer / builder matchmaking'].map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
+                      <li key={b} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
+                        <CheckCircle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
                         {b}
                       </li>
                     ))}
                   </ul>
                   <Link to="/mining/core5"
-                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start"
-                        style={{ background: TEAL, color: NAVY }}>
+                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start border hover:bg-[#00B398] hover:text-white transition-colors"
+                        style={{ borderColor: TEAL, color: TEAL }}>
                     Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
