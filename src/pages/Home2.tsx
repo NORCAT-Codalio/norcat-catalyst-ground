@@ -263,7 +263,7 @@ export default function Home2() {
           </section>
 
         {/* ───── IMPACT STATS ───── */}
-        <section className="py-12 md:py-16" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
@@ -282,9 +282,9 @@ export default function Home2() {
         </section>
 
         {/* ───── WHAT IS NORCAT INNOVATION (light section) ───── */}
-        <section className="pt-12 md:pt-16 pb-16 md:pb-24" style={{ background: '#F2F3F6', color: '#001A4D' }}>
+        <section className="py-20 md:py-32" style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            <div className="max-w-7xl">
               <h2 className="font-black uppercase leading-[0.9] tracking-tight"
                   style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
                 <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ color: NAVY }}>
@@ -302,19 +302,19 @@ export default function Home2() {
                   FOR WHAT'S NEXT.
                 </span>
               </h2>
-
-              <div className="flex flex-col justify-center gap-6 md:gap-8 lg:pb-2">
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  NORCAT Innovation is a one-stop shop for tough-tech and IP-driven companies looking to move from idea to market with the right support, connections, and infrastructure behind them.
-                </p>
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  As Sudbury's Regional Innovation Centre, founders gain access to mentorship, capital connections, industry partners, prototyping support, and real-world validation, helping them grow here and compete anywhere.
-                </p>
-              </div>
             </div>
+
+            <div className="mt-14 md:mt-20 grid gap-8 md:grid-cols-12 lg:grid-cols-12 max-w-7xl">
+              <p className="md:col-start-1 md:col-span-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                NORCAT Innovation is a one-stop shop for tough-tech and IP-driven companies looking to move from idea to market with the right support, connections, and infrastructure behind them.
+              </p>
+              <p className="md:col-start-7 md:col-span-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                As Sudbury's Regional Innovation Centre, founders gain access to mentorship, capital connections, industry partners, prototyping support, and real-world validation, helping them grow here and compete anywhere.
+              </p>
+            </div>
+
           </div>
         </section>
-
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
