@@ -13,6 +13,7 @@ import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderAsset from '@/assets/hero-website-header.png.asset.json';
+import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
 
@@ -21,6 +22,7 @@ const norcatHalfLogo = norcatHalfLogoSquare.url;
 const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderImg = heroHeaderAsset.url;
+const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
@@ -187,14 +189,23 @@ export default function Home2() {
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-          {/* Background image spanning the full banner width */}
-          <div className="absolute inset-0 bg-no-repeat"
+          {/* Background image - no-person version on mobile/tablet, people version on desktop */}
+          <div className="absolute inset-0 bg-no-repeat lg:hidden"
+               style={{ backgroundImage: `url(${heroHeaderNoPersonImg})`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
+          <div className="absolute inset-0 bg-no-repeat hidden lg:block"
                style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
 
+          {/* Deep navy/teal readability gradient - stronger on mobile, left-weighted on desktop */}
+          <div className="absolute inset-0 pointer-events-none lg:hidden" style={{
+            background: 'linear-gradient(180deg, rgba(0,26,77,0.82) 0%, rgba(0,61,165,0.65) 55%, rgba(0,26,77,0.85) 100%)',
+          }} />
+          <div className="absolute inset-0 pointer-events-none hidden lg:block" style={{
+            background: 'linear-gradient(90deg, rgba(0,26,77,0.88) 0%, rgba(0,61,165,0.55) 45%, rgba(0,61,165,0.15) 70%, transparent 100%)',
+          }} />
 
           {/* radial glow */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
           <div className="relative w-full flex-1 flex flex-col items-stretch">
