@@ -372,7 +372,96 @@ export default function Home2() {
           </div>
         </section>
 
+        {/* ───── FEATURED PROGRAM TOGGLE ───── */}
+        <section className="py-12 md:py-20 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-8 md:mb-10">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Programs
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                Featured Pathway
+              </h2>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: '#475068' }}>
+                Explore one of our key programs built for tough-tech founders.
+              </p>
+            </div>
 
+            {/* Toggle pills */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {featuredPrograms.map((p, i) => (
+                <button
+                  key={p.shortName}
+                  onClick={() => setActiveProgramIndex(i)}
+                  className="px-4 py-2 rounded-full text-sm font-bold transition-all duration-200"
+                  style={{
+                    fontFamily: FONT,
+                    background: activeProgramIndex === i ? NAVY : 'transparent',
+                    color: activeProgramIndex === i ? 'white' : NAVY,
+                    border: `1px solid ${activeProgramIndex === i ? NAVY : '#d9dde5'}`,
+                  }}
+                  aria-pressed={activeProgramIndex === i}
+                >
+                  {p.shortName}
+                </button>
+              ))}
+            </div>
+
+            {/* Featured panel */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProgram.shortName}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="relative overflow-hidden rounded-2xl p-8 md:p-10 min-h-[320px] flex flex-col md:flex-row gap-8 md:gap-12"
+                style={{ background: activeProgram.bg, color: activeProgram.text }}
+              >
+                <img src={norcatHalfLogo} alt="" aria-hidden="true"
+                     className="absolute right-0 top-1/2 -translate-y-1/2 h-[130%] w-auto opacity-10 pointer-events-none" />
+                <div className="relative flex-1 flex flex-col">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center"
+                         style={{ background: activeProgram.accent, color: activeProgram.text === 'white' ? NAVY : 'white' }}>
+                      <activeProgram.icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-black uppercase text-2xl md:text-3xl lg:text-4xl tracking-tight"
+                        style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                      {activeProgram.name}
+                    </h3>
+                  </div>
+                  <p className="text-base md:text-lg leading-relaxed max-w-xl"
+                     style={{ color: activeProgram.text === 'white' ? 'rgba(255,255,255,0.9)' : 'rgba(0,26,77,0.85)' }}>
+                    {activeProgram.description}
+                  </p>
+                </div>
+                <div className="relative flex-1 flex flex-col justify-center">
+                  <ul className="space-y-3 mb-8">
+                    {activeProgram.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-3 text-sm md:text-base font-semibold">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: activeProgram.accent }} />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to={activeProgram.href}
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start"
+                        style={{ fontFamily: FONT, background: activeProgram.ctaBg, color: activeProgram.ctaText }}>
+                    {activeProgram.cta}
+                    <span className="inline-flex items-center justify-center size-7 rounded-full"
+                          style={{ background: activeProgram.ctaText === 'white' ? 'white' : NAVY, color: activeProgram.ctaText === 'white' ? NAVY : 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </Link>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </section>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
         <section className="relative py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
