@@ -232,75 +232,33 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">
-            {/* About */}
-            <Link
-              to="/about"
-              className={cn(
-                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                location.pathname === '/about'
-                  ? 'text-primary'
-                  : 'text-foreground/70 hover:text-foreground'
-              )}
-            >
-              About
-            </Link>
-
-            {/* Programs / Funding Triggers */}
-            {(['programs', 'funding'] as const).map((key) => {
-              const label = key === 'programs' ? 'Programs' : 'Funding';
-              return (
-                <div
-                  key={key}
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter(key)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <button
-                    className={cn(
-                      'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                      activeDropdown === key
-                        ? 'text-primary'
-                        : 'text-foreground/70 hover:text-foreground'
-                    )}
-                  >
-                    {label}
-                    <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
-                  </button>
-                </div>
-              );
-            })}
-
-            {/* Ecosystem */}
-            <Link
-              to="/ecosystem/sudbury"
-              className={cn(
-                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                location.pathname.startsWith('/ecosystem')
-                  ? 'text-primary'
-                  : 'text-foreground/70 hover:text-foreground'
-              )}
-            >
-              Ecosystem
-            </Link>
-
-            {/* Innovation Updates */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter('impact')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className={cn(
-                  'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                  activeDropdown === 'impact'
-                    ? 'text-primary'
-                    : 'text-foreground/70 hover:text-foreground'
-                )}
+            {/* About / Programs / Funding / Services / Insights Triggers */}
+            {([
+              { key: 'about', label: 'About' },
+              { key: 'programs', label: 'Programs' },
+              { key: 'funding', label: 'Funding' },
+              { key: 'services', label: 'Services' },
+              { key: 'insights', label: 'Insights' },
+            ] as const).map(({ key, label }) => (
+              <div
+                key={key}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(key)}
+                onMouseLeave={handleMouseLeave}
               >
-                Innovation Updates
-                <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === 'impact' && 'rotate-180 opacity-100')} />
-              </button>
-            </div>
+                <button
+                  className={cn(
+                    'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                    activeDropdown === key
+                      ? 'text-primary'
+                      : 'text-foreground/70 hover:text-foreground'
+                  )}
+                >
+                  {label}
+                  <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
+                </button>
+              </div>
+            ))}
 
             {/* Events */}
             <Link
@@ -314,6 +272,7 @@ export function Navigation() {
             >
               Events
             </Link>
+
 
             {/* Client Portal */}
             <Link
