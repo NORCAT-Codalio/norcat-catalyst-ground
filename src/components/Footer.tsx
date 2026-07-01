@@ -6,21 +6,23 @@ import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
 
 const footerLinks = {
   programs: [
-    { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-    { name: 'Mentorship Services', href: '/programs/mentorship-services' },
     { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
     { name: 'Core5', href: '/mining/core5' },
-    { name: 'Underground Centre', href: '/mining/norcat-underground' },
     { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-    { name: 'Innovation Space', href: '/mining/labs' },
   ],
   funding: [
     { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
     { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
     { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
   ],
+  services: [
+    { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
+    { name: 'Mentorship Services', href: '/programs/mentorship-services' },
+    { name: 'Innovation Space', href: '/mining/labs' },
+    { name: 'Underground Centre', href: '/mining/norcat-underground' },
+  ],
   resources: [
-    { name: 'Ecosystem', href: '/ecosystem/sudbury' },
+    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
     { name: 'Impact', href: '/impact' },
     { name: 'Success Stories', href: '/insights/success-stories' },
     { name: 'News', href: '/insights/news' },
@@ -57,7 +59,7 @@ export function Footer() {
         <div className="container mx-auto px-4 lg:px-8 pt-16 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Brand Column */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
+            <div className="lg:col-span-3 flex flex-col gap-6">
               <div>
                 <img src={norcatLogoBlack} alt="NORCAT" className="h-7 w-auto brightness-0 invert" />
                 <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-sm">
@@ -86,7 +88,7 @@ export function Footer() {
             </div>
 
             {/* Link Columns */}
-            <nav className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-6" aria-label="Footer Menu">
+            <nav className="lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6" aria-label="Footer Menu">
               {/* Programs */}
               <div>
                 <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Programs</h4>
@@ -106,6 +108,20 @@ export function Footer() {
                 <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Funding</h4>
                 <ul className="space-y-2.5">
                   {footerLinks.funding.map((link) => (
+                    <li key={link.name}>
+                      <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Services */}
+              <div>
+                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Services</h4>
+                <ul className="space-y-2.5">
+                  {footerLinks.services.map((link) => (
                     <li key={link.name}>
                       <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
                         {link.name}
