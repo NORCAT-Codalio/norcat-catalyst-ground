@@ -187,7 +187,6 @@ const Funding = () => {
               <div className="group relative rounded-2xl overflow-hidden border border-black/5 bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-52 overflow-hidden">
                   <img src={core5Placeholder.url} alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.25) 100%)` }} />
                 </div>
                 <div className="relative px-6 pb-8 pt-0 -mt-7 flex flex-col flex-1">
                   <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg mb-5 z-10" style={{ background: TEAL, color: 'white' }}>
