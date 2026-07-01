@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, Brain, Banknote, Cpu, Layers, DollarSign, Trendin
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import citPlaceholder from '@/assets/cit-hero-bg.jpg';
-import core5Placeholder from '@/assets/core5-preview.png';
+import core5Placeholder from '@/assets/core5-underground.jpg.asset.json';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
