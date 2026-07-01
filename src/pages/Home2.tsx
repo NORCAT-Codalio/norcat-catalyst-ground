@@ -329,10 +329,10 @@ export default function Home2() {
                   One ecosystem.<br />Three ways to grow.
                 </Display>
               </div>
-              <Link to="/programs/venture-growth-services"
+              <Link to="/programs"
                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
                     style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
-                Explore Programs
+                Explore Services
                 <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </span>
@@ -343,8 +343,8 @@ export default function Home2() {
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
-                const link = ['/programs/venture-growth-services', '/mining/norcat-underground', '/funding'][i];
-                const linkText = ['Explore Programs', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
+                const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
+                const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
                 const words = h.label.split(' ');
                 const last = words.pop();
                 const first = words.join(' ');
