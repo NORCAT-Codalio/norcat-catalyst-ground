@@ -19,6 +19,7 @@ import ValidateIdea from "./pages/ValidateIdea";
 import NotFound from "./pages/NotFound";
 
 // Programs pages
+import Programs from "./pages/programs/Programs";
 import VentureGrowthServices from "./pages/programs/VentureGrowthServices";
 import MentorshipServices from "./pages/programs/MentorshipServices";
 import CapitalNavigation from "./pages/programs/CapitalNavigation";
@@ -92,6 +93,7 @@ const App = () => (
             <Route path="/validate-idea" element={<ValidateIdea />} />
             
             {/* Programs Routes */}
+            <Route path="/programs" element={<Programs />} />
             <Route path="/programs/venture-growth-services" element={<VentureGrowthServices />} />
             <Route path="/programs/mentorship-services" element={<MentorshipServices />} />
             <Route path="/programs/capital-navigation" element={<CapitalNavigation />} />
