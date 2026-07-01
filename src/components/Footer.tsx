@@ -23,16 +23,16 @@ const footerLinks = {
     { name: 'Innovation Space', href: '/mining/labs' },
     { name: 'Underground Centre', href: '/mining/norcat-underground' },
   ],
-  resources: [
-    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
-    { name: 'Impact', href: '/impact' },
+  insights: [
     { name: 'Success Stories', href: '/insights/success-stories' },
     { name: 'News', href: '/insights/news' },
+    { name: 'Impact', href: '/impact' },
     { name: 'Events', href: '/events' },
   ],
   company: [
     { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
     { name: 'About Us', href: '/about' },
+    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
     { name: 'Client Portal', href: '/portal/auth' },
   ],
 };
