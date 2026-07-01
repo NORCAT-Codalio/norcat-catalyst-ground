@@ -47,6 +47,13 @@ const fundingPrograms = [
     description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors.',
     href: '/funding/sudbury-catalyst-fund',
   },
+  {
+    icon: Compass,
+    name: 'Capital Navigation',
+    tag: 'Advisory',
+    description: 'Strategic guidance to map, access, and stack the right capital across grants, equity, and debt.',
+    href: '/programs/capital-navigation',
+  },
 ];
 
 const impactStats = [
