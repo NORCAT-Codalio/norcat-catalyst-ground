@@ -15,6 +15,7 @@ const footerLinks = {
     { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
     { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
     { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
+    { name: 'Capital Navigation', href: '/programs/capital-navigation' },
   ],
   services: [
     { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
