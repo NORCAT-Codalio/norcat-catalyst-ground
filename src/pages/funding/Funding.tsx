@@ -47,6 +47,13 @@ const fundingPrograms = [
     description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors.',
     href: '/funding/sudbury-catalyst-fund',
   },
+  {
+    icon: Compass,
+    name: 'Capital Navigation',
+    tag: 'Advisory',
+    description: 'Strategic guidance to map, access, and stack the right capital across grants, equity, and debt.',
+    href: '/programs/capital-navigation',
+  },
 ];
 
 const impactStats = [
@@ -124,11 +131,11 @@ const Funding = () => {
                 Choose your <span style={{ color: TEAL }}>capital path.</span>
               </h2>
               <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Three flagship programs designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
+                Four flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {fundingPrograms.map((p) => (
                 <Link key={p.name} to={p.href}
                       className="group relative rounded-2xl p-7 bg-white border border-black/5 hover:border-transparent transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col">

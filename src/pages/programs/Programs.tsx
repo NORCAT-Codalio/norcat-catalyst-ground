@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket } from 'lucide-react';
+import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket, DollarSign } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
@@ -46,6 +46,13 @@ const programs = [
     tag: 'Cybersecurity',
     description: 'A national partnership delivering cybersecurity training, assessments, and mentorship tailored to mining and industrial companies.',
     href: '/partners/rogers-cybersecure',
+  },
+  {
+    icon: DollarSign,
+    name: 'Funding Programs',
+    tag: 'Capital',
+    description: 'Non-dilutive grants, seed capital, and dedicated funding streams for mining, industrial, and EV ventures scaling out of Northern Ontario.',
+    href: '/funding',
   },
 ];
 
@@ -115,14 +122,14 @@ const Programs = () => {
             <div className="max-w-3xl mb-14">
               <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Our Programs</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                Three pathways. One mission.
+                Four pathways. One mission.
               </h2>
               <p className="mt-4 text-base md:text-lg leading-relaxed" style={{ color: 'rgba(0,26,77,0.7)' }}>
-                Each program is a specialized front door for ventures building in critical industrial technology, battery and electric vehicles, or cybersecurity.
+                Specialized front doors for ventures building in critical industrial technology, battery and EV, cybersecurity - plus a dedicated funding stream to fuel the journey.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {programs.map((program) => {
                 const Icon = program.icon;
                 return (
