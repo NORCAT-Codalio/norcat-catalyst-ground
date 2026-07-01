@@ -10,12 +10,7 @@ const footerLinks = {
     { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
     { name: 'Core5', href: '/mining/core5' },
     { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
-  ],
-  funding: [
-    { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
-    { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program' },
-    { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
-    { name: 'Capital Navigation', href: '/programs/capital-navigation' },
+    { name: 'Funding Programs', href: '/funding' },
   ],
   services: [
     { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
@@ -90,26 +85,12 @@ export function Footer() {
             </div>
 
             {/* Link Columns */}
-            <nav className="lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6" aria-label="Footer Menu">
+            <nav className="lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-6" aria-label="Footer Menu">
               {/* Programs */}
               <div>
                 <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Programs</h4>
                 <ul className="space-y-2.5">
                   {footerLinks.programs.map((link) => (
-                    <li key={link.name}>
-                      <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Funding */}
-              <div>
-                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Funding</h4>
-                <ul className="space-y-2.5">
-                  {footerLinks.funding.map((link) => (
                     <li key={link.name}>
                       <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
                         {link.name}
