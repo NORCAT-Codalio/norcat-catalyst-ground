@@ -220,8 +220,7 @@ export default function Home2() {
                     <span className="text-white">SCALE</span>
                     <span className="text-white"> YOUR</span>
                   </div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-                       style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white">
                     TECH VENTURE.
                   </div>
                 </div>
