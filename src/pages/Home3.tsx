@@ -201,7 +201,7 @@ export default function Home3() {
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Turn your rough idea into a market-ready reality. Gain world-class mentorship, capital access, and strategic ecosystem infrastructure built to help IP-driven startups scale successfully.
+                We help Northern Ontario startups move from idea to market by connecting them to the mentorship, capital, industry relationships, and real-world validation they need to grow here and compete anywhere.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2.5">
