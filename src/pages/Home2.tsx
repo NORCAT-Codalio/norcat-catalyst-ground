@@ -12,7 +12,7 @@ import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
-import heroHeaderAsset from '@/assets/hero-website-header.png.asset.json';
+import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
@@ -21,7 +21,7 @@ const norcatBuilding = norcatBuildingAsset.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
 const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
-const heroHeaderImg = heroHeaderAsset.url;
+const heroHeaderDesktopImg = heroHeaderDesktopAsset.url;
 const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
@@ -189,18 +189,18 @@ export default function Home2() {
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden min-h-[80vh] flex flex-col"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-          {/* Background image - no-person version on mobile/tablet, people version on desktop */}
+          {/* Background image - no-person version on mobile/tablet, new people-right banner on desktop */}
           <div className="absolute inset-0 bg-no-repeat lg:hidden"
                style={{ backgroundImage: `url(${heroHeaderNoPersonImg})`, backgroundSize: 'cover', backgroundPosition: 'left center' }} />
           <div className="absolute inset-0 bg-no-repeat hidden lg:block"
-               style={{ backgroundImage: `url(${heroHeaderImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
+               style={{ backgroundImage: `url(${heroHeaderDesktopImg})`, backgroundSize: 'cover', backgroundPosition: 'center bottom' }} />
 
-          {/* Deep navy/teal readability gradient - heavier on the left where text lives */}
+          {/* Readability gradient - lighter on desktop because the new banner already has a clean left side */}
           <div className="absolute inset-0 pointer-events-none lg:hidden" style={{
             background: 'linear-gradient(180deg, rgba(0,26,77,0.92) 0%, rgba(0,61,120,0.78) 35%, rgba(0,179,152,0.55) 70%, rgba(0,179,152,0.35) 100%)',
           }} />
           <div className="absolute inset-0 pointer-events-none hidden lg:block" style={{
-            background: 'linear-gradient(90deg, rgba(0,26,77,0.96) 0%, rgba(0,26,77,0.90) 35%, rgba(0,61,120,0.72) 60%, rgba(0,61,120,0.40) 80%, rgba(0,179,152,0.15) 100%)',
+            background: 'linear-gradient(90deg, rgba(0,26,77,0.78) 0%, rgba(0,26,77,0.60) 30%, rgba(0,61,120,0.35) 55%, rgba(0,179,152,0.15) 75%, transparent 85%)',
           }} />
 
           {/* Top-left teal glow + bottom-right blue glow */}
