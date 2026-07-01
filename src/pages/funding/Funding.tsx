@@ -137,93 +137,88 @@ const Funding = () => {
         </section>
 
 
-        {/* INDUSTRY TRACK 1: CRITICAL INDUSTRIAL TECHNOLOGIES */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+        {/* INDUSTRY TRACKS */}
+        <section className="py-16 md:py-24" style={{ background: `linear-gradient(180deg, ${PAPER} 0%, white 100%)`, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-14">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Track</p>
+            <div className="max-w-3xl mb-10 md:mb-12">
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Tracks</p>
               <h2 className="text-3xl md:text-5xl font-black uppercase leading-[0.95]" style={{ letterSpacing: '-0.02em' }}>
-                Built for <span style={{ color: TEAL }}>Ontario mining.</span>
+                Built for <span style={{ color: TEAL }}>Ontario's sectors.</span>
               </h2>
-              <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Critical Industrial Technologies channel funding, facilities, and buyer access to the hard-tech ventures powering Ontario's mining and industrial sectors.
+              <p className="mt-4 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
+                Sector-specific funding and facilities for mining, industrial, and battery-electric ventures scaling across the North.
               </p>
             </div>
 
-            <div className="rounded-2xl p-8 bg-white border border-black/5 flex flex-col md:flex-row md:items-center gap-8">
-              <div className="flex-1">
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
-                       style={{ background: `linear-gradient(135deg, ${TEAL}20, ${BLUE}10)`, color: TEAL }}>
-                    <Cpu className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold leading-tight">Critical Industrial Technologies</h3>
-                    <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>For Ontario mining, industrial, and tough-tech companies</p>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* CIT Card */}
+              <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: NAVY }}>
+                <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
+                  <img src="/src/assets/cit-hero-bg.jpg" alt="Critical Industrial Technologies" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${NAVY} 100%)` }} />
                 </div>
-                <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.75)' }}>
-                  Build, test, and validate hard-tech for the mining and industrial sector with access to funding, facilities, and buyers.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {['Non-dilutive project funding', 'Real-world testing in the Underground Centre', 'Direct pathways to mining OEMs'].map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
-                      <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/mining/critical-industrial-tech"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm"
-                      style={{ background: NAVY, color: 'white' }}>
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="relative p-6 md:p-8 flex flex-col flex-1">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${TEAL}20`, color: TEAL }}>
+                      <Cpu className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold leading-tight text-white">Critical Industrial Technologies</h3>
+                      <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>Ontario mining & industrial tough-tech</p>
+                    </div>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    Build, test, and validate hard-tech for the mining and industrial sector with access to funding, facilities, and buyers.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {['Non-dilutive project funding', 'Real-world testing in the Underground Centre', 'Direct pathways to mining OEMs'].map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                        <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/mining/critical-industrial-tech"
+                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start"
+                        style={{ background: TEAL, color: NAVY }}>
+                    Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* INDUSTRY TRACK 2: CORE5 */}
-        <section className="py-20 md:py-28" style={{ background: 'white', color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-14">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Track</p>
-              <h2 className="text-3xl md:text-5xl font-black uppercase leading-[0.95]" style={{ letterSpacing: '-0.02em' }}>
-                Built for <span style={{ color: TEAL }}>BEV / EV ventures.</span>
-              </h2>
-              <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Core5 is the OVIN Northern Regional Technology Development Site supporting SMEs across the full battery and electric vehicle value chain.
-              </p>
-            </div>
-
-            <div className="rounded-2xl p-8 border border-black/5 flex flex-col md:flex-row md:items-center gap-8" style={{ background: PAPER }}>
-              <div className="flex-1">
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
-                       style={{ background: `linear-gradient(135deg, ${TEAL}20, ${BLUE}10)`, color: TEAL }}>
-                    <Layers className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold leading-tight">Core5</h3>
-                    <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>For BEV / EV ventures across Northern Ontario</p>
-                  </div>
+              {/* Core5 Card */}
+              <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: BLUE }}>
+                <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
+                  <img src="/src/assets/core5-preview.png" alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${BLUE} 100%)` }} />
                 </div>
-                <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.75)' }}>
-                  The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  {['Startup & SME funding support', 'Access to R&D and testing facilities', 'Buyer / builder matchmaking'].map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
-                      <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/mining/core5"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm"
-                      style={{ background: NAVY, color: 'white' }}>
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="relative p-6 md:p-8 flex flex-col flex-1">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.12)', color: 'white' }}>
+                      <Layers className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold leading-tight text-white">Core5</h3>
+                      <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>BEV / EV ventures across Northern Ontario</p>
+                    </div>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {['Startup & SME funding support', 'Access to R&D and testing facilities', 'Buyer / builder matchmaking'].map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                        <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/mining/core5"
+                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start"
+                        style={{ background: TEAL, color: NAVY }}>
+                    Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
