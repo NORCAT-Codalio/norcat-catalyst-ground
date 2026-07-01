@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';

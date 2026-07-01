@@ -1,65 +1,59 @@
-## Goal
-Apply the AODA audit's Part 2 markup fixes across the site without touching styling/copy, and add the Part 3 floating accessibility widget.
+Replace the proposed 3-card grid with a single interactive "Featured Program" panel that uses a toggle to switch between CIT, Core5, and RAII. The panel sits directly below the three Program Highlights cards on the homepage.
 
-## Part 2 — Markup compliance (non-visual changes only)
+### Design direction
 
-**1. Metadata (`index.html`)**
-- Keep `<html lang="en">` (already correct).
-- Fix viewport to `content="width=device-width, initial-scale=1"` (drop `.0`).
-- Per-page titles: add a small `<PageTitle title="…" />` helper (uses `useEffect` to set `document.title`) and drop it into every page in `src/pages/**` with a unique, location-specific title (e.g., "About — NORCAT Innovation", "Innovation Acceleration Program — NORCAT Innovation"). Default fallback stays in `index.html`.
+- Layout: A full-width featured band on the existing `#F2F3F6` background. Centered content with a single prominent featured card/panel and a horizontal pill toggle above it for program selection.
+- Toggle control:
+  - Three pill buttons: "CIT", "Core5", "RAII".
+  - Active state: navy background (`#001A4D`) with white text and a subtle teal left border or underline.
+  - Inactive state: transparent with navy text and a light border.
+  - Smooth transition between active states using a sliding background indicator or a simple color transition.
+- Featured panel anatomy:
+  - Left side: large icon, program name, and a short 2-3 sentence description.
+  - Right side: 2-3 key highlights/bullets and a primary CTA button.
+  - Optional: a subtle background watermark or gradient field behind the panel to separate it from the cards above.
+- Color scheme by program:
+  - CIT: deep navy (`#001A4D`) panel with teal accent and white text.
+  - Core5: innovation blue (`#003DA5`) panel with teal/white accent.
+  - RAII: teal (`#00B398`) panel with navy text for contrast.
+- Typography: `Open Sans` throughout, matching the page. Program name uses uppercase, font-black, tracking-tight. Body text uses white/90 on dark panels or navy/80 on the teal panel.
+- Styling details:
+  - Toggle pills: `rounded-full`, `px-4 py-2`, `text-sm font-bold`.
+  - Panel: `rounded-2xl`, `p-8 md:p-10`, `min-h-[320px]`, `flex flex-col md:flex-row gap-8`.
+  - CTA button: `rounded-full` with the existing arrow-circle pattern, using the contrasting color for the button background.
+- Responsive: Toggle pills remain horizontal on all sizes. Panel stacks vertically on mobile, with content first then bullets/CTA below.
+- Motion: Use `framer-motion` `AnimatePresence` to cross-fade the panel content when toggling between programs. Keep transitions under 300ms to feel snappy.
 
-**2. Alt text / decorative images**
-- Sweep `src/**/*.tsx` for `<img>` tags. Replace placeholder/filename alts (e.g. `alt="image-v2.png"`, alt equal to a logo filename) with intent-describing text.
-- Mark purely decorative imagery (signature lines, teal lines, divider graphics, icon-only `<img>`s) with `alt=""` and `aria-hidden="true"`.
-- For lucide-react icons used decoratively next to labelled text, add `aria-hidden="true"`.
-- CSS background images that carry meaning: wrap with a sibling `<span class="sr-only">` descriptive text node. Add a `.sr-only` utility in `src/index.css` if not already present.
+### Content
 
-**3. Visibility safeguards**
-- Audit `aria-hidden="true"` usages so none wrap focusable content. Loader/overlay components: ensure they receive `aria-hidden="true"` and `inert` (or `pointer-events-none` + removed from tab order) when not active.
+- Section eyebrow: "Programs"
+- Section headline: "Featured Pathway"
+- Section subhead: "Explore one of our key programs built for tough-tech founders."
 
-**4. Links & action targets**
-- Icon-only buttons (footer social links already labelled; check Navigation menu toggles, close buttons in modals, carousel arrows, theme toggles, mentor card expanders) → add `aria-label`.
-- Anchor tags that open menus/modals instead of navigating → switch to `<button>` where trivially possible, otherwise add `role="button"` + `aria-expanded` + `aria-controls`. Targets: `Navigation.tsx` dropdown triggers, mobile menu trigger, any `<a>` used as accordion/modal trigger.
-- "Learn more" / "Read more" / "View" style links: add contextual `aria-label` derived from the adjacent heading.
+Programs:
 
-**5. Semantic regions**
-- Wrap page body content in `<main>` inside `src/components/Layout.tsx` (verify it isn't already) — single `<main>` per page.
-- `Navigation.tsx`: ensure `<nav aria-label="Main Menu">`; mobile nav gets its own label; `Footer.tsx` nav columns get `<nav aria-label="Footer Menu">`.
-- `Footer.tsx`: ensure it renders as `<footer>` (already does) — confirm no duplicate `role="contentinfo"`.
+1. Critical Industrial Technologies (CIT)
+   - Icon: `Cpu`
+   - Description: "Build and test mining, energy, and advanced manufacturing tech in real industrial conditions."
+   - Highlights: ["Underground proving ground", "FedNor & industry partnerships", "From prototype to field trial"]
+   - CTA: "Explore CIT" → `/mining/critical-industrial-tech`
 
-Scope: changes are attribute/wrapper-only. No class names, colors, layout, or copy will change.
+2. Core5
+   - Icon: `Layers`
+   - Description: "A five-pillar growth framework for founders ready to move from prototype to commercial traction."
+   - Highlights: ["Commercialization roadmap", "Mentor & investor network", "IP & go-to-market strategy"]
+   - CTA: "Explore Core5" → `/mining/core5`
 
-## Part 3 — Accessibility widget
+3. RAII (AI Program)
+   - Icon: `Brain`
+   - Description: "Accelerate applied AI/ML adoption with access to compute, data, and industry validation partners."
+   - Highlights: ["Applied AI/ML focus", "Compute & data access", "Industry validation partners"]
+   - CTA: "Explore RAII" → `/programs/raii` (or `/programs` if RAII page does not exist yet)
 
-New component `src/components/accessibility/AccessibilityWidget.tsx` mounted once in `src/App.tsx` (inside `BrowserRouter`, outside `<Routes>`).
+### Implementation steps
 
-**Trigger**
-- Fixed floating button bottom-right (z-index above app chrome), circular, accessibility icon (lucide `Accessibility`), `aria-label="Open accessibility menu"`, `aria-expanded`, `aria-controls="aoda-panel"`.
-
-**Panel**
-- Slide-in panel (role="dialog", aria-modal="false", aria-labelledby), focus-trapped while open, ESC closes, click-outside closes.
-- Sections with toggle buttons (each `aria-pressed`):
-  - Contrast: Dark Contrast, Light Contrast, Monochrome (mutually exclusive within Contrast group).
-  - Typography: Larger Text (cycles 100/125/150/175/200%), Readable Font.
-  - Visual: Highlight Links, Highlight Headings.
-  - Keyboard: Enhanced Focus Indicators.
-  - Reset All.
-
-**State persistence**
-- React state + `localStorage` key `aoda-prefs`. On mount, apply saved prefs by toggling classes on `document.documentElement`.
-
-**Styling**
-- New stylesheet `src/styles/aoda.css` imported from `src/main.tsx`. Contains:
-  - The reference classes from the spec (`.aoda-high-contrast`, `.aoda-monochrome`, `.aoda-large-text*`, `.aoda-readable-font`, `.aoda-highlight-links`) plus `.aoda-dark-contrast` (#121212/#FFFFFF), `.aoda-light-contrast` (#FFFFFF/#000000), `.aoda-highlight-headings`, `.aoda-text-scale-{125,150,175,200}` (font-size via root `--aoda-text-scale`).
-  - `.aoda-focus-ring :focus-visible { outline: 3px solid #2B6CB0 !important; outline-offset: 2px; }`.
-- Widget's own UI uses Tailwind utilities consistent with existing design tokens; it is the only new visual element added.
-
-## Out of scope
-- No content rewrites.
-- No design token changes.
-- No backend/auth/database changes.
-
-## Verification
-- Build passes.
-- Spot-check via Playwright: open homepage, toggle each widget option, screenshot to confirm classes apply and revert on Reset.
-- Keyboard tab through nav + widget to confirm focus rings and aria-expanded states.
+1. In `src/pages/Home2.tsx`, insert the new "Featured Program" section immediately after the closing `</section>` of the Program Highlights block (currently around line 325).
+2. Add a `featuredPrograms` data array with the three program objects and a `useState` index for the active toggle.
+3. Build a small inline component with the toggle buttons and the animated panel.
+4. Verify the panel text contrasts correctly on each of the three color backgrounds, especially the teal RAII panel.
+5. Run a quick build check and verify the toggle works in the preview on desktop and mobile.
