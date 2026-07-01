@@ -16,8 +16,8 @@ export function CircuitIQTestimonial() {
             <div className="liquid-glass-strong glass-shimmer rounded-3xl p-10 md:p-14 text-center">
               <Quote className="w-10 h-10 mx-auto mb-8 opacity-30" style={{ color: 'hsl(168, 100%, 35%)' }} />
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/80 mb-10">
-                Building a startup is lonely. NORCAT's community pulled me in, but the expert support—from mentorship to
-                capital access—is what's kept me here. The value is real.
+                Building a startup is lonely. NORCAT's community pulled me in, but the expert support-from mentorship to
+                capital access-is what's kept me here. The value is real.
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: 'hsl(168 100% 35% / 0.15)', border: '1px solid hsl(168 100% 35% / 0.3)' }}>

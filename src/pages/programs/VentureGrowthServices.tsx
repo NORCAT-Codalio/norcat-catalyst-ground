@@ -36,7 +36,7 @@ const programStructure = [
 
 
 const differentiators = [
-  { icon: Compass, title: 'Hands-On, Not Hands-Off', description: "We roll up our sleeves and work alongside you. This isn't passive mentorship — it's active partnership in your success." },
+  { icon: Compass, title: 'Hands-On, Not Hands-Off', description: "We roll up our sleeves and work alongside you. This isn't passive mentorship - it's active partnership in your success." },
   { icon: Target, title: 'Industry-Connected', description: 'Deep relationships with mining, industrial, and technology sectors mean real customer introductions, not just advice.' },
   { icon: Zap, title: 'Northern Advantage', description: "Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada's most established mining ecosystems." },
 ];
@@ -211,7 +211,7 @@ export default function VentureGrowthServices() {
                           {/* Workshop floor */}
                           <line x1="0" y1="92.5" x2="200" y2="92.5" stroke={TEAL} strokeWidth="0.5" opacity="0.6" />
 
-                          {/* ── 3D PRINTER (left) — morphs in from base ── */}
+                          {/* ── 3D PRINTER (left) - morphs in from base ── */}
                           <g className="printer-rig">
                             {/* Frame posts */}
                             <rect x="14" y="20" width="2.5" height="70" fill={NAVY} />
@@ -238,7 +238,7 @@ export default function VentureGrowthServices() {
                             </g>
                           </g>
 
-                          {/* ── ROBOTIC ARM (right) — morphs in from base ── */}
+                          {/* ── ROBOTIC ARM (right) - morphs in from base ── */}
                           <g className="arm-rig">
                             {/* Base */}
                             <rect x="138" y="84" width="34" height="9" rx="1" fill={NAVY} />
@@ -366,7 +366,7 @@ export default function VentureGrowthServices() {
                     )}
                     {isOngoing && (
                       <div className="pointer-events-none absolute left-0 right-0 bottom-full h-[160px] px-4 flex flex-col justify-end gap-1.5 pb-2">
-                        {/* Incoming bubble (left, navy) — iMessage style */}
+                        {/* Incoming bubble (left, navy) - iMessage style */}
                         <div
                           className="relative self-start max-w-[85%] origin-bottom-left scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500"
                           style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 1)', transitionDelay: '120ms' }}
@@ -391,7 +391,7 @@ export default function VentureGrowthServices() {
                             }}
                           />
                         </div>
-                        {/* Outgoing bubble (right, teal) — iMessage style */}
+                        {/* Outgoing bubble (right, teal) - iMessage style */}
                         <div
                           className="relative self-end max-w-[90%] origin-bottom-right scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500"
                           style={{ transitionTimingFunction: 'cubic-bezier(0.5, 1.6, 0.4, 1)', transitionDelay: '720ms' }}

@@ -243,7 +243,7 @@ export default function About() {
                   The Story of <span style={{ color: TEAL }}>NORCAT.</span>
                 </Display>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub — built on a single belief: keep Northern talent in the North.
+                  From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub - built on a single belief: keep Northern talent in the North.
                 </p>
 
                 {/* Three-box image collage */}
@@ -268,9 +268,9 @@ export default function About() {
                 <div className="space-y-10 md:space-y-12">
                   {[
                     { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
-                    { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit — putting Sudbury on the global mining-tech map.' },
+                    { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit - putting Sudbury on the global mining-tech map.' },
                     { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
-                    { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive — ecosystem pillars under one roof.' },
+                    { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive - ecosystem pillars under one roof.' },
                     { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
                   ].map((m) => (
                     <div key={m.year} className="relative">
@@ -434,7 +434,7 @@ export default function About() {
                 {
                   icon: Zap,
                   title: 'Agile and Adaptive',
-                  desc: 'We celebrate creativity, innovation, and challenging constraints. We are bold. We move fast. We are open. We recognize that day one will never look like day two — and we thrive in that environment. Many people dislike change, but remember — change is the only thing that has brought progress.',
+                  desc: 'We celebrate creativity, innovation, and challenging constraints. We are bold. We move fast. We are open. We recognize that day one will never look like day two - and we thrive in that environment. Many people dislike change, but remember - change is the only thing that has brought progress.',
                 },
                 {
                   icon: ShieldCheck,
@@ -497,7 +497,7 @@ export default function About() {
                 <div key={a.title} className="group flex flex-col items-center text-center transition hover:-translate-y-1">
                   <img
                     src={a.img}
-                    alt={`${a.title} — ${a.org}`}
+                    alt={`${a.title} - ${a.org}`}
                     loading="lazy"
                     width={512}
                     height={512}
@@ -512,7 +512,7 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── PARTNERS — Powered by ───── */}
+        {/* ───── PARTNERS - Powered by ───── */}
 
         <section className="pt-20 md:pt-24 pb-10 md:pb-12" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">

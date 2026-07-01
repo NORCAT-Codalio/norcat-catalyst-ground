@@ -178,7 +178,7 @@ const SudburyCatalystFund = () => {
               </p>
             </div>
 
-            {/* Featured stats — 3 big cards */}
+            {/* Featured stats - 3 big cards */}
             <div className="grid sm:grid-cols-3 gap-4 mb-14 md:mb-20">
               <div
                 className="rounded-2xl p-8 md:p-10 text-center"
@@ -197,7 +197,7 @@ const SudburyCatalystFund = () => {
               </div>
             </div>
 
-            {/* Detail stats — horizontal bar */}
+            {/* Detail stats - horizontal bar */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 px-6 md:px-10 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
               {overviewStats.map((s) => (
                 <div key={s.label} className="flex items-center gap-4">

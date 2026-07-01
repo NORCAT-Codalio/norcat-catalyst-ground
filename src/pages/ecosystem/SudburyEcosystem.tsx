@@ -163,10 +163,10 @@ const SudburyEcosystem = () => {
               </div>
               <div className="lg:col-span-7 lg:pt-4">
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  Greater Sudbury punches well above its weight. Support organizations, dedicated funding programs, world-class research institutions, and a deep bench of industry partners all converge to give founders something rare — an ecosystem where every layer of the journey, from idea to scale, is locally accessible.
+                  Greater Sudbury punches well above its weight. Support organizations, dedicated funding programs, world-class research institutions, and a deep bench of industry partners all converge to give founders something rare - an ecosystem where every layer of the journey, from idea to scale, is locally accessible.
                 </p>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  NORCAT Innovation sits at the centre of this network, connecting founders to the right people, programs, and capital — without the noise.
+                  NORCAT Innovation sits at the centre of this network, connecting founders to the right people, programs, and capital - without the noise.
                 </p>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 py-7" style={{ borderTop: '1px solid #d9dde5', borderBottom: '1px solid #d9dde5' }}>
                   {stats.map((s) => (

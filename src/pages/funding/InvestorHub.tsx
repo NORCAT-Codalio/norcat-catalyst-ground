@@ -123,7 +123,7 @@ const InvestorHub = () => {
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 The capital environment founders were trained for no longer exists.
-                This isn't a market correction — it's a structural shift. We help
+                This isn't a market correction - it's a structural shift. We help
                 you navigate the new era of raising capital.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -168,7 +168,7 @@ const InvestorHub = () => {
                   2025: The worst year<br /><span style={{ color: TEAL }}>for Canadian VC since 2016.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
-                  Only $2.1B raised by 21 funds — the lowest since 2016. 83% of capital
+                  Only $2.1B raised by 21 funds - the lowest since 2016. 83% of capital
                   concentrated in Canada's five largest funds. Emerging managers at record
                   lows. LPs pulling back due to lack of exits.
                 </p>
@@ -211,7 +211,7 @@ const InvestorHub = () => {
                 Capital navigation<br /><span style={{ color: TEAL }}>for the new era.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                We don't just help you raise investment — we help you build a durable
+                We don't just help you raise investment - we help you build a durable
                 company. Revenue-led growth, strategic partnerships, intentional
                 non-dilutive funding. We explore all options and guide you forward.
               </p>
@@ -356,7 +356,7 @@ const InvestorHub = () => {
           </div>
         </section>
 
-        {/* ───── VENTURE NORTH PITCH — Flagship Event (VNA style) ───── */}
+        {/* ───── VENTURE NORTH PITCH - Flagship Event (VNA style) ───── */}
         <section
           id="venture-north"
           className="relative pt-24 pb-20 md:pt-36 md:pb-28 overflow-hidden min-h-[80vh] flex items-center"
@@ -395,7 +395,7 @@ const InvestorHub = () => {
 
               <p className="mt-5 md:mt-7 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 Northern Ontario's premier pitch event. Think Dragon's Den, but for the
-                innovators building the future of our region — connecting bold founders
+                innovators building the future of our region - connecting bold founders
                 with the investors, partners, and capital ready to back what's next.
               </p>
 
@@ -444,7 +444,7 @@ const InvestorHub = () => {
                 </div>
               </div>
 
-              {/* Stats — VNA border-left treatment */}
+              {/* Stats - VNA border-left treatment */}
               <div className="mt-10 grid grid-cols-3 gap-6">
                 {vnpStats.map((s) => (
                   <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
@@ -470,7 +470,7 @@ const InvestorHub = () => {
             </h2>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
               Whether you're exploring non-dilutive funding, building strategic
-              partnerships, or preparing for the right investor conversation — we're
+              partnerships, or preparing for the right investor conversation - we're
               here to help you find the best path for your company.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

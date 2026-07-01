@@ -437,7 +437,7 @@
     pointer-events: none;
   }
 
-  /* Light Liquid Glass — for white/off-white sections */
+  /* Light Liquid Glass - for white/off-white sections */
   .liquid-glass-light {
     background: linear-gradient(
       135deg,
@@ -486,7 +486,7 @@
       0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
-  /* Glassmorphic frosted button — recessed pill */
+  /* Glassmorphic frosted button - recessed pill */
   .glass-frosted-btn {
     background: linear-gradient(
       160deg,

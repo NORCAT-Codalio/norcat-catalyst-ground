@@ -80,14 +80,14 @@ const stats = [
 ];
 
 const benefits = [
-  { icon: Target, title: 'Real-World Validation', description: 'Proof points that move enterprise sales cycles — generated in an active mine, not a lab.' },
+  { icon: Target, title: 'Real-World Validation', description: 'Proof points that move enterprise sales cycles - generated in an active mine, not a lab.' },
   { icon: Globe, title: 'Global Credibility', description: 'Validation recognized by mining operators across 50+ countries.' },
-  { icon: Users, title: 'Customer Demonstrations', description: 'Host buyers live, underground — let them see your tech work where it matters.' },
+  { icon: Users, title: 'Customer Demonstrations', description: 'Host buyers live, underground - let them see your tech work where it matters.' },
   { icon: Lightbulb, title: 'Expert Support', description: 'Operate alongside NORCAT mining engineers, instructors and technologists.' },
 ];
 
 const useCases = [
-  { tag: 'OEMs', title: 'Equipment Trials', copy: 'De-risk new machinery — battery EVs, drills, loaders, scoops — in an active production environment.' },
+  { tag: 'OEMs', title: 'Equipment Trials', copy: 'De-risk new machinery - battery EVs, drills, loaders, scoops - in an active production environment.' },
   { tag: 'Software', title: 'Connectivity & Data', copy: 'Stress-test 5G, LTE, leaky feeder, sensors and analytics platforms against real underground conditions.' },
   { tag: 'Startups', title: 'TRL Acceleration', copy: 'Move from prototype to commercial-ready faster with structured testing programs and customer access.' },
   { tag: 'Operators', title: 'Workforce Training', copy: 'Use the facility for instructor-led, hands-on training programs for the next generation of miners.' },
@@ -132,7 +132,7 @@ const NorcatUnderground = () => {
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                A fully operational, working mine — purpose-built for industry to test, validate and
+                A fully operational, working mine - purpose-built for industry to test, validate and
                 prove next-generation mining technology in real underground conditions.
               </p>
 
@@ -193,7 +193,7 @@ const NorcatUnderground = () => {
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5" style={{ color: '#475068' }}>
                   There is no simulator for the real thing. NORCAT Underground is a fully
-                  operational mine — three kilometres of active tunnels — purpose-built for
+                  operational mine - three kilometres of active tunnels - purpose-built for
                   technology trials, demonstrations and hands-on training.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
@@ -229,7 +229,7 @@ const NorcatUnderground = () => {
                   >
                     <p className="text-[10px] uppercase tracking-[0.22em] font-bold mb-2" style={{ color: TEAL }}>One of one</p>
                     <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                      The only facility of its kind on Earth — an active mine you can book.
+                      The only facility of its kind on Earth - an active mine you can book.
                     </p>
                   </div>
                 </div>
@@ -262,7 +262,7 @@ const NorcatUnderground = () => {
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
                 From autonomous vehicles and battery-electric equipment to 5G, sensors and AI
-                platforms — every category of mining technology has been tested here.
+                platforms - every category of mining technology has been tested here.
               </p>
             </div>
 
@@ -342,7 +342,7 @@ const NorcatUnderground = () => {
                 The credibility<br /><span style={{ color: TEAL }}>you need to win.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                Mining companies do not buy on promises. They buy on proof — and proof is what
+                Mining companies do not buy on promises. They buy on proof - and proof is what
                 we manufacture, underground, every day.
               </p>
             </div>

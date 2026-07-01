@@ -366,7 +366,7 @@ export default function Index() {
           </svg>
         </div>
 
-        {/* ───── PROGRAMS — Insight Cards Grid ───── */}
+        {/* ───── PROGRAMS - Insight Cards Grid ───── */}
         <section className="relative pt-12 pb-0 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
           {/* Subtle teal orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(168 100% 35% / 0.08) 0%, transparent 60%)' }} />
@@ -410,7 +410,7 @@ export default function Index() {
 
 
 
-        {/* ───── INSIGHTS 2 — Reports & Resources ───── */}
+        {/* ───── INSIGHTS 2 - Reports & Resources ───── */}
         <section className="relative pt-16 pb-0" style={{ background: 'hsl(220 15% 92%)' }}>
           <div className="container mx-auto px-6 relative z-10">
             <ScrollReveal>
@@ -448,7 +448,7 @@ export default function Index() {
 
       </section>
 
-      {/* ───── PORTFOLIO COMPANIES — Logo Carousel ───── */}
+      {/* ───── PORTFOLIO COMPANIES - Logo Carousel ───── */}
       <section className="relative py-10 overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="relative overflow-hidden">
           <motion.div
