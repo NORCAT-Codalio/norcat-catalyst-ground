@@ -342,6 +342,91 @@ export default function Home2() {
           </div>
         </section>
 
+        {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
+        <section className="relative py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
+          </div>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+              <div className="max-w-2xl">
+                <Eyebrow>Insights</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  Real Stories.<br />Unique Insights.
+                </Display>
+                <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
+                  Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
+                </p>
+              </div>
+              <Link to="/insights/reports"
+                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
+                    style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
+                View all reports
+                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Horizontally scrollable cards */}
+          <div ref={storiesScrollRef} className="pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide">
+            <div className="flex gap-5 pr-6 items-stretch" style={{ width: 'max-content' }}>
+              {[
+                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories', wide: false },
+                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news', wide: true },
+                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports', wide: false },
+                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem', wide: false },
+                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories', wide: false },
+                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news', wide: false },
+                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports', wide: false },
+              ].map((post) => (
+                <Link key={post.title} to={post.link} className="group block h-full">
+                  <div className={`relative rounded-2xl overflow-hidden h-[420px] hover:scale-[1.02] transition-transform duration-300 ${post.wide ? 'w-[700px]' : 'w-[380px]'}`}>
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
+                        background: 'hsla(168, 100%, 35%, 0.2)',
+                        color: 'hsl(168, 100%, 60%)',
+                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                        backdropFilter: 'blur(8px)',
+                      }}>{post.category}</span>
+                      <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: FONT }}>{post.title}</h3>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
+                        Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation arrows */}
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
+            <div className="flex justify-end mt-8 gap-3">
+              <button
+                onClick={() => storiesScrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
+                aria-label="Scroll left"
+              >
+                <ChevronRight className="w-5 h-5 text-white/80 rotate-180" />
+              </button>
+              <button
+                onClick={() => storiesScrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="w-5 h-5 text-white/80" />
+              </button>
+            </div>
+          </div>
+        </section>
+
+
         {/* ───── WHO IT'S FOR (light) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden"
                  style={{ background: '#F2F3F6', color: '#001A4D' }}>
@@ -435,90 +520,6 @@ export default function Home2() {
                   </Link>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
-        <section className="relative py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
-          </div>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-              <div className="max-w-2xl">
-                <Eyebrow>Insights</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Real Stories.<br />Unique Insights.
-                </Display>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
-                  Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
-                </p>
-              </div>
-              <Link to="/insights/reports"
-                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
-                    style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
-                View all reports
-                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Horizontally scrollable cards */}
-          <div ref={storiesScrollRef} className="pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))] overflow-x-auto overflow-y-hidden scrollbar-hide">
-            <div className="flex gap-5 pr-6 items-stretch" style={{ width: 'max-content' }}>
-              {[
-                { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories', wide: false },
-                { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news', wide: true },
-                { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports', wide: false },
-                { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem', wide: false },
-                { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories', wide: false },
-                { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news', wide: false },
-                { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports', wide: false },
-              ].map((post) => (
-                <Link key={post.title} to={post.link} className="group block h-full">
-                  <div className={`relative rounded-2xl overflow-hidden h-[420px] hover:scale-[1.02] transition-transform duration-300 ${post.wide ? 'w-[700px]' : 'w-[380px]'}`}>
-                    <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
-                        background: 'hsla(168, 100%, 35%, 0.2)',
-                        color: 'hsl(168, 100%, 60%)',
-                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
-                        backdropFilter: 'blur(8px)',
-                      }}>{post.category}</span>
-                      <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: FONT }}>{post.title}</h3>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
-                        Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation arrows */}
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
-            <div className="flex justify-end mt-8 gap-3">
-              <button
-                onClick={() => storiesScrollRef.current?.scrollBy({ left: -400, behavior: 'smooth' })}
-                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-                style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
-                aria-label="Scroll left"
-              >
-                <ChevronRight className="w-5 h-5 text-white/80 rotate-180" />
-              </button>
-              <button
-                onClick={() => storiesScrollRef.current?.scrollBy({ left: 400, behavior: 'smooth' })}
-                className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
-                style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-5 h-5 text-white/80" />
-              </button>
             </div>
           </div>
         </section>
@@ -675,4 +676,3 @@ export default function Home2() {
     </Layout>
   );
 }
-
