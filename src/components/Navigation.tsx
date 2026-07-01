@@ -35,6 +35,7 @@ const fundingItems: MenuEntry[] = [
   { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program', icon: Sparkles, description: 'Non-dilutive funding to accelerate market entry.' },
   { name: 'Regional Artificial Intelligence Program', href: '/funding/regional-ai-program', icon: Brain, description: 'Funding and support for AI-driven ventures in the North.' },
   { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
+  { name: 'Capital Navigation', href: '/programs/capital-navigation', icon: Compass, description: 'Strategic guidance to map, access, and stack the right capital.' },
 ];
 
 const servicesItems: MenuEntry[] = [
