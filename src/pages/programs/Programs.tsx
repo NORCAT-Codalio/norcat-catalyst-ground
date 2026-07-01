@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Compass, Rocket } from 'lucide-react';
+import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
@@ -103,10 +103,6 @@ const Programs = () => {
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
                       style={{ background: TEAL, color: NAVY }}>
                   Become a Client <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link to="/funding"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border border-white/25 text-white hover:bg-white/10">
-                  Explore Funding Pathways <Compass className="w-4 h-4" />
                 </Link>
               </div>
             </div>
