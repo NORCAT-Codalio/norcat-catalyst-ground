@@ -200,7 +200,7 @@ export default function Home2() {
             background: 'linear-gradient(180deg, rgba(0,26,77,0.92) 0%, rgba(0,61,120,0.78) 35%, rgba(0,179,152,0.55) 70%, rgba(0,179,152,0.35) 100%)',
           }} />
           <div className="absolute inset-0 pointer-events-none hidden lg:block" style={{
-            background: 'linear-gradient(90deg, rgba(0,26,77,0.80) 0%, rgba(0,26,77,0.50) 25%, rgba(0,61,120,0.25) 45%, transparent 65%)',
+            background: 'linear-gradient(90deg, rgba(0,26,77,0.78) 0%, rgba(0,26,77,0.60) 30%, rgba(0,61,120,0.35) 55%, rgba(0,179,152,0.15) 75%, transparent 85%)',
           }} />
 
           {/* Top-left teal glow + bottom-right blue glow */}
