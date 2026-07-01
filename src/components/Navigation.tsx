@@ -4,7 +4,7 @@ import {
   Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, LogIn, Phone,
   TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
   Sparkles, Brain, Banknote,
-  Network, BarChart3, Star, Newspaper, Calendar,
+  Network, BarChart3, Star, Newspaper, Calendar, BookOpen,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -19,14 +19,17 @@ type MenuEntry = {
 };
 
 // Menu structure
+const aboutItems: MenuEntry[] = [
+  { name: 'Our Story', href: '/about', icon: BookOpen, description: 'How NORCAT Innovation became the North\'s launchpad for tough-tech.' },
+  { name: 'Ecosystem Partners', href: '/ecosystem/sudbury', icon: Network, description: 'The industry, government, and community partners powering the ecosystem.' },
+  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the portfolio.' },
+];
+
 const programsItems: MenuEntry[] = [
   { name: 'Venture Growth Services', href: '/programs/venture-growth-services', icon: TrendingUp, description: 'Hands-on support to take your venture from idea to scale.' },
-  { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
   { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
   { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
-  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
   { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
-  { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
 ];
 
 const fundingItems: MenuEntry[] = [
@@ -35,13 +38,17 @@ const fundingItems: MenuEntry[] = [
   { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund', icon: Banknote, description: '$3M early-stage capital for Northern innovators.' },
 ];
 
-
-
-
-const impactItems: MenuEntry[] = [
-  { name: 'News & Insight', href: '/impact', icon: BarChart3, description: 'Numbers behind the innovation happening across the ecosystem.' },
-  { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys, case studies, and the latest news from the ecosystem.' },
+const servicesItems: MenuEntry[] = [
+  { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
+  { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
+  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
 ];
+
+const insightsItems: MenuEntry[] = [
+  { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest funding rounds, partnerships, and ecosystem announcements.' },
+  { name: 'Impact', href: '/impact', icon: BarChart3, description: 'The numbers behind the innovation happening across the ecosystem.' },
+];
+
 
 
 
