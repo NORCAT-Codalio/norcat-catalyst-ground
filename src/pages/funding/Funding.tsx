@@ -191,7 +191,7 @@ const Funding = () => {
               {/* Core5 Card */}
               <div className="group relative rounded-2xl overflow-hidden border border-black/5 flex flex-col" style={{ background: BLUE }}>
                 <div className="h-44 sm:h-52 md:h-48 overflow-hidden">
-                  <img src={core5Placeholder} alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={core5Placeholder.url} alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 h-44 sm:h-52 md:h-48" style={{ background: `linear-gradient(180deg, transparent 30%, ${BLUE} 100%)` }} />
                 </div>
                 <div className="relative p-6 md:p-8 flex flex-col flex-1">
