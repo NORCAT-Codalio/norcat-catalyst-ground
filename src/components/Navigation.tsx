@@ -325,13 +325,13 @@ export function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-2">
             <Link
-              to="/apply"
+              to="/portal/auth"
               className="group inline-flex items-center gap-1.5 text-[13px] font-semibold px-4 py-2 rounded-full text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)]"
               style={{
                 background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)',
               }}
             >
-              Validate my Idea
+              Become a Client
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
@@ -579,8 +579,8 @@ export function Navigation() {
 
                 <div className="pt-4 border-t border-border mt-4 space-y-3">
                   <Button asChild variant="default" className="w-full btn-primary">
-                    <Link to="/apply">
-                      Validate my Idea
+                    <Link to="/portal/auth">
+                      Become a Client
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
