@@ -19,6 +19,7 @@ import ValidateIdea from "./pages/ValidateIdea";
 import NotFound from "./pages/NotFound";
 
 // Programs pages
+import Programs from "./pages/programs/Programs";
 import VentureGrowthServices from "./pages/programs/VentureGrowthServices";
 import MentorshipServices from "./pages/programs/MentorshipServices";
 import CapitalNavigation from "./pages/programs/CapitalNavigation";
