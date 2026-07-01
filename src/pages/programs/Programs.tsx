@@ -47,6 +47,13 @@ const programs = [
     description: 'A national partnership delivering cybersecurity training, assessments, and mentorship tailored to mining and industrial companies.',
     href: '/partners/rogers-cybersecure',
   },
+  {
+    icon: DollarSign,
+    name: 'Funding Programs',
+    tag: 'Capital',
+    description: 'Non-dilutive grants, seed capital, and dedicated funding streams for mining, industrial, and EV ventures scaling out of Northern Ontario.',
+    href: '/funding',
+  },
 ];
 
 const fundingPathways = [
