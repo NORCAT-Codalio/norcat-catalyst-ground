@@ -12,7 +12,7 @@ import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
-import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop.png.asset.json';
+import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
