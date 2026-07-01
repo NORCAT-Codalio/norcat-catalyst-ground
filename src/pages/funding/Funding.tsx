@@ -184,48 +184,94 @@ const Funding = () => {
           </div>
         </section>
 
-        {/* INDUSTRY TRACKS: CIT + CORE5 */}
+        {/* INDUSTRY TRACK 1: CRITICAL INDUSTRIAL TECHNOLOGIES */}
         <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-14">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Tracks</p>
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Track</p>
               <h2 className="text-3xl md:text-5xl font-black uppercase leading-[0.95]" style={{ letterSpacing: '-0.02em' }}>
-                Built for Ontario's <span style={{ color: TEAL }}>mining & EV sectors.</span>
+                Built for <span style={{ color: TEAL }}>Ontario mining.</span>
               </h2>
               <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Two dedicated programs channel funding, facilities, and buyer access to the ventures powering Ontario's critical minerals and BEV / EV value chains.
+                Critical Industrial Technologies channel funding, facilities, and buyer access to the hard-tech ventures powering Ontario's mining and industrial sectors.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {industryTracks.map((t) => (
-                <div key={t.name} className="rounded-2xl p-8 bg-white border border-black/5 flex flex-col">
-                  <div className="flex items-start gap-4 mb-5">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
-                         style={{ background: `linear-gradient(135deg, ${TEAL}20, ${BLUE}10)`, color: TEAL }}>
-                      <t.icon className="w-7 h-7" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold leading-tight">{t.name}</h3>
-                      <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>{t.audience}</p>
-                    </div>
+            <div className="rounded-2xl p-8 bg-white border border-black/5 flex flex-col md:flex-row md:items-center gap-8">
+              <div className="flex-1">
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+                       style={{ background: `linear-gradient(135deg, ${TEAL}20, ${BLUE}10)`, color: TEAL }}>
+                    <Cpu className="w-7 h-7" />
                   </div>
-                  <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.75)' }}>{t.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {t.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
-                        <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to={t.href}
-                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm w-fit"
-                        style={{ background: NAVY, color: 'white' }}>
-                    Learn more <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight">Critical Industrial Technologies</h3>
+                    <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>For Ontario mining, industrial, and tough-tech companies</p>
+                  </div>
                 </div>
-              ))}
+                <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.75)' }}>
+                  Build, test, and validate hard-tech for the mining and industrial sector with access to funding, facilities, and buyers.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {['Non-dilutive project funding', 'Real-world testing in the Underground Centre', 'Direct pathways to mining OEMs'].map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
+                      <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/mining/critical-industrial-tech"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm"
+                      style={{ background: NAVY, color: 'white' }}>
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* INDUSTRY TRACK 2: CORE5 */}
+        <section className="py-20 md:py-28" style={{ background: 'white', color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl mb-14">
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Industry Track</p>
+              <h2 className="text-3xl md:text-5xl font-black uppercase leading-[0.95]" style={{ letterSpacing: '-0.02em' }}>
+                Built for <span style={{ color: TEAL }}>BEV / EV ventures.</span>
+              </h2>
+              <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
+                Core5 is the OVIN Northern Regional Technology Development Site supporting SMEs across the full battery and electric vehicle value chain.
+              </p>
+            </div>
+
+            <div className="rounded-2xl p-8 bg-white border border-black/5 flex flex-col md:flex-row md:items-center gap-8">
+              <div className="flex-1">
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+                       style={{ background: `linear-gradient(135deg, ${TEAL}20, ${BLUE}10)`, color: TEAL }}>
+                    <Layers className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight">Core5</h3>
+                    <p className="text-xs font-semibold uppercase tracking-wider mt-1" style={{ color: TEAL }}>For BEV / EV ventures across Northern Ontario</p>
+                  </div>
+                </div>
+                <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.75)' }}>
+                  The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {['Startup & SME funding support', 'Access to R&D and testing facilities', 'Buyer / builder matchmaking'].map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
+                      <span className="mt-1.5 size-1.5 rounded-full shrink-0" style={{ background: TEAL }} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/mining/core5"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm"
+                      style={{ background: NAVY, color: 'white' }}>
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
