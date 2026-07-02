@@ -161,6 +161,7 @@ const testimonials = [
     headline: 'Clara Steele',
     subline: 'Co-Founder, TesMan',
     tag: 'NORCAT Innovation Client',
+    logo: tesmanLogo,
   },
   {
     quote: "Support from NORCAT was critical in our decision to relocate our company to Sudbury, and Venture North PITCH really launched us into the ecosystem that led us to our first angel investor.",
