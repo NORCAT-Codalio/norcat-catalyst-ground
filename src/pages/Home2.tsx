@@ -699,14 +699,16 @@ export default function Home2() {
         </section>
 
 
-        {/* ───── WHO IT'S FOR (light) ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden"
+        {/* ───── WHO IT'S FOR (Built for) ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden"
                  style={{ background: '#F2F3F6', color: '#001A4D' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.12), transparent 55%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.12), transparent 55%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-12 md:mb-16">
+
+            {/* Header */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 md:mb-16">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
@@ -716,85 +718,79 @@ export default function Home2() {
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   <span className="block" style={{ color: NAVY }}>
-                    Built for the builders of the
+                    Built for Northern Ontario startups
                   </span>
-                  <span className="block"
-                        style={{ WebkitTextStroke: `2px ${TEAL}`, color: 'transparent' }}>
-                    North.
+                  <span className="block" style={{ color: TEAL }}>
+                    ready to move.
                   </span>
                 </h2>
               </div>
               <div className="flex flex-col justify-end lg:pb-2">
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
-                  Right here in Greater Sudbury, we shape the innovation ecosystem from both ends of the spectrum.
-                </p>
-                <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
-                  We have spent decades forging a reputation and a global network that allows us to bridge the gap between raw talent and commercial reality for founders, investors, and solution-seeking adopters.
+                  NORCAT Innovation helps founders build, test, validate, and scale technology-driven ventures with access to mentorship, funding pathways, industry connections, and real-world technology development infrastructure.
                 </p>
               </div>
             </div>
 
-            {/* Bento grid: three audience cards on top, quote + CTA on bottom */}
-            <div className="grid gap-6 lg:grid-cols-3">
-              {/* Three audience cards (top row) */}
+            {/* Three audience cards */}
+            <div className="grid gap-6 md:grid-cols-3 mb-10 md:mb-14">
               {audiences.map((a) => (
-                  <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white"
-                       style={{ border: '1px solid #d9dde5' }}>
-                    <div className="flex items-start justify-end mb-3">
-                      <a.icon className="size-5" strokeWidth={2} style={{ color: TEAL }} />
-                    </div>
-                    <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT }}>{a.title}</h3>
-                    <p className="leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>{a.body}</p>
+                <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white flex flex-col h-full"
+                     style={{ border: '1px solid #d9dde5' }}>
+                  <div className="flex items-center justify-center size-14 rounded-full mb-6"
+                       style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}30` }}>
+                    <a.icon className="size-6" strokeWidth={2} style={{ color: TEAL }} />
                   </div>
-                ))}
-
-              {/* Bottom-left data card */}
-              <div className="relative rounded-2xl overflow-hidden p-7 md:p-10 lg:col-span-2 min-h-[260px] lg:min-h-[320px] flex flex-col justify-end"
-                   style={{
-                     background: `linear-gradient(135deg, ${TEAL} 0%, #0b6fb8 45%, #0a3a8c 100%)`,
-                   }}>
-                <span className="absolute top-7 left-7 md:top-10 md:left-10 text-[10px] font-bold tracking-[0.18em] uppercase text-white/90"
-                      style={{ fontFamily: FONT }}>
-                  [ DATA · NACO 2025 ]
-                </span>
-                <Quote className="relative w-8 h-8 mb-4 text-white/90" />
-                <p className="relative text-lg sm:text-xl md:text-2xl leading-snug font-semibold text-white">
-                  Northern Ontario led Canada on a per-capita basis with 35.9 deals per million population, widening its lead over Southern Ontario from 50% in 2024 to 64% in 2025
-                </p>
-                <p className="relative mt-5 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
-                  - National Angel Capital Organization
-                </p>
-              </div>
-
-              {/* Bottom-right CTA box */}
-              <div className="relative rounded-2xl p-7 md:p-9 flex flex-col justify-end overflow-hidden"
-                   style={{ background: TEAL, border: '1px solid #00a38a' }}>
-                <img src={norcatHalfLogo} alt="" aria-hidden="true" className="absolute top-0 right-0 h-full w-auto opacity-10 pointer-events-none" />
-                <p className="relative text-xs font-bold uppercase tracking-[0.18em] mb-auto" style={{ color: NAVY, fontFamily: FONT }}>
-                  Get involved
-                </p>
-                <div className="relative flex flex-wrap items-center gap-3 mt-6">
-                  <Link to="/apply"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: NAVY, color: 'white' }}>
-                    Apply
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                    </span>
-                  </Link>
-                  <Link to="/about"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: 'white', color: NAVY, border: '1px solid #001A4D' }}>
-                    Learn more
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                    </span>
+                  <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT, color: NAVY }}>{a.title}</h3>
+                  <p className="leading-relaxed text-sm md:text-base mb-6 flex-1" style={{ color: '#475068' }}>{a.body}</p>
+                  <Link to={a.href}
+                        className="group inline-flex items-center gap-2 text-sm font-bold transition-colors"
+                        style={{ color: TEAL }}>
+                    {a.linkLabel}
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
+              ))}
+            </div>
+
+            {/* Bottom CTA banner */}
+            <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
+              <div className="flex items-center justify-center size-20 rounded-full flex-shrink-0"
+                   style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
+                <Users className="size-10" style={{ color: 'white' }} />
+              </div>
+              <div className="flex-1 text-center lg:text-left">
+                <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl mb-3" style={{ fontFamily: FONT, color: 'white' }}>
+                  Ready to build, test, or scale?
+                </h3>
+                <p className="text-base sm:text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Whether you're launching a startup, validating new technology, or looking for the right funding pathway, we're here to help you take the next step.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3 flex-shrink-0">
+                <Link to="/portal/auth"
+                      className="group inline-flex items-center gap-2 pl-6 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                      style={{ background: TEAL, color: NAVY }}>
+                  Work with us
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </Link>
+                <Link to="/programs"
+                      className="group inline-flex items-center gap-2 pl-6 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                      style={{ background: 'white', color: NAVY, border: '1px solid #001A4D' }}>
+                  Explore Services
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </Link>
               </div>
             </div>
+
           </div>
         </section>
+
 
         {/* ───── TESTIMONIALS (FROM FOUNDERS, FIRSTHAND) ───── */}
         <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
