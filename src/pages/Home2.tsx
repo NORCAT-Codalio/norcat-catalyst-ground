@@ -755,21 +755,21 @@ export default function Home2() {
             </div>
 
             {/* Bottom CTA banner */}
-            <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+            <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-8"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
               <div className="flex items-center justify-center size-20 rounded-full flex-shrink-0"
                    style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
                 <Users className="size-10" style={{ color: 'white' }} />
               </div>
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl mb-3" style={{ fontFamily: FONT, color: 'white' }}>
+                <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl lg:text-3xl lg:text-nowrap mb-3" style={{ fontFamily: FONT, color: 'white' }}>
                   Ready to build, test, or scale?
                 </h3>
-                <p className="text-base sm:text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="text-base sm:text-lg leading-relaxed lg:max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Whether you're launching a startup, validating new technology, or looking for the right funding pathway, we're here to help you take the next step.
                 </p>
               </div>
-              <div className="flex flex-wrap items-center justify-center gap-3 flex-shrink-0">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 flex-shrink-0">
                 <Link to="/portal/auth"
                       className="group inline-flex items-center gap-2 pl-6 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                       style={{ background: TEAL, color: NAVY }}>
@@ -788,6 +788,7 @@ export default function Home2() {
                 </Link>
               </div>
             </div>
+
 
           </div>
         </section>
