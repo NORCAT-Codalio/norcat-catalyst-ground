@@ -27,7 +27,7 @@ import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
-import core5Logo from '@/assets/logos/core5.png';
+import ovinLogo from '@/assets/logos/ovin-logo.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
@@ -327,7 +327,7 @@ export default function Home2() {
       ],
       href: '/mining/core5',
       partners: [
-        { logo: core5Logo, name: 'Core5' },
+        { logo: ovinLogo, name: 'Ontario Vehicle Innovation Network' },
         { logo: ontarioLogoInline, name: 'Government of Ontario' },
       ],
     },
@@ -556,21 +556,21 @@ export default function Home2() {
                     Delivered in partnership with
                   </p>
                   <div className="flex flex-nowrap items-center gap-4 sm:gap-5 md:gap-6">
-                    {activeProgram.partners.map((partner) => {
-                      const needsDarkBg = partner.name === 'Core5';
-                      return (
-                        <div
-                          key={partner.name}
-                          className={`flex items-center justify-center rounded-lg px-2 py-1 ${needsDarkBg ? 'bg-[#001A4D]' : ''}`}
-                        >
-                          <img
-                            src={partner.logo}
-                            alt={partner.name}
-                            className="h-8 sm:h-9 md:h-10 w-auto object-contain max-w-[180px] sm:max-w-[200px]"
-                          />
-                        </div>
-                      );
-                    })}
+                    {activeProgram.partners.map((partner) => (
+                      <div
+                        key={partner.name}
+                        className="flex items-center justify-center rounded-lg px-2 py-1"
+                      >
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          loading="lazy"
+                          width={200}
+                          height={40}
+                          className="h-8 sm:h-9 md:h-10 w-auto object-contain max-w-[180px] sm:max-w-[200px]"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
