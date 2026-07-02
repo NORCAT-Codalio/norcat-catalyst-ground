@@ -416,7 +416,7 @@ export default function Home2() {
           </section>
 
         {/* ───── IMPACT STATS ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-6 md:py-8" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
