@@ -435,7 +435,7 @@ export default function Home2() {
         </section>
 
         {/* ───── FEATURED PROGRAMS (tabbed) ───── */}
-        <section className="py-12 md:py-16 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
+        <section className="py-10 md:py-14 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.14), transparent 50%), radial-gradient(ellipse at top left, rgba(0,179,152,0.09), transparent 45%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.08), transparent 55%)`,
           }} />
@@ -447,10 +447,10 @@ export default function Home2() {
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
               Featured Programs
             </h2>
-            <div className="h-1.5 w-16 mb-10" style={{ background: TEAL }} />
+            <div className="h-1.5 w-16 mb-8" style={{ background: TEAL }} />
 
             {/* Tabs */}
-            <div className="flex flex-nowrap gap-1.5 sm:gap-3 mb-8">
+            <div className="flex flex-nowrap gap-1.5 sm:gap-3 mb-6">
               {featuredPrograms.map((p, i) => {
                 const active = i === featuredProgramIndex;
                 return (
@@ -474,9 +474,9 @@ export default function Home2() {
             </div>
 
             {/* Panel */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[720px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[560px]">
               {/* Left visual */}
-              <div className="relative min-h-[180px] sm:min-h-[260px] md:min-h-[460px] overflow-hidden bg-white">
+              <div className="relative min-h-[180px] sm:min-h-[240px] md:min-h-[360px] overflow-hidden bg-white">
                 <img
                   src={activeProgram.image}
                   alt={activeProgram.name}
@@ -485,7 +485,7 @@ export default function Home2() {
               </div>
 
               {/* Right content */}
-              <div className="p-6 sm:p-8 md:p-10 lg:p-10 flex flex-col h-full min-h-[280px] sm:min-h-[380px] md:min-h-[460px] lg:overflow-hidden">
+              <div className="p-6 sm:p-8 md:p-8 lg:p-8 flex flex-col h-full min-h-[260px] sm:min-h-[320px] md:min-h-[360px] lg:overflow-hidden">
                 <div className="flex flex-col">
                   <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-2" style={{ color: TEAL, fontFamily: FONT }}>
                     Featured Program
@@ -496,7 +496,7 @@ export default function Home2() {
                   <div className="h-1.5 w-10 mb-4" style={{ background: TEAL }} />
                 </div>
                 <div className="flex-1 flex flex-col">
-                  <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-4" style={{ color: 'rgba(0,26,77,0.75)' }}>
+                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(0,26,77,0.75)' }}>
                     {activeProgram.description}
                   </p>
                   <ul className="hidden sm:block space-y-2 mb-4">
@@ -518,11 +518,11 @@ export default function Home2() {
                   </Link>
 
                   {/* Delivered in partnership with */}
-                  <div className="mt-6 pt-6 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
+                  <div className="mt-5 pt-5 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
                     <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
                       Delivered in partnership with
                     </p>
-                    <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5 md:gap-6">
+                    <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5 md:gap-5">
                       {activeProgram.partners.map((partner) => {
                         const isCanada = partner.name === 'Government of Canada';
                         const isFednor = partner.name === 'Federal Economic Development Agency for Northern Ontario';
@@ -540,12 +540,12 @@ export default function Home2() {
                               height={48}
                               className={`w-auto object-contain ${
                                 isCanada
-                                  ? 'h-10 sm:h-12 md:h-14 max-w-[200px] sm:max-w-[220px]'
+                                  ? 'h-9 sm:h-10 md:h-11 max-w-[180px] sm:max-w-[200px]'
                                   : isFednor
-                                  ? 'h-9 sm:h-11 md:h-12 max-w-[180px] sm:max-w-[200px]'
+                                  ? 'h-8 sm:h-9 md:h-10 max-w-[160px] sm:max-w-[180px]'
                                   : isOntario
-                                  ? 'h-8 sm:h-10 md:h-11 max-w-[160px] sm:max-w-[180px]'
-                                  : 'h-8 sm:h-10 md:h-11 max-w-[150px] sm:max-w-[170px]'
+                                  ? 'h-7 sm:h-8 md:h-9 max-w-[140px] sm:max-w-[160px]'
+                                  : 'h-7 sm:h-8 md:h-9 max-w-[130px] sm:max-w-[150px]'
                               }`}
                             />
                           </div>
