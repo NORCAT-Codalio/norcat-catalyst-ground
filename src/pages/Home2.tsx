@@ -295,7 +295,7 @@ export default function Home2() {
     },
     {
       name: 'Sudbury Catalyst Fund',
-      short: 'Sudbury Catalyst Fund',
+      short: 'SCF',
       icon: Banknote,
       image: featuredScfImg,
       description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors in Northern Ontario ventures.',
