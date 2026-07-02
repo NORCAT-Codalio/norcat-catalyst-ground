@@ -24,6 +24,7 @@ const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderDesktopImg = heroHeaderDesktopAsset.url;
 const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
+const ventureNorthPitchImg = ventureNorthPitchAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
