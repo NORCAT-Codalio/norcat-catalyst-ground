@@ -474,7 +474,7 @@ export default function Home2() {
             </div>
 
             {/* Panel */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white">
+            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[660px]">
               {/* Left visual */}
               <div className="relative min-h-[320px] md:min-h-[460px] overflow-hidden bg-white">
                 <img
@@ -485,67 +485,73 @@ export default function Home2() {
               </div>
 
               {/* Right content */}
-              <div className="p-8 md:p-12 flex flex-col h-full min-h-[360px] md:min-h-[460px]">
-                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
-                  Featured Program
-                </p>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>
-                  {activeProgram.name}
-                </h3>
-                <div className="h-1.5 w-10 mb-5" style={{ background: TEAL }} />
-                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.75)' }}>
-                  {activeProgram.description}
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {activeProgram.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
-                      <span className="text-sm md:text-base" style={{ color: NAVY }}>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to={activeProgram.href}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm mt-auto self-start transition-transform hover:translate-x-0.5"
-                  style={{ background: TEAL, color: 'white', fontFamily: FONT }}
-                >
-                  View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-
-                {/* Delivered in partnership with */}
-                <div className="mt-8 pt-8 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
-                  <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
-                    Delivered in partnership with
+              <div className="p-8 md:p-12 lg:p-12 flex flex-col h-full min-h-[360px] md:min-h-[460px] lg:overflow-hidden">
+                <div className="flex flex-col">
+                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
+                    Featured Program
                   </p>
-                  <div className="flex flex-nowrap items-center justify-start gap-4 sm:gap-5 md:gap-6">
-                    {activeProgram.partners.map((partner) => {
-                      const isCanada = partner.name === 'Government of Canada';
-                      const isFednor = partner.name === 'Federal Economic Development Agency for Northern Ontario';
-                      const isOntario = partner.name === 'Government of Ontario';
-                      return (
-                        <div
-                          key={partner.name}
-                          className="flex items-center justify-center rounded-lg py-2"
-                        >
-                          <img
-                            src={typeof partner.logo === 'string' ? partner.logo : partner.logo.url}
-                            alt={partner.name}
-                            loading="lazy"
-                            width={240}
-                            height={isCanada ? 60 : isFednor ? 52 : isOntario ? 48 : 40}
-                            className={`w-auto object-contain ${
-                              isCanada
-                                ? 'h-10 sm:h-12 md:h-14 max-w-[220px] sm:max-w-[260px]'
-                                : isFednor
-                                ? 'h-9 sm:h-11 md:h-12 max-w-[200px] sm:max-w-[240px]'
-                                : isOntario
-                                ? 'h-8 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[220px]'
-                                : 'h-8 sm:h-9 md:h-10 max-w-[180px] sm:max-w-[200px]'
-                            }`}
-                          />
-                        </div>
-                      );
-                    })}
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>
+                    {activeProgram.name}
+                  </h3>
+                  <div className="h-1.5 w-10 mb-5" style={{ background: TEAL }} />
+                </div>
+                <div className="flex-1 flex flex-col">
+                  <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.75)' }}>
+                    {activeProgram.description}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {activeProgram.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
+                        <span className="text-sm md:text-base" style={{ color: NAVY }}>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-col">
+                  <Link
+                    to={activeProgram.href}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm self-start transition-transform hover:translate-x-0.5"
+                    style={{ background: TEAL, color: 'white', fontFamily: FONT }}
+                  >
+                    View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </Link>
+
+                  {/* Delivered in partnership with */}
+                  <div className="mt-8 pt-8 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
+                    <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
+                      Delivered in partnership with
+                    </p>
+                    <div className="flex flex-nowrap items-center justify-start gap-4 sm:gap-5 md:gap-6">
+                      {activeProgram.partners.map((partner) => {
+                        const isCanada = partner.name === 'Government of Canada';
+                        const isFednor = partner.name === 'Federal Economic Development Agency for Northern Ontario';
+                        const isOntario = partner.name === 'Government of Ontario';
+                        return (
+                          <div
+                            key={partner.name}
+                            className="flex items-center justify-center rounded-lg py-2"
+                          >
+                            <img
+                              src={typeof partner.logo === 'string' ? partner.logo : partner.logo.url}
+                              alt={partner.name}
+                              loading="lazy"
+                              width={240}
+                              height={isCanada ? 60 : isFednor ? 52 : isOntario ? 48 : 40}
+                              className={`w-auto object-contain ${
+                                isCanada
+                                  ? 'h-10 sm:h-12 md:h-14 max-w-[220px] sm:max-w-[260px]'
+                                  : isFednor
+                                  ? 'h-9 sm:h-11 md:h-12 max-w-[200px] sm:max-w-[240px]'
+                                  : isOntario
+                                  ? 'h-8 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[220px]'
+                                  : 'h-8 sm:h-9 md:h-10 max-w-[180px] sm:max-w-[200px]'
+                              }`}
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
