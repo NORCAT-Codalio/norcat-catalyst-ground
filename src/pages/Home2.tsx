@@ -30,6 +30,8 @@ import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
 import core5Logo from '@/assets/logos/core5.png';
 import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
+import fednorFullLogo from '@/assets/logos/fednor-full.png';
+import raiiLogoAsset from '@/assets/logos/raii-logo.png.asset.json';
 import iapLogoAsset from '@/assets/iap-logo.png.asset.json';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
