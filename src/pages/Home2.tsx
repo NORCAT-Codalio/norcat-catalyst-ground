@@ -576,7 +576,7 @@ export default function Home2() {
             </div>
 
             <div className="relative">
-              <div className="overflow-hidden">
+              <div className="overflow-hidden -mx-4 px-4 py-6">
                 <div
                   className="flex transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
