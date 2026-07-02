@@ -251,7 +251,7 @@ export default function Home2() {
       short: 'CIT',
       icon: Cpu,
       image: featuredCitImg,
-      description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors.",
+      description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors through the NORCAT Underground Centre.",
       bullets: [
         'Non-dilutive project funding',
         'Access to world-class testing and validation facilities',
