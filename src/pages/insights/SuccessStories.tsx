@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
