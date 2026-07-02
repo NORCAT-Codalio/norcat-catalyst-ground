@@ -118,7 +118,7 @@ export const newsItems = [
   {
     id: 'fednor-investment',
     title: 'Government of Canada Invests Over $1 Million in Innovation in Northern Ontario',
-    date: 'December 15, 2025',
+    date: 'August 27, 2025',
     excerpt: 'NORCAT Innovation, in partnership with FedNor, announces a $1.05 million investment to help Northern Ontario start-ups scale, adopt new technologies, and compete globally through the RAII and IAP programs.',
     category: 'Funding',
     icon: DollarSign,
