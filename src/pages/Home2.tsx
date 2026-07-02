@@ -357,8 +357,8 @@ export default function Home2() {
                   { category: 'News', title: 'OVIN Northern Ontario RTDS Renewed for Mining Innovation', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
                   { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: stateOfSudburyImpactImg, link: '/impact' },
                   
-                  { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
-                  { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
+                  { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: circuitiqTeam, link: '/insights/success-stories' },
+                  { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: ctaPhoto2, link: '/insights/news' },
                   { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
                 ].map((post) => (
                   <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
