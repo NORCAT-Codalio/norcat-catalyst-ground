@@ -245,8 +245,8 @@ export default function Home2() {
 
   const featuredPrograms = [
     {
-      name: 'Critical Industrial Technologies',
-      short: 'Critical Industrial Technologies (CIT) Initiative',
+      name: 'Critical Industrial Technologies (CIT) Initiative',
+      short: 'CIT',
       icon: Cpu,
       image: featuredCitImg,
       description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors.",
@@ -257,7 +257,6 @@ export default function Home2() {
       ],
       href: '/mining/critical-industrial-tech',
       partners: [
-        { logo: citLogo, name: 'Critical Industrial Technologies' },
         { logo: ociLogo, name: 'Ontario Centre of Innovation' },
         { logo: ontarioLogoInline, name: 'Government of Ontario' },
       ],
