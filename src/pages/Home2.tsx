@@ -307,7 +307,9 @@ export default function Home2() {
       ],
       href: '/funding/sudbury-catalyst-fund',
       partners: [
-        { logo: scfLogo, name: 'Sudbury Catalyst Fund' },
+        { logo: fednorLogo, name: 'Federal Economic Development Agency for Northern Ontario' },
+        { logo: nickelBasinLogo, name: 'Nickel Basin Federal Development Corporation' },
+        { logo: sudburyLogo, name: 'City of Greater Sudbury' },
       ],
     },
     {
