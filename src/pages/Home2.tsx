@@ -280,7 +280,7 @@ export default function Home2() {
     },
     {
       name: 'Regional AI Initiative',
-      short: 'Regional AI Initiative',
+      short: 'Regional Artificial Intelligence Initiative',
       icon: Brain,
       image: featuredRaiiImg,
       description: 'Capital, compute, and specialized support for AI-driven ventures scaling out of Northern Ontario.',
