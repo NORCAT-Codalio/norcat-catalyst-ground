@@ -750,10 +750,6 @@ export default function Home2() {
             {/* Bottom CTA banner */}
             <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-8"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
-              <div className="flex items-center justify-center size-20 rounded-full flex-shrink-0"
-                   style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
-                <Users className="size-10" style={{ color: 'white' }} />
-              </div>
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl lg:text-3xl lg:text-nowrap mb-3" style={{ fontFamily: FONT, color: 'white' }}>
                   Ready to build, test, or scale?
