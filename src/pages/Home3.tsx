@@ -528,13 +528,13 @@ export default function Home3() {
                   <div className={`relative rounded-2xl overflow-hidden h-[420px] hover:scale-[1.02] transition-transform duration-300 ${post.wide ? 'w-[700px]' : 'w-[380px]'}`}>
                     <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.7) 30%, hsl(0 0% 0% / 0.2) 60%, transparent 100%)' }} />
+                    <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                      background: 'hsla(168, 100%, 35%, 0.2)',
+                      color: 'hsl(168, 100%, 60%)',
+                      border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                      backdropFilter: 'blur(8px)',
+                    }}>{post.category}</span>
                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3" style={{
-                        background: 'hsla(168, 100%, 35%, 0.2)',
-                        color: 'hsl(168, 100%, 60%)',
-                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
-                        backdropFilter: 'blur(8px)',
-                      }}>{post.category}</span>
                       <h3 className="text-white font-bold text-lg leading-snug mb-2" style={{ fontFamily: FONT }}>{post.title}</h3>
                       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
                         Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
