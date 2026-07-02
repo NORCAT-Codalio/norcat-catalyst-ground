@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { 
@@ -339,6 +340,18 @@ const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.cate
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<string | null>(null);
+  const [searchParams] = useSearchParams();
+  const newsListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const articleId = searchParams.get('article');
+    if (articleId && newsItems.some(item => item.id === articleId)) {
+      setSelectedNews(articleId);
+      setTimeout(() => {
+        newsListRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 200);
+    }
+  }, [searchParams]);
 
   const filteredNews = activeCategory === 'All' 
     ? newsItems 
@@ -430,7 +443,7 @@ const News = () => {
               </div>
             </div>
 
-            <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div ref={newsListRef} layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredNews.map((item) => {
               const Icon = item.icon;
               const isExpanded = selectedNews === item.id;
