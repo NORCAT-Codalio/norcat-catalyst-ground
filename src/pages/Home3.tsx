@@ -36,7 +36,7 @@ import rnaLogo from '@/assets/logos/rna-diagnostics.png';
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
-import ontarioLogo from '@/assets/logos/ontario.png';
+
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import noaLogoAsset from '@/assets/logos/noa.png.asset.json';
 

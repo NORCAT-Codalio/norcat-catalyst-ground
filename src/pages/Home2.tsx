@@ -26,7 +26,7 @@ import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
-import ontarioLogoInlineAsset from '@/assets/logos/ontario-logo.png.asset.json';
+import ontarioLogoInlineAsset from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
 import ovinLogo from '@/assets/logos/ovin-logo.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
@@ -67,7 +67,6 @@ import myomarLogo from '@/assets/logos/myomar.png';
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
-import ontarioLogo from '@/assets/logos/ontario.png';
 import sudburyLogo from '@/assets/logos/sudbury-logo.png';
 import noaLogoAsset from '@/assets/logos/noa.png.asset.json';
 
