@@ -22,7 +22,7 @@ import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset
 
 const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
-const heroModelImg = heroModel.url;
+
 const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderDesktopImg = heroHeaderDesktopAsset.url;
 const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
