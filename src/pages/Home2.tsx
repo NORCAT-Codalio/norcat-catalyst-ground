@@ -20,7 +20,7 @@ import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.a
 import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset.json';
 import featuredCitPhoto from '@/assets/featured-cit-photo.png';
-import featuredCore5Photo from '@/assets/featured-core5-photo.png';
+import core5EvChargingAsset from '@/assets/core5-ev-charging.png.asset.json';
 import featuredIapPhoto from '@/assets/featured-iap-photo.png';
 import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
@@ -34,7 +34,7 @@ const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
 const featuredRaiiImg = featuredRaiiPhoto;
 const featuredScfImg = featuredScfPhoto;
-const featuredCore5Img = featuredCore5Photo;
+const featuredCore5Img = core5EvChargingAsset.url;
 
 
 
