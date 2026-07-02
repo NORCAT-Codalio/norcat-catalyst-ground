@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award } from 'lucide-react';
+import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -18,6 +18,16 @@ import planaTeam from '@/assets/plana-team.jpg';
 import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
 import codalioLogo from '@/assets/codalio-logo.png.asset.json';
+import circuitiqLogo from '@/assets/logos/circuitiq.webp';
+import myomarLogo from '@/assets/logos/myomar.png';
+import chamberPerksLogo from '@/assets/chamber-perks-logo.png.asset.json';
+import perspicLogo from '@/assets/logos/perspic-logo.png.asset.json';
+import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
+import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
+import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
+import planaLogo from '@/assets/logos/plana.png';
+import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
+import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 
 
 // All stories data
@@ -124,6 +134,88 @@ const allStories: SuccessStory[] = [
 const sectors = ['All', 'Mining Tech', 'AI & Automation', 'Cleantech', 'Medtech', 'SMB Tech'];
 
 // Ecosystem stats
+
+const testimonials = [
+  {
+    quote: "My first PITCH with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and today our team has grown from 7 to 60 in just four years.",
+    headline: 'Luke Begley',
+    subline: 'Founder, CircuitIQ',
+    tag: 'PITCH 2022',
+    logo: circuitiqLogo,
+  },
+  {
+    quote: "The venture capital and funding environment right now is quite challenging and has been for the last couple of years. As we raise our $3-million seed round to advance our at-home test and scale up our laboratory operations to handle 30,000 samples per year, the investment we secured through Greater Sudbury has been a massive win. In the funding world, many organizations wait for the first group to jump. Securing this level of trust and expertise from Northern Ontario through the Venture North PITCH ecosystem has acted as a true catalyst, opening quite a few doors for us to bring in additional capital.",
+    headline: 'Myomar Molecular',
+    subline: "Judges' Choice & Peter Dal Bianco Award",
+    tag: 'PITCH 2025',
+    logo: myomarLogo,
+  },
+  {
+    quote: "Participating in the 2024 NORCAT Venture North PITCH competition was a transformative experience for the Chamber Perks App. The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy and enhancing our presentation skills. Since participating and winning the People's Choice Award, the Chamber Perks App has experienced significant growth, we have expanded our team, extended our reach across Canada, and developed a bilingual version of the app.",
+    headline: 'Karen Hastie',
+    subline: 'Founder/CEO, Chamber Perks App',
+    tag: 'PITCH 2024',
+    logo: chamberPerksLogo.url,
+  },
+  {
+    quote: 'Working within the NORCAT ecosystem as a mentor, as a contributor, and as an investor, I realized that there is a hunger for growth and innovation and has a strong talent pool coming from Cambrian College, College Boreal, and Laurentian University.',
+    headline: 'Ehsan Mirdamadi',
+    subline: 'CEO/Founder, Codalio',
+    tag: 'NORCAT Innovation Client',
+    logo: codalioLogo.url,
+  },
+  {
+    quote: "It surprised me how much high technology there actually is in Sudbury… it is possible to be successful in building a technology company in Northern Ontario, which I think a lot of people don't realize.",
+    headline: 'Matthew Gougeon',
+    subline: 'CEO and Founder, Perspic',
+    tag: 'NORCAT Innovation Client',
+    logo: perspicLogo.url,
+  },
+  {
+    quote: "We had a lot of references for work through the Fortin Discovery Lab and NORCAT, and such strong support turned out to be invaluable, especially when first getting started! You need get involved with your local ecosystem.",
+    headline: 'Stephen Podrucky',
+    subline: 'CEO and Founder, Podco',
+    tag: 'NORCAT Innovation Client',
+    logo: podcoLogo.url,
+  },
+  {
+    quote: "At some point I realised the need to shake hands of the people in the mining sector, and that's more than just a virtual conversation. NORCAT was the place that we find a very high density of end users, companies, and a network that has helped a lot to accelerate the process from having an idea to having a technology.",
+    headline: 'Mashoud Aali',
+    subline: 'Founder and CEO, Scient Analytic',
+    tag: 'NORCAT Innovation Client',
+    logo: scientLogo.url,
+  },
+  {
+    quote: "As a nurse at Health Sciences North, I got to see firsthand what worked, what didn't, and where the gaps were, while support from NORCAT helped me navigate the startup landscape, opened doors and remained incredibly supportive.",
+    headline: 'Avalon Lupini',
+    subline: 'CEO and Founder, SmartyPrints',
+    tag: 'NORCAT Innovation Client',
+    logo: smartyprintsLogo.url,
+  },
+  {
+    quote: "I got involved with NORCAT as a really passionate business owner, but I was running on a dream, a positive attitude, and a belief I was going to get this done. However, once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without the mentorship of Peter.",
+    headline: 'Sheri Tomchick',
+    subline: 'CEO and Founder, PlanA & StaffStat',
+    tag: 'NORCAT Innovation Client',
+    logo: planaLogo,
+  },
+  {
+    quote: "From a small business perspective, being part of a larger high-end innovation centre and team is invaluable to a start-up innovation firm. Working with NORCAT and its connections, has taught us about what we don't know, and we learned how to do what we don't know.",
+    headline: 'Clara Steele',
+    subline: 'Co-Founder, TesMan',
+    tag: 'NORCAT Innovation Client',
+    logo: tesmanLogo.url,
+  },
+  {
+    quote: "Support from NORCAT was critical in our decision to relocate our company to Sudbury, and Venture North PITCH really launched us into the ecosystem that led us to our first angel investor.",
+    headline: 'Tabassum Pasha',
+    subline: 'Co-Founder, Waive',
+    tag: 'PITCH 2023',
+    logo: waiveTestimonialLogo.url,
+  },
+];
+
+// Ecosystem stats
 const ecosystemStats = [
   { value: '$180M+', label: 'Capital Raised' },
   { value: '450+', label: 'Jobs Created' },
@@ -134,6 +226,11 @@ const ecosystemStats = [
 const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const visibleCount = 2;
+  const maxIndex = Math.max(0, testimonials.length - visibleCount);
+  const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
+  const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
   const filteredStories = allStories.filter((story) => {
     if (selectedSector !== 'All' && story.sector !== selectedSector) return false;
@@ -487,6 +584,107 @@ const SuccessStories = () => {
         </div>
       </section>
 
+      {/* ───── TESTIMONIALS: FROM FOUNDERS, FIRSTHAND ───── */}
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'hsl(168, 100%, 32%)' }}>
+        <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10">
+          <div className="max-w-2xl mb-12 md:mb-16">
+            <h2 className="font-bold uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl text-white"
+                style={{ fontFamily: "'Open Sans', sans-serif", letterSpacing: '-0.02em' }}>
+              From Founders,<br />Firsthand
+            </h2>
+            <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'hsla(0, 0%, 100%, 0.5)' }} />
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/90">
+              Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="overflow-hidden -mx-4 px-4 py-6">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
+              >
+                {testimonials.map((t, idx) => {
+                  const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
+                  return (
+                    <div
+                      key={t.headline}
+                      className="w-[85%] sm:w-[55%] lg:w-[45%] flex-shrink-0 px-3 transition-all duration-500"
+                      style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
+                    >
+                      <figure
+                        className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
+                        style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+                        {/* Header: logo + closing quote */}
+                        <div className="flex items-start justify-between mb-5">
+                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
+                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: t.logo ? 'white' : 'hsla(168, 100%, 32%, 0.08)' }}>
+                            {t.logo ? (
+                              <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
+                            ) : (
+                              <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(168, 100%, 32%, 0.55)' }} />
+                            )}
+                          </div>
+                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: 'hsl(168, 100%, 32%)', opacity: 0.85 }}>&rdquo;</div>
+                        </div>
+
+                        <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                          {t.quote}
+                        </blockquote>
+
+                        <figcaption className="relative mt-8 pt-5" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
+                          <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 15%, 20%)' }}>
+                            {t.headline}
+                          </p>
+                          <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                            {t.subline}
+                          </p>
+                          {t.tag && (
+                            <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: 'hsl(168, 100%, 32%)' }}>
+                              {t.tag}
+                            </p>
+                          )}
+                        </figcaption>
+                      </figure>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={prevTestimonial}
+              aria-label="Previous testimonial"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              <ChevronLeft className="size-6" />
+            </button>
+            <button
+              type="button"
+              onClick={nextTestimonial}
+              aria-label="Next testimonial"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              <ChevronRight className="size-6" />
+            </button>
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-10">
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setTestimonialIndex(i)}
+                aria-label={`Go to testimonial slide ${i + 1}`}
+                className="size-2.5 rounded-full transition-all"
+                style={{ background: i === testimonialIndex ? 'white' : 'rgba(255,255,255,0.35)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
