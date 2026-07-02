@@ -564,7 +564,7 @@ export default function Home2() {
                           className="flex items-center justify-center rounded-lg px-2 py-1"
                         >
                           <img
-                            src={partner.logo}
+                            src={typeof partner.logo === 'string' ? partner.logo : partner.logo.url}
                             alt={partner.name}
                             loading="lazy"
                             width={240}
