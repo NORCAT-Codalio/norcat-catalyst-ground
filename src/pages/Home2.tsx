@@ -708,7 +708,7 @@ export default function Home2() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Header */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-16 mb-12 md:mb-16 items-end">
+            <div className="mb-12 md:mb-16">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
@@ -724,9 +724,6 @@ export default function Home2() {
                     Innovation.
                   </span>
                 </h2>
-              </div>
-              <div className="flex flex-col justify-end lg:pb-2">
-                {/* description removed per request */}
               </div>
             </div>
 
