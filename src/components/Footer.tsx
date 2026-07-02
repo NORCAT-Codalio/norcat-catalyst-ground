@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Send, Facebook, Instagram } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
 import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
@@ -36,19 +36,6 @@ export function Footer() {
   return (
     <>
       <div style={{ background: '#F2F3F6' }}>
-        {/* Ontario Funding Banner */}
-        <div className="w-full py-5 md:py-6">
-          <div className="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-            <span className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#001A4D' }}>
-              Funded by the Government of Ontario
-            </span>
-            <img
-              src={ontarioLogoAsset.url}
-              alt="Government of Ontario"
-              className="h-8 md:h-10 w-auto object-contain"
-            />
-          </div>
-        </div>
         <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
       </div>
       <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
@@ -156,36 +143,20 @@ export function Footer() {
           <div className="h-px bg-white/15" />
         </div>
 
-        {/* Newsletter + Bottom Bar */}
+        {/* Ontario Funding + Bottom Bar */}
         <div className="container mx-auto px-4 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            {/* Newsletter */}
-            <form
-              action="https://manage.kmail-lists.com/subscriptions/subscribe?a=WyGW3p&g=RMnA3j"
-              method="POST"
-              target="_blank"
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full lg:w-auto"
-            >
-              <span className="text-sm font-semibold tracking-wider uppercase text-white whitespace-nowrap">
-                Join Our Mailing List
+            {/* Ontario Funding */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
+              <span className="text-sm md:text-base font-bold tracking-wide text-white">
+                Funded by the Government of Ontario
               </span>
-              <div className="flex items-center gap-2">
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Your email address"
-                  className="h-10 w-56 sm:w-64 rounded-md border border-white/30 bg-transparent px-4 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white/60"
-                />
-                <button
-                  type="submit"
-                  className="h-10 px-4 rounded-md inline-flex items-center gap-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/30 transition-all duration-300"
-                >
-                  <Send className="h-4 w-4" />
-                  <span>Subscribe</span>
-                </button>
-              </div>
-            </form>
+              <img
+                src={ontarioLogoAsset.url}
+                alt="Government of Ontario"
+                className="h-8 md:h-10 w-auto object-contain brightness-0 invert"
+              />
+            </div>
 
             {/* Legal */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-white/50">
