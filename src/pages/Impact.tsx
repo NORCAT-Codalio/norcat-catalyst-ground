@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Play, BarChart3 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
+import SectionEyebrow from '@/components/SectionEyebrow';
 import EcosystemDashboard from '@/components/dashboard/EcosystemDashboard';
 import { StoryModal, storyData } from '@/components/StoryModal';
 
@@ -17,12 +18,10 @@ const PAPER = '#F2F3F6';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-    {children}
-  </p>
+const Eyebrow = ({ children, className = '', center = false }: any) => (
+  <div className={`${center ? 'flex justify-center' : ''} mb-5 ${className}`}>
+    <SectionEyebrow>{children}</SectionEyebrow>
+  </div>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
+import SectionEyebrow from '@/components/SectionEyebrow';
 import { ServicesExplorer } from '@/components/ServicesExplorer';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
@@ -41,14 +42,10 @@ const differentiators = [
   { icon: Zap, title: 'Northern Advantage', description: "Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada's most established mining ecosystems." },
 ];
 
-const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
-  <p
-    className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-    style={{ fontFamily: FONT, color: light ? TEAL : TEAL }}
-  >
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-    {children}
-  </p>
+const Eyebrow = ({ children, className = '', center = false }: any) => (
+  <div className={`${center ? 'flex justify-center' : ''} mb-5 ${className}`}>
+    <SectionEyebrow>{children}</SectionEyebrow>
+  </div>
 );
 
 const Display = ({ children, className = '', light = false, as: As = 'h2' as any }: any) => (

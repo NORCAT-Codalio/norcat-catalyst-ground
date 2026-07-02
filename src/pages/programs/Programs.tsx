@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
+import SectionEyebrow from '@/components/SectionEyebrow';
 import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket, DollarSign } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
@@ -10,12 +11,10 @@ const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-    {children}
-  </p>
+const Eyebrow = ({ children, className = '', center = false }: any) => (
+  <div className={`${center ? 'flex justify-center' : ''} mb-5 ${className}`}>
+    <SectionEyebrow>{children}</SectionEyebrow>
+  </div>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
