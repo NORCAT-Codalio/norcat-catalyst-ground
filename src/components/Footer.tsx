@@ -34,9 +34,12 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
-      <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
-      {/* Main Footer */}
+    <>
+      <div style={{ background: '#F2F3F6' }}>
+        <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
+      </div>
+      <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
+        {/* Main Footer */}
         <div className="container mx-auto px-4 lg:px-8 pt-16 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Brand Column */}
@@ -153,18 +156,19 @@ export function Footer() {
             </div>
 
             {/* Ontario Funding */}
-            <div className="flex items-center gap-2 md:gap-3">
+            <div className="flex items-center gap-3 md:gap-5">
               <span className="text-xs md:text-sm font-semibold tracking-wide text-white/90 leading-none">
-                Funded by
+                Funded by the Government of Ontario
               </span>
               <img
                 src={ontarioLogoAsset.url}
                 alt="Government of Ontario"
-                className="h-5 md:h-5 w-auto object-contain"
+                className="h-5 md:h-6 w-auto object-contain"
               />
             </div>
           </div>
         </div>
       </footer>
+    </>
   );
 }
