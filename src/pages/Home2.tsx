@@ -367,11 +367,12 @@ export default function Home2() {
                   <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
                     <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300">
                       <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.72) 0%, hsl(0 0% 0% / 0.40) 35%, transparent 60%)' }} />
                       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.75) 30%, hsl(0 0% 0% / 0.35) 60%, hsl(0 0% 0% / 0.15) 100%)' }} />
                       <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
-                        background: 'hsla(168, 100%, 35%, 0.2)',
-                        color: 'hsl(168, 100%, 60%)',
-                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                        background: 'hsla(168, 100%, 35%, 0.25)',
+                        color: 'hsl(168, 100%, 65%)',
+                        border: '1px solid hsla(168, 100%, 50%, 0.35)',
                         backdropFilter: 'blur(8px)',
                       }}>{post.category}</span>
                       <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
