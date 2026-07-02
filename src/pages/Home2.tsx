@@ -28,7 +28,6 @@ import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
 import core5Logo from '@/assets/logos/core5.png';
-import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
@@ -80,6 +79,7 @@ const tesmanLogo = tesmanAsset.url;
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
+import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
 import ontarioLogo from '@/assets/logos/ontario.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import noaLogoAsset from '@/assets/logos/noa.png.asset.json';
@@ -306,7 +306,9 @@ export default function Home2() {
       ],
       href: '/funding/sudbury-catalyst-fund',
       partners: [
-        { logo: scfLogo, name: 'Sudbury Catalyst Fund' },
+        { logo: fednorLogo, name: 'Federal Economic Development Agency for Northern Ontario' },
+        { logo: nickelBasinLogo, name: 'Nickel Basin Federal Development Corporation' },
+        { logo: sudburyLogo, name: 'City of Greater Sudbury' },
       ],
     },
     {
