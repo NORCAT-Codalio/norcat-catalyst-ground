@@ -80,58 +80,69 @@ const sectors = [
 const testimonials = [
   {
     quote: "My first PITCH with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and today our team has grown from 7 to 60 in just four years.",
-    name: 'Luke Begley',
-    role: 'Founder, CircuitIQ',
+    headline: 'Luke Begley',
+    subline: 'Founder, CircuitIQ',
+    tag: '',
   },
   {
-    quote: "Sudbury's been amazing; we've already raised over $300,000 in angel investment and expect a match from the Sudbury Catalyst Fund, which brings us to over half a million-and we haven't even moved in yet.",
-    name: 'Ryan Marshall',
-    role: 'COO, Myomar Molecular',
+    quote: "The venture capital and funding environment right now is quite challenging and has been for the last couple of years. As we raise our $3-million seed round to advance our at-home test and scale up our laboratory operations to handle 30,000 samples per year, the investment we secured through Greater Sudbury has been a massive win. In the funding world, many organizations wait for the first group to jump. Securing this level of trust and expertise from Northern Ontario through the Venture North PITCH ecosystem has acted as a true catalyst, opening quite a few doors for us to bring in additional capital.",
+    headline: 'Myomar Molecular',
+    subline: "Judges' Choice & Peter Dal Bianco Award",
+    tag: 'PITCH 2025',
   },
   {
-    quote: 'The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy. We have since expanded our team and extended our reach across Canada.',
-    name: 'Karen Hastie',
-    role: 'Founder/CEO, Chamber Perks App',
+    quote: "Participating in the 2024 NORCAT Venture North PITCH competition was a transformative experience for the Chamber Perks App. The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy and enhancing our presentation skills. Since participating and winning the People's Choice Award, the Chamber Perks App has experienced significant growth, we have expanded our team, extended our reach across Canada, and developed a bilingual version of the app.",
+    headline: 'Karen Hastie',
+    subline: 'Founder/CEO, Chamber Perks App',
+    tag: 'PITCH 2024',
   },
   {
     quote: 'Working within the NORCAT ecosystem as a mentor, as a contributor, and as an investor, I realized that there is a hunger for growth and innovation and has a strong talent pool coming from Cambrian College, College Boreal, and Laurentian University.',
-    name: 'Ehsan Mirdamadi',
-    role: 'CEO/Founder, Codalio',
+    headline: 'Ehsan Mirdamadi',
+    subline: 'CEO/Founder, Codalio',
+    tag: '',
   },
   {
     quote: "It surprised me how much high technology there actually is in Sudbury… it is possible to be successful in building a technology company in Northern Ontario, which I think a lot of people don't realize.",
-    name: 'Matthew Gougeon',
-    role: 'CEO and Founder, Perspic',
+    headline: 'Matthew Gougeon',
+    subline: 'CEO and Founder, Perspic',
+    tag: '',
   },
   {
     quote: "We had a lot of references for work through the Fortin Discovery Lab and NORCAT, and such strong support turned out to be invaluable, especially when first getting started! You need get involved with your local ecosystem.",
-    name: 'Stephen Podrucky',
-    role: 'CEO and Founder, Podco',
+    headline: 'Stephen Podrucky',
+    subline: 'CEO and Founder, Podco',
+    tag: '',
   },
   {
     quote: "At some point I realised the need to shake hands of the people in the mining sector, and that's more than just a virtual conversation. NORCAT was the place that we find a very high density of end users, companies, and a network that has helped a lot to accelerate the process from having an idea to having a technology.",
-    name: 'Mashoud Aali',
-    role: 'Founder and CEO, Scient Analytic',
+    headline: 'Mashoud Aali',
+    subline: 'Founder and CEO, Scient Analytic',
+    tag: '',
   },
   {
     quote: "As a nurse at Health Sciences North, I got to see firsthand what worked, what didn't, and where the gaps were, while support from NORCAT helped me navigate the startup landscape, opened doors and remained incredibly supportive.",
-    name: 'Avalon Lupini',
-    role: 'CEO and Founder, SmartyPrints',
+    headline: 'Avalon Lupini',
+    subline: 'CEO and Founder, SmartyPrints',
+    tag: '',
   },
   {
     quote: "I got involved with NORCAT as a really passionate business owner, but I was running on a dream, a positive attitude, and a belief I was going to get this done. However, once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without the mentorship of Peter.",
-    name: 'Sheri Tomchick',
-    role: 'CEO and Founder, PlanA & StaffStat',
+    headline: 'Sheri Tomchick',
+    subline: 'CEO and Founder, PlanA & StaffStat',
+    tag: '',
   },
   {
     quote: "From a small business perspective, being part of a larger high-end innovation centre and team is invaluable to a start-up innovation firm. Working with NORCAT and its connections, has taught us about what we don't know, and we learned how to do what we don't know.",
-    name: 'Clara Steele',
-    role: 'Co-Founder, TesMan',
+    headline: 'Clara Steele',
+    subline: 'Co-Founder, TesMan',
+    tag: '',
   },
   {
     quote: "Support from NORCAT was critical in our decision to relocate our company to Sudbury, and Venture North PITCH really launched us into the ecosystem that led us to our first angel investor.",
-    name: 'Tabassum Pasha',
-    role: 'Co-Founder, Waive',
+    headline: 'Tabassum Pasha',
+    subline: 'Co-Founder, Waive',
+    tag: '',
   },
 ];
 
@@ -183,7 +194,7 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 export default function Home2() {
   const storiesScrollRef = useRef<HTMLDivElement>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const visibleCount = 3;
+  const visibleCount = 2;
   const maxIndex = Math.max(0, testimonials.length - visibleCount);
   const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
   const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
@@ -525,15 +536,15 @@ export default function Home2() {
         </section>
 
         {/* ───── TESTIMONIALS (FROM FOUNDERS, FIRSTHAND) ───── */}
-        <section className="py-16 md:py-24" style={{ background: TEAL, color: 'white' }}>
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 From Founders,<br />Firsthand
               </h2>
-              <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'white' }} />
-              <p className="mt-6 text-lg sm:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              <div className="mt-6 h-1 w-20 rounded-full" style={{ background: TEAL }} />
+              <p className="mt-6 text-lg sm:text-xl leading-relaxed" style={{ color: '#475068' }}>
                 Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
               </p>
             </div>
@@ -542,32 +553,44 @@ export default function Home2() {
               <div className="overflow-hidden">
                 <div
                   className="flex transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(calc(7% - ${testimonialIndex} * (86% / ${visibleCount})))` }}
+                  style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
                 >
                   {testimonials.map((t, idx) => {
                     const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
                     return (
                       <div
-                        key={t.name}
-                        className="w-[85%] sm:w-[60%] lg:w-[28.667%] flex-shrink-0 px-3 transition-all duration-500"
+                        key={t.headline}
+                        className="w-[85%] sm:w-[55%] lg:w-[45%] flex-shrink-0 px-3 transition-all duration-500"
                         style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
                       >
                         <figure
                           className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
-                          style={{ background: 'white' }}>
-                          <div className="text-7xl font-serif leading-none mb-2" style={{ color: TEAL, opacity: 0.9 }}>&ldquo;</div>
-                          <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>{t.quote}</blockquote>
-                          <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
-                            <div className="flex items-center gap-3">
-                              <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                   style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
-                                <ImageIcon className="w-5 h-5" style={{ color: `${TEAL}80` }} />
-                              </div>
-                              <div>
-                                <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
-                                <p className="text-xs md:text-sm mt-0.5 font-semibold" style={{ color: TEAL }}>{t.role}</p>
-                              </div>
+                          style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+                          {/* Header: logo placeholder + closing quote */}
+                          <div className="flex items-start justify-between mb-5">
+                            <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                                 style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
+                              <ImageIcon className="w-6 h-6" style={{ color: `${TEAL}80` }} />
                             </div>
+                            <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: TEAL, opacity: 0.85 }}>&rdquo;</div>
+                          </div>
+
+                          <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>
+                            {t.quote}
+                          </blockquote>
+
+                          <figcaption className="relative mt-8 pt-5" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
+                            <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>
+                              {t.headline}
+                            </p>
+                            <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: '#475068' }}>
+                              {t.subline}
+                            </p>
+                            {t.tag && (
+                              <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: TEAL }}>
+                                {t.tag}
+                              </p>
+                            )}
                           </figcaption>
                         </figure>
                       </div>
@@ -603,7 +626,7 @@ export default function Home2() {
                   onClick={() => setTestimonialIndex(i)}
                   aria-label={`Go to testimonial slide ${i + 1}`}
                   className="size-2.5 rounded-full transition-all"
-                  style={{ background: i === testimonialIndex ? 'white' : 'rgba(255,255,255,0.45)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
+                  style={{ background: i === testimonialIndex ? TEAL : 'rgba(0,26,77,0.25)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
                 />
               ))}
             </div>
