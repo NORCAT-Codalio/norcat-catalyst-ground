@@ -281,35 +281,33 @@ export default function Home2() {
         </section>
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+        <section className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-5 sm:gap-6 grid-cols-1 min-[700px]:grid-cols-2 min-[1100px]:grid-cols-3">
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
                 const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
                 const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
-                const words = h.label.split(' ');
-                const last = words.pop();
-                const first = words.join(' ');
 
                 return (
                   <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl aspect-[4/5] flex flex-col"
+                           className="relative overflow-hidden rounded-2xl flex flex-col min-[700px]:h-full"
                            style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
                     {/* Top image */}
-                    <div className="relative w-full h-[45%] overflow-hidden">
+                    <div className="relative w-full overflow-hidden h-44 sm:h-48 md:h-44 lg:h-52 shrink-0">
                       <img src={image} alt="" aria-hidden="true"
                            className="w-full h-full object-cover" />
                     </div>
                     {/* Content */}
-                    <div className="relative flex-1 flex flex-col p-6 md:p-7 overflow-hidden">
+                    <div className="relative flex-1 flex flex-col p-5 sm:p-6 md:p-6 lg:p-7 overflow-hidden">
                       <img src={norcatHalfLogo} alt="" aria-hidden="true"
                            className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-10 pointer-events-none" />
-                      <h3 className="font-black text-xl md:text-2xl lg:text-3xl leading-tight text-white mb-4 whitespace-nowrap" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                        {first} {last}.
+                      <h3 className="font-black leading-tight text-white mb-3 sm:mb-4 break-words"
+                          style={{ fontFamily: FONT, letterSpacing: '-0.02em', fontSize: 'clamp(1.25rem, 1.6vw + 0.7rem, 1.875rem)' }}>
+                        {h.label}.
                       </h3>
-                      <p className="text-sm leading-relaxed text-white/90 mb-6">{h.desc}</p>
+                      <p className="leading-relaxed text-white/90 mb-6" style={{ fontSize: 'clamp(0.85rem, 0.3vw + 0.78rem, 0.95rem)' }}>{h.desc}</p>
                       <Link to={link}
                             className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1 mt-auto"
                             style={{ fontFamily: FONT }}>
