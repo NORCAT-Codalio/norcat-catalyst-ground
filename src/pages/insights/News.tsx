@@ -128,6 +128,59 @@ export const newsItems = [
       { title: 'About FedNor', text: 'FedNor is the Government of Canada\'s economic development organization for Northern Ontario, dedicated to promoting innovation, supporting business growth, and fostering vibrant, sustainable communities. Through targeted investments and strategic partnerships, FedNor helps position Northern Ontario\'s economy to compete and thrive in the global marketplace.' },
     ],
   },
+  {
+    id: 'sudbury-catalyst-fund-codalio-2025',
+    title: 'Sudbury Catalyst Fund Announces $250,000 Investment in Codalio',
+    date: 'July 16, 2025',
+    excerpt: 'The Sudbury Catalyst Fund invests $250,000 in Codalio, a Sudbury-based SaaS AI-powered startup that transforms software development by converting natural language into functional, scalable applications.',
+    category: 'Funding',
+    icon: DollarSign,
+    fullContent: `Sudbury, Ontario – The Sudbury Catalyst Fund, a $5 million seed capital co-investment fund, proudly announces its investment of $250,000 in Codalio, an innovative Sudbury-based SaaS AI-powered startup transforming the software development process with fully customizable control. Codalio's SaaS-based platform enables project owners, business stakeholders as well as developers to convert natural language into functional applications, simplifying and streamlining the development cycle.
+
+"Codalio empowers product owners and developers to rapidly prototype and construct scalable, enterprise-grade software applications while reducing development costs and time to market by up to 80%," says Ehsan Mirdamadi, CEO of Codalio. By leveraging the open-source Rhino platform – developed and owned by Codalio's founders – alongside the company's proprietary AI core engine, trained on best software development practices and expert-designed infrastructure blueprints, Codalio automates and augments the entire product and software development lifecycle. This integrated approach significantly reduces the time and cost associated with building enterprise-grade software applications.
+
+With a focus on efficiency and quality, Codalio enables project managers to increase productivity and concentrate on higher-value tasks, all while maintaining full ownership of their projects. The platform offers the same benefits of the low-code and no-code platforms, while eliminating vendor lock-in, offering businesses greater flexibility. "We are incredibly grateful for the continued support from the Sudbury Catalyst Fund," adds Mirdamadi. "This investment allows us to continue growing our platform and drive even more innovation, as software development has historically been one of the biggest bottlenecks to innovation due to its high cost and complexity."
+
+Codalio's full-stack development approach sets it apart from other generative AI tools, offering end-to-end support from ideation, scoping, coding to publishing, coupled with its abstraction layer (Rhino), Codalio distinguishes itself from other LLMs models like Copilot, ChatGPT or even platforms like Cursor, by providing full-cycle contextual control, high-quality application generation, and direct publishing. This results in the production of enterprise-grade "Full Applications" rather than limited code snippets.
+
+"We are proud to invest in Codalio, a company that is reshaping how software is developed and managed," said Jason Sullivan, co-managing partner of the Sudbury Catalyst Fund and Executive Director of the Nickel Basin Federal Development Corporation. "Codalio's innovation is set to make a significant impact, not only in Sudbury's SME ecosystem but also in the global tech ecosystem."
+
+Don Duval, CEO of NORCAT and co-managing partner of the Sudbury Catalyst Fund, sees Codalio's growth as a testament to the strength of Sudbury's tech ecosystem. "Codalio's success reflects the innovation and entrepreneurial spirit thriving in our community," he said. Their decision to relocate to Sudbury reinforces this momentum. "Our mission has always been to accelerate support for startups that drive meaningful change, create long-term value, and generate job opportunities within the region," Duval added.
+
+---
+
+MEDIA CONTACTS
+
+Cynthia Furlotte | NORCAT | Marketing and Communications | cfurlotte@norcat.org
+
+---
+
+Version française
+
+Le Fonds catalyseur de Sudbury annonce un investissement de 250 000 $ dans Codalio
+
+Sudbury (Ontario) – Le Fonds catalyseur de Sudbury, un fonds de capital d'amorçage de 5 millions de dollars, est fier d'annoncer son investissement de 250 000 $ dans Codalio, une entreprise innovatrice de logiciel-service (SaaS – software as a service) installée à Sudbury qui fait appel à l'intelligence artificielle pour transformer le domaine du développement de logiciels en offrant le contrôle entièrement personnalisable du processus. La plateforme de Codalio permet aux propriétaires de projets, aux parties prenantes d'entreprises et aux développeurs de logiciels de convertir du langage naturel en applications fonctionnelles, de manière à simplifier et à accélérer le cycle du développement.
+
+« Codalio donne aux propriétaires et aux développeurs de produits la capacité de mener rapidement le prototypage et la construction de logiciels de qualité entreprise tout en réduisant de jusqu'à 80 % les coûts et le temps qu'il faut pour développer un logiciel commercialisable », dit Ehsan Mirdamadi, le PDG de Codalio. En recourant à la plateforme à code source ouvert Rhino – développée et détenue par les fondateurs de Codalio – aux côtés de son moteur de programme propriétaire à intelligence artificielle entraînée sur des pratiques exemplaires du développement de logiciels et des plans d'infrastructure conçus par des experts, Codalio automatise et rehausse l'ensemble du cycle du développement de produits et de logiciels. Cette approche intégrée réduit considérablement le temps et les coûts associés à la création de logiciels de qualité entreprise.
+
+En visant l'efficacité et la qualité, Codalio permet aux gestionnaires de projet d'augmenter leur productivité et de concentrer leurs efforts sur des tâches à valeur plus élevée, tout en gardant l'entière propriété de leurs projets. Cette plateforme fournit les mêmes avantages que les plateformes sans codage ou à faible codage, mais en éliminant l'asservissement à un fournisseur, ce qui donne plus de flexibilité aux entreprises. « Nous sommes profondément reconnaissants pour le soutien continu du Fonds catalyseur de Sudbury, ajoute Mirdamadi. Cet investissement nous permet de continuer de faire progresser notre plateforme et de poursuivre l'innovation encore plus loin, surtout que le développement de logiciels a longtemps été un frein à l'innovation à cause de ses coûts élevés et de sa complexité. »
+
+L'approche de développement full-stack de Codalio la distingue d'autres outils de génération à intelligence artificielle en offrant le soutien de bout en bout à l'idéation, au cadrage, au codage et à la publication et en le jumelant à son palier d'abstraction (Rhino). Codalio se distingue d'autres grands modèles de langage comme Copilot, Chat GPT ou même des plateformes comme Cursor, parce qu'il permet le contrôle contextuel sur l'ensemble du cycle, la génération d'applications de haute qualité et la publication directe. Le résultat obtenu est donc la production « d'applications complètes » de niveau entreprise, plutôt que des extraits de code limités.
+
+« Nous sommes fiers d'investir dans Codalio, une entreprise qui transforme le domaine de l'élaboration et de la gestion des logiciels », dit Jason Sullivan, associé codirecteur du Fonds catalyseur de Sudbury et directeur général de la Société fédérale de développement du Bassin du nickel. « L'innovation qu'apporte Codalio aura prochainement un impact important, non seulement dans l'écosystème des PME de Sudbury, mais aussi dans l'écosystème technologique international. »
+
+Don Duval, PDG de NORCAT et associé codirecteur du Fonds catalyseur de Sudbury, voit la croissance de Codalio comme une manifestation de la force de l'écosystème technologique de Sudbury. « Le succès de Codalio est un reflet de l'esprit d'innovation et d'entrepreneuriat qui s'épanouit dans notre communauté », dit-il. Leur décision de déménager à Sudbury a renforcé cet élan. « Notre mission a toujours été d'accélérer le soutien des entreprises qui poursuivent des changements importants, qui créent de la valeur à long terme et qui génèrent des emplois dans notre région », ajoute Duval.
+
+---
+
+RENSEIGNEMENTS AUX MÉDIAS
+
+Cynthia Furlotte | NORCAT | Marketing et communications | cfurlotte@norcat.org`,
+    aboutSections: [
+      { title: 'About the Sudbury Catalyst Fund', text: 'The Sudbury Catalyst Fund is a unique co-investment seed capital venture fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City of Greater Sudbury, the Greater Sudbury Development Corporation, FedNor, and NORCAT. For more information, visit www.norcat.org/innovation/sudbury-catalyst-fund.html or www.nickelbasin.ca.' },
+      { title: 'About Codalio', text: 'Codalio is an AI-powered software development platform that empowers entrepreneurs and businesses to build scalable, production-ready applications with remarkable speed and efficiency. By transforming natural language prompts into full-stack, secure, and customizable full applications, Codalio eliminates traditional development bottlenecks—enabling users to launch MVPs and iterate quickly to eventually build enterprise-grade solutions up to 80% faster. With built-in DevOps, modern architecture, and no vendor lock-in, Codalio bridges the gap between no-code simplicity and professional-grade software development. To learn more, visit https://www.codalio.com.' },
+    ],
+  },
 ];
 
 // Helper to render markdown-style links in news content
