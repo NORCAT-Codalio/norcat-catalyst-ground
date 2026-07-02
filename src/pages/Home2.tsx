@@ -338,7 +338,7 @@ export default function Home2() {
               <div className="max-w-2xl">
                 <Eyebrow>Latest Updates</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Insights.<br />Real Stories.
+                  Real Stories.<br />Unique Insights.
                 </Display>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
                   Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
