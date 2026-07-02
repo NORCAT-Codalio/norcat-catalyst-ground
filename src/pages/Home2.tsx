@@ -251,7 +251,7 @@ export default function Home2() {
       short: 'CIT',
       icon: Cpu,
       image: featuredCitImg,
-      description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors through the NORCAT Underground Centre.",
+      description: "Supporting SMEs in developing and adopting advanced mining and industrial technologies through access to the NORCAT Underground Centre.",
       bullets: [
         'Non-dilutive project funding',
         'Access to world-class testing and validation facilities',
@@ -485,7 +485,7 @@ export default function Home2() {
               </div>
 
               {/* Right content */}
-              <div className="p-8 md:p-12 flex flex-col">
+              <div className="p-8 md:p-12 flex flex-col h-full min-h-[360px] md:min-h-[460px]" style={{ minHeight: '360px' }}>
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
                   Featured Program
                 </p>
