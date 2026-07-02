@@ -246,7 +246,7 @@ export default function Home2() {
   const featuredPrograms = [
     {
       name: 'Critical Industrial Technologies',
-      short: 'Critical Industrial Technologies',
+      short: 'Critical Industrial Technologies (CIT) Initiative',
       icon: Cpu,
       image: featuredCitImg,
       description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors.",
@@ -280,7 +280,7 @@ export default function Home2() {
     },
     {
       name: 'Regional AI Initiative',
-      short: 'Regional AI Initiative',
+      short: 'Regional Artificial Intelligence Initiative',
       icon: Brain,
       image: featuredRaiiImg,
       description: 'Capital, compute, and specialized support for AI-driven ventures scaling out of Northern Ontario.',
