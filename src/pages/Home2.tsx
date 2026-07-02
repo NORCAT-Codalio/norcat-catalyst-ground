@@ -16,6 +16,7 @@ import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
+import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.asset.json';
 
 const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
