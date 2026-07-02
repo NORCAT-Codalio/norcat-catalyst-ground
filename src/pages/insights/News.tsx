@@ -130,6 +130,28 @@ export const newsItems = [
   },
 ];
 
+// Helper to render markdown-style links in news content
+const renderMarkdownLinks = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const [, label, url] = match;
+      return (
+        <a
+          key={i}
+          href={url}
+          className="underline hover:text-[#00B398] transition-colors"
+          style={{ color: '#003DA5' }}
+        >
+          {label}
+        </a>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+};
+
 // Activity feed
 const activityFeed = [
   { text: 'VentFlow Systems expanded to South Africa', time: '2 hours ago', type: 'expansion' },
