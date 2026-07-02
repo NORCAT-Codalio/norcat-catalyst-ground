@@ -86,6 +86,7 @@ import sudburyLogoAsset from '@/assets/logos/sudbury-logo.png.asset.json';
 import noaLogoAsset from '@/assets/logos/noa.png.asset.json';
 
 const noaLogo = noaLogoAsset.url;
+const sudburyLogo = sudburyLogoAsset.url;
 
 const FONT = "'Open Sans', system-ui, sans-serif";
 
