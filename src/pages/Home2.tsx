@@ -295,7 +295,7 @@ export default function Home2() {
       ],
       href: '/funding/regional-ai-program',
       partners: [
-        { logo: raiiLogo, name: 'Regional AI Initiative' },
+        { logo: fednorFullLogo, name: 'Federal Economic Development Agency for Northern Ontario' },
       ],
     },
     {
