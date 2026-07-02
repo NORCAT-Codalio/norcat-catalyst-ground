@@ -708,14 +708,14 @@ export default function Home2() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Header */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 md:mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-16 mb-12 md:mb-16 items-end">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Built for
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   <span className="block" style={{ color: NAVY }}>
                     Built for Northern Ontario startups
@@ -726,11 +726,12 @@ export default function Home2() {
                 </h2>
               </div>
               <div className="flex flex-col justify-end lg:pb-2">
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation helps founders build, test, validate, and scale technology-driven ventures with access to mentorship, funding pathways, industry connections, and real-world technology development infrastructure.
                 </p>
               </div>
             </div>
+
 
             {/* Three audience cards */}
             <div className="grid gap-6 md:grid-cols-3 mb-10 md:mb-14">
