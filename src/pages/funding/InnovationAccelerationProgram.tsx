@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
+import canadaLogo from '@/assets/logos/government-of-canada.png';
 import iapLogo from '@/assets/iap-logo.png.asset.json';
 
 // ── Brand tokens (mirrors RAII) ──
@@ -417,7 +418,8 @@ const InnovationAccelerationProgram = () => {
         <section className="py-16" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-5 text-center" style={{ color: '#6b7387' }}>Funded by</p>
-            <div className="max-w-md mx-auto rounded-xl p-6 flex items-center justify-center min-h-[110px]" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+            <div className="max-w-md mx-auto rounded-xl p-6 flex items-center justify-center gap-5 min-h-[110px]" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+              <img src={canadaLogo} alt="Government of Canada" className="max-h-12 max-w-[120px] object-contain" />
               <img src={fednorFullLogo} alt="Federal Economic Development Agency for Northern Ontario" className="max-h-14 max-w-full object-contain" />
             </div>
           </div>
