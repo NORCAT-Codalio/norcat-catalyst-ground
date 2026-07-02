@@ -166,7 +166,7 @@ const SuccessStories = () => {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.2] tracking-tight text-white mb-8 uppercase" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.2] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
                 Built in Sudbury.<br />
                 <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Scaling Globally.</span>
               </h1>
