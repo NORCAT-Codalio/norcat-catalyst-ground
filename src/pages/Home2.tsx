@@ -327,7 +327,7 @@ export default function Home2() {
       ],
       href: '/mining/core5',
       partners: [
-        { logo: core5Logo, name: 'Core5' },
+        { logo: ovinLogo.url, name: 'Ontario Vehicle Innovation Network' },
         { logo: ontarioLogoInline, name: 'Government of Ontario' },
       ],
     },
