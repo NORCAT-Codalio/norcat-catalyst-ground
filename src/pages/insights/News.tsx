@@ -181,6 +181,30 @@ Cynthia Furlotte | NORCAT | Marketing et communications | cfurlotte@norcat.org`,
       { title: 'About Codalio', text: 'Codalio is an AI-powered software development platform that empowers entrepreneurs and businesses to build scalable, production-ready applications with remarkable speed and efficiency. By transforming natural language prompts into full-stack, secure, and customizable full applications, Codalio eliminates traditional development bottlenecks—enabling users to launch MVPs and iterate quickly to eventually build enterprise-grade solutions up to 80% faster. With built-in DevOps, modern architecture, and no vendor lock-in, Codalio bridges the gap between no-code simplicity and professional-grade software development. To learn more, visit https://www.codalio.com.' },
     ],
   },
+  {
+    id: 'turnkey-norcat-partnership-2025',
+    title: 'Turnkey Communications Selects NORCAT as Innovation Partner to Advance Telecom Integration in Mining',
+    date: 'May 6, 2025',
+    excerpt: 'Turnkey Communications, one of Canada\'s leading telecommunications infrastructure providers, has selected NORCAT to accelerate the adoption and commercialization of advanced communications technologies across the global mining industry.',
+    category: 'Partnership',
+    icon: Building2,
+    fullContent: `Turnkey Communications, one of Canada\'s leading providers of telecommunications infrastructure and systems integration, has selected NORCAT to accelerate the adoption and commercialization of advanced communications technologies across the global mining industry.
+
+As part of NORCAT\'s dynamic ecosystem, Turnkey will leverage its deep field experience to help mining companies and technology developers bring cutting-edge solutions to life. With a track record of deploying complex communications systems in challenging environments, Turnkey brings valuable real-world insight that will help other companies scale and integrate their innovations effectively. "NORCAT has long been recognized as a catalyst for mining innovation, and we\'re honoured to be part of that journey," said Terry Joseph, President & CEO of Turnkey Communications. "We selected NORCAT because they offer a unique environment to help us, and the broader innovation community, close that gap. Their support, facilities, and global network of mining partners make them an ideal choice."
+
+As part of this collaboration, Turnkey Communications will:
+
+- Showcase advanced telecom solutions at [NORCAT\'s Underground Centre](/mining/underground-centre), including mining communication networks, fiber optics, and underground wireless systems-offering live demonstrations to mining stakeholders and decision-makers.
+- Collaborate with technology developers by offering field-proven deployment support and system integration expertise, helping innovators bring solutions to market with greater speed and confidence.
+- Advance safety and operational readiness by building communication systems that improve real-time control, remote monitoring, and emergency responsiveness in underground and remote environments.
+- Contribute to training and workforce development by engaging in NORCAT\'s education and training programs, helping the next generation of skilled workers gain hands-on experience with modern telecom infrastructure.
+
+"We are excited to welcome Turnkey Communications to the NORCAT ecosystem," said Don Duval, CEO of NORCAT. "Our Underground Centre serves as the global hub for mining innovation and supporting Turnkey underscores our commitment to expedite the adoption and diffusion of technologies that will shape the future of mining."`,
+    aboutSections: [
+      { title: 'About Turnkey Communications', text: 'Turnkey Communications is Canada\'s trusted systems integrator for telecommunications infrastructure, offering more than 25 years of experience in delivering reliable, future-proof solutions including private/public cellular networks, fiber optics, and enterprise-grade networking. Turnkey serves industrial sectors across Canada with a focus on operational efficiency, safety, and performance.' },
+      { title: 'About the NORCAT Underground Centre', text: 'Located in the City of Greater Sudbury, the NORCAT Underground Centre serves as the global one-stop shop operating mine designed to enable start-ups, small / medium enterprises, and international companies to develop, test, and demonstrate emerging technologies that are poised to transform the global mining industry.' },
+    ],
+  },
 ];
 
 // Helper to render markdown-style links in news content
