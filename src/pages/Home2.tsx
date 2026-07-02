@@ -734,7 +734,7 @@ export default function Home2() {
 
 
             {/* Three audience cards */}
-            <div className="grid gap-6 md:grid-cols-3 mb-10 md:mb-14">
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 md:mb-14">
               {audiences.map((a) => (
                 <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white flex flex-col h-full"
                      style={{ border: '1px solid #d9dde5' }}>
@@ -745,7 +745,7 @@ export default function Home2() {
                   <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT, color: NAVY }}>{a.title}</h3>
                   <p className="leading-relaxed text-sm md:text-base mb-6 flex-1" style={{ color: '#475068' }}>{a.body}</p>
                   <Link to={a.href}
-                        className="group inline-flex items-center gap-2 text-sm font-bold transition-colors"
+                        className="group inline-flex items-center gap-2 text-sm font-bold transition-colors whitespace-nowrap"
                         style={{ color: TEAL }}>
                     {a.linkLabel}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -753,6 +753,7 @@ export default function Home2() {
                 </div>
               ))}
             </div>
+
 
             {/* Bottom CTA banner */}
             <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-8"
