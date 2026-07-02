@@ -29,7 +29,7 @@ import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
 import ovinLogo from '@/assets/logos/ovin-logo.png.asset.json';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
-import canadaLogo from '@/assets/logos/government-of-canada.png';
+import canadaLogo from '@/assets/logos/government-of-canada.png.asset.json';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
 const featuredRaiiImg = featuredRaiiPhoto;
@@ -556,21 +556,28 @@ export default function Home2() {
                     Delivered in partnership with
                   </p>
                   <div className="flex flex-nowrap items-center gap-4 sm:gap-5 md:gap-6">
-                    {activeProgram.partners.map((partner) => (
-                      <div
-                        key={partner.name}
-                        className="flex items-center justify-center rounded-lg px-2 py-1"
-                      >
-                        <img
-                          src={partner.logo}
-                          alt={partner.name}
-                          loading="lazy"
-                          width={200}
-                          height={40}
-                          className="h-8 sm:h-9 md:h-10 w-auto object-contain max-w-[180px] sm:max-w-[200px]"
-                        />
-                      </div>
-                    ))}
+                    {activeProgram.partners.map((partner) => {
+                      const isCanada = partner.name === 'Government of Canada';
+                      return (
+                        <div
+                          key={partner.name}
+                          className="flex items-center justify-center rounded-lg px-2 py-1"
+                        >
+                          <img
+                            src={typeof partner.logo === 'string' ? partner.logo : partner.logo.url}
+                            alt={partner.name}
+                            loading="lazy"
+                            width={240}
+                            height={isCanada ? 60 : 40}
+                            className={`w-auto object-contain ${
+                              isCanada
+                                ? 'h-10 sm:h-12 md:h-14 max-w-[220px] sm:max-w-[260px]'
+                                : 'h-8 sm:h-9 md:h-10 max-w-[180px] sm:max-w-[200px]'
+                            }`}
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
