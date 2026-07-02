@@ -584,6 +584,107 @@ const SuccessStories = () => {
         </div>
       </section>
 
+      {/* ───── TESTIMONIALS: FROM FOUNDERS, FIRSTHAND ───── */}
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'hsl(168, 100%, 32%)' }}>
+        <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10">
+          <div className="max-w-2xl mb-12 md:mb-16">
+            <h2 className="font-bold uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl text-white"
+                style={{ fontFamily: "'Open Sans', sans-serif", letterSpacing: '-0.02em' }}>
+              From Founders,<br />Firsthand
+            </h2>
+            <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'hsla(0, 0%, 100%, 0.5)' }} />
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/90">
+              Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="overflow-hidden -mx-4 px-4 py-6">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
+              >
+                {testimonials.map((t, idx) => {
+                  const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
+                  return (
+                    <div
+                      key={t.headline}
+                      className="w-[85%] sm:w-[55%] lg:w-[45%] flex-shrink-0 px-3 transition-all duration-500"
+                      style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
+                    >
+                      <figure
+                        className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
+                        style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+                        {/* Header: logo + closing quote */}
+                        <div className="flex items-start justify-between mb-5">
+                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
+                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: t.logo ? 'white' : 'hsla(168, 100%, 32%, 0.08)' }}>
+                            {t.logo ? (
+                              <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
+                            ) : (
+                              <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(168, 100%, 32%, 0.55)' }} />
+                            )}
+                          </div>
+                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: 'hsl(168, 100%, 32%)', opacity: 0.85 }}>&rdquo;</div>
+                        </div>
+
+                        <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>
+                          {t.quote}
+                        </blockquote>
+
+                        <figcaption className="relative mt-8 pt-5" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
+                          <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 15%, 20%)' }}>
+                            {t.headline}
+                          </p>
+                          <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: 'hsl(220, 15%, 40%)' }}>
+                            {t.subline}
+                          </p>
+                          {t.tag && (
+                            <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: 'hsl(168, 100%, 32%)' }}>
+                              {t.tag}
+                            </p>
+                          )}
+                        </figcaption>
+                      </figure>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={prevTestimonial}
+              aria-label="Previous testimonial"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              <ChevronLeft className="size-6" />
+            </button>
+            <button
+              type="button"
+              onClick={nextTestimonial}
+              aria-label="Next testimonial"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              <ChevronRight className="size-6" />
+            </button>
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-10">
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setTestimonialIndex(i)}
+                aria-label={`Go to testimonial slide ${i + 1}`}
+                className="size-2.5 rounded-full transition-all"
+                style={{ background: i === testimonialIndex ? 'white' : 'rgba(255,255,255,0.35)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
