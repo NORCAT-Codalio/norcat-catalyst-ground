@@ -159,12 +159,10 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
+import SectionEyebrow from '@/components/SectionEyebrow';
+
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-    {children}
-  </p>
+  <SectionEyebrow className="mb-5">{children}</SectionEyebrow>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
