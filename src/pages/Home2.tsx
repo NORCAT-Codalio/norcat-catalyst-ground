@@ -560,6 +560,7 @@ export default function Home2() {
                     {activeProgram.partners.map((partner) => {
                       const isCanada = partner.name === 'Government of Canada';
                       const isFednor = partner.name === 'Federal Economic Development Agency for Northern Ontario';
+                      const isOntario = partner.name === 'Government of Ontario';
                       return (
                         <div
                           key={partner.name}
@@ -570,12 +571,14 @@ export default function Home2() {
                             alt={partner.name}
                             loading="lazy"
                             width={240}
-                            height={isCanada ? 60 : isFednor ? 52 : 40}
+                            height={isCanada ? 60 : isFednor ? 52 : isOntario ? 48 : 40}
                             className={`w-auto object-contain ${
                               isCanada
                                 ? 'h-10 sm:h-12 md:h-14 max-w-[220px] sm:max-w-[260px]'
                                 : isFednor
                                 ? 'h-9 sm:h-11 md:h-12 max-w-[200px] sm:max-w-[240px]'
+                                : isOntario
+                                ? 'h-8 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[220px]'
                                 : 'h-8 sm:h-9 md:h-10 max-w-[180px] sm:max-w-[200px]'
                             }`}
                           />
