@@ -10,7 +10,7 @@ import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import successStoriesCardImg from '@/assets/Untitled_design_85.png.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
-import heroModel from '@/assets/hero-model.png.asset.json';
+
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
