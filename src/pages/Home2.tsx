@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft, Image as ImageIcon } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
@@ -558,8 +558,16 @@ export default function Home2() {
                           <div className="text-7xl font-serif leading-none mb-2" style={{ color: TEAL, opacity: 0.9 }}>&ldquo;</div>
                           <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>{t.quote}</blockquote>
                           <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
-                            <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
-                            <p className="text-xs md:text-sm mt-1 font-semibold" style={{ color: TEAL }}>{t.role}</p>
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                                   style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
+                                <ImageIcon className="w-5 h-5" style={{ color: `${TEAL}80` }} />
+                              </div>
+                              <div>
+                                <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
+                                <p className="text-xs md:text-sm mt-0.5 font-semibold" style={{ color: TEAL }}>{t.role}</p>
+                              </div>
+                            </div>
                           </figcaption>
                         </figure>
                       </div>
