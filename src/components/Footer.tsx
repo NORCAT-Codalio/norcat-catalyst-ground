@@ -156,14 +156,14 @@ export function Footer() {
             </div>
 
             {/* Ontario Funding */}
-            <div className="flex items-center gap-3 md:gap-5">
+            <div className="flex items-center gap-2 md:gap-3">
               <span className="text-xs md:text-sm font-semibold tracking-wide text-white/90 leading-none">
-                Funded by the Government of Ontario
+                Funded by
               </span>
               <img
                 src={ontarioLogoAsset.url}
                 alt="Government of Ontario"
-                className="h-5 md:h-6 w-auto object-contain"
+                className="h-5 md:h-5 w-auto object-contain"
               />
             </div>
           </div>
