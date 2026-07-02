@@ -24,21 +24,17 @@ import featuredCore5Photo from '@/assets/featured-core5-photo.png';
 import featuredIapPhoto from '@/assets/featured-iap-photo.png';
 import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
-import raiiLogoAsset from '@/assets/logos/raii-logo.png.asset.json';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
 import core5Logo from '@/assets/logos/core5.png';
 import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
-import iapLogoAsset from '@/assets/iap-logo.png.asset.json';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
 const featuredRaiiImg = featuredRaiiPhoto;
 const featuredScfImg = featuredScfPhoto;
 const featuredCore5Img = featuredCore5Photo;
-const raiiLogo = raiiLogoAsset.url;
-const iapLogoImg = iapLogoAsset.url;
 
 
 
