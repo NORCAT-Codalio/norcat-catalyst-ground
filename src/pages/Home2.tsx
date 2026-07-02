@@ -279,7 +279,7 @@ export default function Home2() {
       ],
       href: '/funding/innovation-acceleration-program',
       partners: [
-        { logo: iapLogoImg, name: 'Innovation Acceleration Program' },
+        { logo: fednorFullLogo, name: 'Federal Economic Development Agency for Northern Ontario' },
       ],
     },
     {
