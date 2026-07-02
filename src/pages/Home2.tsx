@@ -90,10 +90,11 @@ const noaLogo = noaLogoAsset.url;
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const audiences = [
-  { icon: Rocket, title: 'Are you a Founder?', body: 'We unlock the physical space, regional resources, elite talent, and direct funding to successfully\u00a0scale, develop, and commercialize your innovation globally.' },
-  { icon: Building2, title: 'Are you an Industry Leader?', body: 'We connect you directly with our tech-builder clients to accelerate real-world development: test cutting-edge products live, and forge strategic business partnerships.' },
-  { icon: Handshake, title: 'Are you an Investor?', body: 'If you are looking to back high-potential, high-grit companies rooted in the industrial market, we introduce you to startups that are already operationally tested.\u00a0' },
+  { icon: Rocket, title: 'For Founders', body: 'Get the advisory support, funding guidance, market validation, and connections you need to build and grow a successful venture.', href: '/programs', linkLabel: 'Explore support' },
+  { icon: Building2, title: 'For SMEs', body: 'Access programs, funding pathways, and technology development sites to test, validate, and advance new solutions for real industry needs.', href: '/programs', linkLabel: 'Explore opportunities' },
+  { icon: Handshake, title: 'For Industry Partners', body: 'Connect with emerging technologies and startup solutions built to solve real operational challenges across mining, industrial, and advanced technology sectors.', href: '/ecosystem', linkLabel: 'Connect with innovators' },
 ];
+
 
 const highlights = [
   { icon: Sparkles, label: 'Venture Growth', desc: 'Take advantage of 1-on-1 mentorship, strategic programs, and a robust network designed to turn you into a market leader.', img: circuitiqTeam },
