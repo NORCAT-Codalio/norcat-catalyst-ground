@@ -19,16 +19,25 @@ import whatwedoPodiumImg from '@/assets/whatwedo-podium.png';
 import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset.json';
-import featuredCitAsset from '@/assets/featured-cit.png.asset.json';
-import featuredIapAsset from '@/assets/featured-iap.png.asset.json';
-import featuredRaiiAsset from '@/assets/featured-raii.png.asset.json';
-import featuredScfAsset from '@/assets/featured-scf.png.asset.json';
-import featuredCore5Asset from '@/assets/featured-core5.png.asset.json';
-const featuredCitImg = featuredCitAsset.url;
-const featuredIapImg = featuredIapAsset.url;
-const featuredRaiiImg = featuredRaiiAsset.url;
-const featuredScfImg = featuredScfAsset.url;
-const featuredCore5Img = featuredCore5Asset.url;
+import featuredCitPhoto from '@/assets/featured-cit-photo.png';
+import featuredCore5Photo from '@/assets/featured-core5-photo.png';
+import featuredIapPhoto from '@/assets/featured-iap-photo.png';
+import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
+import featuredScfPhoto from '@/assets/featured-scf-photo.png';
+import raiiLogoAsset from '@/assets/logos/raii-logo.png.asset.json';
+import citLogo from '@/assets/logos/cit-logo.png';
+import ociLogo from '@/assets/logos/oci-logo.png';
+import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
+import core5Logo from '@/assets/logos/core5.png';
+import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
+import iapLogoAsset from '@/assets/iap-logo.png.asset.json';
+const featuredCitImg = featuredCitPhoto;
+const featuredIapImg = featuredIapPhoto;
+const featuredRaiiImg = featuredRaiiPhoto;
+const featuredScfImg = featuredScfPhoto;
+const featuredCore5Img = featuredCore5Photo;
+const raiiLogo = raiiLogoAsset.url;
+const iapLogoImg = iapLogoAsset.url;
 
 
 
@@ -250,6 +259,11 @@ export default function Home2() {
         'Connections to industry and innovation partners',
       ],
       href: '/mining/critical-industrial-tech',
+      partners: [
+        { logo: citLogo, name: 'Critical Industrial Technologies' },
+        { logo: ociLogo, name: 'Ontario Centre of Innovation' },
+        { logo: ontarioLogoInline, name: 'Government of Ontario' },
+      ],
     },
     {
       name: 'Innovation Acceleration Program',
@@ -263,6 +277,9 @@ export default function Home2() {
         'Pathways to strategic partners and customers',
       ],
       href: '/funding/innovation-acceleration-program',
+      partners: [
+        { logo: iapLogoImg, name: 'Innovation Acceleration Program' },
+      ],
     },
     {
       name: 'Regional AI Initiative',
@@ -276,6 +293,9 @@ export default function Home2() {
         'Industry pilot opportunities across sectors',
       ],
       href: '/funding/regional-ai-program',
+      partners: [
+        { logo: raiiLogo, name: 'Regional AI Initiative' },
+      ],
     },
     {
       name: 'Sudbury Catalyst Fund',
@@ -289,6 +309,9 @@ export default function Home2() {
         'Post-investment portfolio support',
       ],
       href: '/funding/sudbury-catalyst-fund',
+      partners: [
+        { logo: scfLogo, name: 'Sudbury Catalyst Fund' },
+      ],
     },
     {
       name: 'Core5',
@@ -302,6 +325,9 @@ export default function Home2() {
         'Access to OEMs and industry partners',
       ],
       href: '/mining/core5',
+      partners: [
+        { logo: core5Logo, name: 'Core5' },
+      ],
     },
   ];
   const activeProgram = featuredPrograms[featuredProgramIndex];
@@ -457,7 +483,7 @@ export default function Home2() {
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
               Featured Programs
             </h2>
-            <div className="h-1 w-16 mb-10" style={{ background: TEAL }} />
+            <div className="h-1.5 w-16 mb-10" style={{ background: TEAL }} />
 
             {/* Tabs */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
@@ -486,7 +512,7 @@ export default function Home2() {
             {/* Panel */}
             <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white">
               {/* Left visual */}
-              <div className="relative min-h-[320px] md:min-h-[420px] overflow-hidden bg-white">
+              <div className="relative min-h-[320px] md:min-h-[460px] overflow-hidden bg-white">
                 <img
                   src={activeProgram.image}
                   alt={activeProgram.name}
@@ -494,23 +520,22 @@ export default function Home2() {
                 />
               </div>
 
-
               {/* Right content */}
               <div className="p-8 md:p-12 flex flex-col">
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
                   Featured Program
                 </p>
-                <h3 className="text-2xl md:text-3xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                   {activeProgram.name}
                 </h3>
-                <div className="h-1 w-10 mb-5" style={{ background: TEAL }} />
-                <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.75)' }}>
+                <div className="h-1.5 w-10 mb-5" style={{ background: TEAL }} />
+                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.75)' }}>
                   {activeProgram.description}
                 </p>
                 <ul className="space-y-3 mb-8">
                   {activeProgram.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                      <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
                       <span className="text-sm md:text-base" style={{ color: NAVY }}>{b}</span>
                     </li>
                   ))}
@@ -520,8 +545,25 @@ export default function Home2() {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm mt-auto self-start transition-transform hover:translate-x-0.5"
                   style={{ background: TEAL, color: 'white', fontFamily: FONT }}
                 >
-                  View This Program <ArrowRight className="w-4 h-4" />
+                  View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
+
+                {/* Delivered in partnership with */}
+                <div className="mt-8 pt-8 border-t" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
+                  <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
+                    Delivered in partnership with
+                  </p>
+                  <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+                    {activeProgram.partners.map((partner) => (
+                      <img
+                        key={partner.name}
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="h-10 sm:h-12 md:h-14 w-auto object-contain max-w-[220px]"
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
