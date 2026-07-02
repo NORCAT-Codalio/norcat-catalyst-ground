@@ -356,7 +356,7 @@ export default function Home2() {
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'OVIN Northern Ontario RTDS Renewed for Mining Innovation', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
                   { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: stateOfSudburyImpactImg, link: '/impact' },
-                  { category: 'Portfolio Highlights', title: 'Recent Wins', image: heroModelImg, link: '/impact#portfolio-highlights' },
+                  
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
                   { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
                   { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
