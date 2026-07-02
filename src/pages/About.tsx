@@ -242,7 +242,7 @@ export default function About() {
                   The Story of <span style={{ color: TEAL }}>NORCAT.</span>
                 </Display>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub - built on a single belief: keep Northern talent in the North.
+                  Since 2014, NORCAT Innovation has been the launchpad for Northern founders, turning regional expertise into globally competitive technology ventures.
                 </p>
 
                 {/* Three-box image collage */}
@@ -266,10 +266,12 @@ export default function About() {
                 <div className="absolute left-6 top-1 bottom-1 w-px" style={{ background: TEAL }} />
                 <div className="space-y-10 md:space-y-12">
                   {[
-                    { year: '1995', title: 'Founded in a Basement', desc: 'Darryl Lake launches NORCAT at Cambrian College to keep local talent in the North.' },
-                    { year: '1997', title: 'The Living Laboratory', desc: 'Underground training mine opens at Falconbridge Onaping Adit - putting Sudbury on the global mining-tech map.' },
-                    { year: '1998', title: 'Outgrowing the Space', desc: 'Rapid growth forces the team out of the college basement.' },
-                    { year: '2009', title: 'A New Headquarters', desc: '$14M expansion delivers a 70,000 sq ft home on Maley Drive - ecosystem pillars under one roof.' },
+                    { year: '2014', title: 'The Innovation Mill', desc: 'The official launch of Sudbury\'s Regional Innovation Centre, laying the groundwork for startup mentorship and hosting the inaugural PITCH event to connect local founders with early capital.' },
+                    { year: '2019', title: 'Scaling Capital & The Catalyst Fund', desc: 'A milestone era for the ecosystem, having supported the creation of over 100 sustainable tech jobs, generated upwards of $35M in equity capital, and launched the $5M Sudbury Catalyst Fund.' },
+                    { year: '2022', title: 'Mining Transformed', desc: 'The debut of the world\'s only technology exhibition held within an active underground mine, directly connecting developers of autonomous and electrified systems with global industry buyers.' },
+                    { year: '2024', title: 'Venture North PITCH Unification', desc: 'The strategic merger of NORCAT and Northern Ontario Angels\' flagship events, bringing the region\'s top startup talent and an extensive network of Accredited Angel Investors onto a single, high-stakes stage.' },
+                    { year: '2025', title: 'FedNor Investment & AI Integration', desc: 'The launch of the Regional Artificial Intelligence Initiative (RAII) and the renewal of the Innovation Acceleration Program, providing critical $20,000 micro-grants to help SMEs commercialize and scale.' },
+                    { year: '2026', title: 'Digital Transformation & Expansion', desc: 'A year of comprehensive modernization featuring the Phase III expansion of the Underground Centre\'s demonstration spaces, hands-on AI skill-building workshops, and a complete overhaul of digital venture growth services.' },
                     { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
                   ].map((m) => (
                     <div key={m.year} className="relative">
