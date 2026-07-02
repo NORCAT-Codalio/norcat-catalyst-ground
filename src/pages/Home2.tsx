@@ -348,13 +348,14 @@ export default function Home2() {
             <div className="relative">
               <div ref={storiesScrollRef} className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory pb-2">
                 {[
+                  { category: 'Events', title: 'Venture North PITCH is Returning', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
-                  { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports' },
+                  { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/impact' },
                   { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem' },
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
                   { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
-                  { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
+                  { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
                 ].map((post) => (
                   <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
                     <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300">
