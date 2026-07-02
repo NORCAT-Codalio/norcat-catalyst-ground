@@ -342,14 +342,6 @@ export default function Home2() {
                   Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
                 </p>
               </div>
-              <Link to="/insights/reports"
-                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
-                    style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
-                View all reports
-                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </span>
-              </Link>
             </div>
 
             {/* Carousel - 4 cards visible, equal sizing */}
