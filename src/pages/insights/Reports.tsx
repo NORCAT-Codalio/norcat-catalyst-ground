@@ -59,9 +59,9 @@ const InsightsReports = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {reports.map((report, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <article className="card-modern p-8 h-full flex flex-col">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="badge text-xs">{report.type}</span>
+                <article className="relative card-modern p-8 h-full flex flex-col">
+                  <span className="absolute top-4 left-4 badge text-xs">{report.type}</span>
+                  <div className="flex items-center gap-4 mb-4 mt-8">
                     <span className="flex items-center gap-1 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4" />
                       {report.date}
