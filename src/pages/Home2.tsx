@@ -219,10 +219,76 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 export default function Home2() {
   const storiesScrollRef = useRef<HTMLDivElement>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [featuredProgramIndex, setFeaturedProgramIndex] = useState(0);
   const visibleCount = 2;
   const maxIndex = Math.max(0, testimonials.length - visibleCount);
   const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
   const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
+
+  const featuredPrograms = [
+    {
+      name: 'Critical Industrial Technologies',
+      short: 'Critical Industrial Technologies',
+      icon: Cpu,
+      description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors.",
+      bullets: [
+        'Non-dilutive project funding',
+        'Access to world-class testing and validation facilities',
+        'Connections to industry and innovation partners',
+      ],
+      href: '/mining/critical-industrial-tech',
+    },
+    {
+      name: 'Innovation Acceleration Program',
+      short: 'Innovation Acceleration Program',
+      icon: Sparkles,
+      description: 'Accelerate market entry for high-growth ventures across Northern Ontario with tailored, non-dilutive support.',
+      bullets: [
+        'Milestone-based non-dilutive funding',
+        'Hands-on advisory from industry experts',
+        'Pathways to strategic partners and customers',
+      ],
+      href: '/funding/innovation-acceleration-program',
+    },
+    {
+      name: 'Regional AI Initiative',
+      short: 'Regional AI Initiative',
+      icon: Brain,
+      description: 'Capital, compute, and specialized support for AI-driven ventures scaling out of Northern Ontario.',
+      bullets: [
+        'Dedicated funding for AI ventures',
+        'Access to compute credits and technical mentors',
+        'Industry pilot opportunities across sectors',
+      ],
+      href: '/funding/regional-ai-program',
+    },
+    {
+      name: 'Sudbury Catalyst Fund',
+      short: 'Sudbury Catalyst Fund',
+      icon: Banknote,
+      description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors in Northern Ontario ventures.',
+      bullets: [
+        'Up to $250K in seed equity co-investment',
+        'Angel investor network alignment',
+        'Post-investment portfolio support',
+      ],
+      href: '/funding/sudbury-catalyst-fund',
+    },
+    {
+      name: 'Core5',
+      short: 'Core5',
+      icon: Layers,
+      description: 'The OVIN Northern Regional Technology Development Site supporting startups and SMEs across the full battery and electric vehicle value chain.',
+      bullets: [
+        'BEV / EV sector project funding',
+        'Real-world underground and industrial testing',
+        'Access to OEMs and industry partners',
+      ],
+      href: '/mining/core5',
+    },
+  ];
+  const activeProgram = featuredPrograms[featuredProgramIndex];
+  const ActiveProgramIcon = activeProgram.icon;
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: "'Open Sans', sans-serif" }}>
