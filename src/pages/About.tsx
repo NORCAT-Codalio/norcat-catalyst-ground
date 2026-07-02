@@ -242,7 +242,7 @@ export default function About() {
                   The Story of <span style={{ color: TEAL }}>NORCAT.</span>
                 </Display>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  From a Cambrian College basement in 1995 to a 70,000 sq ft innovation hub - built on a single belief: keep Northern talent in the North.
+                  Since 2014, NORCAT Innovation has been the launchpad for Northern founders, turning regional expertise into globally competitive technology ventures.
                 </p>
 
                 {/* Three-box image collage */}
