@@ -61,7 +61,7 @@ export function NewsFeed() {
             >
               <motion.div
                 layout
-                className="rounded-[20px] overflow-hidden"
+                className="relative rounded-[20px] overflow-hidden"
                 style={{
                   background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -71,12 +71,16 @@ export function NewsFeed() {
                 }}
               >
                 {!isExpanded && (
-                  <motion.div layout="position" className="p-6">
+                  <motion.div layout="position" className="p-6 pt-12">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style={{
+                      background: 'hsl(168 100% 35% / 0.1)',
+                      color: 'hsl(168, 100%, 28%)',
+                      border: '0.5px solid hsl(168 100% 35% / 0.2)',
+                    }}>{item.category}</span>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-11 h-11 rounded-full flex items-center justify-center" style={iconContainerStyle}>
                         <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
-                      <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.category}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs mb-3" style={{ color: 'hsl(220, 15%, 50%)' }}>
                       <Calendar className="w-3.5 h-3.5" />
