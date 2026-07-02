@@ -18,7 +18,7 @@ import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.a
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
 
-const norcatBuilding = norcatBuildingAsset.url;
+const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
 const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
