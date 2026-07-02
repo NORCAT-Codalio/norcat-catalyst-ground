@@ -1,5 +1,4 @@
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, FlaskConical, Handshake, Battery, Cpu, MapPin, ExternalLink } from 'lucide-react';
@@ -131,7 +130,10 @@ const Core5 = () => {
           {/* Centered header */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <ScrollReveal>
-              <div className="mb-6"><SectionEyebrow>EV Innovation Hub</SectionEyebrow></div>
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <Cpu className="w-4 h-4" />
+                EV Innovation Hub
+              </span>
               <h2 className="headline-lg mb-6">Powering Northern Ontario's EV Future</h2>
               <p className="body-lg text-muted-foreground">
                 Core5 is one of six regional technology development sites within the Ontario Vehicle 
@@ -182,7 +184,10 @@ const Core5 = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <div className="mb-6 flex justify-center"><SectionEyebrow>Pan-Northern Network</SectionEyebrow></div>
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <MapPin className="w-4 h-4" />
+                Pan-Northern Network
+              </span>
               <h2 className="headline-lg mb-4">Regional Partners</h2>
               <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
                 Core5 connects innovation hubs across Northern Ontario, creating a unified 

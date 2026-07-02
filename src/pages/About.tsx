@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, Linkedin, X, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -63,6 +62,72 @@ const team = [
 ];
 
 
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+     style={{ fontFamily: FONT, color: TEAL }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
+
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+    {children}
+  </As>
+);
+
+function TeamModal({ member, onClose }: { member: typeof team[0] | null; onClose: () => void }) {
+  if (!member) return null;
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+        onClick={onClose}
+      />
+      <motion.div
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      >
+        <motion.div
+          className="rounded-2xl max-w-md w-full p-8 relative"
+          style={{ background: 'white', border: '1px solid #d9dde5' }}
+          initial={{ scale: 0.95, y: 10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 10 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button onClick={onClose}
+                  className="absolute top-4 right-4 size-9 rounded-full flex items-center justify-center transition-colors"
+                  style={{ background: PAPER, color: NAVY }}>
+            <X className="w-4 h-4" />
+          </button>
+          <div className="text-center">
+            <img src={member.image} alt={member.name}
+                 className="w-24 h-24 rounded-full object-cover mx-auto mb-5"
+                 style={{ border: `3px solid ${TEAL}` }} />
+            <h3 className="text-2xl font-black uppercase mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+              {member.name}
+            </h3>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: TEAL, fontFamily: FONT }}>
+              {member.role}
+            </p>
+            <p className="text-left leading-relaxed mb-7 text-sm" style={{ color: '#475068' }}>
+              {member.bio}
+            </p>
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+               className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+               style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+              <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+              </span>
+            </a>
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
 
 export default function About() {
   const [expandedMember, setExpandedMember] = useState<string | null>(null);
@@ -92,7 +157,7 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <div className="mb-5"><SectionEyebrow>About NORCAT Innovation</SectionEyebrow></div>
+              <Eyebrow className="text-lg">About NORCAT Innovation</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 <span style={{ color: TEAL }}>The Innovation Engine</span><br />of the North.
               </Display>
@@ -128,8 +193,11 @@ export default function About() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="mb-5"><SectionEyebrow><span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
-                  Our Mission</SectionEyebrow></div>
+                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
+                  Our Mission
+                </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   About <span style={{ color: TEAL }}>NORCAT Innovation.</span>
@@ -169,7 +237,7 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               {/* Left: section header */}
               <div className="max-w-xl lg:sticky lg:top-32">
-                <div className="mb-5"><SectionEyebrow>Our Story</SectionEyebrow></div>
+                <Eyebrow>Our Story</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   The Story of <span style={{ color: TEAL }}>NORCAT.</span>
                 </Display>
@@ -232,8 +300,11 @@ export default function About() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
-                <div className="mb-5"><SectionEyebrow><span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                  Our Team</SectionEyebrow></div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Our Team
+                </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   Meet the<br /><span style={{ color: TEAL }}>Innovation Team.</span>
@@ -346,7 +417,7 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
-              <div className="mb-5"><SectionEyebrow>What We Stand For</SectionEyebrow></div>
+              <Eyebrow>What We Stand For</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Our <span style={{ color: TEAL }}>Values.</span>
               </Display>
@@ -399,8 +470,11 @@ export default function About() {
         <section className="py-20 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
-              <div className="mb-4"><SectionEyebrow><span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Recognition</SectionEyebrow></div>
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Recognition
+              </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Awards & <span style={{ color: TEAL }}>Accolades.</span>
@@ -442,8 +516,11 @@ export default function About() {
         <section className="pt-20 md:pt-24 pb-10 md:pb-12" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center mb-10 md:mb-12">
-              <div className="mb-4 flex justify-center"><SectionEyebrow><span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Our Partners</SectionEyebrow></div>
+              <p className="inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Our Partners
+              </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 Friends who open doors.
@@ -476,7 +553,7 @@ export default function About() {
                className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <div className="mb-5 flex justify-center"><SectionEyebrow>Your move</SectionEyebrow></div>
+            <Eyebrow className="justify-center">Your move</Eyebrow>
             <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
             </Display>

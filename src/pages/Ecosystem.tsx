@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Building2, GraduationCap, Landmark, Users, Pickaxe, DollarSign, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -192,7 +191,9 @@ export default function Ecosystem() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl">
             <ScrollReveal>
-              <div className="mb-4"><SectionEyebrow>Ecosystem Map</SectionEyebrow></div>
+              <span className="text-primary font-semibold text-sm tracking-wider uppercase mb-4 block">
+                Ecosystem Map
+              </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="headline-xl mb-6">

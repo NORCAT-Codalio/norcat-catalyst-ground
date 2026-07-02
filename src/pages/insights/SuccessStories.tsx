@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -161,7 +160,10 @@ const SuccessStories = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <div className="mb-8"><SectionEyebrow>Portfolio Success Stories</SectionEyebrow></div>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
+                <Sparkles className="w-3.5 h-3.5" />
+                PORTFOLIO SUCCESS STORIES&nbsp;
+              </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.2] tracking-tight text-white mb-8" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
