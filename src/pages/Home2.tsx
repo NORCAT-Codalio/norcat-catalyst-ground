@@ -29,6 +29,7 @@ import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
 import core5Logo from '@/assets/logos/core5.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
+import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
 const featuredRaiiImg = featuredRaiiPhoto;
@@ -274,6 +275,7 @@ export default function Home2() {
       ],
       href: '/funding/innovation-acceleration-program',
       partners: [
+        { logo: canadaLogo, name: 'Government of Canada' },
         { logo: fednorFullLogo, name: 'Federal Economic Development Agency for Northern Ontario' },
       ],
     },
@@ -290,6 +292,7 @@ export default function Home2() {
       ],
       href: '/funding/regional-ai-program',
       partners: [
+        { logo: canadaLogo, name: 'Government of Canada' },
         { logo: fednorFullLogo, name: 'Federal Economic Development Agency for Northern Ontario' },
       ],
     },
