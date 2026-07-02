@@ -726,9 +726,7 @@ export default function Home2() {
                 </h2>
               </div>
               <div className="flex flex-col justify-end lg:pb-2">
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
-                  NORCAT Innovation helps founders build, test, validate, and scale technology-driven ventures with access to mentorship, funding pathways, industry connections, and real-world technology development infrastructure.
-                </p>
+                {/* description removed per request */}
               </div>
             </div>
 
