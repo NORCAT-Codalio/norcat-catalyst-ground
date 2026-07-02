@@ -708,14 +708,14 @@ export default function Home2() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Header */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 md:mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-16 mb-12 md:mb-16 items-end">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Built for
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   <span className="block" style={{ color: NAVY }}>
                     Built for Northern Ontario startups
@@ -726,14 +726,15 @@ export default function Home2() {
                 </h2>
               </div>
               <div className="flex flex-col justify-end lg:pb-2">
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation helps founders build, test, validate, and scale technology-driven ventures with access to mentorship, funding pathways, industry connections, and real-world technology development infrastructure.
                 </p>
               </div>
             </div>
 
+
             {/* Three audience cards */}
-            <div className="grid gap-6 md:grid-cols-3 mb-10 md:mb-14">
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 md:mb-14">
               {audiences.map((a) => (
                 <div key={a.title} className="relative p-7 md:p-9 rounded-2xl bg-white flex flex-col h-full"
                      style={{ border: '1px solid #d9dde5' }}>
@@ -744,7 +745,7 @@ export default function Home2() {
                   <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT, color: NAVY }}>{a.title}</h3>
                   <p className="leading-relaxed text-sm md:text-base mb-6 flex-1" style={{ color: '#475068' }}>{a.body}</p>
                   <Link to={a.href}
-                        className="group inline-flex items-center gap-2 text-sm font-bold transition-colors"
+                        className="group inline-flex items-center gap-2 text-sm font-bold transition-colors whitespace-nowrap"
                         style={{ color: TEAL }}>
                     {a.linkLabel}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -753,22 +754,23 @@ export default function Home2() {
               ))}
             </div>
 
+
             {/* Bottom CTA banner */}
-            <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+            <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-8"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
               <div className="flex items-center justify-center size-20 rounded-full flex-shrink-0"
                    style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
                 <Users className="size-10" style={{ color: 'white' }} />
               </div>
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl mb-3" style={{ fontFamily: FONT, color: 'white' }}>
+                <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl lg:text-3xl lg:text-nowrap mb-3" style={{ fontFamily: FONT, color: 'white' }}>
                   Ready to build, test, or scale?
                 </h3>
-                <p className="text-base sm:text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="text-base sm:text-lg leading-relaxed lg:max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Whether you're launching a startup, validating new technology, or looking for the right funding pathway, we're here to help you take the next step.
                 </p>
               </div>
-              <div className="flex flex-wrap items-center justify-center gap-3 flex-shrink-0">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 flex-shrink-0">
                 <Link to="/portal/auth"
                       className="group inline-flex items-center gap-2 pl-6 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                       style={{ background: TEAL, color: NAVY }}>
@@ -787,6 +789,7 @@ export default function Home2() {
                 </Link>
               </div>
             </div>
+
 
           </div>
         </section>
