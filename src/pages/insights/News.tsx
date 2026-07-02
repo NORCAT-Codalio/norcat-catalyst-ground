@@ -370,7 +370,7 @@ const News = () => {
                           <div className="max-w-3xl">
                             {item.fullContent.split('\n\n').map((paragraph, idx) => (
                               <p key={idx} className="text-base leading-relaxed mb-4 last:mb-0" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
-                                {paragraph}
+                                {renderMarkdownLinks(paragraph)}
                               </p>
                             ))}
 
