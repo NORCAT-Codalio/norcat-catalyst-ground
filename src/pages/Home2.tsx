@@ -245,8 +245,8 @@ export default function Home2() {
 
   const featuredPrograms = [
     {
-      name: 'Critical Industrial Technologies',
-      short: 'Critical Industrial Technologies (CIT) Initiative',
+      name: 'Critical Industrial Technologies (CIT) Initiative',
+      short: 'CIT',
       icon: Cpu,
       image: featuredCitImg,
       description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors.",
@@ -257,14 +257,13 @@ export default function Home2() {
       ],
       href: '/mining/critical-industrial-tech',
       partners: [
-        { logo: citLogo, name: 'Critical Industrial Technologies' },
         { logo: ociLogo, name: 'Ontario Centre of Innovation' },
         { logo: ontarioLogoInline, name: 'Government of Ontario' },
       ],
     },
     {
       name: 'Innovation Acceleration Program',
-      short: 'Innovation Acceleration Program',
+      short: 'IAP',
       icon: Sparkles,
       image: featuredIapImg,
       description: 'Accelerate market entry for high-growth ventures across Northern Ontario with tailored, non-dilutive support.',
@@ -279,8 +278,8 @@ export default function Home2() {
       ],
     },
     {
-      name: 'Regional AI Initiative',
-      short: 'Regional Artificial Intelligence Initiative',
+      name: 'Regional Artificial Intelligence Initiative',
+      short: 'RAII',
       icon: Brain,
       image: featuredRaiiImg,
       description: 'Capital, compute, and specialized support for AI-driven ventures scaling out of Northern Ontario.',
@@ -296,7 +295,7 @@ export default function Home2() {
     },
     {
       name: 'Sudbury Catalyst Fund',
-      short: 'Sudbury Catalyst Fund',
+      short: 'SCF',
       icon: Banknote,
       image: featuredScfImg,
       description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors in Northern Ontario ventures.',
