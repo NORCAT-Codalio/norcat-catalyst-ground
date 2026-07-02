@@ -45,6 +45,11 @@ import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import rephealthLogo from '@/assets/logos/rephealth.png';
 import rnaLogo from '@/assets/logos/rna-diagnostics.png';
+import myomarLogo from '@/assets/logos/myomar.png';
+import waiveTestimonialLogo from '@/assets/logos/waive.png';
+import planaLogo from '@/assets/logos/plana.png';
+import chamberPerksAsset from '@/assets/chamber-perks-logo.png.asset.json';
+const chamberPerksLogo = chamberPerksAsset.url;
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
@@ -83,24 +88,28 @@ const testimonials = [
     headline: 'Luke Begley',
     subline: 'Founder, CircuitIQ',
     tag: 'PITCH 2022',
+    logo: circuitiqLogo,
   },
   {
     quote: "The venture capital and funding environment right now is quite challenging and has been for the last couple of years. As we raise our $3-million seed round to advance our at-home test and scale up our laboratory operations to handle 30,000 samples per year, the investment we secured through Greater Sudbury has been a massive win. In the funding world, many organizations wait for the first group to jump. Securing this level of trust and expertise from Northern Ontario through the Venture North PITCH ecosystem has acted as a true catalyst, opening quite a few doors for us to bring in additional capital.",
     headline: 'Myomar Molecular',
     subline: "Judges' Choice & Peter Dal Bianco Award",
     tag: 'PITCH 2025',
+    logo: myomarLogo,
   },
   {
     quote: "Participating in the 2024 NORCAT Venture North PITCH competition was a transformative experience for the Chamber Perks App. The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy and enhancing our presentation skills. Since participating and winning the People's Choice Award, the Chamber Perks App has experienced significant growth, we have expanded our team, extended our reach across Canada, and developed a bilingual version of the app.",
     headline: 'Karen Hastie',
     subline: 'Founder/CEO, Chamber Perks App',
     tag: 'PITCH 2024',
+    logo: chamberPerksLogo,
   },
   {
     quote: 'Working within the NORCAT ecosystem as a mentor, as a contributor, and as an investor, I realized that there is a hunger for growth and innovation and has a strong talent pool coming from Cambrian College, College Boreal, and Laurentian University.',
     headline: 'Ehsan Mirdamadi',
     subline: 'CEO/Founder, Codalio',
     tag: 'NORCAT Innovation Client',
+    logo: codalioLogo,
   },
   {
     quote: "It surprised me how much high technology there actually is in Sudbury… it is possible to be successful in building a technology company in Northern Ontario, which I think a lot of people don't realize.",
@@ -131,6 +140,7 @@ const testimonials = [
     headline: 'Sheri Tomchick',
     subline: 'CEO and Founder, PlanA & StaffStat',
     tag: 'NORCAT Innovation Client',
+    logo: planaLogo,
   },
   {
     quote: "From a small business perspective, being part of a larger high-end innovation centre and team is invaluable to a start-up innovation firm. Working with NORCAT and its connections, has taught us about what we don't know, and we learned how to do what we don't know.",
@@ -143,6 +153,7 @@ const testimonials = [
     headline: 'Tabassum Pasha',
     subline: 'Co-Founder, Waive',
     tag: 'PITCH 2023',
+    logo: waiveTestimonialLogo,
   },
 ];
 
@@ -568,9 +579,13 @@ export default function Home2() {
                           style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
                           {/* Header: logo placeholder + closing quote */}
                           <div className="flex items-start justify-between mb-5">
-                            <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
-                                 style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
-                              <ImageIcon className="w-6 h-6" style={{ color: `${TEAL}80` }} />
+                            <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
+                                 style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : `2px dashed ${TEAL}40`, background: t.logo ? 'white' : 'rgba(0,179,152,0.06)' }}>
+                              {t.logo ? (
+                                <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[85%] max-h-[85%] object-contain" loading="lazy" />
+                              ) : (
+                                <ImageIcon className="w-6 h-6" style={{ color: `${TEAL}80` }} />
+                              )}
                             </div>
                             <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: TEAL, opacity: 0.85 }}>&rdquo;</div>
                           </div>
