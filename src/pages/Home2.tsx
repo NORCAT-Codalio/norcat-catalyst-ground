@@ -14,8 +14,8 @@ import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
-import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
-import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
+import whatwedoRobotImg from '@/assets/whatwedo-robot.jpg';
+import whatwedoPodiumImg from '@/assets/whatwedo-podium.png';
 import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset.json';
@@ -328,7 +328,7 @@ export default function Home2() {
             <div className="grid grid-cols-1 min-[1200px]:grid-cols-3 gap-5 min-[1200px]:gap-6 items-stretch">
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
-                const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
+                const image = [circuitiqTeam, whatwedoRobotImg, whatwedoPodiumImg][i];
                 const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
                 const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
 
