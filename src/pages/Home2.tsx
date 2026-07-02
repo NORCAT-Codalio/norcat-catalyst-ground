@@ -435,7 +435,7 @@ export default function Home2() {
         </section>
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+        <section className="py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
               {highlights.map((h, i) => {
