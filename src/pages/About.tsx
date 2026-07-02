@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, Linkedin, X, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -63,10 +62,12 @@ const team = [
 ];
 
 
-const Eyebrow = ({ children, className = '', center = false }: any) => (
-  <div className={`${center ? 'flex justify-center' : ''} mb-5 ${className}`}>
-    <SectionEyebrow>{children}</SectionEyebrow>
-  </div>
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+     style={{ fontFamily: FONT, color: TEAL }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (

@@ -1,5 +1,4 @@
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
@@ -39,10 +38,14 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, className = '', center = false }: any) => (
-  <div className={`${center ? 'flex justify-center' : ''} mb-5 ${className}`}>
-    <SectionEyebrow>{children}</SectionEyebrow>
-  </div>
+const Eyebrow = ({ children, center = false, color = TEAL }: { children: React.ReactNode; center?: boolean; color?: string }) => (
+  <p
+    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
+    style={{ fontFamily: FONT, color }}
+  >
+    <span className="size-1.5 rounded-full inline-block" style={{ background: color }} />
+    {children}
+  </p>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any, color = 'white' }: any) => (

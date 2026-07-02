@@ -3,7 +3,6 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
@@ -161,7 +160,11 @@ const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <SectionEyebrow className="mb-5">{children}</SectionEyebrow>
+  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+     style={{ fontFamily: FONT, color: TEAL }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (

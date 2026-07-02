@@ -1,5 +1,4 @@
 import { Layout } from '@/components/Layout';
-import SectionEyebrow from '@/components/SectionEyebrow';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, FlaskConical, Handshake, Battery, Cpu, MapPin, ExternalLink } from 'lucide-react';
