@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
-import ontarioLogoAsset from '@/assets/ontario-logo.png.asset.json';
+import ontarioLogoAsset from '@/assets/logos/ontario-logo.png.asset.json';
 
 const footerLinks = {
   programs: [
@@ -143,21 +143,9 @@ export function Footer() {
           <div className="h-px bg-white/15" />
         </div>
 
-        {/* Ontario Funding + Bottom Bar */}
+        {/* Legal + Ontario Funding */}
         <div className="container mx-auto px-4 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            {/* Ontario Funding */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
-              <span className="text-sm md:text-base font-bold tracking-wide text-white">
-                Funded by the Government of Ontario
-              </span>
-              <img
-                src={ontarioLogoAsset.url}
-                alt="Government of Ontario"
-                className="h-8 md:h-10 w-auto object-contain brightness-0 invert"
-              />
-            </div>
-
             {/* Legal */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-white/50">
               <span>© {new Date().getFullYear()} NORCAT Innovation</span>
@@ -165,6 +153,18 @@ export function Footer() {
                 <Link to="/privacy" className="hover:text-white/80 transition-colors">Privacy Policy</Link>
                 <a href="https://www.norcat.org/aoda-policy.html" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">AODA Policy</a>
               </div>
+            </div>
+
+            {/* Ontario Funding */}
+            <div className="flex items-center gap-2 md:gap-3">
+              <span className="text-xs md:text-sm font-semibold tracking-wide text-white/90 leading-none">
+                Funded by the Government of Ontario
+              </span>
+              <img
+                src={ontarioLogoAsset.url}
+                alt="Government of Ontario"
+                className="h-5 md:h-6 w-auto object-contain brightness-0 invert"
+              />
             </div>
           </div>
         </div>
