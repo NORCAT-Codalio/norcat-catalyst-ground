@@ -15,7 +15,7 @@ import waiveLogo from '@/assets/waive-logo.png.asset.json';
 // Fund partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
-import sudburyLogo from '@/assets/logos/sudbury.png';
+import sudburyLogoAsset from '@/assets/logos/sudbury-logo.png.asset.json';
 import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
 
 // Team headshots
@@ -313,7 +313,7 @@ const SudburyCatalystFund = () => {
                     <img src={nickelBasinLogo} alt="Nickel Basin Federal Development Corporation" className="max-h-16 max-w-full object-contain" />
                   </div>
                   <div className="rounded-xl p-6 flex items-center justify-center min-h-[110px]" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                    <img src={sudburyLogo} alt="City of Greater Sudbury" className="max-h-16 max-w-full object-contain" />
+                    <img src={sudburyLogoAsset.url} alt="City of Greater Sudbury" className="max-h-16 max-w-full object-contain" />
                   </div>
                   <div className="col-span-2 rounded-xl p-6 flex items-center justify-center min-h-[110px]" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                     <img src={fednorLogo} alt="Federal Economic Development Agency for Northern Ontario" className="max-h-14 max-w-full object-contain" />
