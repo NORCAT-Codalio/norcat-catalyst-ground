@@ -17,6 +17,7 @@ import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.a
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
 import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.asset.json';
+import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 
 const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
@@ -25,6 +26,7 @@ const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderDesktopImg = heroHeaderDesktopAsset.url;
 const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
 const ventureNorthPitchImg = ventureNorthPitchAsset.url;
+const stateOfSudburyImpactImg = stateOfSudburyImpactAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
@@ -351,7 +353,7 @@ export default function Home2() {
                   { category: 'Events', title: 'Venture North PITCH Returns this October', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
-                  { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/impact' },
+                  { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: stateOfSudburyImpactImg, link: '/impact' },
                   { category: 'Portfolio Highlights', title: 'Recent Wins', image: heroModelImg, link: '/impact#portfolio-highlights' },
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
                   { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
