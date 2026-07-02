@@ -215,8 +215,14 @@ const testimonials = [
   },
 ];
 
+// Ecosystem stats
+const ecosystemStats = [
+  { value: '$180M+', label: 'Capital Raised' },
+  { value: '450+', label: 'Jobs Created' },
+  { value: '23', label: 'Countries Reached' },
+  { value: '89%', label: 'Survival Rate' },
+];
 
-const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
