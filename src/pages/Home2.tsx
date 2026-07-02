@@ -536,15 +536,15 @@ export default function Home2() {
         </section>
 
         {/* ───── TESTIMONIALS (FROM FOUNDERS, FIRSTHAND) ───── */}
-        <section className="py-16 md:py-24" style={{ background: TEAL, color: 'white' }}>
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 From Founders,<br />Firsthand
               </h2>
-              <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'white' }} />
-              <p className="mt-6 text-lg sm:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+              <div className="mt-6 h-1 w-20 rounded-full" style={{ background: TEAL }} />
+              <p className="mt-6 text-lg sm:text-xl leading-relaxed" style={{ color: '#475068' }}>
                 Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
               </p>
             </div>
@@ -553,32 +553,44 @@ export default function Home2() {
               <div className="overflow-hidden">
                 <div
                   className="flex transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(calc(7% - ${testimonialIndex} * (86% / ${visibleCount})))` }}
+                  style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
                 >
                   {testimonials.map((t, idx) => {
                     const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
                     return (
                       <div
-                        key={t.name}
-                        className="w-[85%] sm:w-[60%] lg:w-[28.667%] flex-shrink-0 px-3 transition-all duration-500"
+                        key={t.headline}
+                        className="w-[85%] sm:w-[55%] lg:w-[45%] flex-shrink-0 px-3 transition-all duration-500"
                         style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
                       >
                         <figure
                           className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
-                          style={{ background: 'white' }}>
-                          <div className="text-7xl font-serif leading-none mb-2" style={{ color: TEAL, opacity: 0.9 }}>&ldquo;</div>
-                          <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>{t.quote}</blockquote>
-                          <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
-                            <div className="flex items-center gap-3">
-                              <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                   style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
-                                <ImageIcon className="w-5 h-5" style={{ color: `${TEAL}80` }} />
-                              </div>
-                              <div>
-                                <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
-                                <p className="text-xs md:text-sm mt-0.5 font-semibold" style={{ color: TEAL }}>{t.role}</p>
-                              </div>
+                          style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+                          {/* Header: logo placeholder + closing quote */}
+                          <div className="flex items-start justify-between mb-5">
+                            <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                                 style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
+                              <ImageIcon className="w-6 h-6" style={{ color: `${TEAL}80` }} />
                             </div>
+                            <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: TEAL, opacity: 0.85 }}>&rdquo;</div>
+                          </div>
+
+                          <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>
+                            {t.quote}
+                          </blockquote>
+
+                          <figcaption className="relative mt-8 pt-5" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
+                            <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>
+                              {t.headline}
+                            </p>
+                            <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: '#475068' }}>
+                              {t.subline}
+                            </p>
+                            {t.tag && (
+                              <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: TEAL }}>
+                                {t.tag}
+                              </p>
+                            )}
                           </figcaption>
                         </figure>
                       </div>
@@ -614,7 +626,7 @@ export default function Home2() {
                   onClick={() => setTestimonialIndex(i)}
                   aria-label={`Go to testimonial slide ${i + 1}`}
                   className="size-2.5 rounded-full transition-all"
-                  style={{ background: i === testimonialIndex ? 'white' : 'rgba(255,255,255,0.45)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
+                  style={{ background: i === testimonialIndex ? TEAL : 'rgba(0,26,77,0.25)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
                 />
               ))}
             </div>
