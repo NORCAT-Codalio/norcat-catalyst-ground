@@ -45,6 +45,11 @@ import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import rephealthLogo from '@/assets/logos/rephealth.png';
 import rnaLogo from '@/assets/logos/rna-diagnostics.png';
+import myomarLogo from '@/assets/logos/myomar.png';
+import waiveTestimonialLogo from '@/assets/logos/waive.png';
+import planaLogo from '@/assets/logos/plana.png';
+import chamberPerksAsset from '@/assets/chamber-perks-logo.png.asset.json';
+const chamberPerksLogo = chamberPerksAsset.url;
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
