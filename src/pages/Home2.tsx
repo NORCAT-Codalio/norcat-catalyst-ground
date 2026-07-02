@@ -27,7 +27,7 @@ import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
-import ovinLogo from '@/assets/logos/ovin-logo.png';
+import ovinLogo from '@/assets/logos/ovin-logo.png.asset.json';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
@@ -327,7 +327,7 @@ export default function Home2() {
       ],
       href: '/mining/core5',
       partners: [
-        { logo: ovinLogo, name: 'Ontario Vehicle Innovation Network' },
+        { logo: ovinLogo.url, name: 'Ontario Vehicle Innovation Network' },
         { logo: ontarioLogoInline, name: 'Government of Ontario' },
       ],
     },
