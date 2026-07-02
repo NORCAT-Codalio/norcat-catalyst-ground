@@ -118,17 +118,39 @@ export const newsItems = [
   {
     id: 'fednor-investment',
     title: 'Government of Canada Invests Over $1 Million in Innovation in Northern Ontario',
-    date: 'December 15, 2025',
+    date: 'August 27, 2025',
     excerpt: 'NORCAT Innovation, in partnership with FedNor, announces a $1.05 million investment to help Northern Ontario start-ups scale, adopt new technologies, and compete globally through the RAII and IAP programs.',
     category: 'Funding',
     icon: DollarSign,
-    fullContent: `Greater Sudbury, Ontario - NORCAT Innovation, in partnership with FedNor, is pleased to announce a $1.05 million investment to help Northern Ontario's start-ups scale, adopt new technologies, and compete globally. The funding will support two key programs that give entrepreneurs the tools, resources, and confidence to bring technology-driven ideas from concept to market.\n\nThe Regional Artificial Intelligence Initiative (RAII) is a two-year program designed to accelerate the adoption and commercialization of artificial intelligence across Northern Ontario. Through advisory services, targeted training, cloud and server infrastructure, and micro-grants of up to $20,000, the initiative will support both start-ups building AI-driven technologies and established companies integrating AI into their operations. By helping companies develop in-house expertise and practical applications, RAII will strengthen efficiency, competitiveness, and long-term growth potential.\n\nThe Innovation Acceleration Program (IAP), now in its third iteration, is a three-year micro-grant program that provides up to $20,000 in matching funding to support start-ups at critical stages of development. The program enables companies to invest in research and development, testing, prototyping, market expansion, and other commercialization activities. Over the years, IAP has supported dozens of local ventures, helping them scale faster, attract new customers, and compete on a larger stage.\n\nTogether, these two initiatives will support more than 35 small- and medium-sized enterprises across Northern Ontario, creating new jobs, advancing product development, and contributing to a more resilient regional innovation economy.\n\n"This investment from FedNor ensures that Northern Ontario entrepreneurs have access to the same opportunities and resources as their peers in larger centres. AI is evolving at an extraordinary pace, and the cost of adoption can put small companies at a disadvantage. With this support, local founders can experiment, integrate, and commercialize technologies that will help them grow and keep Northern Ontario on the map as a leader in innovation." - Brendan Skiffington, Manager of NORCAT Innovation\n\n"When we focus on innovation and new technologies, today's innovators become tomorrow's industry leaders. This investment will help ensure that Canadian opportunities benefit Canadians, and that the many enterprises that make Greater Sudbury an international hotspot for natural resource extraction will thrive for future generations." - Viviane Lapointe, Member of Parliament for Sudbury\n\nThese federally funded programs strengthen Northern Ontario's innovation ecosystem by advancing AI adoption, supporting commercialization, and equipping entrepreneurs with the resources and connections they need to succeed.`,
+    fullContent: `Greater Sudbury, Ontario - NORCAT Innovation, in partnership with FedNor, is pleased to announce a $1.05 million investment to help Northern Ontario's start-ups scale, adopt new technologies, and compete globally. The funding will support two key programs that give entrepreneurs the tools, resources, and confidence to bring technology-driven ideas from concept to market.\n\nThe [Regional Artificial Intelligence Initiative (RAII)](/funding/regional-ai-program) is a two-year program designed to accelerate the adoption and commercialization of artificial intelligence across Northern Ontario. Through advisory services, targeted training, cloud and server infrastructure, and micro-grants of up to $20,000, the initiative will support both start-ups building AI-driven technologies and established companies integrating AI into their operations. By helping companies develop in-house expertise and practical applications, RAII will strengthen efficiency, competitiveness, and long-term growth potential.\n\nThe [Innovation Acceleration Program (IAP)](/funding/innovation-acceleration-program), now in its third iteration, is a three-year micro-grant program that provides up to $20,000 in matching funding to support start-ups at critical stages of development. The program enables companies to invest in research and development, testing, prototyping, market expansion, and other commercialization activities. Over the years, IAP has supported dozens of local ventures, helping them scale faster, attract new customers, and compete on a larger stage.\n\nTogether, these two initiatives will support more than 35 small- and medium-sized enterprises across Northern Ontario, creating new jobs, advancing product development, and contributing to a more resilient regional innovation economy.\n\n"This investment from FedNor ensures that Northern Ontario entrepreneurs have access to the same opportunities and resources as their peers in larger centres. AI is evolving at an extraordinary pace, and the cost of adoption can put small companies at a disadvantage. With this support, local founders can experiment, integrate, and commercialize technologies that will help them grow and keep Northern Ontario on the map as a leader in innovation." - Brendan Skiffington, Manager of NORCAT Innovation\n\n"When we focus on innovation and new technologies, today's innovators become tomorrow's industry leaders. This investment will help ensure that Canadian opportunities benefit Canadians, and that the many enterprises that make Greater Sudbury an international hotspot for natural resource extraction will thrive for future generations." - Viviane Lapointe, Member of Parliament for Sudbury\n\nThese federally funded programs strengthen Northern Ontario's innovation ecosystem by advancing AI adoption, supporting commercialization, and equipping entrepreneurs with the resources and connections they need to succeed.`,
     aboutSections: [
       { title: 'About NORCAT', text: 'Headquartered in Sudbury, Ontario, NORCAT is the world\'s leading technology and innovation hub and skilled labour training and development organization collectively serving the global mining industry.' },
       { title: 'About FedNor', text: 'FedNor is the Government of Canada\'s economic development organization for Northern Ontario, dedicated to promoting innovation, supporting business growth, and fostering vibrant, sustainable communities. Through targeted investments and strategic partnerships, FedNor helps position Northern Ontario\'s economy to compete and thrive in the global marketplace.' },
     ],
   },
 ];
+
+// Helper to render markdown-style links in news content
+const renderMarkdownLinks = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const [, label, url] = match;
+      return (
+        <a
+          key={i}
+          href={url}
+          className="underline hover:text-[#00B398] transition-colors"
+          style={{ color: '#003DA5' }}
+        >
+          {label}
+        </a>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+};
 
 // Activity feed
 const activityFeed = [
@@ -348,7 +370,7 @@ const News = () => {
                           <div className="max-w-3xl">
                             {item.fullContent.split('\n\n').map((paragraph, idx) => (
                               <p key={idx} className="text-base leading-relaxed mb-4 last:mb-0" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
-                                {paragraph}
+                                {renderMarkdownLinks(paragraph)}
                               </p>
                             ))}
 
