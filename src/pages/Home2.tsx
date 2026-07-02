@@ -19,6 +19,18 @@ import whatwedoPodiumImg from '@/assets/whatwedo-podium.png';
 import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset.json';
+import featuredCitAsset from '@/assets/featured-cit.png.asset.json';
+import featuredIapAsset from '@/assets/featured-iap.png.asset.json';
+import featuredRaiiAsset from '@/assets/featured-raii.png.asset.json';
+import featuredScfAsset from '@/assets/featured-scf.png.asset.json';
+import featuredCore5Asset from '@/assets/featured-core5.png.asset.json';
+const featuredCitImg = featuredCitAsset.url;
+const featuredIapImg = featuredIapAsset.url;
+const featuredRaiiImg = featuredRaiiAsset.url;
+const featuredScfImg = featuredScfAsset.url;
+const featuredCore5Img = featuredCore5Asset.url;
+
+
 
 const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
