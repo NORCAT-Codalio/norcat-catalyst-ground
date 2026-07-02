@@ -527,7 +527,7 @@ export default function Home2() {
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
                   Featured Program
                 </p>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>
                   {activeProgram.name}
                 </h3>
                 <div className="h-1.5 w-10 mb-5" style={{ background: TEAL }} />
