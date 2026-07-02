@@ -404,7 +404,7 @@ const MentorshipServices = () => {
                               <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: TEAL, fontFamily: FONT }}>
                                 NORCAT Mentor
                               </p>
-                              <p className="leading-relaxed text-sm md:text-base mb-7" style={{ color: '#475068' }}>
+                              <p className="leading-relaxed text-sm md:text-base mb-7 whitespace-pre-line" style={{ color: '#475068' }}>
                                 {mentor.bio}
                               </p>
                               <a
