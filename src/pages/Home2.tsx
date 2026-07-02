@@ -107,13 +107,6 @@ const portfolio = [
   { name: 'RNA Diagnostics', logo: rnaLogo },
 ];
 
-const partners = [
-  { name: 'FedNor', logo: fednorLogo },
-  { name: 'Ontario', logo: ontarioLogo },
-  { name: 'Northern Ontario Angels', logo: noaLogo },
-  { name: 'City of Greater Sudbury', logo: sudburyLogo },
-  { name: 'Rogers', logo: rogersLogo },
-];
 
 // Style tokens - NORCAT Innovation Brand V1.0 (2026)
 const NAVY = '#001A4D';          // Deep Navy
@@ -696,35 +689,6 @@ export default function Home2() {
                 </div>
               ))}
             </motion.div>
-          </div>
-        </section>
-
-        {/* ───── PORTFOLIO / PARTNERS ───── */}
-        <section className="pt-20 md:pt-24 pb-10 md:pb-12" style={{ background: '#F2F3F6' }}>
-
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="text-center mb-10 md:mb-12">
-              <p className="inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Powered by partners
-              </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                Made possible by those who believe in the North.
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto mb-14">
-              {partners.map((p) => (
-                <div key={p.name}
-                     className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
-                     style={{ background: 'white', border: `1px solid ${BORDER}` }}>
-                  <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
-                </div>
-              ))}
-            </div>
-
           </div>
         </section>
 
