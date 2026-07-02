@@ -551,14 +551,21 @@ export default function Home2() {
                     Delivered in partnership with
                   </p>
                   <div className="flex flex-nowrap items-center gap-4 sm:gap-5 md:gap-6">
-                    {activeProgram.partners.map((partner) => (
-                      <img
-                        key={partner.name}
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="h-8 sm:h-9 md:h-10 w-auto object-contain max-w-[180px] sm:max-w-[200px]"
-                      />
-                    ))}
+                    {activeProgram.partners.map((partner) => {
+                      const needsDarkBg = partner.name === 'Core5';
+                      return (
+                        <div
+                          key={partner.name}
+                          className={`flex items-center justify-center rounded-lg px-2 py-1 ${needsDarkBg ? 'bg-[#001A4D]' : ''}`}
+                        >
+                          <img
+                            src={partner.logo}
+                            alt={partner.name}
+                            className="h-8 sm:h-9 md:h-10 w-auto object-contain max-w-[180px] sm:max-w-[200px]"
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
