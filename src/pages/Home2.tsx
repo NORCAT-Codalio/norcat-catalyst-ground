@@ -263,7 +263,7 @@ export default function Home2() {
       ],
     },
     {
-      name: 'Innovation Acceleration Program',
+      name: 'Innovation\nAcceleration Program',
       short: 'IAP',
       icon: Sparkles,
       image: featuredIapImg,
