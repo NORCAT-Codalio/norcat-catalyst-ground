@@ -486,20 +486,14 @@ export default function Home2() {
             {/* Panel */}
             <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white">
               {/* Left visual */}
-              <div className="relative min-h-[320px] md:min-h-[420px] flex items-center justify-center overflow-hidden"
-                   style={{ background: `linear-gradient(135deg, rgba(0,179,152,0.12) 0%, rgba(0,179,152,0.04) 100%)` }}>
-                <img src={signatureLines} alt="" aria-hidden="true"
-                     className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply pointer-events-none" />
-                <div className="relative flex flex-col items-center justify-center text-center px-8">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl flex items-center justify-center mb-6"
-                       style={{ background: TEAL, boxShadow: '0 20px 40px -20px rgba(0,179,152,0.6)' }}>
-                    <ActiveProgramIcon className="w-16 h-16 md:w-20 md:h-20" style={{ color: 'white' }} strokeWidth={1.5} />
-                  </div>
-                  <p className="text-xs font-bold tracking-[0.24em] uppercase" style={{ color: TEAL, fontFamily: FONT }}>
-                    NORCAT Innovation
-                  </p>
-                </div>
+              <div className="relative min-h-[320px] md:min-h-[420px] overflow-hidden bg-white">
+                <img
+                  src={activeProgram.image}
+                  alt={activeProgram.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
+
 
               {/* Right content */}
               <div className="p-8 md:p-12 flex flex-col">
