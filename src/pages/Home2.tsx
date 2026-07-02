@@ -556,7 +556,7 @@ export default function Home2() {
                   <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
                     Delivered in partnership with
                   </p>
-                  <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6">
+                  <div className="flex flex-nowrap items-center justify-start gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6">
                     {activeProgram.partners.map((partner) => {
                       const isCanada = partner.name === 'Government of Canada';
                       const isFednor = partner.name === 'Federal Economic Development Agency for Northern Ontario';
