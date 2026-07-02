@@ -524,69 +524,80 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── TESTIMONIALS (light) ───── */}
-        <section className="py-12 md:py-20" style={{ background: PAPER, color: NAVY }}>
+        {/* ───── TESTIMONIALS (FROM FOUNDERS, FIRSTHAND) ───── */}
+        <section className="py-16 md:py-24" style={{ background: TEAL, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="rounded-2xl shadow-2xl overflow-hidden" style={{ background: TEAL }}>
-              <div className="px-6 sm:px-10 md:px-12 py-16 md:py-20">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
-                  <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl text-white"
-                      style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                    Momentum<br />In Action
-                  </h2>
-                  <p className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-lg md:text-right" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                    Hear from the founders who leveraged NORCAT Innovation's Venture Growth Services and the milestones they've hit since!
-                  </p>
-                </div>
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                From Founders,<br />Firsthand
+              </h2>
+              <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'white' }} />
+              <p className="mt-6 text-lg sm:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
+              </p>
+            </div>
 
-                <div className="relative">
-                  <div className="overflow-hidden">
-                    <div
-                      className="flex transition-transform duration-500 ease-out"
-                      style={{ transform: `translateX(calc(7% - ${testimonialIndex} * (86% / ${visibleCount})))` }}
-                    >
-                      {testimonials.map((t, idx) => {
-                        const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
-                        return (
-                          <div
-                            key={t.name}
-                            className="w-[85%] sm:w-[60%] lg:w-[28.667%] flex-shrink-0 px-3 transition-all duration-500"
-                            style={{ opacity: isVisible ? 1 : 0.35 }}
-                          >
-                            <figure
-                              className="relative overflow-hidden rounded-xl p-6 md:p-8 flex flex-col h-full min-h-[420px] shadow-lg"
-                              style={{ background: 'white' }}>
-                              <div className="text-5xl font-serif leading-none mb-4" style={{ color: TEAL, opacity: 0.3 }}>"</div>
-                              <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>{t.quote}</blockquote>
-                              <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
-                                <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
-                                <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: TEAL }}>{t.role}</p>
-                              </figcaption>
-                            </figure>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={prevTestimonial}
-                    aria-label="Previous testimonial"
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
-                    style={{ background: NAVY, color: 'white' }}>
-                    <ChevronLeft className="size-6" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={nextTestimonial}
-                    aria-label="Next testimonial"
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
-                    style={{ background: NAVY, color: 'white' }}>
-                    <ChevronRight className="size-6" />
-                  </button>
+            <div className="relative">
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(calc(7% - ${testimonialIndex} * (86% / ${visibleCount})))` }}
+                >
+                  {testimonials.map((t, idx) => {
+                    const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
+                    return (
+                      <div
+                        key={t.name}
+                        className="w-[85%] sm:w-[60%] lg:w-[28.667%] flex-shrink-0 px-3 transition-all duration-500"
+                        style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
+                      >
+                        <figure
+                          className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
+                          style={{ background: 'white' }}>
+                          <div className="text-7xl font-serif leading-none mb-2" style={{ color: TEAL, opacity: 0.9 }}>&ldquo;</div>
+                          <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: NAVY }}>{t.quote}</blockquote>
+                          <figcaption className="relative mt-8 pt-6" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
+                            <p className="font-black uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
+                            <p className="text-xs md:text-sm mt-1 font-semibold" style={{ color: TEAL }}>{t.role}</p>
+                          </figcaption>
+                        </figure>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
+
+              <button
+                type="button"
+                onClick={prevTestimonial}
+                aria-label="Previous testimonial"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+                style={{ background: NAVY, color: 'white' }}>
+                <ChevronLeft className="size-6" />
+              </button>
+              <button
+                type="button"
+                onClick={nextTestimonial}
+                aria-label="Next testimonial"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+                style={{ background: NAVY, color: 'white' }}>
+                <ChevronRight className="size-6" />
+              </button>
+            </div>
+
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-10">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setTestimonialIndex(i)}
+                  aria-label={`Go to testimonial slide ${i + 1}`}
+                  className="size-2.5 rounded-full transition-all"
+                  style={{ background: i === testimonialIndex ? 'white' : 'rgba(255,255,255,0.45)', transform: i === testimonialIndex ? 'scale(1.25)' : 'scale(1)' }}
+                />
+              ))}
             </div>
           </div>
         </section>
