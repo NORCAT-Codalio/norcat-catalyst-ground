@@ -15,6 +15,28 @@ const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.cate
 const NAVY = '#001A4D';
 const TEAL = '#00B398';
 
+// Helper to render markdown-style links in news content
+const renderMarkdownLinks = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const [, label, url] = match;
+      return (
+        <a
+          key={i}
+          href={url}
+          className="underline hover:text-[#00B398] transition-colors"
+          style={{ color: '#003DA5' }}
+        >
+          {label}
+        </a>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+};
+
 
 export function NewsFeed() {
   const [activeCategory, setActiveCategory] = useState('All');
