@@ -553,13 +553,13 @@ export default function Home2() {
                   <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
                     Delivered in partnership with
                   </p>
-                  <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+                  <div className="flex flex-nowrap items-center gap-4 sm:gap-5 md:gap-6">
                     {activeProgram.partners.map((partner) => (
                       <img
                         key={partner.name}
                         src={partner.logo}
                         alt={partner.name}
-                        className="h-10 sm:h-12 md:h-14 w-auto object-contain max-w-[220px]"
+                        className="h-8 sm:h-9 md:h-10 w-auto object-contain max-w-[180px] sm:max-w-[200px]"
                       />
                     ))}
                   </div>
