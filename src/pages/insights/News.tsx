@@ -238,6 +238,59 @@ For more information about the [Critical Industrial Technologies Initiative (CIT
       { title: 'About Ontario Centre of Innovation', text: 'The Ontario Centre of Innovation (OCI) brings industry, academic, and government partners together to invest in collaborative R&D, technology development, and commercialization opportunities that generate the highest return on innovation for Ontarians. As an ecosystem connector, OCI initiates unparalleled partnership opportunities, develops and manages successful industry-academic collaborations, supports high-potential SMEs in commercializing ground-breaking research, and provides hands-on training and skills development opportunities for the next generation of highly-skilled talent. OCI drives economic growth and job creation through investments in the development, commercialization, and adoption of advanced technologies. For more information: https://www.oc-innovation.ca' },
     ],
   },
+  {
+    id: 'sudbury-catalyst-fund-verv-2025',
+    title: 'Sudbury Catalyst Fund Announces $250,000 Investment in Tech Startup Verv Technologies',
+    date: 'January 9, 2025',
+    excerpt: 'The Sudbury Catalyst Fund announces a follow-on investment of $250,000 in Verv Technologies, a Sudbury-based medtech startup pioneering an affordable, precise in-home blood testing platform.',
+    category: 'Funding',
+    icon: DollarSign,
+    fullContent: `Sudbury, Ontario – The Sudbury Catalyst Fund, a seed capital co-investment fund, proudly announces its follow-on investment of $250,000 in Verv Technologies, a Sudbury-based medtech startup pioneering an affordable and precise platform for in-home blood testing.
+
+Verv's in-home blood testing solution, Vi, empowers consumers to track their health effortlessly. With just a finger prick of blood, users will receive biomarker results in 15 minutes. These results are displayed on the Vi analyzer and can then be sent directly to the user's smartphone through the accompanying mobile app. Vi offers a fast, precise, and affordable healthcare experience, eliminating the need for large needles, laboratory visits, or lengthy wait times.
+
+"We are grateful and truly appreciative of this financial support," said Jeff Sutton, Verv Founder & President. "We are poised for growth and look forward to having a positive impact on the community and beyond. This investment is also an endorsement of our innovation, progress, and the need to empower people and transform care."
+
+Combining the benefits of traditional labs with the convenience of at-home testing, Vi increases access to diagnostics in underserved areas, reduces wait times in urban areas, and provides physicians with the information needed to make critical medical decisions more efficiently than ever.
+
+"We are excited to support Verv Technologies as they revolutionize traditional blood diagnostic testing and prioritize access to patient care," says Jason Sullivan, co-managing partner of the Sudbury Catalyst Fund and Executive Director of the Nickel Basin Federal Development Corporation. "We are looking forward to their continued growth and expansion in our community."
+
+"Verv Technologies' vision aligns directly with our commitment to invest in and foster the growth of transformative tech ventures," said Don Duval, co-managing partner of the Sudbury Catalyst Fund and NORCAT CEO. "This investment demonstrates our commitment to supporting local technology startups and strengthening Sudbury's position as an attractive destination for technology companies looking to establish themselves in Canada."
+
+---
+
+MEDIA CONTACT
+
+Cynthia Furlotte | NORCAT | Marketing and Communications | (705) 521-8324 ext. 293 | cfurlotte@norcat.org
+
+---
+
+Version française
+
+Le Fonds catalyseur de Sudbury annonce un investissement de 250 000 $ dans l'entreprise en démarrage Verv Technologies
+
+Sudbury (Ontario) – Le Fonds catalyseur de Sudbury, un fonds de co-investissement de capital d'amorçage, est fier d'annoncer un investissement de suivi de 250 000 $ dans Verv Technologies, une entreprise de technologie médicale en démarrage basée à Sudbury qui développe une plateforme innovatrice, abordable et précise pour l'analyse du sang à domicile.
+
+La solution de Verv pour l'analyse du sang à domicile, nommée Vi, donne aux consommateurs la possibilité de surveiller leur état de santé facilement. L'utilisateur n'a qu'à prélever une goutte de sang en se piquant le bout d'un doigt pour recevoir ses biomarqueurs dans 15 minutes. Les résultats s'affichent d'abord dans l'analyseur de Vi et peuvent ensuite être envoyés directement au téléphone intelligent de l'utilisateur à l'aide de l'application agencée. Vi offre ainsi des soins de santé rapides, précis et abordables tout en éliminant les grandes seringues, les laboratoires et les temps d'attente.
+
+« Nous sommes très reconnaissants de ce soutien financier et nous l'apprécions grandement », dit Martin Gurbin, directeur général de Verv. « Nous sommes prêts pour la croissance et nous tenons à apporter des retombées bénéfiques dans notre communauté et ailleurs. Cet investissement est aussi un témoignage de confiance dans nos innovations, notre progrès et notre intention d'outiller les gens et de transformer les soins de santé. »
+
+Vi combine les avantages du laboratoire traditionnel avec la commodité de l'analyse à domicile pour augmenter l'accès aux diagnostics dans des régions moins bien servies, réduire les temps d'attente en contexte urbain et fournir aux médecins l'information qu'il leur faut pour pouvoir prendre des décisions médicales plus efficacement que jamais.
+
+« Nous sommes heureux de soutenir Verv Technologies dans sa volonté de révolutionner les méthodes traditionnelles d'analyse diagnostique et de prioriser l'accès aux soins », dit Jason Sullivan, associé et codirecteur du Fonds catalyseur de Sudbury et directeur général de la Société fédérale de développement du Bassin de nickel. « Nous avons hâte de voir la suite de sa croissance et de son expansion dans notre communauté. »
+
+« La vision de Verv Technologies rejoint directement notre engagement d'investir dans des entreprises technologiques transformatrices et d'appuyer leur croissance », a dit Don Duval, associé codirecteur du Fonds catalyseur de Sudbury et directeur général de NORCAT. « Cet investissement reflète notre volonté de soutenir les entreprises technologiques locales et de renforcer la position de Sudbury en tant que destination attirante pour les entreprises technologiques qui cherchent à s'établir au Canada. »
+
+---
+
+RENSEIGNEMENTS AUX MÉDIAS
+
+Cynthia Furlotte | NORCAT | Marketing et communications | 705-521-8324, poste 293 | cfurlotte@norcat.org`,
+    aboutSections: [
+      { title: 'About Verv Technologies', text: 'Verv Technologies is finalizing a first-of-its-kind portable blood analyzer, complemented by a suite of disposable tests for key health indicators such as cholesterol and hormone levels. Quantitative results in less than 15 minutes. Its technology, capable of efficiently separating blood plasma from small blood samples without costly equipment, positions Verv to redefine home health monitoring with an easy-to-use and accurate device.' },
+      { title: 'About the Sudbury Catalyst Fund', text: 'The Sudbury Catalyst Fund is a unique co-investment seed capital venture fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City of Greater Sudbury, the Greater Sudbury Development Corporation, FedNor, and NORCAT. For more information, visit www.norcat.org/innovation/sudbury-catalyst-fund.html or www.nickelbasin.ca.' },
+    ],
+  },
 ];
 
 // Helper to render markdown-style links in news content
