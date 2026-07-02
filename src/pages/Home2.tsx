@@ -292,7 +292,7 @@ export default function Home2() {
 
                 return (
                   <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl flex flex-col w-full sm:w-[92%] sm:max-w-[720px] lg:w-full lg:max-w-none"
+                           className="relative overflow-hidden rounded-2xl flex flex-col w-full sm:w-[92%] sm:max-w-[720px] min-[1200px]:w-full min-[1200px]:max-w-none"
                            style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
                     {/* Top image */}
                     <div className="relative w-full overflow-hidden h-48 sm:h-[260px] md:h-[300px] lg:h-52 shrink-0">
