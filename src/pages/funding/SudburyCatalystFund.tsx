@@ -15,7 +15,7 @@ import waiveLogo from '@/assets/waive-logo.png.asset.json';
 // Fund partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
-import sudburyLogo from '@/assets/logos/sudbury.png';
+import sudburyLogoAsset from '@/assets/logos/sudbury-logo.png.asset.json';
 import scfLogo from '@/assets/logos/sudbury-catalyst-fund.png';
 
 // Team headshots
