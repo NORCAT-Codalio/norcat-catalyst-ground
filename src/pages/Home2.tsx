@@ -434,48 +434,6 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── PROGRAM HIGHLIGHTS ───── */}
-        <section className="py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
-              {highlights.map((h, i) => {
-                const bg = ['#001A4D', '#003DA5', TEAL][i];
-                const image = [circuitiqTeam, whatwedoRobotImg, whatwedoPodiumImg][i];
-                const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
-                const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
-
-                return (
-                  <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl flex flex-col w-full h-full"
-                           style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
-                    {/* Top image */}
-                    <div className="relative w-full overflow-hidden h-48 sm:h-[260px] md:h-[300px] min-[1200px]:h-52 shrink-0">
-                      <img src={image} alt="" aria-hidden="true"
-                           className="w-full h-full object-cover" />
-                    </div>
-                    {/* Content */}
-                    <div className="relative flex-1 flex flex-col p-5 sm:p-6 lg:p-7 overflow-hidden">
-                      <img src={norcatHalfLogo} alt="" aria-hidden="true"
-                           className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-10 pointer-events-none" />
-                      <h3 className="font-black leading-tight text-white mb-3 sm:mb-4 break-words"
-                          style={{ fontFamily: FONT, letterSpacing: '-0.02em', fontSize: 'clamp(1.25rem, 1.2vw + 0.7rem, 1.75rem)' }}>
-                        {h.label}.
-                      </h3>
-                      <p className="leading-relaxed text-white/90 mb-6" style={{ fontSize: 'clamp(0.85rem, 0.25vw + 0.78rem, 0.95rem)' }}>{h.desc}</p>
-                      <Link to={link}
-                            className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1 mt-auto"
-                            style={{ fontFamily: FONT }}>
-                        {linkText}
-                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* ───── FEATURED PROGRAMS (tabbed) ───── */}
         <section className="py-12 md:py-16 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
@@ -595,6 +553,48 @@ export default function Home2() {
           </div>
         </section>
 
+
+        {/* ───── PROGRAM HIGHLIGHTS ───── */}
+        <section className="py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
+              {highlights.map((h, i) => {
+                const bg = ['#001A4D', '#003DA5', TEAL][i];
+                const image = [circuitiqTeam, whatwedoRobotImg, whatwedoPodiumImg][i];
+                const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
+                const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
+
+                return (
+                  <article key={h.label}
+                           className="relative overflow-hidden rounded-2xl flex flex-col w-full h-full"
+                           style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
+                    {/* Top image */}
+                    <div className="relative w-full overflow-hidden h-48 sm:h-[260px] md:h-[300px] min-[1200px]:h-52 shrink-0">
+                      <img src={image} alt="" aria-hidden="true"
+                           className="w-full h-full object-cover" />
+                    </div>
+                    {/* Content */}
+                    <div className="relative flex-1 flex flex-col p-5 sm:p-6 lg:p-7 overflow-hidden">
+                      <img src={norcatHalfLogo} alt="" aria-hidden="true"
+                           className="absolute right-0 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain opacity-10 pointer-events-none" />
+                      <h3 className="font-black leading-tight text-white mb-3 sm:mb-4 break-words"
+                          style={{ fontFamily: FONT, letterSpacing: '-0.02em', fontSize: 'clamp(1.25rem, 1.2vw + 0.7rem, 1.75rem)' }}>
+                        {h.label}.
+                      </h3>
+                      <p className="leading-relaxed text-white/90 mb-6" style={{ fontSize: 'clamp(0.85rem, 0.25vw + 0.78rem, 0.95rem)' }}>{h.desc}</p>
+                      <Link to={link}
+                            className="group inline-flex items-center gap-2 text-sm font-bold text-white transition-transform hover:translate-x-1 mt-auto"
+                            style={{ fontFamily: FONT }}>
+                        {linkText}
+                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
         <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
