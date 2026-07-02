@@ -10,7 +10,7 @@ import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import successStoriesCardImg from '@/assets/Untitled_design_85.png.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
-import heroModel from '@/assets/hero-model.png.asset.json';
+
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
 import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.asset.json';
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
@@ -22,7 +22,7 @@ import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset
 
 const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
-const heroModelImg = heroModel.url;
+
 const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderDesktopImg = heroHeaderDesktopAsset.url;
 const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
@@ -356,7 +356,7 @@ export default function Home2() {
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'OVIN Northern Ontario RTDS Renewed for Mining Innovation', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
                   { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: stateOfSudburyImpactImg, link: '/impact' },
-                  { category: 'Portfolio Highlights', title: 'Recent Wins', image: heroModelImg, link: '/impact#portfolio-highlights' },
+                  
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
                   { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
                   { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
