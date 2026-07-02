@@ -283,7 +283,7 @@ export default function Home2() {
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
         <section className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 place-items-center">
+            <div className="grid grid-cols-1 min-[1200px]:grid-cols-3 gap-5 min-[1200px]:gap-6 place-items-center">
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
