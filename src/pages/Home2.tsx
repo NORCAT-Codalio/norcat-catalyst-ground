@@ -49,7 +49,17 @@ import myomarLogo from '@/assets/logos/myomar.png';
 import waiveTestimonialLogo from '@/assets/logos/waive.png';
 import planaLogo from '@/assets/logos/plana.png';
 import chamberPerksAsset from '@/assets/chamber-perks-logo.png.asset.json';
+import perspicAsset from '@/assets/logos/perspic-logo.png.asset.json';
+import smartyprintsAsset from '@/assets/logos/smartyprints-logo.avif.asset.json';
+import podcoAsset from '@/assets/logos/podco-logo.png.asset.json';
+import scientAsset from '@/assets/logos/scient-logo.png.asset.json';
+import tesmanAsset from '@/assets/logos/tesman-logo.png.asset.json';
 const chamberPerksLogo = chamberPerksAsset.url;
+const perspicLogo = perspicAsset.url;
+const smartyprintsLogo = smartyprintsAsset.url;
+const podcoLogo = podcoAsset.url;
+const scientLogo = scientAsset.url;
+const tesmanLogo = tesmanAsset.url;
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
@@ -116,24 +126,28 @@ const testimonials = [
     headline: 'Matthew Gougeon',
     subline: 'CEO and Founder, Perspic',
     tag: 'NORCAT Innovation Client',
+    logo: perspicLogo,
   },
   {
     quote: "We had a lot of references for work through the Fortin Discovery Lab and NORCAT, and such strong support turned out to be invaluable, especially when first getting started! You need get involved with your local ecosystem.",
     headline: 'Stephen Podrucky',
     subline: 'CEO and Founder, Podco',
     tag: 'NORCAT Innovation Client',
+    logo: podcoLogo,
   },
   {
     quote: "At some point I realised the need to shake hands of the people in the mining sector, and that's more than just a virtual conversation. NORCAT was the place that we find a very high density of end users, companies, and a network that has helped a lot to accelerate the process from having an idea to having a technology.",
     headline: 'Mashoud Aali',
     subline: 'Founder and CEO, Scient Analytic',
     tag: 'NORCAT Innovation Client',
+    logo: scientLogo,
   },
   {
     quote: "As a nurse at Health Sciences North, I got to see firsthand what worked, what didn't, and where the gaps were, while support from NORCAT helped me navigate the startup landscape, opened doors and remained incredibly supportive.",
     headline: 'Avalon Lupini',
     subline: 'CEO and Founder, SmartyPrints',
     tag: 'NORCAT Innovation Client',
+    logo: smartyprintsLogo,
   },
   {
     quote: "I got involved with NORCAT as a really passionate business owner, but I was running on a dream, a positive attitude, and a belief I was going to get this done. However, once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without the mentorship of Peter.",
@@ -147,6 +161,7 @@ const testimonials = [
     headline: 'Clara Steele',
     subline: 'Co-Founder, TesMan',
     tag: 'NORCAT Innovation Client',
+    logo: tesmanLogo,
   },
   {
     quote: "Support from NORCAT was critical in our decision to relocate our company to Sudbury, and Venture North PITCH really launched us into the ecosystem that led us to our first angel investor.",
