@@ -776,7 +776,7 @@ export default function Home2() {
         <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 From Founders,<br />Firsthand
               </h2>
