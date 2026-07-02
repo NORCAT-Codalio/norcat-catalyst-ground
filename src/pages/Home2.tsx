@@ -328,7 +328,7 @@ export default function Home2() {
             <div className="grid grid-cols-1 min-[1200px]:grid-cols-3 gap-5 min-[1200px]:gap-6 items-stretch">
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
-                const image = [circuitiqTeam, whatwedo2Asset.url, whatwedo3Asset.url][i];
+                const image = [circuitiqTeam, whatwedoRobotImg, whatwedoPodiumImg][i];
                 const link = ['/programs', '/mining/norcat-underground', '/funding'][i];
                 const linkText = ['Explore Services', 'Explore Our Facilities', 'Explore Funding Pathways'][i];
 
