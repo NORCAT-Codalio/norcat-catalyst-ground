@@ -20,21 +20,21 @@ import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.a
 import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset.json';
 import featuredCitPhoto from '@/assets/featured-cit-photo.png';
-import core5EvChargingAsset from '@/assets/core5-ev-charging.png.asset.json';
+import featuredCore5Photo from '@/assets/featured-core5-photo.png';
 import featuredIapPhoto from '@/assets/featured-iap-photo.png';
 import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
-import ovinLogo from '@/assets/logos/ovin-logo.png.asset.json';
+import ovinLogo from '@/assets/logos/ovin-logo.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
-import canadaLogo from '@/assets/logos/government-of-canada.png.asset.json';
+import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto;
 const featuredRaiiImg = featuredRaiiPhoto;
 const featuredScfImg = featuredScfPhoto;
-const featuredCore5Img = core5EvChargingAsset.url;
+const featuredCore5Img = featuredCore5Photo;
 
 
 
@@ -82,11 +82,10 @@ const tesmanLogo = tesmanAsset.url;
 import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
 import ontarioLogo from '@/assets/logos/ontario.png';
-import sudburyLogoAsset from '@/assets/logos/sudbury-logo.png.asset.json';
+import sudburyLogo from '@/assets/logos/sudbury-logo.png';
 import noaLogoAsset from '@/assets/logos/noa.png.asset.json';
 
 const noaLogo = noaLogoAsset.url;
-const sudburyLogo = sudburyLogoAsset.url;
 
 const FONT = "'Open Sans', system-ui, sans-serif";
 
@@ -247,7 +246,7 @@ export default function Home2() {
 
   const featuredPrograms = [
     {
-      name: 'Critical Industrial Technologies (CIT) Initiative',
+      name: 'Critical Industrial Technologies (CIT)',
       short: 'CIT',
       icon: Cpu,
       image: featuredCitImg,
@@ -328,7 +327,7 @@ export default function Home2() {
       ],
       href: '/mining/core5',
       partners: [
-        { logo: ovinLogo.url, name: 'Ontario Vehicle Innovation Network' },
+        { logo: ovinLogo, name: 'Ontario Vehicle Innovation Network' },
         { logo: ontarioLogoInline, name: 'Government of Ontario' },
       ],
     },
@@ -474,7 +473,7 @@ export default function Home2() {
             </div>
 
             {/* Panel */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[660px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[720px]">
               {/* Left visual */}
               <div className="relative min-h-[320px] md:min-h-[460px] overflow-hidden bg-white">
                 <img
@@ -485,21 +484,21 @@ export default function Home2() {
               </div>
 
               {/* Right content */}
-              <div className="p-8 md:p-12 lg:p-12 flex flex-col h-full min-h-[360px] md:min-h-[460px] lg:overflow-hidden">
+              <div className="p-8 md:p-10 lg:p-10 flex flex-col h-full min-h-[360px] md:min-h-[460px] lg:overflow-hidden">
                 <div className="flex flex-col">
-                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
+                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-2" style={{ color: TEAL, fontFamily: FONT }}>
                     Featured Program
                   </p>
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>
                     {activeProgram.name}
                   </h3>
-                  <div className="h-1.5 w-10 mb-5" style={{ background: TEAL }} />
+                  <div className="h-1.5 w-10 mb-4" style={{ background: TEAL }} />
                 </div>
                 <div className="flex-1 flex flex-col">
-                  <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.75)' }}>
+                  <p className="text-base md:text-lg leading-relaxed mb-4" style={{ color: 'rgba(0,26,77,0.75)' }}>
                     {activeProgram.description}
                   </p>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 mb-4">
                     {activeProgram.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
@@ -518,11 +517,11 @@ export default function Home2() {
                   </Link>
 
                   {/* Delivered in partnership with */}
-                  <div className="mt-8 pt-8 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
-                    <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
+                  <div className="mt-6 pt-6 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
+                    <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
                       Delivered in partnership with
                     </p>
-                    <div className="flex flex-nowrap items-center justify-start gap-4 sm:gap-5 md:gap-6">
+                    <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5 md:gap-6">
                       {activeProgram.partners.map((partner) => {
                         const isCanada = partner.name === 'Government of Canada';
                         const isFednor = partner.name === 'Federal Economic Development Agency for Northern Ontario';
@@ -530,22 +529,22 @@ export default function Home2() {
                         return (
                           <div
                             key={partner.name}
-                            className="flex items-center justify-center rounded-lg py-2"
+                            className="flex items-center justify-start rounded-lg py-1"
                           >
                             <img
-                              src={typeof partner.logo === 'string' ? partner.logo : partner.logo.url}
+                              src={partner.logo}
                               alt={partner.name}
                               loading="lazy"
-                              width={240}
-                              height={isCanada ? 60 : isFednor ? 52 : isOntario ? 48 : 40}
+                              width={160}
+                              height={48}
                               className={`w-auto object-contain ${
                                 isCanada
-                                  ? 'h-10 sm:h-12 md:h-14 max-w-[220px] sm:max-w-[260px]'
+                                  ? 'h-10 sm:h-12 md:h-14 max-w-[200px] sm:max-w-[220px]'
                                   : isFednor
-                                  ? 'h-9 sm:h-11 md:h-12 max-w-[200px] sm:max-w-[240px]'
+                                  ? 'h-9 sm:h-11 md:h-12 max-w-[180px] sm:max-w-[200px]'
                                   : isOntario
-                                  ? 'h-8 sm:h-10 md:h-11 max-w-[190px] sm:max-w-[220px]'
-                                  : 'h-8 sm:h-9 md:h-10 max-w-[180px] sm:max-w-[200px]'
+                                  ? 'h-8 sm:h-10 md:h-11 max-w-[160px] sm:max-w-[180px]'
+                                  : 'h-8 sm:h-10 md:h-11 max-w-[150px] sm:max-w-[170px]'
                               }`}
                             />
                           </div>
