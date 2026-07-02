@@ -577,14 +577,15 @@ export default function Home2() {
                         <figure
                           className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
                           style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
-                          {/* Header: logo placeholder + closing quote */}
+                          {/* Header: logo + closing quote */}
                           <div className="flex items-start justify-between mb-5">
-                            <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
-                                 style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : `2px dashed ${TEAL}40`, background: t.logo ? 'white' : 'rgba(0,179,152,0.06)' }}>
+                            <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0 overflow-hidden">
                               {t.logo ? (
-                                <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
+                                <img src={t.logo} alt={`${t.headline} logo`} className="w-full h-full object-contain" loading="lazy" />
                               ) : (
-                                <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: `${TEAL}80` }} />
+                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-lg flex items-center justify-center" style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
+                                  <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: `${TEAL}80` }} />
+                                </div>
                               )}
                             </div>
                             <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: TEAL, opacity: 0.85 }}>&rdquo;</div>
