@@ -205,6 +205,39 @@ As part of this collaboration, Turnkey Communications will:
       { title: 'About the NORCAT Underground Centre', text: 'Located in the City of Greater Sudbury, the NORCAT Underground Centre serves as the global one-stop shop operating mine designed to enable start-ups, small / medium enterprises, and international companies to develop, test, and demonstrate emerging technologies that are poised to transform the global mining industry.' },
     ],
   },
+  {
+    id: 'norcat-cit-technology-development-site-2025',
+    title: 'NORCAT Selected as a Technology Development Site in OCI’s Critical Industrial Technologies Initiative',
+    date: 'April 16, 2025',
+    excerpt: 'NORCAT is partnering with the Ontario Centre of Innovation as one of ten Technology Development Sites in Ontario through the Critical Industrial Technologies Initiative, giving SMEs access to the NORCAT Underground Centre to test and scale critical mining technologies.',
+    category: 'Partnership',
+    icon: Zap,
+    fullContent: `Sudbury, ON – NORCAT is proud to announce its partnership with the Ontario Centre of Innovation (OCI) as one of ten Technology Development Sites in Ontario through the [Critical Industrial Technologies Initiative (CIT)](/mining/critical-industrial-tech). This initiative supports Ontario's small and medium enterprises (SMEs) in accelerating the development and commercialization of critical technologies. Eligible SMEs will gain access to the [NORCAT Underground Centre](/mining/underground-centre), a one-of-a-kind testing environment for mining technology. This partnership empowers businesses to test, refine, and scale their technologies, contributing to the growth of Ontario's industrial capabilities.
+
+The CIT initiative was introduced at this year's DiscoveryX conference in Toronto, with the announcement delivered by OCI's President and CEO, Claudia Krywiak. By leveraging resources like testing sites, tools, and regional expertise, this initiative accelerates progress across four key sectors, such as mining, advanced manufacturing, agri-food, and construction. The [NORCAT Underground Centre](/mining/underground-centre), recognized for its advanced testing capabilities, is uniquely equipped to support SMEs in driving industrial innovation.
+
+"Our partnership with OCI through the Critical Industrial Technologies Initiative allows NORCAT to further support critical technologies, accelerating the momentum at which products hit the market," says Greg Major, Director of the Underground Centre. "We will continue to enhance and optimize the real-world innovative technological development cycle, further empowering prospective SMEs to develop, test, and demonstrate their product in an operating environment-fostering an ecosystem between the 'builders' of innovation and the 'buyers' of innovation."
+
+As part of its expanded partnership with OCI, NORCAT is enhancing the resources and capabilities of the Underground Centre to better support Ontario-based SMEs. The Centre has been a leader in advancing technologies such as tele-remote and autonomous vehicles, advanced drilling and bolting systems, and energy-efficient ventilation solutions.
+
+"The NORCAT Underground Centre has become a globally recognized active laboratory for mining technology innovation," says Don Duval, CEO of NORCAT. "Through this partnership, we are further strengthening our role as the one-stop shop for mining and technology development. By expanding access to cutting-edge development sites, we're fueling innovation, strengthening Ontario's tech sector, and driving sustainable growth, together."
+
+With these proven capabilities, the NORCAT Underground Centre is poised to drive innovation across critical technology areas in mining, such as 5G & advanced networks, AI, and robotics, further strengthening Ontario's industrial foundation and positioning Canada as a global leader in industrial technologies.
+
+"Through the Critical Industrial Technologies Initiative, we're strengthening Ontario's innovation ecosystem by giving SMEs the tools, support, and spaces they need to thrive," said Claudia Krywiak, President and CEO of the Ontario Centre of Innovation (OCI). "NORCAT's selection as a Technology Development Site highlights their global leadership in mining innovation and their dedication to helping companies develop, test, and scale cutting-edge technologies. Together, we're building a more competitive Ontario-accelerating industrial innovation from underground labs to global markets."
+
+Companies looking to access NORCAT's state-of-the-art Underground Centre to test, validate, and commercialize their technologies at no cost are encouraged to connect with our team. Through OCI's Critical Industrial Technologies Initiative, NORCAT can help businesses navigate available support streams-including the Technology Access Program (TAP) and the Development & Commercialization Program (DC)-to identify the best pathway for accelerating technology development while eliminating financial barriers.
+
+"As Ontario prepares to lead a rapidly evolving global industrial economy, it is crucial to build a connected, province-wide network that fuels the development, testing, and adoption of critical technologies," said Raed Kadri, Vice-President, Strategic Initiatives and Business Development, OCI and Head of OVIN. "From robotics and AI to cybersecurity and sustainable construction, the new Technology Development Sites under the Critical Industrial Technologies initiative will provide Ontario companies the competitive edge they need to transform the mining, construction, agri-food, and advanced manufacturing sectors and fuel a more resilient economy."
+
+"With over 85,000 tech professionals, Ontario stands at the forefront of global innovation and technology," said Vic Fedeli, Minister of Economic Development, Job Creation and Trade. "Through the Critical Industrial Technologies Initiative, NORCAT's partnership with the Ontario Centre of Innovation will accelerate the delivery of made-in-Ontario technologies, and further enhance our province's growing innovation ecosystem."
+
+For more information about the [Critical Industrial Technologies Initiative (CIT)](/mining/critical-industrial-tech) and details about the selected Technology Development Sites, including the [NORCAT Underground Centre](/mining/underground-centre), please visit: https://www.oc-innovation.ca/programs/cit/`,
+    aboutSections: [
+      { title: 'About NORCAT', text: 'NORCAT is a global leader in skilled labor training and development and innovation services. Located in the City of Greater Sudbury, the NORCAT Underground Centre serves as the global one-stop shop operating mine designed to enable start-ups, small / medium enterprises, and international companies to develop, test, and demonstrate emerging technologies that are poised to transform the global mining industry. To learn more visit: www.norcat.org' },
+      { title: 'About Ontario Centre of Innovation', text: 'The Ontario Centre of Innovation (OCI) brings industry, academic, and government partners together to invest in collaborative R&D, technology development, and commercialization opportunities that generate the highest return on innovation for Ontarians. As an ecosystem connector, OCI initiates unparalleled partnership opportunities, develops and manages successful industry-academic collaborations, supports high-potential SMEs in commercializing ground-breaking research, and provides hands-on training and skills development opportunities for the next generation of highly-skilled talent. OCI drives economic growth and job creation through investments in the development, commercialization, and adoption of advanced technologies. For more information: https://www.oc-innovation.ca' },
+    ],
+  },
 ];
 
 // Helper to render markdown-style links in news content
