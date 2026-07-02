@@ -24,7 +24,7 @@ import tomFortinImg from '@/assets/mentors/tom-fortin.png';
 import cathyNadjiwonImg from '@/assets/mentors/cathy-nadjiwon.png';
 import peterDalBiancoImg from '@/assets/mentors/peter-dal-bianco.png';
 import jamieDewarImg from '@/assets/mentors/jamie-dewar.png';
-import bernieAhoImg from '@/assets/mentors/bernie-aho.png';
+import bernieAhoImg from '@/assets/mentors/bernie-aho.png.asset.json';
 import barbWardDagnonImg from '@/assets/mentors/barb-ward-dagnon.png';
 import jeffFullerImg from '@/assets/mentors/jeff-fuller.png';
 import dennisReichImg from '@/assets/mentors/dennis-reich.jpg';
