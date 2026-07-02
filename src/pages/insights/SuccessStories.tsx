@@ -323,14 +323,14 @@ const SuccessStories = () => {
                             <X className="w-5 h-5 text-white" />
                           </button>
                           
+                          <span className="absolute top-4 left-4 md:top-6 md:left-6 px-3 py-1 rounded-full text-xs font-bold" style={{
+                            background: 'hsl(168 100% 35% / 0.2)',
+                            color: 'hsl(168, 100%, 60%)',
+                            border: '0.5px solid hsl(168 100% 50% / 0.3)',
+                          }}>
+                            {story.sector}
+                          </span>
                           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4" style={{
-                              background: 'hsl(168 100% 35% / 0.2)',
-                              color: 'hsl(168, 100%, 60%)',
-                              border: '0.5px solid hsl(168 100% 50% / 0.3)',
-                            }}>
-                              {story.sector}
-                            </span>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{story.company}</h2>
                             <p className="text-lg text-white/80 font-light max-w-2xl">{story.tagline}</p>
                           </div>
