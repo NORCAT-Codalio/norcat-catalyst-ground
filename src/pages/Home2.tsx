@@ -486,7 +486,7 @@ export default function Home2() {
             {/* Panel */}
             <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white">
               {/* Left visual */}
-              <div className="relative min-h-[320px] md:min-h-[420px] overflow-hidden bg-white flex items-center justify-center p-8 md:p-12 pb-12 md:pb-16">
+              <div className="relative min-h-[320px] md:min-h-[420px] overflow-hidden bg-white flex items-center justify-center p-10 md:p-16 lg:p-20 pb-14 md:pb-20">
                 <img
                   src={activeProgram.image}
                   alt={activeProgram.name}
