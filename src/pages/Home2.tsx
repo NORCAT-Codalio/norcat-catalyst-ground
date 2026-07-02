@@ -355,41 +355,34 @@ export default function Home2() {
             {/* Carousel - 4 cards visible, equal sizing */}
             <div className="relative">
               <div ref={storiesScrollRef} className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory pb-2">
-                {(() => {
-                  const gradients: Record<string, string> = {
-                    'Success Stories': 'linear-gradient(135deg, hsl(168 100% 25%) 0%, hsl(200 90% 20%) 55%, hsl(220 80% 15%) 100%)',
-                    'News': 'linear-gradient(135deg, hsl(220 80% 20%) 0%, hsl(210 90% 30%) 55%, hsl(168 100% 30%) 100%)',
-                    'Reports': 'linear-gradient(135deg, hsl(230 60% 15%) 0%, hsl(210 70% 25%) 55%, hsl(190 80% 35%) 100%)',
-                    'Ecosystem': 'linear-gradient(135deg, hsl(168 100% 30%) 0%, hsl(190 90% 25%) 55%, hsl(220 70% 20%) 100%)',
-                  };
-                  return [
-                    { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', link: '/insights/success-stories' },
-                    { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', link: '/insights/news' },
-                    { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', link: '/insights/reports' },
-                    { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", link: '/ecosystem' },
-                    { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', link: '/insights/success-stories' },
-                    { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', link: '/insights/news' },
-                    { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', link: '/insights/reports' },
-                  ].map((post) => (
-                    <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
-                      <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300" style={{ background: gradients[post.category] }}>
-                        <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 80% 20%, hsl(168 100% 60% / 0.35), transparent 60%), radial-gradient(circle at 10% 90%, hsl(220 100% 50% / 0.25), transparent 55%)' }} />
-                        <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
-                          background: 'hsla(0, 0%, 100%, 0.15)',
-                          color: 'hsl(0 0% 100%)',
-                          border: '1px solid hsla(0, 0%, 100%, 0.3)',
-                          backdropFilter: 'blur(8px)',
-                        }}>{post.category}</span>
-                        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                          <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-2 break-words" style={{ fontFamily: FONT }}>{post.title}</h3>
-                          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 group-hover:text-white transition-colors">
-                            Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                          </span>
-                        </div>
+                {[
+                  { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
+                  { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
+                  { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports' },
+                  { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem' },
+                  { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
+                  { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
+                  { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
+                ].map((post) => (
+                  <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+                    <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300">
+                      <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.75) 30%, hsl(0 0% 0% / 0.35) 60%, hsl(0 0% 0% / 0.15) 100%)' }} />
+                      <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                        background: 'hsla(168, 100%, 35%, 0.2)',
+                        color: 'hsl(168, 100%, 60%)',
+                        border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                        backdropFilter: 'blur(8px)',
+                      }}>{post.category}</span>
+                      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                        <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-2 break-words" style={{ fontFamily: FONT }}>{post.title}</h3>
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 group-hover:text-white transition-colors">
+                          Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                        </span>
                       </div>
-                    </Link>
-                  ));
-                })()}
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
 
