@@ -246,7 +246,7 @@ export default function Home2() {
   const featuredPrograms = [
     {
       name: 'Critical Industrial Technologies',
-      short: 'Critical Industrial Technologies',
+      short: 'Critical Industrial Technologies (CIT) Initiative',
       icon: Cpu,
       image: featuredCitImg,
       description: "Supporting the development and adoption of advanced technologies that strengthen Northern Ontario's mining and industrial sectors.",
