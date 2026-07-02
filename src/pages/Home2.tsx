@@ -336,9 +336,9 @@ export default function Home2() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div className="max-w-2xl">
-                <Eyebrow>Insights</Eyebrow>
+                <Eyebrow>Latest Updates</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Real Stories.<br />Unique Insights.
+                  Latest Updates.<br />Real Stories.
                 </Display>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
                   Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
