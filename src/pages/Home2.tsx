@@ -392,7 +392,12 @@ export default function Home2() {
                   const el = storiesScrollRef.current;
                   if (!el) return;
                   const step = el.clientWidth / 4;
-                  el.scrollBy({ left: -step, behavior: 'smooth' });
+                  const maxScroll = el.scrollWidth - el.clientWidth;
+                  if (el.scrollLeft <= 10) {
+                    el.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                  } else {
+                    el.scrollBy({ left: -step, behavior: 'smooth' });
+                  }
                 }}
                 className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
                 style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
@@ -405,7 +410,12 @@ export default function Home2() {
                   const el = storiesScrollRef.current;
                   if (!el) return;
                   const step = el.clientWidth / 4;
-                  el.scrollBy({ left: step, behavior: 'smooth' });
+                  const maxScroll = el.scrollWidth - el.clientWidth;
+                  if (el.scrollLeft + step >= maxScroll - 10) {
+                    el.scrollTo({ left: 0, behavior: 'smooth' });
+                  } else {
+                    el.scrollBy({ left: step, behavior: 'smooth' });
+                  }
                 }}
                 className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
                 style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
