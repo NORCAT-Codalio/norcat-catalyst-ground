@@ -579,9 +579,13 @@ export default function Home2() {
                           style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
                           {/* Header: logo placeholder + closing quote */}
                           <div className="flex items-start justify-between mb-5">
-                            <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
-                                 style={{ border: `2px dashed ${TEAL}40`, background: 'rgba(0,179,152,0.06)' }}>
-                              <ImageIcon className="w-6 h-6" style={{ color: `${TEAL}80` }} />
+                            <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
+                                 style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : `2px dashed ${TEAL}40`, background: t.logo ? 'white' : 'rgba(0,179,152,0.06)' }}>
+                              {t.logo ? (
+                                <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[85%] max-h-[85%] object-contain" loading="lazy" />
+                              ) : (
+                                <ImageIcon className="w-6 h-6" style={{ color: `${TEAL}80` }} />
+                              )}
                             </div>
                             <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: TEAL, opacity: 0.85 }}>&rdquo;</div>
                           </div>
