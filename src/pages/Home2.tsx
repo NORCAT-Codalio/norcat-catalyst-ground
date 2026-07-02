@@ -488,14 +488,14 @@ export default function Home2() {
             <div className="h-1.5 w-16 mb-10" style={{ background: TEAL }} />
 
             {/* Tabs */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
+            <div className="flex flex-nowrap gap-1.5 sm:gap-3 mb-8">
               {featuredPrograms.map((p, i) => {
                 const active = i === featuredProgramIndex;
                 return (
                   <button
                     key={p.name}
                     onClick={() => setFeaturedProgramIndex(i)}
-                    className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all"
+                    className="flex-1 sm:flex-initial px-3 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap"
                     style={{
                       fontFamily: FONT,
                       background: active ? TEAL : 'white',
