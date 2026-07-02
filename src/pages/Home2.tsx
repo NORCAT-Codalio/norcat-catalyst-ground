@@ -485,7 +485,7 @@ export default function Home2() {
               </div>
 
               {/* Right content */}
-              <div className="p-8 md:p-12 flex flex-col h-full min-h-[360px] md:min-h-[460px]" style={{ minHeight: '360px' }}>
+              <div className="p-8 md:p-12 flex flex-col h-full min-h-[360px] md:min-h-[460px]">
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
                   Featured Program
                 </p>
