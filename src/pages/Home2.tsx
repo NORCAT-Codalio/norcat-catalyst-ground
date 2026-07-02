@@ -354,8 +354,8 @@ export default function Home2() {
                 {[
                   { category: 'Events', title: 'Venture North PITCH Returns this October', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
-                  { category: 'News', title: 'OVIN Northern Ontario RTDS Renewed for Mining Innovation', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
-                  { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: stateOfSudburyImpactImg, link: '/impact' },
+                  { category: 'News', title: 'OVIN RTDS Renewed for Northern Ontario', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
+                  { category: 'Impact', title: 'Greater Sudbury Innovation Ecosystem Report', image: stateOfSudburyImpactImg, link: '/impact' },
                   
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: circuitiqTeam, link: '/insights/success-stories' },
                   { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
