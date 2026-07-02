@@ -121,12 +121,12 @@ const Funding = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {fundingPrograms.map((p) => (
                 <Link key={p.name} to={p.href}
-                      className="group relative rounded-2xl p-7 bg-white border border-black/5 hover:border-transparent transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col">
+                      className="group relative rounded-2xl p-7 pt-14 bg-white border border-black/5 hover:border-transparent transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col">
+                  <span className="absolute top-4 left-4 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full" style={{ background: `${TEAL}15`, color: TEAL }}>{p.tag}</span>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                        style={{ background: `${TEAL}15`, color: TEAL }}>
                     <p.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider mb-2" style={{ color: TEAL }}>{p.tag}</span>
                   <h3 className="text-xl font-bold mb-3 leading-tight">{p.name}</h3>
                   <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: 'rgba(0,26,77,0.72)' }}>{p.description}</p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: NAVY }}>

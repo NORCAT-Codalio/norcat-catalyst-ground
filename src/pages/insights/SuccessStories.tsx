@@ -258,6 +258,11 @@ const SuccessStories = () => {
                         <div className="relative aspect-[16/10] overflow-hidden">
                           <img src={story.image} alt={story.company} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
                           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsla(220, 25%, 12%, 0.8) 0%, hsla(220, 25%, 12%, 0.2) 40%, transparent 100%)' }} />
+                          <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold" style={{
+                            background: 'hsl(168 100% 35% / 0.2)',
+                            color: 'hsl(168, 100%, 60%)',
+                            border: '0.5px solid hsl(168 100% 50% / 0.3)',
+                          }}>{story.sector}</span>
                           {story.hasVideo && (
                             <div className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsla(0, 0%, 100%, 0.2)', backdropFilter: 'blur(8px)' }}>
                               <Play className="w-5 h-5 text-white fill-white" />
@@ -265,7 +270,6 @@ const SuccessStories = () => {
                           )}
                         </div>
                         <div className="p-6">
-                          <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: 'hsl(168, 100%, 28%)' }}>{story.sector}</span>
                           <h3 className="text-xl font-bold mt-2 mb-2" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{story.company}</h3>
                           <p className="text-sm font-light line-clamp-2 mb-4" style={{ color: 'hsl(220, 15%, 40%)' }}>{story.tagline}</p>
                           <div className="flex items-center gap-4 text-sm">
@@ -319,14 +323,14 @@ const SuccessStories = () => {
                             <X className="w-5 h-5 text-white" />
                           </button>
                           
+                          <span className="absolute top-4 left-4 md:top-6 md:left-6 px-3 py-1 rounded-full text-xs font-bold" style={{
+                            background: 'hsl(168 100% 35% / 0.2)',
+                            color: 'hsl(168, 100%, 60%)',
+                            border: '0.5px solid hsl(168 100% 50% / 0.3)',
+                          }}>
+                            {story.sector}
+                          </span>
                           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4" style={{
-                              background: 'hsl(168 100% 35% / 0.2)',
-                              color: 'hsl(168, 100%, 60%)',
-                              border: '0.5px solid hsl(168 100% 50% / 0.3)',
-                            }}>
-                              {story.sector}
-                            </span>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>{story.company}</h2>
                             <p className="text-lg text-white/80 font-light max-w-2xl">{story.tagline}</p>
                           </div>

@@ -510,18 +510,22 @@ export default function Index() {
                 <ScrollReveal key={i} delay={i * 0.08}>
                   <Link to="/insights/news" className="group block h-full">
                     <article className="h-full bg-white rounded-2xl overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                      <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                         <img
                           src={item.img}
                           alt={item.alt}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />
+                        <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{
+                          background: 'hsla(168, 100%, 35%, 0.2)',
+                          color: 'hsl(168, 100%, 60%)',
+                          border: '1px solid hsla(168, 100%, 50%, 0.25)',
+                          backdropFilter: 'blur(8px)',
+                        }}>{item.tag}</span>
                       </div>
                       <div className="p-6">
                         <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider mb-3">
-                          <span style={{ color: 'hsl(168, 100%, 28%)' }}>{item.tag}</span>
-                          <span style={{ color: 'hsl(220, 15%, 55%)' }}>•</span>
                           <span style={{ color: 'hsl(220, 15%, 55%)' }}>{item.date}</span>
                         </div>
                         <h3 className="text-lg font-bold leading-snug group-hover:text-[hsl(168,100%,28%)] transition-colors" style={{ color: 'hsl(220, 15%, 20%)' }}>

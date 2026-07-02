@@ -138,13 +138,13 @@ const Programs = () => {
                     to={program.href}
                     className="group relative flex flex-col rounded-2xl p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 bg-white border border-slate-200/60 shadow-sm hover:shadow-xl"
                   >
-                    <div className="flex items-center justify-between mb-6">
+                    <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full" style={{ background: 'rgba(0,179,152,0.1)', color: TEAL }}>
+                      {program.tag}
+                    </span>
+                    <div className="flex items-center justify-between mb-6 mt-4">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.1)' }}>
                         <Icon className="w-6 h-6" style={{ color: TEAL }} />
                       </div>
-                      <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full" style={{ background: 'rgba(0,179,152,0.1)', color: TEAL }}>
-                        {program.tag}
-                      </span>
                     </div>
                     <h3 className="text-xl font-bold mb-3" style={{ fontFamily: FONT }}>{program.name}</h3>
                     <p className="text-sm leading-relaxed mb-8 flex-1" style={{ color: 'rgba(0,26,77,0.7)' }}>
@@ -187,17 +187,17 @@ const Programs = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="group flex items-start gap-4 p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
+                      className="group relative flex items-start gap-4 p-5 pt-12 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
                     >
+                      <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
+                        {item.tag}
+                      </span>
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.15)' }}>
                         <Icon className="w-5 h-5" style={{ color: TEAL }} />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h3 className="font-bold text-base" style={{ fontFamily: FONT }}>{item.name}</h3>
-                          <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
-                            {item.tag}
-                          </span>
                         </div>
                         <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
                           {item.description}

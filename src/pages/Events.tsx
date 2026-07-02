@@ -171,7 +171,7 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
         </div>
 
         {/* Type badge */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-24 left-4">
           <span className="glass-frosted-btn rounded-full px-3 py-1.5 text-xs font-semibold flex items-center gap-1.5">
             <Icon className="w-3 h-3" />
             {event.type}

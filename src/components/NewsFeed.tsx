@@ -61,7 +61,7 @@ export function NewsFeed() {
             >
               <motion.div
                 layout
-                className="rounded-[20px] overflow-hidden"
+                className="relative rounded-[20px] overflow-hidden"
                 style={{
                   background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -71,12 +71,16 @@ export function NewsFeed() {
                 }}
               >
                 {!isExpanded && (
-                  <motion.div layout="position" className="p-6">
+                  <motion.div layout="position" className="p-6 pt-12">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style={{
+                      background: 'hsl(168 100% 35% / 0.1)',
+                      color: 'hsl(168, 100%, 28%)',
+                      border: '0.5px solid hsl(168 100% 35% / 0.2)',
+                    }}>{item.category}</span>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-11 h-11 rounded-full flex items-center justify-center" style={iconContainerStyle}>
                         <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
                       </div>
-                      <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.category}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs mb-3" style={{ color: 'hsl(220, 15%, 50%)' }}>
                       <Calendar className="w-3.5 h-3.5" />
@@ -96,7 +100,10 @@ export function NewsFeed() {
 
                 {isExpanded && (
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.3 }}>
-                    <div className="relative p-8 md:p-12 pb-0">
+                    <div className="relative p-8 md:p-12 pb-0 pt-16">
+                      <span className="absolute top-4 left-4 md:top-6 md:left-6 inline-block px-3 py-1 rounded-full text-xs font-bold" style={{
+                        background: 'hsl(168 100% 35% / 0.1)', color: 'hsl(168, 100%, 28%)', border: '0.5px solid hsl(168 100% 35% / 0.2)',
+                      }}>{item.category}</span>
                       <button
                         onClick={(e) => { e.stopPropagation(); setSelectedNews(null); }}
                         className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-20 transition-transform hover:scale-110"
@@ -108,9 +115,6 @@ export function NewsFeed() {
                         <div className="w-12 h-12 rounded-full flex items-center justify-center" style={iconContainerStyle}>
                           <Icon className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
                         </div>
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-bold" style={{
-                          background: 'hsl(168 100% 35% / 0.1)', color: 'hsl(168, 100%, 28%)', border: '0.5px solid hsl(168 100% 35% / 0.2)',
-                        }}>{item.category}</span>
                         <span className="text-xs" style={{ color: 'hsl(220, 15%, 50%)' }}>{item.date}</span>
                       </div>
                       <h2 className="text-2xl md:text-3xl font-bold mb-4 max-w-3xl" style={{ color: 'hsl(220, 15%, 15%)' }}>
