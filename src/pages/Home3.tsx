@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Calendar, MapPin, Users, Rocket, Building2, Handshake, Sparkles, Quote, Trophy, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight } from 'lucide-react';
 import { Layout } from '@/components/Layout';
+import SectionEyebrow from '@/components/SectionEyebrow';
 import signatureLines from '@/assets/signature-lines.png';
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import ctaPhoto4 from '@/assets/cta-photo-4.jpg';
@@ -154,12 +155,10 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-    {children}
-  </p>
+const Eyebrow = ({ children, className = '', center = false }: any) => (
+  <div className={`${center ? 'flex justify-center' : ''} ${className}`}>
+    <SectionEyebrow>{children}</SectionEyebrow>
+  </div>
 );
 
 const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (

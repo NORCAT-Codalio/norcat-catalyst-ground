@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Layout } from '@/components/Layout';
+import SectionEyebrow from '@/components/SectionEyebrow';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Building2, GraduationCap, Landmark, Users, Pickaxe, DollarSign, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';

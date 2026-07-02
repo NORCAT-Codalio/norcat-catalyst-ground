@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Layout } from '@/components/Layout';
+import SectionEyebrow from '@/components/SectionEyebrow';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
