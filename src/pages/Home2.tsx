@@ -552,7 +552,7 @@ export default function Home2() {
                 </Link>
 
                 {/* Delivered in partnership with */}
-                <div className="mt-8 pt-8 border-t" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
+                <div className="mt-8 pt-8 border-t hidden md:block" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
                   <p className="text-xs font-semibold tracking-[0.15em] uppercase mb-5" style={{ color: 'rgba(0,26,77,0.55)', fontFamily: FONT }}>
                     Delivered in partnership with
                   </p>
