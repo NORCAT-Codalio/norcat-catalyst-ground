@@ -49,7 +49,17 @@ import myomarLogo from '@/assets/logos/myomar.png';
 import waiveTestimonialLogo from '@/assets/logos/waive.png';
 import planaLogo from '@/assets/logos/plana.png';
 import chamberPerksAsset from '@/assets/chamber-perks-logo.png.asset.json';
+import perspicAsset from '@/assets/logos/perspic-logo.png.asset.json';
+import smartyprintsAsset from '@/assets/logos/smartyprints-logo.avif.asset.json';
+import podcoAsset from '@/assets/logos/podco-logo.png.asset.json';
+import scientAsset from '@/assets/logos/scient-logo.png.asset.json';
+import tesmanAsset from '@/assets/logos/tesman-logo.png.asset.json';
 const chamberPerksLogo = chamberPerksAsset.url;
+const perspicLogo = perspicAsset.url;
+const smartyprintsLogo = smartyprintsAsset.url;
+const podcoLogo = podcoAsset.url;
+const scientLogo = scientAsset.url;
+const tesmanLogo = tesmanAsset.url;
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
