@@ -163,7 +163,7 @@ export function Footer() {
               <img
                 src={ontarioLogoAsset.url}
                 alt="Government of Ontario"
-                className="h-5 md:h-6 w-auto object-contain brightness-0 invert"
+                className="h-5 md:h-6 w-auto object-contain"
               />
             </div>
           </div>
