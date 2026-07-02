@@ -155,7 +155,7 @@ export default function Home2() {
       href: '/mining/critical-industrial-tech',
       partners: [
         { logo: ociLogo, name: 'Ontario Centre of Innovation' },
-        { logo: ontarioLogoInline, name: 'Government of Ontario' },
+        { logo: ontarioLogoInlineAsset.url, name: 'Government of Ontario' },
       ],
     },
     {
@@ -224,7 +224,7 @@ export default function Home2() {
       href: '/mining/core5',
       partners: [
         { logo: ovinLogo, name: 'Ontario Vehicle Innovation Network' },
-        { logo: ontarioLogoInline, name: 'Government of Ontario' },
+        { logo: ontarioLogoInlineAsset.url, name: 'Government of Ontario' },
       ],
     },
   ];
