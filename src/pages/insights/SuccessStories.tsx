@@ -223,8 +223,14 @@ const ecosystemStats = [
   { value: '89%', label: 'Survival Rate' },
 ];
 
+const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const visibleCount = 2;
+  const maxIndex = Math.max(0, testimonials.length - visibleCount);
+  const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
+  const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
   const filteredStories = allStories.filter((story) => {
     if (selectedSector !== 'All' && story.sector !== selectedSector) return false;
