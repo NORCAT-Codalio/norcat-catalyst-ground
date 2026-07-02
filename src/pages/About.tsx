@@ -64,7 +64,7 @@ const team = [
 
 
 const Eyebrow = ({ children, className = '', center = false }: any) => (
-  <div className={`${center ? 'flex justify-center' : ''} ${className}`}>
+  <div className={`${center ? 'flex justify-center' : ''} mb-5 ${className}`}>
     <SectionEyebrow>{children}</SectionEyebrow>
   </div>
 );
