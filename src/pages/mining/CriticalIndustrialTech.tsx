@@ -26,7 +26,7 @@ import {
 
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
-import ontarioLogo from '@/assets/logos/ontario-logo.png';
+import ontarioLogoAsset from '@/assets/logos/ontario-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
@@ -260,7 +260,7 @@ const CriticalIndustrialTech = () => {
                   <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
                     <img src={citLogo} alt="Critical Industrial Technologies" className="h-14 object-contain" />
                     <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain" />
-                    <img src={ontarioLogo} alt="Government of Ontario" className="h-12 object-contain" />
+                    <img src={ontarioLogoAsset.url} alt="Government of Ontario" className="h-12 object-contain" />
                   </div>
                 </div>
 

@@ -26,7 +26,7 @@ import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
-import ontarioLogoInline from '@/assets/logos/ontario-logo.png';
+import ontarioLogoInlineAsset from '@/assets/logos/ontario-logo.png.asset.json';
 import ovinLogo from '@/assets/logos/ovin-logo.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
@@ -155,7 +155,7 @@ export default function Home2() {
       href: '/mining/critical-industrial-tech',
       partners: [
         { logo: ociLogo, name: 'Ontario Centre of Innovation' },
-        { logo: ontarioLogoInline, name: 'Government of Ontario' },
+        { logo: ontarioLogoInlineAsset.url, name: 'Government of Ontario' },
       ],
     },
     {
@@ -224,7 +224,7 @@ export default function Home2() {
       href: '/mining/core5',
       partners: [
         { logo: ovinLogo, name: 'Ontario Vehicle Innovation Network' },
-        { logo: ontarioLogoInline, name: 'Government of Ontario' },
+        { logo: ontarioLogoInlineAsset.url, name: 'Government of Ontario' },
       ],
     },
   ];
