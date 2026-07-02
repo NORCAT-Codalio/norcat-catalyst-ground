@@ -708,7 +708,7 @@ export default function Home2() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Header */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-8 lg:gap-16 mb-12 md:mb-16 items-end">
+            <div className="mb-12 md:mb-16">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
@@ -725,11 +725,6 @@ export default function Home2() {
                   </span>
                 </h2>
               </div>
-              <div className="flex flex-col justify-end lg:pb-2">
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
-                  NORCAT Innovation helps founders build, test, validate, and scale technology-driven ventures with access to mentorship, funding pathways, industry connections, and real-world technology development infrastructure.
-                </p>
-              </div>
             </div>
 
 
@@ -743,13 +738,7 @@ export default function Home2() {
                     <a.icon className="size-6" strokeWidth={2} style={{ color: TEAL }} />
                   </div>
                   <h3 className="font-black uppercase text-xl md:text-2xl mb-3" style={{ fontFamily: FONT, color: NAVY }}>{a.title}</h3>
-                  <p className="leading-relaxed text-sm md:text-base mb-6 flex-1" style={{ color: '#475068' }}>{a.body}</p>
-                  <Link to={a.href}
-                        className="group inline-flex items-center gap-2 text-sm font-bold transition-colors whitespace-nowrap"
-                        style={{ color: TEAL }}>
-                    {a.linkLabel}
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
+                  <p className="leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>{a.body}</p>
                 </div>
               ))}
             </div>
@@ -758,10 +747,6 @@ export default function Home2() {
             {/* Bottom CTA banner */}
             <div className="relative rounded-2xl overflow-hidden p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-8"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
-              <div className="flex items-center justify-center size-20 rounded-full flex-shrink-0"
-                   style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
-                <Users className="size-10" style={{ color: 'white' }} />
-              </div>
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="font-black uppercase text-2xl sm:text-3xl md:text-4xl lg:text-3xl lg:text-nowrap mb-3" style={{ fontFamily: FONT, color: 'white' }}>
                   Ready to build, test, or scale?
