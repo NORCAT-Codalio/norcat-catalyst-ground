@@ -9,6 +9,7 @@ import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatBuildingAsset from '@/assets/norcat-building.jpg.asset.json';
+import successStoriesCardImg from '@/assets/success-stories-hero-bg.png.asset.json';
 import norcatHalfLogoSquare from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 import heroModel from '@/assets/hero-model.png.asset.json';
 import founderSpotlight from '@/assets/underground-centre-v3.png.asset.json';
