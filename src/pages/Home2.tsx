@@ -477,7 +477,7 @@ export default function Home2() {
         </section>
 
         {/* ───── FEATURED PROGRAMS (tabbed) ───── */}
-        <section className="py-12 md:py-16" style={{ background: 'linear-gradient(180deg, rgba(0,179,152,0.08) 0%, rgba(255,255,255,1) 100%)', color: NAVY }}>
+        <section className="py-12 md:py-16" style={{ background: 'linear-gradient(180deg, rgba(0,179,152,0.14) 0%, rgba(0,179,152,0.04) 100%)', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
               Featured Programs
