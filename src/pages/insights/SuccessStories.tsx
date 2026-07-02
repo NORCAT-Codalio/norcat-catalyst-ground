@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award } from 'lucide-react';
+import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -18,6 +18,16 @@ import planaTeam from '@/assets/plana-team.jpg';
 import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
 import codalioLogo from '@/assets/codalio-logo.png.asset.json';
+import circuitiqLogo from '@/assets/logos/circuitiq.webp';
+import myomarLogo from '@/assets/logos/myomar.png';
+import chamberPerksLogo from '@/assets/chamber-perks-logo.png.asset.json';
+import perspicLogo from '@/assets/logos/perspic-logo.png.asset.json';
+import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
+import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
+import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
+import planaLogo from '@/assets/logos/plana.png';
+import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
+import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 
 
 // All stories data
