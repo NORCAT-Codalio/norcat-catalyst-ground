@@ -73,6 +73,11 @@ export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {
           {statusLabels[story.status]}
         </div>
 
+        {/* Sector tag */}
+        <div className="absolute top-12 left-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-white/20 backdrop-blur-sm text-white border border-white/20">
+          {story.sector}
+        </div>
+
         {/* Video indicator */}
         {story.hasVideo && (
           <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -83,11 +88,6 @@ export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {
 
       {/* Content */}
       <div className="p-6">
-        {/* Sector tag */}
-        <span className="text-primary text-xs font-semibold tracking-wider uppercase">
-          {story.sector}
-        </span>
-
         {/* Company name */}
         <h3 className="headline-sm mt-2 mb-2 group-hover:text-primary transition-colors">
           {story.company}
