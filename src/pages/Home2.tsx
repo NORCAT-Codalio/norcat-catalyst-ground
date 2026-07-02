@@ -437,7 +437,7 @@ export default function Home2() {
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
         <section className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-1 min-[1200px]:grid-cols-3 gap-5 min-[1200px]:gap-6 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
                 const image = [circuitiqTeam, whatwedoRobotImg, whatwedoPodiumImg][i];
@@ -446,7 +446,7 @@ export default function Home2() {
 
                 return (
                   <article key={h.label}
-                           className="relative overflow-hidden rounded-2xl flex flex-col w-full h-full sm:w-[92%] sm:max-w-[720px] min-[1200px]:w-full min-[1200px]:max-w-none"
+                           className="relative overflow-hidden rounded-2xl flex flex-col w-full h-full"
                            style={{ background: bg, border: `1px solid ${i === 2 ? '#00a38a' : '#2a5bb5'}` }}>
                     {/* Top image */}
                     <div className="relative w-full overflow-hidden h-48 sm:h-[260px] md:h-[300px] min-[1200px]:h-52 shrink-0">
