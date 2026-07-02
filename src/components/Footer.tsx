@@ -34,12 +34,9 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <>
-      <div style={{ background: '#F2F3F6' }}>
-        <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
-      </div>
-      <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
-        {/* Main Footer */}
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
+      <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
+      {/* Main Footer */}
         <div className="container mx-auto px-4 lg:px-8 pt-16 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Brand Column */}
@@ -169,6 +166,5 @@ export function Footer() {
           </div>
         </div>
       </footer>
-    </>
   );
 }
