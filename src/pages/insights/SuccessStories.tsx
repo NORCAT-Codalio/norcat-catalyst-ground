@@ -134,12 +134,87 @@ const allStories: SuccessStory[] = [
 const sectors = ['All', 'Mining Tech', 'AI & Automation', 'Cleantech', 'Medtech', 'SMB Tech'];
 
 // Ecosystem stats
-const ecosystemStats = [
-  { value: '$180M+', label: 'Capital Raised' },
-  { value: '450+', label: 'Jobs Created' },
-  { value: '23', label: 'Countries Reached' },
-  { value: '89%', label: 'Survival Rate' },
+
+const testimonials = [
+  {
+    quote: "My first PITCH with NORCAT Innovation was a night I'll never forget. The investment that followed changed everything. Since then, our company has relocated to Sudbury, secured $2M in seed funding, and today our team has grown from 7 to 60 in just four years.",
+    headline: 'Luke Begley',
+    subline: 'Founder, CircuitIQ',
+    tag: 'PITCH 2022',
+    logo: circuitiqLogo,
+  },
+  {
+    quote: "The venture capital and funding environment right now is quite challenging and has been for the last couple of years. As we raise our $3-million seed round to advance our at-home test and scale up our laboratory operations to handle 30,000 samples per year, the investment we secured through Greater Sudbury has been a massive win. In the funding world, many organizations wait for the first group to jump. Securing this level of trust and expertise from Northern Ontario through the Venture North PITCH ecosystem has acted as a true catalyst, opening quite a few doors for us to bring in additional capital.",
+    headline: 'Myomar Molecular',
+    subline: "Judges' Choice & Peter Dal Bianco Award",
+    tag: 'PITCH 2025',
+    logo: myomarLogo,
+  },
+  {
+    quote: "Participating in the 2024 NORCAT Venture North PITCH competition was a transformative experience for the Chamber Perks App. The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy and enhancing our presentation skills. Since participating and winning the People's Choice Award, the Chamber Perks App has experienced significant growth, we have expanded our team, extended our reach across Canada, and developed a bilingual version of the app.",
+    headline: 'Karen Hastie',
+    subline: 'Founder/CEO, Chamber Perks App',
+    tag: 'PITCH 2024',
+    logo: chamberPerksLogo.url,
+  },
+  {
+    quote: 'Working within the NORCAT ecosystem as a mentor, as a contributor, and as an investor, I realized that there is a hunger for growth and innovation and has a strong talent pool coming from Cambrian College, College Boreal, and Laurentian University.',
+    headline: 'Ehsan Mirdamadi',
+    subline: 'CEO/Founder, Codalio',
+    tag: 'NORCAT Innovation Client',
+    logo: codalioLogo.url,
+  },
+  {
+    quote: "It surprised me how much high technology there actually is in Sudbury… it is possible to be successful in building a technology company in Northern Ontario, which I think a lot of people don't realize.",
+    headline: 'Matthew Gougeon',
+    subline: 'CEO and Founder, Perspic',
+    tag: 'NORCAT Innovation Client',
+    logo: perspicLogo.url,
+  },
+  {
+    quote: "We had a lot of references for work through the Fortin Discovery Lab and NORCAT, and such strong support turned out to be invaluable, especially when first getting started! You need get involved with your local ecosystem.",
+    headline: 'Stephen Podrucky',
+    subline: 'CEO and Founder, Podco',
+    tag: 'NORCAT Innovation Client',
+    logo: podcoLogo.url,
+  },
+  {
+    quote: "At some point I realised the need to shake hands of the people in the mining sector, and that's more than just a virtual conversation. NORCAT was the place that we find a very high density of end users, companies, and a network that has helped a lot to accelerate the process from having an idea to having a technology.",
+    headline: 'Mashoud Aali',
+    subline: 'Founder and CEO, Scient Analytic',
+    tag: 'NORCAT Innovation Client',
+    logo: scientLogo.url,
+  },
+  {
+    quote: "As a nurse at Health Sciences North, I got to see firsthand what worked, what didn't, and where the gaps were, while support from NORCAT helped me navigate the startup landscape, opened doors and remained incredibly supportive.",
+    headline: 'Avalon Lupini',
+    subline: 'CEO and Founder, SmartyPrints',
+    tag: 'NORCAT Innovation Client',
+    logo: smartyprintsLogo.url,
+  },
+  {
+    quote: "I got involved with NORCAT as a really passionate business owner, but I was running on a dream, a positive attitude, and a belief I was going to get this done. However, once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without the mentorship of Peter.",
+    headline: 'Sheri Tomchick',
+    subline: 'CEO and Founder, PlanA & StaffStat',
+    tag: 'NORCAT Innovation Client',
+    logo: planaLogo,
+  },
+  {
+    quote: "From a small business perspective, being part of a larger high-end innovation centre and team is invaluable to a start-up innovation firm. Working with NORCAT and its connections, has taught us about what we don't know, and we learned how to do what we don't know.",
+    headline: 'Clara Steele',
+    subline: 'Co-Founder, TesMan',
+    tag: 'NORCAT Innovation Client',
+    logo: tesmanLogo.url,
+  },
+  {
+    quote: "Support from NORCAT was critical in our decision to relocate our company to Sudbury, and Venture North PITCH really launched us into the ecosystem that led us to our first angel investor.",
+    headline: 'Tabassum Pasha',
+    subline: 'Co-Founder, Waive',
+    tag: 'PITCH 2023',
+    logo: waiveTestimonialLogo.url,
+  },
 ];
+
 
 const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
