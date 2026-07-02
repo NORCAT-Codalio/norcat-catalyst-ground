@@ -16,6 +16,7 @@ import heroHeaderDesktopAsset from '@/assets/hero-website-header-desktop-v2.png.
 import heroHeaderNoPersonAsset from '@/assets/hero-website-header-noperson.png.asset.json';
 import whatwedo2Asset from '@/assets/whatwedo-robot.jpg.asset.json';
 import whatwedo3Asset from '@/assets/whatwedo-podium.png.asset.json';
+import ventureNorthPitchAsset from '@/assets/venture-north-pitch-returning.png.asset.json';
 
 const norcatBuilding = successStoriesCardImg.url;
 const norcatHalfLogo = norcatHalfLogoSquare.url;
@@ -23,6 +24,7 @@ const heroModelImg = heroModel.url;
 const founderSpotlightImg = founderSpotlight.url;
 const heroHeaderDesktopImg = heroHeaderDesktopAsset.url;
 const heroHeaderNoPersonImg = heroHeaderNoPersonAsset.url;
+const ventureNorthPitchImg = ventureNorthPitchAsset.url;
 import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 
 
@@ -340,27 +342,20 @@ export default function Home2() {
                   Stories, insights, and reports from the founders, partners, and programs powering Northern Ontario's innovation ecosystem.
                 </p>
               </div>
-              <Link to="/insights/reports"
-                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start md:self-end"
-                    style={{ background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontFamily: FONT }}>
-                View all reports
-                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </span>
-              </Link>
             </div>
 
             {/* Carousel - 4 cards visible, equal sizing */}
             <div className="relative">
               <div ref={storiesScrollRef} className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory pb-2">
                 {[
+                  { category: 'Events', title: 'Venture North PITCH is Returning', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
-                  { category: 'Reports', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/insights/reports' },
+                  { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/impact' },
                   { category: 'Ecosystem', title: "Northern Ontario's Growing Tech & Innovation Landscape", image: heroModelImg, link: '/ecosystem' },
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: ctaPhoto2, link: '/insights/success-stories' },
                   { category: 'News', title: 'NORCAT Underground: A Global Hub for Mining Innovation', image: circuitiqTeam, link: '/insights/news' },
-                  { category: 'Reports', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/insights/reports' },
+                  { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
                 ].map((post) => (
                   <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
                     <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300">
