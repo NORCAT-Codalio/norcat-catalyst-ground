@@ -348,7 +348,7 @@ export default function Home2() {
             <div className="relative">
               <div ref={storiesScrollRef} className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory pb-2">
                 {[
-                  { category: 'Events', title: 'Venture North PITCH is Returning', image: ventureNorthPitchImg, link: '/events' },
+                  { category: 'Events', title: 'Venture North PITCH Returns this October', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'Mining Transformation: Technology Innovation in Northern Ontario', image: miningUndergroundHero, link: '/insights/news' },
                   { category: 'Impact', title: 'The State of the Greater Sudbury Innovation Ecosystem', image: founderSpotlightImg, link: '/impact' },
