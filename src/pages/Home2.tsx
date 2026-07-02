@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Quote, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Layout } from '@/components/Layout';
@@ -175,6 +175,7 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 export default function Home2() {
+  const storiesScrollRef = useRef<HTMLDivElement>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const visibleCount = 3;
   const maxIndex = Math.max(0, testimonials.length - visibleCount);
