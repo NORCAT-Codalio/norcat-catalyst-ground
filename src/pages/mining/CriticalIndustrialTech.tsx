@@ -26,7 +26,7 @@ import {
 
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
-import ontarioLogoAsset from '@/assets/logos/ontario-logo.png.asset.json';
+import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
