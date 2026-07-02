@@ -263,7 +263,7 @@ export default function Home2() {
     },
     {
       name: 'Innovation Acceleration Program',
-      short: 'Innovation Acceleration Program',
+      short: 'IAP',
       icon: Sparkles,
       image: featuredIapImg,
       description: 'Accelerate market entry for high-growth ventures across Northern Ontario with tailored, non-dilutive support.',
