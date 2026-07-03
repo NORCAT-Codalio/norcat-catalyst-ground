@@ -407,6 +407,19 @@ const MentorshipServices = () => {
                               <p className="leading-relaxed text-sm md:text-base mb-7 whitespace-pre-line" style={{ color: '#475068' }}>
                                 {mentor.bio}
                               </p>
+                              {(mentor as { videoUrl?: string }).videoUrl && (
+                                <div className="mb-7 rounded-xl overflow-hidden" style={{ border: `1px solid rgba(0,179,152,0.25)` }}>
+                                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                                    <iframe
+                                      src={(mentor as { videoUrl?: string }).videoUrl}
+                                      title={`${mentor.name} interview`}
+                                      className="absolute inset-0 w-full h-full"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                      allowFullScreen
+                                    />
+                                  </div>
+                                </div>
+                              )}
                               <a
                                 href={mentor.expertfile}
                                 target="_blank"
