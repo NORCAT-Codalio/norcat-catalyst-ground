@@ -1118,4 +1118,59 @@ Looking ahead, Myomar is developing an at-home urine test using lateral flow ass
 
 Two of the five primary biomarkers have already been validated in this new format, with a consumer launch planned for 2026. Myomar’s mission is to make muscle health a cornerstone of the longevity movement because muscle is the foundation of resilience, mobility, and freedom. “We’re not just diagnosing decay,” Marshall concluded. “We’re building the infrastructure for care that adds years of independence, vitality, and strength. And it starts with something as simple as a urine test.”`,
   },
+  'scient': {
+    id: 'scient',
+    company: 'Scient Analytics',
+    tagline: 'Where Geoscience Meets Machine Vision: Bringing Confidence to Core Analysis',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['Mentorship', 'IAP'],
+    image: scientLogo.url,
+    founded: '2020',
+    problem: 'Mineral exploration is a high-risk, high-reward business where drilling alone costs $1,500 to $5,000 per metre and nearly 98% of programs never become a mine. Yet orebody interpretation still relies on subjective visual analysis of core samples—Scient’s customer discovery across nearly 300 geologists found it can take up to seven attempts to reach a concrete interpretation of a single orebody sample. The industry collects vast amounts of data and samples but spends little time processing them, creating a costly disconnect in the mineral supply chain.',
+    breakthrough: {
+      text: 'Scient Analytics applies AI-driven image segmentation and hyperspectral imaging to core photos, spectral signatures, and measured data to deliver objective, real-time orebody knowledge. Rather than replacing geologists, Scient acts as decision support—bringing confidence and consistency to interpretation at mass volume so exploration teams can act on a sharper compass while drilling is still in progress.',
+      image: scientLogo.url,
+    },
+    timeline: [
+      { year: '2020', event: 'Masoud Aali pivots from PhD research in exploration geophysics to found Scient Analytics after identifying a critical gap in orebody interpretation' },
+      { year: '2022', event: 'Customer discovery expands past 97 geologist interviews on the path to nearly 300, validating the demand for objective core analysis' },
+      { year: '2023', event: 'First pilots deployed with Northern Ontario mining partners through the NORCAT ecosystem' },
+      { year: '2024', event: 'Scient scales its hyperspectral imaging and image segmentation platform for real-time orebody knowledge in the field' },
+    ],
+    impactMetrics: { jobs: 0, revenue: 'Pilot', capital: '', pilots: 3, markets: 1 },
+    founderQuote: {
+      text: 'At its core, Scient is real analytics: it’s how we process data and then use hyperspectral imaging to turn the data into something that can add value for mining.',
+      author: 'Masoud Aali',
+      role: 'Founder & CEO, Scient Analytics',
+    },
+    currentStage: 'Commercial Pilots & Scaling',
+    whatsNext: 'Scient is expanding partnerships with mining operators across Greater Sudbury and beyond, refining its leading-edge platform to bring real-time orebody knowledge into standard exploration workflows.',
+    globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
+    fullStory: `Deep into his PhD researching exploration geophysics, the conception of the idea that would become Scient Analytics Inc. began when Masoud Aali discovered a “significant problem” in the mine-exploration industry, pivoting his career from academia into the world of mining innovation.
+
+“I remember doing customer discovery interviews, and we talked to 97 geologists,” shares Aali. “Although we are now passing nearly 300.” Across the conversations, a shocking trend emerged: “It can take geologists up to seven attempts to complete a concrete interpretation of an orebody sample, due to the subjectivity of the geologists coming to see the core from different perspectives and different experiences.”
+
+“Mining is a high-risk, high-reward industry, and drilling alone can be anywhere from $1,500 to $5,000 per metre, depending on where you are. In fact, nearly 98% of exploration does not turn into an operation.” With margins that tight, real-time interpretation is much more than a luxury.
+
+When the exploration phase for a new mine begins, the most critical elements influencing the decision to invest or not is the quality of the underground orebody. “As it stands,” reflects Aali, “the status quo is slow in generating orebody knowledge during the supply chain mineral production.” The lead time and the “disconnect” of the orebody knowledge collection process “is fairly costly for the industry. That is where the gap is.”
+
+“At its core,” he explains, “Scient is real analytics: it’s how we process data and then use hyperspectral imaging to turn the data into something that can add value for mining.”
+
+Years before AI became the headline of 2020, Aali was already applying AI to the technology of image segmentation and seismic data analysis, fusing “a little bit of engineering and a little bit of science,” to visually identify and delineate minerals of the orebody. “The orebody,” Aali explains, “is the composition of the rock: the type of minerals they have and the type of geological patterns. It acts like a compass guiding the development, and the sharper the compass, the more precise the exploration process.”
+
+“This has nothing to do with the geologists being bad,” Aali stresses. “Geology is an inherently complex, chaotic, and unpredictable field. Feedback and knowledge are limited to the experience of the geologists who are on site.” Rather, “the problem in the mining sector is that we have a love for collecting data and samples, but we don’t spend much time processing them and doing the analytics,” Aali says.
+
+This is where “Scient maximises the return on investment, on data, and sample acquisition of any kind,” Aali describes. “Scient tackles the thick stacks of core photos, spectral signatures, and measured data using image segmentation to bring objectivity and confidence to the interpretation in mass volume.” Rather than competing with human expertise, Scient Analytics positions itself alongside the workers without disrupting the craft itself. “There is a lot of appreciation for the hard work—which no technology could be a replacement for,” Aali emphasises. “But the technology helps a lot with decision support and providing real-time orebody knowledge when it’s needed most.”
+
+“Scient has been developed from the ground up with the needs of the geologists and the mining sector in mind, and that has helped us break down the complexity of deep tech,” and enforced “the need to shake hands with the people in the mining sector in the North, and that meant more than just a virtual conversation,” Aali remembers. “NORCAT was the place where we found a very high density of end users, companies, and a network that has helped a lot to accelerate the process from having an idea to having a technology.”
+
+“It’s important to note,” reminds Aali, that “when I say Scient, I very much mean my team—they have done a fantastic job from the very first pilot.” Scient is deliberately “at the leading edge, rather than the bleeding edge,” a mantra Aali adheres to as his own guiding compass from lessons he learned during the “early years of talking with people and being in complete darkness.” Operating on the bleeding edge means that companies push boundaries before the world is ready and weather the pain of being first. Scient is positioned on the leading edge, positioning the innovation far enough to be optimally competitive, supportive, and transformative in the industry.
+
+“It’s fascinating,” recalls Aali. “I realised you can drive in Greater Sudbury in any direction for 15 minutes, and you’ll start seeing signs for the mines,” he says. “We couldn’t ask for a better place.”
+
+“If you are a founder looking to the North,” Aali offers, “and if the mining space is your passion, then you are in the right place at the right time.”`,
+  },
 };
