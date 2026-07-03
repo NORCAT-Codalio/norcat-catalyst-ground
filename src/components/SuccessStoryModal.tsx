@@ -993,4 +993,55 @@ While the science was strong, the start-up world was unfamiliar: “we are not t
 
 “A lot of cancer care is still a work in progress,” he says. “We need to do better.” Thanks to the relentless work of a small Northern Ontario team, cancer chemotherapy treatment may be entering a more compassionate, more precise era.`,
   },
+  'smartyprints': {
+    id: 'smartyprints',
+    company: 'SmartyPrints',
+    tagline: 'How a Frontline Problem Rewrote the Rules of Medication Labelling',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: 'Bootstrapped', jobsCreated: 6, marketsReached: 9 },
+    programs: ['Mentorship', 'IAP'],
+    image: smartyprintsLogo.url,
+    founded: '2022',
+    problem: 'Across Canadian hospitals and pharmacies, technicians still hand-label IV bags and medication vials in high volumes. Labels smear, dissolve, and peel off, forcing costly medication to be discarded. Beyond Use Dates are calculated manually—technicians literally counting days on their phones—introducing fragility and risk into a workflow where errors compromise patient safety.',
+    breakthrough: {
+      text: 'SmartyPrints is a toaster-sized label printer, designed and built in Canada with software developed entirely in Greater Sudbury, that eliminates handwritten pharmacy labels. It instantly calculates Beyond Use Dates and prints on custom penny-per-label media rated to withstand moisture, rubbing alcohol, and chemical exposure. A 40-minute manual task collapses to two seconds—removing human error, cutting waste, and hardening patient safety at the point of compounding.',
+      image: smartyprintsLogo.url,
+    },
+    timeline: [
+      { year: '2022', event: 'Pharmacy technician Avalon Lupini partners with Key Logic Software founder Dean Lupini to prototype an automated labelling system' },
+      { year: '2023', event: 'SmartyPrints is validated in live workflows at Health Sciences North in Sudbury' },
+      { year: '2024', event: 'Avalon Lupini receives the national Technician Initiative Award from Pharmacy Practice + Business; SmartyPrints joins the CAN Health Network Elevate program' },
+      { year: '2025', event: 'Deployed at eight hospitals and one retail pharmacy with expansion into nursing stations, retail, and lab settings underway' },
+    ],
+    impactMetrics: { jobs: 6, revenue: 'Commercial', capital: 'Bootstrapped', pilots: 9, markets: 9 },
+    founderQuote: {
+      text: "What used to take 40 minutes now takes 2 seconds. This isn’t just about efficiency—it’s about accuracy, reliability, and reducing waste.",
+      author: 'Avalon Lupini',
+      role: 'Founder & CEO, SmartyPrints',
+    },
+    currentStage: 'Commercial Deployment & National Expansion',
+    whatsNext: 'SmartyPrints is adapting its printer and software for nursing stations, retail pharmacies, and lab settings, scaling nationally through the CAN Health Network while continuing to build every component in Canada.',
+    globalPresence: ['Canada'],
+    fullStory: `Avalon Lupini exudes the kind of vibrant and visceral entrepreneurial energy that is akin to a seasoned founder—and unexpected from a professional registered pharmacy technician of 17 years, including eight at Health Sciences North (HSN). A persistent challenge, often hidden behind the scenes but one pharmacy technicians were all too familiar with, compelled her to act: the outdated, inefficient, manual process of handwriting medication labels.
+
+For years, Lupini, her colleagues, and pharmacists across the country have been required to hand-label IV bags and medication vials, often in large volumes, by hand. “It wasn’t just frustrating,” she explains, “but a fragile process; inconsistent and expensive, too.” Labels wouldn’t stick to the bags and often dissolved, which meant valuable medication had to be discarded.
+
+The challenge with labelling inconsistencies was twofold: there was no reliable method for calculating Beyond Use Dates—the expiry window for compounded medications—and Lupini recalls her team having to stop what they were doing “just to count days on our phones,” hoping to avoid errors. “It was all so messy and time-consuming, and in the end, it’s just compromising patient safety, right? We all knew it.”
+
+Lupini shared her idea with her husband, Dean Lupini, founder of Sudbury-based Key Logic Software Solutions. “We realized we could combine our unique technical expertise. Pharmacy technicians handle a lot of technology. There’s significant automation in pharmacy,” she notes. “We operate $3 million robots in the hospital. So, I’ve always been hands-on with technology.” Dean answered simply: “Yeah, we can build that. I’ll put together a prototype.” That conversation marked the beginning of SmartyPrints.
+
+Built from lived experience and about the size of a small toaster, the SmartyPrints label printer is now making big waves in the pharmaceutical space. “Now, it calculates dates for us instantly. We don’t have to use our phones anymore. And because the data goes into a computer and is not handwritten, human error and burnout are reduced.”
+
+Produced in B.C., the custom high-quality labels are “temperature-rated with powerful adhesive,” Lupini notes. “They cost just a penny each and are designed to withstand moisture, rubbing alcohol, and even chemical exposure.” Every component—from the hardware to the software—is designed and assembled in Canada, with the software development taking place entirely in Greater Sudbury. “This isn’t just about efficiency. It’s about accuracy, reliability, and reducing waste. What used to take 40 minutes now takes 2 seconds.”
+
+In 2024, Lupini received the Technician Initiative Award from Pharmacy Practice + Business—a monumental national recognition of her innovation and leadership. “They said, ‘This needs to be in every pharmacy. This is amazing,’” she shares. Even HSN CEO Dr. David McNeil reached out personally to offer his congratulations. That same year, SmartyPrints was selected for the CAN Health Network’s Elevate program, reserved for top Canadian health tech companies positioned for national impact.
+
+“I felt that Sudbury was a great place to start a MedTech company,” she adds. Testing and validating the system at HSN proved invaluable. “I got to see firsthand what worked, what didn’t, and where the gaps were. While support from NORCAT helped me navigate the startup landscape, they opened doors and remained incredibly supportive.”
+
+SmartyPrints is now in use at eight hospitals and one retail pharmacy, with expansion on the horizon into nursing stations, retail pharmacies, and lab settings—areas where the labelling problems are just as potent. “SmartyPrints has the potential to make life easier and safer in so many settings.”
+
+Lupini hopes her journey inspires others in healthcare, especially those who may not see themselves as inventors, to speak up and innovate. “Don’t ever give up on an idea. Because it could have real impacts for a lot of people. Your ideas are needed—especially from those on the front lines.”`,
+  },
 };
