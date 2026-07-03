@@ -194,6 +194,18 @@ const allStories: SuccessStory[] = [
     image: iregainedLogo.url,
     founded: '2018',
   },
+  {
+    id: 'rna-diagnostics',
+    company: 'RNA Diagnostics',
+    tagline: 'Leading Innovation in Oncology Diagnostics',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$26M', jobsCreated: 15, marketsReached: 3 },
+    programs: ['Mentorship', 'IAP'],
+    image: rnaDiagnosticsLogo.url,
+    founded: '2008',
+  },
 ];
 
 // Filter options
