@@ -16,6 +16,7 @@ import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.
 import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
+import waiveLogo from '@/assets/logos/waive.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
