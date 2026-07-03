@@ -35,6 +35,7 @@ import loopxCit from '@/assets/cit-loopx.jpg.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
+import enabledTalentNews from '@/assets/news-enabledtalent.jpg.asset.json';
 
 
 // All stories data
@@ -254,6 +255,18 @@ const allStories: SuccessStory[] = [
     programs: ['UG Centre', 'Mentorship', 'IAP'],
     image: loopxCit.url,
     founded: '2021',
+  },
+  {
+    id: 'enabled-talent',
+    company: 'Enabled Talent',
+    tagline: 'Rebuilding Hiring Systems to Recognize Talent, Not Filter It Out',
+    sector: 'SMB Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 8, marketsReached: 4 },
+    programs: ['Mentorship', 'IAP'],
+    image: enabledTalentNews.url,
+    founded: '2020',
   },
 ];
 

@@ -24,6 +24,7 @@ import myomarLogo from '@/assets/logos/myomar.png.asset.json';
 import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
 import loopxCit from '@/assets/cit-loopx.jpg.asset.json';
 import loopxCitWide from '@/assets/cit-loopx-wide.jpg.asset.json';
+import enabledTalentNews from '@/assets/news-enabledtalent.jpg.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -1233,5 +1234,61 @@ This integrated intelligence extends to the maintenance shop via X.Parts, which 
 Beyond technology, Petroski is committed to the Northern Ontario innovation ecosystem. Having served as a judge at PITCH 2025, he actively supports the environment around him to ensure it flourishes. His goal is to make the industries where innovation happens safe, efficient, and people friendly. This mentorship was evident when LoopX converged with SYMX.AI at the NORCAT Underground Centre. Their collaboration led to a system deployed on a Rokion electric vehicle, demonstrated during Mining Transformed. Features like bucket pose estimation and voice-based collision warnings represented a generational shift for operators.
 
 For Petroski, these partnerships are essential for delivering “capabilities for advancements in Industrial IoT and AI into mining corridors where a significant positive impact on mobile asset safety, visibility, and efficiency can be realized.” Yu returns the focus to the human dimension, stressing labour augmentation: “It’s time to upscale the workforces for the autonomous future. We’re not replacing the workforce; we’re enabling it to evolve safely.”`,
+  },
+  'enabled-talent': {
+    id: 'enabled-talent',
+    company: 'Enabled Talent',
+    tagline: 'Rebuilding Hiring Systems to Recognize Talent, Not Filter It Out',
+    sector: 'SMB Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 8, marketsReached: 4 },
+    programs: ['Mentorship', 'IAP'],
+    image: enabledTalentNews.url,
+    founded: '2020',
+    problem: 'Nearly 27 percent of Canadian adults live with a disability, yet close to 40 percent of that population remain unemployed or underemployed—not because they lack skill, ambition, or effort, but because hiring systems are built around able-bodied norms and repeatedly force individuals to navigate inaccessible processes alone.',
+    breakthrough: {
+      text: 'Enabled Talent replaces repetitive, inaccessible applications with a one-time AI-powered onboarding. Candidates complete a voice-or-text profile once, and the platform builds a personal digital persona that uses AI agents to communicate with matching job opportunities. Employers receive a curated, pre-vetted shortlist instead of hundreds of applications, cutting hiring time by 90 to 95 percent while keeping the candidate’s talent at the centre.',
+    },
+    timeline: [
+      { year: '2020', event: 'Post-pandemic AI advances inspire Amandipp Singh to begin building a platform that removes barriers for job seekers with disabilities' },
+      { year: '2022', event: 'Enabled Talent launches one-time voice-and-text onboarding with AI-agent matching between candidates and employers' },
+      { year: '2023', event: 'NORCAT Innovation unlocks expansion into Northern Ontario, connecting the team to Sudbury, Timmins, Thunder Bay, and North Bay' },
+      { year: '2024', event: 'Selected by UNICEF Startup Lab Africa; pilots launch in Ghana, Kenya, and Nigeria with local consulates and ministries' },
+      { year: '2025', event: 'Team grows to eight across Brampton and Greater Sudbury; platform surpasses 20,000 users' },
+      { year: '2026', event: 'Spanish-language platform version underway, supported by the Spanish ministry, with a Centre of Enabled Talent planned' },
+    ],
+    impactMetrics: { jobs: 8, capital: '', pilots: 3, markets: 4 },
+    founderQuote: {
+      text: 'The talent was always there. The systems simply needed to be rebuilt to recognize it.',
+      author: 'Amandipp Singh',
+      role: 'Founder & CEO, Enabled Talent',
+    },
+    currentStage: 'Pan-Canadian & Global Pilot Expansion',
+    whatsNext: 'Enabled Talent is scaling toward 100,000 users, expanding its Spanish-language platform, and establishing a Centre of Enabled Talent to host workshops and programs for job seekers with disabilities.',
+    globalPresence: ['Greater Sudbury', 'Canada', 'Ghana', 'Kenya', 'Nigeria'],
+    fullStory: `For millions of Canadians, the hardest part of finding work has little to do with skill, ambition, or effort, but rather with accessibility, accommodation, and support systems. According to the Canadian Survey on Disability, nearly 27 percent of adults in Canada, roughly eight million people, identify as having a disability. Yet close to 40 percent of this population remain unemployed or underemployed. For Amandipp Singh, the intersection between his own lived experience and that of countless other Canadians became undeniable.
+
+“I have nearly a decade of experience in the education sector, working with governments, nonprofits, and educational institutions, building solutions to empower underprivileged communities for better integration into the workforce and education,” reflects Singh. “Which, on top of my own lived experience with partial blindness,” he adds, “gave me a fair idea of the pain points and the possible solutions.”
+
+“I always use this example,” Singh says. “If even for a day you had to work with your eyes closed or be unable to speak, there is nothing that will suddenly replace your talent, skills, passion, or anything. Everything will remain as it is.” What shifts, he explains, is not the person, but the conditions of moving through systems designed for able-bodied people, without flexibility. “The job seeker’s experience becomes completely different. That’s the gap we’re solving for.”
+
+Then, post-2020, a turning point came into view. “When the era of AI agents and technology became available,” Singh says, “I had a strong understanding of the pain points and the possible solutions, and we asked: what if we build a solution to minimize those barriers?” Singh recalls, “That vision and that desire led to the beginning of the journey of what would become Enabled Talent.”
+
+Instead of forcing individuals with disabilities to repeatedly navigate inaccessible hiring systems, Enabled Talent streamlines that burden with AI. “For each candidate, it creates a personal digital persona,” Singh explains, “and that digital profile, using AI agents, will communicate with all the job opportunities on the platform, not the individual.”
+
+Candidates complete a one-time onboarding process, using voice or text, and the platform matches them to roles based on skills, interests, and real-world fit. Employers receive a curated shortlist rather than hundreds of applications. It benefits employers as well, explains Singh. “Instead of getting hundreds of applications, which is where we are today,” he says, “you get a pre-vetted list of candidates that match, like a dating app.” The increase in efficiency is dramatic. “During this journey, you save 90 to 95 percent of the time,” he adds, “and the candidates will have the relevant necessary skills.”
+
+“Let’s say there is a role for a barista at a coffee shop,” Singh offers as an example. “A person with a hearing impairment can apply. Someone with a speech impairment can still do it. But a person with a physical disability or who uses a wheelchair, it is not a practical job.” The platform’s recommendations are built on practical context, not assumptions, and address traditional blind spots in hiring practices. “I use the term ‘co-design,’ asking individuals with disabilities, ‘what would make your journey better?’” Singh says, noting that “people avoid change, and having people understand change takes time, trust, and transparency.”
+
+“On the Canadian Survey of Disability,” he says, “Sudbury, Timmins, Thunder Bay, North Bay, those are the ones where there’s more need for such a solution,” transforming what began as a pan-Ontario initiative into a pan-Canadian journey. Expansion into Northern Ontario and access to the regional ecosystem were unlocked through the team at NORCAT Innovation. “Just one person opened the door, which led to a further chain effect,” Singh recalls. Proving his belief that “one door opens all the doors,” Enabled Talent was soon selected by UNICEF Startup Lab in Africa, launching pilot programs in Ghana, Kenya, and Nigeria in collaboration with local consulates and ministries. “We had a formal launch event with UNICEF,” Singh says. “It was more like the first step of a Canadian company going global.”
+
+In the early days of Enabled Talent, Singh often reflected and joked that “people don’t trust you when you’re working alone in a start-up, so I said that we were a team of three people. Who were these people, you ask? Well, me, myself, and I.”
+
+As of late 2025, Enabled Talent is a team of eight, with combined central office locations in Brampton and Greater Sudbury, and plans to establish a Centre of Enabled Talent to host workshops and programs for job seekers with disabilities.
+
+Enabled Talent currently serves more than 20,000 users, with a goal of exceeding 100,000. A Spanish-language version of the platform is underway, supported by the Spanish ministry.
+
+Singh measures success less by numbers than by outcomes. “When you help people,” he says, “it means you’re solving things for the government, and even when you solve ten of those, that means you have unlocked a larger talent pool.” The talent was always there. The systems simply needed to be rebuilt to recognize it.`,
   },
 };
