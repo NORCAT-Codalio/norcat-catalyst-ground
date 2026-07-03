@@ -30,6 +30,7 @@ import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
 import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
+import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
 
 
 // All stories data
@@ -153,6 +154,18 @@ const allStories: SuccessStory[] = [
     programs: ['UG Centre', 'Mentorship'],
     image: medatechRaisePro.url,
     founded: '2003',
+  },
+  {
+    id: 'kinmetrix',
+    company: 'Kinmetrix',
+    tagline: 'Bringing Data to the Missing Link in Athlete Safety.',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 4 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
+    image: kinmetrixArc.url,
+    founded: '2019',
   },
 ];
 
