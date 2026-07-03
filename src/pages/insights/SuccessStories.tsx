@@ -31,6 +31,7 @@ import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
+import loopxCit from '@/assets/cit-loopx.jpg.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
@@ -241,6 +242,18 @@ const allStories: SuccessStory[] = [
     programs: ['Mentorship', 'IAP'],
     image: scientLogo.url,
     founded: '2020',
+  },
+  {
+    id: 'loopx',
+    company: 'LoopX',
+    tagline: 'AI Autonomy for the Harshest Environments',
+    sector: 'AI & Automation',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship', 'IAP'],
+    image: loopxCit.url,
+    founded: '2021',
   },
 ];
 

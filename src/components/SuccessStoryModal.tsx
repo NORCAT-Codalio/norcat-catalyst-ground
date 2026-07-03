@@ -22,6 +22,8 @@ import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
 import myomarLogo from '@/assets/logos/myomar.png.asset.json';
 import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
+import loopxCit from '@/assets/cit-loopx.jpg.asset.json';
+import loopxCitWide from '@/assets/cit-loopx-wide.jpg.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -1172,5 +1174,50 @@ This is where “Scient maximises the return on investment, on data, and sample 
 “It’s fascinating,” recalls Aali. “I realised you can drive in Greater Sudbury in any direction for 15 minutes, and you’ll start seeing signs for the mines,” he says. “We couldn’t ask for a better place.”
 
 “If you are a founder looking to the North,” Aali offers, “and if the mining space is your passion, then you are in the right place at the right time.”`,
+  },
+  'loopx': {
+    id: 'loopx',
+    company: 'LoopX',
+    tagline: 'AI Autonomy for the Harshest Environments',
+    sector: 'AI & Automation',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship', 'IAP'],
+    image: loopxCit.url,
+    founded: '2021',
+    problem: 'Underground mines are dark, dull, dirty, and dangerous—line of sight is limited, GPS is absent, and sensory systems are routinely disrupted by dust and signal loss. According to Natural Resources Canada, human-machine interactions cause most serious underground mining incidents, yet the industry has long relied on radio calls and tag-based proximity systems that leave operators reacting to accidents rather than preventing them.',
+    breakthrough: {
+      text: 'LoopX’s AI-Powered Situational Awareness System fuses Vision AI, LiDAR, and RF sensing to give legacy underground vehicles 360-degree real-time perception without GPS. Every retrofitted machine becomes a mobile survey platform, restoring the senses operators historically lacked and enabling features like bucket pose estimation and voice-based collision warnings—a generational shift for underground operators.',
+      image: loopxCitWide.url,
+    },
+    timeline: [
+      { year: '2021', event: 'Dr. Chao Yu leaves an 8-year machine-learning career at General Motors to found LoopX, redirecting autonomy research from surface consumer robotics to underground mining' },
+      { year: '2023', event: 'LoopX establishes its base at the NORCAT Underground Centre in Sudbury to stress-test perception hardware against dust, humidity, and seismic vibration' },
+      { year: '2024', event: 'Strategic collaboration with SYMX.AI fuses LoopX Vision AI and LiDAR with the X.Machines platform, giving legacy fleets full situational awareness' },
+      { year: '2025', event: 'Joint LoopX + SYMX.AI system deployed on a Rokion electric vehicle and demonstrated at Mining Transformed with bucket pose estimation and voice collision warnings' },
+    ],
+    impactMetrics: { jobs: 0, revenue: 'Pilot', capital: '', pilots: 3, markets: 1 },
+    founderQuote: {
+      text: 'It’s time to upscale the workforces for the autonomous future. We’re not replacing the workforce; we’re enabling it to evolve safely.',
+      author: 'Dr. Chao Yu',
+      role: 'Founder & CEO, LoopX',
+    },
+    currentStage: 'Commercial Pilots & Ecosystem Deployment',
+    whatsNext: 'LoopX is scaling its AI-Powered Situational Awareness System across underground fleets in partnership with SYMX.AI, converting more legacy machines into GPS-free autonomous survey platforms for safer, more efficient mines.',
+    globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
+    fullStory: `In the subterranean corridors of an underground mine, line of sight is limited and sensory systems are routinely disrupted. According to Natural Resources Canada, human-machine interactions cause most serious underground mining incidents. For decades, the industry relied on radio calls and tag-based proximity systems—tools that left operators reacting to accidents rather than preventing them. The collaboration between Sudbury-based LoopX and SYMX.AI changes this dynamic by pairing autonomous perception with resilient digital infrastructure. Dr. Chao Yu, Founder and CEO of LoopX, notes: “Mining presents a dark, dull, dirty, and dangerous environment, making it an ideal application for autonomous technologies.” Together, these companies are building the eyes and nervous system of the modern mine.
+
+The partnership began with a shift in Dr. Yu’s journey. A machine learning specialist with a PhD from the University of Waterloo, Yu spent eight years at General Motors designing control systems. His initial ambition was surface-level autonomy, but he observed the consumer robotics sector still “had significant maturing to do” regarding safety and viability. He redirected his technology—reliable machine perception without GPS—to the underground, where dust and signal loss are constant. This became the foundation of LoopX and its AI-Powered Situational Awareness System. By fusing Vision AI, LiDAR, and RF sensing, LoopX enables legacy vehicles to achieve 360-degree real-time perception. “Every machine we converted became a mobile survey machine,” Yu emphasizes, restoring senses operators historically lacked.
+
+Perception is insufficient if insight cannot travel, a challenge central to Kirk Petroski’s career. As Founder and Executive Chairman of SYMX.AI, Petroski focuses on dismantling infrastructure silos. While connectivity is vital, Petroski argues the scope is broader than providing a mesh network: “The main item is the full digitization of equipment in both underground and open-pit environments. This is how we change the industry from within.” As a long-standing resident of the NORCAT Underground Centre, SYMX.AI uses the facility to stress-test hardware against high humidity and seismic vibrations, ensuring their X.Machines platform withstands unforgiving conditions.
+
+Petroski highlights the economic necessity of this shift, noting that maintenance and fuel costs often hurt output. To address this, SYMX.AI applies AI to machine data to predict failures. This nervous system, powered by the X.Connect IoT platform, collects OEM-agnostic data, bridging gaps between machinery brands into a unified stream. The resulting efficiencies allow mining vehicles to optimize performance and lower fuel costs by nearly 9 percent.
+
+This integrated intelligence extends to the maintenance shop via X.Parts, which applies AI to maintenance logs to identify assets prone to failure. By detecting conditions earlier, operations better coordinate the full mining cycle, including drilling, blasting, and mucking. This holistic approach contributes to a shortened cycle and a significant reduction in greenhouse gas emissions. This intelligence turns raw data into actionable profitability, moving LoopX’s real-time insights from machine to management.
+
+Beyond technology, Petroski is committed to the Northern Ontario innovation ecosystem. Having served as a judge at PITCH 2025, he actively supports the environment around him to ensure it flourishes. His goal is to make the industries where innovation happens safe, efficient, and people friendly. This mentorship was evident when LoopX converged with SYMX.AI at the NORCAT Underground Centre. Their collaboration led to a system deployed on a Rokion electric vehicle, demonstrated during Mining Transformed. Features like bucket pose estimation and voice-based collision warnings represented a generational shift for operators.
+
+For Petroski, these partnerships are essential for delivering “capabilities for advancements in Industrial IoT and AI into mining corridors where a significant positive impact on mobile asset safety, visibility, and efficiency can be realized.” Yu returns the focus to the human dimension, stressing labour augmentation: “It’s time to upscale the workforces for the autonomous future. We’re not replacing the workforce; we’re enabling it to evolve safely.”`,
   },
 };
