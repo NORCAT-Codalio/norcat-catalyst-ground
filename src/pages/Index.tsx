@@ -31,7 +31,7 @@ import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import rephealthLogo from '@/assets/logos/rephealth.png';
-import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png';
+import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 import komatsuLogo from '@/assets/logos/komatsu.png';
 import maestroLogo from '@/assets/logos/maestro.png';
 import staffstatLogo from '@/assets/logos/staffstat.png';
@@ -56,7 +56,7 @@ const portfolioCompanies = [
   { name: 'LoopX', logo: loopxLogo },
   { name: 'Circuit IQ', logo: circuitiqLogo },
   { name: 'Rep Health', logo: rephealthLogo },
-  { name: 'RNA Diagnostics', logo: rnaDiagnosticsLogo },
+  { name: 'RNA Diagnostics', logo: rnaDiagnosticsLogo.url },
   { name: 'Komatsu', logo: komatsuLogo },
   { name: 'Maestro Digital Mine', logo: maestroLogo },
   { name: 'StaffStat', logo: staffstatLogo },

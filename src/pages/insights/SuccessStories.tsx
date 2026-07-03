@@ -33,6 +33,7 @@ import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
+import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 
 
 // All stories data
@@ -192,6 +193,18 @@ const allStories: SuccessStory[] = [
     programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'PITCH'],
     image: iregainedLogo.url,
     founded: '2018',
+  },
+  {
+    id: 'rna-diagnostics',
+    company: 'RNA Diagnostics',
+    tagline: 'Leading Innovation in Oncology Diagnostics',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$26M', jobsCreated: 15, marketsReached: 3 },
+    programs: ['Mentorship', 'IAP'],
+    image: rnaDiagnosticsLogo.url,
+    founded: '2008',
   },
 ];
 
