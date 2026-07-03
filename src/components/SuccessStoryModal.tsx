@@ -760,4 +760,63 @@ The next major step is evolving the existing RodBot technology, a hydraulic robo
 
 MEDATech will continue to develop additional configurations of the RaisePro, including a 48-inch capacity drill on rubber tires, and even larger 60-inch capacity drills.`,
   },
+  'kinmetrix': {
+    id: 'kinmetrix',
+    company: 'Kinmetrix',
+    tagline: 'Bringing Data to the Missing Link in Athlete Safety.',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 4 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
+    image: kinmetrixArc.url,
+    founded: '2019',
+    problem: 'Sports medicine has long lacked objective, quantifiable data around neck strength, even though the neck connects the entire nervous system and plays a decisive role in force absorption, head control, and concussion resilience. Traditional neck training relied on manual resistance and subjective assessment, leaving athletes, coaches, and medical staff guessing about one of the body\'s most vulnerable areas.',
+    breakthrough: {
+      text: 'Kinmetrix blends robotics with sensor technology to create the Kinmetrix Arc, the first digital device that establishes baseline neck strength metrics and autonomously prescribes targeted cervical workouts. By replacing subjective manual resistance with precise, repeatable measurement, the Arc gives elite athletes, research facilities, and medical teams data they cannot get anywhere else in the world.',
+      image: kinmetrixArc.url,
+    },
+    timeline: [
+      { year: '2019', event: 'Kim Brouzes takes the reins as CEO of Kinmetrix, bringing decades of hands-on athletic therapy experience to the venture' },
+      { year: '2020', event: 'Development begins on the Kinmetrix Arc, combining robotics and sensor technology for objective neck-strength assessment' },
+      { year: '2022', event: 'Prototype validated with athletic therapists, sports teams, and early research partners in Sudbury' },
+      { year: '2024', event: 'Secures $250,000 from the Sudbury Catalyst Fund with mentorship from Peter Dal Bianco' },
+      { year: '2025', event: 'Expands into major leagues, college sports, the OHL, Formula 1, and the United States Department of Defense' },
+      { year: '2026', event: 'Introduces the Kinmetrix Arc to Eric Lindros and deepens engagement with combat-sport and performance-institute partners' },
+    ],
+    impactMetrics: { jobs: 8, capital: '$250K', pilots: 5, markets: 4 },
+    founderQuote: {
+      text: 'Learn what your strengths are in every role that you take on, and integrate yourself into the support systems and community infrastructure of Greater Sudbury—where dedicated innovators become global leaders.',
+      author: 'Kim Brouzes',
+      role: 'Founder & CEO, Kinmetrix Inc.',
+    },
+    currentStage: 'Scaling Across Elite Sports & Research',
+    whatsNext: 'Kinmetrix is expanding the Arc into combat-sport environments, including conversations with the UFC Performance Institute, while continuing to build the global data set around neck strength and concussion resilience.',
+    globalPresence: ['Greater Sudbury', 'Canada', 'USA', 'Global'],
+    fullStory: `The ingenuity forged in the rocks and refined in the industrial innovation of Sudbury has always possessed a singular focus: solving intractable problems to protect the well-being of people.
+
+As we shift focus from the technological revolution underground to the innovations saving lives and improving health on the surface, the story of Kinmetrix Inc. is powerfully framed by the personal journey of its CEO, Kim Brouzes, whose wisdom and deep roots in Sudbury were instrumental in transitioning a crucial invention into a global solution.
+
+Kim Brouzes’s path to leading a high-tech venture was unexpectedly rooted not in corporate strategy, but in decades of hands-on patient care. She established her reputation in Sudbury over 25 years as an Athletic Therapist with Active Therapy Plus. It was only recently, at the age of 51, that Kim had a moment of intense self-discovery. She realised her core competency wasn’t just physical therapy; it was her ability to connect and educate. “The value I have is somewhere between kindness and my ability to educate and teach,” she shared, adding, “I literally talk all day long.” Her people-first approach—building trust and communicating clearly—became her unexpected “superpower” as she stepped onto the global stage.
+
+When entrepreneurial physician Dr. Dennis Reich asked Kim to take the reins as CEO of Kinmetrix, she admitted she had “no formal training as a CEO.” The shift required her to learn complex corporate terminology like “burn rates and COGS (Cost of Goods Sold),” a language she had “no idea” how to speak. From her medical background, Kim described the experience as having to learn “literally from the ground up.”
+
+The technology she championed—the Kinmetrix Arc—addresses a critical gap in sports safety: the lack of objective, quantifiable data around neck strength. Traditionally, and even now, strengthening the neck—connecting the entire nervous system of the body—relied on subjective “manual resistance.” Physical resistance against the neck, pushing and pulling, is primal. Kinmetrix blends “robotics with sensor technology” to collect and establish data and metrics that illustrate a baseline that simply doesn’t exist “anywhere in the world.”
+
+While Kim and Dennis Reich are the big picture “innovators,” she relied heavily on colleagues like Lisa Aho, the CFO/COO, who she calls the “brain with numbers… she grounds us.” Veteran entrepreneur Bernie Aho created some of the “best software the NFL has ever seen” for the Arc, allowing the machine to autonomously assess and prescribe workouts. “The Northern spirit is about the collective—utilising and leveraging each other’s strengths.”
+
+Kinmetrix’s growth was profoundly accelerated by the Sudbury Catalyst Fund, securing a $250,000 seed funding round. Kim recalled being “so nervous” before her first pitch because she had “never had to present for money.” Peter Dal Bianco provided “beautiful mentoring” by taking her existing strengths and showing her how to apply them to pitching. This support was “an imperative piece” to their success, confirming their decision to “headquarter Kinmetrix here.”
+
+Kim’s extensive network, honed over 25 years in the medical field, opened doors to major leagues, college sports teams, and influential performance centres. NHL ambassador Nick Foligno confirmed the significance, stating he is “excited and inspired by the work Kim, Bill, and the team have put into this amazing product,” believing that “strengthening the neck safely to eventually reduce concussion rates is crucial, now more than ever.” One particularly meaningful milestone came when Kim had the opportunity to introduce the Kinmetrix Arc to Eric Lindros. For her, it was a profound moment—Eric is the reason she has worked so hard on improving concussion outcomes across her 26-year career. They shared a great discussion, he offered remarkable insight, and the conversation opened the door to future collaborations.
+
+Kim found herself doing podcasts with people she never thought she would share the stage with, including personnel from the NFL, UFC, and Formula One. She recounts the humorous shock of mistaking famed NFL agent Lee Steinberg for a homeless person due to his dishevelled attire at the NFL Combine—a conversation that led to an invitation to test athletes at a Super Bowl party.
+
+This traction confirms the value of the unique pool of data Kinmetrix is gathering, sought after by research facilities, universities, the Ontario Hockey League, Formula 1, and, pending approval, the United States Department of Defense.
+
+Combat sports have become an especially important frontier. UFC athletes are among the most complete high-performance athletes in the world—combining explosive power, reaction speed, endurance, mobility, and resilience. As modern MMA training becomes more data-driven and scientifically optimized, the role of neck strength and cervical stability deserves far more attention. The neck is central to force absorption, head control, striking mechanics, grappling posture, fatigue resistance, and potential concussion mitigation. That is precisely why the Kinmetrix Arc was built: to bring objective measurement and targeted cervical training into elite performance environments. As organizations like the UFC Performance Institute continue pushing sports science forward, Kinmetrix is excited to be part of the evolving conversation around athlete performance and protection.
+
+She advises new entrepreneurs to embrace the “familial” and low-ego environment where people do things to “help more people as opposed to snubbing or discrediting.” She notes that having been successful in Sudbury, she now understands why other companies should move here: “It’s the community that embraces you, coupled with the affordability to live and the beautiful landscape.”
+
+“Learn what your strengths are in every role that you take on,” she advises, and integrate yourself into the support systems and community infrastructure of Greater Sudbury—where dedicated innovators become global leaders.`,
+  },
 };
