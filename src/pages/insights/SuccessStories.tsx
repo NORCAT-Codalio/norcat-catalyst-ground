@@ -28,6 +28,7 @@ import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
 import planaLogo from '@/assets/logos/plana.png';
 import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
 import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
+import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
 
 
 // All stories data
@@ -127,6 +128,18 @@ const allStories: SuccessStory[] = [
     programs: ['SCF', 'VGS', 'Mentorship', 'RAI'],
     image: codalioLogo.url,
     founded: '2023',
+  },
+  {
+    id: 'podco',
+    company: 'PodCo',
+    tagline: 'From Prototype to Production, the PodCo Way.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { jobsCreated: 5, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship', 'IAP'],
+    image: podcoDiscoveryLab.url,
+    founded: '2017',
   },
 ];
 

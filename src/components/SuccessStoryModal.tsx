@@ -12,6 +12,8 @@ import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
 import chamberPerksLogo from '@/assets/chamber-perks-logo.png.asset.json';
 import codalioLogo from '@/assets/codalio-logo.png.asset.json';
+import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
+import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -642,5 +644,61 @@ export const detailedStories: Record<string, StoryDetails> = {
     whatsNext: 'Scaling the Codalio platform nationally, expanding the Rhino open-source ecosystem, and deepening AI adoption support for Northern Ontario SMEs through the Regional AI Initiative.',
     globalPresence: ['Sudbury', 'Canada'],
     fullStory: "Ehsan Mirdamadi has spent more than two decades inside Canadian tech. A serial entrepreneur since 1999, he bootstrapped Canada's first and largest cloud computing company before exiting and turning his attention to a critical, frustrating gap in the country's innovation pipeline: the MVP gap.\n\nBuilding software is expensive. A staggering 80-90% of early-stage capital is burned on tech development that gets revamped multiple times. Generative AI was supposed to fix this-but Ehsan saw the catch immediately. \"We're lying to founders about how easy it is to build software with AI,\" he says. AI tools are incredible at getting you 70% of the way there-usually the UI and the prototype. The final 30%-the logic, security, backend architecture, and integration-hits a wall. Non-technical founders get stranded with code they can't scale and a product they can't launch.\n\nCodalio is his answer. A Sudbury-based, AI-powered SaaS startup, Codalio is built as a true MVP-building tool for non-technical founders. The platform converts natural language into functional applications, powered by the open-source Rhino platform-developed and owned by Codalio's founders-and a proprietary AI core engine trained on best software development practices and expert-designed infrastructure blueprints. The result: enterprise-grade full applications, not locked-in runtimes or limited code snippets. Codalio cuts development cost and time-to-market by up to 80%, and crucially, hands founders full code ownership.\n\nThe Sudbury Catalyst Fund invested $250,000 in Codalio to accelerate the platform. \"Their success reflects the innovation and entrepreneurial spirit thriving in our community,\" said Don Duval, CEO of NORCAT and co-managing partner of the SCF. \"Their decision to relocate to Sudbury reinforces this momentum.\" Codalio has co-hosted hands-on MVP workshops with NORCAT Innovation in Sudbury, teaching founders the frameworks, tools, and confidence to turn vision into reality-and is helping power FedNor's Regional AI Initiative, which is investing in AI adoption, integration, and commercialization across Northern Ontario SMEs.",
+  },
+  'podco': {
+    id: 'podco',
+    company: 'PodCo',
+    tagline: 'From Prototype to Production, the PodCo Way.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { jobsCreated: 5, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship', 'IAP'],
+    image: podcoDiscoveryLab.url,
+    founded: '2017',
+    problem: 'Mining technology demands holistic innovation: devices must be robust enough to survive deep underground for years under a "set-it-and-forget-it" mandate, while remaining affordable to manufacture. Uncontrolled water flow in underground mines creates dangerous inrush hazards that threaten infrastructure and lives, yet many promising prototypes fail because they are not designed for production.',
+    breakthrough: {
+      text: 'PodCo develops professional hardware solutions from concept to prototype through production, applying rigorous mechanical and electrical integration to create devices that survive hostile underground environments. Their work on the NORCAT Open Innovation Challenge with Vale produced a hardware solution to detect and mitigate uncontrolled water flow, moving from the Fortin Discovery Lab to the NORCAT Underground Centre and ultimately to a three-year pilot at Vale\'s Garson Mine.',
+      image: podcoLogo.url,
+    },
+    timeline: [
+      { year: '2017', event: 'Stephen Podrucky launches PodCo in Greater Sudbury after seven years at Jannatec Technologies' },
+      { year: '2018', event: 'Sets up shop permanently in the Fortin Discovery Lab at the NORCAT Innovation Centre' },
+      { year: '2019', event: 'Selected for the NORCAT Open Innovation Challenge with Vale to address underground inrush hazards' },
+      { year: '2020', event: 'Begins iterative prototyping and field testing at the NORCAT Underground Centre' },
+      { year: '2021', event: 'Launches three-year pilot project at Vale\'s Garson Mine' },
+      { year: '2024', event: 'Collaborates with NORCAT CTO Ed Wisnewski on the FiAR augmented-reality fire extinguisher training device' },
+      { year: '2026', event: 'Serves mining sector clients across Canada as a trusted prototype-to-production engineering partner' },
+    ],
+    impactMetrics: { jobs: 5, capital: 'Bootstrapped', pilots: 3, markets: 1 },
+    founderQuote: {
+      text: 'Everything is interconnected, and it\'s our job to make the necessary tweak to get products to market seamlessly. If you don\'t have that holistic approach, you risk creating a great prototype that\'s impossible to manufacture affordably.',
+      author: 'Stephen Podrucky',
+      role: 'Founder & CEO, PodCo Inc.',
+    },
+    currentStage: 'Prototype-to-Production Partner',
+    whatsNext: 'PodCo continues to support clients across mining and beyond-including Maestro Digital Mine, SYMX.AI, Jannatec, CircuitIQ, and NORCAT\'s own Studio-while mentoring new entrepreneurs to engage with the local ecosystem.',
+    globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
+    fullStory: `The sheer complexity of mining technology demands that innovators operate with a holistic mindset—not just inventing something clever but ensuring it is robust enough to survive deep underground. For Stephen Podrucky, Founder of PodCo Inc., achieving this seamless, complete vision became the central quest of his career, born from a desire to escape the narrow constraints of conventional engineering.
+
+Stephen’s path began like that of many ambitious engineers: extensive academic study culminating in a Technologist Diploma, a Bachelor of Electrical Engineering, and a Master’s degree in Electrical Engineering. Yet, he found himself restless, describing the graduate research system as a “very strange setup,” where efforts were often organized solely around securing funding rather than solving real-world problems. He knew he didn’t want a “standard kind of engineering cubicle job” at a big firm. His ambition was simpler, yet fundamentally challenging: “I always just thought it would be cool to make real work contributions by inventing something,” and to pursue it.
+
+Driven by a desire to get closer to hands-on product design and to leave behind the big-city life of Toronto, Stephen moved north to Greater Sudbury. After seven years at Jannatec Technologies, a Sudbury-based mining technology company, he launched PodCo—a firm focused on providing professional expertise from concept to prototype, right through to production.
+
+PodCo’s early success was closely tied to the Fortin Discovery Lab, located within the NORCAT Innovation Centre. The lab provided the space, tools, and technical support—including 3D printers and CNC machines—necessary for prototyping and certification. The lab, the brainchild of local visionary Tom Fortin (whom Stephen considers a strong advocate and “unbelievable guy”), offered more than just equipment. After setting up shop permanently in the manufacturing lab, Stephen tapped into the wider innovation ecosystem. He received “a lot of fun references for work through Tom and also through NORCAT,” which he says proved to be “such strong support, especially first getting started.”
+
+“Everything is interconnected, and it’s our job to make the necessary tweak to get products to market seamlessly,” Stephen explained. He stressed that pulling just one component risks failing the entire solution. “If you don’t have that holistic approach,”—considering price points, mechanical and electrical integration, and final fabrication costs—“you risk creating a great prototype that’s impossible to manufacture affordably.”
+
+This philosophy was immediately put to the test when PodCo was selected for the NORCAT Open Innovation Challenge, in partnership with Vale. The problem was critical: uncontrolled water flow in underground mines, often leading to the dangerous “inrush of material”—a hazard that has caused damage to infrastructure and, tragically, the loss of life. It was exactly the kind of challenge PodCo had been waiting for. They began developing a hardware solution to detect and mitigate these conditions.
+
+The unique requirement? The device had to survive underground, not just “a week, or a couple of weeks,” but under a “set-it-and-forget-it” mandate. Solving this real-world engineering challenge required extensive trial and error—from the workbench to field testing in the controlled but hostile environment of the NORCAT Underground Centre, and ultimately at Vale’s Garson Mine for a three-year pilot project. For Stephen, this was the essence of innovation: “realizing that no one has done this before, so how do we do it right?”
+
+Today, PodCo exemplifies the agility and depth of talent in Northern Ontario’s innovation economy. The company supports clients across the mining sector and beyond, including Maestro Digital Mine, SYMX.AI, Jannatec, CircuitIQ, and even NORCAT’s own Studio, where Stephen collaborated with CTO Ed Wisnewski on the prototyping and development of the flagship FiAR—an augmented reality fire extinguisher training device.
+
+Stephen encourages new entrepreneurs to “definitely connect with NORCAT, get involved with your local ecosystem,” and to tap into the unique resources and knowledge available. Sudbury’s innovation community is, in his words, “really unique” and continues to impress tech leaders nationally and internationally.
+
+PodCo’s success story confirms that Greater Sudbury’s strength lies not only in the resources it extracts, but in the collaborative intelligence and human ingenuity it cultivates.
+
+PodCo takes pride in striving to make every product “portable, strong, and right the first time.”`,
   },
 };
