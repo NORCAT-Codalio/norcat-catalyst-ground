@@ -56,7 +56,7 @@ const portfolioCompanies = [
   { name: 'LoopX', logo: loopxLogo },
   { name: 'Circuit IQ', logo: circuitiqLogo },
   { name: 'Rep Health', logo: rephealthLogo },
-  { name: 'RNA Diagnostics', logo: rnaDiagnosticsLogo },
+  { name: 'RNA Diagnostics', logo: rnaDiagnosticsLogo.url },
   { name: 'Komatsu', logo: komatsuLogo },
   { name: 'Maestro Digital Mine', logo: maestroLogo },
   { name: 'StaffStat', logo: staffstatLogo },

@@ -103,7 +103,7 @@ const portfolio = [
   { name: 'Symx AI', logo: symxLogo }, { name: 'Codalio', logo: codalioLogo },
   { name: 'Flosonics', logo: flosonicsLogo }, { name: 'Kinmetrix', logo: kinmetrixLogo },
   { name: 'LoopX', logo: loopxLogo }, { name: 'CircuitIQ', logo: circuitiqLogo },
-  { name: 'RNA Diagnostics', logo: rnaLogo },
+  { name: 'RNA Diagnostics', logo: rnaLogo.url },
 ];
 
 
