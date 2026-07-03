@@ -128,6 +128,7 @@ const allStories: SuccessStory[] = [
     programs: ['SCF', 'VGS', 'Mentorship', 'RAI'],
     image: codalioLogo.url,
     founded: '2023',
+  },
   {
     id: 'podco',
     company: 'PodCo',
