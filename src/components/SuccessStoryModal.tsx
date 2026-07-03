@@ -17,6 +17,7 @@ import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
+import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -886,5 +887,58 @@ Since joining Sudbury’s innovation ecosystem, momentum has accelerated. Waive 
 Now expanding across Canada and into England and the United States, Waive is proving that community-backed companies can deliver global solutions in health tech.
 
 “Clinics don’t need to be buried under paperwork,” Anand says. “We took a 15-part process and turned it into three.”`,
+  },
+  'iregained': {
+    id: 'iregained',
+    company: 'IRegained',
+    tagline: 'Rewiring the Brain to Regain the Hand',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 4 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'PITCH'],
+    image: iregainedLogo.url,
+    founded: '2018',
+    problem: 'For stroke survivors, the loss of hand function can feel permanent. Years after injury, many patients are told they have plateaued, with few options to restore the dexterity that daily life requires. Existing rehabilitation tools are often inaccessible, impersonal, and unable to deliver the repeated, targeted stimulation the brain needs to rebuild lost pathways.',
+    breakthrough: {
+      text: 'IRegained developed the MyHand System, a patented digital neurotherapeutic device that uses gamified, progressively challenging tasks to harness neuroplasticity and rewire the brain. The portable, printer-sized system adapts to each user with custom grip positioning and adjustable resistance from 1 gram to 10 pounds, enabling meaningful recovery even a decade or more after injury.',
+      image: iregainedLogo.url,
+    },
+    timeline: [
+      { year: '2018', event: 'Vineet Johnson connects with Peter Dal Bianco at NORCAT and begins shaping the MyHand System concept' },
+      { year: '2019', event: 'IRegained wins Judge’s Choice at the NORCAT PITCH competition and secures a $250,000 seed round led by NORCAT Innovation Angels and Northern Ontario Angels' },
+      { year: '2020', event: 'Relocates to Greater Sudbury and begins building a team of Laurentian University engineering, biomedical, and computational talent' },
+      { year: '2023', event: 'Clinical trials validate meaningful hand-function improvement in patients 10–15 years post-injury' },
+      { year: '2024', event: 'Receives FDA, Health Canada, HSA Singapore, and CDSCO India approvals and launches a distribution partnership with Performance Health and UpCare across the United States and Canada' },
+      { year: '2025', event: 'Surpasses $250,000 in revenue and expands into Asia-Pacific and the Middle East while exploring telemedicine capabilities' },
+    ],
+    impactMetrics: { jobs: 8, revenue: '$250K+', capital: '$250K', pilots: 5, markets: 4 },
+    founderQuote: {
+      text: "We're helping patients recover not just mobility, but dignity—and that's what drives us.",
+      author: 'Vineet Johnson',
+      role: 'Founder & CEO, IRegained Inc.',
+    },
+    currentStage: 'Commercial Launch & Global Expansion',
+    whatsNext: 'IRegained is expanding into high-demand Asia-Pacific and Middle East markets, developing a telemedicine version of the MyHand System, and positioning the company for potential merger, acquisition, or IPO opportunities.',
+    globalPresence: ['United States', 'Canada', 'Singapore', 'India'],
+    fullStory: `The story of IRegained® Inc. exemplifies the commitment to proving that world-class medical innovation can be conceived and executed in the North—sustaining the entrepreneurial dream for generations to come.
+
+IRegained®, a digital neurotherapeutics company, was founded by Vineet Johnson, who lived in Toronto when his venture sought crucial capital and mentorship in the health and life sciences space. With a background in “clinical, research and teaching,” Vineet quickly learned that entrepreneurship is a life “filled with uncertainties and risks every single day.” Running the company required him to “keep all your stuff inside your head” and “suck up all your ego” without complaining to clients or investors.
+
+The company’s innovative approach, which helps stroke survivors regain lost hand function—immediately caught the attention of the Northern innovation ecosystem. This journey led them to the NORCAT PITCH competition in 2019, where IRegained® won the Judge’s Choice Award and secured a $250,000 seed investment round led by the NORCAT Innovation Angels and Northern Ontario Angels (NOA).
+
+Vineet’s success was profoundly shaped by his relationship with mentor Mr. Peter Dal Bianco, Chair of the NORCAT Innovation Angels. Peter, known for having “no filter,” provided “brutally honest feedback,” which Vineet considered essential when leading a startup. He also offered crucial “credibility” with new investors, at times meeting with them on IRegained’s behalf to vouch for the company. Most importantly, he gave Vineet the space to “disagree and not get disrespected for it.”
+
+That mentorship led to a transformative mandate: Peter and entrepreneurial physician Dr. Dennis Reich promised, “We’ll find your investment, provided you’re willing to move in here. Come to this town—the town will support you.” Vineet found that promise “very true,” contrasting Sudbury’s respectful environment with his previous experience at the RIC in Mississauga, where mentors would “talk down to you a lot.” The relocation enabled IRegained® to hire “eight incredible Laurentian University students,” and today approximately 60% of its staff are Laurentian alumni, bringing engineering, biomedical, and computational expertise.
+
+When Vineet first met Peter in 2018, the medical device was still little more than “a paper” concept. The MyHand® System, co-founded by Vineet and Ranjit Stanley, is a scientifically proven, patented digital rehabilitation technology designed to “rewire” a stroke survivor’s brain through neuroplasticity. The portable, printer-sized device uses gamification to deliver progressively challenging tasks, training cognitive and muscle memory. It supports a wide range of users through custom grip positioning and adjustable resistance from 1 gram to 10 pounds.
+
+The early investment from the NORCAT PITCH competition and local angels was formalized through the Sudbury Catalyst Fund, which Vineet describes as providing the “fuel to accelerate the commercialization of our MyHand® technology.” The fund continues to support companies that will drive future economic and social prosperity in the region.
+
+Clinical trials have consistently validated the system’s effectiveness, showing meaningful improvement even for individuals with 10–15 years of post–injury. Clinical Research Lead Eric Dumais shared: “We have a chance to make a difference in people’s lives. Many of the patients we have served had almost no hope when we met them… when you can consistently deliver high quality care, it just feels awesome.” Clinical researcher Margot Shima noted that patients often progress from little to no hand function to being able to open their hands and, in some cases, lift weights.
+
+IRegained® has since secured regulatory approvals from the FDA (U.S.), Health Canada, HSA (Singapore), and CDSCO in India. This enabled a major distribution deal with Performance Health USA) & UpCare (Canada) to deploy the MyHand® System in hospitals across the United States & Canada. Since launching in December 2024, the company generated over $250,000 in revenue and is on track to surpass $1 million by the end of 2026. As Eric Dumais highlighted, “we want to sell thousands of these things.” Beyond North America, IRegained® is expanding into high-demand markets across the Asia-Pacific and Middle East and is seeking capital to position itself for potential merger/acquisition or IPO opportunities.
+
+Looking ahead, IRegained® hopes to launch the MyHand® System as a telemedicine so patients can connect remotely with a therapist. Vineet summarizes their purpose: “We’re helping patients recover not just mobility, but dignity—and that’s what drives us.” He reflects on their trajectory: “Fast isn’t the right word, but momentum is building. But you can’t expect to be fast—you must expect to do it right.”`,
   },
 };

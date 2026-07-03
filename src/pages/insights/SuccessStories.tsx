@@ -32,6 +32,7 @@ import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
+import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 
 
 // All stories data
@@ -179,6 +180,18 @@ const allStories: SuccessStory[] = [
     programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
     image: waiveLogo.url,
     founded: '2020',
+  },
+  {
+    id: 'iregained',
+    company: 'IRegained',
+    tagline: 'Rewiring the Brain to Regain the Hand',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 4 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'PITCH'],
+    image: iregainedLogo.url,
+    founded: '2018',
   },
 ];
 
