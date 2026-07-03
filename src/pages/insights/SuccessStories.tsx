@@ -256,6 +256,18 @@ const allStories: SuccessStory[] = [
     image: loopxCit.url,
     founded: '2021',
   },
+  {
+    id: 'enabled-talent',
+    company: 'Enabled Talent',
+    tagline: 'Rebuilding Hiring Systems to Recognize Talent, Not Filter It Out',
+    sector: 'SMB Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 8, marketsReached: 4 },
+    programs: ['Mentorship', 'IAP'],
+    image: enabledTalentNews.url,
+    founded: '2020',
+  },
 ];
 
 // Filter options
