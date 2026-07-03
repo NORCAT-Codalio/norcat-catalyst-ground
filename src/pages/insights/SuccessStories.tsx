@@ -155,6 +155,18 @@ const allStories: SuccessStory[] = [
     image: medatechRaisePro.url,
     founded: '2003',
   },
+  {
+    id: 'kinmetrix',
+    company: 'Kinmetrix',
+    tagline: 'Bringing Data to the Missing Link in Athlete Safety.',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 4 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
+    image: kinmetrixArc.url,
+    founded: '2019',
+  },
 ];
 
 // Filter options
