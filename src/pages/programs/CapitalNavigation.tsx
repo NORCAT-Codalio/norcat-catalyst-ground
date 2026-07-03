@@ -2,7 +2,7 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, DollarSign, FileText, PieChart, TrendingUp } from 'lucide-react';
+import { ArrowRight, Compass, DollarSign, ExternalLink, FileText, PieChart, TrendingUp } from 'lucide-react';
 
 const CapitalNavigation = () => {
   return (
