@@ -12,6 +12,8 @@ import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
 import chamberPerksLogo from '@/assets/chamber-perks-logo.png.asset.json';
 import codalioLogo from '@/assets/codalio-logo.png.asset.json';
+import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
+import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
