@@ -24,6 +24,7 @@ import myomarLogo from '@/assets/logos/myomar.png.asset.json';
 import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
 import loopxCit from '@/assets/cit-loopx.jpg.asset.json';
 import loopxCitWide from '@/assets/cit-loopx-wide.jpg.asset.json';
+import enabledTalentNews from '@/assets/news-enabledtalent.jpg.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;

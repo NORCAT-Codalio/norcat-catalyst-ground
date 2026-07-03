@@ -35,6 +35,7 @@ import loopxCit from '@/assets/cit-loopx.jpg.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
+import enabledTalentNews from '@/assets/news-enabledtalent.jpg.asset.json';
 
 
 // All stories data
