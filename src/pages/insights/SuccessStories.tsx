@@ -31,6 +31,7 @@ import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
+import waiveLogo from '@/assets/logos/waive.png.asset.json';
 
 
 // All stories data
@@ -166,6 +167,18 @@ const allStories: SuccessStory[] = [
     programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
     image: kinmetrixArc.url,
     founded: '2019',
+  },
+  {
+    id: 'waive',
+    company: 'Waive',
+    tagline: 'Automating the Administrative Burden in Healthcare',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 5, marketsReached: 3 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
+    image: waiveLogo.url,
+    founded: '2020',
   },
 ];
 

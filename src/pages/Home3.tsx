@@ -24,7 +24,7 @@ import norcatWhiteLogo from '@/assets/logos/norcat-white.png';
 import turnkeyLogo from '@/assets/logos/turnkey.png';
 import rogersLogo from '@/assets/logos/rogers.png';
 import hardlineLogo from '@/assets/logos/hardline.png';
-import waiveLogo from '@/assets/logos/waive.png';
+import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import symxLogo from '@/assets/logos/symx.png';
 import codalioLogo from '@/assets/logos/codalio.png';
 import flosonicsLogo from '@/assets/logos/flosonics.png';
@@ -126,7 +126,7 @@ const testimonials = [
 
 const portfolio = [
   { name: 'Turnkey', logo: turnkeyLogo }, { name: 'Rogers', logo: rogersLogo },
-  { name: 'Hard-Line', logo: hardlineLogo }, { name: 'Waive', logo: waiveLogo },
+  { name: 'Hard-Line', logo: hardlineLogo }, { name: 'Waive', logo: waiveLogo.url },
   { name: 'Symx AI', logo: symxLogo }, { name: 'Codalio', logo: codalioLogo },
   { name: 'Flosonics', logo: flosonicsLogo }, { name: 'Kinmetrix', logo: kinmetrixLogo },
   { name: 'LoopX', logo: loopxLogo }, { name: 'CircuitIQ', logo: circuitiqLogo },

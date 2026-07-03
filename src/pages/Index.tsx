@@ -23,7 +23,7 @@ import { useRef, useEffect, useState } from 'react';
 import turnkeyLogo from '@/assets/logos/turnkey.png';
 import rogersLogo from '@/assets/logos/rogers.png';
 import hardlineLogo from '@/assets/logos/hardline.png';
-import waiveLogo from '@/assets/logos/waive.png';
+import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import symxLogo from '@/assets/logos/symx.png';
 import codalioLogo from '@/assets/logos/codalio.png';
 import flosonicsLogo from '@/assets/logos/flosonics.png';
@@ -48,7 +48,7 @@ const portfolioCompanies = [
   { name: 'Turnkey', logo: turnkeyLogo },
   { name: 'Rogers', logo: rogersLogo },
   { name: 'Hard-Line', logo: hardlineLogo },
-  { name: 'Waive', logo: waiveLogo },
+  { name: 'Waive', logo: waiveLogo.url },
   { name: 'Symx AI', logo: symxLogo },
   { name: 'Codalio', logo: codalioLogo },
   { name: 'Flosonics Medical', logo: flosonicsLogo },

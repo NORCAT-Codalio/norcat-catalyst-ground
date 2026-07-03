@@ -16,6 +16,7 @@ import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.
 import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
 import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
+import waiveLogo from '@/assets/logos/waive.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -818,5 +819,72 @@ Combat sports have become an especially important frontier. UFC athletes are amo
 She advises new entrepreneurs to embrace the “familial” and low-ego environment where people do things to “help more people as opposed to snubbing or discrediting.” She notes that having been successful in Sudbury, she now understands why other companies should move here: “It’s the community that embraces you, coupled with the affordability to live and the beautiful landscape.”
 
 “Learn what your strengths are in every role that you take on,” she advises, and integrate yourself into the support systems and community infrastructure of Greater Sudbury—where dedicated innovators become global leaders.`,
+  },
+  'waive': {
+    id: 'waive',
+    company: 'Waive',
+    tagline: 'Automating the Administrative Burden in Healthcare',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 5, marketsReached: 3 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
+    image: waiveLogo.url,
+    founded: '2020',
+    problem: 'Canadian clinics are drowning in administrative work while patients fall through the cracks of an overloaded system. Family doctors spend an average of 19 hours a week on administrative tasks, and 94 percent report feeling overwhelmed, leaving less time for actual care and creating dangerous delays for patients waiting in emergency rooms or chasing lost referrals.',
+    breakthrough: {
+      text: 'Waive is building AI administrators that work directly inside electronic medical record systems. Its Automated Task Manager handles patient outreach and form completion, while its Document Triaging Service reads and classifies the flood of daily faxes and emails, routing them accurately and triggering workflows so urgent information never sits idle over a weekend.',
+      image: waiveLogo.url,
+    },
+    timeline: [
+      { year: '2020', event: 'Waive launches as The Smart Waiting Room through Queen’s University QICSI, delivering predictive notifications to help patients arrive at appointments just in time' },
+      { year: '2021', event: 'After clinic feedback reveals deeper administrative burnout, the company pivots toward AI tools that reduce the paperwork burden on physicians and staff' },
+      { year: '2023', event: 'Wins Judges’ Choice at NORCAT’s Venture North PITCH, joining the local ecosystem and securing its first Sudbury-based angel investor' },
+      { year: '2023', event: 'Relocates and expands to Greater Sudbury with a $250,000 investment from the Sudbury Catalyst Fund' },
+      { year: '2024', event: 'Refines document triaging and workflow automation so clinics can process inbound files instantly, even after hours' },
+      { year: '2025', event: 'Expands across Canada and begins moving into England and the United States' },
+    ],
+    impactMetrics: { jobs: 5, capital: '$250K', pilots: 5, markets: 3 },
+    founderQuote: {
+      text: "Clinics don't need to be buried under paperwork. We took a 15-part process and turned it into three.",
+      author: 'Shreyansh Anand',
+      role: 'Co-Founder & CEO, Waive',
+    },
+    currentStage: 'Scaling Across Canada and Into Global Markets',
+    whatsNext: 'Waive is expanding its AI administrator platform across Canada and into England and the United States, helping more clinics eliminate the tedious work that keeps staff from focusing on patients.',
+    globalPresence: ['Canada', 'England', 'United States'],
+    fullStory: `The mission of WaiveTheWait, now known simply as Waive, is defined by a refusal to accept the chaos embedded within the Canadian health care system. Fuelled by personal frustration and transformed into a high-impact solution, the company is developing AI administrators for clinics.
+
+For CEO and co-founder Shreyansh Anand, the idea was sparked by a troubling childhood memory. After his father suffered a serious accident, the family rushed him to the nearest hospital—only to “end up waiting about eight hours overnight before he finally got the help he needed.”
+
+Anand became determined to make health care “more patient-focused and transparent,” with a vision rooted in “providing people peace of mind.” For COO and co-founder Tabassum Pasha, the problem hit just as personally. “I needed to see a specialist. My referral was never sent, and I waited almost two years before I got the care I needed.”
+
+What began as two personal frustrations quickly revealed themselves to be systemic issues. “Thousands of patients fall through the cracks of our health care system because clinics are overwhelmed,” the pair realised. Their goal became clear: build tools that enable a future where “physicians are less overwhelmed, staff are happier, and patients are safer.”
+
+Waive launched in May 2020 through Queen’s University’s QICSI (Centre for Entrepreneurship, Innovation & Social Impact) under the name The Smart Waiting Room, offering predictive notifications to help patients arrive at appointments just in time. But by May 2021, after gathering feedback from clinics, the founders identified a deeper issue: administrative burnout.
+
+“We found that, on average, family doctors spend 19 hours a week on administrative tasks,” says Pasha, “and a staggering 94 per cent report they are overwhelmed.”
+
+Family physician and Waive’s Chief Medical Officer Dr. Shane Teper echo this urgency. “There is such an influx of information coming into clinics now. It’s almost like a firehose of data landing in your electronic medical record,” he says. “Physicians are spending at least two hours a day just managing that inflow—not even doing the clinical work.”
+
+Waive is addressing that challenge with two core AI tools:
+
+The Automated Task Manager performs time-consuming tasks like patient outreach and form filling directly within the electronic medical record.
+
+The Document Triaging Service uses AI to read and classify “hundreds of faxes and emails” clinics receive each day, labelling them accurately and routing them to the appropriate physician.
+
+“This kind of automation eliminates the very tedious, time-sucking work,” Pasha says, “and frees up staff to focus on work that’s truly value-added.”
+
+Waive is now advancing its AI models to trigger workflows from inbound documents, ensuring that when important information arrives—whether from a referral, a follow-up form, or test results—it doesn’t sit idle. “With this automation, clinics can process files that come in instantly, even on a Friday at 6 p.m.,” explains Pasha. “The system flags anything urgent, so by Monday, the appointment is already booked rather than just discovered.”
+
+The company has focused on making its tools seamless. “We integrate directly with your clinical systems and workflows,” Pasha says. “There’s no need to log into a separate platform or retrain staff. Most automation tools assist—Waive fully handles the task.”
+
+Since joining Sudbury’s innovation ecosystem, momentum has accelerated. Waive won Judges’ Choice at NORCAT’s 2023 Venture North Pitch (VNP) event, which also led to the company’s relocation and expansion to Greater Sudbury with support from a $250,000 investment from the Sudbury Catalyst Fund.
+
+“Support from NORCAT was critical in our decision to relocate to Sudbury,” says Pasha. “VNP launched us into the ecosystem and led us to our first Sudbury-based angel investor.”
+
+Now expanding across Canada and into England and the United States, Waive is proving that community-backed companies can deliver global solutions in health tech.
+
+“Clinics don’t need to be buried under paperwork,” Anand says. “We took a 15-part process and turned it into three.”`,
   },
 };
