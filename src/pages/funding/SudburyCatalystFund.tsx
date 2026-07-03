@@ -8,7 +8,7 @@ import vervLogo from '@/assets/logos/verv.png';
 import rephealthLogo from '@/assets/logos/rephealth.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
-import myomarLogo from '@/assets/logos/myomar.png';
+import myomarLogo from '@/assets/logos/myomar.png.asset.json';
 import codalioLogo from '@/assets/logos/codalio.png';
 import waiveLogo from '@/assets/waive-logo.png.asset.json';
 
@@ -61,7 +61,7 @@ const SudburyCatalystFund = () => {
     { name: 'Rep Health', logo: rephealthLogo },
     { name: 'Circuit IQ', logo: circuitiqLogo },
     { name: 'Kinmetrix', logo: kinmetrixLogo },
-    { name: 'Myomar', logo: myomarLogo },
+    { name: 'Myomar', logo: myomarLogo.url },
     { name: 'Codalio', logo: codalioLogo },
     { name: 'Waive', logo: waiveLogo.url },
   ];
