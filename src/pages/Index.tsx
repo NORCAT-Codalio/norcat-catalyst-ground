@@ -34,8 +34,8 @@ import rephealthLogo from '@/assets/logos/rephealth.png';
 import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 import komatsuLogo from '@/assets/logos/komatsu.png';
 import maestroLogo from '@/assets/logos/maestro.png';
-import staffstatLogo from '@/assets/logos/staffstat.png';
-import planaLogo from '@/assets/logos/plana.png';
+import staffstatLogo from '@/assets/logos/staffstat.png.asset.json';
+import planaLogo from '@/assets/logos/plana.png.asset.json';
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
@@ -59,8 +59,8 @@ const portfolioCompanies = [
   { name: 'RNA Diagnostics', logo: rnaDiagnosticsLogo.url },
   { name: 'Komatsu', logo: komatsuLogo },
   { name: 'Maestro Digital Mine', logo: maestroLogo },
-  { name: 'StaffStat', logo: staffstatLogo },
-  { name: 'Plan A', logo: planaLogo },
+  { name: 'StaffStat', logo: staffstatLogo.url },
+  { name: 'Plan A', logo: planaLogo.url },
 ];
 
 const partnerLogos = [

@@ -25,7 +25,7 @@ import perspicLogo from '@/assets/logos/perspic-logo.png.asset.json';
 import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
 import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
 import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
-import planaLogo from '@/assets/logos/plana.png';
+import planaLogo from '@/assets/logos/plana.png.asset.json';
 import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
 import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
@@ -299,7 +299,7 @@ const testimonials = [
     headline: 'Sheri Tomchick',
     subline: 'CEO and Founder, PlanA & StaffStat',
     tag: 'NORCAT Innovation Client',
-    logo: planaLogo,
+    logo: planaLogo.url,
   },
   {
     quote: "From a small business perspective, being part of a larger high-end innovation centre and team is invaluable to a start-up innovation firm. Working with NORCAT and its connections, has taught us about what we don't know, and we learned how to do what we don't know.",
