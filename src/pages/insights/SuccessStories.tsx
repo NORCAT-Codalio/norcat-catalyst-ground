@@ -243,6 +243,18 @@ const allStories: SuccessStory[] = [
     image: scientLogo.url,
     founded: '2020',
   },
+  {
+    id: 'loopx',
+    company: 'LoopX',
+    tagline: 'AI Autonomy for the Harshest Environments',
+    sector: 'AI & Automation',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship', 'IAP'],
+    image: loopxCit.url,
+    founded: '2021',
+  },
 ];
 
 // Filter options
