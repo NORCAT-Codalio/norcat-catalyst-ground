@@ -2,7 +2,7 @@ import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, DollarSign, FileText, PieChart, TrendingUp } from 'lucide-react';
+import { ArrowRight, Compass, DollarSign, ExternalLink, FileText, PieChart, TrendingUp } from 'lucide-react';
 
 const CapitalNavigation = () => {
   return (
@@ -66,7 +66,82 @@ const CapitalNavigation = () => {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Invest Sudbury Funding & Incentives Portal */}
+      <section className="section-padding bg-gradient-to-br from-gray-50 via-white to-gray-50 border-y border-border">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-[0.15em] uppercase mb-6">
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  External Resource
+                </span>
+                <h2 className="headline-lg mb-4">Invest Sudbury Funding &amp; Incentives</h2>
+                <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
+                  Explore the official Greater Sudbury funding directory to find municipal, provincial, and federal programs matched to your business stage.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.1}>
+              <div className="card-modern p-8 md:p-12">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <h3 className="headline-sm mb-4">Search the Funding Directory</h3>
+                    <p className="body-md text-muted-foreground mb-6">
+                      The Invest Sudbury portal features a searchable directory of grants, loans, tax incentives, and investor programs available to businesses in Sudbury and Northern Ontario.
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {[
+                        'Filter by business stage and funding type',
+                        'Find grants, loans, tax rebates, and VC options',
+                        'Access local and regional program details',
+                        'Connect with the Greater Sudbury Economic Development team',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="https://investsudbury.ca/incentives-and-programs/funding-and-incentives/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary-lg inline-flex"
+                    >
+                      Open Funding Portal
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { label: 'Grants', desc: 'Non-repayable funds' },
+                      { label: 'Loans', desc: 'Flexible financing' },
+                      { label: 'Tax Rebates', desc: 'Reduce tax burden' },
+                      { label: 'Investors', desc: 'Angel & VC capital' },
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="rounded-2xl p-5 text-center"
+                        style={{
+                          background: 'linear-gradient(145deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 100%)',
+                          backdropFilter: 'blur(20px)',
+                          borderTop: '1px solid hsla(168, 30%, 90%, 0.5)',
+                        }}
+                      >
+                        <div className="text-2xl font-black text-foreground mb-1">{item.label}</div>
+                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
       <section className="section-padding bg-secondary/50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
