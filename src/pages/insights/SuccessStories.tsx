@@ -33,6 +33,7 @@ import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png
 import kinmetrixArc from '@/assets/success-stories/kinmetrix-arc.png.asset.json';
 import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
+import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 
 
 // All stories data
