@@ -61,7 +61,7 @@ import flosonicsLogo from '@/assets/logos/flosonics.png';
 import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
-import rnaLogo from '@/assets/logos/rna-diagnostics.png';
+import rnaLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 import myomarLogo from '@/assets/logos/myomar.png';
 
 // Partner logos

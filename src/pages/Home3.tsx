@@ -32,7 +32,7 @@ import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import rephealthLogo from '@/assets/logos/rephealth.png';
-import rnaLogo from '@/assets/logos/rna-diagnostics.png';
+import rnaLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
