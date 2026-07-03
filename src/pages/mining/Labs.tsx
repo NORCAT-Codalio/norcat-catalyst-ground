@@ -130,7 +130,7 @@ const Labs = () => {
       </section>
 
       {/* Locations Overview */}
-      <section className="section-padding bg-secondary/30">
+      <section className="pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-16 lg:pb-20 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
