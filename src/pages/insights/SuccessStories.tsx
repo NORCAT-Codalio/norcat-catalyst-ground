@@ -28,6 +28,7 @@ import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
 import planaLogo from '@/assets/logos/plana.png';
 import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
 import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
+import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
 
 
 // All stories data
