@@ -19,7 +19,7 @@ import maestroUnderground from '@/assets/maestro-underground.jpg';
 import karenHastie from '@/assets/karen-hastie.jpg.asset.json';
 import codalioLogo from '@/assets/codalio-logo.png.asset.json';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
-import myomarLogo from '@/assets/logos/myomar.png';
+import myomarLogo from '@/assets/logos/myomar.png.asset.json';
 import chamberPerksLogo from '@/assets/chamber-perks-logo.png.asset.json';
 import perspicLogo from '@/assets/logos/perspic-logo.png.asset.json';
 import podcoLogo from '@/assets/logos/podco-logo.png.asset.json';
@@ -218,6 +218,18 @@ const allStories: SuccessStory[] = [
     image: smartyprintsLogo.url,
     founded: '2022',
   },
+  {
+    id: 'myomar',
+    company: 'Myomar Molecular',
+    tagline: 'Muscle: The Unsung Longevity Organ',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$500K+', jobsCreated: 8, marketsReached: 1 },
+    programs: ['SCF', 'Mentorship', 'IAP', 'PITCH'],
+    image: myomarLogo.url,
+    founded: '2024',
+  },
 ];
 
 // Filter options
@@ -238,7 +250,7 @@ const testimonials = [
     headline: 'Myomar Molecular',
     subline: "Judges' Choice & Peter Dal Bianco Award",
     tag: 'PITCH 2025',
-    logo: myomarLogo,
+    logo: myomarLogo.url,
   },
   {
     quote: "Participating in the 2024 NORCAT Venture North PITCH competition was a transformative experience for the Chamber Perks App. The exceptional mentorship, guidance, and unwavering support from the NORCAT team were instrumental in refining our business strategy and enhancing our presentation skills. Since participating and winning the People's Choice Award, the Chamber Perks App has experienced significant growth, we have expanded our team, extended our reach across Canada, and developed a bilingual version of the app.",

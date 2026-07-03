@@ -20,6 +20,7 @@ import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
+import myomarLogo from '@/assets/logos/myomar.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
@@ -1043,5 +1044,61 @@ In 2024, Lupini received the Technician Initiative Award from Pharmacy Practice 
 SmartyPrints is now in use at eight hospitals and one retail pharmacy, with expansion on the horizon into nursing stations, retail pharmacies, and lab settings—areas where the labelling problems are just as potent. “SmartyPrints has the potential to make life easier and safer in so many settings.”
 
 Lupini hopes her journey inspires others in healthcare, especially those who may not see themselves as inventors, to speak up and innovate. “Don’t ever give up on an idea. Because it could have real impacts for a lot of people. Your ideas are needed—especially from those on the front lines.”`,
+  },
+  'myomar': {
+    id: 'myomar',
+    company: 'Myomar Molecular',
+    tagline: 'Muscle: The Unsung Longevity Organ',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$500K+', jobsCreated: 8, marketsReached: 1 },
+    programs: ['SCF', 'Mentorship', 'IAP', 'PITCH'],
+    image: myomarLogo.url,
+    founded: '2024',
+    problem: 'Muscle loss begins in our thirties—long before it is visible—and drives declining strength, slower recovery, balance issues, and even cognitive decline. Yet the tools to track it are outdated or inaccessible: DEXA scans are expensive and radiation-heavy, and impedance tests are unreliable. The rise of GLP-1 drugs like Ozempic and Wegovy is compounding the problem, with unintended muscle wasting reaching a population projected to hit 40 million users by 2029.',
+    breakthrough: {
+      text: 'Myomar Molecular has built a non-invasive, urine-based diagnostic that reads a panel of 55 biomarkers to score muscle integrity, degradation, and recovery. Validated against DEXA at a 92% correlation—the clinical gold standard for sarcopenia—the test replaces a radiation-heavy scan with a cup, giving clinicians and patients a scalable window into whether muscle is firing, degrading, or improving over weeks, not years.',
+      image: myomarLogo.url,
+    },
+    timeline: [
+      { year: '2020', event: 'Dr. Rafaela Andrade’s transgenic mouse work identifies biomarker signatures of muscle loss and recovery' },
+      { year: '2023', event: 'Successful human validation of the 55-biomarker panel against DEXA' },
+      { year: '2024', event: 'Ryan Marshall joins as COO; Myomar launches its lab-developed test and receives Health Canada approval' },
+      { year: '2025', event: 'Wins Judges’ Choice and the Peter Dal Bianco Award at Venture North PITCH; partners with Moetus Health on menopause research and opens a new lab at the HSN Research Institute' },
+      { year: '2026', event: 'Consumer launch planned for an at-home lateral flow urine test with AI-powered mobile scoring' },
+    ],
+    impactMetrics: { jobs: 8, revenue: 'Commercial', capital: '$500K+', pilots: 4, markets: 1 },
+    founderQuote: {
+      text: "We’re not just diagnosing decay. We’re building the infrastructure for care that adds years of independence, vitality, and strength—and it starts with something as simple as a urine test.",
+      author: 'Ryan Marshall',
+      role: 'COO & Co-Founder, Myomar Molecular',
+    },
+    currentStage: 'Clinical Deployment & Consumer Product Development',
+    whatsNext: 'Myomar is scaling its clinical test through Canadian partnerships while preparing a 2026 consumer launch of an at-home lateral flow urine assay paired with an AI-powered app that turns a one-time test into a long-term muscle health companion.',
+    globalPresence: ['Canada'],
+    fullStory: `Dr. Rafaela Andrade, a molecular biologist originally from Brazil, had already built a distinguished career in science when a personal tragedy changed her trajectory. A family member with a muscle-related condition suffered a fall—an injury from which they would never recover. That loss didn’t just affect her; it transformed her.
+
+“She was touched, early on,” said Ryan Marshall, COO and co-founder of Myomar Molecular. “One of her close family members had a muscle-related disease. She had a fall and eventually passed away from that complication. That was Rafaela’s turning point.”
+
+Instead of retreating, Dr. Andrade turned her grief into a mission. Armed with a PhD in biochemistry and molecular biology from Dalhousie University and years of postdoctoral research, her goal was clear: detect muscle degradation before it becomes life-altering or fatal. Today, Myomar Molecular is redefining muscle health through a urine-based diagnostic test that offers a non-invasive, scalable way to evaluate muscle quality, bringing preventative care into sharp focus.
+
+Muscle loss often begins in our thirties, long before it is visible to the naked eye. It is linked to declining strength, slower recovery, balance issues, and even cognitive decline. Yet, the tools to track it are outdated or inaccessible. DEXA scans are expensive, and impedance tests are often unreliable.
+
+“There’s nothing on the market like our test,” said Marshall. “Instead of exposing your body to radiation in a machine that most people can’t access, you just pee in a cup.”
+
+That simple test provides insight into muscle integrity, degradation, and recovery. Myomar’s panel of 55 biomarkers, refined through years of research, shows a 92 percent correlation with DEXA scans—the clinical gold standard for diagnosing sarcopenia. “We give you the ability to look at the quality of your muscle,” said Marshall. “Is it firing properly? Is it degrading? Is it improving? We can tell all that through biomarker analysis and a personalized muscle score.” In one instance, a 55-year-old man improved his score from “good” to “excellent” in just four weeks, a change backed by measurable biological data.
+
+Dr. Andrade’s breakthrough began with transgenic mice that showed muscle loss when sedentary but regained healthy biomarker levels with dietary and activity changes. Successful human testing followed, and Marshall joined the company in 2024 to lead commercial strategy. That same year, Myomar launched its lab-developed test and received Health Canada approval.
+
+The company has since formed major partnerships across Canada. In Sudbury, Myomar partnered with Moetus Health on a menopause-focused study and is expanding operations with a new lab at the Health Sciences North Research Institute (HSNRI). “Sudbury’s been amazing,” said Marshall. “We’ve already raised over $300,000 in angel investment and expect a match from the Sudbury Catalyst Fund, which brings us to over half a million—and we haven’t even moved in yet.”
+
+Beyond age-related loss, Myomar is addressing the impact of GLP-1 drugs like Ozempic and Wegovy. While effective for weight loss, these medications can lead to unintended muscle wasting. With 40 million people projected to be on GLP-1s by 2029, monitoring muscle health alongside fat loss is becoming urgent. “It’s not about discrediting the drug,” said Marshall. “It’s about making sure people using them aren’t losing muscle too quickly and are protecting their long-term strength.”
+
+Myomar is also gaining traction in elite sport. During a trial with a Canadian Olympic team, the test tracked biomarkers across an intense training cycle. “What we saw was extraordinary,” said Marshall. “Our test became a predictor of performance. A few of our biomarkers are directly tied to recovery pathways.”
+
+Looking ahead, Myomar is developing an at-home urine test using lateral flow assay technology, similar to a pregnancy test. Users will scan their test strip with a phone to receive instant, AI-powered results. “We’re building an interactive app,” said Marshall. “It will track your scores, give tailored feedback, and show changes over time. We’re turning a one-time test into a long-term health companion.”
+
+Two of the five primary biomarkers have already been validated in this new format, with a consumer launch planned for 2026. Myomar’s mission is to make muscle health a cornerstone of the longevity movement because muscle is the foundation of resilience, mobility, and freedom. “We’re not just diagnosing decay,” Marshall concluded. “We’re building the infrastructure for care that adds years of independence, vitality, and strength. And it starts with something as simple as a urine test.”`,
   },
 };
