@@ -21,6 +21,7 @@ import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
 import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
 import smartyprintsLogo from '@/assets/logos/smartyprints-logo.avif.asset.json';
 import myomarLogo from '@/assets/logos/myomar.png.asset.json';
+import scientLogo from '@/assets/logos/scient-logo.png.asset.json';
 
 interface StoryDetails extends SuccessStory {
   problem: string;
