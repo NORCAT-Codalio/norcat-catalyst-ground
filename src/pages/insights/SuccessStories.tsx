@@ -230,6 +230,18 @@ const allStories: SuccessStory[] = [
     image: myomarLogo.url,
     founded: '2024',
   },
+  {
+    id: 'scient',
+    company: 'Scient Analytics',
+    tagline: 'Where Geoscience Meets Machine Vision: Bringing Confidence to Core Analysis',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '', jobsCreated: 0, marketsReached: 1 },
+    programs: ['Mentorship', 'IAP'],
+    image: scientLogo.url,
+    founded: '2020',
+  },
 ];
 
 // Filter options
