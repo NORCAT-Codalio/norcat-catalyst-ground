@@ -188,7 +188,7 @@ const allStories: SuccessStory[] = [
     sector: 'Medtech',
     stage: 'growth',
     status: 'scaling',
-    metrics: { capitalRaised: '$250K', revenue: '$250K+', jobsCreated: 8, marketsReached: 4 },
+    metrics: { capitalRaised: '$250K', jobsCreated: 8, marketsReached: 4 },
     programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'PITCH'],
     image: iregainedLogo.url,
     founded: '2018',
