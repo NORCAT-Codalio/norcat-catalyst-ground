@@ -702,4 +702,61 @@ PodCo’s success story confirms that Greater Sudbury’s strength lies not only
 
 PodCo takes pride in striving to make every product “portable, strong, and right the first time.”`,
   },
+  'medatech-raisepro': {
+    id: 'medatech-raisepro',
+    company: 'MEDATech RaisePro',
+    tagline: 'Developing Safer Underground Drilling Technology.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { jobsCreated: 10, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship'],
+    image: medatechRaisePro.url,
+    founded: '2003',
+    problem: 'Shaft sinking has historically relied on drilling and blasting, a cycle that is one of the most hazardous, expensive, and time-consuming operations in mining. While raise boring improved safety and efficiency, the market still faced a significant gap in equipment size—too large for some applications, too small for others. Mines needed a versatile ITH-raise drill that could operate safely across a wide range of diameters and depths.',
+    breakthrough: {
+      text: 'MEDATech developed the RaisePro-48T, a track-mounted In-The-Hole (ITH) raise drill capable of drilling 3.5” to 48” holes for production, maintenance, slot raises, and escapeways. The design and build were completed in approximately twelve months, and the drill was validated at the NORCAT Underground Centre before shipping to Vale\'s North Mine in Sudbury, where it reamed a 230-foot pilot hole from 9” to 42”.',
+      image: medatechRaisePro.url,
+    },
+    timeline: [
+      { year: '2003', event: 'MEDATech Engineering Services founded in Canada, specializing in heavy-duty mobile equipment design' },
+      { year: 'Sep 2023', event: 'Detailed design of the RaisePro-48T begins, led by MEDATech owner Robert Rennie and Archer Mining\'s Steve Archer' },
+      { year: 'Sep 2024', event: 'RaisePro-48T presented at Mine Expo after a rapid twelve-month design-and-build cycle' },
+      { year: '2025', event: 'Intensive testing at the NORCAT Underground Centre with support from Boart Longyear operators' },
+      { year: '2025', event: 'Drill shipped to Vale\'s North Mine in Sudbury for first operational hole, reaming 230 ft from 9” to 42”' },
+      { year: '2026', event: 'RodBot robotic rod handler being evolved for underground ITH configuration; additional 48” and 60” capacity RaisePro variants in development' },
+    ],
+    impactMetrics: { jobs: 10, capital: 'Bootstrapped', pilots: 3, markets: 1 },
+    founderQuote: {
+      text: 'We saw a real gap in raise boring equipment size. Our goal was to build a safer, more efficient ITH-raise drill that gives mines the versatility they need without the years-long timelines of traditional shaft sinking.',
+      author: 'Robert Rennie',
+      role: 'President & CEO, MEDATech Engineering Services',
+    },
+    currentStage: 'Commercial Validation & Expansion',
+    whatsNext: 'MEDATech is evolving the RodBot hydraulic robotic rod handler for underground ITH use, and developing additional RaisePro configurations including a 48-inch rubber-tired drill and larger 60-inch capacity models.',
+    globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
+    fullStory: `Imagine a high-rise building under construction. Now remove the elevator shaft. Suddenly, every floor is isolated: no air, no materials, no movement of workers or tools. That’s what a mine without raises looks like underground.
+
+Historically, shaft sinking was done using drilling and blasting. Miners would drill blast holes into the rock at the shaft bottom. Next, explosives would break the rock apart. Then, labouring crews would muck out (remove) the broken rock. The cycle would repeat, often taking years to reach deep ore bodies. Unquestionably, it’s one of the most hazardous and expensive mining operations.
+
+The evolution of modern mechanised mining introduced raise boring, a safer, more efficient method that uses a machine set up on an upper level to drill a pilot hole, then pulls a large reamer head upwards to excavate the full-diameter hole. While raise boring has seen immense improvements—capable of drilling shafts up to 7.1 metres in diameter and over a kilometre deep—the market still faced a significant gap in equipment size.
+
+This is the problem MEDATech stepped in to solve, driven by the vision of finding new efficiencies and safety improvements.
+
+Robert Rennie, the owner of MEDATech, had extensive experience with ITH drilling from his previous roles at OEMs like MacLean’s and Cubex. Together with Steve Archer of Archer Mining, they realised the significance of this gap, and detailed design of the RaisePro began in September 2023.
+
+The detailed design and build phase took approximately twelve months, resulting in the drill being presented at Mine Expo in September 2024—an impressively rapid turnaround compared to the typical multi-year development timeline for new, large equipment builds in the industry.
+
+Despite the speed of development, the true test of this sophisticated piece of machinery could not happen on the shop floor. MEDATech had strong connections to Sudbury, thanks to Steve Archer and Robert Rennie’s history in the region, but for the buyers, there was a real need to “see it operate before they would commit to buying or renting the drill.”
+
+The NORCAT Underground Centre (UGC) provided the perfect solution, and MEDATech brought their technology to the "active laboratory" in Onaping. Taylor Davies, Division Manager at MEDATech, said, “the plan for NORCAT was to be the first-time having mine air supply, having mine water supply, and being able to apply a torque against the top drive on the drill… because we weren’t going to drill into our shop floor prior to that.”
+
+The testing period was intensive and collaborative, with MEDATech benefiting from Boart Longyear supplying five team members to operate the drill and provide feedback throughout the testing. Taylor elaborates, “when we\'re designing machines, you make a lot of assumptions... that you\'re going to have the perfect mine air pressure and mine air temperature [and] consistent mine water flow... to be in an area that demonstrated a mining environment was very good for testing and fine-tuning.” MEDATech generated a significant list of opportunities for improvement. “We knew we had about eight weeks from the drill returning to our facility... to work through [it] before it was going to be shipped to Vale for the first operational hole.”
+
+The drill was shipped to Vale’s North Mine in Sudbury and reamed an existing pilot hole that was 230 feet long from 9” diameter to 42”. This demonstrates the drill’s varying capability to operate at wider diameters as well as production hole diameters down to 3.5”, both at significantly longer hole lengths than competing ITH drills.
+
+The next major step is evolving the existing RodBot technology, a hydraulic robotic rod handler, into an underground ITH drilling configuration, for use with the RaisePro and other ITH drills. This is a necessity because the RaisePro drills large-diameter, deep holes, requiring heavy drill rods that can weigh up to 150 pounds. Manually handling these heavy rods is dangerous, and most mines are moving away from that practice. The new RodBot configuration, which includes a semi-automated path planning feature, will require testing at the UGC.
+
+MEDATech will continue to develop additional configurations of the RaisePro, including a 48-inch capacity drill on rubber tires, and even larger 60-inch capacity drills.`,
+  },
 };
