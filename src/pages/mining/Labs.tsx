@@ -187,7 +187,7 @@ const Labs = () => {
       </section>
 
       {/* Facilities Grid */}
-      <section className="section-padding bg-background">
+      <section className="pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
