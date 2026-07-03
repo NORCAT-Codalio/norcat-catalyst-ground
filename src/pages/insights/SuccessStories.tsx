@@ -142,6 +142,18 @@ const allStories: SuccessStory[] = [
     image: podcoDiscoveryLab.url,
     founded: '2017',
   },
+  {
+    id: 'medatech-raisepro',
+    company: 'MEDATech RaisePro',
+    tagline: 'Developing Safer Underground Drilling Technology.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { jobsCreated: 10, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship'],
+    image: medatechRaisePro.url,
+    founded: '2003',
+  },
 ];
 
 // Filter options
