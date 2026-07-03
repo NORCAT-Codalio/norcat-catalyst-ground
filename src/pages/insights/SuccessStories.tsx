@@ -168,6 +168,18 @@ const allStories: SuccessStory[] = [
     image: kinmetrixArc.url,
     founded: '2019',
   },
+  {
+    id: 'waive',
+    company: 'Waive',
+    tagline: 'Automating the Administrative Burden in Healthcare',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', jobsCreated: 5, marketsReached: 3 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP'],
+    image: waiveLogo.url,
+    founded: '2020',
+  },
 ];
 
 // Filter options
