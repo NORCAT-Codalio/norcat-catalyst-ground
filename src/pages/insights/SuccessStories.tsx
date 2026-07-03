@@ -181,6 +181,18 @@ const allStories: SuccessStory[] = [
     image: waiveLogo.url,
     founded: '2020',
   },
+  {
+    id: 'iregained',
+    company: 'IRegained',
+    tagline: 'Rewiring the Brain to Regain the Hand',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$250K', revenue: '$250K+', jobsCreated: 8, marketsReached: 4 },
+    programs: ['SCF', 'Mentorship', 'VGS', 'IAP', 'PITCH'],
+    image: iregainedLogo.url,
+    founded: '2018',
+  },
 ];
 
 // Filter options
