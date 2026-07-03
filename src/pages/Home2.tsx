@@ -99,7 +99,7 @@ const sectors = [
 
 const portfolio = [
   { name: 'Turnkey', logo: turnkeyLogo }, { name: 'Rogers', logo: rogersLogo },
-  { name: 'Hard-Line', logo: hardlineLogo }, { name: 'Waive', logo: waiveLogo },
+  { name: 'Hard-Line', logo: hardlineLogo }, { name: 'Waive', logo: waiveLogo.url },
   { name: 'Symx AI', logo: symxLogo }, { name: 'Codalio', logo: codalioLogo },
   { name: 'Flosonics', logo: flosonicsLogo }, { name: 'Kinmetrix', logo: kinmetrixLogo },
   { name: 'LoopX', logo: loopxLogo }, { name: 'CircuitIQ', logo: circuitiqLogo },

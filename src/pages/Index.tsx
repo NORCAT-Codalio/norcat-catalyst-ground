@@ -48,7 +48,7 @@ const portfolioCompanies = [
   { name: 'Turnkey', logo: turnkeyLogo },
   { name: 'Rogers', logo: rogersLogo },
   { name: 'Hard-Line', logo: hardlineLogo },
-  { name: 'Waive', logo: waiveLogo },
+  { name: 'Waive', logo: waiveLogo.url },
   { name: 'Symx AI', logo: symxLogo },
   { name: 'Codalio', logo: codalioLogo },
   { name: 'Flosonics Medical', logo: flosonicsLogo },
