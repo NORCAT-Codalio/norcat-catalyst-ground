@@ -206,6 +206,18 @@ const allStories: SuccessStory[] = [
     image: rnaDiagnosticsLogo.url,
     founded: '2008',
   },
+  {
+    id: 'smartyprints',
+    company: 'SmartyPrints',
+    tagline: 'How a Frontline Problem Rewrote the Rules of Medication Labelling',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: 'Bootstrapped', jobsCreated: 6, marketsReached: 9 },
+    programs: ['Mentorship', 'IAP'],
+    image: smartyprintsLogo.url,
+    founded: '2022',
+  },
 ];
 
 // Filter options
