@@ -218,6 +218,18 @@ const allStories: SuccessStory[] = [
     image: smartyprintsLogo.url,
     founded: '2022',
   },
+  {
+    id: 'myomar',
+    company: 'Myomar Molecular',
+    tagline: 'Muscle: The Unsung Longevity Organ',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$500K+', jobsCreated: 8, marketsReached: 1 },
+    programs: ['SCF', 'Mentorship', 'IAP', 'PITCH'],
+    image: myomarLogo.url,
+    founded: '2024',
+  },
 ];
 
 // Filter options
