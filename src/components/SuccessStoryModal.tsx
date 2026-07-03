@@ -942,4 +942,54 @@ IRegained® has since secured regulatory approvals from the FDA (U.S.), Health C
 
 Looking ahead, IRegained® hopes to launch the MyHand® System as a telemedicine so patients can connect remotely with a therapist. Vineet summarizes their purpose: “We’re helping patients recover not just mobility, but dignity—and that’s what drives us.” He reflects on their trajectory: “Fast isn’t the right word, but momentum is building. But you can’t expect to be fast—you must expect to do it right.”`,
   },
+  'rna-diagnostics': {
+    id: 'rna-diagnostics',
+    company: 'RNA Diagnostics',
+    tagline: 'Leading Innovation in Oncology Diagnostics',
+    sector: 'Medtech',
+    stage: 'growth',
+    status: 'scaling',
+    metrics: { capitalRaised: '$26M', jobsCreated: 15, marketsReached: 3 },
+    programs: ['Mentorship', 'IAP'],
+    image: rnaDiagnosticsLogo.url,
+    founded: '2008',
+    problem: 'Chemotherapy is brutal—neuropathy, heart damage, fatigue, secondary cancers—and yet most patients are expected to complete every cycle, even when the drugs may never destroy their tumour. For the most common subtype of breast cancer, chemotherapy offers little survival benefit, and even in the most responsive subtypes the odds of a pathological complete response barely exceed fifty-fifty. Until now, that response could only be measured after treatment ended, leaving patients with no way to know mid-course whether the suffering was worth it.',
+    breakthrough: {
+      text: 'Founded on discoveries from Dr. Amadeo Parissenti’s Laurentian University lab, RNA Diagnostics developed the RNA Disruption Assay (RDA)—a mid-treatment test that reads the degradation of the 28S and 18S ribosomal RNAs inside a tumour biopsy to reveal, in real time, whether chemotherapy is destroying cancer cells. Intact RNA signals the treatment is not working; degraded RNA signals it is. For the first time, oncologists can interrogate a tumour’s response while there is still time to change course.',
+      image: rnaDiagnosticsLogo.url,
+    },
+    timeline: [
+      { year: '2008', event: 'RNA Disruption Assay patented; company incorporated after a late-night Sudbury pitch session with OCE’s Mark Castel' },
+      { year: '2015', event: 'Early clinical validation confirms RDA can predict pathological complete response mid-chemotherapy' },
+      { year: '2020', event: 'Angel and venture capital rounds close, backed by Sudbury business leader Peter Del Bianco' },
+      { year: '2024', event: 'Cumulative capital raised surpasses $26 million across patenting, clinical trials, and regulatory work' },
+      { year: '2026', event: 'Deepens partnerships with Laurentian University, Health Sciences North, and NORCAT as major North American cancer centres adopt neoadjuvant chemotherapy monitoring' },
+    ],
+    impactMetrics: { jobs: 15, revenue: 'Pre-revenue', capital: '$26M', pilots: 6, markets: 3 },
+    founderQuote: {
+      text: 'You can’t interrogate a tumour’s response to chemotherapy if it’s already gone. A lot of cancer care is still a work in progress—we need to do better.',
+      author: 'Dr. Amadeo Parissenti',
+      role: 'Chief Scientific Officer, RNA Diagnostics',
+    },
+    currentStage: 'Clinical Validation & Regulatory Scale-Up',
+    whatsNext: 'RNA Diagnostics is advancing the RDA through international clinical trials and regulatory pathways so oncologists can routinely stop ineffective chemotherapy mid-course and move patients onto treatments that actually work.',
+    globalPresence: ['Canada', 'United States', 'Europe'],
+    fullStory: `For many cancer patients, the harsh reality is not just the diagnosis, but the gruelling treatment that follows. Side effects from chemotherapy like neuropathy, heart damage, fatigue, and even secondary cancers are common, and yet, “almost all patients are expected to complete their drug regimen right to the very end,” says Dr. Amadeo Parissenti, professor at Laurentian University and Chief Scientific Officer of RNA Diagnostics.
+
+“My research group has always been interested in the variability of chemotherapy response in cancer patients. In fact, for patients with the most common subtype of breast cancer, there is little survival benefit from chemotherapy.” Even for the two most chemo-responsive subtypes of breast cancer, there is only a slightly greater than fifty-fifty chance of achieving what is known as a pathological complete response—meaning the cancer cells have been completely destroyed. “It is really not a pleasant experience. But unfortunately, pathologic complete response can only be measured after chemotherapy treatment,” Dr. Parissenti explains.
+
+Traditionally, patients receive either surgery followed by chemotherapy (adjuvant, practised mostly in North America) or chemotherapy followed by surgery (neoadjuvant, practised mostly in Europe). “There was a lot of debate about which approach was better, since treatment outcomes are very similar. But that’s changing as major U.S. and Canadian centres are starting to see the benefit of assessing tumours during treatment,” says Dr. Parissenti. “You can’t interrogate a tumour’s response to chemotherapy if it’s already gone.” The benefits go beyond prediction. “In neoadjuvant chemotherapy, shrinking the tumour before surgery can help preserve the breast,” says Dr. Gabriel Thériault, Senior Scientist at RNA Diagnostics. “That makes a huge difference for patients—not just physically, but emotionally.”
+
+Ultimately, international clinical outcomes using either adjuvant or neoadjuvant chemotherapy proved similar, and many patients still undergo the entire course of chemo without benefit. “That’s still the current paradigm,” Dr. Thériault says. “How can we continue chemotherapy only for patients who are going to benefit from it?”
+
+The answer came unexpectedly while studying tumour biopsies from breast cancer patients, when Dr. Parissenti’s team was studying tumour gene activity through RNA. “RNA comes from DNA, and all active genes create RNA,” he explains, “which gives us an idea of which genes are active within the tumour or within the patient.” With tens of thousands of RNAs to sift through, the team noticed something else: “there are two major RNAs in the cells of the human body and in tumour cells, they stick out like a sore thumb: the 28S and 18S ribosomal RNAs. They’re big and there’s a lot of them. Thus, they can be a great measure of RNA quality.” He describes the moment as “a bit of divine providence… recognising when something is staring you in the face. And that wasn’t what you were planning.”
+
+“During chemo, in some patients, the 28S and 18S RNAs degraded dramatically,” he recalls. “In others, they didn’t.” The degraded RNAs turned out to be a sign of tumour destruction: “if the patient’s tumour has got really good quality 28S and 18S RNA in the middle of treatment, we can say, ‘well, it’s probably better to stop that treatment and move on to something else.’”
+
+The team patented the discovery—the RNA Disruption Assay, or RDA—in 2008. During a pitch session in Sudbury, Ontario Centres of Excellence commercialisation leader Mark Castel warned that “you can’t let this patent lapse—we’ve got to do something.” That urgency launched the company. “Castel cancelled his flight, and we all went to Pat & Mario’s that evening,” Dr. Parissenti remembers. “At 1 o’clock in the morning, we had RNA Diagnostics.”
+
+While the science was strong, the start-up world was unfamiliar: “we are not trained for that space,” he says, crediting mentors like Sudbury business leader Peter Del Bianco for attracting many investors to the company: “he has a tremendous attitude; you can’t say no to the guy.” Since then, the company has attracted both angel investors and venture capital, raising over $26 million to support patenting, clinical trials, and regulatory approvals. RNA Diagnostics maintains strong ties to Sudbury’s Laurentian University, Health Sciences North, and NORCAT, the regional innovation centre. “Innovation space thanks to NORCAT is getting better and better all the time,” says Dr. Parissenti.
+
+“A lot of cancer care is still a work in progress,” he says. “We need to do better.” Thanks to the relentless work of a small Northern Ontario team, cancer chemotherapy treatment may be entering a more compassionate, more precise era.`,
+  },
 };
