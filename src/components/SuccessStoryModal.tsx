@@ -520,7 +520,7 @@ export const detailedStories: Record<string, StoryDetails> = {
   'plana-staffstat': {
     id: 'plana-staffstat',
     company: 'Plan A & StaffStat',
-    tagline: 'People-first tech staffing strategy transforming senior care across Canada.',
+    tagline: 'Turning Burnout into a Nationwide Solution for Frontline Staffing',
     sector: 'Medtech / Health Tech',
     stage: 'growth',
     status: 'scaling',
@@ -528,28 +528,44 @@ export const detailedStories: Record<string, StoryDetails> = {
     programs: ['Mentorship', 'VGS'],
     image: planaTeam,
     founded: '2012',
-    problem: 'Long-term care homes in Canada had no reliable, modern way to fill nursing and PSW shifts-relying on cold calls at all hours, leading to chronic understaffing and burnout.',
+    problem: 'Long-term care in Canada had no real back-up plan for nurses and PSWs. Homes filled shifts by cold-calling staff at all hours—“Can you work? If you can’t work, Sheri, no one can work”—driving chronic understaffing, burnout, and turnover in the very workforce seniors depend on.',
     breakthrough: {
-      text: 'Sheri Tomchick built StaffStat-a digital shift-filling platform that removes friction from frontline staffing. What started as a tool to get shifts to staff "stat" evolved into an intelligent workforce hub using AI to predict shift anomalies days or weeks in advance, measure staff engagement, and alert leaders when employees need more support.',
+      text: 'Plan A paired a human-led staffing agency with StaffStat, a digital shift-filling platform built to get shifts to staff, stat. It has since evolved into an intelligent workforce hub with a virtual bulletin board for culture and communications, and AI that predicts shift anomalies days or weeks in advance, surfaces disengaged team members, and gives leaders early signals to intervene—simple, standalone, and deliberately not another expensive HRIS.',
     },
     timeline: [
-      { year: '2012', event: 'Sheri Tomchick founded Plan A staffing agency in Sudbury' },
-      { year: '2014', event: 'Began developing StaffStat digital platform' },
-      { year: '2016', event: 'Joined NORCAT Innovation; paired with mentor Peter Dal Bianco' },
-      { year: '2020', event: 'StaffStat evolved into AI-powered workforce engagement hub' },
-      { year: '2024', event: 'Expanded to support over 900 nursing homes across Canada' },
-      { year: '2026', event: 'Team of 18 operating nationally from Greater Sudbury' },
+      { year: '2012', event: 'Sheri Tomchick founds Plan A staffing agency in Sudbury after burning out on the frontline' },
+      { year: '2014', event: 'Begins building StaffStat as a rare female-led app project to digitize shift filling' },
+      { year: '2016', event: 'Joins NORCAT Innovation and is paired with mentor Peter Dal Bianco, a turning point for the company' },
+      { year: '2020', event: 'StaffStat evolves into an AI-powered workforce engagement hub with predictive analytics and engagement reporting' },
+      { year: '2024', event: 'Plan A and StaffStat expand to support 900+ nursing homes across Canada, with sales cycles collapsing from months to weeks' },
+      { year: '2026', event: 'A dynamic 18-person team in Greater Sudbury delivers the full continuum: recruitment, predictive scheduling, and engagement analytics' },
     ],
     impactMetrics: { jobs: 18, capital: '900+', pilots: 2, markets: 1 },
     founderQuote: {
-      text: "I got involved with NORCAT, and I was a really passionate business owner, but I needed help. I was running on a dream, a positive attitude, and a belief I was going to get this done. Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without somebody like Peter.",
+      text: "Nobody knows we're here in Greater Sudbury doing all of these magnificent things across Canada with an office of 18. My team is dynamic—they can make magic happen with very little.",
       author: 'Sheri Tomchick',
-      role: 'CEO & Co-founder, Plan A & StaffStat',
+      role: 'CEO & Founder, Plan A & StaffStat',
     },
     currentStage: 'Scaling Nationally',
-    whatsNext: 'Supporting over 900 nursing homes across Canada with growing demand. StaffStat\'s AI-powered engagement analytics and predictive scheduling are setting a new standard for frontline healthcare staffing.',
+    whatsNext: 'Deepening AI-driven engagement analytics and predictive scheduling for the 900+ nursing homes already on StaffStat, while doubling down on the simple, standalone tools long-term care actually needs.',
     globalPresence: ['Greater Sudbury', 'Ontario', 'Canada'],
-    fullStory: "Sheri's journey began with a dose of hard reality. After graduating from nursing and returning to Sudbury for her preceptorship, she quickly felt the cracks in the system. \"There was zero backup plan for nurses and PSWs in Sudbury,\" she says. \"I was ready to begin my career, but I just burned out really fast.\"\n\nThat fire began as a small staffing agency-Plan A. But Sheri hated cold-calling people, waking them up at all hours to fill shifts. She began developing what would become StaffStat-a digital shift-filling platform that would remove friction from frontline staffing.\n\nMentorship made the difference. \"Once I was paired with Mr. Peter Dal Bianco, things really changed for my company,\" Sheri says. The software evolved fast. What started as a shift-filling tool soon became an intelligent workforce hub.\n\nToday, StaffStat uses AI to predict shift anomalies days or weeks in advance. It measures staff engagement and alerts when employees are not engaged so leaders can act early.\n\nOn the ground, Mandy Gauthier is the human engine behind Plan A's national growth. \"I call Mandy the fairy godmother of long-term care,\" Sheri says. Their combined leadership has built a \"Small Giant\" in Canadian health tech.\n\n\"Nobody really understands all the magnificent things we're doing across Canada from Greater Sudbury… with an incredible team of 18,\" Sheri says proudly. Plan A now offers a full continuum of staffing services, from frontline recruitment to predictive scheduling to engagement analytics.\n\nPlan A and StaffStat now support over 900 nursing homes across Canada, with demand growing fast. \"There's nothing in the healthcare market that has as much impact on the front line as it does the bottom line as StaffStat.\"",
+    fullStory: `Sheri Tomchick and Mandy Gauthier run two organizations that are distinct, yet inseparable—Plan A and StaffStat. “There is no Plan A without StaffStat, but there is a StaffStat without Plan A,” Sheri explains. Together, the companies form a people-first staffing strategy that’s transforming senior care across Canada.
+
+Sheri’s journey began with a dose of hard reality. After graduating from York University and returning to Sudbury for her preceptorship, she quickly felt the cracks in the system. “There was zero back-up plan for nurses and PSWs in Sudbury,” she says. “I was ready to begin my career, but I just burnt out really fast.” She’d often pick up the phone to hear: “Can you work? If you can’t work, Sheri, no one can work.”
+
+It was unsustainable. “There was such a need for someone to get innovative in the senior care space,” Sheri says. “We started a fire.”
+
+That fire began as a small staffing agency—Plan A. But Sheri hated cold-calling people, waking them up at all hours to fill shifts. “I knew I had to go digital to make a real change. But in 2012, building apps was still quite novel… and women were definitely not building apps.” She didn’t let that stop her. Sheri began developing what would become StaffStat—a digital scheduling platform that would remove friction from frontline staffing and give long-term care homes a fighting chance to stay properly resourced. “It was really built initially to get shifts to staff, stat—like fast!”
+
+But building tech was just one piece. Sheri admits she had passion but no business background. “I got involved with NORCAT, and I was a really passionate business owner, but I wasn’t doing very ‘good’. I was running on a dream, a positive attitude, and a belief I was going to get this done.” Mentorship made the difference. “Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don’t think I’d be where I am today without somebody like Peter.”
+
+The software evolved fast. What started as a scheduling tool soon became an intelligent workforce hub. “It’s a hub where communication and culture start,” Sheri explains. “There’s a virtual bulletin board—‘There are donuts in the lounge, we have a new job posting, there’s a policy change, hey, thank you!’” Today, StaffStat uses AI to predict shift anomalies days or weeks in advance. It flags risk areas and sends alerts so leaders can act early. “At the bottom of that engagement report are the people who aren’t paying attention,” Sheri says. “And that gives team leaders a chance to look at themselves—do they need more training, more mentoring?”
+
+On the ground, Mandy Gauthier is the human engine behind Plan A’s national growth. “I call Mandy the fairy godmother of long-term care,” Sheri says. “She has this ability to build and nurture such solid relationships… they genuinely want to work with her and trust her. She’s a woman who refuses to stop growing.” Their combined leadership has built a “Small Giant” in Canadian healthtech. “Nobody knows we’re here in Greater Sudbury doing all of these magnificent things across Canada… with an office of 18,” Sheri says proudly. “My team is dynamic. They can make magic happen with very little.”
+
+Plan A now offers a full continuum of staffing services, from frontline recruitment to predictive scheduling to engagement analytics. “We were initially just bringing nurses and PSWs to senior care,” Sheri says. “Now we do the entire rigmarole.” At a time when healthcare systems are overstretched and workforce retention is fragile, simplicity is key. “Some of the people playing in this space went from simplicity to entire HRIS systems,” Sheri says. “They’re really, really expensive now because they have to support all of that—payroll, benefits, everything. But the quick and easy standalone is what long-term care needs right now.”
+
+Plan A and StaffStat now support over 900 nursing homes across Canada, with demand growing fast. “It used to take six to eight months to get a second meeting,” Sheri says. “Now they’re meeting again in the next week.” The approach is working because it blends humanity with modern tech. “You have two ears and one mouth for a reason,” Sheri says. “You have to shut up and really hear the people.”`,
   },
   'maestro-digital-mine': {
     id: 'maestro-digital-mine',
