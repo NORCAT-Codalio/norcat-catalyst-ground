@@ -29,6 +29,7 @@ import planaLogo from '@/assets/logos/plana.png';
 import tesmanLogo from '@/assets/logos/tesman-logo.png.asset.json';
 import waiveTestimonialLogo from '@/assets/waive-logo.png.asset.json';
 import podcoDiscoveryLab from '@/assets/success-stories/podco-discovery-lab.jpg.asset.json';
+import medatechRaisePro from '@/assets/success-stories/medatech-raisepro-48t.png.asset.json';
 
 
 // All stories data
@@ -140,6 +141,18 @@ const allStories: SuccessStory[] = [
     programs: ['UG Centre', 'Mentorship', 'IAP'],
     image: podcoDiscoveryLab.url,
     founded: '2017',
+  },
+  {
+    id: 'medatech-raisepro',
+    company: 'MEDATech RaisePro',
+    tagline: 'Developing Safer Underground Drilling Technology.',
+    sector: 'Mining Tech',
+    stage: 'growth',
+    status: 'commercial',
+    metrics: { jobsCreated: 10, marketsReached: 1 },
+    programs: ['UG Centre', 'Mentorship'],
+    image: medatechRaisePro.url,
+    founded: '2003',
   },
 ];
 
