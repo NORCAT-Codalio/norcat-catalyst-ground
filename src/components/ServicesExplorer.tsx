@@ -95,6 +95,8 @@ const categories: Record<Audience, CategoryItem[]> = {
       description:
         'A structured approach to defining your ideal customer, positioning, pricing, and distribution so your first commercial push lands with real traction.',
       features: ['Ideal customer definition', 'Positioning & messaging', 'Pricing & packaging strategy', 'Launch playbook'],
+      link: '/programs/mentorship-services',
+      linkText: 'Meet the Mentors',
     },
     {
       icon: LinkIcon,
@@ -104,6 +106,8 @@ const categories: Record<Audience, CategoryItem[]> = {
       description:
         'Connect with established corporations, enterprise buyers, and strategic partners who can accelerate your path to revenue, pilots, and scale.',
       features: ['Curated corporate introductions', 'Pilot & partnership design', 'Strategic buyer mapping', 'Commercial relationship support'],
+      link: '/programs/mentorship-services',
+      linkText: 'Meet the Mentors',
     },
     {
       icon: Globe,
@@ -113,6 +117,8 @@ const categories: Record<Audience, CategoryItem[]> = {
       description:
         'Navigate the complexity of entering new markets with market-entry planning, regulatory guidance, and introductions to international networks and customers.',
       features: ['Market entry analysis', 'International customer introductions', 'Regulatory & compliance guidance', 'Global partner network access'],
+      link: '/programs/mentorship-services',
+      linkText: 'Meet the Mentors',
     },
   ],
   'Funding Support': [
