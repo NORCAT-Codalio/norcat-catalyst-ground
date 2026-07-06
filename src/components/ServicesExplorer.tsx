@@ -49,12 +49,21 @@ const categories: Record<Audience, CategoryItem[]> = {
     },
     {
       icon: Briefcase,
-      title: 'MaRS Startup Toolkit',
-      headline: 'Proven tools to',
-      headlineItalic: 'structure and scale',
+      title: 'MaRS Startup Toolkit & Market Intelligence',
+      headline: 'Tools and insights to',
+      headlineItalic: 'structure, scale, and compete',
       description:
-        'Access the curated MaRS Startup Toolkit - frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
-      features: ['Business model canvas', 'Financial planning templates', 'Investor pitch frameworks', 'Growth milestone trackers'],
+        'Access the curated MaRS Startup Toolkit alongside data-driven market intelligence—frameworks, templates, and research insights that help you plan, pitch, and execute faster.',
+      features: [
+        'Business model canvas',
+        'Financial planning templates',
+        'Investor pitch frameworks',
+        'Growth milestone trackers',
+        'Market landscape analysis',
+        'Competitive intelligence',
+        'Customer & sector research',
+        'Data-driven growth reports',
+      ],
     },
     {
       icon: Handshake,
@@ -73,15 +82,6 @@ const categories: Record<Audience, CategoryItem[]> = {
       description:
         'Join focused, small-group sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
       features: ['Peer cohort sessions', 'Founder roundtables', 'Problem-solving workshops', 'Accountability circles'],
-    },
-    {
-      icon: BarChart3,
-      title: 'Data & Market Intelligence Services',
-      headline: 'Insights that drive',
-      headlineItalic: 'smarter decisions',
-      description:
-        'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market, product roadmap, and fundraising strategy.',
-      features: ['Market landscape analysis', 'Competitive intelligence', 'Customer & sector research', 'Data-driven growth reports'],
     },
   ],
   'Funding Support': [
@@ -233,7 +233,6 @@ const placeholderImages: Record<Audience, string[]> = {
     'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
     'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
     'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
-    'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
   ],
   'Funding Support': [
     'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
