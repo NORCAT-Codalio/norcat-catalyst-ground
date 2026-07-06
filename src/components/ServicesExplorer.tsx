@@ -13,6 +13,10 @@ import {
   Briefcase,
   BarChart3,
   Check,
+  Rocket,
+  TrendingUp,
+  Globe,
+  Link as LinkIcon,
   type LucideIcon,
 } from 'lucide-react';
 import entrepreneurialCoursesImg from '@/assets/entrepreneurial-courses.png';
