@@ -13,10 +13,6 @@ import {
   Briefcase,
   BarChart3,
   Check,
-  Rocket,
-  TrendingUp,
-  Globe,
-  Link as LinkIcon,
   type LucideIcon,
 } from 'lucide-react';
 import entrepreneurialCoursesImg from '@/assets/entrepreneurial-courses.png';
@@ -86,39 +82,6 @@ const categories: Record<Audience, CategoryItem[]> = {
       description:
         'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market, product roadmap, and fundraising strategy.',
       features: ['Market landscape analysis', 'Competitive intelligence', 'Customer & sector research', 'Data-driven growth reports'],
-    },
-    {
-      icon: Rocket,
-      title: 'Go-to-Market (GTM) Strategy',
-      headline: 'Launch with',
-      headlineItalic: 'precision and momentum',
-      description:
-        'A structured approach to defining your ideal customer, positioning, pricing, and distribution so your first commercial push lands with real traction.',
-      features: ['Ideal customer definition', 'Positioning & messaging', 'Pricing & packaging strategy', 'Launch playbook'],
-      link: '/programs/mentorship-services',
-      linkText: 'Meet the Mentors',
-    },
-    {
-      icon: LinkIcon,
-      title: 'Corporate Matchmaking',
-      headline: 'Open doors to',
-      headlineItalic: 'the right partners',
-      description:
-        'Connect with established corporations, enterprise buyers, and strategic partners who can accelerate your path to revenue, pilots, and scale.',
-      features: ['Curated corporate introductions', 'Pilot & partnership design', 'Strategic buyer mapping', 'Commercial relationship support'],
-      link: '/programs/mentorship-services',
-      linkText: 'Meet the Mentors',
-    },
-    {
-      icon: Globe,
-      title: 'International Expansion',
-      headline: 'Take your venture',
-      headlineItalic: 'across borders',
-      description:
-        'Navigate the complexity of entering new markets with market-entry planning, regulatory guidance, and introductions to international networks and customers.',
-      features: ['Market entry analysis', 'International customer introductions', 'Regulatory & compliance guidance', 'Global partner network access'],
-      link: '/programs/mentorship-services',
-      linkText: 'Meet the Mentors',
     },
   ],
   'Funding Support': [
@@ -271,8 +234,6 @@ const placeholderImages: Record<Audience, string[]> = {
     'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
     'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
     'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
-    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
-    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
   ],
   'Funding Support': [
     'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
