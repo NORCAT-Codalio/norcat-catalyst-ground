@@ -265,6 +265,8 @@ const placeholderImages: Record<Audience, string[]> = {
     'linear-gradient(135deg, #001A4D 0%, #00B398 60%, #003DA5 100%)',
     'linear-gradient(135deg, #003DA5 0%, #00B398 60%, #001A4D 100%)',
     'linear-gradient(135deg, #00B398 0%, #001A4D 60%, #003DA5 100%)',
+    'linear-gradient(135deg, #003DA5 0%, #001A4D 60%, #00B398 100%)',
+    'linear-gradient(135deg, #00B398 0%, #003DA5 60%, #001A4D 100%)',
   ],
   'Funding Support': [
     'linear-gradient(135deg, #001A4D 0%, #003DA5 60%, #00B398 100%)',
