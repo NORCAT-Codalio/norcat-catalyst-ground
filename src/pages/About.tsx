@@ -129,6 +129,38 @@ export default function About() {
         </section>
 
 
+        {/* ───── ROOTED IN NORTHERN ONTARIO ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Rooted in Northern Ontario
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                    style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                  Where Bold Ideas <span style={{ color: TEAL }}>Grow.</span>
+                </h2>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>NORCAT Innovation was founded to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
+                  <p>As a non-profit Regional Innovation Centre, we help entrepreneurs turn ideas into market-ready ventures through mentorship, capital connections, industry relationships, and access to the resources needed to build, test, and scale.</p>
+                  <p>By bringing the right people, partners, and opportunities together, we help Northern Ontario innovators grow here and compete anywhere.</p>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+                  <img src={norcatBuilding.url} alt="NORCAT Innovation" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
         {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
         <section className="py-10 md:py-16 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
