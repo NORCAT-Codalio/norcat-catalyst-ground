@@ -46,7 +46,7 @@ type ProgramTab = {
   benefits: string[];
   href: string;
   image: string;
-  partners: { url: string; alt: string; height?: number }[];
+  partners: { logo: string; alt: string; height?: number }[];
 };
 
 const programTabs: ProgramTab[] = [
