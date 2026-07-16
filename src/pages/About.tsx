@@ -165,9 +165,9 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow className="text-lg">About NORCAT Innovation</Eyebrow>
+              <Eyebrow className="text-lg">ABOUT NORCAT INNOVATION.</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                <span style={{ color: TEAL }}>The Innovation Engine</span><br />of the North.
+                <span style={{ color: TEAL }}>ABOUT NORCAT INNOVATION.</span><br />
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Designed by-and-for the builders of innovative technology and scientific discovery, NORCAT Innovation provides you with the Sudbury Advantage: land, resources, talent, capital, and an unparalleled appeal to wanting to see others succeed.
@@ -204,16 +204,16 @@ export default function About() {
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
-                  Our Mission
+                  ABOUT NORCAT INNOVATIO
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  About <span style={{ color: TEAL }}>NORCAT Innovation.</span>
+                  THE INNOVATION ENGINE<br />OF THE NORTH.
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed whitespace-pre-line" style={{ color: '#475068' }}>
                   NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission:
                   keep talented founders and builders in the North by giving them the resources, mentorship,
-                  and capital access they need to grow.{"\n\n\n"}
+                  and capital access they need to grow.{"\n\n"}
                   We believe innovation thrives when community comes first,
                   safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
                 </p>
