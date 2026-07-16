@@ -172,34 +172,36 @@ export function Footer() {
           ))}
         </nav>
 
-        {/* Large NORCAT Innovation lockup */}
-        <div className="mt-16 flex justify-center lg:justify-end">
-          <img
-            src={norcatInnovationLogo.url}
-            alt="NORCAT Innovation"
-            className="h-12 md:h-16 lg:h-20 w-auto object-contain brightness-0 invert"
-          />
-        </div>
-      </div>
+        {/* Bottom row: legal (left) + NORCAT Innovation lockup (right) */}
+        <div className="mt-16 flex flex-col-reverse lg:flex-row lg:items-end lg:justify-between gap-8 relative">
+          <div className="flex flex-col gap-3 text-xs text-white/70">
+            <div className="flex items-center gap-6">
+              <Link to="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <a
+                href="https://www.norcat.org/aoda-policy.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                AODA Policy
+              </a>
+            </div>
+          </div>
 
-      {/* Bottom bar */}
-      <div className="container mx-auto px-6 lg:px-12 pb-8 relative">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/60">
-          <span>© {new Date().getFullYear()} NORCAT Innovation</span>
-          <div className="flex items-center gap-6">
-            <Link to="/privacy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <a
-              href="https://www.norcat.org/aoda-policy.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              AODA Policy
-            </a>
+          <div className="flex flex-col items-start lg:items-end gap-3">
+            <img
+              src={norcatInnovationLogo}
+              alt="NORCAT Innovation"
+              className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+            />
+            <span className="text-xs text-white/70">
+              © {new Date().getFullYear()} NORCAT Innovation
+            </span>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );
