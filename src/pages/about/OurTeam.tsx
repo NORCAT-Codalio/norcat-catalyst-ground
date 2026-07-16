@@ -192,19 +192,19 @@ export default function OurTeam() {
         </section>
 
         {/* ───── MENTORS CTA ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY }}>
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: PAPER, color: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 10% 80%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 90% 20%, rgba(47,111,214,0.22), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 10% 80%, rgba(0,179,152,0.12), transparent 40%), radial-gradient(circle at 90% 20%, rgba(47,111,214,0.10), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
               <div className="max-w-2xl">
                 <Eyebrow>MENTOR NETWORK</Eyebrow>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
                   WORLD-CLASS <span style={{ color: TEAL }}>MENTORS.</span>
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
                   Our mentors are operators, founders, and industry experts who volunteer their time to help northern ventures scale. From pitch practice to go-to-market strategy, they bring decades of real-world experience.
                 </p>
               </div>
@@ -221,7 +221,7 @@ export default function OurTeam() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-14" style={{ borderTop: `1px solid ${BORDER}` }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-14" style={{ borderTop: '1px solid #d9dde5' }}>
               {[
                 { number: '18', label: 'Active Mentors' },
                 { number: '1000+', label: 'Hours Mentored in 2025' },
@@ -229,8 +229,8 @@ export default function OurTeam() {
                 { number: '$0', label: 'To Access Mentorship' },
               ].map((s) => (
                 <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
-                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: 'white' }}>{s.number}</p>
-                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: 'rgba(255,255,255,0.72)' }}>{s.label}</p>
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
                 </div>
               ))}
             </div>
