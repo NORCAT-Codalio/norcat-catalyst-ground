@@ -295,9 +295,21 @@ export default function About() {
                               style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                             {event.title}
                           </h3>
-                          <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                          <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: FG_MUTED }}>
                             {event.desc}
                           </p>
+                          {event.cta && (
+                            <Link
+                              to={event.cta.href}
+                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] group"
+                              style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                            >
+                              {event.cta.label}
+                              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                              </span>
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
