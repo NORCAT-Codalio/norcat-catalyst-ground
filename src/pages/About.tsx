@@ -311,58 +311,39 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── VALUES (blue to teal gradient) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden"
-                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
-          }} />
-          <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute bottom-0 left-0 w-auto h-1/3 object-contain object-left-bottom opacity-30 pointer-events-none select-none mix-blend-overlay" />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        {/* ───── OUR VALUES (light, numbered cards) ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
-              <Eyebrow>What Drives Innovation</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                What Drives Innovation
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 Our <span style={{ color: TEAL }}>Values.</span>
-              </Display>
+              </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
               {[
-                {
-                  icon: Target,
-                  title: 'Real-World Impact',
-                  desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy.",
-                },
-                {
-                  icon: Atom,
-                  title: 'Bold Experimentation',
-                  desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.',
-                },
-                {
-                  icon: Rocket,
-                  title: 'Idea to Market',
-                  desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.',
-                },
-                {
-                  icon: Share2,
-                  title: 'Connected Ecosystem',
-                  desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.',
-                },
+                { n: '01', title: 'Real-World Impact', desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy." },
+                { n: '02', title: 'Bold Experimentation', desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.' },
+                { n: '03', title: 'Idea to Market', desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
+                { n: '04', title: 'Connected Ecosystem', desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.' },
               ].map((v) => (
                 <div key={v.title}
-                     className="rounded-2xl p-7 md:p-8 transition hover:-translate-y-1"
-                     style={{ background: 'rgba(255,255,255,0.10)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
-                  <div className="inline-flex items-center justify-center size-12 rounded-xl mb-5"
-                       style={{ background: `${TEAL}22`, color: TEAL, border: `1px solid ${TEAL}55` }}>
-                    <v.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-black uppercase text-xl md:text-2xl mb-3 text-white"
-                      style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                     className="rounded-2xl p-7 md:p-8 transition hover:-translate-y-1 flex flex-col"
+                     style={{ background: 'white', border: '1px solid #e3e6ec' }}>
+                  <p className="font-black text-4xl md:text-5xl mb-5" style={{ fontFamily: FONT, color: TEAL, letterSpacing: '-0.02em' }}>
+                    {v.n}
+                  </p>
+                  <h3 className="font-black uppercase text-lg md:text-xl mb-3"
+                      style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     {v.title}
                   </h3>
-                  <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                  <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
                     {v.desc}
                   </p>
                 </div>
@@ -372,12 +353,11 @@ export default function About() {
             <div className="mt-12 md:mt-14 flex justify-center">
               <Link
                 to="/insights/success-stories"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-[1.02]"
-                style={{ background: 'white', color: NAVY, fontFamily: FONT }}
+                className="group inline-flex items-center gap-3 pl-7 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
               >
                 Success Stories
-                <span className="inline-flex items-center justify-center size-8 rounded-full transition-colors"
-                      style={{ background: TEAL, color: 'white' }}>
+                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
                 </span>
               </Link>
