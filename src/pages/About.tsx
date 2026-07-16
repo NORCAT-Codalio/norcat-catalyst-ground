@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { motion } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -71,61 +71,7 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
-function TeamModal({ member, onClose }: { member: typeof team[0] | null; onClose: () => void }) {
-  if (!member) return null;
-  return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-        onClick={onClose}
-      />
-      <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      >
-        <motion.div
-          className="rounded-2xl max-w-md w-full p-8 relative"
-          style={{ background: 'white', border: '1px solid #d9dde5' }}
-          initial={{ scale: 0.95, y: 10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 10 }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button onClick={onClose}
-                  className="absolute top-4 right-4 size-9 rounded-full flex items-center justify-center transition-colors"
-                  style={{ background: PAPER, color: NAVY }}>
-            <X className="w-4 h-4" />
-          </button>
-          <div className="text-center">
-            <img src={member.image} alt={member.name}
-                 className="w-24 h-24 rounded-full object-cover mx-auto mb-5"
-                 style={{ border: `3px solid ${TEAL}` }} />
-            <h3 className="text-2xl font-black uppercase mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-              {member.name}
-            </h3>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: TEAL, fontFamily: FONT }}>
-              {member.role}
-            </p>
-            <p className="text-left leading-relaxed mb-7 text-sm" style={{ color: '#475068' }}>
-              {member.bio}
-            </p>
-            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-               className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-               style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-              <Linkedin className="w-4 h-4" /> Connect on LinkedIn
-              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-              </span>
-            </a>
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
-}
-
 export default function About() {
-  const [expandedMember, setExpandedMember] = useState<string | null>(null);
-
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
