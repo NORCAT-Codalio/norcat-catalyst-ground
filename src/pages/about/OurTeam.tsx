@@ -102,7 +102,7 @@ export default function OurTeam() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <Eyebrow className="text-lg">ABOUT NORCAT INNOVATION.</Eyebrow>
+              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
                 OUR <span style={{ color: TEAL }}>TEAM.</span>
               </Display>

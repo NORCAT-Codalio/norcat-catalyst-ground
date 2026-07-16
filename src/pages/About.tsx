@@ -97,7 +97,7 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow className="text-lg">ABOUT NORCAT INNOVATION.</Eyebrow>
+              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 <span style={{ color: TEAL }}>THE INNOVATION ENGINE</span><br />OF THE NORTH.
               </Display>
