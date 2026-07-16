@@ -239,7 +239,7 @@ export default function About() {
               <div className="max-w-xl lg:sticky lg:top-32">
                 <Eyebrow>Our Story</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  The Story of <span style={{ color: TEAL }}>NORCAT.</span>
+                  The NORCAT <span style={{ color: TEAL }}>Innovation Timeline.</span>
                 </Display>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Since 2014, NORCAT Innovation has been the launchpad for Northern founders, turning regional expertise into globally competitive technology ventures.
