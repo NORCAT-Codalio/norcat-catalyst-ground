@@ -199,7 +199,7 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden"
+        <section className="py-10 md:py-16 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
@@ -213,7 +213,7 @@ export default function About() {
               <div className="absolute top-0 bottom-0 w-px hidden md:block left-1/2 -translate-x-1/2" style={{ background: 'rgba(0,179,152,0.35)' }} />
               <div className="absolute top-0 bottom-0 w-px md:hidden left-4" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              <div className="space-y-14 md:space-y-24">
+              <div className="space-y-8 md:space-y-12">
                 {[
                   { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition to connect local founders with early investment networks.", image: storyLake.url },
                   { year: '2016', title: 'Innovation Acceleration Program (IAP) Launch', desc: 'NORCAT secures federal funding from FedNor to send $10,000 micro-grants straight to tech ventures for product prototyping and testing.', image: featuredIap.url },
@@ -230,27 +230,27 @@ export default function About() {
                   return (
                     <div key={event.year + idx} className="relative">
                       {/* Node dot */}
-                      <div className="absolute top-6 md:top-8 z-10 size-4 rounded-full ring-4 md:left-1/2 md:-translate-x-1/2 left-4 -translate-x-1/2"
+                      <div className="absolute top-0 md:top-1 z-10 size-4 rounded-full ring-4 md:left-1/2 md:-translate-x-1/2 left-4 -translate-x-1/2"
                            style={{ background: TEAL, boxShadow: `0 0 0 6px rgba(0,179,152,0.15)`, ['--tw-ring-color' as string]: NAVY } as React.CSSProperties} />
 
-                      <div className={`grid md:grid-cols-2 gap-6 md:gap-12 items-center ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
+                      <div className={`grid md:grid-cols-2 gap-4 md:gap-8 items-start ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
                         {/* Image side */}
-                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[4/3]">
+                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
+                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[16/10] max-h-[200px] max-w-[380px] ml-auto mr-auto">
                             <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                           </div>
                         </div>
                         {/* Text side */}
-                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pl-12' : 'md:pr-12 md:text-right'}`}>
-                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
+                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pl-8' : 'md:pr-8 md:text-right'}`}>
+                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1"
                              style={{ color: TEAL, fontFamily: FONT }}>
                             {event.year}
                           </p>
-                          <h3 className="font-black uppercase text-xl md:text-2xl lg:text-3xl mb-4 text-white"
+                          <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2 text-white"
                               style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                             {event.title}
                           </h3>
-                          <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: FG_MUTED }}>
+                          <p className="text-sm md:text-base leading-snug mb-3" style={{ color: FG_MUTED }}>
                             {event.desc}
                           </p>
                           {event.cta && (
