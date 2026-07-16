@@ -142,7 +142,7 @@ export function Footer() {
             { title: 'Company', links: footerLinks.company },
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="font-display font-bold text-white text-sm tracking-[0.15em] uppercase mb-5">
+              <h4 className="font-sans font-semibold text-white text-sm tracking-[0.15em] uppercase mb-5">
                 {col.title}
               </h4>
               <ul className="space-y-3">
