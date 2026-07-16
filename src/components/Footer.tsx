@@ -88,7 +88,22 @@ export function Footer() {
               onSubmit={(e) => e.preventDefault()}
               className="mt-4 flex items-center gap-2 max-w-md w-full lg:ml-auto"
             >
-...
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                aria-label="Email address"
+                className="flex-1 min-w-0 h-11 rounded-md bg-white/10 border border-white/20 px-4 text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
+              />
+              <button
+                type="submit"
+                aria-label="Subscribe"
+                className="h-11 w-11 shrink-0 rounded-md bg-white text-[#003da5] hover:bg-white/90 flex items-center justify-center transition-colors"
+              >
+                <Send className="h-4 w-4" />
+              </button>
             </form>
 
             <div className="mt-5 flex items-center gap-3 lg:self-end">
