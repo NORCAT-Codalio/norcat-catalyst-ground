@@ -260,7 +260,7 @@ const CriticalIndustrialTech = () => {
                   <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
                     <img src={citLogo} alt="Critical Industrial Technologies" className="h-14 object-contain" />
                   <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain" />
-                    <img src={ontarioLogoAsset.url} alt="Government of Ontario" className="h-12 object-contain" />
+                    <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain" />
                   </div>
                 </div>
 
