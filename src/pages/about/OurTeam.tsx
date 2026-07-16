@@ -175,13 +175,6 @@ export default function OurTeam() {
                     />
                     <div className="absolute inset-0"
                          style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                         style={{ background: 'rgba(0,26,77,0.35)' }}>
-                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold"
-                            style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                        View Profile <ArrowUpRight className="w-4 h-4" />
-                      </span>
-                    </div>
                   </div>
 
                   <div className="p-5">
