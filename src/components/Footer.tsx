@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Facebook, Instagram, Send } from 'lucide-react';
 import { useState } from 'react';
 import ontarioLogoAsset from '@/assets/logos/ontario-rev-logo.png.asset.json';
-import norcatInnovationLogo from '@/assets/norcat-innovation-logo.png.asset.json';
+import norcatInnovationLogo from '@/assets/logos/norcat-white.png';
+import trianglesAsset from '@/assets/white-triangles-lines.png.asset.json';
 
 const footerLinks = {
   funding: [
@@ -41,15 +42,14 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-[#003da5] via-[#002a7a] to-[#001a4d] text-white">
-      {/* Subtle diagonal accent lines bottom-left */}
+      {/* Triangles decoration bottom-left */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 left-0 h-64 w-1/2 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(45deg, transparent 0 40px, #ffffff 40px 41px)',
-        }}
-      />
+        className="pointer-events-none absolute bottom-6 left-0 w-[46%] max-w-2xl opacity-90"
+      >
+        <img src={trianglesAsset.url} alt="" className="w-full h-auto object-contain" />
+      </div>
+
 
       <div className="container mx-auto px-6 lg:px-12 pt-16 pb-10 relative">
         {/* Top row: brand / mailing list */}
@@ -59,7 +59,7 @@ export function Footer() {
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/90">
               Explore More of NORCAT Innovation
             </p>
-            <div className="mt-4 h-px w-full max-w-md bg-white/25" />
+            
             <h2 className="mt-6 font-display text-4xl md:text-5xl leading-[1.05] text-white">
               Sudbury's Regional<br />Innovation Centre
             </h2>
@@ -172,32 +172,33 @@ export function Footer() {
           ))}
         </nav>
 
-        {/* Large NORCAT Innovation lockup */}
-        <div className="mt-16 flex justify-center lg:justify-end">
-          <img
-            src={norcatInnovationLogo.url}
-            alt="NORCAT Innovation"
-            className="h-12 md:h-16 lg:h-20 w-auto object-contain brightness-0 invert"
-          />
-        </div>
-      </div>
+        {/* Bottom row: legal (left) + NORCAT Innovation lockup (right) */}
+        <div className="mt-16 flex flex-col-reverse lg:flex-row lg:items-end lg:justify-between gap-8 relative">
+          <div className="flex flex-col gap-3 text-xs text-white/70">
+            <div className="flex items-center gap-6">
+              <Link to="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <a
+                href="https://www.norcat.org/aoda-policy.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                AODA Policy
+              </a>
+            </div>
+          </div>
 
-      {/* Bottom bar */}
-      <div className="container mx-auto px-6 lg:px-12 pb-8 relative">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/60">
-          <span>© {new Date().getFullYear()} NORCAT Innovation</span>
-          <div className="flex items-center gap-6">
-            <Link to="/privacy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <a
-              href="https://www.norcat.org/aoda-policy.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              AODA Policy
-            </a>
+          <div className="flex flex-col items-start lg:items-end gap-3">
+            <img
+              src={norcatInnovationLogo}
+              alt="NORCAT Innovation"
+              className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+            />
+            <span className="text-xs text-white/70">
+              © {new Date().getFullYear()} NORCAT Innovation
+            </span>
           </div>
         </div>
       </div>
