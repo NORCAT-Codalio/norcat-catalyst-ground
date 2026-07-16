@@ -263,7 +263,7 @@ export default function Home2() {
                   Sudbury's Regional Innovation Centre
                 </p>
 
-                <div className="font-black uppercase leading-[0.9] tracking-tight text-white max-w-5xl"
+                <div className="font-black uppercase leading-[1.05] tracking-tight text-white max-w-5xl"
                      style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">BUILD, TEST</div>
                   <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
