@@ -80,7 +80,7 @@ export function Footer() {
           </div>
 
           {/* Right: Mailing list + social */}
-          <div className="lg:pl-8">
+          <div>
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/90">
               Join Our Mailing List
             </p>
