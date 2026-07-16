@@ -106,7 +106,7 @@ const Programs = () => {
                 NORCAT Innovation runs targeted programs for industrial, mining, and cybersecurity ventures - each designed to move founders from concept to commercialization with the right mix of capital, infrastructure, and mentorship.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/portal/auth"
+                <Link to="/apply"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
                       style={{ background: TEAL, color: NAVY }}>
                   Become a Client <ArrowRight className="w-4 h-4" />
@@ -225,7 +225,7 @@ const Programs = () => {
               Tell us what you're building and we'll map you to the right program, funding stream, and mentor network.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link to="/portal/auth"
+              <Link to="/apply"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
                     style={{ background: TEAL, color: NAVY }}>
                 Become a Client <ArrowRight className="w-4 h-4" />

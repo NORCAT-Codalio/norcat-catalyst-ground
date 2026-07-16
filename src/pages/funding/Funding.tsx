@@ -177,7 +177,7 @@ const Funding = () => {
                 Non-dilutive grants, seed capital, and dedicated programs for mining, industrial, and EV ventures scaling out of Ontario. One front door to the region's most active funding streams.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/portal/auth"
+                <Link to="/apply"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
                       style={{ background: TEAL, color: NAVY }}>
                   Become a Client <ArrowRight className="w-4 h-4" />
@@ -409,7 +409,7 @@ const Funding = () => {
               Become a client to unlock program eligibility, or work directly with our Capital Navigation team to map your funding path.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <Link to="/portal/auth"
+              <Link to="/apply"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
                     style={{ background: TEAL, color: 'white' }}>
                 Become a Client <ArrowRight className="w-4 h-4" />
