@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Mail, X } from 'lucide-react';
+import { ArrowUpRight, X } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
@@ -245,32 +245,43 @@ export default function OurTeam() {
 
         {/* ───── GET IN TOUCH ───── */}
         <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: PAPER }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.12), transparent 40%), radial-gradient(circle at 10% 90%, rgba(0,61,165,0.10), transparent 45%)`,
-          }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
-              <div className="max-w-2xl">
-                <Eyebrow>START THE CONVERSATION</Eyebrow>
-                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  GET IN <span style={{ color: TEAL }}>TOUCH.</span>
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
-                  Have a question, partnership idea, or just want to learn more about how we can help? Reach out — we'd love to hear from you.
-                </p>
+            <div
+              className="relative overflow-hidden rounded-3xl px-8 py-10 md:px-14 md:py-14"
+              style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
+            >
+              <div className="absolute inset-0 pointer-events-none" style={{
+                backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.25), transparent 35%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.12), transparent 40%)`,
+              }} />
+              <img src={signatureLines} alt="" aria-hidden="true"
+                   className="absolute -top-8 -right-8 w-48 h-auto opacity-40 pointer-events-none select-none mix-blend-overlay" />
+
+              <div className="relative flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+                <div className="flex-1">
+                  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                     style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)' }}>
+                    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                    START THE CONVERSATION
+                  </p>
+                  <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-4"
+                      style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
+                    GET IN <span style={{ color: TEAL }}>TOUCH.</span>
+                  </h2>
+                  <p className="text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                    Have a question, partnership idea, or just want to learn more about how we can help? Reach out — we'd love to hear from you.
+                  </p>
+                </div>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm md:text-base font-bold transition-all duration-300 hover:scale-[1.02] whitespace-nowrap self-start lg:self-center"
+                  style={{ background: 'white', color: NAVY, fontFamily: FONT }}
+                >
+                  Contact Us
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: TEAL, color: 'white' }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </Link>
               </div>
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-transform hover:scale-[1.02] whitespace-nowrap"
-                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
-              >
-                <Mail className="w-5 h-5" />
-                Contact Us
-                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </span>
-              </Link>
             </div>
           </div>
         </section>
