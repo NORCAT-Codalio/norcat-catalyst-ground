@@ -279,19 +279,20 @@ export default function About() {
         {/* ───── TEAM (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
-              <div className="max-w-2xl">
+            <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-8 mb-12 md:mb-16">
+              <div className="flex-1 flex flex-col justify-center">
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   THE INNOVATION TEAM
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   MEET THE INNOVATION TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
                 </h2>
               </div>
-              <p className="text-sm md:text-base md:max-w-sm leading-relaxed" style={{ color: '#5b6478' }}>
+              <p className="flex-1 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-relaxed lg:leading-relaxed"
+                 style={{ color: '#5b6478' }}>
                 Whether it's your first time jotting a business idea down on the back of a napkin 
                 or you're scaling and ready to demonstrate your technology to global operators, 
                 we are here to help.&nbsp;
