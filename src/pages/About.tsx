@@ -197,44 +197,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── MISSION (light, text left / video right) ───── */}
-        <section className="py-20 md:py-28" style={{ background: '#f4f6fa', color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
-              <div className="lg:col-span-6 order-2 lg:order-1">
-                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block mr-2 align-middle" style={{ background: TEAL }} />
-                  ABOUT NORCAT INNOVATIO
-                </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  THE INNOVATION ENGINE<br />OF THE NORTH.
-                </h2>
-                <p className="text-base sm:text-lg leading-relaxed whitespace-pre-line" style={{ color: '#475068' }}>
-                  NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission:
-                  keep talented founders and builders in the North by giving them the resources, mentorship,
-                  and capital access they need to grow.{"\n\n"}
-                  We believe innovation thrives when community comes first,
-                  safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
-                </p>
-              </div>
-              <div className="lg:col-span-6 order-1 lg:order-2">
-                <div className="rounded-2xl overflow-hidden aspect-video shadow-xl"
-                     style={{ border: '1px solid #d9dde5' }}>
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="About NORCAT Innovation"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
         <section className="py-20 md:py-28 relative overflow-hidden"
