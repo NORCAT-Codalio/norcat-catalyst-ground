@@ -41,28 +41,28 @@ export function Footer() {
   const [email, setEmail] = useState('');
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-[#003da5] via-[#002a7a] to-[#001a4d] text-white">
-      {/* Triangles decoration bottom-left */}
+    <footer className="relative overflow-hidden font-sans text-white bg-[radial-gradient(120%_90%_at_0%_100%,#0FA88C_0%,#0a5aa8_28%,#003da5_55%,#001a4d_100%)]">
+      {/* Triangles decoration bottom-left (flipped to point up/right per design) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-6 left-0 w-[46%] max-w-2xl opacity-90"
+        className="pointer-events-none absolute bottom-0 left-0 w-[46%] max-w-2xl opacity-70 -scale-y-100"
       >
         <img src={trianglesAsset.url} alt="" className="w-full h-auto object-contain" />
       </div>
-
 
       <div className="container mx-auto px-6 lg:px-12 pt-16 pb-10 relative">
         {/* Top row: brand / mailing list */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: Brand */}
           <div>
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/90">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/90 inline-block border-b border-white/30 pb-3">
               Explore More of NORCAT Innovation
             </p>
-            
-            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-[1.05] text-white">
+
+            <h2 className="mt-6 font-sans font-semibold text-4xl md:text-5xl leading-[1.05] text-white">
               Sudbury's Regional<br />Innovation Centre
             </h2>
+
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <img
