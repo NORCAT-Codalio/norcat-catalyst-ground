@@ -199,7 +199,7 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden"
+        <section className="py-10 md:py-16 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
