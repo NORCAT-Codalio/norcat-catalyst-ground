@@ -145,7 +145,7 @@ export function Footer() {
               <h4 className="font-sans font-semibold text-white text-sm tracking-[0.15em] uppercase mb-5">
                 {col.title}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {col.links.map((link: any) => (
                   <li key={link.name}>
                     {link.external ? (
