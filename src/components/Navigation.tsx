@@ -287,7 +287,7 @@ export function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-2">
             <Link
-              to="/portal/auth"
+              to="/apply"
               className="group inline-flex items-center gap-1.5 text-[13px] font-semibold px-4 py-2 rounded-full text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)]"
               style={{
                 background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)',
@@ -339,7 +339,7 @@ export function Navigation() {
                 const menus = {
                   about: { label: 'About', items: aboutItems, eyebrow: 'The story of the North\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Explore all programs', body: 'CIT, Core5, Rogers Cybersecure Catalyst, and funding pathways - find the right fit for your venture.', href: '/programs', cta: 'View programs overview' } },
-                  services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/portal/auth', cta: 'Become a Client' } },
+                  services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/apply', cta: 'Become a Client' } },
                   insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'See our impact', body: 'Northern innovation - by the numbers and the stories behind them.', href: '/impact', cta: 'Explore impact' } },
                 } as const;
 
@@ -500,7 +500,7 @@ export function Navigation() {
 
                 <div className="pt-4 border-t border-border mt-4 space-y-3">
                   <Button asChild variant="default" className="w-full btn-primary">
-                    <Link to="/portal/auth">
+                    <Link to="/apply">
                       Become a Client
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
