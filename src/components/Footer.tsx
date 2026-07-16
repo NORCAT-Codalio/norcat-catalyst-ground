@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Facebook, Instagram } from 'lucide-react';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import skylineAsset from '@/assets/sudbury-skyline.png.asset.json';
 import ontarioLogoAsset from '@/assets/logos/ontario-logo-white.png.asset.json';
 
 const footerLinks = {
