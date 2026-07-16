@@ -52,7 +52,7 @@ export function Footer() {
 
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 pt-16 pb-10 relative">
         {/* Top row: brand / mailing list */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: Brand */}
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/90 inline-block border-b border-white/30 pb-3">
