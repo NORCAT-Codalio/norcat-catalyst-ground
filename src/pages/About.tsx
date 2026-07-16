@@ -406,14 +406,11 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 items-end max-w-4xl mx-auto">
               {[
                 { title: 'Best Place to Work', org: 'Bell Business Awards', img: awardBestPlace },
                 { title: 'Best Innovation Ecosystem', org: 'Bell Business Awards', img: awardInnovationEco },
                 { title: 'NASA Group Achievement Award', org: 'NASA', img: awardNasa },
-                { title: 'Indigenous Partnership Award', org: 'De Beers', img: awardIndigenous },
-                { title: 'Executive of the Year Award', org: 'Industry Recognition', img: awardExecutive },
-                { title: 'Consistent Business Growth', org: 'Academy of Extended Reality (AIXR)', img: awardBusinessGrowth },
               ].map((a) => (
                 <div key={a.title} className="group flex flex-col items-center text-center transition hover:-translate-y-1">
                   <img
