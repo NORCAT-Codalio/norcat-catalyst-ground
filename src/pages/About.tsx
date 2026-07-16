@@ -138,6 +138,20 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
+            {/* Section intro */}
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>Our Journey</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                From Idea to <span style={{ color: TEAL }}>Impact.</span>
+              </Display>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
+              </p>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Over time, that support has expanded into a connected ecosystem of mentorship, capital, industry relationships, validation opportunities, and practical resources designed to help founders build, test, and scale.
+              </p>
+            </div>
+
             {/* Alternating image + text timeline */}
             <div className="relative">
               {/* Center rail (desktop) / left rail (mobile) */}
