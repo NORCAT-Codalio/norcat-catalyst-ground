@@ -325,7 +325,7 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
-              <Eyebrow>What We Stand For</Eyebrow>
+              <Eyebrow>What Drives Innovation</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Our <span style={{ color: TEAL }}>Values.</span>
               </Display>
