@@ -167,10 +167,11 @@ export default function About() {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="text-lg">ABOUT NORCAT INNOVATION.</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                <span style={{ color: TEAL }}>ABOUT NORCAT INNOVATION.</span><br />
+                <span style={{ color: TEAL }}>THE INNOVATION ENGINE</span><br />OF THE NORTH.
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Designed by-and-for the builders of innovative technology and scientific discovery, NORCAT Innovation provides you with the Sudbury Advantage: land, resources, talent, capital, and an unparalleled appeal to wanting to see others succeed.
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl whitespace-pre-line" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission: keep talented founders and builders in the North by giving them the resources, mentorship, and capital access they need to grow.{"\n\n"}
+                We believe innovation thrives when community comes first, safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
               </p>
             </div>
           </div>
