@@ -312,7 +312,7 @@ export default function Home2() {
         {/* ───── IMPACT STATS ───── */}
         <section className="py-6 md:py-8" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { number: '150+', label: 'Startups Supported' },
                 { number: '500+', label: 'Ecosystem Members' },
