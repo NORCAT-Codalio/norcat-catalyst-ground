@@ -251,7 +251,7 @@ const InvestorHub = () => {
                   Strategic Partner
                 </p>
                 <div className="rounded-xl p-5 mb-6 inline-block" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <img src={noaLogo.url} alt="Northern Ontario Angels" className="h-10 md:h-12 object-contain" />
+                  <img src={noaLogo} alt="Northern Ontario Angels" className="h-10 md:h-12 object-contain" />
                 </div>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"

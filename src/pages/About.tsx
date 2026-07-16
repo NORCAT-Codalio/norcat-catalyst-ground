@@ -55,7 +55,7 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 
 const partnerLogos = [
   { name: 'FedNor', logo: fednorLogo },
-  { name: 'Ontario', logo: ontarioLogoAsset.url },
+  { name: 'Ontario', logo: ontarioLogoAsset },
   { name: 'NORCAT', logo: norcatLogo },
   { name: 'City of Greater Sudbury', logo: sudburyLogo },
   { name: 'TEDC', logo: tedcLogo },
@@ -573,7 +573,7 @@ export default function About() {
               </div>
 
               <div>
-                <img src={ontarioLogoAsset.url} alt="Government of Ontario" className="h-16 object-contain mb-4" />
+                <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-16 object-contain mb-4" />
                 <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
                   Funded by the <strong style={{ color: NAVY }}>Ministry of Economic Development, Job Creation and Trade</strong>,
                   enabling free and subsidized services for Northern Ontario entrepreneurs.
