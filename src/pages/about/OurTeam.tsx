@@ -68,8 +68,8 @@ function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: ()
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="flex flex-col md:flex-row">
-                <div className="md:w-2/5 aspect-square md:aspect-auto">
+              <div className="flex flex-col md:flex-row md:min-h-[420px]">
+                <div className="md:w-2/5 aspect-square md:aspect-auto md:h-auto">
                   <img src={member.image} alt={member.name}
                        className="w-full h-full object-cover" />
                 </div>
