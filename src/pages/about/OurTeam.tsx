@@ -140,9 +140,9 @@ export default function OurTeam() {
             <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-8 mb-12 md:mb-16">
               <div className="flex-1 flex flex-col justify-center text-left">
                 <Eyebrow>THE INNOVATION TEAM</Eyebrow>
-                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  MEET THE INNOVATION TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
+                  MEET THE INNOVATION TEAM
                 </h2>
               </div>
               <p className="flex-1 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-relaxed lg:leading-relaxed"
