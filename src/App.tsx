@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Home2 from "./pages/Home2";
 import Home3 from "./pages/Home3";
 import About from "./pages/About";
+import OurTeam from "./pages/about/OurTeam";
 import MiningInnovation from "./pages/MiningInnovation";
 import Ecosystem from "./pages/Ecosystem";
 import Impact from "./pages/Impact";
@@ -85,6 +86,7 @@ const App = () => (
             <Route path="/home-2" element={<Home2 />} />
             <Route path="/home-3" element={<Home3 />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/our-team" element={<OurTeam />} />
             <Route path="/mining-innovation" element={<MiningInnovation />} />
             <Route path="/ecosystem" element={<Ecosystem />} />
             <Route path="/impact" element={<Impact />} />
