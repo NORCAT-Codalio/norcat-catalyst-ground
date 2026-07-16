@@ -254,6 +254,38 @@ export default function OurTeam() {
             </div>
           </div>
         </section>
+
+        {/* ───── GET IN TOUCH ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: PAPER }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.12), transparent 40%), radial-gradient(circle at 10% 90%, rgba(0,61,165,0.10), transparent 45%)`,
+          }} />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+              <div className="max-w-2xl">
+                <Eyebrow>START THE CONVERSATION</Eyebrow>
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                  GET IN <span style={{ color: TEAL }}>TOUCH.</span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
+                  Have a question, partnership idea, or just want to learn more about how we can help? Reach out — we'd love to hear from you.
+                </p>
+              </div>
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-transform hover:scale-[1.02] whitespace-nowrap"
+                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+              >
+                <Mail className="w-5 h-5" />
+                Contact Us
+                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
 
       <TeamModal member={modalMember} onClose={() => setModalMember(null)} />
