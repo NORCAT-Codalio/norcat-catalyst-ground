@@ -153,14 +153,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-white/85 hover:text-teal-300 transition-colors"
+                        className="text-sm text-white/85 hover:text-white transition-colors"
                       >
                         {link.name}
                       </a>
                     ) : (
                       <Link
                         to={link.href}
-                        className="text-sm text-white/85 hover:text-teal-300 transition-colors"
+                        className="text-sm text-white/85 hover:text-white transition-colors"
                       >
                         {link.name}
                       </Link>
