@@ -211,7 +211,7 @@ export default function OurTeam() {
                 </p>
               </div>
               <Link
-                to="/programs/mentorship-services"
+                to="/programs/mentorship-services#meet-our-mentors"
                 className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-transform hover:scale-[1.02] whitespace-nowrap"
                 style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
               >
