@@ -284,11 +284,11 @@ export default function About() {
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                  Our Team
+                  THE INNOVATION TEAM
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  Meet the<br /><span style={{ color: TEAL }}>Innovation Team.</span>
+                  MEET THE&nbsp;TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
                 </h2>
               </div>
               <p className="text-sm md:text-base md:max-w-sm leading-relaxed" style={{ color: '#5b6478' }}>
