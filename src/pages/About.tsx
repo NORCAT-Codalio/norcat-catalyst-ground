@@ -267,13 +267,13 @@ export default function About() {
                 <div className="space-y-14 md:space-y-16">
                   {[
                     {
-                      chapter: 'The Foundation: Establishing Regional Innovation',
+                      chapter: "GREATER SUDBURY'S REGIONAL INNOVATION CENTRE\u00a0",
                       year: '2014',
                       summary: 'The official launch of Sudbury\'s Regional Innovation Centre laid the groundwork for tech startup mentorship. This era marked a foundational shift for the ecosystem, establishing its cornerstone pitch platform and hosting the inaugural PITCH competition to bridge local founders with early investment networks.',
                       items: []
                     },
                     {
-                      chapter: 'Capital, Infrastructure & Direct Micro-Grants',
+                      chapter: '\n',
                       year: '2016 – 2018',
                       summary: 'NORCAT entered a period of rapid infrastructure and funding expansion to support physical and digital venture development.',
                       items: [
@@ -325,7 +325,7 @@ export default function About() {
                         <ul className="space-y-4">
                           {chapter.items.map((item) => (
                             <li key={item.year} className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
-                              <span className="font-bold text-white" style={{ fontFamily: FONT }}>{item.year}:</span>{' '}
+                              <span className="font-bold text-white" style={{ fontFamily: FONT }}>{item.year}{item.year === '2017' ? '\u00a0:' : ':'}</span>{' '}
                               {item.desc}
                             </li>
                           ))}
