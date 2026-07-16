@@ -446,6 +446,20 @@ export default function About() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-12 md:mt-14 flex justify-center">
+              <Link
+                to="/insights/success-stories"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-[1.02]"
+                style={{ background: 'white', color: NAVY, fontFamily: FONT }}
+              >
+                Success Stories
+                <span className="inline-flex items-center justify-center size-8 rounded-full transition-colors"
+                      style={{ background: TEAL, color: 'white' }}>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
 
