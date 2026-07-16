@@ -335,23 +335,23 @@ export default function About() {
               {[
                 {
                   icon: Target,
-                  title: 'Quality, Results and Impact',
-                  desc: 'Our impact is measured by the success of our customers, partners, and community stakeholders. Achieving excellence demands we define a path of continuous improvement. We listen, learn, build, measure, and repeat.',
+                  title: 'Real-World Impact',
+                  desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy.",
                 },
                 {
-                  icon: Zap,
-                  title: 'Agile and Adaptive',
-                  desc: 'We celebrate creativity, innovation, and challenging constraints. We are bold. We move fast. We are open. We recognize that day one will never look like day two - and we thrive in that environment. Many people dislike change, but remember - change is the only thing that has brought progress.',
+                  icon: Atom,
+                  title: 'Bold Experimentation',
+                  desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.',
                 },
                 {
-                  icon: ShieldCheck,
-                  title: "Do What's Right",
-                  desc: 'Trust is the belief and confidence in integrity, reliability and fairness. Without integrity, nothing else matters. We always pause, reflect, and ask: what is the right thing to do? Then we do it and we do it proudly.',
+                  icon: Rocket,
+                  title: 'Idea to Market',
+                  desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.',
                 },
                 {
-                  icon: Users2,
-                  title: 'Teamwork and Collaboration',
-                  desc: 'We must collaborate to compete and winning must always be celebrated as a team. We can do hard things and we must do them together.',
+                  icon: Share2,
+                  title: 'Connected Ecosystem',
+                  desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.',
                 },
               ].map((v) => (
                 <div key={v.title}
