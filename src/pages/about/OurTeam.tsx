@@ -69,11 +69,11 @@ function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: ()
               </button>
 
               <div className="flex flex-col md:flex-row md:min-h-[520px]">
-                <div className="md:w-2/5 aspect-square md:aspect-auto md:h-auto">
+                <div className="md:w-[45%] aspect-square md:aspect-auto md:h-auto">
                   <img src={member.image} alt={member.name}
-                       className="w-full h-full object-cover" />
+                       className="w-full h-full object-cover object-top" />
                 </div>
-                <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                <div className="md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
                   <h3 className="text-2xl md:text-3xl font-black uppercase mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     {member.name}
                   </h3>
@@ -84,10 +84,10 @@ function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: ()
                     {member.bio}
                   </p>
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] self-start"
-                     style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:scale-[1.02] self-start text-white"
+                     style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)', fontFamily: FONT }}>
                     <Linkedin className="w-4 h-4" /> Connect on LinkedIn
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(255,255,255,0.18)', color: 'white' }}>
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </a>
