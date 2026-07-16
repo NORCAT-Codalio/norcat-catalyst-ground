@@ -11,10 +11,10 @@ import featuredIap from '@/assets/featured-iap-photo.png';
 import featuredRaii from '@/assets/featured-raii-photo.png';
 import featuredScf from '@/assets/featured-scf-photo.png';
 import featuredCore5 from '@/assets/featured-core5-photo.png';
-import ociLogo from '@/assets/logos/oci-logo.png.asset.json';
-import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
-import ovinLogo from '@/assets/logos/ovin-logo.png.asset.json';
-import noaLogo from '@/assets/logos/northern-ontario-angels.png.asset.json';
+import ociLogo from '@/assets/logos/oci-logo.png';
+import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
+import ovinLogo from '@/assets/logos/ovin-logo.png';
+import noaLogo from '@/assets/logos/northern-ontario-angels.png';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
