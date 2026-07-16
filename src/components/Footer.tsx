@@ -132,7 +132,7 @@ export function Footer() {
         {/* Link columns */}
         <nav
           aria-label="Footer navigation"
-          className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10"
+          className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10"
         >
           {[
             { title: 'Funding', links: footerLinks.funding },
@@ -145,7 +145,7 @@ export function Footer() {
               <h4 className="font-sans font-semibold text-white text-sm tracking-[0.15em] uppercase mb-5">
                 {col.title}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {col.links.map((link: any) => (
                   <li key={link.name}>
                     {link.external ? (
