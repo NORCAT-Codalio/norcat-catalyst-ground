@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Mail, X, Users } from 'lucide-react';
+import { ArrowUpRight, Mail, X } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
@@ -216,15 +216,10 @@ export default function OurTeam() {
                 </p>
                 <Link
                   to="/programs/mentorship-services#meet-our-mentors"
-                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
+                  className="group inline-flex items-center px-8 py-4 rounded-full text-base font-bold transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
                   style={{ background: 'white', color: NAVY, fontFamily: FONT }}
                 >
-                  <Users className="w-5 h-5" style={{ color: TEAL }} />
                   Meet Our Mentors
-                  <span className="inline-flex items-center justify-center size-8 rounded-full transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
-                        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </span>
                 </Link>
               </div>
 
