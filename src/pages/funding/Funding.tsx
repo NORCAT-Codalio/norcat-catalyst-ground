@@ -227,7 +227,7 @@ const Funding = () => {
               <div className="grid lg:grid-cols-2">
                 <div className="relative h-64 sm:h-80 lg:h-auto min-h-[320px] lg:min-h-[480px]">
                   <img
-                    src={activeProgram.image.url}
+                    src={activeProgram.image}
                     alt={activeProgram.name}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
