@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { motion } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -24,9 +24,6 @@ import { team } from '@/data/team';
 import awardBestPlace from '@/assets/award-best-place-to-work.png';
 import awardInnovationEco from '@/assets/award-best-innovation-ecosystem.png';
 import awardNasa from '@/assets/award-nasa-achievement.png';
-import awardIndigenous from '@/assets/award-indigenous-partnership.png';
-import awardExecutive from '@/assets/award-executive-of-the-year.png';
-import awardBusinessGrowth from '@/assets/award-business-growth.png';
 
 // Logos
 import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
@@ -34,9 +31,9 @@ import innovateonLogo from '@/assets/logos/innovateon.png';
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
-import norcatLogo from '@/assets/logos/norcat.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
-import tedcLogo from '@/assets/logos/tedc.png';
+import ociLogo from '@/assets/logos/oci.png';
+import nohfcLogo from '@/assets/logos/nohfc.png';
 
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
@@ -50,9 +47,9 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 const partnerLogos = [
   { name: 'FedNor', logo: fednorLogo },
   { name: 'Ontario', logo: ontarioLogoAsset },
-  { name: 'NORCAT', logo: norcatLogo },
+  { name: 'Ontario Centres of Innovation', logo: ociLogo },
+  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
   { name: 'City of Greater Sudbury', logo: sudburyLogo },
-  { name: 'TEDC', logo: tedcLogo },
 ];
 
 
@@ -99,11 +96,10 @@ export default function About() {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                <span style={{ color: TEAL }}>THE INNOVATION ENGINE</span><br />OF THE NORTH.
+                OUR <span style={{ color: TEAL }}>STORY.</span>
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl whitespace-pre-line" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission: keep talented founders and builders in the North by giving them the resources, mentorship, and capital access they need to grow.{"\n\n"}
-                We believe innovation thrives when community comes first, safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Since 2014, we have been passionate about driving the growth of Northern Ontario's innovation ecosystem in Greater Sudbury and beyond.
               </p>
             </div>
           </div>
@@ -130,6 +126,38 @@ export default function About() {
         </section>
 
 
+        {/* ───── ROOTED IN NORTHERN ONTARIO ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Rooted in Northern Ontario
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                    style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                  Where Bold Ideas <span style={{ color: TEAL }}>Grow.</span>
+                </h2>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>NORCAT Innovation was founded to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
+                  <p>As a non-profit Regional Innovation Centre, we help entrepreneurs turn ideas into market-ready ventures through mentorship, capital connections, industry relationships, and access to the resources needed to build, test, and scale.</p>
+                  <p>By bringing the right people, partners, and opportunities together, we help Northern Ontario innovators grow here and compete anywhere.</p>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+                  <img src={norcatBuilding.url} alt="NORCAT Innovation" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
         {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
         <section className="py-10 md:py-16 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
@@ -138,6 +166,20 @@ export default function About() {
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+
+            {/* Section intro */}
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>Our Journey</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                From Idea to <span style={{ color: TEAL }}>Impact.</span>
+              </Display>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
+              </p>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Over time, that support has expanded into a connected ecosystem of mentorship, capital, industry relationships, validation opportunities, and practical resources designed to help founders build, test, and scale.
+              </p>
+            </div>
 
             {/* Alternating image + text timeline */}
             <div className="relative">
@@ -280,7 +322,7 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
-              <Eyebrow>What We Stand For</Eyebrow>
+              <Eyebrow>What Drives Innovation</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Our <span style={{ color: TEAL }}>Values.</span>
               </Display>
@@ -290,23 +332,23 @@ export default function About() {
               {[
                 {
                   icon: Target,
-                  title: 'Quality, Results and Impact',
-                  desc: 'Our impact is measured by the success of our customers, partners, and community stakeholders. Achieving excellence demands we define a path of continuous improvement. We listen, learn, build, measure, and repeat.',
+                  title: 'Real-World Impact',
+                  desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy.",
                 },
                 {
-                  icon: Zap,
-                  title: 'Agile and Adaptive',
-                  desc: 'We celebrate creativity, innovation, and challenging constraints. We are bold. We move fast. We are open. We recognize that day one will never look like day two - and we thrive in that environment. Many people dislike change, but remember - change is the only thing that has brought progress.',
+                  icon: Atom,
+                  title: 'Bold Experimentation',
+                  desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.',
                 },
                 {
-                  icon: ShieldCheck,
-                  title: "Do What's Right",
-                  desc: 'Trust is the belief and confidence in integrity, reliability and fairness. Without integrity, nothing else matters. We always pause, reflect, and ask: what is the right thing to do? Then we do it and we do it proudly.',
+                  icon: Rocket,
+                  title: 'Idea to Market',
+                  desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.',
                 },
                 {
-                  icon: Users2,
-                  title: 'Teamwork and Collaboration',
-                  desc: 'We must collaborate to compete and winning must always be celebrated as a team. We can do hard things and we must do them together.',
+                  icon: Share2,
+                  title: 'Connected Ecosystem',
+                  desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.',
                 },
               ].map((v) => (
                 <div key={v.title}
@@ -361,14 +403,11 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 items-end max-w-4xl mx-auto">
               {[
                 { title: 'Best Place to Work', org: 'Bell Business Awards', img: awardBestPlace },
                 { title: 'Best Innovation Ecosystem', org: 'Bell Business Awards', img: awardInnovationEco },
                 { title: 'NASA Group Achievement Award', org: 'NASA', img: awardNasa },
-                { title: 'Indigenous Partnership Award', org: 'De Beers', img: awardIndigenous },
-                { title: 'Executive of the Year Award', org: 'Industry Recognition', img: awardExecutive },
-                { title: 'Consistent Business Growth', org: 'Academy of Extended Reality (AIXR)', img: awardBusinessGrowth },
               ].map((a) => (
                 <div key={a.title} className="group flex flex-col items-center text-center transition hover:-translate-y-1">
                   <img
