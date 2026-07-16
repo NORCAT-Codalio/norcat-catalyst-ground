@@ -18,7 +18,7 @@ import {
   Sparkles,
   Crown,
 } from 'lucide-react';
-import noaLogo from '@/assets/logos/northern-ontario-angels.png.asset.json';
+import noaLogo from '@/assets/logos/northern-ontario-angels.png';
 import vnpBackground from '@/assets/vnp-background.png';
 import vnpLogo from '@/assets/logos/venture-north-pitch.png';
 import signatureLines from '@/assets/signature-lines.png';

@@ -35,7 +35,7 @@ import bartImage from '@/assets/team/bart.png';
 import jieImage from '@/assets/team/jie-new.png';
 
 // Logos
-import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
+import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
 import innovateonLogo from '@/assets/logos/innovateon.png';
 
 // Partner logos
