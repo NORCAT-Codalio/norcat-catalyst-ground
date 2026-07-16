@@ -238,7 +238,7 @@ export default function OurTeam() {
                   <div key={s.label}
                        className="rounded-2xl p-6 md:p-8 transition-transform duration-300 hover:scale-[1.02]"
                        style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(12px)' }}>
-                    <p className="font-black text-3xl md:text-4xl mb-1" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                    <p className="font-black text-3xl md:text-4xl mb-1" style={{ fontFamily: FONT, color: 'white' }}>{s.number}</p>
                     <p className="text-xs font-bold uppercase tracking-[0.16em] mb-3" style={{ color: 'white' }}>{s.label}</p>
                     <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.80)' }}>{s.desc}</p>
                   </div>
