@@ -10,6 +10,14 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import storyLake from '@/assets/story/story-lake.jpg.asset.json';
 import storyMine from '@/assets/story/story-mine.jpg.asset.json';
 import storyHorse from '@/assets/story/story-horse.jpg.asset.json';
+import featuredIap from '@/assets/featured-iap.png.asset.json';
+import featuredScf from '@/assets/featured-scf.png.asset.json';
+import featuredRaii from '@/assets/featured-raii.png.asset.json';
+import featuredCit from '@/assets/featured-cit.png.asset.json';
+import featuredCore5 from '@/assets/featured-core5.png.asset.json';
+import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
+import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
+import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
 // Award badges
