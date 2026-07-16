@@ -102,7 +102,6 @@ function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: ()
 }
 
 export default function OurTeam() {
-  const [expandedMember, setExpandedMember] = useState<string | null>(null);
   const [modalMember, setModalMember] = useState<TeamMember | null>(null);
 
   return (
