@@ -108,7 +108,7 @@ export default function OurTeam() {
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[50vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
           <div
             className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
@@ -135,7 +135,7 @@ export default function OurTeam() {
 
 
         {/* ───── TEAM GRID ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 md:mb-16">
               <div className="flex-1 flex flex-col justify-start text-left">
@@ -192,7 +192,7 @@ export default function OurTeam() {
         </section>
 
         {/* ───── MENTOR NETWORK ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY, color: 'white' }}>
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: NAVY, color: 'white' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`,
             opacity: 0.35,
@@ -252,7 +252,7 @@ export default function OurTeam() {
         </section>
 
         {/* ───── GET IN TOUCH ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: PAPER }}>
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: PAPER }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.12), transparent 40%), radial-gradient(circle at 10% 90%, rgba(0,61,165,0.10), transparent 45%)`,
           }} />
