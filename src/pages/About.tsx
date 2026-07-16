@@ -294,7 +294,7 @@ export default function About() {
               <p className="flex-1 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-relaxed lg:leading-relaxed"
                  style={{ color: '#5b6478' }}>
                 Whether it's your first time jotting a business idea down on the back of a napkin 
-                or you're scaling and ready to demonstrate your technology to global operators, 
+                or you're scaling and ready to demonstrate your technology to the world, 
                 we are here to help.&nbsp;
               </p>
             </div>
