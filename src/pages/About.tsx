@@ -210,10 +210,11 @@ export default function About() {
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   About <span style={{ color: TEAL }}>NORCAT Innovation.</span>
                 </h2>
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                <p className="text-base sm:text-lg leading-relaxed whitespace-pre-line" style={{ color: '#475068' }}>
                   NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission:
                   keep talented founders and builders in the North by giving them the resources, mentorship,
-                  and capital access they need to grow. We believe innovation thrives when community comes first,
+                  and capital access they need to grow.{"\n\n\n"}
+                  We believe innovation thrives when community comes first,
                   safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
                 </p>
               </div>
