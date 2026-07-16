@@ -24,9 +24,6 @@ import { team } from '@/data/team';
 import awardBestPlace from '@/assets/award-best-place-to-work.png';
 import awardInnovationEco from '@/assets/award-best-innovation-ecosystem.png';
 import awardNasa from '@/assets/award-nasa-achievement.png';
-import awardIndigenous from '@/assets/award-indigenous-partnership.png';
-import awardExecutive from '@/assets/award-executive-of-the-year.png';
-import awardBusinessGrowth from '@/assets/award-business-growth.png';
 
 // Logos
 import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
