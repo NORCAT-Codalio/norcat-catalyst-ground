@@ -18,7 +18,7 @@ import {
   Sparkles,
   Crown,
 } from 'lucide-react';
-import noaLogo from '@/assets/logos/northern-ontario-angels.png.asset.json';
+import noaLogo from '@/assets/logos/northern-ontario-angels.png';
 import vnpBackground from '@/assets/vnp-background.png';
 import vnpLogo from '@/assets/logos/venture-north-pitch.png';
 import signatureLines from '@/assets/signature-lines.png';
@@ -251,7 +251,7 @@ const InvestorHub = () => {
                   Strategic Partner
                 </p>
                 <div className="rounded-xl p-5 mb-6 inline-block" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <img src={noaLogo.url} alt="Northern Ontario Angels" className="h-10 md:h-12 object-contain" />
+                  <img src={noaLogo} alt="Northern Ontario Angels" className="h-10 md:h-12 object-contain" />
                 </div>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
