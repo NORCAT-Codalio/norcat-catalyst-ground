@@ -34,9 +34,6 @@ const footerLinks = {
 export function Footer() {
   return (
     <>
-      <div style={{ background: '#F2F3F6' }}>
-        <img src={skylineAsset.url} alt="Sudbury skyline" className="w-full h-auto block" />
-      </div>
       <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
         {/* Main Footer */}
         <div className="container mx-auto px-4 lg:px-8 pt-16 pb-12">
