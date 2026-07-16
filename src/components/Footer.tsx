@@ -172,34 +172,29 @@ export function Footer() {
           ))}
         </nav>
 
-        {/* Bottom row: legal (left) + NORCAT Innovation lockup (right) */}
-        <div className="mt-16 flex flex-col-reverse lg:flex-row lg:items-end lg:justify-between gap-8 relative">
-          <div className="flex flex-col gap-3 text-xs text-white/70">
-            <div className="flex items-center gap-6">
-              <Link to="/privacy" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <a
-                href="https://www.norcat.org/aoda-policy.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                AODA Policy
-              </a>
-            </div>
-          </div>
+        {/* NORCAT Innovation lockup (right) */}
+        <div className="mt-20 flex justify-center lg:justify-end relative">
+          <img
+            src={norcatInnovationLogo}
+            alt="NORCAT Innovation"
+            className="h-7 md:h-8 lg:h-9 w-auto object-contain"
+          />
+        </div>
 
-          <div className="flex flex-col items-start lg:items-end gap-3">
-            <img
-              src={norcatInnovationLogo}
-              alt="NORCAT Innovation"
-              className="h-10 md:h-12 lg:h-14 w-auto object-contain"
-            />
-            <span className="text-xs text-white/70">
-              © {new Date().getFullYear()} NORCAT Innovation
-            </span>
-          </div>
+        {/* Legal row: all right-aligned per design */}
+        <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-end gap-x-8 gap-y-2 text-xs text-white/75 relative">
+          <span>© {new Date().getFullYear()} NORCAT Innovation</span>
+          <Link to="/privacy" className="hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
+          <a
+            href="https://www.norcat.org/aoda-policy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            AODA Policy
+          </a>
         </div>
       </div>
     </footer>
