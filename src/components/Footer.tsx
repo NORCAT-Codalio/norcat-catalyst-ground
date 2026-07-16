@@ -59,7 +59,7 @@ export function Footer() {
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/90">
               Explore More of NORCAT Innovation
             </p>
-            <div className="mt-4 h-px w-full max-w-md bg-white/25" />
+            
             <h2 className="mt-6 font-display text-4xl md:text-5xl leading-[1.05] text-white">
               Sudbury's Regional<br />Innovation Centre
             </h2>
