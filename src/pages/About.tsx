@@ -213,7 +213,7 @@ export default function About() {
               <div className="absolute top-0 bottom-0 w-px hidden md:block left-1/2 -translate-x-1/2" style={{ background: 'rgba(0,179,152,0.35)' }} />
               <div className="absolute top-0 bottom-0 w-px md:hidden left-4" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              <div className="space-y-10 md:space-y-16">
+              <div className="space-y-8 md:space-y-12">
                 {[
                   { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition to connect local founders with early investment networks.", image: storyLake.url },
                   { year: '2016', title: 'Innovation Acceleration Program (IAP) Launch', desc: 'NORCAT secures federal funding from FedNor to send $10,000 micro-grants straight to tech ventures for product prototyping and testing.', image: featuredIap.url },
@@ -230,13 +230,13 @@ export default function About() {
                   return (
                     <div key={event.year + idx} className="relative">
                       {/* Node dot */}
-                      <div className="absolute top-5 md:top-6 z-10 size-4 rounded-full ring-4 md:left-1/2 md:-translate-x-1/2 left-4 -translate-x-1/2"
+                      <div className="absolute top-0 md:top-1 z-10 size-4 rounded-full ring-4 md:left-1/2 md:-translate-x-1/2 left-4 -translate-x-1/2"
                            style={{ background: TEAL, boxShadow: `0 0 0 6px rgba(0,179,152,0.15)`, ['--tw-ring-color' as string]: NAVY } as React.CSSProperties} />
 
-                      <div className={`grid md:grid-cols-2 gap-5 md:gap-10 items-center ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
+                      <div className={`grid md:grid-cols-2 gap-4 md:gap-8 items-start ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
                         {/* Image side */}
-                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-10 md:text-right' : 'md:pl-10'}`}>
-                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[16/10] max-h-[260px] ml-auto mr-auto">
+                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
+                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[16/10] max-h-[220px] ml-auto mr-auto">
                             <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                           </div>
                         </div>
