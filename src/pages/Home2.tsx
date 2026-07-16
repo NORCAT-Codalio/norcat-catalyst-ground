@@ -25,7 +25,7 @@ import featuredIapPhoto from '@/assets/featured-iap-photo.png';
 import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
-import ociLogo from '@/assets/logos/oci-logo.png';
+import ociLogo from '@/assets/logos/oci-logo.png.asset.json';
 import ontarioLogoInlineAsset from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
 import ovinLogo from '@/assets/logos/ovin-logo.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
@@ -153,7 +153,7 @@ export default function Home2() {
       ],
       href: '/mining/critical-industrial-tech',
       partners: [
-        { logo: ociLogo, name: 'Ontario Centre of Innovation' },
+        { logo: ociLogo.url, name: 'Ontario Centre of Innovation' },
         { logo: ontarioLogoInlineAsset.url, name: 'Government of Ontario' },
       ],
     },

@@ -1,10 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { ArrowRight, Sparkles, Brain, Banknote, Cpu, Layers, DollarSign, TrendingUp, Rocket, Compass, CheckCircle } from 'lucide-react';
+import { ArrowRight, Cpu, Layers, DollarSign, TrendingUp, Rocket, CheckCircle, Compass } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
 import core5Placeholder from '@/assets/core5-ev-charging.png.asset.json';
+import featuredCit from '@/assets/featured-cit.png.asset.json';
+import featuredIap from '@/assets/featured-iap.png.asset.json';
+import featuredRaii from '@/assets/featured-raii.png.asset.json';
+import featuredScf from '@/assets/featured-scf.png.asset.json';
+import featuredCore5 from '@/assets/featured-core5.png.asset.json';
+import ociLogo from '@/assets/logos/oci-logo.png.asset.json';
+import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
+import ovinLogo from '@/assets/logos/ovin-logo.png.asset.json';
+import noaLogo from '@/assets/logos/northern-ontario-angels.png.asset.json';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
@@ -27,34 +37,107 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
-const fundingPrograms = [
+type ProgramTab = {
+  key: string;
+  shortName: string;
+  name: string;
+  eyebrow: string;
+  description: string;
+  benefits: string[];
+  href: string;
+  image: { url: string };
+  partners: { url: string; alt: string; height?: number }[];
+};
+
+const programTabs: ProgramTab[] = [
   {
-    icon: Sparkles,
+    key: 'CIT',
+    shortName: 'CIT',
+    name: 'Critical Industrial Technologies (CIT)',
+    eyebrow: 'Featured Program',
+    description: 'Supporting SMEs in developing and adopting advanced mining and industrial technologies through access to the NORCAT Underground Centre.',
+    benefits: [
+      'Non-dilutive project funding',
+      'Access to world-class testing and validation facilities',
+      'Connections to industry and innovation partners',
+    ],
+    href: '/mining/critical-industrial-tech',
+    image: featuredCit,
+    partners: [
+      { url: ociLogo.url, alt: 'Ontario Centre of Innovation', height: 36 },
+      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+    ],
+  },
+  {
+    key: 'IAP',
+    shortName: 'IAP',
     name: 'Innovation Acceleration Program',
-    tag: 'Non-dilutive',
+    eyebrow: 'Non-dilutive Funding',
     description: 'Non-dilutive funding to accelerate market entry for high-growth ventures across Northern Ontario.',
+    benefits: [
+      'Up to $100K in non-dilutive capital',
+      'Dedicated venture growth coaching',
+      'Market validation and pilot matchmaking',
+    ],
     href: '/funding/innovation-acceleration-program',
+    image: featuredIap,
+    partners: [
+      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+      { url: noaLogo.url, alt: 'Northern Ontario Angels', height: 32 },
+    ],
   },
   {
-    icon: Brain,
+    key: 'RAII',
+    shortName: 'RAII',
     name: 'Regional Artificial Intelligence Program',
-    tag: 'AI Ventures',
+    eyebrow: 'AI Ventures',
     description: 'Capital, compute, and support for AI-driven ventures scaling out of Northern Ontario.',
+    benefits: [
+      'AI compute credits and infrastructure access',
+      'Technical and commercialization mentorship',
+      'Connections to enterprise AI buyers',
+    ],
     href: '/funding/regional-ai-program',
+    image: featuredRaii,
+    partners: [
+      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+    ],
   },
   {
-    icon: Banknote,
+    key: 'SCF',
+    shortName: 'SCF',
     name: 'Sudbury Catalyst Fund',
-    tag: 'Seed Capital',
+    eyebrow: 'Seed Capital',
     description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors.',
+    benefits: [
+      'Co-investment up to $250K per deal',
+      'Angel syndication and due diligence support',
+      'Direct pathway to follow-on capital',
+    ],
     href: '/funding/sudbury-catalyst-fund',
+    image: featuredScf,
+    partners: [
+      { url: noaLogo.url, alt: 'Northern Ontario Angels', height: 32 },
+      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+    ],
   },
   {
-    icon: Compass,
-    name: 'Capital Navigation',
-    tag: 'Advisory',
-    description: 'Strategic guidance to map, access, and stack the right capital across grants, equity, and debt.',
-    href: '/programs/capital-navigation',
+    key: 'Core5',
+    shortName: 'Core5',
+    name: 'Core5',
+    eyebrow: 'BEV / EV Ventures',
+    description: 'The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.',
+    benefits: [
+      'Startup & SME funding support',
+      'Access to R&D and testing facilities',
+      'Buyer / builder matchmaking',
+    ],
+    href: '/mining/core5',
+    image: featuredCore5,
+    partners: [
+      { url: ovinLogo.url, alt: 'OVIN', height: 32 },
+      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+    ],
   },
 ];
 
@@ -66,6 +149,9 @@ const impactStats = [
 ];
 
 const Funding = () => {
+  const [activeTab, setActiveTab] = useState('CIT');
+  const activeProgram = programTabs.find((p) => p.key === activeTab) || programTabs[0];
+
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
@@ -114,26 +200,85 @@ const Funding = () => {
                 Choose your <span style={{ color: TEAL }}>capital path.</span>
               </h2>
               <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Four flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
+                Five flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {fundingPrograms.map((p) => (
-                <Link key={p.name} to={p.href}
-                      className="group relative rounded-2xl p-7 pt-14 bg-white border border-black/5 hover:border-transparent transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col">
-                  <span className="absolute top-4 left-4 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full" style={{ background: `${TEAL}15`, color: TEAL }}>{p.tag}</span>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                       style={{ background: `${TEAL}15`, color: TEAL }}>
-                    <p.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 leading-tight">{p.name}</h3>
-                  <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: 'rgba(0,26,77,0.72)' }}>{p.description}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: NAVY }}>
-                    Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Link>
+            {/* Program Tabs */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              {programTabs.map((p) => (
+                <button
+                  key={p.key}
+                  onClick={() => setActiveTab(p.key)}
+                  className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
+                    activeTab === p.key
+                      ? 'text-white shadow-md'
+                      : 'bg-white text-[#001A4D] border border-black/10 hover:border-teal-400 hover:text-teal-600'
+                  }`}
+                  style={activeTab === p.key ? { background: TEAL } : undefined}
+                >
+                  {p.shortName}
+                </button>
               ))}
+            </div>
+
+            {/* Featured Program Card */}
+            <div className="rounded-3xl overflow-hidden bg-white border border-black/5 shadow-lg">
+              <div className="grid lg:grid-cols-2">
+                <div className="relative h-64 sm:h-80 lg:h-auto min-h-[320px] lg:min-h-[480px]">
+                  <img
+                    src={activeProgram.image.url}
+                    alt={activeProgram.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>
+                    {activeProgram.eyebrow}
+                  </p>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase leading-[0.95] mb-4" style={{ color: NAVY, letterSpacing: '-0.02em' }}>
+                    {activeProgram.name}
+                  </h3>
+                  <div className="w-16 h-1.5 mb-6" style={{ background: TEAL }} />
+                  <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.72)' }}>
+                    {activeProgram.description}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {activeProgram.benefits.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-sm md:text-base" style={{ color: 'rgba(0,26,77,0.85)' }}>
+                        <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: `${TEAL}15`, color: TEAL }}>
+                          <CheckCircle className="w-3.5 h-3.5" />
+                        </span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={activeProgram.href}
+                    className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 rounded-full font-semibold text-sm text-white transition-all hover:opacity-90"
+                    style={{ background: TEAL }}
+                  >
+                    View This Program <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  <div className="mt-8 pt-6 border-t border-black/10">
+                    <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
+                      Delivered in partnership with
+                    </p>
+                    <div className="flex flex-wrap items-center gap-6">
+                      {activeProgram.partners.map((partner) => (
+                        <img
+                          key={partner.alt}
+                          src={partner.url}
+                          alt={partner.alt}
+                          className="object-contain"
+                          style={{ height: partner.height || 32, maxWidth: 140 }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
