@@ -241,16 +241,16 @@ export default function About() {
                           </div>
                         </div>
                         {/* Text side */}
-                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pl-12' : 'md:pr-12 md:text-right'}`}>
-                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
+                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pl-10' : 'md:pr-10 md:text-right'}`}>
+                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2"
                              style={{ color: TEAL, fontFamily: FONT }}>
                             {event.year}
                           </p>
-                          <h3 className="font-black uppercase text-xl md:text-2xl lg:text-3xl mb-4 text-white"
+                          <h3 className="font-black uppercase text-xl md:text-2xl lg:text-[1.75rem] mb-2 text-white"
                               style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                             {event.title}
                           </h3>
-                          <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: FG_MUTED }}>
+                          <p className="text-sm md:text-base leading-snug mb-4" style={{ color: FG_MUTED }}>
                             {event.desc}
                           </p>
                           {event.cta && (
