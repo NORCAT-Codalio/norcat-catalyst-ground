@@ -71,8 +71,8 @@ export function Footer() {
                 alt="Government of Ontario"
                 className="h-12 w-auto object-contain shrink-0"
               />
-              <p className="text-xs md:text-sm text-white/85 leading-relaxed md:max-w-md">
-                Funded by the Ministry of Economic Development, Job Creation and Trade,
+              <p className="text-xs md:text-sm text-white/85 leading-relaxed">
+                <span className="md:whitespace-nowrap">Funded by the Ministry of Economic Development, Job Creation and Trade,</span>
                 <br className="hidden md:inline" />
                 enabling free and subsidized services for Northern Ontario entrepreneurs.
               </p>
