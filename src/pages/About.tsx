@@ -113,7 +113,7 @@ function TimelineAccordionItem({ event, defaultOpen = false }: { event: any; def
                       style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
                     >
                       {event.cta.label}
-                      <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY,2, color: 'white' }}>
+                      <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                         <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                       </span>
                     </Link>
