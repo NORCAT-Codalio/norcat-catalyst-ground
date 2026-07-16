@@ -137,15 +137,15 @@ export default function OurTeam() {
         {/* ───── TEAM GRID ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-8 mb-12 md:mb-16">
-              <div className="flex-1 flex flex-col justify-center text-left">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 md:mb-16">
+              <div className="flex-1 flex flex-col justify-start text-left">
                 <Eyebrow>THE INNOVATION TEAM</Eyebrow>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   EXPERTISE TO HELP<br />YOU MOVE FORWARD
                 </h2>
               </div>
-              <p className="flex-1 flex items-center text-base md:text-lg leading-relaxed"
+              <p className="flex-1 flex items-start text-base md:text-lg leading-relaxed md:pt-10"
                  style={{ color: '#5b6478' }}>
                 From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
               </p>
