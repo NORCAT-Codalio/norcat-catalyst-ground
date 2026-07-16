@@ -59,7 +59,7 @@ export function Footer() {
               Explore More of NORCAT Innovation
             </p>
 
-            <h2 className="mt-6 font-sans font-semibold text-4xl md:text-5xl leading-[1.2] text-white">
+            <h2 className="mt-6 font-sans font-semibold text-4xl md:text-5xl leading-[1.45] text-white">
               Sudbury's Regional<br />Innovation Centre
             </h2>
 
