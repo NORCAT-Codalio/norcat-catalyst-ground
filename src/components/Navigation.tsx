@@ -192,7 +192,7 @@ export function Navigation() {
       {/* Top info bar - visible only at top */}
       <div
         className={cn(
-          'fixed top-0 left-0 right-0 z-[51] transition-all duration-300 bg-[#001a4d] border-b border-white/10 overflow-hidden',
+          'fixed top-0 left-0 right-0 z-[51] transition-all duration-300 bg-[#003da5] border-b border-white/10 overflow-hidden',
           isScrolled ? 'max-h-0 opacity-0' : 'max-h-8 opacity-100'
         )}
       >
