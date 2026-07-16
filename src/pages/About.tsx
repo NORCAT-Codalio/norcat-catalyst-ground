@@ -264,30 +264,73 @@ export default function About() {
               {/* Right: vertical timeline */}
               <div className="relative pl-14">
                 <div className="absolute left-6 top-1 bottom-1 w-px" style={{ background: TEAL }} />
-                <div className="space-y-10 md:space-y-12">
+                <div className="space-y-14 md:space-y-16">
                   {[
-                    { year: '2014', title: 'The Innovation Mill', desc: 'The official launch of Sudbury\'s Regional Innovation Centre, laying the groundwork for startup mentorship and hosting the inaugural PITCH event to connect local founders with early capital.' },
-                    { year: '2019', title: 'Scaling Capital & The Catalyst Fund', desc: 'A milestone era for the ecosystem, having supported the creation of over 100 sustainable tech jobs, generated upwards of $35M in equity capital, and launched the $5M Sudbury Catalyst Fund.' },
-                    { year: '2022', title: 'Mining Transformed', desc: 'The debut of the world\'s only technology exhibition held within an active underground mine, directly connecting developers of autonomous and electrified systems with global industry buyers.' },
-                    { year: '2024', title: 'Venture North PITCH Unification', desc: 'The strategic merger of NORCAT and Northern Ontario Angels\' flagship events, bringing the region\'s top startup talent and an extensive network of Accredited Angel Investors onto a single, high-stakes stage.' },
-                    { year: '2025', title: 'FedNor Investment & AI Integration', desc: 'The launch of the Regional Artificial Intelligence Initiative (RAII) and the renewal of the Innovation Acceleration Program, providing critical $20,000 micro-grants to help SMEs commercialize and scale.' },
-                    { year: '2026', title: 'Digital Transformation & Expansion', desc: 'A year of comprehensive modernization featuring the Phase III expansion of the Underground Centre\'s demonstration spaces, hands-on AI skill-building workshops, and a complete overhaul of digital venture growth services.' },
-                    { year: 'Today', title: 'NORCAT Innovation', desc: 'A hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.' },
-                  ].map((m) => (
-                    <div key={m.year} className="relative">
+                    {
+                      chapter: 'The Foundation: Establishing Regional Innovation',
+                      year: '2014',
+                      summary: 'The official launch of Sudbury\'s Regional Innovation Centre laid the groundwork for tech startup mentorship. This era marked a foundational shift for the ecosystem, establishing its cornerstone pitch platform and hosting the inaugural PITCH competition to bridge local founders with early investment networks.',
+                      items: []
+                    },
+                    {
+                      chapter: 'Capital, Infrastructure & Direct Micro-Grants',
+                      year: '2016 – 2018',
+                      summary: 'NORCAT entered a period of rapid infrastructure and funding expansion to support physical and digital venture development.',
+                      items: [
+                        { year: '2016', desc: 'Secured a foundational federal investment from FedNor to launch the Innovation Acceleration Program (IAP), distributing non-repayable $10,000 micro-grants directly to tech startups for critical prototyping.' },
+                        { year: '2017', desc: 'Landed $976,500 in joint public capital from FedNor and the NOHFC to overhaul ventilation and electrical systems, expanding the sub-surface capabilities of the Underground Centre in Onaping.' },
+                        { year: '2018', desc: 'Expanded the physical toolset via an additional $305,000 federal injection to launch Phase II of the IAP and introduce industrial injection molding capabilities into the Fortin Discovery Lab.' },
+                      ]
+                    },
+                    {
+                      chapter: 'Ecosystem Maturation & Job Creation',
+                      year: '2019 – 2022',
+                      summary: 'NORCAT shifted toward global scaling, commercialization networks, and high-impact industry events.',
+                      items: [
+                        { year: '2019', desc: 'Reached a major milestone era for the ecosystem, having supported the creation of over 100 sustainable tech jobs, generated upwards of $35M in equity capital, and launched the $5M Sudbury Catalyst Fund.' },
+                        { year: '2022', desc: 'Debuted Mining Transformed, the world\'s only technology exhibition held within an active underground mine, directly connecting developers of autonomous and electrified systems with global industry buyers.' },
+                      ]
+                    },
+                    {
+                      chapter: 'Unification & Next-Gen Tech Scaling',
+                      year: '2024 – 2025',
+                      summary: 'Strategic alignments and massive funding renewals solidified the region\'s position as a premier global hub for emerging tech and AI ventures.',
+                      items: [
+                        { year: '2024', desc: 'Executed the strategic merger of NORCAT and Northern Ontario Angels\' flagship events, bringing the region\'s top startup talent and an extensive network of Accredited Angel Investors onto a single, high-stakes stage.' },
+                        { year: '2025', desc: 'Launched the Regional Artificial Intelligence Initiative (RAII) alongside a renewed Innovation Acceleration Program backed by FedNor, upgrading the micro-grant threshold to $20,000 to help SMEs commercialize and scale AI technologies.' },
+                      ]
+                    },
+                    {
+                      chapter: 'Digital Transformation & The AI Future',
+                      year: '2026 – Present',
+                      summary: 'Following years of continuous physical and systemic growth, NORCAT Innovation entered a year of comprehensive modernization. Featuring the Phase III expansion of the Underground Centre\'s demonstration spaces, hands-on AI skill-building workshops, and a complete overhaul of digital venture growth services, NORCAT remains the ultimate hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.',
+                      items: []
+                    },
+                  ].map((chapter, idx) => (
+                    <div key={idx} className="relative">
                       <div className="absolute -left-8 top-1.5 w-3 h-3 rounded-full -translate-x-1/2"
                            style={{ background: TEAL }} />
                       <p className="text-xs font-bold tracking-[0.18em] uppercase mb-2"
                          style={{ color: TEAL, fontFamily: FONT }}>
-                        {m.year}
+                        {chapter.year}
                       </p>
-                      <h3 className="font-black uppercase text-lg md:text-xl mb-2 text-white"
+                      <h3 className="font-black uppercase text-lg md:text-xl mb-3 text-white"
                           style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                        {m.title}
+                        {chapter.chapter}
                       </h3>
-                      <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
-                        {m.desc}
+                      <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: FG_MUTED }}>
+                        {chapter.summary}
                       </p>
+                      {chapter.items.length > 0 && (
+                        <ul className="space-y-4">
+                          {chapter.items.map((item) => (
+                            <li key={item.year} className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                              <span className="font-bold text-white" style={{ fontFamily: FONT }}>{item.year}:</span>{' '}
+                              {item.desc}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   ))}
                 </div>
