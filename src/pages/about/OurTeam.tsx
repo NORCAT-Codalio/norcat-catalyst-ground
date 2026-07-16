@@ -124,10 +124,10 @@ export default function OurTeam() {
             <div className="max-w-3xl">
               <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                OUR <span style={{ color: TEAL }}>TEAM.</span>
+                MEET OUR <span style={{ color: TEAL }}>TEAM.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                The people behind the programs. Meet the innovation team helping founders turn ideas into impact.
+                The people helping Northern Ontario founders build, validate, and grow.
               </p>
             </div>
           </div>
