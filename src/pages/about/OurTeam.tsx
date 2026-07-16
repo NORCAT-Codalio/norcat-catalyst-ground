@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Mail, X } from 'lucide-react';
+import { ArrowUpRight, X } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
@@ -273,7 +273,7 @@ export default function OurTeam() {
                 </div>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm md:text-base font-bold transition-allcaps-all duration-300 hover:scale-[1.02] whitespace-nowrap self-start lg:self-center"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-sm md:text-base font-bold transition-all duration-300 hover:scale-[1.02] whitespace-nowrap self-start lg:self-center"
                   style={{ background: 'white', color: NAVY, fontFamily: FONT }}
                 >
                   Contact Us
