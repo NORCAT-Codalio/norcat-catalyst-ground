@@ -64,8 +64,8 @@ const programTabs: ProgramTab[] = [
     href: '/mining/critical-industrial-tech',
     image: featuredCit,
     partners: [
-      { url: ociLogo.url, alt: 'Ontario Centre of Innovation', height: 36 },
-      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+      { logo: ociLogo, alt: 'Ontario Centre of Innovation', height: 36 },
+      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
     ],
   },
   {
