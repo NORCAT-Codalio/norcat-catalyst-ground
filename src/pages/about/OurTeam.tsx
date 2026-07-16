@@ -192,40 +192,37 @@ export default function OurTeam() {
         </section>
 
         {/* ───── MENTOR NETWORK ───── */}
-        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: NAVY, color: 'white' }}>
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 60%, ${NAVY} 100%)`, color: 'white' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`,
-            opacity: 0.35,
+            backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 35%), radial-gradient(circle at 90% 80%, rgba(0,179,152,0.35), transparent 45%)`,
           }} />
-          <div className="absolute top-0 right-0 -mt-24 -mr-24 w-[28rem] h-[28rem] rounded-full opacity-25 pointer-events-none"
-               style={{ background: TEAL, filter: 'blur(100px)' }} />
-          <div className="absolute bottom-0 left-0 -mb-24 -ml-24 w-80 h-80 rounded-full opacity-20 pointer-events-none"
-               style={{ background: BLUE, filter: 'blur(80px)' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] rounded-full opacity-30 pointer-events-none"
+               style={{ background: `radial-gradient(circle, ${BLUE} 0%, transparent 70%)`, filter: 'blur(80px)' }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                   style={{ fontFamily: FONT, color: 'white' }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
                   MENTOR NETWORK
                 </p>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  WORLD-CLASS <span style={{ color: TEAL }}>MENTORS.</span>
+                  WORLD-CLASS <span style={{ color: NAVY }}>MENTORS.</span>
                 </h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.80)' }}>
+                <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
                   Our mentors are operators, founders, and industry experts who volunteer their time to help northern ventures scale. From pitch practice to go-to-market strategy, they bring decades of real-world experience.
                 </p>
                 <Link
                   to="/programs/mentorship-services#meet-our-mentors"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
-                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                  style={{ background: 'white', color: NAVY, fontFamily: FONT }}
                 >
-                  <Users className="w-5 h-5" />
+                  <Users className="w-5 h-5" style={{ color: TEAL }} />
                   Meet Our Mentors
                   <span className="inline-flex items-center justify-center size-8 rounded-full transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
-                        style={{ background: NAVY, color: 'white' }}>
+                        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, color: 'white' }}>
                     <ArrowUpRight className="w-4 h-4" />
                   </span>
                 </Link>
@@ -240,10 +237,10 @@ export default function OurTeam() {
                 ].map((s, i) => (
                   <div key={s.label}
                        className="rounded-2xl p-6 md:p-8 transition-transform duration-300 hover:scale-[1.02]"
-                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)', backdropFilter: 'blur(12px)' }}>
-                    <p className="font-black text-3xl md:text-4xl mb-1" style={{ fontFamily: FONT }}>{s.number}</p>
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] mb-3" style={{ color: TEAL }}>{s.label}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>{s.desc}</p>
+                       style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(12px)' }}>
+                    <p className="font-black text-3xl md:text-4xl mb-1" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] mb-3" style={{ color: 'white' }}>{s.label}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.80)' }}>{s.desc}</p>
                   </div>
                 ))}
               </div>
