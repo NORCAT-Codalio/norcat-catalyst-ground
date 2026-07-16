@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Linkedin, X, Users } from 'lucide-react';
+import { ArrowUpRight, Linkedin, Mail, X, Users } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
