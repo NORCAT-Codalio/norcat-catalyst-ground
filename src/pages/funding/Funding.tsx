@@ -45,7 +45,7 @@ type ProgramTab = {
   description: string;
   benefits: string[];
   href: string;
-  image: { url: string };
+  image: string;
   partners: { url: string; alt: string; height?: number }[];
 };
 
