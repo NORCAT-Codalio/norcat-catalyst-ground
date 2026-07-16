@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { motion } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -34,9 +34,9 @@ import innovateonLogo from '@/assets/logos/innovateon.png';
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
-import norcatLogo from '@/assets/logos/norcat.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
-import tedcLogo from '@/assets/logos/tedc.png';
+import ociLogo from '@/assets/logos/oci.png';
+import nohfcLogo from '@/assets/logos/nohfc.png';
 
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
@@ -50,9 +50,9 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 const partnerLogos = [
   { name: 'FedNor', logo: fednorLogo },
   { name: 'Ontario', logo: ontarioLogoAsset },
-  { name: 'NORCAT', logo: norcatLogo },
+  { name: 'Ontario Centres of Innovation', logo: ociLogo },
+  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
   { name: 'City of Greater Sudbury', logo: sudburyLogo },
-  { name: 'TEDC', logo: tedcLogo },
 ];
 
 
@@ -99,11 +99,10 @@ export default function About() {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                <span style={{ color: TEAL }}>THE INNOVATION ENGINE</span><br />OF THE NORTH.
+                OUR <span style={{ color: TEAL }}>STORY.</span>
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl whitespace-pre-line" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                NORCAT Innovation is a non-profit Regional Innovation Centre built on a simple mission: keep talented founders and builders in the North by giving them the resources, mentorship, and capital access they need to grow.{"\n\n"}
-                We believe innovation thrives when community comes first, safety and integrity are non-negotiable, and bold ideas are met with real support. Everything we do is designed to help entrepreneurs turn local potential into global impact.
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Since 2014, we have been passionate about driving the growth of Northern Ontario's innovation ecosystem in Greater Sudbury and beyond.
               </p>
             </div>
           </div>
