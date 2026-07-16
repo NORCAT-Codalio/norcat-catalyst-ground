@@ -220,7 +220,7 @@ export default function OurTeam() {
                   style={{ background: 'white', color: NAVY, fontFamily: FONT }}
                 >
                   <Users className="w-5 h-5" style={{ color: TEAL }} />
-                  Meet Our conversation
+                  Meet Our Mentors
                   <span className="inline-flex items-center justify-center size-8 rounded-full transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
                         style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, color: 'white' }}>
                     <ArrowUpRight className="w-4 h-4" />
