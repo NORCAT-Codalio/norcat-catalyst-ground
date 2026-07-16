@@ -11,6 +11,7 @@ const NAVY = '#001A4D';
 const BLUE = '#003DA5';
 const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
@@ -229,7 +230,7 @@ export default function OurTeam() {
             backgroundImage: `radial-gradient(circle at 10% 80%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 90% 20%, rgba(47,111,214,0.22), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col lg:flex-row lg: the items-center lg:justify-between gap-10">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
               <div className="max-w-2xl">
                 <Eyebrow>MENTOR NETWORK</Eyebrow>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
