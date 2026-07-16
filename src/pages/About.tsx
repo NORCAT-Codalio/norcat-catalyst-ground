@@ -288,12 +288,13 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  MEET THE&nbsp;TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
+                  MEET THE INNOVATION TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
                 </h2>
               </div>
               <p className="text-sm md:text-base md:max-w-sm leading-relaxed" style={{ color: '#5b6478' }}>
-                Our dedicated team works closely with founders to provide the support,
-                resources, and connections needed to build successful companies.
+                Whether it's your first time jotting a business idea down on the back of a napkin 
+                or you're scaling and ready to demonstrate your technology to global operators, 
+                we are here to help.&nbsp;
               </p>
             </div>
 
