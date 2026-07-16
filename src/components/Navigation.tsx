@@ -22,6 +22,7 @@ type MenuEntry = {
 const aboutItems: MenuEntry[] = [
   { name: 'Our Story', href: '/about', icon: BookOpen, description: 'How NORCAT Innovation became the North\'s launchpad for tough-tech.' },
   { name: 'Ecosystem Partners', href: '/ecosystem/sudbury', icon: Network, description: 'The industry, government, and community partners powering the ecosystem.' },
+  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
 ];
 
 
@@ -36,7 +37,6 @@ const servicesItems: MenuEntry[] = [
   { name: 'Venture Growth Services', href: '/programs/venture-growth-services', icon: TrendingUp, description: 'Hands-on support to take your venture from idea to scale.' },
   { name: 'Mentorship', href: '/programs/mentorship-services', icon: Users, description: 'Tap into a curated bench of operator-mentors.' },
   { name: 'Innovation Space', href: '/mining/labs', icon: Building2, description: 'Lab, prototyping, and workspace inside NORCAT HQ.' },
-  { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
 ];
 
 const insightsItems: MenuEntry[] = [
