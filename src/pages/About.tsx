@@ -10,6 +10,14 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import storyLake from '@/assets/story/story-lake.jpg.asset.json';
 import storyMine from '@/assets/story/story-mine.jpg.asset.json';
 import storyHorse from '@/assets/story/story-horse.jpg.asset.json';
+import featuredIap from '@/assets/featured-iap.png.asset.json';
+import featuredScf from '@/assets/featured-scf.png.asset.json';
+import featuredRaii from '@/assets/featured-raii.png.asset.json';
+import featuredCit from '@/assets/featured-cit.png.asset.json';
+import featuredCore5 from '@/assets/featured-core5.png.asset.json';
+import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
+import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
+import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
 // Award badges
@@ -234,106 +242,67 @@ export default function About() {
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-              {/* Left: section header */}
-              <div className="max-w-xl lg:sticky lg:top-32">
-                <Eyebrow>Our Story</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  The NORCAT <span style={{ color: TEAL }}>Innovation Timeline.</span>
-                </Display>
-                <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Since 2014, NORCAT Innovation has been the launchpad for Northern founders, turning regional expertise into globally competitive technology ventures.
-                </p>
+            <div className="max-w-3xl mb-16">
+              <Eyebrow>Our Story</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                The NORCAT <span style={{ color: TEAL }}>Innovation Timeline.</span>
+              </Display>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Since 2014, NORCAT Innovation has been the launchpad for Northern founders, turning regional expertise into globally competitive technology ventures.
+              </p>
+            </div>
 
-                {/* Three-box image collage */}
-                <div className="mt-8 grid grid-cols-2 gap-3 h-72 md:h-96">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex-1 overflow-hidden rounded-2xl ring-1 ring-white/15">
-                      <img src={storyLake.url} alt="NORCAT founder conversation" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="flex-1 overflow-hidden rounded-2xl ring-1 ring-white/15">
-                      <img src={storyHorse.url} alt="NORCAT building entrance" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  <div className="overflow-hidden rounded-2xl ring-1 ring-white/15">
-                    <img src={storyMine.url} alt="Underground mining technology testing" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
+            {/* Alternating image + text timeline */}
+            <div className="relative">
+              {/* Center rail (desktop) / left rail (mobile) */}
+              <div className="absolute top-0 bottom-0 w-px hidden md:block left-1/2 -translate-x-1/2" style={{ background: 'rgba(0,179,152,0.35)' }} />
+              <div className="absolute top-0 bottom-0 w-px md:hidden left-4" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              {/* Right: vertical timeline */}
-              <div className="relative pl-14">
-                <div className="absolute left-6 top-1 bottom-1 w-px" style={{ background: TEAL }} />
-                <div className="space-y-14 md:space-y-16">
-                  {[
-                    {
-                      chapter: 'The Foundation: Establishing Regional Innovation',
-                      year: '2014',
-                      summary: 'The official launch of Sudbury\'s Regional Innovation Centre laid the groundwork for tech startup mentorship. This era marked a foundational shift for the ecosystem, establishing its cornerstone pitch platform and hosting the inaugural PITCH competition to bridge local founders with early investment networks.',
-                      items: []
-                    },
-                    {
-                      chapter: 'Capital, Infrastructure & Direct Micro-Grants',
-                      year: '2016 – 2018',
-                      summary: 'NORCAT entered a period of rapid infrastructure and funding expansion to support physical and digital venture development.',
-                      items: [
-                        { year: '2016', desc: 'Secured a foundational federal investment from FedNor to launch the Innovation Acceleration Program (IAP), distributing non-repayable $10,000 micro-grants directly to tech startups for critical prototyping.' },
-                        { year: '2017', desc: 'Landed $976,500 in joint public capital from FedNor and the NOHFC to overhaul ventilation and electrical systems, expanding the sub-surface capabilities of the Underground Centre in Onaping.' },
-                        { year: '2018', desc: 'Expanded the physical toolset via an additional $305,000 federal injection to launch Phase II of the IAP and introduce industrial injection molding capabilities into the Fortin Discovery Lab.' },
-                      ]
-                    },
-                    {
-                      chapter: 'Ecosystem Maturation & Job Creation',
-                      year: '2019 – 2022',
-                      summary: 'NORCAT shifted toward global scaling, commercialization networks, and high-impact industry events.',
-                      items: [
-                        { year: '2019', desc: 'Reached a major milestone era for the ecosystem, having supported the creation of over 100 sustainable tech jobs, generated upwards of $35M in equity capital, and launched the $5M Sudbury Catalyst Fund.' },
-                        { year: '2022', desc: 'Debuted Mining Transformed, the world\'s only technology exhibition held within an active underground mine, directly connecting developers of autonomous and electrified systems with global industry buyers.' },
-                      ]
-                    },
-                    {
-                      chapter: 'Unification & Next-Gen Tech Scaling',
-                      year: '2024 – 2025',
-                      summary: 'Strategic alignments and massive funding renewals solidified the region\'s position as a premier global hub for emerging tech and AI ventures.',
-                      items: [
-                        { year: '2024', desc: 'Executed the strategic merger of NORCAT and Northern Ontario Angels\' flagship events, bringing the region\'s top startup talent and an extensive network of Accredited Angel Investors onto a single, high-stakes stage.' },
-                        { year: '2025', desc: 'Launched the Regional Artificial Intelligence Initiative (RAII) alongside a renewed Innovation Acceleration Program backed by FedNor, upgrading the micro-grant threshold to $20,000 to help SMEs commercialize and scale AI technologies.' },
-                      ]
-                    },
-                    {
-                      chapter: 'Digital Transformation & The AI Future',
-                      year: '2026 – Present',
-                      summary: 'Following years of continuous physical and systemic growth, NORCAT Innovation entered a year of comprehensive modernization. Featuring the Phase III expansion of the Underground Centre\'s demonstration spaces, hands-on AI skill-building workshops, and a complete overhaul of digital venture growth services, NORCAT remains the ultimate hub where entrepreneurs, resources, and ideas come together to turn Northern grit into global tech.',
-                      items: []
-                    },
-                  ].map((chapter, idx) => (
-                    <div key={idx} className="relative">
-                      <div className="absolute -left-8 top-1.5 w-3 h-3 rounded-full -translate-x-1/2"
-                           style={{ background: TEAL }} />
-                      <p className="text-xs font-bold tracking-[0.18em] uppercase mb-2"
-                         style={{ color: TEAL, fontFamily: FONT }}>
-                        {chapter.year}
-                      </p>
-                      <h3 className="font-black uppercase text-lg md:text-xl mb-3 text-white"
-                          style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                        {chapter.chapter}
-                      </h3>
-                      <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: FG_MUTED }}>
-                        {chapter.summary}
-                      </p>
-                      {chapter.items.length > 0 && (
-                        <ul className="space-y-4">
-                          {chapter.items.map((item) => (
-                            <li key={item.year} className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
-                              <span className="font-bold text-white" style={{ fontFamily: FONT }}>{item.year}:</span>{' '}
-                              {item.desc}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+              <div className="space-y-14 md:space-y-24">
+                {[
+                  { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition to connect local founders with early investment networks.", image: storyLake.url },
+                  { year: '2016', title: 'Innovation Acceleration Program (IAP) Launch', desc: 'NORCAT secures federal funding from FedNor to send $10,000 micro-grants straight to tech ventures for product prototyping and testing.', image: featuredIap.url },
+                  { year: '2017', title: 'Underground Infrastructure Expansion', desc: 'An injection of nearly $1 million in joint public funding helps NORCAT overhaul the ventilation and electrical systems at the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
+                  { year: '2018', title: 'IAP Phase II & Advanced Manufacturing', desc: "An additional $305,000 federal investment expands the hub's physical toolset, launching phase two of the micro-grant program and adding industrial injection molding machines to the Fortin Discovery Lab.", image: featuredCore5.url },
+                  { year: '2019', title: 'Scaling Capital & The Catalyst Fund', desc: 'The ecosystem hits its stride, supporting the creation of over 100 tech jobs, bringing in more than $35M in equity capital, and launching the $5M Sudbury Catalyst Fund.', image: featuredScf.url },
+                  { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine, putting developers of autonomous and electric systems in direct contact with global buyers.", image: storyMine.url },
+                  { year: '2024', title: 'Venture North PITCH', desc: "NORCAT and the Northern Ontario Angels merge their flagship events, bringing the region's top startup talent and a massive network of Accredited Angel Investors together on a single, high-stakes stage.", image: ventureNorthPitch.url },
+                  { year: '2025', title: 'FedNor Investment & AI Integration', desc: 'NORCAT launches the Regional Artificial Intelligence Initiative (RAII) and renews the Innovation Acceleration Program, boosting micro-grants to $20,000 to help small businesses build and scale emerging tech.', image: featuredRaii.url },
+                  { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands the demonstration spaces at the Underground Centre, rolls out hands-on AI workshops, and overhauls its tech startup services to better support modern businesses.', image: featuredCit.url },
+                  { year: 'TODAY', title: 'Global Impact', desc: 'Today, NORCAT Innovation stands as a premier hub of Northern innovation and is a catalyst for turning rugged, regional ideas into globally scalable technologies. We bridge the gap between creative founders, local industry, and international investors, anchoring world-class tech development right here in the North.', image: stateOfSudbury.url },
+                ].map((event, idx) => {
+                  const isLeft = idx % 2 === 0;
+                  return (
+                    <div key={event.year + idx} className="relative">
+                      {/* Node dot */}
+                      <div className="absolute top-6 md:top-8 z-10 size-4 rounded-full ring-4 md:left-1/2 md:-translate-x-1/2 left-4 -translate-x-1/2"
+                           style={{ background: TEAL, boxShadow: `0 0 0 6px rgba(0,179,152,0.15)`, ['--tw-ring-color' as string]: NAVY } as React.CSSProperties} />
+
+                      <div className={`grid md:grid-cols-2 gap-6 md:gap-12 items-center ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
+                        {/* Image side */}
+                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[4/3]">
+                            <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                          </div>
+                        </div>
+                        {/* Text side */}
+                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pl-12' : 'md:pr-12 md:text-right'}`}>
+                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
+                             style={{ color: TEAL, fontFamily: FONT }}>
+                            {event.year}
+                          </p>
+                          <h3 className="font-black uppercase text-xl md:text-2xl lg:text-3xl mb-4 text-white"
+                              style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                            {event.title}
+                          </h3>
+                          <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                            {event.desc}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
