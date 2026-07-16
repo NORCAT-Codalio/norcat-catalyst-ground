@@ -192,10 +192,14 @@ export default function OurTeam() {
         </section>
 
         {/* ───── MENTOR NETWORK ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: '#042f2e', color: 'white' }}>
-          <div className="absolute top-0 right-0 -mt-24 -mr-24 w-[28rem] h-[28rem] rounded-full opacity-20 pointer-events-none"
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY, color: 'white' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`,
+            opacity: 0.35,
+          }} />
+          <div className="absolute top-0 right-0 -mt-24 -mr-24 w-[28rem] h-[28rem] rounded-full opacity-25 pointer-events-none"
                style={{ background: TEAL, filter: 'blur(100px)' }} />
-          <div className="absolute bottom-0 left-0 -mb-24 -ml-24 w-80 h-80 rounded-full opacity-15 pointer-events-none"
+          <div className="absolute bottom-0 left-0 -mb-24 -ml-24 w-80 h-80 rounded-full opacity-20 pointer-events-none"
                style={{ background: BLUE, filter: 'blur(80px)' }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
