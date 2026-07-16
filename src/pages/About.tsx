@@ -107,7 +107,7 @@ export default function About() {
 
 
         {/* ───── ROOTED IN NORTHERN ONTARIO ───── */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-20 md:pt-28 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
@@ -137,7 +137,7 @@ export default function About() {
 
 
         {/* ───── IMPACT STATS ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-4 md:pt-6 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
