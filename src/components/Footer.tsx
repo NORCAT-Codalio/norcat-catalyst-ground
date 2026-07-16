@@ -85,7 +85,7 @@ export function Footer() {
             </p>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-4 flex items-center gap-2"
+              className="mt-4 flex items-center gap-2 max-w-md"
             >
               <input
                 type="email"
