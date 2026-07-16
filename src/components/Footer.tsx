@@ -50,7 +50,7 @@ export function Footer() {
         <img src={trianglesAsset.url} alt="" className="w-full h-auto object-contain" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 pt-16 pb-10 relative">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 pt-16 pb-10 relative">
         {/* Top row: brand / mailing list */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: Brand */}
