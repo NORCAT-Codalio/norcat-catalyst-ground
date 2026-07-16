@@ -82,8 +82,8 @@ const programTabs: ProgramTab[] = [
     href: '/funding/innovation-acceleration-program',
     image: featuredIap,
     partners: [
-      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
-      { url: noaLogo.url, alt: 'Northern Ontario Angels', height: 32 },
+      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
+      { logo: noaLogo, alt: 'Northern Ontario Angels', height: 32 },
     ],
   },
   {
@@ -100,7 +100,7 @@ const programTabs: ProgramTab[] = [
     href: '/funding/regional-ai-program',
     image: featuredRaii,
     partners: [
-      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
     ],
   },
   {
@@ -117,8 +117,8 @@ const programTabs: ProgramTab[] = [
     href: '/funding/sudbury-catalyst-fund',
     image: featuredScf,
     partners: [
-      { url: noaLogo.url, alt: 'Northern Ontario Angels', height: 32 },
-      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+      { logo: noaLogo, alt: 'Northern Ontario Angels', height: 32 },
+      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
     ],
   },
   {
@@ -135,8 +135,8 @@ const programTabs: ProgramTab[] = [
     href: '/mining/core5',
     image: featuredCore5,
     partners: [
-      { url: ovinLogo.url, alt: 'OVIN', height: 32 },
-      { url: ontarioLogo.url, alt: 'Ontario', height: 28 },
+      { logo: ovinLogo, alt: 'OVIN', height: 32 },
+      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
     ],
   },
 ];
@@ -269,7 +269,7 @@ const Funding = () => {
                       {activeProgram.partners.map((partner) => (
                         <img
                           key={partner.alt}
-                          src={partner.url}
+                          src={partner.logo}
                           alt={partner.alt}
                           className="object-contain"
                           style={{ height: partner.height || 32, maxWidth: 140 }}
