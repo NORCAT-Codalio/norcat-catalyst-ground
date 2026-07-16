@@ -21,6 +21,7 @@ type MenuEntry = {
 // Menu structure
 const aboutItems: MenuEntry[] = [
   { name: 'Our Story', href: '/about', icon: BookOpen, description: 'How NORCAT Innovation became the North\'s launchpad for tough-tech.' },
+  { name: 'Our Team', href: '/about/our-team', icon: Users, description: 'Meet the people behind the Innovation engine.' },
   { name: 'Ecosystem Partners', href: '/ecosystem/sudbury', icon: Network, description: 'The industry, government, and community partners powering the ecosystem.' },
   { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
 ];
