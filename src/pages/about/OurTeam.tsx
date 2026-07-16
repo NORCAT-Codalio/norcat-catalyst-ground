@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Linkedin, X, Users } from 'lucide-react';
+import { ArrowUpRight, Linkedin, X, Users } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
@@ -113,16 +113,6 @@ export default function OurTeam() {
           </div>
         </section>
 
-        {/* ───── BREADCRUMB ───── */}
-        <div className="py-4" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <nav className="flex items-center gap-2 text-sm font-semibold" style={{ color: '#5b6478' }}>
-              <Link to="/about" className="hover:underline" style={{ color: BLUE }}>About</Link>
-              <ArrowRight className="w-3.5 h-3.5" />
-              <span style={{ color: NAVY }}>Our Team</span>
-            </nav>
-          </div>
-        </div>
 
         {/* ───── TEAM GRID ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
