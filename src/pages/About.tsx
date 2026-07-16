@@ -236,7 +236,7 @@ export default function About() {
                       <div className={`grid md:grid-cols-2 gap-4 md:gap-8 items-start ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
                         {/* Image side */}
                         <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
-                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[16/10] max-h-[220px] ml-auto mr-auto">
+                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[16/10] max-h-[200px] max-w-[380px] ml-auto mr-auto">
                             <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                           </div>
                         </div>
