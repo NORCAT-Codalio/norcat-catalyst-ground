@@ -80,32 +80,18 @@ export function Footer() {
           </div>
 
           {/* Right: Mailing list + social */}
-          <div>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/90">
+          <div className="lg:flex lg:flex-col lg:items-end">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/90 lg:self-end">
               Join Our Mailing List
             </p>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="mt-4 flex items-center gap-2 max-w-md"
+              className="mt-4 flex items-center gap-2 max-w-md w-full lg:ml-auto"
             >
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="flex-1 h-12 rounded-md bg-white/5 border border-white/25 px-4 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white/60"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="h-12 w-12 shrink-0 rounded-md bg-[#0a2f7a] border border-white/25 flex items-center justify-center hover:bg-[#123f9a] transition-colors"
-              >
-                <Send className="h-5 w-5 text-white" />
-              </button>
+...
             </form>
 
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-3 lg:self-end">
               {[
                 { Icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
                 { Icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
