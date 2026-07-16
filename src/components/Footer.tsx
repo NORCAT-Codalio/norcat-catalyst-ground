@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Facebook, Instagram, Send } from 'lucide-react';
 import { useState } from 'react';
 import ontarioLogoAsset from '@/assets/logos/ontario-rev-logo.png.asset.json';
-import norcatInnovationLogo from '@/assets/norcat-innovation-logo.png.asset.json';
+import norcatInnovationLogo from '@/assets/logos/norcat-white.png';
+import trianglesAsset from '@/assets/white-triangles-lines.png.asset.json';
 
 const footerLinks = {
   funding: [
