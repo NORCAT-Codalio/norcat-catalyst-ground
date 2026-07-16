@@ -39,7 +39,7 @@ import planaLogo from '@/assets/logos/plana.png.asset.json';
 
 // Partner logos
 import fednorLogo from '@/assets/logos/fednor.png';
-import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png.asset.json';
+import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import sudburyLogo from '@/assets/logos/sudbury.png';
 import tedcLogo from '@/assets/logos/tedc.png';
@@ -65,7 +65,7 @@ const portfolioCompanies = [
 
 const partnerLogos = [
   { name: 'FedNor', logo: fednorLogo },
-  { name: 'Ontario', logo: ontarioLogo.url },
+  { name: 'Ontario', logo: ontarioLogo },
   { name: 'NORCAT', logo: norcatLogo },
   { name: 'City of Greater Sudbury', logo: sudburyLogo },
   { name: 'TEDC', logo: tedcLogo },
