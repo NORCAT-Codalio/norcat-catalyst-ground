@@ -11,6 +11,7 @@ const NAVY = '#001A4D';
 const BLUE = '#003DA5';
 const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
@@ -251,6 +252,20 @@ export default function OurTeam() {
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </span>
               </Link>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-14" style={{ borderTop: `1px solid ${BORDER}` }}>
+              {[
+                { number: '18', label: 'Active Mentors' },
+                { number: '1000+', label: 'Hours Mentored in 2025' },
+                { number: '100', label: 'NPS Score' },
+                { number: '$0', label: 'To Access Mentorship' },
+              ].map((s) => (
+                <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: 'white' }}>{s.number}</p>
+                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: 'rgba(255,255,255,0.72)' }}>{s.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
