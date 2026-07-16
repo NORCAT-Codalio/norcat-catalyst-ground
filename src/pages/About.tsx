@@ -295,7 +295,7 @@ export default function About() {
                  style={{ color: '#5b6478' }}>
                 Whether it's your first time jotting a business idea down on the back of a napkin 
                 or you're scaling and ready to demonstrate your technology to the world, 
-                we are here to help.&nbsp;
+                we are here to help you scale success!&nbsp;
               </p>
             </div>
 
