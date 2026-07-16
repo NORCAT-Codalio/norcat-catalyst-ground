@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Linkedin, X, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
+import { ArrowRight, Target, Zap, ShieldCheck, Users2, Trophy, Sparkles } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
@@ -19,6 +18,7 @@ import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
+import { team } from '@/data/team';
 
 // Award badges
 import awardBestPlace from '@/assets/award-best-place-to-work.png';
@@ -27,12 +27,6 @@ import awardNasa from '@/assets/award-nasa-achievement.png';
 import awardIndigenous from '@/assets/award-indigenous-partnership.png';
 import awardExecutive from '@/assets/award-executive-of-the-year.png';
 import awardBusinessGrowth from '@/assets/award-business-growth.png';
-
-// Team headshots
-import brendanImage from '@/assets/team/brendan.png';
-import shashankImage from '@/assets/team/shashank.png';
-import bartImage from '@/assets/team/bart.png';
-import jieImage from '@/assets/team/jie-new.png';
 
 // Logos
 import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
@@ -59,14 +53,6 @@ const partnerLogos = [
   { name: 'NORCAT', logo: norcatLogo },
   { name: 'City of Greater Sudbury', logo: sudburyLogo },
   { name: 'TEDC', logo: tedcLogo },
-];
-
-
-const team = [
-  { name: 'Brendan Skiffington', role: 'INNOVATION MANAGER', image: brendanImage, bio: "Born right here in Sudbury and now leading Innovation, I am fully committed to the growth of my hometown. I focus on unlocking our capacity for innovation and am always making new network connections to sustain and expand our mission and impact. Outside of work, I am an avid hockey and sports fan, and I love keeping up with F1!", linkedin: 'https://linkedin.com/in/' },
-  { name: 'Shashank Mehta', role: 'INNOVATION COORDINATOR', image: shashankImage, bio: "As the Core5 and innovation lead, I specialize in breaking down complex workflow barriers with practical, step-by-step steps that help founders get their products to market. In my spare time, I am a constant learner who loves to travel, build up diverse knowledge, and spend quality time with my family.", linkedin: 'https://linkedin.com/in/' },
-  { name: 'Bart Streppel', role: 'Content Specialist', image: bartImage, bio: "I help early-stage startups and academic research teams translate complex technical ideas into clear, compelling stories that drive commercialization forward. When I'm off the clock, I'm usually writing and playing music as a singer-songwriter, tackling hands-on home renovation projects, or diving deep into video game mechanics.", linkedin: 'https://linkedin.com/in/' },
-  { name: 'Jie Chen', role: 'INNOVATION ASSOCIATE', image: jieImage, bio: "With an incredible attention to detail, I help clients break down the innovation landscape into successive, tangible steps that get founders in touch with funding, industry connections, and momentum-building partnerships. In my spare time, I love nothing more than to be with my family and dissecting the latest wave-making tech; otherwise, you'll find me cycling!", linkedin: 'https://linkedin.com/in/' },
 ];
 
 
