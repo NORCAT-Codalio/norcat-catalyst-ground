@@ -1,167 +1,206 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Youtube, Facebook, Instagram } from 'lucide-react';
-import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import ontarioLogoAsset from '@/assets/logos/ontario-logo-white.png.asset.json';
+import { Linkedin, Twitter, Youtube, Facebook, Instagram, Send } from 'lucide-react';
+import { useState } from 'react';
+import ontarioLogoAsset from '@/assets/logos/ontario-rev-logo.png.asset.json';
+import norcatInnovationLogo from '@/assets/norcat-innovation-logo.png.asset.json';
 
 const footerLinks = {
+  funding: [
+    { name: 'Innovation Acceleration Program', href: '/funding/innovation-acceleration-program' },
+    { name: 'Regional Artificial Intelligence', href: '/funding/regional-ai-program' },
+    { name: 'Sudbury Catalyst Fund', href: '/funding/sudbury-catalyst-fund' },
+  ],
   programs: [
-    { name: 'Funding Programs', href: '/funding' },
-    { name: 'Programs Overview', href: '/programs' },
-    { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
     { name: 'Core5', href: '/mining/core5' },
     { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure' },
+    { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech' },
   ],
   services: [
-    { name: 'Venture Growth Services', href: '/programs/venture-growth-services' },
-    { name: 'Mentorship Services', href: '/programs/mentorship-services' },
+    { name: 'Mentorship', href: '/programs/mentorship-services' },
+    { name: 'Venture Growth', href: '/programs/venture-growth-services' },
     { name: 'Innovation Space', href: '/mining/labs' },
     { name: 'Underground Centre', href: '/mining/norcat-underground' },
   ],
   insights: [
-    { name: 'Success Stories', href: '/insights/success-stories' },
     { name: 'News', href: '/insights/news' },
-    { name: 'Impact', href: '/impact' },
     { name: 'Events', href: '/events' },
+    { name: 'Impact', href: '/impact' },
+    { name: 'Success Stories', href: '/insights/success-stories' },
   ],
   company: [
-    { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
-    { name: 'About Us', href: '/about' },
-    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
+    { name: 'Contact Us', href: '/contact' },
     { name: 'Client Portal', href: '/portal/auth' },
+    { name: 'NORCAT.org', href: 'https://norcat.org', external: true },
+    { name: 'Ecosystem Partners', href: '/ecosystem/sudbury' },
+    { name: 'About NORCAT Innovation', href: '/about' },
   ],
 };
 
 export function Footer() {
+  const [email, setEmail] = useState('');
+
   return (
-    <>
-      <footer className="relative overflow-hidden bg-gradient-to-b from-[#003da5] to-[#001a4d]">
-        {/* Main Footer */}
-        <div className="container mx-auto px-4 lg:px-8 pt-16 pb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-            {/* Brand Column */}
-            <div className="lg:col-span-3 flex flex-col gap-6">
-              <div>
-                <img src={norcatLogoBlack} alt="NORCAT" className="h-7 w-auto brightness-0 invert" />
-                <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-sm">
-                  Sudbury's Regional Innovation Centre - helping tech and mining ventures start, scale, and succeed.
-                </p>
-              </div>
+    <footer className="relative overflow-hidden bg-gradient-to-br from-[#003da5] via-[#002a7a] to-[#001a4d] text-white">
+      {/* Subtle diagonal accent lines bottom-left */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-0 h-64 w-1/2 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, transparent 0 40px, #ffffff 40px 41px)',
+        }}
+      />
 
-              {/* Social Links */}
-              <div className="flex items-center gap-3">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="Facebook">
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="YouTube">
-                  <Youtube className="h-5 w-5" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="Instagram">
-                  <Instagram className="h-5 w-5" />
-                </a>
-              </div>
+      <div className="container mx-auto px-6 lg:px-12 pt-16 pb-10 relative">
+        {/* Top row: brand / mailing list */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Left: Brand */}
+          <div>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/90">
+              Explore More of NORCAT Innovation
+            </p>
+            <div className="mt-4 h-px w-full max-w-md bg-white/25" />
+            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-[1.05] text-white">
+              Sudbury's Regional<br />Innovation Centre
+            </h2>
+
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+              <img
+                src={ontarioLogoAsset.url}
+                alt="Government of Ontario"
+                className="h-12 w-auto object-contain shrink-0"
+              />
+              <p className="text-xs md:text-sm text-white/85 leading-relaxed max-w-sm">
+                Funded by the Ministry of Economic Development, Job Creation and Trade,
+                enabling free and subsidized services for Northern Ontario entrepreneurs.
+              </p>
             </div>
+          </div>
 
-            {/* Link Columns */}
-            <nav className="lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-6" aria-label="Footer Menu">
-              {/* Programs */}
-              <div>
-                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Programs</h4>
-                <ul className="space-y-2.5">
-                  {footerLinks.programs.map((link) => (
-                    <li key={link.name}>
-                      <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Right: Mailing list + social */}
+          <div className="lg:pl-8">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-white/90">
+              Join Our Mailing List
+            </p>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="mt-4 flex items-center gap-2 max-w-md"
+            >
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                className="flex-1 h-12 rounded-md bg-white/5 border border-white/25 px-4 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-white/60"
+              />
+              <button
+                type="submit"
+                aria-label="Subscribe"
+                className="h-12 w-12 shrink-0 rounded-md bg-[#0a2f7a] border border-white/25 flex items-center justify-center hover:bg-[#123f9a] transition-colors"
+              >
+                <Send className="h-5 w-5 text-white" />
+              </button>
+            </form>
 
-              {/* Services */}
-              <div>
-                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Services</h4>
-                <ul className="space-y-2.5">
-                  {footerLinks.services.map((link) => (
-                    <li key={link.name}>
-                      <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Insights */}
-              <div>
-                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Insights</h4>
-                <ul className="space-y-2.5">
-                  {footerLinks.insights.map((link) => (
-                    <li key={link.name}>
-                      <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Company */}
-              <div>
-                <h4 className="font-display font-bold text-white text-sm tracking-wider uppercase mb-4">Company</h4>
-                <ul className="space-y-2.5">
-                  {footerLinks.company.map((link) => (
-                    <li key={link.name}>
-                      {'external' in link && link.external ? (
-                        <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-white/75 hover:text-teal-300 transition-colors">
-                          {link.name}
-                        </a>
-                      ) : (
-                        <Link to={link.href} className="text-sm text-white/75 hover:text-teal-300 transition-colors">
-                          {link.name}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
+            <div className="mt-5 flex items-center gap-3">
+              {[
+                { Icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+                { Icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+                { Icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
+                { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                { Icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+              ].map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="h-9 w-9 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                >
+                  <Icon className="h-4 w-4 text-white" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="h-px bg-white/15" />
+        <div className="mt-14 h-px w-full bg-white/20" />
+
+        {/* Link columns */}
+        <nav
+          aria-label="Footer navigation"
+          className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10"
+        >
+          {[
+            { title: 'Funding', links: footerLinks.funding },
+            { title: 'Programs', links: footerLinks.programs },
+            { title: 'Services', links: footerLinks.services },
+            { title: 'Insights', links: footerLinks.insights },
+            { title: 'Company', links: footerLinks.company },
+          ].map((col) => (
+            <div key={col.title}>
+              <h4 className="font-display font-bold text-white text-sm tracking-[0.15em] uppercase mb-5">
+                {col.title}
+              </h4>
+              <ul className="space-y-3">
+                {col.links.map((link: any) => (
+                  <li key={link.name}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white/85 hover:text-teal-300 transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-sm text-white/85 hover:text-teal-300 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+
+        {/* Large NORCAT Innovation lockup */}
+        <div className="mt-16 flex justify-center lg:justify-end">
+          <img
+            src={norcatInnovationLogo.url}
+            alt="NORCAT Innovation"
+            className="h-12 md:h-16 lg:h-20 w-auto object-contain brightness-0 invert"
+          />
         </div>
+      </div>
 
-        {/* Legal + Ontario Funding */}
-        <div className="container mx-auto px-4 lg:px-8 py-8">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            {/* Legal */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-white/50">
-              <span>© {new Date().getFullYear()} NORCAT Innovation</span>
-              <div className="flex items-center gap-4">
-                <Link to="/privacy" className="hover:text-white/80 transition-colors">Privacy Policy</Link>
-                <a href="https://www.norcat.org/aoda-policy.html" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">AODA Policy</a>
-              </div>
-            </div>
-
-            {/* Ontario Funding */}
-            <div className="flex items-center">
-              <img
-                src={ontarioLogoAsset.url}
-                alt="Funded by the Government of Ontario"
-                className="h-7 md:h-8 w-auto object-contain"
-              />
-            </div>
+      {/* Bottom bar */}
+      <div className="container mx-auto px-6 lg:px-12 pb-8 relative">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/60">
+          <span>© {new Date().getFullYear()} NORCAT Innovation</span>
+          <div className="flex items-center gap-6">
+            <Link to="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <a
+              href="https://www.norcat.org/aoda-policy.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              AODA Policy
+            </a>
           </div>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }
