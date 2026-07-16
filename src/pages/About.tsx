@@ -69,6 +69,65 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
+function TimelineAccordionItem({ event, defaultOpen = false }: { event: any; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="rounded-2xl ring-1 ring-white/10 overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 md:px-6 md:py-5 text-left transition-colors hover:bg-white/5"
+      >
+        <div className="flex items-center gap-4 md:gap-6">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: TEAL, fontFamily: FONT, minWidth: '3.5rem' }}>
+            {event.year}
+          </span>
+          <h3 className="font-black uppercase text-base md:text-lg lg:text-xl text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+            {event.title}
+          </h3>
+        </div>
+        <ChevronDown className={`w-5 h-5 md:w-6 md:h-6 text-white/70 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0">
+              <div className="grid md:grid-cols-2 gap-5 md:gap-8 items-start">
+                <div className="overflow-hidden rounded-xl ring-1 ring-white/15 shadow-xl aspect-[16/10] max-h-[220px]">
+                  <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div>
+                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: FG_MUTED }}>
+                    {event.desc}
+                  </p>
+                  {event.cta && (
+                    <Link
+                      to={event.cta.href}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] group"
+                      style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                    >
+                      {event.cta.label}
+                      <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY,2, color: 'white' }}>
+                        <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                      </span>
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function About() {
   return (
     <Layout>
