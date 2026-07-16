@@ -42,15 +42,14 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-[#003da5] via-[#002a7a] to-[#001a4d] text-white">
-      {/* Subtle diagonal accent lines bottom-left */}
+      {/* Triangles decoration bottom-left */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 left-0 h-64 w-1/2 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(45deg, transparent 0 40px, #ffffff 40px 41px)',
-        }}
-      />
+        className="pointer-events-none absolute bottom-6 left-0 w-[46%] max-w-2xl opacity-90"
+      >
+        <img src={trianglesAsset.url} alt="" className="w-full h-auto object-contain" />
+      </div>
+
 
       <div className="container mx-auto px-6 lg:px-12 pt-16 pb-10 relative">
         {/* Top row: brand / mailing list */}
