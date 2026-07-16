@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Linkedin, X } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Linkedin, X, Users } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
@@ -230,6 +230,38 @@ export default function OurTeam() {
                 );
               })}
             </motion.div>
+          </div>
+        </section>
+
+        {/* ───── MENTORS CTA ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 10% 80%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 90% 20%, rgba(47,111,214,0.22), transparent 45%)`,
+          }} />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+              <div className="max-w-2xl">
+                <Eyebrow>MENTOR NETWORK</Eyebrow>
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  WORLD-CLASS <span style={{ color: TEAL }}>MENTORS.</span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Our mentors are operators, founders, and industry experts who volunteer their time to help northern ventures scale. From pitch practice to go-to-market strategy, they bring decades of real-world experience.
+                </p>
+              </div>
+              <Link
+                to="/programs/mentorship-services"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-bold transition-transform hover:scale-[1.02] whitespace-nowrap"
+                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+              >
+                <Users className="w-5 h-5" />
+                Meet Our Mentors
+                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
