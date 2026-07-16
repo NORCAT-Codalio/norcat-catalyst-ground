@@ -48,68 +48,193 @@ function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: ()
           onClick={(e) => e.stopPropagation()}
         >
           <button onClick={onClose}
-                  deleteLines: [31, 34, 65, 70, 88, 138, 141, 280, 390],
-            addLines: [
-              "import { team, type TeamMember } from '@/data/team';",
-              "const [expandedMember, setExpandedMember] = useState<string | null>(null);",
-              "{/* ───── TEAM TEASER (light) ───── */}",
-              "<section className=\"py-20 md:py-32\" style={{ background: PAPER, color: NAVY }}>",
-              "  <div className=\"mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10\">",
-              "    <div className=\"flex flex-col md:flex-row md:items-stretch justify-between gap-8 mb-12 md:mb-16\">",
-              "      <div className=\"flex-1 flex flex-col justify-center\">",
-              "        <p className=\"inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5\"",
-              "           style={{ fontFamily: FONT, color: TEAL }}>",
-              "          <span className=\"size-1.5 rounded-full inline-block\" style={{ background: TEAL }} />",
-              "          THE INNOVATION TEAM",
-              "        </p>",
-              "        <h2 className=\"font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl\"",
-              "            style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>",
-              "          MEET THE INNOVATION TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>",
-              "        </h2>",
-              "      </div>",
-              "      <p className=\"flex-1 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-relaxed lg:leading-relaxed\"",
-              "         style={{ color: '#5b6478' }}>",
-              "        Whether it's your first time jotting a business idea down on the back of a napkin",
-              "        or you're scaling and ready to demonstrate your technology to the world,",
-              "        we are here to help you scale success!&nbsp;",
-              "      </p>",
-              "    </div>",
-              "    <div className=\"grid grid-cols-2 lg:grid-cols-4 gap-5\">",
-              "      {team.map((member) => (",
-              "        <div key={member.name} className=\"rounded-2xl overflow-hidden\" style={{ background: 'white', border: '1px solid #d9dde5' }}>",
-              "          <div className=\"relative w-full aspect-square overflow-hidden\">",
-              "            <img src={member.image} alt={member.name} className=\"w-full h-full object-cover\" />",
-              "          </div>",
-              "          <div className=\"p-5\">",
-              "            <h3 className=\"font-black uppercase text-base md:text-lg mb-1\" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>",
-              "              {member.name}",
-              "            </h3>",
-              "            <p className=\"text-xs font-bold uppercase tracking-[0.18em]\" style={{ color: TEAL, fontFamily: FONT }}>",
-              "              {member.role}",
-              "            </p>",
-              "          </div>",
-              "        </div>",
-              "      ))}",
-              "    </div>",
-              "    <div className=\"mt-12 md:mt-14 flex justify-center\">",
-              "      <Link",
-              "        to=\"/about/our-team\"",
-              "        className=\"group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-[1.02]\"",
-              "        style={{ background: TEAL, color: NAVY, fontFamily: FONT }}",
-              "      >",
-              "        Meet the Full Team",
-              "        <span className=\"inline-flex items-center justify-center size-8 rounded-full transition-colors\"",
-              "              style={{ background: NAVY, color: 'white' }}>",
-              "          <ArrowRight className=\"w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5\" />",
-              "        </span>",
-              "      </Link>",
-              "    </div>",
-              "  </div>",
-              "</section>"
-            ]
-          }
-        }
-      }
-    }
-  }
+                  className="absolute top-4 right-4 size-9 rounded-full flex items-center justify-center transition-colors"
+                  style={{ background: PAPER, color: NAVY }}>
+            <X className="w-4 h-4" />
+          </button>
+          <div className="text-center">
+            <img src={member.image} alt={member.name}
+                 className="w-24 h-24 rounded-full object-cover mx-auto mb-5"
+                 style={{ border: `3px solid ${TEAL}` }} />
+            <h3 className="text-2xl font-black uppercase mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+              {member.name}
+            </h3>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: TEAL, fontFamily: FONT }}>
+              {member.role}
+            </p>
+            <p className="text-left leading-relaxed mb-7 text-sm" style={{ color: '#475068' }}>
+              {member.bio}
+            </p>
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+               className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+               style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+              <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+              </span>
+            </a>
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+export default function OurTeam() {
+  const [expandedMember, setExpandedMember] = useState<string | null>(null);
+  const [modalMember, setModalMember] = useState<TeamMember | null>(null);
+
+  return (
+    <Layout>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden min-h-[50vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+          }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl">
+              <Eyebrow className="text-lg">ABOUT NORCAT INNOVATION.</Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+                OUR <span style={{ color: TEAL }}>TEAM.</span>
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                The people behind the programs. Meet the innovation team helping founders turn ideas into impact.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── BREADCRUMB ───── */}
+        <div className="py-4" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <nav className="flex items-center gap-2 text-sm font-semibold" style={{ color: '#5b6478' }}>
+              <Link to="/about" className="hover:underline" style={{ color: BLUE }}>About</Link>
+              <ArrowRight className="w-3.5 h-3.5" />
+              <span style={{ color: NAVY }}>Our Team</span>
+            </nav>
+          </div>
+        </div>
+
+        {/* ───── TEAM GRID ───── */}
+        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-8 mb-12 md:mb-16">
+              <div className="flex-1 flex flex-col justify-center">
+                <Eyebrow>THE INNOVATION TEAM</Eyebrow>
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  MEET THE INNOVATION TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
+                </h2>
+              </div>
+              <p className="flex-1 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-relaxed lg:leading-relaxed"
+                 style={{ color: '#5b6478' }}>
+                Whether it's your first time jotting a business idea down on the back of a napkin
+                or you're scaling and ready to demonstrate your technology to the world,
+                we are here to help you scale success!&nbsp;
+              </p>
+            </div>
+
+            <motion.div layout className="grid grid-cols-2 lg:grid-cols-4 gap-5 items-start">
+              {team.map((member) => {
+                const isExpanded = expandedMember === member.name;
+                return (
+                  <motion.div
+                    key={member.name}
+                    layout
+                    onClick={() => setExpandedMember(isExpanded ? null : member.name)}
+                    transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+                    whileHover={isExpanded ? undefined : { y: -6 }}
+                    className="group text-left rounded-2xl overflow-hidden cursor-pointer relative"
+                    style={{ background: 'white', border: '1px solid #d9dde5' }}
+                  >
+                    <motion.div layout className={isExpanded ? 'p-6' : ''}>
+                      <motion.div
+                        layout
+                        className={`relative overflow-hidden ${
+                          isExpanded
+                            ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-full flex-shrink-0'
+                            : 'w-full aspect-square'
+                        }`}
+                        style={isExpanded ? { border: `3px solid ${TEAL}` } : undefined}
+                      >
+                        <motion.img
+                          layout
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {!isExpanded && (
+                          <div className="absolute inset-0"
+                               style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
+                        )}
+                      </motion.div>
+
+                      <motion.div layout className={isExpanded ? 'flex-1 min-w-0' : 'p-5'}>
+                        <motion.h3 layout className="font-black uppercase text-base md:text-lg mb-1"
+                            style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                          {member.name}
+                        </motion.h3>
+                        <motion.p layout className="text-xs font-bold uppercase tracking-[0.18em]"
+                           style={{ color: TEAL, fontFamily: FONT }}>
+                          {member.role}
+                        </motion.p>
+
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.25, delay: 0.1 }}
+                          >
+                              <p className="mt-4 leading-relaxed text-sm" style={{ color: '#475068' }}>
+                                {member.bio}
+                              </p>
+                              <a
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="mt-5 group/btn inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                              >
+                                <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                                <span className="inline-flex items-center justify-center size-7 rounded-full"
+                                      style={{ background: NAVY, color: 'white' }}>
+                                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover/btn:rotate-[360deg]" />
+                                </span>
+                              </a>
+                          </motion.div>
+                        )}
+                      </motion.div>
+
+                      {isExpanded && (
+                        <button
+                          onClick={(e) => { e.stopPropagation(); setExpandedMember(null); }}
+                          className="absolute top-4 right-4 size-9 rounded-full flex items-center justify-center transition-colors"
+                          style={{ background: PAPER, color: NAVY }}
+                          aria-label="Close"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      )}
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+      </div>
+
+      <TeamModal member={modalMember} onClose={() => setModalMember(null)} />
+    </Layout>
+  );
 }
