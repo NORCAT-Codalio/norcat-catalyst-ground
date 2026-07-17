@@ -119,7 +119,7 @@ export default function OurTeam() {
                 <Eyebrow>START THE CONVERSATION</Eyebrow>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  GET IN <span style={{ color: TEAL }}>TOUCH.</span refine this further if needed.
+                  GET IN <span style={{ color: TEAL }}>TOUCH.</span>
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
                   Have a question, partnership idea, or just want to learn more about how we can help? Reach out — we'd love to hear from you.
