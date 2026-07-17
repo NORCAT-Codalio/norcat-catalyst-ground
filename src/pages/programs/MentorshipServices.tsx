@@ -368,7 +368,7 @@ const MentorshipServices = () => {
                 >
                   <div className="h-full rounded-2xl p-6 md:p-8 flex flex-col"
                        style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${BORDER}` }}>
-                    <div className="h-10 mb-6 flex items-center">
+                    <div className="h-14 mb-6 flex items-center justify-start rounded-lg px-3 py-2 bg-white/95">
                       <img src={t.logo} alt={t.role.split(',')[0]} className="max-h-full max-w-[140px] object-contain" />
                     </div>
                     <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
