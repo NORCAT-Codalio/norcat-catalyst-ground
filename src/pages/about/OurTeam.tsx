@@ -267,7 +267,7 @@ export default function OurTeam() {
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 OUR PARTNERS
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
+              <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 SUPPORTING WHAT'S NEXT.
               </h2>
