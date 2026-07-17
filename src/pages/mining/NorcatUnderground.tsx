@@ -25,8 +25,6 @@ import {
   Users,
   Lightbulb,
   Award,
-  Compass,
-  Gauge,
   Mail,
 } from 'lucide-react';
 
