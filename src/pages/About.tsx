@@ -182,11 +182,11 @@ export default function About() {
             </div>
 
             {/* Alternating side-by-side timeline */}
-            <div className="relative">
+            <div className="relative mx-auto max-w-5xl">
               {/* Central vertical connector rail */}
               <div className="absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-px hidden md:block" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              <div className="space-y-8 md:space-y-10">
+              <div className="space-y-10 md:space-y-14">
                 {[
                   { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition.", image: storyLake.url },
                   { year: '2017', title: 'Underground Centre Expansion', desc: 'Joint public funding helps NORCAT overhaul the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
@@ -196,48 +196,52 @@ export default function About() {
                   { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands Underground Centre demonstration spaces, rolls out AI workshops, and overhauls tech startup services.', image: featuredCit.url },
                   { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: stateOfSudbury.url },
                 ].map((event, idx) => {
-                  const isEven = idx % 2 === 1;
+                  const isRight = idx % 2 === 1;
                   return (
-                    <div
-                      key={event.year + idx}
-                      className={`relative flex items-center gap-4 md:gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}
-                    >
-                      {/* Text content */}
-                      <div className={`flex-1 md:text-right ${isEven ? 'md:text-left' : ''}`}>
-                        <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1"
-                           style={{ color: TEAL, fontFamily: FONT }}>
-                          {event.year}
-                        </p>
-                        <h3 className="font-black uppercase text-base md:text-lg lg:text-xl mb-1.5 text-white"
-                            style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                          {event.title}
-                        </h3>
-                        <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>
-                          {event.desc}
-                        </p>
-                        {event.cta && (
-                          <Link
-                            to={event.cta.href}
-                            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-transform hover:scale-[1.02] group ${isEven ? '' : 'md:flex-row-reverse'}`}
-                            style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
-                          >
-                            {event.cta.label}
-                            <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                              <ArrowUpRight className="w-3 h-3 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                            </span>
-                          </Link>
-                        )}
+                    <div key={event.year + idx} className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
+                      {/* Mobile: inline image + text */}
+                      <div className="flex items-start gap-4 md:hidden">
+                        <div className="relative shrink-0">
+                          <div className="size-20 rounded-full overflow-hidden ring-[3px] shadow-xl"
+                               style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
+                            <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                          </div>
+                        </div>
+                        <div className="flex-1 pt-1">
+                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                          <h3 className="font-black uppercase text-base mb-1.5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{event.title}</h3>
+                          <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>{event.desc}</p>
+                          {event.cta && (
+                            <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+                              {event.cta.label}
+                              <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                                <ArrowUpRight className="w-3 h-3" />
+                              </span>
+                            </Link>
+                          )}
+                        </div>
                       </div>
 
-                      {/* Small circular image + node */}
-                      <div className="relative z-10 shrink-0">
-                        <div className="size-20 md:size-28 rounded-full overflow-hidden ring-[3px] md:ring-4 shadow-xl"
-                             style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
-                          <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                      {/* Desktop: alternating columns */}
+                      <div className={`hidden md:flex items-center gap-5 ${isRight ? 'col-start-2 order-2' : 'col-start-1 justify-end flex-row-reverse text-right'}`}>
+                        <div className="relative shrink-0">
+                          <div className="size-24 lg:size-28 rounded-full overflow-hidden ring-4 shadow-xl"
+                               style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
+                            <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                          </div>
                         </div>
-                        <div className="absolute -bottom-1 -right-1 size-6 md:size-7 rounded-full flex items-center justify-center text-[10px] md:text-xs font-black"
-                             style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                          {idx + 1}
+                        <div className="max-w-sm">
+                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                          <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{event.title}</h3>
+                          <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>{event.desc}</p>
+                          {event.cta && (
+                            <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+                              {event.cta.label}
+                              <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                                <ArrowUpRight className="w-3 h-3" />
+                              </span>
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
