@@ -413,9 +413,6 @@ export default function About() {
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Awards & <span style={{ color: TEAL }}>Accolades.</span>
               </h2>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed md:whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Recognized nationally and globally for building a world-class innovation ecosystem in the North.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
