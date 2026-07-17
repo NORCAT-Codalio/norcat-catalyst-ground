@@ -285,7 +285,7 @@ export default function Contact() {
                         className="mt-1"
                       />
                       <Label htmlFor="consent" className="text-sm font-normal leading-relaxed cursor-pointer">
-                        I agree to NORCAT Innovation collecting and storing my information so we can respond to my inquiry. See our Privacy Policy.
+                        I agree to NORCAT Innovation collecting and storing my information so we can respond to my inquiry. See our <Link to="/privacy" className="underline hover:no-underline" style={{ color: BLUE }}>Privacy Policy</Link>.
                       </Label>
                     </div>
 
