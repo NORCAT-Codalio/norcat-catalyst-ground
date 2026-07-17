@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout';
 
 const TEAL = '#00B398';
-const BLUE = '#0072CE';
+const BLUE = '#003DA5';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 export default function Privacy() {

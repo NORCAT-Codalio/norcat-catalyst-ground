@@ -29,8 +29,8 @@ import {
 } from 'lucide-react';
 
 const TEAL = '#00B398';
-const BLUE = '#0072CE';
-const NAVY = '#003DA5';
+const BLUE = '#003DA5';
+const NAVY = '#001A4D';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const contactTopics = [
