@@ -153,8 +153,8 @@ export default function Contact() {
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <div className="max-w-3xl">
             <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-               style={{ fontFamily: FONT, color: TEAL }}>
-              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+               style={{ fontFamily: FONT, color: 'white' }}>
+              <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
               START THE CONVERSATION
             </p>
             <h1 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem] mb-6"
