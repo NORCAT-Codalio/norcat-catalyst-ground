@@ -183,18 +183,22 @@ const SudburyEcosystem = () => {
                 <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation helps startups navigate the ecosystem and connect with the right people, programs, and opportunities when they need them.
                 </p>
-                <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 py-7" style={{ borderTop: '1px solid #d9dde5', borderBottom: '1px solid #d9dde5' }}>
-                  {stats.map((s) => (
-                    <div key={s.label} className="flex items-center gap-4">
-                      <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
-                      <div>
-                        <p className="text-lg md:text-xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
-                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
+            </div>
+
+            {/* Stats row — full width, spread out beneath text */}
+            <div className="mt-14 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-8 md:py-10 px-4 md:px-8 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+              {stats.map((s) => (
+                <div key={s.label} className="flex items-center gap-4 md:gap-5">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)' }}>
+                    <s.icon className="w-6 h-6" style={{ color: TEAL }} />
+                  </div>
+                  <div>
+                    <p className="text-xl md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
+                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
