@@ -27,9 +27,10 @@ import {
   Award,
   Compass,
   Gauge,
+  Mail,
 } from 'lucide-react';
 
-// ── Brand tokens (mirrors Home2 / About / IAP / SCF) ──
+// ── Brand tokens (mirrors Home2 / About / OurTeam) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
 const TEAL = '#00B398';
@@ -38,21 +39,17 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, center = false, color = TEAL }: { children: React.ReactNode; center?: boolean; color?: string }) => (
-  <p
-    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
-    style={{ fontFamily: FONT, color }}
-  >
-    <span className="size-1.5 rounded-full inline-block" style={{ background: color }} />
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+     style={{ fontFamily: FONT, color: TEAL }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
   </p>
 );
 
-const Display = ({ children, className = '', as: As = 'h2' as any, color = 'white' }: any) => (
-  <As
-    className={`font-black uppercase leading-[0.95] tracking-tight ${className}`}
-    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color }}
-  >
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
     {children}
   </As>
 );
@@ -101,7 +98,7 @@ const NorcatUnderground = () => {
       <div ref={containerRef} style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[80vh] flex items-center pt-10 pb-16 md:pt-16 md:pb-24">
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
           {/* logo background */}
@@ -124,11 +121,11 @@ const NorcatUnderground = () => {
           />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>The Global One-Stop Shop for the Future of Mining</Eyebrow>
+            <div className="max-w-3xl">
+              <Eyebrow className="text-lg !text-white">The Global One-Stop Shop for the Future of Mining</Eyebrow>
 
-              <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                NORCAT<br /><span style={{ color: TEAL }}>Underground.</span>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                NORCAT <span style={{ color: TEAL }}>Underground.</span>
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
@@ -154,36 +151,13 @@ const NorcatUnderground = () => {
               </div>
             </div>
           </div>
-
-        </section>
-
-        {/* ───── STATS STRIP ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  className="flex items-center gap-4 pl-4"
-                  style={{ borderLeft: `2px solid ${TEAL}` }}
-                >
-                  <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
-                  <div>
-                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
-                    <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </section>
 
         {/* ───── THE ASSET (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-16 md:pt-24 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
-              <div className="lg:col-span-6">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
                 <Eyebrow>The Asset</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
@@ -191,16 +165,10 @@ const NorcatUnderground = () => {
                 >
                   An actual mine.<br /><span style={{ color: TEAL }}>Open for business.</span>
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5" style={{ color: '#475068' }}>
-                  There is no simulator for the real thing. NORCAT Underground is a fully
-                  operational mine - three kilometres of active tunnels - purpose-built for
-                  technology trials, demonstrations and hands-on training.
-                </p>
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  OEMs, software vendors and startups from around the world come here to do
-                  what they cannot do anywhere else: prove their technology in real conditions,
-                  in front of real customers.
-                </p>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>There is no simulator for the real thing. NORCAT Underground is a fully operational mine - three kilometres of active tunnels - purpose-built for technology trials, demonstrations and hands-on training.</p>
+                  <p>OEMs, software vendors and startups from around the world come here to do what they cannot do anywhere else: prove their technology in real conditions, in front of real customers.</p>
+                </div>
 
                 <div className="mt-8 grid sm:grid-cols-3 gap-3">
                   {[
@@ -218,22 +186,30 @@ const NorcatUnderground = () => {
                 </div>
               </div>
 
-              <div className="lg:col-span-6">
-                <div className="relative">
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden" style={{ border: '1px solid #d9dde5' }}>
-                    <img src={undergroundWorkers} alt="NORCAT Underground operations" className="w-full h-full object-cover" />
-                  </div>
-                  <div
-                    className="absolute -bottom-6 -left-6 hidden md:block rounded-2xl p-6 max-w-[260px]"
-                    style={{ background: NAVY, color: 'white', boxShadow: '0 20px 60px rgba(0,26,77,0.25)' }}
-                  >
-                    <p className="text-[10px] uppercase tracking-[0.22em] font-bold mb-2" style={{ color: TEAL }}>One of one</p>
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                      The only facility of its kind on Earth - an active mine you can book.
-                    </p>
-                  </div>
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+                  <img src={undergroundWorkers} alt="NORCAT Underground operations" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── IMPACT STATS ───── */}
+        <section className="pt-4 md:pt-6 pb-14 md:pb-20" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {stats.map((s, i) => (
+                <motion.div
+                  key={s.label}
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                  className="pl-4"
+                  style={{ borderLeft: `2px solid ${TEAL}` }}
+                >
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -241,7 +217,7 @@ const NorcatUnderground = () => {
         {/* ───── CAPABILITIES (dark) ───── */}
         <section
           id="capabilities"
-          className="py-20 md:py-32 relative overflow-hidden"
+          className="py-16 md:py-24 relative overflow-hidden"
           style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
         >
           <div
@@ -256,7 +232,7 @@ const NorcatUnderground = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>What You Can Test</Eyebrow>
+              <Eyebrow className="!text-white">What You Can Test</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 If it belongs in a mine,<br /><span style={{ color: TEAL }}>we can run it underground.</span>
               </Display>
@@ -272,7 +248,7 @@ const NorcatUnderground = () => {
                   key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}
                   className="group rounded-2xl p-6 transition-colors h-full"
-                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
@@ -290,7 +266,7 @@ const NorcatUnderground = () => {
         </section>
 
         {/* ───── USE CASES (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Who It's For</Eyebrow>
@@ -328,7 +304,7 @@ const NorcatUnderground = () => {
 
         {/* ───── WHY (dark) ───── */}
         <section
-          className="py-20 md:py-32 relative overflow-hidden"
+          className="py-16 md:py-24 relative overflow-hidden"
           style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
         >
           <div
@@ -337,7 +313,7 @@ const NorcatUnderground = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Why Operators Choose Us</Eyebrow>
+              <Eyebrow className="!text-white">Why Operators Choose Us</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 The credibility<br /><span style={{ color: TEAL }}>you need to win.</span>
               </Display>
@@ -353,7 +329,7 @@ const NorcatUnderground = () => {
                   key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-7 h-full"
-                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,179,152,0.18)' }}>
                     <b.icon className="w-5 h-5" style={{ color: TEAL }} />
@@ -368,46 +344,9 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── FINAL CTA (light bridge) ───── */}
-        <section className="pt-20 md:pt-28 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
-          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <Eyebrow center>Your move</Eyebrow>
-            <Mountain className="w-12 h-12 mx-auto mb-6" style={{ color: TEAL }} />
-            <h2
-              className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-              style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
-            >
-              Bring your tech<br /><span style={{ color: TEAL }}>underground.</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              Book a tour, scope a trial, or host your customers in the only working mine
-              built for innovation. Let's get to work.
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Link
-                to="/apply"
-                className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                style={{ fontFamily: FONT, background: TEAL, color: 'white' }}
-              >
-                Book a Tour
-                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </span>
-              </Link>
-              <Link
-                to="/insights/success-stories"
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transition-colors"
-                style={{ border: '1px solid #d9dde5', color: NAVY, fontFamily: FONT, background: 'white' }}
-              >
-                View Success Stories
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* ───── CIT PROGRAM (dark) ───── */}
         <section
-          className="py-20 md:py-32 relative overflow-hidden"
+          className="py-16 md:py-24 relative overflow-hidden"
           style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
         >
           <div
@@ -426,7 +365,7 @@ const NorcatUnderground = () => {
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
                 className="lg:col-span-7"
               >
-                <Eyebrow color="white">Critical Industrial Technologies</Eyebrow>
+                <Eyebrow className="!text-white">Critical Industrial Technologies</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   The proving ground for<br /><span style={{ color: TEAL }}>CIT ventures.</span>
                 </Display>
@@ -468,6 +407,48 @@ const NorcatUnderground = () => {
                   </Link>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── GET IN TOUCH ───── */}
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: PAPER }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.12), transparent 40%), radial-gradient(circle at 10% 90%, rgba(0,61,165,0.10), transparent 45%)`,
+          }} />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+              <div className="max-w-2xl">
+                <Eyebrow>Your Move</Eyebrow>
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                  Bring your tech<br /><span style={{ color: TEAL }}>underground.</span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
+                  Book a tour, scope a trial, or host your customers in the only working mine
+                  built for innovation. Let's get to work.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}
+                >
+                  Book a Tour
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </span>
+                </Link>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                  style={{ border: '1px solid #d9dde5', color: NAVY, fontFamily: FONT, background: 'white' }}
+                >
+                  <Mail className="w-4 h-4" />
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </section>
