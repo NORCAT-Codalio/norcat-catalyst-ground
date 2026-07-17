@@ -469,7 +469,7 @@ export default function About() {
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="text-center max-w-5xl mx-auto mb-12 md:mb-14">
+            <div className="max-w-3xl mb-12 md:mb-14">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -479,12 +479,12 @@ export default function About() {
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Awards & <span style={{ color: TEAL }}>Accolades.</span>
               </h2>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed md:whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Recognized nationally and globally for building a world-class innovation ecosystem in the North.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-7 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7">
               {[
                 { year: '2011', title: 'NASA Group Achievement', org: 'NASA', Icon: Rocket },
                 { year: '2016', title: 'Entrepreneurial Community of the Year', org: 'Northern Ontario Business Awards', Icon: Users },
@@ -492,44 +492,31 @@ export default function About() {
               ].map((a) => (
                 <div
                   key={a.title}
-                  className="group relative flex flex-col items-center text-center rounded-2xl bg-white px-5 py-7 md:py-8 transition-transform duration-300 hover:-translate-y-1"
+                  className="group flex flex-col rounded-2xl bg-white p-6 md:p-7 transition-transform duration-300 hover:-translate-y-1"
                   style={{ boxShadow: '0 24px 50px -20px rgba(0,26,77,0.35)' }}
                 >
-                  {/* Badge with laurels */}
-                  <div className="relative flex items-center justify-center mb-5">
-                    <LaurelBranch className="w-14 h-14 md:w-16 md:h-16 opacity-80" side="left" />
-                    <div className="relative flex flex-col items-center mx-2">
-                      <div
-                        className="flex items-center justify-center rounded-full"
-                        style={{ width: 58, height: 58, background: NAVY }}
-                      >
-                        <a.Icon className="w-6 h-6 text-white" strokeWidth={2} />
-                      </div>
-                      {/* Teal ribbon */}
-                      <div className="relative -mt-1.5 w-5 h-4" style={{ filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.12))' }}>
-                        <svg viewBox="0 0 20 16" className="w-full h-full" aria-hidden="true">
-                          <path d="M0 0h20v12l-10 4-10-4V0z" fill={TEAL} />
-                        </svg>
-                      </div>
+                  {/* Top row: badge + year */}
+                  <div className="flex items-center gap-4 mb-5">
+                    <div
+                      className="inline-flex items-center justify-center rounded-full shrink-0"
+                      style={{ width: 54, height: 54, background: NAVY }}
+                    >
+                      <a.Icon className="w-6 h-6 text-white" strokeWidth={2} />
                     </div>
-                    <LaurelBranch className="w-14 h-14 md:w-16 md:h-16 opacity-80" side="right" />
-                  </div>
-
-                  {/* Year with lines */}
-                  <div className="flex items-center gap-3 w-full mb-4">
-                    <span className="h-px flex-1" style={{ background: 'rgba(0,179,152,0.45)' }} />
-                    <span className="font-black text-lg md:text-xl" style={{ color: TEAL, fontFamily: FONT }}>{a.year}</span>
-                    <span className="h-px flex-1" style={{ background: 'rgba(0,179,152,0.45)' }} />
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black uppercase tracking-[0.12em]"
+                          style={{ background: 'rgba(0,179,152,0.12)', color: TEAL, fontFamily: FONT }}>
+                      {a.year}
+                    </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-black uppercase leading-tight tracking-tight text-base md:text-lg mb-3 px-1"
+                  <h3 className="font-black uppercase leading-tight tracking-tight text-base md:text-lg mb-2"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     {a.title}
                   </h3>
 
                   {/* Org */}
-                  <p className="mt-auto text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] leading-tight"
+                  <p className="text-xs md:text-[13px] font-bold uppercase tracking-[0.12em] leading-snug"
                      style={{ color: 'rgba(0,26,77,0.65)' }}>
                     {a.org}
                   </p>
