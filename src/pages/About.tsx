@@ -186,7 +186,7 @@ export default function About() {
 
 
         {/* ───── RIC NETWORK ───── */}
-        <section className="pb-10 md:pb-16" style={{ background: BLUE, color: 'white' }}>
+        <section className="py-20 md:py-32" style={{ background: BLUE, color: 'white' }}>
           <div className="mx-auto w-full px-5 sm:px-6 md:px-10 lg:px-14">
             <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-8 p-6 md:p-8 lg:p-10 rounded-2xl shadow-lg mb-[-48px] md:mb-[-72px] relative z-10" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
               <div className="shrink-0 flex items-center justify-center md:justify-start">
