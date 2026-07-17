@@ -309,7 +309,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
               {[
                 { icon: Target, title: 'REAL-WORLD RESULTS', desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy." },
-                { icon: Atom, title: 'VALIDATION & DEMONSTRATION', desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.' },
+                { icon: Atom, title: 'VALIDATION & DEMONSTRATION', desc: 'Much more than just creating a product, innovation takes curiosity, speed, and a willingness to challenge the standard; we foster the ecosystem for ambitious ideas like yours to come to life.' },
                 { icon: Rocket, title: "FROM\u00a0IDEATION TO\u00a0SCALING\u00a0\u00a0\n", desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
                 { icon: Share2, title: 'COLLABORATIVE ECOSYSTEM', desc: 'successful companies do not scale in isolation. We connect founders, investors, industry, and partners together to scaffold and support your innovation.' },
               ].map((v) => (
