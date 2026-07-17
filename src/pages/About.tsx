@@ -397,7 +397,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  WORLD-CLASS <span style={{ color: NAVY }}>MENTORS.</span>
+                  EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
                   Our mentors are operators, founders, and industry experts who volunteer their time to help northern ventures scale. From pitch practice to go-to-market strategy, they bring decades of real-world experience.
