@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2, Plus, Minus, Users, Star } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Rocket, Plus, Minus, Users, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -17,6 +17,9 @@ import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
+import valueResults from '@/assets/values/real-world-results.jpg';
+import valueValidation from '@/assets/values/validation-demo.jpg';
+import valueEcosystem from '@/assets/values/collaborative-ecosystem.jpg';
 
 
 // Logos
@@ -306,22 +309,21 @@ export default function About() {
               </Display>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
               {[
-                { icon: Target, title: 'REAL-WORLD RESULTS', desc: "Founders are building practical technologies that solve real industry challenges, create job opportunity, and strengthen Northern Ontario's innovation economy locally with global impact." },
-                { icon: Atom, title: 'VALIDATION & DEMONSTRATION', desc: 'Much more than just creating a product, innovation takes curiosity, speed, and a willingness to challenge the standard; we foster the ecosystem for ambitious ideas like yours to come to life.' },
-                { icon: Rocket, title: "FROM\u00a0IDEATION TO\u00a0SCALING\u00a0\u00a0\n", desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
-                { icon: Share2, title: 'COLLABORATIVE ECOSYSTEM', desc: 'successful companies do not scale in isolation. We connect founders, investors, industry, and partners together to scaffold and support your innovation.' },
+                { image: valueResults, title: 'REAL-WORLD RESULTS', desc: "Founders are building practical technologies that solve real industry challenges, create job opportunity, and strengthen Northern Ontario's innovation economy locally with global impact." },
+                { image: valueValidation, title: 'VALIDATION & DEMONSTRATION', desc: 'Much more than just creating a product, innovation takes curiosity, speed, and a willingness to challenge the standard; we foster the ecosystem for ambitious ideas like yours to come to life.' },
+                { image: valueEcosystem, title: 'COLLABORATIVE ECOSYSTEM', desc: 'successful companies do not scale in isolation. We connect founders, investors, industry, and partners together to scaffold and support your innovation.' },
               ].map((v) => (
                 <div key={v.title}
-                     className="rounded-2xl p-7 md:p-10 flex items-center gap-6 md:gap-8 transition hover:-translate-y-1"
+                     className="rounded-2xl overflow-hidden flex flex-col transition hover:-translate-y-1"
                      style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.14)' }}>
-                  <div className="shrink-0 inline-flex items-center justify-center rounded-full size-20 md:size-24"
-                       style={{ border: `1.5px solid ${TEAL}`, background: 'rgba(0,179,152,0.06)' }}>
-                    <v.icon className="w-10 h-10 md:w-11 md:h-11" strokeWidth={1.4} style={{ color: TEAL }} />
+                  <div className="aspect-[4/3] w-full overflow-hidden">
+                    <img src={v.image} alt={v.title} loading="lazy" width={1024} height={1024}
+                         className="w-full h-full object-cover" />
                   </div>
-                  <div className="flex-1 min-w-0 border-l border-white/15 pl-6 md:pl-8">
-                    <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2 text-white"
+                  <div className="p-7 md:p-8 flex-1 flex flex-col">
+                    <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-3 text-white"
                         style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                       {v.title}
                     </h3>
