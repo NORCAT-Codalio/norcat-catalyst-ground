@@ -293,17 +293,11 @@ export default function Contact() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group inline-flex items-center gap-3 px-8 py-6 h-auto rounded-full text-base font-bold transition-transform hover:scale-[1.02]"
-                      style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                      className="group inline-flex items-center gap-2 px-6 py-3 h-auto rounded-lg text-sm font-semibold transition-colors hover:opacity-90"
+                      style={{ background: NAVY, color: 'white', fontFamily: FONT }}
                     >
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4" />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
-                      <span
-                        className="inline-flex items-center justify-center size-8 rounded-full"
-                        style={{ background: NAVY, color: 'white' }}
-                      >
-                        <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                      </span>
                     </Button>
                   </form>
                 </div>
@@ -427,7 +421,7 @@ export default function Contact() {
                   >
                     VISIT US
                   </h3>
-                  <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
                     {locations.map((location) => (
                       <div key={location.name} className="flex items-start gap-4">
                         <div
@@ -446,18 +440,18 @@ export default function Contact() {
                         </div>
                       </div>
                     ))}
-                  </div>
-                  <div className="mt-6 overflow-hidden rounded-2xl border border-gray-100">
-                    <iframe
-                      title="NORCAT Innovation Headquarters map"
-                      src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
-                      width="100%"
-                      height="280"
-                      style={{ border: 0 }}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      allowFullScreen
-                    />
+                    <div className="overflow-hidden rounded-2xl border border-gray-100 h-full min-h-[180px]">
+                      <iframe
+                        title="NORCAT Innovation Headquarters map"
+                        src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0, minHeight: '180px' }}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        allowFullScreen
+                      />
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
