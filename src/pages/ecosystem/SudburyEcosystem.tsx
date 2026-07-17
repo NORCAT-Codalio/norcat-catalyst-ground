@@ -139,7 +139,7 @@ const SudburyEcosystem = () => {
 
         {/* ───── HERO: Built for Founders (blue gradient) ───── */}
         <section className="relative overflow-hidden py-16 md:py-24">
-          <div className="absolute route-absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />
           <div className="absolute inset-0 pointer-events-none" style={{
