@@ -397,6 +397,24 @@ export default function Contact() {
                       >
                         <Youtube className="w-5 h-5" />
                       </a>
+                      <a
+                        href="https://www.facebook.com/NORCAT"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                        aria-label="Facebook"
+                      >
+                        <Facebook className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/norcat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <Instagram className="w-5 h-5" />
+                      </a>
                     </div>
                   </div>
                 </div>
