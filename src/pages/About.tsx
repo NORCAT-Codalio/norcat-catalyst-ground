@@ -108,7 +108,7 @@ export default function About() {
                   Where Bold Ideas <span style={{ color: TEAL }}>Grow.</span>
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  <p>NORCAT Innovation was founded to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
+                  <p>NORCAT Innovation was founded in 2014 to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
                   <p>As a non-profit Regional Innovation Centre, we help entrepreneurs turn ideas into market-ready ventures through mentorship, capital connections, industry relationships, and access to the resources needed to build, test, and scale.</p>
                   <p>By bringing the right people, partners, and opportunities together, we help Northern Ontario innovators grow here and compete anywhere.</p>
                 </div>
