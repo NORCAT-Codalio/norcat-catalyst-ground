@@ -138,7 +138,7 @@ export default function Contact() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
             className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full opacity-20"
-            style={{ background: `radial-gradient(circle, ${TEAL} 0%, transparent 70%)` }}
+            style={{ background: `radial-gradient(circle, #ffffff 0%, transparent 70%)` }}
           />
           <div
             className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-10"
