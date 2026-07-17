@@ -444,13 +444,6 @@ export default function Contact() {
                           <p className="text-sm leading-relaxed mt-1" style={{ color: '#475068' }}>
                             {location.address}
                           </p>
-                          <a
-                            href={`tel:${location.phone.replace(/-/g, '')}`}
-                            className="text-sm font-medium hover:underline mt-1 inline-block"
-                            style={{ color: TEAL }}
-                          >
-                            {location.phone}
-                          </a>
                         </div>
                       </div>
                     ))}
