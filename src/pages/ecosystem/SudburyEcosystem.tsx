@@ -49,7 +49,7 @@ interface EcosystemOrg {
 }
 
 const categories: { id: CategoryType; label: string; icon: React.ElementType }[] = [
-  { id: 'all', label: 'All', icon: Globe },
+  { id: 'all', label: 'All Resources', icon: Globe },
   { id: 'support', label: 'Support Orgs', icon: Users },
   { id: 'funding', label: 'Funding', icon: DollarSign },
   { id: 'education', label: 'Education', icon: GraduationCap },
@@ -180,41 +180,38 @@ const SudburyEcosystem = () => {
           </div>
         </section>
 
-        {/* ───── DIRECTORY (dark gradient, Home2 highlights pattern) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden"
-                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
+        {/* ───── DIRECTORY ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.10), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.10), transparent 45%)`,
           }} />
-          <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-40 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
-              <div className="max-w-2xl">
-                <Eyebrow>Ecosystem Directory</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Find your<br /><span style={{ color: TEAL }}>people.</span>
-                </Display>
-                <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
-                  Filter by category, then click any organization to learn more about how they support founders and builders in the North.
-                </p>
-              </div>
+            {/* Header */}
+            <div className="text-center mb-12 md:mb-16">
+              <Eyebrow className="justify-center mb-5">Greater Sudbury Innovation Ecosystem</Eyebrow>
+              <h2 className="font-black leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                Ecosystem <span style={{ color: TEAL }}>Directory</span>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: '#5b6478' }}>
+                Select a category to filter, then click any organization to learn more about their services and contact details.
+              </p>
             </div>
 
             {/* Filter tabs */}
-            <div className="flex flex-wrap gap-2 mb-10">
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
               {categories.map(cat => {
                 const active = activeCategory === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-[0.12em] transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
-                      background: TEAL, color: NAVY, border: `1px solid ${TEAL}`, fontFamily: FONT,
+                      background: TEAL, color: 'white', border: `1px solid ${TEAL}`, fontFamily: FONT, boxShadow: '0 10px 15px -3px rgba(0,179,152,0.25)',
                     } : {
-                      background: 'rgba(255,255,255,0.06)', color: 'white', border: '1px solid rgba(255,255,255,0.18)', fontFamily: FONT,
+                      background: 'white', color: NAVY, border: '1px solid #d9dde5', fontFamily: FONT,
                     }}
                   >
                     <cat.icon className="w-3.5 h-3.5" />
@@ -224,9 +221,9 @@ const SudburyEcosystem = () => {
               })}
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="flex flex-col lg:flex-row gap-8">
               {/* Cards */}
-              <div className="lg:col-span-2">
+              <div className="flex-1">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeCategory}
@@ -234,43 +231,35 @@ const SudburyEcosystem = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.25 }}
-                    className="grid sm:grid-cols-2 gap-4"
+                    className="grid md:grid-cols-2 gap-4"
                   >
                     {filteredOrgs.map((org) => {
                       const isSelected = selectedOrg?.name === org.name;
+                      const categoryLabel = categories.find(c => c.id === org.category)?.label;
                       return (
                         <motion.button
                           key={org.name}
                           layout
                           onClick={() => setSelectedOrg(org)}
-                          whileHover={{ y: -4 }}
-                          className="text-left rounded-2xl p-5 transition-shadow"
-                          style={{
-                            background: 'white',
-                            border: isSelected ? `2px solid ${TEAL}` : '1px solid rgba(255,255,255,0.15)',
-                            boxShadow: isSelected ? '0 18px 40px -18px rgba(0,179,152,0.55)' : '0 10px 30px -20px rgba(0,0,0,0.4)',
-                          }}
+                          whileHover={{ y: -2 }}
+                          className={`text-left rounded-2xl p-5 transition-all flex items-start gap-4 bg-white border shadow-sm group ${
+                            isSelected ? 'ring-2 ring-offset-2 ring-offset-white ring-[#00B398]' : 'hover:shadow-xl hover:border-[#00B398]'
+                          }`}
+                          style={{ borderColor: isSelected ? TEAL : '#e2e8f0', color: NAVY }}
                         >
-                          <div className="flex items-start gap-4">
-                            <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0"
-                                 style={{ background: TEAL }}>
-                              <org.icon className="w-5 h-5" style={{ color: NAVY }} />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="font-black uppercase text-sm md:text-base mb-1"
-                                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                                {org.name}
-                              </h3>
-                              {org.highlight && (
-                                <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.12em] mb-2"
-                                      style={{ background: 'rgba(0,179,152,0.12)', color: '#006A5B' }}>
-                                  {org.highlight}
-                                </span>
-                              )}
-                              <p className="text-sm leading-relaxed" style={{ color: '#5b6478' }}>
-                                {org.description}
-                              </p>
-                            </div>
+                          <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                            isSelected ? 'bg-[#00B398] text-white' : 'bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white'
+                          }`}>
+                            <org.icon className="w-6 h-6" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-black uppercase text-sm md:text-base mb-1"
+                                style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>
+                              {org.name}
+                            </h4>
+                            <p className="text-xs font-semibold" style={{ color: '#6b7280' }}>
+                              {org.highlight || categoryLabel}
+                            </p>
                           </div>
                         </motion.button>
                       );
@@ -280,7 +269,7 @@ const SudburyEcosystem = () => {
               </div>
 
               {/* Detail panel */}
-              <div className="lg:col-span-1">
+              <div className="lg:w-1/3">
                 <div className="sticky top-28">
                   <AnimatePresence mode="wait">
                     {selectedOrg ? (
@@ -289,85 +278,96 @@ const SudburyEcosystem = () => {
                         initial={{ opacity: 0, x: 16 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -16 }}
-                        className="rounded-2xl p-7 relative"
-                        style={{ background: NAVY, color: 'white', border: `1px solid ${BORDER}` }}
+                        className="rounded-3xl p-8 relative overflow-hidden"
+                        style={{ background: PAPER, border: '1px solid #d9dde5', color: NAVY }}
                       >
+                        {/* Decorative blurs */}
+                        <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.12)' }} />
+                        <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.10)' }} />
+
                         <button onClick={() => setSelectedOrg(null)}
                                 aria-label="Close detail panel"
-                                className="absolute top-4 right-4 size-8 rounded-full flex items-center justify-center"
-                                style={{ background: 'rgba(255,255,255,0.1)', color: 'white' }}>
+                                className="absolute top-5 right-5 size-8 rounded-full flex items-center justify-center z-10"
+                                style={{ background: 'rgba(0,26,77,0.08)', color: NAVY }}>
                           <X className="w-4 h-4" />
                         </button>
 
-                        <div className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
-                             style={{ background: TEAL }}>
-                          <selectedOrg.icon className="w-6 h-6" style={{ color: NAVY }} />
-                        </div>
-
-                        <h3 className="font-black uppercase text-2xl mb-2"
-                            style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                          {selectedOrg.name}
-                        </h3>
-
-                        {selectedOrg.highlight && (
-                          <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-[0.14em] mb-4"
-                                style={{ background: TEAL, color: NAVY }}>
-                            {selectedOrg.highlight}
-                          </span>
-                        )}
-
-                        <p className="mb-6 leading-relaxed text-sm md:text-base" style={{ color: FG_MUTED }}>
-                          {selectedOrg.longDescription || selectedOrg.description}
-                        </p>
-
-                        {selectedOrg.tags && (
-                          <div className="flex flex-wrap gap-2 mb-6">
-                            {selectedOrg.tags.map(tag => (
-                              <span key={tag} className="px-3 py-1 rounded-full text-xs"
-                                    style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                                {tag}
-                              </span>
-                            ))}
+                        <div className="relative z-10">
+                          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 shadow-md"
+                               style={{ background: TEAL }}>
+                            <selectedOrg.icon className="w-8 h-8" style={{ color: 'white' }} />
                           </div>
-                        )}
 
-                        {selectedOrg.internalLink ? (
-                          <Link to={selectedOrg.internalLink}
-                                className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                                style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                            Learn More
-                            <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                              <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                          <h3 className="font-black uppercase text-2xl mb-2"
+                              style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                            {selectedOrg.name}
+                          </h3>
+
+                          {selectedOrg.highlight && (
+                            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-[0.14em] mb-4"
+                                  style={{ background: 'rgba(0,179,152,0.12)', color: '#006A5B' }}>
+                              {selectedOrg.highlight}
                             </span>
-                          </Link>
-                        ) : selectedOrg.link ? (
-                          <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
-                             className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                             style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                            Visit Website
-                            <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                              <ExternalLink className="w-3.5 h-3.5" />
-                            </span>
-                          </a>
-                        ) : null}
+                          )}
+
+                          <p className="mb-6 leading-relaxed text-sm md:text-base" style={{ color: '#475068' }}>
+                            {selectedOrg.longDescription || selectedOrg.description}
+                          </p>
+
+                          {selectedOrg.tags && (
+                            <div className="flex flex-wrap gap-2 mb-6">
+                              {selectedOrg.tags.map(tag => (
+                                <span key={tag} className="px-3 py-1 rounded-full text-xs"
+                                      style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
+                          {selectedOrg.internalLink ? (
+                            <Link to={selectedOrg.internalLink}
+                                  className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
+                                  style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+                              Learn More
+                              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: TEAL, color: NAVY }}>
+                                <ArrowUpRight className="w-4 h-4" />
+                              </span>
+                            </Link>
+                          ) : selectedOrg.link ? (
+                            <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
+                               className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
+                               style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+                              Visit Website
+                              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: TEAL, color: NAVY }}>
+                                <ExternalLink className="w-3.5 h-3.5" />
+                              </span>
+                            </a>
+                          ) : null}
+                        </div>
                       </motion.div>
                     ) : (
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="rounded-2xl p-8 text-center"
-                        style={{ background: 'rgba(255,255,255,0.06)', border: '1px dashed rgba(255,255,255,0.25)', color: 'white' }}
+                        className="rounded-3xl p-8 text-center relative overflow-hidden min-h-[320px] flex flex-col items-center justify-center"
+                        style={{ background: PAPER, border: '1px dashed #d9dde5', color: NAVY }}
                       >
-                        <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
-                             style={{ background: TEAL }}>
-                          <Globe className="w-6 h-6" style={{ color: NAVY }} />
+                        <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.10)' }} />
+                        <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.08)' }} />
+
+                        <div className="relative z-10">
+                          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm"
+                               style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                            <Globe className="w-8 h-8" style={{ color: TEAL }} />
+                          </div>
+                          <h3 className="font-black uppercase text-base mb-2" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                            Select an Organization
+                          </h3>
+                          <p className="text-sm max-w-xs mx-auto" style={{ color: '#6b7280' }}>
+                            Click any card to view details and connect.
+                          </p>
                         </div>
-                        <h3 className="font-black uppercase text-base mb-2" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                          Select an Organization
-                        </h3>
-                        <p className="text-sm" style={{ color: FG_MUTED }}>
-                          Click any card to view details and connect.
-                        </p>
                       </motion.div>
                     )}
                   </AnimatePresence>
