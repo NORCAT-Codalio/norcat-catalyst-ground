@@ -281,7 +281,12 @@ export default function OurTeam() {
                 <div key={p.name}
                      className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
                      style={{ background: 'white', border: '1px solid #e3e6ec' }}>
-                  <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                  <img
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    loading="lazy"
+                    className={`max-w-full object-contain ${p.name === 'City of Greater Sudbury' ? 'max-h-[70%]' : 'max-h-full'}`}
+                  />
                 </div>
               ))}
             </div>
