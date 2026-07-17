@@ -561,7 +561,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cy-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
               {partnerLogos.map((p) => (
                 <div key={p.name}
                      className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
