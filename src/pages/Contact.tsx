@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
@@ -28,7 +29,8 @@ import {
 } from 'lucide-react';
 
 const TEAL = '#00B398';
-const NAVY = '#001A4D';
+const BLUE = '#0072CE';
+const NAVY = '#003DA5';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const contactTopics = [
@@ -45,11 +47,6 @@ const locations = [
     name: 'NORCAT Innovation Headquarters',
     address: '1547 Maley Drive, Sudbury, ON P3A 4R7',
     phone: '705-521-6600',
-  },
-  {
-    name: 'NORCAT Underground Centre',
-    address: 'Onaping, ON',
-    phone: '705-693-4273',
   },
 ];
 
@@ -136,12 +133,12 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
-        style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #003DA5 50%, #0A5AA8 100%)` }}
+        style={{ background: `linear-gradient(135deg, ${BLUE} 0%, #00A0DC 55%, ${TEAL} 100%)` }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
             className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full opacity-20"
-            style={{ background: `radial-gradient(circle, ${TEAL} 0%, transparent 70%)` }}
+            style={{ background: `radial-gradient(circle, #ffffff 0%, transparent 70%)` }}
           />
           <div
             className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-10"
@@ -153,7 +150,8 @@ export default function Contact() {
           <div className="max-w-3xl">
             <p
               className="text-xs font-semibold tracking-[0.25em] uppercase mb-5"
-              style={{ color: TEAL }}
+              style={{ color: '#FFFFFF' }}
+
             >
               START THE CONVERSATION
             </p>
@@ -161,7 +159,7 @@ export default function Contact() {
               className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
               style={{ fontFamily: FONT, color: 'white' }}
             >
-              GET IN <span style={{ color: TEAL }}>TOUCH.</span>
+              GET IN TOUCH.
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-white/85 max-w-2xl">
               Have a question, partnership idea, or just want to learn more about how we can help?
@@ -287,7 +285,7 @@ export default function Contact() {
                         className="mt-1"
                       />
                       <Label htmlFor="consent" className="text-sm font-normal leading-relaxed cursor-pointer">
-                        I agree to NORCAT Innovation collecting and storing my information so we can respond to my inquiry. See our Privacy Policy.
+                        I agree to NORCAT Innovation collecting and storing my information so we can respond to my inquiry. See our <Link to="/privacy" className="underline hover:no-underline" style={{ color: BLUE }}>Privacy Policy</Link>.
                       </Label>
                     </div>
 
@@ -314,7 +312,7 @@ export default function Contact() {
             {/* Sidebar Info */}
             <div className="lg:col-span-2 space-y-8">
               <ScrollReveal delay={100}>
-                <div className="rounded-[28px] p-8 md:p-10 text-white" style={{ background: NAVY }}>
+                <div className="rounded-[28px] p-8 md:p-10 text-white" style={{ background: `linear-gradient(160deg, ${BLUE} 0%, ${TEAL} 100%)` }}>
                   <h3
                     className="font-black uppercase leading-[0.95] tracking-tight text-xl md:text-2xl mb-6"
                     style={{ fontFamily: FONT }}
@@ -436,6 +434,18 @@ export default function Contact() {
                         </div>
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6 overflow-hidden rounded-2xl border border-gray-100">
+                    <iframe
+                      title="NORCAT Innovation Headquarters map"
+                      src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
+                      width="100%"
+                      height="280"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                    />
                   </div>
                 </div>
               </ScrollReveal>
