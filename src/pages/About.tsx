@@ -496,7 +496,7 @@ export default function About() {
         {/* ───── FINAL CTA (white) ───── */}
         <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <Eyebrow className="justify-center">Your move</Eyebrow>
+            {/* Eyebrow removed */}
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
               LET'S BUILD SOMETHING<br /><span style={{ color: TEAL }}>EXTRAORDINARY!</span>
