@@ -430,7 +430,7 @@ export default function Contact() {
                         </p>
                       </div>
                     ))}
-                    <div className="overflow-hidden rounded-2xl border border-gray-100 w-full h-[360px] md:h-[420px]">
+                    <div className="overflow-hidden rounded-2xl border border-gray-100 w-full h-[260px] md:h-[320px]">
                       <iframe
                         title="NORCAT Innovation Headquarters map"
                         src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
