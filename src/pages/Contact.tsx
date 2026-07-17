@@ -132,7 +132,7 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
-        style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+        style={{ background: BLUE }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
