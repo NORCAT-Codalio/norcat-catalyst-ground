@@ -446,7 +446,7 @@ export default function About() {
             <div className="max-w-3xl mb-8 md:mb-10">
               <Eyebrow>OUR VALUES&nbsp;&nbsp;</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
-                DRIVING INNOVATION FORWARD.
+                ACCELERATING INNOVATION&nbsp;
               </Display>
             </div>
 
