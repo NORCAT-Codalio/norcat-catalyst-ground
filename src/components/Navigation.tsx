@@ -341,7 +341,7 @@ export function Navigation() {
                   about: { label: 'About', items: aboutItems, eyebrow: 'The story of the North\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Explore all programs', body: 'CIT, Core5, Rogers Cybersecure Catalyst, and funding pathways - find the right fit for your venture.', href: '/programs', cta: 'View programs overview' } },
                   services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/apply', cta: 'Become a Client' } },
-                  insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'Venture North PITCH', body: 'Our flagship startup pitch event returns this October. Apply to pitch or register to attend.', href: '/events', cta: 'Learn more' } },
+                  insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'Venture North PITCH', body: 'Applications to pitch are now closed. Join us to watch the finalists compete live.', href: '/events', cta: 'Learn more' } },
                 } as const;
 
                 const menu = menus[activeDropdown as keyof typeof menus];
