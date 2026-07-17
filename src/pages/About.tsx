@@ -21,11 +21,6 @@ import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json
 import { LocationsMap } from '@/components/LocationsMap';
 
 
-// Award badges
-import awardBestPlace from '@/assets/award-best-place-to-work.png';
-import awardInnovationEco from '@/assets/award-best-innovation-ecosystem.png';
-import awardNasa from '@/assets/award-nasa-achievement.png';
-
 // Logos
 import innovateonLogo from '@/assets/logos/innovateon.png.asset.json';
 
