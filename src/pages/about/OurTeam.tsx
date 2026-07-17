@@ -269,10 +269,10 @@ export default function OurTeam() {
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                BACKED BY A STRONGER NETWORK.
+                SUPPORTING WHAT'S NEXT.
               </h2>
               <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
-                These organizations help expand access to funding, expertise, and opportunities across Northern Ontario.
+                Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.
               </p>
             </div>
 
