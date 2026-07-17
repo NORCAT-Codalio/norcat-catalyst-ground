@@ -108,9 +108,9 @@ export default function About() {
 
 
         {/* ───── RIC NETWORK ───── */}
-        <section className="pb-14 md:pb-20" style={{ background: BLUE, color: 'white' }}>
+        <section className="pb-8 md:pb-12" style={{ background: BLUE, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-8 md:p-10 rounded-2xl shadow-sm" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-8 md:p-10 rounded-2xl shadow-lg mb-[-40px] md:mb-[-56px] relative z-10" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
               <div className="shrink-0 flex items-center justify-center md:justify-start">
                 <img src={innovateonLogo.url} alt="InnovateON - Regional Innovation Centre Network"
                      className="h-8 md:h-10 w-auto object-contain" />
@@ -127,7 +127,7 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (compact accordion timeline) ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        <section className="pt-20 md:pt-32 pb-14 md:pb-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-10 lg:gap-16 items-start">
 
