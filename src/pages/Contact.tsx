@@ -132,37 +132,36 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero */}
-      <section
-        className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
-        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)` }}
-      >
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div
-            className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full opacity-20"
-            style={{ background: `radial-gradient(circle, #ffffff 0%, transparent 70%)` }}
-          />
-          <div
-            className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-10"
-            style={{ background: `radial-gradient(circle, #ffffff 0%, transparent 70%)` }}
-          />
-        </div>
+      <section className="relative overflow-hidden flex items-center py-16 md:py-24" style={{ background: NAVY }}>
+        <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+
+        {/* logo background (matches Our Story hero) */}
+        <div
+          className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+          style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+        />
+
+        {/* radial glow (matches Our Story hero) */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+        }} />
+
+        {/* signature lines */}
+        <img src={signatureLines} alt="" aria-hidden="true"
+             className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <div className="max-w-3xl">
-            <p
-              className="text-xs font-semibold tracking-[0.25em] uppercase mb-5"
-              style={{ color: '#FFFFFF' }}
-
-            >
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+               style={{ fontFamily: FONT, color: TEAL }}>
+              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
               START THE CONVERSATION
             </p>
-            <h1
-              className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-              style={{ fontFamily: FONT, color: 'white' }}
-            >
-              GET IN TOUCH.
+            <h1 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem] mb-6"
+                style={{ fontFamily: FONT, color: 'white', letterSpacing: '-0.02em' }}>
+              GET IN <span style={{ color: TEAL }}>TOUCH.</span>
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-white/85 max-w-2xl">
+            <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
               Have a question, partnership idea, or just want to learn more about how we can help?
               Reach out — we'd love to hear from you.
             </p>
