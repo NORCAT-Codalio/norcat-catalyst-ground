@@ -49,6 +49,37 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
+const LaurelBranch = ({ className = '', side = 'left' }: { className?: string; side?: 'left' | 'right' }) => (
+  <svg
+    className={className}
+    viewBox="0 0 48 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    style={{ transform: side === 'right' ? 'scaleX(-1)' : undefined }}
+  >
+    {/* Stem */}
+    <path
+      d="M24 4 C36 24, 36 56, 24 76"
+      stroke="#9BA3B4"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+    />
+    {/* Leaves */}
+    {[8, 18, 28, 38, 48, 58].map((cy, i) => (
+      <ellipse
+        key={i}
+        cx="24"
+        cy={cy}
+        rx="10"
+        ry="5"
+        fill="#9BA3B4"
+        transform={`rotate(${i % 2 === 0 ? -35 : 35} 24 ${cy})`}
+      />
+    ))}
+  </svg>
+);
 
 export default function About() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
