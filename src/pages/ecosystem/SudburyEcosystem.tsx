@@ -380,7 +380,7 @@ const SudburyEcosystem = () => {
           <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
               <Display className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center md:text-left">
-                GET CONNECTED IN THE&nbsp;<span style={{ color: TEAL }}>REGION</span>
+                GET CONNECTED TO THE&nbsp;<span style={{ color: TEAL }}>REGION</span>
               </Display>
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] shrink-0"
