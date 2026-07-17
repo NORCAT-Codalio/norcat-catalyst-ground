@@ -376,21 +376,19 @@ const SudburyEcosystem = () => {
         </Dialog>
 
         {/* ───── CTA (dark) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden"
+        <section className="py-10 md:py-14 relative overflow-hidden"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
           }} />
-          <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
 
-          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              GET CONNECTED IN THE&nbsp;<br /><span style={{ color: TEAL }}>REGION</span>
-            </Display>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+              <Display className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center md:text-left">
+                GET CONNECTED IN THE&nbsp;<span style={{ color: TEAL }}>REGION</span>
+              </Display>
               <Link to="/apply"
-                    className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                    className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] shrink-0"
                     style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                 Apply
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
