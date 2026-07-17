@@ -499,16 +499,16 @@ export default function About() {
             <Eyebrow className="justify-center">Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-              Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
+              LET'S BUILD SOMETHING<br /><span style={{ color: TEAL }}>EXTRAORDINARY!</span>
             </h2>
             <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              Whether you're just starting out or ready to scale, we're here to help you build something extraordinary.
+              <br />
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
-                Apply to NORCAT Innovation
+                Apply&nbsp;
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </span>
