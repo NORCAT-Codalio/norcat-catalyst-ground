@@ -200,7 +200,7 @@ export default function About() {
                     {/* Small circular image + node */}
                     <div className="relative z-10 shrink-0">
                       <div className="size-20 md:size-28 rounded-full overflow-hidden ring-[3px] md:ring-4 shadow-xl"
-                           style={{ ringColor: 'rgba(0,179,152,0.35)' }}>
+                           style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
                         <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                       </div>
                       <div className="absolute -bottom-1 -right-1 size-6 md:size-7 rounded-full flex items-center justify-center text-[10px] md:text-xs font-black"
