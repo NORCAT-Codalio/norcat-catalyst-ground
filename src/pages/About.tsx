@@ -379,54 +379,26 @@ export default function About() {
         </section>
 
 
-        {/* ───── MENTOR NETWORK ───── */}
-        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 60%, ${NAVY} 100%)`, color: 'white' }}>
+        {/* ───── EXPERTISE TO HELP YOU MOVE FORWARD ───── */}
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 35%), radial-gradient(circle at 90% 80%, rgba(0,179,152,0.35), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] rounded-full opacity-30 pointer-events-none"
-               style={{ background: `radial-gradient(circle, ${BLUE} 0%, transparent 70%)`, filter: 'blur(80px)' }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div>
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
-                   style={{ fontFamily: FONT, color: 'white' }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
-                  MENTOR NETWORK
-                </p>
-                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  WORLD-CLASS <span style={{ color: NAVY }}>MENTORS.</span>
-                </h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
-                  Our mentors are operators, founders, and industry experts who volunteer their time to help northern ventures scale. From pitch practice to go-to-market strategy, they bring decades of real-world experience.
-                </p>
-                <Link
-                  to="/programs/mentorship-services#meet-our-mentors"
-                  className="group inline-flex items-center px-8 py-4 rounded-full text-base font-bold transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
-                  style={{ background: 'white', color: NAVY, fontFamily: FONT }}
-                >
-                  Meet Our Mentors
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {[
-                  { number: '18', label: 'Active Mentors', desc: 'Vetted operators and founders across sectors.' },
-                  { number: '1000+', label: 'Hours Mentored in 2025', desc: 'Hands-on guidance for northern ventures.' },
-                  { number: '100', label: 'NPS Score', desc: 'Founder-rated mentorship experience.' },
-                  { number: '$0', label: 'To Access Mentorship', desc: 'No cost for qualifying ventures.' },
-                ].map((s) => (
-                  <div key={s.label}
-                       className="rounded-2xl p-6 md:p-8 transition-transform duration-300 hover:scale-[1.02]"
-                       style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.22)', transform: 'translateZ(0)', willChange: 'transform' }}>
-                    <p className="font-black text-3xl md:text-4xl mb-1" style={{ fontFamily: FONT, color: 'white' }}>{s.number}</p>
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] mb-3" style={{ color: 'white' }}>{s.label}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.80)' }}>{s.desc}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="max-w-3xl">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: 'white' }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
+                THE INNOVATION TEAM
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD</span>
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Whether it's your first time jotting a business idea down on the back of a napkin or you're scaling and ready to demonstrate your technology to global operators, we are here to help.
+              </p>
             </div>
           </div>
         </section>
