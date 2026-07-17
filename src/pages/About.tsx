@@ -504,7 +504,7 @@ export default function About() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="w-full font-black uppercase leading-tight tracking-tight text-left text-lg md:text-xl mb-5"
+                  <h3 className="w-full font-black uppercase leading-tight tracking-tight text-center text-lg md:text-xl mb-5"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     {a.title}
                   </h3>
