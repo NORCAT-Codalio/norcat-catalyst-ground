@@ -504,9 +504,9 @@ export default function About() {
 
 
         {/* ───── TESTIMONIAL BLURBS ───── */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-14 md:py-20" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-12 md:mb-16">
+            <div className="max-w-3xl mb-8 md:mb-10">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -604,14 +604,14 @@ export default function About() {
 
 
         {/* ───── AWARDS BANNER (colour) ───── */}
-        <section className="py-20 md:py-24 relative overflow-hidden"
+        <section className="py-14 md:py-20 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.06), transparent 45%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="mb-12 md:mb-14 text-left">
+            <div className="mb-8 md:mb-10 text-left">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -699,17 +699,17 @@ export default function About() {
         </section>
 
         {/* ───── FINAL CTA (white) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
             {/* Eyebrow removed */}
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
               LET'S BUILD SOMETHING<br /><span style={{ color: TEAL }}>EXTRAORDINARY!</span>
             </h2>
-            <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: '#475068' }}>
+            <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: '#475068' }}>
               <br />
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
