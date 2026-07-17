@@ -132,7 +132,7 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
-        style={{ background: BLUE }}
+        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)` }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
@@ -305,7 +305,7 @@ export default function Contact() {
             {/* Sidebar Info */}
             <div className="lg:col-span-2 space-y-8">
               <ScrollReveal delay={100}>
-                <div className="rounded-[28px] p-8 md:p-10 text-white" style={{ background: BLUE }}>
+                <div className="rounded-[28px] p-8 md:p-10 text-white" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)` }}>
                   <h3
                     className="font-black uppercase leading-[0.95] tracking-tight text-xl md:text-2xl mb-6"
                     style={{ fontFamily: FONT }}
