@@ -20,7 +20,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  ArrowUpRight,
   Send,
   Clock,
   Linkedin,
