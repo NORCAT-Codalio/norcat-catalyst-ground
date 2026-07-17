@@ -168,20 +168,20 @@ const SudburyEcosystem = () => {
               <div className="lg:col-span-5">
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
-                  The Greater Sudbury Ecosystem
+                  Built for Founders
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  One region.{' '}
-                  <span style={{ color: TEAL }}>A full stack of support.</span>
+                  SUPPORT AT{' '}
+                  <span style={{ color: TEAL }}>EVERY STAGE.</span>
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:pt-4">
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  Greater Sudbury punches well above its weight. Support organizations, dedicated funding programs, world-class research institutions, and a deep bench of industry partners all converge to give founders something rare - an ecosystem where every layer of the journey, from idea to scale, is locally accessible.
+                  Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
                 </p>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  NORCAT Innovation sits at the centre of this network, connecting founders to the right people, programs, and capital - without the noise.
+                  NORCAT Innovation helps startups navigate the ecosystem and connect with the right people, programs, and opportunities when they need them.
                 </p>
                 <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 py-7" style={{ borderTop: '1px solid #d9dde5', borderBottom: '1px solid #d9dde5' }}>
                   {stats.map((s) => (
