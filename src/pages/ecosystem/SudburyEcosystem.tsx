@@ -30,7 +30,6 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 import { motion, AnimatePresence } from 'framer-motion';
-import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // ── Brand tokens (mirrors About / Home2) ──
