@@ -26,8 +26,6 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 export default function OurTeam() {
-  const [modalMember, setModalMember] = useState<TeamMember | null>(null);
-
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
