@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Plus, Minus, Users, Star } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Rocket, Plus, Minus, Users, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
