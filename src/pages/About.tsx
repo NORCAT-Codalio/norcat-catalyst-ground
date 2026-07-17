@@ -195,11 +195,11 @@ export default function About() {
             </div>
 
             {/* Alternating side-by-side timeline */}
-            <div className="relative mx-auto max-w-7xl">
+            <div className="relative mx-auto max-w-5xl">
               {/* Central vertical connector rail */}
-              <div className="absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-px hidden md:block" style={{ background: 'rgba(0,179,152,0.35)' }} />
+              <div className="absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-px hidden md:block" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              <div className="space-y-8 md:space-y-10">
+              <div className="space-y-6 md:space-y-8">
                 {[
                   { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition.", image: storyLake.url },
                   { year: '2017', title: 'Underground Centre Expansion', desc: 'Joint public funding helps NORCAT overhaul the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
@@ -238,72 +238,65 @@ export default function About() {
                       )}
                     </AnimatePresence>
                   );
+
+                  const textBlock = (
+                    <button
+                      onClick={() => toggleEvent(idx)}
+                      className={`group text-left w-full ${isRight ? 'md:text-right' : ''}`}
+                      aria-expanded={isOpen}
+                    >
+                      <div className={`flex items-start gap-2 ${isRight ? 'md:flex-row-reverse' : ''}`}>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-base md:text-lg lg:text-xl font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                          <h3 className="font-black uppercase text-base md:text-lg lg:text-xl leading-tight" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                        </div>
+                        <span className="shrink-0 mt-1 inline-flex items-center justify-center size-6 rounded-full transition-colors" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
+                          <ExpandIcon className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                      {descBlock}
+                    </button>
+                  );
+
+                  const imageButton = (
+                    <button
+                      onClick={() => toggleEvent(idx)}
+                      className="relative shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                      style={{ ['--tw-ring-color' as string]: TEAL }}
+                      aria-label={`Toggle ${event.title}`}
+                    >
+                      <div className="size-16 lg:size-20 rounded-full overflow-hidden ring-[3px] shadow-lg transition-transform duration-300 group-hover:scale-105"
+                           style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
+                        <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                      </div>
+                    </button>
+                  );
+
                   return (
-                    <div key={event.year + idx} className="relative md:grid md:grid-cols-2 md:gap-12 items-start">
-                      {/* Mobile: inline image + text */}
+                    <div key={event.year + idx} className="relative">
+                      {/* Mobile */}
                       <div className="flex items-start gap-4 md:hidden">
-                        <button
-                          onClick={() => toggleEvent(idx)}
-                          className="relative shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                          style={{ ['--tw-ring-color' as string]: TEAL }}
-                          aria-label={`Toggle ${event.title}`}
-                        >
-                          <div className="size-20 rounded-full overflow-hidden ring-[3px] shadow-xl"
-                               style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
-                            <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
-                          </div>
-                        </button>
+                        {imageButton}
                         <div className="flex-1 pt-1">
-                          <button
-                            onClick={() => toggleEvent(idx)}
-                            className="w-full text-left group"
-                            aria-expanded={isOpen}
-                          >
-                            <div className="flex items-start justify-between gap-2">
-                              <div>
-                                <p className="text-base font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                                <h3 className="font-black uppercase text-base mb-0.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                              </div>
-                              <span className="shrink-0 mt-1 inline-flex items-center justify-center size-6 rounded-full transition-colors" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
-                                <ExpandIcon className="w-4 h-4" />
-                              </span>
-                            </div>
-                          </button>
-                          {descBlock}
+                          {textBlock}
                         </div>
                       </div>
 
-                      {/* Desktop: alternating columns */}
-                      <div className={`hidden md:flex items-start gap-3 ${isRight ? 'col-start-2 order-2' : 'col-start-1 justify-end flex-row-reverse text-right'}`}>
-                        <button
-                          onClick={() => toggleEvent(idx)}
-                          className="relative shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                          style={{ ['--tw-ring-color' as string]: TEAL }}
-                          aria-label={`Toggle ${event.title}`}
-                        >
-                          <div className="size-20 lg:size-24 rounded-full overflow-hidden ring-4 shadow-xl transition-transform duration-300 group-hover:scale-105"
-                               style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
-                            <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
-                          </div>
-                        </button>
-                        <div className="max-w-xl">
-                          <button
-                            onClick={() => toggleEvent(idx)}
-                            className={`w-full group ${isRight ? 'text-left' : 'text-right'}`}
-                            aria-expanded={isOpen}
-                          >
-                            <div className={`flex items-start gap-2 ${isRight ? 'flex-row-reverse' : ''}`}>
-                              <div className="flex-1">
-                                <p className="text-base md:text-lg lg:text-xl font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                                <h3 className="font-black uppercase text-lg lg:text-xl mb-0.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                              </div>
-                              <span className="shrink-0 mt-1 inline-flex items-center justify-center size-7 rounded-full transition-colors" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
-                                <ExpandIcon className="w-4 h-4" />
-                              </span>
-                            </div>
-                          </button>
-                          {descBlock}
-                        </div>
+                      {/* Desktop alternating grid */}
+                      <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 lg:gap-8 items-start">
+                        {isRight ? (
+                          <>
+                            <div className="col-start-1" /> {/* empty left */}
+                            <div className="col-start-2 flex justify-center pt-2">{imageButton}</div>
+                            <div className="col-start-3 pt-1">{textBlock}</div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="col-start-1 pt-1">{textBlock}</div>
+                            <div className="col-start-2 flex justify-center pt-2">{imageButton}</div>
+                            <div className="col-start-3" /> {/* empty right */}
+                          </>
+                        )}
                       </div>
                     </div>
                   );
