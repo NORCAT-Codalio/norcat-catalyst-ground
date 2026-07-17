@@ -70,10 +70,10 @@ const capabilities = [
 ];
 
 const stats = [
-  { icon: Pickaxe, number: '3 KM', label: 'Underground workings' },
-  { icon: Zap, number: '300+', label: 'Technology trials hosted' },
-  { icon: Globe, number: '50+', label: 'Countries represented' },
-  { icon: Award, number: '15+ YEARS', label: 'Supporting technology validation' },
+  { icon: Pickaxe, number: '3 KM', label: 'Operational Underground Tunnels' },
+  { icon: Zap, number: '300+', label: 'Technology Tests Hosted' },
+  { icon: Globe, number: '50+', label: 'Countries Reached' },
+  { icon: Award, number: '15+', label: 'Years of Real-World Validation' },
 ];
 
 const benefits = [
@@ -122,17 +122,15 @@ const NorcatUnderground = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">The NORcat Underground Centre</Eyebrow>
+              <Eyebrow className="text-lg !text-white">The Global One-Stop Shop for the Future of Mining</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Built for <span style={{ color: TEAL }}>real-world testing.</span>
+                NORCAT <span style={{ color: TEAL }}>Underground.</span>
               </Display>
 
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                The NORCAT Underground Centre is a fully operational mine designed for technology trials, product demonstrations, and hands-on training.
-              </p>
-              <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Startups, OEMs, and technology companies use the site to test solutions in active mining conditions, gather industry feedback, and demonstrate performance before bringing products to market.
+                A fully operational, working mine - purpose-built for industry to test, validate and
+                prove next-generation mining technology in real underground conditions.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
@@ -174,9 +172,9 @@ const NorcatUnderground = () => {
 
                 <div className="mt-8 grid sm:grid-cols-3 gap-3">
                   {[
-                    { icon: Mountain, label: 'Active Underground Workings' },
-                    { icon: Gauge, label: 'Industry-Ready Testing' },
-                    { icon: Users, label: 'Direct Access to Customers' },
+                    { icon: Compass, label: '3 km of Active Tunnels' },
+                    { icon: Gauge, label: 'Production-Grade Conditions' },
+                    { icon: Award, label: 'Globally Recognized' },
                   ].map((b) => (
                     <div key={b.label} className="flex items-center gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}>
