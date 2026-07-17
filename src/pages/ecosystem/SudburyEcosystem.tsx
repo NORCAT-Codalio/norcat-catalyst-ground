@@ -388,9 +388,6 @@ const SudburyEcosystem = () => {
             <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               GET CONNECTED IN THE&nbsp;<br /><span style={{ color: TEAL }}>REGION</span>
             </Display>
-            <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: FG_MUTED }}>
-              Connect with NORCAT Innovation to access the full network of resources, mentors, and funding opportunities available to founders in Greater Sudbury.
-            </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
