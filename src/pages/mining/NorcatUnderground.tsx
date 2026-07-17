@@ -70,10 +70,10 @@ const capabilities = [
 ];
 
 const stats = [
-  { icon: Pickaxe, number: '3 KM', label: 'Operational Underground Tunnels' },
-  { icon: Zap, number: '300+', label: 'Technology Tests Hosted' },
-  { icon: Globe, number: '50+', label: 'Countries Reached' },
-  { icon: Award, number: '15+', label: 'Years of Real-World Validation' },
+  { icon: Pickaxe, number: '3 KM', label: 'Underground workings' },
+  { icon: Zap, number: '300+', label: 'Technology trials hosted' },
+  { icon: Globe, number: '50+', label: 'Countries represented' },
+  { icon: Award, number: '15+ YEARS', label: 'Supporting technology validation' },
 ];
 
 const benefits = [
@@ -158,29 +158,29 @@ const NorcatUnderground = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
-                <Eyebrow>The Asset</Eyebrow>
+                <Eyebrow>THE NORCAT UNDERGROUND CENTRE</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
-                  An actual mine.<br /><span style={{ color: TEAL }}>Open for business.</span>
+                  BUILT FOR<br /><span style={{ color: TEAL }}>REAL-WORLD TESTING.</span>
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  <p>There is no simulator for the real thing. NORCAT Underground is a fully operational mine - three kilometres of active tunnels - purpose-built for technology trials, demonstrations and hands-on training.</p>
-                  <p>OEMs, software vendors and startups from around the world come here to do what they cannot do anywhere else: prove their technology in real conditions, in front of real customers.</p>
+                  <p>The NORCAT Underground Centre is a fully operational mine designed for technology trials, product demonstrations, and hands-on training.</p>
+                  <p>Startups, OEMs, and technology companies use the site to test solutions in active mining conditions, gather industry feedback, and demonstrate performance before bringing products to market.</p>
                 </div>
 
                 <div className="mt-8 grid sm:grid-cols-3 gap-3">
                   {[
-                    { icon: Compass, label: '3 km of Active Tunnels' },
-                    { icon: Gauge, label: 'Production-Grade Conditions' },
-                    { icon: Award, label: 'Globally Recognized' },
+                    { icon: Mountain, label: 'ACTIVE UNDERGROUND WORKINGS' },
+                    { icon: Gauge, label: 'INDUSTRY-READY TESTING' },
+                    { icon: Users, label: 'DIRECT ACCESS TO CUSTOMERS' },
                   ].map((b) => (
                     <div key={b.label} className="flex items-center gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}>
                         <b.icon className="w-5 h-5" style={{ color: TEAL }} />
                       </div>
-                      <p className="text-xs font-bold uppercase tracking-[0.1em]" style={{ color: NAVY }}>{b.label}</p>
+                      <p className="text-xs font-bold uppercase tracking-[0.08em]" style={{ color: NAVY }}>{b.label}</p>
                     </div>
                   ))}
                 </div>
