@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
-import signatureLines from '@/assets/signature-lines.png';
-import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import storyLake from '@/assets/story/story-lake.jpg.asset.json';
 import storyMine from '@/assets/story/story-mine.jpg.asset.json';
 import storyHorse from '@/assets/story/story-horse.jpg.asset.json';
@@ -60,40 +58,6 @@ export default function About() {
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
-        {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
-
-          {/* logo background (matches Home2 hero) */}
-          <div
-            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
-          />
-
-          {/* radial glow (matches Home2 hero) */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
-          }} />
-
-          {/* signature lines */}
-          <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
-              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                OUR <span style={{ color: TEAL }}>STORY.</span>
-              </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Since 2014, we have been passionate about driving the growth of Northern Ontario's innovation ecosystem in Greater Sudbury and beyond.
-              </p>
-            </div>
-          </div>
-        </section>
-
-
-        {/* ───── ROOTED IN NORTHERN ONTARIO ───── */}
         <section className="pt-20 md:pt-28 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
