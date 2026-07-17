@@ -158,21 +158,19 @@ const SudburyEcosystem = () => {
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
-              <div className="lg:col-span-5">
-                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  Built for Founders
-                </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
-                  SUPPORT AT{' '}
-                  <span style={{ color: TEAL }}>EVERY STAGE.</span>
-                </h2>
-              </div>
-              <div className="lg:col-span-7 lg:pt-4">
+            <div className="max-w-4xl">
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                Built for Founders
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
+                SUPPORT AT{' '}
+                <span style={{ color: TEAL }}>EVERY STAGE.</span>
+              </h2>
+              <div className="mt-8 md:mt-10">
                 <p className="text-lg sm:text-xl md:text-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
+                  Greater Sudbury punches well above its weight. It brings together funding, research, industry expertise, and startup support in one connected ecosystem.
                 </p>
               </div>
             </div>
