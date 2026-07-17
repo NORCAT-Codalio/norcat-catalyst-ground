@@ -406,17 +406,6 @@ export default function About() {
         {/* ───── TEAM GRID ───── */}
         <section className="py-10 md:py-14" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="mb-6 md:mb-8">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                THE INNOVATION TEAM
-              </p>
-              <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                MEET THE TEAM.
-              </h2>
-            </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
               {team.map((member) => (
                 <motion.div
