@@ -30,12 +30,6 @@ import awardNasa from '@/assets/award-nasa-achievement.png';
 import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
 import innovateonLogo from '@/assets/logos/innovateon.png';
 
-// Partner logos
-import fednorLogo from '@/assets/logos/fednor.png';
-import sudburyLogo from '@/assets/logos/sudbury.png';
-import ociLogo from '@/assets/logos/oci.png';
-import nohfcLogo from '@/assets/logos/nohfc.png';
-
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
@@ -44,14 +38,6 @@ const PAPER = '#F2F3F6';
 const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
-
-const partnerLogos = [
-  { name: 'FedNor', logo: fednorLogo },
-  { name: 'Ontario', logo: ontarioLogoAsset },
-  { name: 'Ontario Centres of Innovation', logo: ociLogo },
-  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
-  { name: 'City of Greater Sudbury', logo: sudburyLogo },
-];
 
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
