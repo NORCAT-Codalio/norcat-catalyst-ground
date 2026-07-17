@@ -140,7 +140,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  From Idea to <span style={{ color: TEAL }}>Impact.</span>
+                  From Idea to <span style={{ color: TEAL }}>RESULT.</span>
                 </h2>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
@@ -300,18 +300,18 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
-              <Eyebrow>What Drives Innovation</Eyebrow>
+              <Eyebrow>WHAT DRIVES INNOVATION?</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
-                Our <span style={{ color: TEAL }}>Values.</span>
+                INNOVATION{"\u00a0"}VALUES.
               </Display>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
               {[
-                { icon: Target, title: 'Real-World Impact', desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy." },
-                { icon: Atom, title: 'Bold Experimentation', desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.' },
-                { icon: Rocket, title: 'Idea to Market', desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
-                { icon: Share2, title: 'Connected Ecosystem', desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.' },
+                { icon: Target, title: 'REAL-WORLD RESULTS', desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy." },
+                { icon: Atom, title: 'VALIDATION & DEMONSTRATION', desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.' },
+                { icon: Rocket, title: "FROM\u00a0IDEATION TO\u00a0SCALING\u00a0\u00a0\n", desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
+                { icon: Share2, title: 'COLLABORATIVE ECOSYSTEM', desc: 'successful companies do not scale in isolation. We connect founders, investors, industry, and partners together to scaffold and support your innovation.' },
               ].map((v) => (
                 <div key={v.title}
                      className="rounded-2xl p-7 md:p-10 flex items-center gap-6 md:gap-8 transition hover:-translate-y-1"
