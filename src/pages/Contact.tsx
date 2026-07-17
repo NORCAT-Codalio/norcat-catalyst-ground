@@ -435,6 +435,18 @@ export default function Contact() {
                       </div>
                     ))}
                   </div>
+                  <div className="mt-6 overflow-hidden rounded-2xl border border-gray-100">
+                    <iframe
+                      title="NORCAT Innovation Headquarters map"
+                      src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
+                      width="100%"
+                      height="280"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               </ScrollReveal>
             </div>
