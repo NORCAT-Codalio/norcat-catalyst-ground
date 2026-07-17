@@ -126,6 +126,51 @@ const stats = [
   { number: '$0', label: 'To Access Mentorship' },
 ];
 
+const founderTestimonials = [
+  {
+    quote: "NORCAT was a true partner and instrumental in helping us launch our company. They provided us with the experience, know-how, and credibility we needed to develop a world-class startup here in the North.",
+    name: "Dr. Joe Eibl",
+    role: "CEO and Co-founder, FloSonics Medical",
+    logo: flosonicsLogo,
+  },
+  {
+    quote: "While the science was strong, the start-up world was unfamiliar; we are not trained for that space. Mentors like Peter Dal Bianco were vital for attracting many investors to the company.",
+    name: "Dr. Amadeo Parissenti",
+    role: "Co-Founder & CSO, RNA Diagnostics",
+    logo: rnaDiagnosticsLogo.url,
+  },
+  {
+    quote: "Once I was paired with Mr. Peter Dal Bianco, things really changed for my company. I don't think I'd be where I am today without somebody like Peter.",
+    name: "Sheri Tomchick",
+    role: "Founder and CEO, Plan A and StaffStat",
+    logo: planaLogo.url,
+  },
+  {
+    quote: "The support from NORCAT was critical in our decision to relocate to Sudbury. And the mentorship board was instrumental in our success, helping launch us into the ecosystem.",
+    name: "Tabassum Pasha",
+    role: "COO & Co-Founder, Waive",
+    logo: waiveLogo.url,
+  },
+  {
+    quote: "In the Tom Fortin Discovery Centre, a space built for experimentation and practical innovation that is sovereign to Canada, Tom's support played a significant role in providing the environment and the materials we required.",
+    name: "Michael Gribbons",
+    role: "Founder & CEO, Maestro Digital Mine",
+    logo: maestroLogo,
+  },
+  {
+    quote: "Tom Fortin provided me with invaluable, direct support—giving me time, resources, and the space to complete my critical first production run. Tom coached me on purchasing the right equipment and instilled a foundational principle.",
+    name: "Matthew Gougeon",
+    role: "Founder & CEO, Perspic",
+    logo: perspicLogo.url,
+  },
+  {
+    quote: "As a startup founder, you need brutally honest feedback, and that is exactly what the mentors provided, and offered crucial credibility with new investors.",
+    name: "Vineet Johnson",
+    role: "Founder & CEO, iRegained",
+    logo: iregainedLogo.url,
+  },
+];
+
 const MentorshipServices = () => {
   const [expandedMentor, setExpandedMentor] = useState<string | null>(null);
 
