@@ -390,7 +390,7 @@ const SudburyEcosystem = () => {
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] shrink-0"
                     style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                Apply
+                Apply Now
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
