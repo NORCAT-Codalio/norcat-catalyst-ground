@@ -456,9 +456,9 @@ export default function About() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-8 md:mb-10">
-              <Eyebrow>WHAT DRIVES INNOVATION?</Eyebrow>
+              <Eyebrow>OUR VALUES&nbsp;&nbsp;</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
-                OUR VALUES.
+                DRIVING INNOVATION FORWARD.
               </Display>
             </div>
 
