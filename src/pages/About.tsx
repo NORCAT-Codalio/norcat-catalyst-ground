@@ -705,6 +705,8 @@ export default function About() {
 
 
       </div>
+
+      <TeamModal member={modalMember} onClose={() => setModalMember(null)} />
     </Layout>
   );
 }
