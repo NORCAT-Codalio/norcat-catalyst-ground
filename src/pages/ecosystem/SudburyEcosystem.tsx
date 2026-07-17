@@ -17,7 +17,6 @@ import {
   Rocket,
   Award,
   FlaskConical,
-  Cpu,
   Shield,
   Sparkles,
   X,
