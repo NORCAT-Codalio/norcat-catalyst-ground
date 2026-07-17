@@ -26,6 +26,8 @@ import {
   Linkedin,
   Youtube,
   Twitter,
+  Facebook,
+  Instagram,
 } from 'lucide-react';
 
 const TEAL = '#00B398';
