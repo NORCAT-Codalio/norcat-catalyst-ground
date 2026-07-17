@@ -531,20 +531,26 @@ const MentorshipServices = () => {
               {[...founderTestimonials, ...founderTestimonials].map((t, i) => (
                 <div
                   key={`${t.name}-${i}`}
-                  className="shrink-0 w-[320px] sm:w-[380px] md:w-[420px] mx-3 md:mx-4"
+                  className="shrink-0 w-[300px] sm:w-[360px] md:w-[400px] mx-3 md:mx-4"
                 >
-                  <div className="h-full rounded-2xl p-6 md:p-8 flex flex-col"
-                       style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${BORDER}` }}>
-                    <div className="h-14 mb-6 flex items-center justify-start rounded-lg px-3 py-2 bg-white/95">
-                      <img src={t.logo} alt={t.role.split(',')[0]} className="max-h-full max-w-[140px] object-contain" />
+                  <div className="h-full rounded-2xl p-6 md:p-8 flex flex-col bg-white shadow-lg"
+                       style={{ border: '1px solid #e2e8f0' }}>
+                    <div className="h-14 mb-5 flex items-center justify-start rounded-lg px-3 py-2 bg-white"
+                         style={{ border: '1px solid #e2e8f0' }}>
+                      <img
+                        src={typeof t.logo === 'string' ? t.logo : (t.logo as any)?.url || t.logo}
+                        alt={t.role.split(',')[0]}
+                        className="max-h-full max-w-[140px] object-contain"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                      />
                     </div>
                     <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
-                    <p className="text-sm md:text-base leading-relaxed mb-6 flex-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                    <p className="text-sm md:text-base leading-relaxed mb-6 flex-1" style={{ color: '#334155' }}>
                       "{t.quote}"
                     </p>
                     <div>
-                      <p className="font-bold text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
-                      <p className="text-xs md:text-sm" style={{ color: FG_MUTED }}>{t.role}</p>
+                      <p className="font-bold text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{t.name}</p>
+                      <p className="text-xs md:text-sm" style={{ color: '#64748b' }}>{t.role}</p>
                     </div>
                   </div>
                 </div>
