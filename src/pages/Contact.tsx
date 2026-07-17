@@ -41,6 +41,7 @@ const contactTopics = [
   { value: 'funding', label: 'Funding & Capital' },
   { value: 'mentorship', label: 'Mentorship' },
   { value: 'facilities', label: 'Innovation Space & Labs' },
+  { value: 'tour', label: 'Book a Tour' },
   { value: 'partnerships', label: 'Partnerships & Media' },
 ];
 
