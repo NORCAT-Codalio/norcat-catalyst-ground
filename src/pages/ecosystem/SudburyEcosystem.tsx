@@ -189,7 +189,7 @@ const SudburyEcosystem = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             {/* Header */}
             <div className="text-center mb-12 md:mb-16">
-              <Eyebrow className="justify-center mb-5">Ecosystem Directory</Eyebrow>
+              <Eyebrow className="justify-center mb-5">Greater Sudbury Innovation Ecosystem</Eyebrow>
               <h2 className="font-black leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
                 Ecosystem <span style={{ color: TEAL }}>Directory</span>
