@@ -137,12 +137,12 @@ export default function OurTeam() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
+              <Eyebrow className="text-lg !text-white">THE INNOVATION TEAM</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                MEET OUR <span style={{ color: TEAL }}>TEAM.</span>
+                EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                The people helping Northern Ontario founders build, validate, and grow.
+                From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
               </p>
             </div>
           </div>
@@ -152,20 +152,6 @@ export default function OurTeam() {
         {/* ───── TEAM GRID ───── */}
         <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 md:mb-16">
-              <div className="flex-1 flex flex-col justify-start text-left">
-                <Eyebrow>THE INNOVATION TEAM</Eyebrow>
-                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  EXPERTISE TO HELP<br />YOU MOVE FORWARD
-                </h2>
-              </div>
-              <p className="flex-1 flex items-start text-lg md:text-xl leading-relaxed md:pt-10"
-                 style={{ color: '#5b6478' }}>
-                From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
-              </p>
-            </div>
-
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
               {team.map((member) => (
                 <motion.div
