@@ -17,7 +17,6 @@ import {
   Rocket,
   Award,
   FlaskConical,
-  Cpu,
   Shield,
   Sparkles,
   X,
@@ -68,8 +67,6 @@ const ecosystemOrgs: EcosystemOrg[] = [
 
   { name: 'Sudbury Catalyst Fund', category: 'funding', description: '$5M venture capital fund for startups', longDescription: 'A unique venture capital fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City, FedNor, and NORCAT.', internalLink: '/funding/sudbury-catalyst-fund', icon: Zap, highlight: '$5M Fund', tags: ['Venture Capital', 'Investment'] },
   { name: 'Northern Ontario Angels', category: 'funding', description: 'Angel investor network', longDescription: 'Connects investment-ready founders with a network of 50+ active angel investors across Northern Ontario.', internalLink: '/funding/investor-hub', icon: Award, highlight: '50+ Angels', tags: ['Angel Investment', 'Network'] },
-  { name: 'Innovation Acceleration Program', category: 'funding', description: 'Matching grants up to $20,000', longDescription: 'NORCAT Innovation grant program for tech-enabled founders in Greater Sudbury to accelerate commercialization.', internalLink: '/funding/innovation-acceleration-program', icon: Rocket, highlight: 'Up to $20K', tags: ['Grants', 'Commercialization'] },
-  { name: 'Regional AI Initiative', category: 'funding', description: 'AI adoption grants up to $20,000', longDescription: 'Accelerates AI adoption among SMEs with matching grants for AI integration and commercialization projects.', internalLink: '/funding/regional-ai-program', icon: Cpu, highlight: 'AI Focus', tags: ['AI', 'Grants', 'Technology'] },
 
   { name: 'Laurentian University', category: 'education', description: 'Research-intensive university', longDescription: "Northern Ontario's bilingual university offering programs in mining, environmental studies, and more.", link: 'https://laurentian.ca', icon: GraduationCap, tags: ['Research', 'Graduate Programs'] },
   { name: 'Cambrian College', category: 'education', description: 'Applied learning & technical training', longDescription: 'Offers diploma programs in mining, trades, technology, and applied research through Cambrian R&D.', link: 'https://cambriancollege.ca', icon: GraduationCap, tags: ['Technical Training', 'Applied Research'] },
@@ -79,7 +76,6 @@ const ecosystemOrgs: EcosystemOrg[] = [
   { name: 'MIRARCO', category: 'research', description: 'Mining innovation research consortium', longDescription: 'Research consortium focused on mining innovation, safety, and environmental sustainability.', link: 'https://mirarco.org', icon: FlaskConical, highlight: 'Mining Research', tags: ['Mining', 'Innovation', 'Safety'] },
   { name: 'CEMI', category: 'research', description: 'Centre for Excellence in Mining Innovation', longDescription: 'Industry-led research organization accelerating the development and adoption of mining innovation.', link: 'https://cemi.ca', icon: Landmark, tags: ['Mining Excellence', 'R&D'] },
   { name: 'SNOLAB', category: 'research', description: 'World-class underground physics lab', longDescription: 'Deep underground research facility 2km below surface, conducting cutting-edge physics research.', link: 'https://snolab.ca', icon: Sparkles, highlight: '2km Underground', tags: ['Physics', 'World-Class Facility'] },
-  { name: 'Metal Earth', category: 'research', description: 'Mineral exploration research', longDescription: "Major research initiative investigating the evolution of Earth's crust to improve mineral exploration.", link: 'https://merc.laurentian.ca', icon: Globe, tags: ['Geoscience', 'Exploration'] },
 
   { name: 'Vale', category: 'industry', description: 'Global mining company', longDescription: "One of the world's largest producers of nickel and a major employer in Greater Sudbury.", link: 'https://vale.com', icon: Pickaxe, highlight: 'Major Employer', tags: ['Nickel', 'Global'] },
   { name: 'Glencore', category: 'industry', description: 'Diversified mining company', longDescription: 'Major commodity company with significant mining operations in the Sudbury basin.', link: 'https://glencore.com', icon: Pickaxe, tags: ['Copper', 'Nickel', 'Zinc'] },
