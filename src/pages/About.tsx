@@ -138,6 +138,7 @@ function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: ()
 
 export default function About() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [modalMember, setModalMember] = useState<TeamMember | null>(null);
 
   const toggleEvent = (idx: number) => {
     setOpenIdx((prev) => (prev === idx ? null : idx));
