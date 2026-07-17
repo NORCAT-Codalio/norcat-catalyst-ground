@@ -501,9 +501,9 @@ const MentorshipServices = () => {
         </section>
 
         {/* ───── FOUNDER VOICES: scrolling testimonials + logos ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY }}>
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: BLUE }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.14), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.14), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 mb-12 md:mb-16">
@@ -522,10 +522,10 @@ const MentorshipServices = () => {
           <div className="relative">
             {/* left fade */}
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
-                 style={{ background: `linear-gradient(to right, ${NAVY}, transparent)` }} />
+                 style={{ background: `linear-gradient(to right, ${BLUE}, transparent)` }} />
             {/* right fade */}
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
-                 style={{ background: `linear-gradient(to left, ${NAVY}, transparent)` }} />
+                 style={{ background: `linear-gradient(to left, ${BLUE}, transparent)` }} />
 
             <div className="flex animate-marquee hover:[animation-play-state:paused]">
               {[...founderTestimonials, ...founderTestimonials].map((t, i) => (
