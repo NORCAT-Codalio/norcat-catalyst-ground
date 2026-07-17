@@ -159,7 +159,7 @@ export default function Contact() {
               className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
               style={{ fontFamily: FONT, color: 'white' }}
             >
-              GET IN <span style={{ color: TEAL }}>TOUCH.</span>
+              GET IN <span style={{ color: '#FFE45E' }}>TOUCH.</span>
             </h1>
             <p className="text-lg md:text-xl leading-relaxed text-white/85 max-w-2xl">
               Have a question, partnership idea, or just want to learn more about how we can help?
