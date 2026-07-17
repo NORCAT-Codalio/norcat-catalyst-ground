@@ -110,12 +110,12 @@ export default function About() {
         {/* ───── RIC NETWORK ───── */}
         <section className="pb-14 md:pb-20" style={{ background: BLUE, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col items-center text-center gap-5 md:gap-6 p-8 md:p-10 rounded-2xl shadow-sm" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
-              <div className="shrink-0 flex items-center justify-center">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-8 md:p-10 rounded-2xl shadow-sm" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+              <div className="shrink-0 flex items-center justify-center md:justify-start">
                 <img src={innovateonLogo.url} alt="InnovateON - Regional Innovation Centre Network"
                      className="h-8 md:h-10 w-auto object-contain" />
               </div>
-              <p className="text-base md:text-lg leading-relaxed max-w-3xl" style={{ color: '#475068' }}>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 We're proudly part of Ontario's 17-centre RIC Network, connecting entrepreneurs
                 with resources, mentorship, and funding to start and scale businesses.
               </p>
