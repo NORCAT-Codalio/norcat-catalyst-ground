@@ -460,11 +460,11 @@ export default function About() {
               ].map((a) => (
                 <div
                   key={a.title}
-                  className="group relative flex flex-col items-start text-left rounded-2xl bg-white px-6 pt-10 pb-8 transition-transform duration-300 hover:-translate-y-1"
+                  className="group relative flex flex-col items-center text-center rounded-2xl bg-white px-6 pt-10 pb-8 transition-transform duration-300 hover:-translate-y-1"
                   style={{ boxShadow: '0 24px 50px -20px rgba(0,26,77,0.45)' }}
                 >
                   {/* Badge + laurels */}
-                  <div className="relative flex items-center justify-center mb-6 ml-7" style={{ height: 88, width: 150 }}>
+                  <div className="relative flex items-center justify-center mb-6" style={{ height: 88, width: 150 }}>
                     {/* Left laurel */}
                     <svg viewBox="0 0 60 90" className="absolute" style={{ right: 'calc(50% + 30px)', width: 46, height: 70, opacity: 0.45 }} aria-hidden="true">
                       <g fill="none" stroke="#7FA3C7" strokeWidth="2" strokeLinecap="round">
@@ -501,14 +501,14 @@ export default function About() {
                   </div>
 
                   {/* Year with side rules */}
-                  <div className="flex items-center gap-3 mb-3 w-full justify-start">
+                  <div className="flex items-center gap-3 mb-3 w-full justify-center">
                     <span className="h-px flex-1 max-w-[40px]" style={{ background: 'rgba(0,179,152,0.55)' }} />
                     <span className="text-lg font-black tracking-tight" style={{ fontFamily: FONT, color: TEAL }}>{a.year}</span>
-                    <span className="h-px flex-1" style={{ background: 'rgba(0,179,152,0.55)' }} />
+                    <span className="h-px flex-1 max-w-[40px]" style={{ background: 'rgba(0,179,152,0.55)' }} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-black uppercase leading-tight tracking-tight text-lg md:text-xl mb-5"
+                  <h3 className="w-full font-black uppercase leading-tight tracking-tight text-left text-lg md:text-xl mb-5"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     {a.title}
                   </h3>
