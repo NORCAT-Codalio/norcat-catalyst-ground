@@ -25,6 +25,8 @@ import {
   Users,
   Lightbulb,
   Award,
+  Compass,
+  Gauge,
   Mail,
 } from 'lucide-react';
 
@@ -152,7 +154,7 @@ const NorcatUnderground = () => {
         </section>
 
         {/* ───── THE ASSET (light) ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-16 md:pt-24 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
@@ -167,6 +169,21 @@ const NorcatUnderground = () => {
                   <p>There is no simulator for the real thing. NORCAT Underground is a fully operational mine - three kilometres of active tunnels - purpose-built for technology trials, demonstrations and hands-on training.</p>
                   <p>OEMs, software vendors and startups from around the world come here to do what they cannot do anywhere else: prove their technology in real conditions, in front of real customers.</p>
                 </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  {[
+                    { icon: Compass, label: '3 km of Active Tunnels' },
+                    { icon: Gauge, label: 'Production-Grade Conditions' },
+                    { icon: Award, label: 'Globally Recognized' },
+                  ].map((b) => (
+                    <div key={b.label} className="flex items-center gap-3 p-4 rounded-xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}>
+                        <b.icon className="w-5 h-5" style={{ color: TEAL }} />
+                      </div>
+                      <p className="text-xs font-bold uppercase tracking-[0.1em]" style={{ color: NAVY }}>{b.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="relative">
@@ -175,23 +192,22 @@ const NorcatUnderground = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Stats row */}
-            <div className="mt-14 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {/* ───── IMPACT STATS ───── */}
+        <section className="pt-4 md:pt-6 pb-14 md:pb-20" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((s, i) => (
                 <motion.div
                   key={s.label}
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  className="flex items-start gap-4 p-5 rounded-2xl"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                  className="pl-4"
+                  style={{ borderLeft: `2px solid ${TEAL}` }}
                 >
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}>
-                    <s.icon className="w-5 h-5" style={{ color: TEAL }} />
-                  </div>
-                  <div>
-                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
-                    <p className="text-[11px] mt-0.5 font-bold uppercase tracking-[0.14em] leading-tight" style={{ color: '#5b6478' }}>{s.label}</p>
-                  </div>
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
+                  <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
                 </motion.div>
               ))}
             </div>
