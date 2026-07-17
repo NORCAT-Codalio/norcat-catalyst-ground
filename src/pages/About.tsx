@@ -71,15 +71,10 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 
 export default function About() {
-  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   const toggleEvent = (idx: number) => {
-    setExpanded((prev) => {
-      const next = new Set(prev);
-      if (next.has(idx)) next.delete(idx);
-      else next.add(idx);
-      return next;
-    });
+    setOpenIdx((prev) => (prev === idx ? null : idx));
   };
 
   return (
@@ -171,140 +166,146 @@ export default function About() {
 
 
 
-        {/* ───── STORY OF NORCAT (side-by-side timeline) ───── */}
-        <section className="py-10 md:py-16 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        {/* ───── STORY OF NORCAT (compact accordion timeline) ───── */}
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-10 lg:gap-16 items-start">
 
-            {/* Section intro */}
-            <div className="max-w-3xl mb-10 md:mb-14">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Our Journey
-              </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#001A4D]"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                From Idea to <span style={{ color: TEAL }}>Impact.</span>
-              </h2>
-              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
-              </p>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                Over time, that support has expanded into a connected ecosystem of mentorship, capital, industry relationships, validation opportunities, and practical resources designed to help founders build, test, and scale.
-              </p>
-            </div>
+              {/* Left: intro */}
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                  Our Journey
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
+                  From Idea to <span style={{ color: TEAL }}>Impact.</span>
+                </h2>
+                <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
+                </p>
+                <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  Over time, that support has expanded into a connected ecosystem of mentorship, capital, industry relationships, validation opportunities, and practical resources designed to help founders build, test, and scale.
+                </p>
+              </div>
 
-            {/* Alternating side-by-side timeline */}
-            <div className="relative mx-auto max-w-5xl">
-              {/* Central vertical connector rail */}
-              <div className="absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-px hidden md:block" style={{ background: 'rgba(0,179,152,0.35)' }} />
+              {/* Right: accordion timeline */}
+              <div className="relative">
+                {/* Vertical rail */}
+                <div className="absolute top-3 bottom-3 left-[11px] w-px" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              <div className="space-y-6 md:space-y-8">
-                {[
-                  { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition.", image: storyLake.url },
-                  { year: '2017', title: 'Underground Centre Expansion', desc: 'Joint public funding helps NORCAT overhaul the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
-                  { year: '2019', title: 'Launch of the Sudbury Catalyst Fund', desc: 'The ecosystem hits its stride, supporting 100+ tech jobs, $35M+ in equity capital, and the $5M Sudbury Catalyst Fund.', image: featuredScf.url, cta: { label: 'View the SCF Recipients!', href: '/funding/sudbury-catalyst-fund' } },
-                  { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine.", image: storyMine.url },
-                  { year: '2024', title: 'Venture North PITCH', desc: "NORCAT and the Northern Ontario Angels merge their flagship events, bringing top startup talent and Angel Investors together.", image: ventureNorthPitch.url },
-                  { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands Underground Centre demonstration spaces, rolls out AI workshops, and overhauls tech startup services.', image: featuredCit.url },
-                  { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: stateOfSudbury.url },
-                ].map((event, idx) => {
-                  const isRight = idx % 2 === 1;
-                  const isOpen = expanded.has(idx);
-                  const ExpandIcon = isOpen ? Minus : Plus;
-                  const descBlock = (
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          key="desc"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25, ease: 'easeInOut' }}
-                          className="overflow-hidden text-left"
+                <ul className="relative">
+                  {[
+                    { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition.", image: storyLake.url },
+                    { year: '2017', title: 'Underground Centre Expansion', desc: 'Joint public funding helps NORCAT overhaul the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
+                    { year: '2019', title: 'Launch of the Sudbury Catalyst Fund', desc: 'The ecosystem hits its stride, supporting 100+ tech jobs, $35M+ in equity capital, and the $5M Sudbury Catalyst Fund.', image: featuredScf.url, cta: { label: 'View the SCF Recipients!', href: '/funding/sudbury-catalyst-fund' } },
+                    { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine.", image: storyMine.url },
+                    { year: '2024', title: 'Venture North PITCH', desc: 'NORCAT and the Northern Ontario Angels merge their flagship events, bringing top startup talent and Angel Investors together.', image: ventureNorthPitch.url },
+                    { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands Underground Centre demonstration spaces, rolls out AI workshops, and overhauls tech startup services.', image: featuredCit.url },
+                    { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: stateOfSudbury.url },
+                  ].map((event, idx, arr) => {
+                    const isOpen = openIdx === idx;
+                    const ExpandIcon = isOpen ? Minus : Plus;
+                    const isLast = idx === arr.length - 1;
+                    return (
+                      <li key={event.year + idx} className="relative pl-10">
+                        {/* Node dot */}
+                        <span
+                          className="absolute left-0 top-[18px] inline-flex items-center justify-center rounded-full"
+                          style={{
+                            width: 22, height: 22,
+                            background: 'white',
+                            border: `2px solid ${TEAL}`,
+                            boxShadow: isOpen ? `0 0 0 4px rgba(0,179,152,0.15)` : 'none',
+                          }}
                         >
-                          <p className="text-sm md:text-[15px] leading-relaxed pt-2" style={{ color: '#5b6478' }}>{event.desc}</p>
-                          {event.cta && (
-                            <div className="pt-3">
-                              <Link to={event.cta.href} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                                {event.cta.label}
-                                <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                                  <ArrowUpRight className="w-3 h-3" />
-                                </span>
-                              </Link>
-                            </div>
-                          )}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  );
-
-                  const textBlock = (
-                    <button
-                      onClick={() => toggleEvent(idx)}
-                      className={`group text-left w-full ${isRight ? 'md:text-right' : ''}`}
-                      aria-expanded={isOpen}
-                    >
-                      <div className={`flex items-start gap-2 ${isRight ? 'md:flex-row-reverse' : ''}`}>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-base md:text-lg lg:text-xl font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-base md:text-lg lg:text-xl leading-tight" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                        </div>
-                        <span className="shrink-0 mt-1 inline-flex items-center justify-center size-6 rounded-full transition-colors" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
-                          <ExpandIcon className="w-3.5 h-3.5" />
+                          <span className="rounded-full" style={{ width: 8, height: 8, background: TEAL }} />
                         </span>
-                      </div>
-                      {descBlock}
-                    </button>
-                  );
 
-                  const imageButton = (
-                    <button
-                      onClick={() => toggleEvent(idx)}
-                      className="relative shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                      style={{ ['--tw-ring-color' as string]: TEAL }}
-                      aria-label={`Toggle ${event.title}`}
-                    >
-                      <div className="size-16 lg:size-20 rounded-full overflow-hidden ring-[3px] shadow-lg transition-transform duration-300 group-hover:scale-105"
-                           style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
-                        <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
-                      </div>
-                    </button>
-                  );
+                        {/* Row */}
+                        <button
+                          type="button"
+                          onClick={() => toggleEvent(idx)}
+                          aria-expanded={isOpen}
+                          className="w-full flex items-center justify-between gap-4 py-3 md:py-3.5 text-left transition-colors hover:opacity-90"
+                        >
+                          <div className="flex items-baseline gap-3 md:gap-5 min-w-0">
+                            <span className="font-black tracking-[0.14em] text-sm md:text-base shrink-0" style={{ color: TEAL, fontFamily: FONT }}>
+                              {event.year}
+                            </span>
+                            <h3 className="font-black uppercase text-sm md:text-base lg:text-[17px] leading-tight truncate" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>
+                              {event.title}
+                            </h3>
+                          </div>
+                          <span
+                            className="shrink-0 inline-flex items-center justify-center rounded-full transition-colors"
+                            style={{
+                              width: 28, height: 28,
+                              background: isOpen ? TEAL : 'rgba(0,26,77,0.06)',
+                              color: isOpen ? 'white' : NAVY,
+                            }}
+                          >
+                            <ExpandIcon className="w-3.5 h-3.5" />
+                          </span>
+                        </button>
 
-                  return (
-                    <div key={event.year + idx} className="relative">
-                      {/* Mobile */}
-                      <div className="flex items-start gap-4 md:hidden">
-                        {imageButton}
-                        <div className="flex-1 pt-1">
-                          {textBlock}
-                        </div>
-                      </div>
+                        {/* Expanded card */}
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              key="card"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.28, ease: 'easeInOut' }}
+                              className="overflow-hidden"
+                            >
+                              <div
+                                className="mb-3 mt-1 rounded-2xl overflow-hidden bg-white"
+                                style={{
+                                  border: '1px solid rgba(0,26,77,0.08)',
+                                  boxShadow: '0 12px 32px -18px rgba(0,26,77,0.25)',
+                                }}
+                              >
+                                <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] md:grid-cols-[200px_1fr] gap-0">
+                                  <div className="aspect-[4/3] sm:aspect-auto sm:h-full overflow-hidden">
+                                    <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                                  </div>
+                                  <div className="p-4 md:p-5">
+                                    <p className="text-sm md:text-[15px] leading-relaxed" style={{ color: '#475068' }}>
+                                      {event.desc}
+                                    </p>
+                                    {event.cta && (
+                                      <div className="pt-4">
+                                        <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+                                          {event.cta.label}
+                                          <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                                            <ArrowUpRight className="w-3 h-3" />
+                                          </span>
+                                        </Link>
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
 
-                      {/* Desktop alternating grid */}
-                      <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 lg:gap-8 items-start">
-                        {isRight ? (
-                          <>
-                            <div className="col-start-1" /> {/* empty left */}
-                            <div className="col-start-2 flex justify-center pt-2">{imageButton}</div>
-                            <div className="col-start-3 pt-1">{textBlock}</div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="col-start-1 pt-1">{textBlock}</div>
-                            <div className="col-start-2 flex justify-center pt-2">{imageButton}</div>
-                            <div className="col-start-3" /> {/* empty right */}
-                          </>
+                        {/* Divider */}
+                        {!isLast && (
+                          <div className="ml-0" style={{ borderBottom: '1px solid rgba(0,26,77,0.08)' }} />
                         )}
-                      </div>
-                    </div>
-                  );
-                })}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           </div>
         </section>
+
 
 
 
