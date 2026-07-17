@@ -142,7 +142,7 @@ export default function OurTeam() {
                 EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
+                Whether it's your first time jotting a business idea down on the back of a napkin or you're scaling and ready to demonstrate your technology to global operators, we are here to help.
               </p>
             </div>
           </div>
