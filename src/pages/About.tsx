@@ -17,7 +17,7 @@ import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
-import { team } from '@/data/team';
+
 
 // Award badges
 import awardBestPlace from '@/assets/award-best-place-to-work.png';
