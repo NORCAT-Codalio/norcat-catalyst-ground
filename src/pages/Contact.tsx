@@ -48,7 +48,6 @@ const locations = [
   {
     name: 'NORCAT Innovation Headquarters',
     address: '1547 Maley Drive, Sudbury, ON P3A 4R7',
-    phone: '705-521-6600',
   },
 ];
 
