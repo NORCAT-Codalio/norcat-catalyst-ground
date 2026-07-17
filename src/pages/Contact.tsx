@@ -419,7 +419,7 @@ export default function Contact() {
                   >
                     VISIT US
                   </h3>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-5">
                     {locations.map((location) => (
                       <div key={location.name}>
                         <p className="font-semibold" style={{ color: NAVY }}>
@@ -430,13 +430,13 @@ export default function Contact() {
                         </p>
                       </div>
                     ))}
-                    <div className="overflow-hidden rounded-2xl border border-gray-100 h-full min-h-[220px]">
+                    <div className="overflow-hidden rounded-2xl border border-gray-100 w-full h-[360px] md:h-[420px]">
                       <iframe
                         title="NORCAT Innovation Headquarters map"
                         src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
                         width="100%"
                         height="100%"
-                        style={{ border: 0, minHeight: '220px' }}
+                        style={{ border: 0 }}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         allowFullScreen
