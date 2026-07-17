@@ -385,7 +385,6 @@ const SudburyEcosystem = () => {
                className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <Eyebrow className="justify-center">Get Connected</Eyebrow>
             <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               GET CONNECTED IN THE&nbsp;<br /><span style={{ color: TEAL }}>REGION</span>
             </Display>
@@ -400,11 +399,6 @@ const SudburyEcosystem = () => {
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
-              </Link>
-              <Link to="/about"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-colors"
-                    style={{ background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', fontFamily: FONT }}>
-                Learn About NORCAT
               </Link>
             </div>
           </div>
