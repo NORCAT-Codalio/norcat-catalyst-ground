@@ -494,10 +494,6 @@ export default function About() {
                          style={{ width: 64, height: 64, background: NAVY, boxShadow: '0 8px 18px -6px rgba(0,26,77,0.5)' }}>
                       <a.Icon className="w-7 h-7 text-white" strokeWidth={2.2} />
                     </div>
-                    {/* Ribbon tail */}
-                    <svg viewBox="0 0 20 18" className="absolute" style={{ top: 54, width: 22, height: 20 }} aria-hidden="true">
-                      <polygon points="0,0 20,0 20,18 10,12 0,18" fill={TEAL} />
-                    </svg>
                   </div>
 
                   {/* Year with side rules */}
