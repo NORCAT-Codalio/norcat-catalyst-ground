@@ -159,24 +159,24 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (side-by-side timeline) ───── */}
-        <section className="py-10 md:py-16 relative overflow-hidden"
-                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
-          }} />
-
+        <section className="py-10 md:py-16 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Section intro */}
             <div className="max-w-3xl mb-10 md:mb-14">
-              <Eyebrow>Our Journey</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Our Journey
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#001A4D]"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 From Idea to <span style={{ color: TEAL }}>Impact.</span>
-              </Display>
-              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              </h2>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
               </p>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 Over time, that support has expanded into a connected ecosystem of mentorship, capital, industry relationships, validation opportunities, and practical resources designed to help founders build, test, and scale.
               </p>
             </div>
@@ -209,8 +209,8 @@ export default function About() {
                         </div>
                         <div className="flex-1 pt-1">
                           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-base mb-1.5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{event.title}</h3>
-                          <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>{event.desc}</p>
+                          <h3 className="font-black uppercase text-base mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                          <p className="text-sm leading-snug mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
                             <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                               {event.cta.label}
@@ -232,8 +232,8 @@ export default function About() {
                         </div>
                         <div className="max-w-sm">
                           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{event.title}</h3>
-                          <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>{event.desc}</p>
+                          <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                          <p className="text-sm leading-snug mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
                             <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                               {event.cta.label}
