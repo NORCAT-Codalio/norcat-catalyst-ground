@@ -218,7 +218,7 @@ export default function About() {
 
 
 
-        {/* ───── STORY OF NORCAT (dark, vertical timeline) ───── */}
+        {/* ───── STORY OF NORCAT (accordion timeline) ───── */}
         <section className="py-10 md:py-16 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
@@ -228,7 +228,7 @@ export default function About() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Section intro */}
-            <div className="max-w-3xl mb-12 md:mb-16">
+            <div className="max-w-3xl mb-10 md:mb-14">
               <Eyebrow>Our Journey</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 From Idea to <span style={{ color: TEAL }}>Impact.</span>
@@ -241,70 +241,19 @@ export default function About() {
               </p>
             </div>
 
-            {/* Alternating image + text timeline */}
-            <div className="relative">
-              {/* Center rail (desktop) / left rail (mobile) */}
-              <div className="absolute top-0 bottom-0 w-px hidden md:block left-1/2 -translate-x-1/2" style={{ background: 'rgba(0,179,152,0.35)' }} />
-              <div className="absolute top-0 bottom-0 w-px md:hidden left-4" style={{ background: 'rgba(0,179,152,0.35)' }} />
-
-              <div className="space-y-8 md:space-y-12">
-                {[
-                  { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition to connect local founders with early investment networks.", image: storyLake.url },
-                  { year: '2016', title: 'Innovation Acceleration Program (IAP) Launch', desc: 'NORCAT secures federal funding from FedNor to send $10,000 micro-grants straight to tech ventures for product prototyping and testing.', image: featuredIap.url },
-                  { year: '2017', title: 'UNDERGROUND CENTRE EXPANSION', desc: 'An injection of nearly $1 million in joint public funding helps NORCAT overhaul the ventilation and electrical systems at the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
-                  { year: '2018', title: 'IAP PHASE II ADVANCES MANUFACTURING', desc: "An additional $305,000 federal investment expands the hub's physical toolset, launching phase two of the micro-grant program and adding industrial injection molding machines to the Fortin Discovery Lab.", image: featuredCore5.url },
-                  { year: '2019', title: 'LAUNCH OF THE SUDBURY CATALYST FUND', desc: 'The ecosystem hits its stride, supporting the creation of over 100 tech jobs, bringing in more than $35M in equity capital, and launching the $5M Sudbury Catalyst Fund.', image: featuredScf.url, cta: { label: 'View the SCF Recipients!', href: '/funding/sudbury-catalyst-fund' } },
-                  { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine, putting developers of autonomous and electric systems in direct contact with global buyers.", image: storyMine.url },
-                  { year: '2024', title: 'Venture North PITCH', desc: "NORCAT and the Northern Ontario Angels merge their flagship events, bringing the region's top startup talent and a massive network of Accredited Angel Investors together on a single, high-stakes stage.", image: ventureNorthPitch.url },
-                  { year: '2025', title: 'FUNDING GROWTH & ARTIFICIAL INTELLIGENCE', desc: 'NORCAT launches the Regional Artificial Intelligence Initiative (RAII) and renews the Innovation Acceleration Program, boosting micro-grants to $20,000 to help small businesses build and scale emerging tech.', image: featuredRaii.url },
-                  { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands the demonstration spaces at the Underground Centre, rolls out hands-on AI workshops, and overhauls its tech startup services to better support modern businesses.', image: featuredCit.url },
-                  { year: 'TODAY', title: 'GLOBAL INNOVATION', desc: 'Today, NORCAT Innovation stands as a premier hub of Northern innovation and is a catalyst for turning rugged, regional ideas into globally scalable technologies. We bridge the gap between creative founders, local industry, and international investors, anchoring world-class tech development right here in the North.', image: stateOfSudbury.url },
-                ].map((event, idx) => {
-                  const isLeft = idx % 2 === 0;
-                  return (
-                    <div key={event.year + idx} className="relative">
-                      {/* Node dot */}
-                      <div className="absolute top-0 md:top-1 z-10 size-4 rounded-full ring-4 md:left-1/2 md:-translate-x-1/2 left-4 -translate-x-1/2"
-                           style={{ background: TEAL, boxShadow: `0 0 0 6px rgba(0,179,152,0.15)`, ['--tw-ring-color' as string]: NAVY } as React.CSSProperties} />
-
-                      <div className={`grid md:grid-cols-2 gap-4 md:gap-8 items-start ${isLeft ? '' : 'md:[&>*:first-child]:order-2'}`}>
-                        {/* Image side */}
-                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
-                          <div className="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl aspect-[16/10] max-h-[200px] max-w-[380px] ml-auto mr-auto">
-                            <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
-                          </div>
-                        </div>
-                        {/* Text side */}
-                        <div className={`pl-10 md:pl-0 ${isLeft ? 'md:pl-8' : 'md:pr-8 md:text-right'}`}>
-                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1"
-                             style={{ color: TEAL, fontFamily: FONT }}>
-                            {event.year}
-                          </p>
-                          <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2 text-white"
-                              style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                            {event.title}
-                          </h3>
-                          <p className="text-sm md:text-base leading-snug mb-3" style={{ color: FG_MUTED }}>
-                            {event.desc}
-                          </p>
-                          {event.cta && (
-                            <Link
-                              to={event.cta.href}
-                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] group"
-                              style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
-                            >
-                              {event.cta.label}
-                              <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                              </span>
-                            </Link>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Accordion timeline */}
+            <div className="space-y-3">
+              {[
+                { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition to connect local founders with early investment networks.", image: storyLake.url },
+                { year: '2017', title: 'Underground Centre Expansion', desc: 'An injection of nearly $1 million in joint public funding helps NORCAT overhaul the ventilation and electrical systems at the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
+                { year: '2019', title: 'Launch of the Sudbury Catalyst Fund', desc: 'The ecosystem hits its stride, supporting the creation of over 100 tech jobs, bringing in more than $35M in equity capital, and launching the $5M Sudbury Catalyst Fund.', image: featuredScf.url, cta: { label: 'View the SCF Recipients!', href: '/funding/sudbury-catalyst-fund' } },
+                { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine, putting developers of autonomous and electric systems in direct contact with global buyers.", image: storyMine.url },
+                { year: '2024', title: 'Venture North PITCH', desc: "NORCAT and the Northern Ontario Angels merge their flagship events, bringing the region's top startup talent and a massive network of Accredited Angel Investors together on a single, high-stakes stage.", image: ventureNorthPitch.url },
+                { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands the demonstration spaces at the Underground Centre, rolls out hands-on AI workshops, and overhauls its tech startup services to better support modern businesses.', image: featuredCit.url },
+                { year: 'TODAY', title: 'Global Innovation', desc: 'Today, NORCAT Innovation stands as a premier hub of Northern innovation and is a catalyst for turning rugged, regional ideas into globally scalable technologies. We bridge the gap between creative founders, local industry, and international investors, anchoring world-class tech development right here in the North.', image: stateOfSudbury.url },
+              ].map((event, idx) => (
+                <TimelineAccordionItem key={event.year + idx} event={event} defaultOpen={idx === 0} />
+              ))}
             </div>
           </div>
         </section>
