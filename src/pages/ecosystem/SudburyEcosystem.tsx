@@ -387,7 +387,7 @@ const SudburyEcosystem = () => {
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
             <Eyebrow className="justify-center">Get Connected</Eyebrow>
             <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              Ready to Join the<br /><span style={{ color: TEAL }}>Ecosystem?</span>
+              GET CONNECTED IN THE&nbsp;<br /><span style={{ color: TEAL }}>REGION</span>
             </Display>
             <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: FG_MUTED }}>
               Connect with NORCAT Innovation to access the full network of resources, mentors, and funding opportunities available to founders in Greater Sudbury.
@@ -396,7 +396,7 @@ const SudburyEcosystem = () => {
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                Apply to NORCAT Innovation
+                Apply
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
