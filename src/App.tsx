@@ -17,6 +17,7 @@ import Impact from "./pages/Impact";
 import Events from "./pages/Events";
 import Apply from "./pages/Apply";
 import ValidateIdea from "./pages/ValidateIdea";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // Programs pages
