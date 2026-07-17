@@ -20,7 +20,7 @@ export const team: TeamMember[] = [
     linkedin: 'https://linkedin.com/in/',
   },
   {
-    name: 'Shashank Mehta',
+    name: 'SHASHANK METHA',
     role: 'INNOVATION COORDINATOR',
     image: shashankImage,
     bio: "As the Core5 and innovation lead, I specialize in breaking down complex workflow barriers with practical, step-by-step steps that help founders get their products to market. In my spare time, I am a constant learner who loves to travel, build up diverse knowledge, and spend quality time with my family.",
