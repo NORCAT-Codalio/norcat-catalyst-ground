@@ -265,14 +265,14 @@ export default function OurTeam() {
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Our Partners
+                OUR PARTNERS
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                Friends who open doors.
+                BACKED BY A STRONGER NETWORK.
               </h2>
               <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
-                The operators, builders, and organizations who show up, make intros, and help founders win.
+                These organizations help expand access to funding, expertise, and opportunities across Northern Ontario.
               </p>
             </div>
 
