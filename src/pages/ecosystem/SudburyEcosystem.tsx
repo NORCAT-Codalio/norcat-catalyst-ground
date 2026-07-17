@@ -174,9 +174,6 @@ const SudburyEcosystem = () => {
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
                 </p>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  NORCAT Innovation helps startups navigate the ecosystem and connect with the right people, programs, and opportunities when they need them.
-                </p>
               </div>
             </div>
 
