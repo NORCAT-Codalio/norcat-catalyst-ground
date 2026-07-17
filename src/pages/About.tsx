@@ -531,7 +531,7 @@ export default function About() {
                   style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}
                 >
                   <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                    {t.quote}
+                    <span className="opacity-30 mr-1" aria-hidden="true">"</span>{t.quote}<span className="opacity-30 ml-1" aria-hidden="true">"</span>
                   </p>
                   <div>
                     <p className="font-bold text-sm uppercase tracking-[0.12em]" style={{ color: NAVY, fontFamily: FONT }}>
