@@ -17,6 +17,7 @@ import Impact from "./pages/Impact";
 import Events from "./pages/Events";
 import Apply from "./pages/Apply";
 import ValidateIdea from "./pages/ValidateIdea";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // Programs pages
@@ -93,6 +94,7 @@ const App = () => (
             <Route path="/events" element={<Events />} />
             <Route path="/apply" element={<Apply />} />
             <Route path="/validate-idea" element={<ValidateIdea />} />
+            <Route path="/contact" element={<Contact />} />
             
             {/* Programs Routes */}
             <Route path="/programs" element={<Programs />} />
