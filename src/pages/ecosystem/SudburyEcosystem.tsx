@@ -161,7 +161,7 @@ const SudburyEcosystem = () => {
             <div className="max-w-4xl">
               <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
-                Built for Founders
+                THE SUDBURY ADVANTAGE
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
@@ -170,7 +170,7 @@ const SudburyEcosystem = () => {
               </h2>
               <div className="mt-8 md:mt-10">
                 <p className="text-lg sm:text-xl md:text-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Greater Sudbury punches well above its weight. It brings together funding, research, industry expertise, and startup support in one connected ecosystem.
+                  Greater Sudbury punches well above its weight; take advantage of the holistic ecosystem support & the full capacity of Northern Ontario at your back
                 </p>
               </div>
             </div>
