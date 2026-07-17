@@ -547,12 +547,11 @@ export default function About() {
           </div>
         </section>
 
-
         {/* ───── OUR PARTNERS ───── */}
-        <section className="py-10 md:py-14" style={{ background: PAPER }}>
+        <section className="py-6 md:py-8" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="text-left mb-6 md:mb-8">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+            <div className="text-left mb-4 md:mb-5">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-2"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 OUR PARTNERS
@@ -561,7 +560,7 @@ export default function About() {
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 SUPPORTING WHAT'S NEXT.
               </h2>
-              <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
+              <p className="mt-2 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
                 Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.{" "}
                 <Link
                   to="/ecosystem/sudbury-ecosystem"
@@ -574,10 +573,10 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
               {partnerLogos.map((p) => (
                 <div key={p.name}
-                     className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
+                     className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-4"
                      style={{ background: 'white', border: '1px solid #e3e6ec' }}>
                   <img
                     src={p.logo}
@@ -590,6 +589,7 @@ export default function About() {
             </div>
           </div>
         </section>
+
 
 
         {/* ───── AWARDS BANNER (colour) ───── */}
