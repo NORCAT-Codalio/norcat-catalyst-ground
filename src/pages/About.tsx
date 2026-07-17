@@ -503,7 +503,7 @@ export default function About() {
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                BUILT IN THE NORTH.<br /><span style={{ color: TEAL }}>BACKED BY NORCAT.</span>
+                BUILT WITH NORCAT.<br /><span style={{ color: TEAL }}>BACKED BY THE NORTH.</span>
               </h2>
             </div>
 
@@ -531,7 +531,7 @@ export default function About() {
                   style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}
                 >
                   <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                    "{t.quote}"
+                    {t.quote}
                   </p>
                   <div>
                     <p className="font-bold text-sm uppercase tracking-[0.12em]" style={{ color: NAVY, fontFamily: FONT }}>
