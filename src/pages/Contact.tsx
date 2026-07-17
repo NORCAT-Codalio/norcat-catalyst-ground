@@ -421,21 +421,13 @@ export default function Contact() {
                   </h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     {locations.map((location) => (
-                      <div key={location.name} className="flex items-start gap-4">
-                        <div
-                          className="inline-flex items-center justify-center size-10 rounded-full shrink-0"
-                          style={{ background: `${TEAL}15`, color: TEAL }}
-                        >
-                          <MapPin className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="font-semibold" style={{ color: NAVY }}>
-                            {location.name}
-                          </p>
-                          <p className="text-sm leading-relaxed mt-1" style={{ color: '#475068' }}>
-                            {location.address}
-                          </p>
-                        </div>
+                      <div key={location.name}>
+                        <p className="font-semibold" style={{ color: NAVY }}>
+                          {location.name}
+                        </p>
+                        <p className="text-sm leading-relaxed mt-1" style={{ color: '#475068' }}>
+                          {location.address}
+                        </p>
                       </div>
                     ))}
                     <div className="overflow-hidden rounded-2xl border border-gray-100 h-full min-h-[220px]">
