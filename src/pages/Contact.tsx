@@ -272,7 +272,7 @@ export default function Contact() {
                         value={formData.message}
                         onChange={(e) => handleChange('message', e.target.value)}
                         placeholder="Tell us how we can help..."
-                        rows={5}
+                        rows={8}
                         required
                       />
                     </div>
@@ -439,13 +439,13 @@ export default function Contact() {
                         </div>
                       </div>
                     ))}
-                    <div className="overflow-hidden rounded-2xl border border-gray-100 h-full min-h-[180px]">
+                    <div className="overflow-hidden rounded-2xl border border-gray-100 h-full min-h-[220px]">
                       <iframe
                         title="NORCAT Innovation Headquarters map"
                         src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
                         width="100%"
                         height="100%"
-                        style={{ border: 0, minHeight: '180px' }}
+                        style={{ border: 0, minHeight: '220px' }}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         allowFullScreen
