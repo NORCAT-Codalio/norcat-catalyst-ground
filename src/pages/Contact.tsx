@@ -29,7 +29,8 @@ import {
 } from 'lucide-react';
 
 const TEAL = '#00B398';
-const NAVY = '#001A4D';
+const BLUE = '#0072CE';
+const NAVY = '#003DA5';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const contactTopics = [
@@ -46,11 +47,6 @@ const locations = [
     name: 'NORCAT Innovation Headquarters',
     address: '1547 Maley Drive, Sudbury, ON P3A 4R7',
     phone: '705-521-6600',
-  },
-  {
-    name: 'NORCAT Underground Centre',
-    address: 'Onaping, ON',
-    phone: '705-693-4273',
   },
 ];
 
