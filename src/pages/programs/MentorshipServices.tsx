@@ -541,11 +541,8 @@ const MentorshipServices = () => {
                         src={typeof t.logo === 'string' ? t.logo : (t.logo as any)?.url || t.logo}
                         alt={t.role.split(',')[0]}
                         className="max-h-full max-w-[140px] object-contain"
-                        onError={(e) => {
-                          const target = e.currentTarget as HTMLImageElement;
-                          target.style.display = 'none';
-                          target.parentElement!.setAttribute('data-logo-fallback', target.alt);
-                        }}
+                        onLoad={(e) => { (e.currentTarget.nextElementSibling as HTMLElement | null)?.style.setProperty('display', 'none'); }}
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                       />
                       <span className="text-sm font-bold tracking-tight" style={{ color: NAVY }}>
                         {t.role.split(',')[0]}
