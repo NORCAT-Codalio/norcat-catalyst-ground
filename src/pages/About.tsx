@@ -221,11 +221,11 @@ export default function About() {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.25, ease: 'easeInOut' }}
-                          className="overflow-hidden"
+                          className="overflow-hidden text-left"
                         >
                           <p className="text-sm md:text-[15px] leading-relaxed pt-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
-                            <div className={`pt-3 ${isRight ? 'text-left' : ''}`}>
+                            <div className="pt-3">
                               <Link to={event.cta.href} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                                 {event.cta.label}
                                 <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
