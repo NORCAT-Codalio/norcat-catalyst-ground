@@ -346,11 +346,11 @@ export default function About() {
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                Founder Voices
+                HEAR FOUNDER VOICES
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                Built Here.<br /><span style={{ color: TEAL }}>Backed by NORCAT.</span>
+                BUILT IN THE NORTH.<br /><span style={{ color: TEAL }}>BACKED BY NORCAT.</span>
               </h2>
             </div>
 
