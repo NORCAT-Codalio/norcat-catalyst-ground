@@ -535,6 +535,50 @@ export default function About() {
         </section>
 
 
+        {/* ───── OUR PARTNERS ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="text-left mb-10 md:mb-12">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                OUR PARTNERS
+              </p>
+              <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                SUPPORTING WHAT'S NEXT.
+              </h2>
+              <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
+                Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.{" "}
+                <Link
+                  to="/ecosystem/sudbury-ecosystem"
+                  className="inline-flex items-center gap-1 font-bold underline underline-offset-4 transition-colors hover:no-underline"
+                  style={{ color: TEAL, fontFamily: FONT }}
+                >
+                  Explore the full ecosystem directory
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </p>
+            </div>
+
+            <div className="grid grid-cy-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+              {partnerLogos.map((p) => (
+                <div key={p.name}
+                     className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
+                     style={{ background: 'white', border: '1px solid #e3e6ec' }}>
+                  <img
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    loading="lazy"
+                    className={`max-w-full object-contain ${p.name === 'City of Greater Sudbury' ? 'max-h-[70%]' : 'max-h-full'}`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* ───── AWARDS BANNER (colour) ───── */}
         <section className="py-20 md:py-24 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
