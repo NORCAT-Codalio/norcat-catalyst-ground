@@ -328,7 +328,7 @@ export default function Contact() {
                     >
                       <div
                         className="inline-flex items-center justify-center size-10 rounded-full shrink-0"
-                        style={{ background: TEAL, color: NAVY }}
+                        style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
                       >
                         <Mail className="w-5 h-5" />
                       </div>
