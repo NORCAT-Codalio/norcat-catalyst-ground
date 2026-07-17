@@ -437,7 +437,7 @@ export default function About() {
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-12 md:mb-14">
+            <div className="max-w-3xl mx-auto mb-12 md:mb-14 text-center">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -447,12 +447,12 @@ export default function About() {
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Awards & <span style={{ color: TEAL }}>Accolades.</span>
               </h2>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed md:whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Recognized nationally and globally for building a world-class innovation ecosystem in the North.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
               {[
                 { year: '2011', title: 'NASA Group Achievement', org: 'NASA', Icon: Rocket },
                 { year: '2016', title: 'Entrepreneurial Community of the Year', org: 'Northern Ontario Business Awards', Icon: Users },
@@ -460,38 +460,72 @@ export default function About() {
               ].map((a) => (
                 <div
                   key={a.title}
-                  className="group flex flex-col rounded-2xl bg-white p-6 md:p-7 transition-transform duration-300 hover:-translate-y-1"
-                  style={{ boxShadow: '0 24px 50px -20px rgba(0,26,77,0.35)' }}
+                  className="group relative flex flex-col items-center text-center rounded-2xl bg-white px-6 pt-10 pb-8 transition-transform duration-300 hover:-translate-y-1"
+                  style={{ boxShadow: '0 24px 50px -20px rgba(0,26,77,0.45)' }}
                 >
-                  {/* Top row: badge + year */}
-                  <div className="flex items-center gap-4 mb-5">
-                    <div
-                      className="inline-flex items-center justify-center rounded-full shrink-0"
-                      style={{ width: 54, height: 54, background: NAVY }}
-                    >
-                      <a.Icon className="w-6 h-6 text-white" strokeWidth={2} />
+                  {/* Badge + laurels */}
+                  <div className="relative flex items-center justify-center mb-6" style={{ height: 88 }}>
+                    {/* Left laurel */}
+                    <svg viewBox="0 0 60 90" className="absolute" style={{ right: 'calc(50% + 30px)', width: 46, height: 70, opacity: 0.45 }} aria-hidden="true">
+                      <g fill="none" stroke="#7FA3C7" strokeWidth="2" strokeLinecap="round">
+                        <path d="M50 85 Q 20 55, 20 8" />
+                        {Array.from({ length: 7 }).map((_, i) => {
+                          const t = 0.15 + i * 0.11;
+                          const cx = 50 - (50 - 20) * t - 6;
+                          const cy = 85 - (85 - 8) * t;
+                          return <ellipse key={i} cx={cx} cy={cy} rx="8" ry="4" transform={`rotate(${-40 - i * 6} ${cx} ${cy})`} fill="#B9CFE3" stroke="none" />;
+                        })}
+                      </g>
+                    </svg>
+                    {/* Right laurel (mirrored) */}
+                    <svg viewBox="0 0 60 90" className="absolute" style={{ left: 'calc(50% + 30px)', width: 46, height: 70, opacity: 0.45, transform: 'scaleX(-1)' }} aria-hidden="true">
+                      <g fill="none" stroke="#7FA3C7" strokeWidth="2" strokeLinecap="round">
+                        <path d="M50 85 Q 20 55, 20 8" />
+                        {Array.from({ length: 7 }).map((_, i) => {
+                          const t = 0.15 + i * 0.11;
+                          const cx = 50 - (50 - 20) * t - 6;
+                          const cy = 85 - (85 - 8) * t;
+                          return <ellipse key={i} cx={cx} cy={cy} rx="8" ry="4" transform={`rotate(${-40 - i * 6} ${cx} ${cy})`} fill="#B9CFE3" stroke="none" />;
+                        })}
+                      </g>
+                    </svg>
+                    {/* Center medallion */}
+                    <div className="relative inline-flex items-center justify-center rounded-full"
+                         style={{ width: 64, height: 64, background: NAVY, boxShadow: '0 8px 18px -6px rgba(0,26,77,0.5)' }}>
+                      <a.Icon className="w-7 h-7 text-white" strokeWidth={2.2} />
                     </div>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-black uppercase tracking-[0.12em]"
-                          style={{ background: 'rgba(0,179,152,0.12)', color: TEAL, fontFamily: FONT }}>
-                      {a.year}
-                    </span>
+                    {/* Ribbon tail */}
+                    <svg viewBox="0 0 20 18" className="absolute" style={{ top: 54, width: 22, height: 20 }} aria-hidden="true">
+                      <polygon points="0,0 20,0 20,18 10,12 0,18" fill={TEAL} />
+                    </svg>
+                  </div>
+
+                  {/* Year with side rules */}
+                  <div className="flex items-center gap-3 mb-3 w-full justify-center">
+                    <span className="h-px flex-1 max-w-[40px]" style={{ background: 'rgba(0,179,152,0.55)' }} />
+                    <span className="text-lg font-black tracking-tight" style={{ fontFamily: FONT, color: TEAL }}>{a.year}</span>
+                    <span className="h-px flex-1 max-w-[40px]" style={{ background: 'rgba(0,179,152,0.55)' }} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-black uppercase leading-tight tracking-tight text-base md:text-lg mb-2"
+                  <h3 className="font-black uppercase leading-tight tracking-tight text-lg md:text-xl mb-5 px-2"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     {a.title}
                   </h3>
 
+                  {/* Divider */}
+                  <div className="w-full h-px mb-4" style={{ background: 'rgba(0,26,77,0.12)' }} />
+
                   {/* Org */}
-                  <p className="text-xs md:text-[13px] font-bold uppercase tracking-[0.12em] leading-snug"
-                     style={{ color: 'rgba(0,26,77,0.65)' }}>
+                  <p className="text-xs md:text-[13px] font-bold uppercase tracking-[0.14em] leading-snug"
+                     style={{ color: NAVY }}>
                     {a.org}
                   </p>
                 </div>
               ))}
             </div>
           </div>
+
         </section>
 
         {/* ───── FINAL CTA (white) ───── */}
