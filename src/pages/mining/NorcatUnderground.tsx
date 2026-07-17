@@ -1,10 +1,56 @@
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import undergroundWorkers from '@/assets/underground-workers.png';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import ugImg1 from '@/assets/underground/underground-1.jpg.asset.json';
+import ugImg2 from '@/assets/underground/underground-2.jpg.asset.json';
+import ugImg3 from '@/assets/underground/underground-3.jpg.asset.json';
+
+const UG_SLIDES = [
+  { url: ugImg1.url, alt: 'NORCAT Underground Centre entrance with mining equipment' },
+  { url: ugImg2.url, alt: 'Underground technology testing in active mining conditions' },
+  { url: ugImg3.url, alt: 'Safety and technology demonstration underground' },
+];
+
+function UndergroundSlideshow() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((v) => (v + 1) % UG_SLIDES.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+      <AnimatePresence mode="sync">
+        <motion.img
+          key={i}
+          src={UG_SLIDES[i].url}
+          alt={UG_SLIDES[i].alt}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9 }}
+          loading="lazy"
+        />
+      </AnimatePresence>
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {UG_SLIDES.map((_, idx) => (
+          <button
+            key={idx}
+            aria-label={`Slide ${idx + 1}`}
+            onClick={() => setI(idx)}
+            className="w-2 h-2 rounded-full transition-all"
+            style={{ background: idx === i ? '#ffffff' : 'rgba(255,255,255,0.5)' }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 import {
   ArrowUpRight,
   Mountain,
@@ -187,9 +233,7 @@ const NorcatUnderground = () => {
               </div>
 
               <div className="relative">
-                <div className="overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
-                  <img src={undergroundWorkers} alt="NORCAT Underground operations" className="w-full h-full object-cover" loading="lazy" />
-                </div>
+                <UndergroundSlideshow />
               </div>
             </div>
           </div>
