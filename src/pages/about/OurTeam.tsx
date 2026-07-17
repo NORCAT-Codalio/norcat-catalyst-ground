@@ -160,7 +160,7 @@ export default function OurTeam() {
                   EXPERTISE TO HELP<br />YOU MOVE FORWARD
                 </h2>
               </div>
-              <p className="flex-1 flex items-start text-base md:text-lg leading-relaxed md:pt-10"
+              <p className="flex-1 flex items-start text-lg md:text-xl leading-relaxed md:pt-10"
                  style={{ color: '#5b6478' }}>
                 From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
               </p>
