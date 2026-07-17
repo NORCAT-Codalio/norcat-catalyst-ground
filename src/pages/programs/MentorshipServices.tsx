@@ -39,6 +39,15 @@ import michaelDolinarImg from '@/assets/mentors/michael-dolinar.png';
 import davidPasiekaImg from '@/assets/mentors/david-pasieka.png';
 import peyvandMelatiImg from '@/assets/mentors/peyvand-melati.png';
 
+// Founder / client logos for testimonial marquee
+import flosonicsLogo from '@/assets/logos/flosonics.png';
+import rnaDiagnosticsLogo from '@/assets/logos/rna-diagnostics.png.asset.json';
+import planaLogo from '@/assets/logos/plana.png.asset.json';
+import waiveLogo from '@/assets/logos/waive.png.asset.json';
+import maestroLogo from '@/assets/logos/maestro.png';
+import perspicLogo from '@/assets/logos/perspic-logo.png.asset.json';
+import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
+
 // ── Brand tokens (mirrors Home2 / About) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
