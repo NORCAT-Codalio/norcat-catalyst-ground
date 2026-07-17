@@ -539,13 +539,13 @@ const MentorshipServices = () => {
                          style={{ border: '1px solid #e2e8f0' }}>
                       <img
                         src={typeof t.logo === 'string' ? t.logo : (t.logo as any)?.url || t.logo}
-                        alt={t.role.split(',')[0]}
+                        alt={t.role.split(',').slice(1).join(',').trim()}
                         className="max-h-full max-w-[140px] object-contain"
                         onLoad={(e) => { (e.currentTarget.nextElementSibling as HTMLElement | null)?.style.setProperty('display', 'none'); }}
                         onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                       />
                       <span className="text-sm font-bold tracking-tight" style={{ color: NAVY }}>
-                        {t.role.split(',')[0]}
+                        {t.role.split(',').slice(1).join(',').trim()}
                       </span>
                     </div>
                     <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
