@@ -56,49 +56,6 @@ export default function OurTeam() {
         </section>
 
 
-        {/* ───── TEAM GRID ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-              {team.map((member) => (
-                <motion.div
-                  key={member.name}
-                  whileHover={{ y: -6 }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 28 }}
-                  onClick={() => setModalMember(member)}
-                  className="group text-left rounded-2xl overflow-hidden cursor-pointer relative bg-white"
-                  style={{ border: '1px solid #d9dde5' }}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setModalMember(member); }}
-                  aria-label={`Open profile for ${member.name}`}
-                >
-                  <div className="relative overflow-hidden aspect-square">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0"
-                         style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
-                  </div>
-
-                  <div className="p-5">
-                    <h3 className="font-black uppercase text-base md:text-lg mb-1"
-                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                      {member.name}
-                    </h3>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em]"
-                       style={{ color: TEAL, fontFamily: FONT }}>
-                      {member.role}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ───── MENTOR NETWORK ───── */}
         <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 60%, ${NAVY} 100%)`, color: 'white' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
