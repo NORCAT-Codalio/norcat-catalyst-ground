@@ -71,15 +71,10 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 
 export default function About() {
-  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   const toggleEvent = (idx: number) => {
-    setExpanded((prev) => {
-      const next = new Set(prev);
-      if (next.has(idx)) next.delete(idx);
-      else next.add(idx);
-      return next;
-    });
+    setOpenIdx((prev) => (prev === idx ? null : idx));
   };
 
   return (
