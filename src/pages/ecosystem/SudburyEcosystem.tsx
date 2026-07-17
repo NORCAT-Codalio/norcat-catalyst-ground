@@ -137,9 +137,9 @@ const SudburyEcosystem = () => {
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
-        {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+        {/* ───── HERO: Built for Founders (blue gradient) ───── */}
+        <section className="relative overflow-hidden py-16 md:py-24">
+          <div className="absolute route-absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />
           <div className="absolute inset-0 pointer-events-none" style={{
@@ -149,21 +149,6 @@ const SudburyEcosystem = () => {
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">Greater Sudbury Innovation Ecosystem</Eyebrow>
-              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                CONNECTED TO <span style={{ color: TEAL }}>WHAT'S NEXT.</span>
-              </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Explore the organizations, funding programs, research institutions, and industry partners helping startups build, validate, and grow in Greater Sudbury.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ───── WHAT IS THE ECOSYSTEM (light, Home2 pattern) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
@@ -171,16 +156,16 @@ const SudburyEcosystem = () => {
                   Built for Founders
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
                   SUPPORT AT{' '}
                   <span style={{ color: TEAL }}>EVERY STAGE.</span>
                 </h2>
               </div>
               <div className="lg:col-span-7 lg:pt-4">
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
                 </p>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   NORCAT Innovation helps startups navigate the ecosystem and connect with the right people, programs, and opportunities when they need them.
                 </p>
               </div>
