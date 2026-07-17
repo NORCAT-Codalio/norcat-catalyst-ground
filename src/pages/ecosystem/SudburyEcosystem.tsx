@@ -49,7 +49,7 @@ interface EcosystemOrg {
 }
 
 const categories: { id: CategoryType; label: string; icon: React.ElementType }[] = [
-  { id: 'all', label: 'All', icon: Globe },
+  { id: 'all', label: 'All Resources', icon: Globe },
   { id: 'support', label: 'Support Orgs', icon: Users },
   { id: 'funding', label: 'Funding', icon: DollarSign },
   { id: 'education', label: 'Education', icon: GraduationCap },
