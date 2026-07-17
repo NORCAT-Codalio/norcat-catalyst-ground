@@ -291,10 +291,10 @@ export default function Contact() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group inline-flex items-center gap-2 px-6 py-3 h-auto rounded-lg text-sm font-semibold transition-colors hover:opacity-90"
-                      style={{ background: NAVY, color: 'white', fontFamily: FONT }}
+                      className="group inline-flex items-center gap-2 px-6 py-3 h-auto rounded-full text-sm font-semibold text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:opacity-95"
+                      style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)', fontFamily: FONT }}
                     >
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
