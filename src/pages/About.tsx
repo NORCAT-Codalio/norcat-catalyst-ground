@@ -435,20 +435,25 @@ export default function About() {
         </section>
 
 
-        {/* ───── AWARDS BANNER (light) ───── */}
-        <section className="py-20 md:py-24" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        {/* ───── AWARDS BANNER (colour) ───── */}
+        <section className="py-20 md:py-24 relative overflow-hidden"
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.06), transparent 45%)`,
+          }} />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-14">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 Recognition
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl text-white"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Awards & <span style={{ color: TEAL }}>Accolades.</span>
               </h2>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Recognized nationally and globally for building a world-class innovation ecosystem in the North.
               </p>
             </div>
@@ -468,7 +473,7 @@ export default function About() {
                     height={512}
                     className="w-full h-auto max-w-[180px] drop-shadow-sm"
                   />
-                  <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: TEAL }}>
+                  <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: 'white' }}>
                     {a.org}
                   </p>
                 </div>
