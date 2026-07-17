@@ -170,7 +170,7 @@ const SudburyEcosystem = () => {
               </h2>
               <div className="mt-8 md:mt-10">
                 <p className="text-lg sm:text-xl md:text-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Greater Sudbury punches well above its weight. It brings together funding, research, industry expertise, and startup support in one connected ecosystem.
+                  Greater Sudbury punches well above its weight
                 </p>
               </div>
             </div>
