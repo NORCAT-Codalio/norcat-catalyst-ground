@@ -518,29 +518,29 @@ const MentorshipServices = () => {
             </div>
           </div>
 
-          {/* Scrolling testimonial cards */}
-          <div className="relative">
+          {/* Scrolling testimonial cards — contained to page margins */}
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             {/* left fade */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
+            <div className="absolute left-5 sm:left-6 md:left-10 top-0 bottom-0 w-12 md:w-24 z-10 pointer-events-none"
                  style={{ background: `linear-gradient(to right, ${BLUE}, transparent)` }} />
             {/* right fade */}
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
+            <div className="absolute right-5 sm:right-6 md:right-10 top-0 bottom-0 w-12 md:w-24 z-10 pointer-events-none"
                  style={{ background: `linear-gradient(to left, ${BLUE}, transparent)` }} />
 
             <div className="flex animate-marquee hover:[animation-play-state:paused]">
               {[...founderTestimonials, ...founderTestimonials].map((t, i) => (
                 <div
                   key={`${t.name}-${i}`}
-                  className="shrink-0 w-[300px] sm:w-[360px] md:w-[400px] mx-3 md:mx-4"
+                  className="shrink-0 w-[320px] sm:w-[420px] md:w-[520px] mx-3 md:mx-5"
                 >
                   <div className="h-full rounded-2xl p-6 md:p-8 flex flex-col bg-white shadow-lg"
                        style={{ border: '1px solid #e2e8f0' }}>
-                    <div className="h-14 mb-5 flex items-center justify-start rounded-lg px-3 py-2 bg-white"
+                    <div className="h-16 mb-6 flex items-center justify-start rounded-xl px-4 py-2 bg-white"
                          style={{ border: '1px solid #e2e8f0' }}>
                       <img
                         src={typeof t.logo === 'string' ? t.logo : (t.logo as any)?.url || t.logo}
                         alt={t.role.split(',').slice(1).join(',').trim()}
-                        className="max-h-full max-w-[140px] object-contain"
+                        className="max-h-[80%] max-w-[180px] object-contain"
                         onLoad={(e) => { (e.currentTarget.nextElementSibling as HTMLElement | null)?.style.setProperty('display', 'none'); }}
                         onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                       />
