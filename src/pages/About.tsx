@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Rocket, Plus, Minus, Users, Star } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Rocket, Plus, Minus, Users, Star, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
@@ -20,10 +20,16 @@ import { LocationsMap } from '@/components/LocationsMap';
 import valueResults from '@/assets/values/real-world-results.jpg';
 import valueValidation from '@/assets/values/validation-demo.jpg';
 import valueEcosystem from '@/assets/values/collaborative-ecosystem.jpg';
+import { team, type TeamMember } from '@/data/team';
 
 
 // Logos
 import innovateonLogo from '@/assets/logos/innovateon.png.asset.json';
+import fednorLogo from '@/assets/logos/fednor.png';
+import sudburyLogo from '@/assets/logos/sudbury.png';
+import ociLogo from '@/assets/logos/oci.png';
+import nohfcLogo from '@/assets/logos/nohfc.png';
+import ontarioPartnerLogo from '@/assets/logos/ontario-logo-wordmark.png';
 
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
