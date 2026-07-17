@@ -108,7 +108,7 @@ export default function About() {
 
 
         {/* ───── RIC NETWORK ───── */}
-        <section className="pb-14 md:pb-20" style={{ background: PAPER, color: NAVY }}>
+        <section className="pb-14 md:pb-20" style={{ background: BLUE, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-8 md:p-10 rounded-2xl shadow-sm" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
               <div className="shrink-0 flex items-center justify-center md:justify-start">
