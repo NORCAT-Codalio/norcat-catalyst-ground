@@ -26,6 +26,8 @@ import {
   Linkedin,
   Youtube,
   Twitter,
+  Facebook,
+  Instagram,
 } from 'lucide-react';
 
 const TEAL = '#00B398';
@@ -46,7 +48,6 @@ const locations = [
   {
     name: 'NORCAT Innovation Headquarters',
     address: '1547 Maley Drive, Sudbury, ON P3A 4R7',
-    phone: '705-521-6600',
   },
 ];
 
@@ -133,7 +134,7 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
-        style={{ background: `linear-gradient(135deg, ${BLUE} 0%, #00A0DC 55%, ${TEAL} 100%)` }}
+        style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
@@ -326,7 +327,7 @@ export default function Contact() {
                     >
                       <div
                         className="inline-flex items-center justify-center size-10 rounded-full shrink-0"
-                        style={{ background: TEAL, color: NAVY }}
+                        style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
                       >
                         <Mail className="w-5 h-5" />
                       </div>
@@ -340,7 +341,7 @@ export default function Contact() {
                     <a href="tel:17055216600" className="flex items-start gap-4 group">
                       <div
                         className="inline-flex items-center justify-center size-10 rounded-full shrink-0"
-                        style={{ background: TEAL, color: NAVY }}
+                        style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
                       >
                         <Phone className="w-5 h-5" />
                       </div>
@@ -354,7 +355,7 @@ export default function Contact() {
                     <div className="flex items-start gap-4">
                       <div
                         className="inline-flex items-center justify-center size-10 rounded-full shrink-0"
-                        style={{ background: TEAL, color: NAVY }}
+                        style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
                       >
                         <Clock className="w-5 h-5" />
                       </div>
@@ -395,6 +396,24 @@ export default function Contact() {
                       >
                         <Youtube className="w-5 h-5" />
                       </a>
+                      <a
+                        href="https://www.facebook.com/NORCAT"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                        aria-label="Facebook"
+                      >
+                        <Facebook className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/norcat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <Instagram className="w-5 h-5" />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -424,13 +443,6 @@ export default function Contact() {
                           <p className="text-sm leading-relaxed mt-1" style={{ color: '#475068' }}>
                             {location.address}
                           </p>
-                          <a
-                            href={`tel:${location.phone.replace(/-/g, '')}`}
-                            className="text-sm font-medium hover:underline mt-1 inline-block"
-                            style={{ color: TEAL }}
-                          >
-                            {location.phone}
-                          </a>
                         </div>
                       </div>
                     ))}
