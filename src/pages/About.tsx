@@ -27,7 +27,6 @@ import awardInnovationEco from '@/assets/award-best-innovation-ecosystem.png';
 import awardNasa from '@/assets/award-nasa-achievement.png';
 
 // Logos
-import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
 import innovateonLogo from '@/assets/logos/innovateon.png';
 
 // ── Brand tokens (mirrors Home2) ──
