@@ -182,7 +182,7 @@ export default function About() {
             </div>
 
             {/* Alternating side-by-side timeline */}
-            <div className="relative mx-auto max-w-5xl">
+            <div className="relative mx-auto max-w-7xl">
               {/* Central vertical connector rail */}
               <div className="absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-px hidden md:block" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
@@ -208,9 +208,9 @@ export default function About() {
                           </div>
                         </div>
                         <div className="flex-1 pt-1">
-                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                          <p className="text-base md:text-lg font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
                           <h3 className="font-black uppercase text-base mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                          <p className="text-sm leading-snug mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
+                          <p className="text-sm md:text-[15px] leading-relaxed mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
                             <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                               {event.cta.label}
@@ -223,17 +223,17 @@ export default function About() {
                       </div>
 
                       {/* Desktop: alternating columns */}
-                      <div className={`hidden md:flex items-center gap-5 ${isRight ? 'col-start-2 order-2' : 'col-start-1 justify-end flex-row-reverse text-right'}`}>
+                      <div className={`hidden md:flex items-center gap-3 ${isRight ? 'col-start-2 order-2' : 'col-start-1 justify-end flex-row-reverse text-right'}`}>
                         <div className="relative shrink-0">
-                          <div className="size-24 lg:size-28 rounded-full overflow-hidden ring-4 shadow-xl"
+                          <div className="size-20 lg:size-24 rounded-full overflow-hidden ring-4 shadow-xl"
                                style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
                             <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                           </div>
                         </div>
-                        <div className="max-w-sm">
-                          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                        <div className="max-w-xl">
+                          <p className="text-base md:text-lg lg:text-xl font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
                           <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                          <p className="text-sm leading-snug mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
+                          <p className="text-sm md:text-[15px] leading-relaxed mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
                             <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                               {event.cta.label}
