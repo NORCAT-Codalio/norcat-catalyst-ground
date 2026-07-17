@@ -256,9 +256,9 @@ const Labs = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                <a href="mailto:info@norcat.org">
+                <Link to="/contact">
                   Contact Us
-                </a>
+                </Link>
               </Button>
             </div>
           </ScrollReveal>
