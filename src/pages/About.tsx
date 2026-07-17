@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
-import signatureLines from '@/assets/signature-lines.png';
-import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import storyLake from '@/assets/story/story-lake.jpg.asset.json';
 import storyMine from '@/assets/story/story-mine.jpg.asset.json';
 import storyHorse from '@/assets/story/story-horse.jpg.asset.json';
