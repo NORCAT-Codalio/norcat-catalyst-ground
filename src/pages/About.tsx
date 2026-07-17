@@ -198,9 +198,9 @@ export default function About() {
 
 
         {/* ───── RIC NETWORK ───── */}
-        <section className="pb-16 md:pb-24" style={{ background: BLUE, color: 'white' }}>
+        <section className="pb-10 md:pb-16" style={{ background: BLUE, color: 'white' }}>
           <div className="mx-auto w-full px-5 sm:px-6 md:px-10 lg:px-14">
-            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg mb-[-80px] md:mb-[-112px] relative z-10" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+            <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-8 p-6 md:p-8 lg:p-10 rounded-2xl shadow-lg mb-[-48px] md:mb-[-72px] relative z-10" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
               <div className="shrink-0 flex items-center justify-center md:justify-start">
                 <img src={innovateonLogo.url} alt="InnovateON - Regional Innovation Centre Network"
                      className="h-8 md:h-10 w-auto object-contain" />
@@ -459,14 +459,14 @@ export default function About() {
 
 
         {/* ───── OUR VALUES (dark, 2x2 icon cards) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden"
+        <section className="py-14 md:py-20 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.06), transparent 45%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-12 md:mb-16">
+            <div className="max-w-3xl mb-8 md:mb-10">
               <Eyebrow>WHAT DRIVES INNOVATION?</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
                 INNOVATION{"\u00a0"}VALUES.
@@ -560,9 +560,9 @@ export default function About() {
 
 
         {/* ───── OUR PARTNERS ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER }}>
+        <section className="py-10 md:py-14" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="text-left mb-10 md:mb-12">
+            <div className="text-left mb-6 md:mb-8">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
