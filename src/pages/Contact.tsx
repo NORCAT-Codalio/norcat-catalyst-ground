@@ -342,7 +342,7 @@ export default function Contact() {
                     <a href="tel:17055216600" className="flex items-start gap-4 group">
                       <div
                         className="inline-flex items-center justify-center size-10 rounded-full shrink-0"
-                        style={{ background: TEAL, color: NAVY }}
+                        style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
                       >
                         <Phone className="w-5 h-5" />
                       </div>
