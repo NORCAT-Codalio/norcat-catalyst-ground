@@ -458,7 +458,7 @@ export default function About() {
             <div className="max-w-3xl mb-8 md:mb-10">
               <Eyebrow>WHAT DRIVES INNOVATION?</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
-                INNOVATION{"\u00a0"}VALUES.
+                OUR VALUES.
               </Display>
             </div>
 
