@@ -17,7 +17,7 @@ import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
-import { team } from '@/data/team';
+
 
 // Award badges
 import awardBestPlace from '@/assets/award-best-place-to-work.png';
@@ -159,24 +159,24 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (side-by-side timeline) ───── */}
-        <section className="py-10 md:py-16 relative overflow-hidden"
-                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08), transparent 45%)`,
-          }} />
-
+        <section className="py-10 md:py-16 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
 
             {/* Section intro */}
             <div className="max-w-3xl mb-10 md:mb-14">
-              <Eyebrow>Our Journey</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Our Journey
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#001A4D]"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 From Idea to <span style={{ color: TEAL }}>Impact.</span>
-              </Display>
-              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              </h2>
+              <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
               </p>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 Over time, that support has expanded into a connected ecosystem of mentorship, capital, industry relationships, validation opportunities, and practical resources designed to help founders build, test, and scale.
               </p>
             </div>
@@ -209,8 +209,8 @@ export default function About() {
                         </div>
                         <div className="flex-1 pt-1">
                           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-base mb-1.5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{event.title}</h3>
-                          <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>{event.desc}</p>
+                          <h3 className="font-black uppercase text-base mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                          <p className="text-sm leading-snug mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
                             <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                               {event.cta.label}
@@ -232,8 +232,8 @@ export default function About() {
                         </div>
                         <div className="max-w-sm">
                           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{event.title}</h3>
-                          <p className="text-sm leading-snug mb-2" style={{ color: FG_MUTED }}>{event.desc}</p>
+                          <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                          <p className="text-sm leading-snug mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
                           {event.cta && (
                             <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
                               {event.cta.label}
@@ -253,66 +253,6 @@ export default function About() {
         </section>
 
 
-        {/* ───── TEAM TEASER ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-8 mb-12 md:mb-16">
-              <div className="flex-1 flex flex-col justify-center">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                  THE INNOVATION TEAM
-                </p>
-                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  MEET THE INNOVATION TEAM!<br /><span style={{ color: TEAL }}>&nbsp;</span>
-                </h2>
-              </div>
-              <p className="flex-1 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-relaxed lg:leading-relaxed"
-                 style={{ color: '#5b6478' }}>
-                Whether it's your first time jotting a business idea down on the back of a napkin 
-                or you're scaling and ready to demonstrate your technology to the world, 
-                we are here to help you scale success!&nbsp;
-              </p>
-            </div>
-
-            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-              <div className="flex-1">
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8" style={{ color: '#475068' }}>
-                  The people behind the programs. Our innovation team works closely with founders to provide mentorship, capital navigation, and venture growth support.
-                </p>
-                <Link
-                  to="/about/our-team"
-                  className="group inline-flex items-center gap-3 pl-7 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
-                >
-                  Meet the Team
-                  <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                </Link>
-              </div>
-
-              <div className="flex-1 flex justify-center lg:justify-end">
-                <div className="flex -space-x-4">
-                  {team.map((member) => (
-                    <div
-                      key={member.name}
-                      className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-4 overflow-hidden"
-                      style={{ borderColor: PAPER, background: NAVY }}
-                    >
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ───── OUR VALUES (dark, 2x2 icon cards) ───── */}
         <section className="py-20 md:py-28 relative overflow-hidden"
