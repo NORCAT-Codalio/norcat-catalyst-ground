@@ -359,17 +359,61 @@ export default function About() {
               ))}
             </div>
 
-            <div className="mt-12 md:mt-14 flex justify-center">
-              <Link
-                to="/insights/success-stories"
-                className="group inline-flex items-center gap-3 pl-7 pr-2 py-2.5 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                style={{ background: 'white', color: NAVY, fontFamily: FONT }}
-              >
-                Success Stories
-                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: TEAL, color: 'white' }}>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
-                </span>
-              </Link>
+          </div>
+        </section>
+
+
+        {/* ───── TESTIMONIAL BLURBS ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Founder Voices
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                Built Here.<br /><span style={{ color: TEAL }}>Backed by NORCAT.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              {[
+                {
+                  quote: "NORCAT gave us the credibility, connections, and capital introductions we needed to turn a prototype into a globally deployable mining technology.",
+                  name: "PodCo Team",
+                  company: "PodCo",
+                },
+                {
+                  quote: "The mentorship was practical, not theoretical. They helped us navigate customer validation, pitch preparation, and our first institutional round.",
+                  name: "MEDATech RaisePro",
+                  company: "MEDATech RaisePro",
+                },
+                {
+                  quote: "Being part of the NORCAT ecosystem opened doors to industry partners we could never have reached on our own. It changed our trajectory.",
+                  name: "Kinmetrix",
+                  company: "Kinmetrix",
+                },
+              ].map((t) => (
+                <div
+                  key={t.company}
+                  className="rounded-2xl p-8 md:p-10 flex flex-col justify-between transition hover:-translate-y-1"
+                  style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}
+                >
+                  <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
+                    "{t.quote}"
+                  </p>
+                  <div>
+                    <p className="font-bold text-sm uppercase tracking-[0.12em]" style={{ color: NAVY, fontFamily: FONT }}>
+                      {t.name}
+                    </p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] mt-1" style={{ color: TEAL }}>
+                      {t.company}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
