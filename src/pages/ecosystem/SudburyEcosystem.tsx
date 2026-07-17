@@ -138,7 +138,7 @@ const SudburyEcosystem = () => {
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />
@@ -149,10 +149,10 @@ const SudburyEcosystem = () => {
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow className="text-lg">Greater Sudbury Innovation Ecosystem</Eyebrow>
+            <div className="max-w-3xl">
+              <Eyebrow className="text-lg !text-white">Greater Sudbury Innovation Ecosystem</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Everything You Need to <span className="whitespace-nowrap" style={{ color: TEAL }}>Build and Scale.</span>
+                YOUR NETWORK <span style={{ color: TEAL }}>STARTS HERE.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Explore the complete network of support organizations, funding programs, research institutions, and industry partners that make Greater Sudbury one of Canada's most connected innovation ecosystems.
