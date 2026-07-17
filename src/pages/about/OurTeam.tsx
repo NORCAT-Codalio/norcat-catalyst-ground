@@ -137,12 +137,12 @@ export default function OurTeam() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
+              <Eyebrow className="text-lg !text-white">THE INNOVATION TEAM</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                MEET OUR <span style={{ color: TEAL }}>TEAM.</span>
+                EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                The people helping Northern Ontario founders build, validate, and grow.
+                From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
               </p>
             </div>
           </div>
