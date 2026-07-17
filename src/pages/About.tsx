@@ -454,12 +454,15 @@ export default function About() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
               {[
-                { year: '2011', title: 'NASA Group Achievement', org: 'NASA', Icon: Rocket },
-                { year: '2016', title: 'Entrepreneurial Community of the Year', org: 'Northern Ontario Business Awards', Icon: Users },
-                { year: '2019', title: 'Best Place to Work', org: 'Northern Ontario Business Awards', Icon: Star },
+                { year: '2011', title: 'NASA Group Achievement', org: 'NASA', Icon: Rocket, href: 'https://www.northernontariobusiness.com/around-the-north/norcat-recognized-for-work-with-nasa-367803' },
+                { year: '2016', title: 'Entrepreneurial Community of the Year', org: 'Northern Ontario Business Awards', Icon: Users, href: 'https://www.northernontariobusiness.com/regional-news/sudbury/30th-annual-northern-ontario-business-award-winners-announced-432689' },
+                { year: '2019', title: 'Best Place to Work', org: 'Northern Ontario Business Awards', Icon: Star, href: 'https://www.inc.com/kevin-daum/this-entrepreneurial-engineer-knows-business-success-requires-more-than-just-stem.html' },
               ].map((a) => (
-                <div
+                <a
                   key={a.title}
+                  href={a.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative flex flex-col items-center text-center rounded-2xl bg-white px-6 pt-10 pb-8 transition-transform duration-300 hover:-translate-y-1"
                   style={{ boxShadow: '0 24px 50px -20px rgba(0,26,77,0.45)' }}
                 >
@@ -517,7 +520,7 @@ export default function About() {
                      style={{ color: NAVY }}>
                     {a.org}
                   </p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
