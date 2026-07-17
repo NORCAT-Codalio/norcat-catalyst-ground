@@ -27,6 +27,8 @@ import {
   Facebook,
   Instagram,
 } from 'lucide-react';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import signatureLines from '@/assets/signature-lines.png';
 
 const TEAL = '#00B398';
 const BLUE = '#003DA5';
