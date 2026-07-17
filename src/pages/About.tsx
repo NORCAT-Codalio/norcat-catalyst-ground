@@ -56,6 +56,86 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
+const partnerLogos = [
+  { name: 'FedNor', logo: fednorLogo },
+  { name: 'Ontario', logo: ontarioPartnerLogo },
+  { name: 'Ontario Centres of Innovation', logo: ociLogo },
+  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
+  { name: 'City of Greater Sudbury', logo: sudburyLogo },
+];
+
+function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: () => void }) {
+  useEffect(() => {
+    if (!member) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [member, onClose]);
+
+  return (
+    <AnimatePresence>
+      {member && (
+        <>
+          <motion.div
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative"
+              style={{ background: 'white', border: '1px solid #d9dde5' }}
+              initial={{ scale: 0.92, y: 16, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.92, y: 16, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 280, damping: 26 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={onClose}
+                      className="absolute top-4 right-4 z-10 size-10 rounded-full flex items-center justify-center transition-colors hover:opacity-90"
+                      style={{ background: PAPER, color: NAVY }}
+                      aria-label="Close">
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex flex-col md:flex-row md:min-h-[520px]">
+                <div className="md:w-[45%] aspect-square md:aspect-auto md:h-auto">
+                  <img src={member.image} alt={member.name}
+                       className="w-full h-full object-cover object-top" />
+                </div>
+                <div className="md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl font-black uppercase mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] mb-6" style={{ color: TEAL, fontFamily: FONT }}>
+                    {member.role}
+                  </p>
+                  <p className="leading-relaxed mb-8 text-sm md:text-base" style={{ color: '#475068' }}>
+                    {member.bio}
+                  </p>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:scale-[1.02] self-start text-white"
+                     style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)', fontFamily: FONT }}>
+                    Connect on LinkedIn
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(255,255,255,0.18)', color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function About() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
