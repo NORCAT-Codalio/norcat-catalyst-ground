@@ -7,12 +7,27 @@ import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 
+// Partner logos
+import fednorLogo from '@/assets/logos/fednor.png';
+import sudburyLogo from '@/assets/logos/sudbury.png';
+import ociLogo from '@/assets/logos/oci.png';
+import nohfcLogo from '@/assets/logos/nohfc.png';
+import ontarioPartnerLogo from '@/assets/logos/ontario-logo-wordmark.png';
+
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
 const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
 const BORDER = 'rgba(255,255,255,0.10)';
 const FONT = "'Open Sans', system-ui, sans-serif";
+
+const partnerLogos = [
+  { name: 'FedNor', logo: fednorLogo },
+  { name: 'Ontario', logo: ontarioPartnerLogo },
+  { name: 'Ontario Centres of Innovation', logo: ociLogo },
+  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
+  { name: 'City of Greater Sudbury', logo: sudburyLogo },
+];
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
@@ -239,6 +254,36 @@ export default function OurTeam() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── OUR PARTNERS ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="text-center mb-10 md:mb-12">
+              <p className="inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                Our Partners
+              </p>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                Friends who open doors.
+              </h2>
+              <p className="mt-4 text-sm md:text-base max-w-2xl mx-auto" style={{ color: '#5b6478' }}>
+                The operators, builders, and organizations who show up, make intros, and help founders win.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
+              {partnerLogos.map((p) => (
+                <div key={p.name}
+                     className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
+                     style={{ background: 'white', border: '1px solid #e3e6ec' }}>
+                  <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                </div>
+              ))}
             </div>
           </div>
         </section>
