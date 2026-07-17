@@ -510,29 +510,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* ───── RIC NETWORK (light) ───── */}
-        <section className="pb-10 md:pb-16" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-10 md:gap-16">
-              <div>
-                <img src={innovateonLogo} alt="InnovateON - Regional Innovation Centre Network"
-                     className="h-8 object-contain mb-4" />
-                <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
-                  We're part of Ontario's 17-centre RIC Network, connecting entrepreneurs
-                  with resources, mentorship, and funding to start and scale businesses.
-                </p>
-              </div>
-
-              <div>
-                <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-16 object-contain mb-4" />
-                <p className="text-base leading-relaxed" style={{ color: '#475068' }}>
-                  Funded by the <strong style={{ color: NAVY }}>Ministry of Economic Development, Job Creation and Trade</strong>,
-                  enabling free and subsidized services for Northern Ontario entrepreneurs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
       </div>
     </Layout>
