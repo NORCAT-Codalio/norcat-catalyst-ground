@@ -119,8 +119,19 @@ const stats = [
 const SudburyEcosystem = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
   const [selectedOrg, setSelectedOrg] = useState<EcosystemOrg | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredOrgs = activeCategory === 'all' ? ecosystemOrgs : ecosystemOrgs.filter(o => o.category === activeCategory);
+  const filteredOrgs = ecosystemOrgs.filter((o) => {
+    const matchesCategory = activeCategory === 'all' || o.category === activeCategory;
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch =
+      !q ||
+      o.name.toLowerCase().includes(q) ||
+      o.description.toLowerCase().includes(q) ||
+      (o.highlight && o.highlight.toLowerCase().includes(q)) ||
+      (o.tags && o.tags.some((t) => t.toLowerCase().includes(q)));
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <Layout>
