@@ -132,7 +132,7 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
-        style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+        style={{ background: BLUE }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
@@ -291,8 +291,8 @@ export default function Contact() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group inline-flex items-center gap-2 px-6 py-3 h-auto rounded-full text-sm font-semibold text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:opacity-95"
-                      style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)', fontFamily: FONT }}
+                      className="group inline-flex items-center gap-2 px-6 py-3 h-auto rounded-full text-sm font-semibold text-white transition-all duration-300 shadow-[0_2px_10px_-2px_rgba(0,61,165,0.4)] hover:shadow-[0_4px_16px_-2px_rgba(0,61,165,0.55)] hover:opacity-95"
+                      style={{ background: BLUE, fontFamily: FONT }}
                     >
                       <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -305,7 +305,7 @@ export default function Contact() {
             {/* Sidebar Info */}
             <div className="lg:col-span-2 space-y-8">
               <ScrollReveal delay={100}>
-                <div className="rounded-[28px] p-8 md:p-10 text-white" style={{ background: `linear-gradient(160deg, ${BLUE} 0%, ${TEAL} 100%)` }}>
+                <div className="rounded-[28px] p-8 md:p-10 text-white" style={{ background: BLUE }}>
                   <h3
                     className="font-black uppercase leading-[0.95] tracking-tight text-xl md:text-2xl mb-6"
                     style={{ fontFamily: FONT }}
