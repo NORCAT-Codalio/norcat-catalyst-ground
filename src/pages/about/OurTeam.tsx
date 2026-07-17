@@ -274,6 +274,16 @@ export default function OurTeam() {
               <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
                 Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.
               </p>
+              <Link
+                to="/ecosystem/sudbury-ecosystem"
+                className="group inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ background: NAVY, color: 'white', fontFamily: FONT }}
+              >
+                Explore Ecosystem Directory
+                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: TEAL, color: NAVY }}>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </span>
+              </Link>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
