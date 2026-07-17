@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2 } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2, Plus, Minus } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
@@ -69,6 +71,17 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 
 export default function About() {
+  const [expanded, setExpanded] = useState<Set<number>>(new Set());
+
+  const toggleEvent = (idx: number) => {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+  };
+
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
@@ -186,7 +199,7 @@ export default function About() {
               {/* Central vertical connector rail */}
               <div className="absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-px hidden md:block" style={{ background: 'rgba(0,179,152,0.35)' }} />
 
-              <div className="space-y-10 md:space-y-14">
+              <div className="space-y-8 md:space-y-10">
                 {[
                   { year: '2014', title: 'The Innovation Mill', desc: "NORCAT officially launches Sudbury's Regional Innovation Centre, laying the groundwork for tech startup mentorship and hosting the first PITCH competition.", image: storyLake.url },
                   { year: '2017', title: 'Underground Centre Expansion', desc: 'Joint public funding helps NORCAT overhaul the Underground Centre, creating live testing labs for international technology builders.', image: undergroundCentre.url },
@@ -197,51 +210,99 @@ export default function About() {
                   { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: stateOfSudbury.url },
                 ].map((event, idx) => {
                   const isRight = idx % 2 === 1;
+                  const isOpen = expanded.has(idx);
+                  const ExpandIcon = isOpen ? Minus : Plus;
+                  const descBlock = (
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="desc"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-sm md:text-[15px] leading-relaxed pt-2" style={{ color: '#5b6478' }}>{event.desc}</p>
+                          {event.cta && (
+                            <div className={`pt-3 ${isRight ? 'text-left' : ''}`}>
+                              <Link to={event.cta.href} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
+                                {event.cta.label}
+                                <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                                  <ArrowUpRight className="w-3 h-3" />
+                                </span>
+                              </Link>
+                            </div>
+                          )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  );
                   return (
-                    <div key={event.year + idx} className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div key={event.year + idx} className="relative md:grid md:grid-cols-2 md:gap-12 items-start">
                       {/* Mobile: inline image + text */}
                       <div className="flex items-start gap-4 md:hidden">
-                        <div className="relative shrink-0">
+                        <button
+                          onClick={() => toggleEvent(idx)}
+                          className="relative shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                          style={{ ['--tw-ring-color' as string]: TEAL }}
+                          aria-label={`Toggle ${event.title}`}
+                        >
                           <div className="size-20 rounded-full overflow-hidden ring-[3px] shadow-xl"
                                style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
                             <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                           </div>
-                        </div>
+                        </button>
                         <div className="flex-1 pt-1">
-                          <p className="text-base md:text-lg font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-base mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                          <p className="text-sm md:text-[15px] leading-relaxed mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
-                          {event.cta && (
-                            <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                              {event.cta.label}
-                              <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                                <ArrowUpRight className="w-3 h-3" />
+                          <button
+                            onClick={() => toggleEvent(idx)}
+                            className="w-full text-left group"
+                            aria-expanded={isOpen}
+                          >
+                            <div className="flex items-start justify-between gap-2">
+                              <div>
+                                <p className="text-base font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                                <h3 className="font-black uppercase text-base mb-0.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                              </div>
+                              <span className="shrink-0 mt-1 inline-flex items-center justify-center size-6 rounded-full transition-colors" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
+                                <ExpandIcon className="w-4 h-4" />
                               </span>
-                            </Link>
-                          )}
+                            </div>
+                          </button>
+                          {descBlock}
                         </div>
                       </div>
 
                       {/* Desktop: alternating columns */}
-                      <div className={`hidden md:flex items-center gap-3 ${isRight ? 'col-start-2 order-2' : 'col-start-1 justify-end flex-row-reverse text-right'}`}>
-                        <div className="relative shrink-0">
-                          <div className="size-20 lg:size-24 rounded-full overflow-hidden ring-4 shadow-xl"
+                      <div className={`hidden md:flex items-start gap-3 ${isRight ? 'col-start-2 order-2' : 'col-start-1 justify-end flex-row-reverse text-right'}`}>
+                        <button
+                          onClick={() => toggleEvent(idx)}
+                          className="relative shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                          style={{ ['--tw-ring-color' as string]: TEAL }}
+                          aria-label={`Toggle ${event.title}`}
+                        >
+                          <div className="size-20 lg:size-24 rounded-full overflow-hidden ring-4 shadow-xl transition-transform duration-300 group-hover:scale-105"
                                style={{ ['--tw-ring-color' as string]: 'rgba(0,179,152,0.35)' }}>
                             <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
                           </div>
-                        </div>
+                        </button>
                         <div className="max-w-xl">
-                          <p className="text-base md:text-lg lg:text-xl font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
-                          <h3 className="font-black uppercase text-lg lg:text-xl mb-1.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
-                          <p className="text-sm md:text-[15px] leading-relaxed mb-2" style={{ color: '#5b6478' }}>{event.desc}</p>
-                          {event.cta && (
-                            <Link to={event.cta.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold group" style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                              {event.cta.label}
-                              <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                                <ArrowUpRight className="w-3 h-3" />
+                          <button
+                            onClick={() => toggleEvent(idx)}
+                            className={`w-full group ${isRight ? 'text-left' : 'text-right'}`}
+                            aria-expanded={isOpen}
+                          >
+                            <div className={`flex items-start gap-2 ${isRight ? 'flex-row-reverse' : ''}`}>
+                              <div className="flex-1">
+                                <p className="text-base md:text-lg lg:text-xl font-black tracking-[0.18em] uppercase mb-1" style={{ color: TEAL, fontFamily: FONT }}>{event.year}</p>
+                                <h3 className="font-black uppercase text-lg lg:text-xl mb-0.5" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>{event.title}</h3>
+                              </div>
+                              <span className="shrink-0 mt-1 inline-flex items-center justify-center size-7 rounded-full transition-colors" style={{ background: 'rgba(0,179,152,0.15)', color: TEAL }}>
+                                <ExpandIcon className="w-4 h-4" />
                               </span>
-                            </Link>
-                          )}
+                            </div>
+                          </button>
+                          {descBlock}
                         </div>
                       </div>
                     </div>
