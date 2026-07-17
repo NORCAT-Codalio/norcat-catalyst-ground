@@ -404,9 +404,9 @@ export default function About() {
         </section>
 
         {/* ───── TEAM GRID ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-10 md:py-14" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="mb-10 md:mb-12">
+            <div className="mb-6 md:mb-8">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
