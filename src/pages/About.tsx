@@ -25,11 +25,6 @@ import { team, type TeamMember } from '@/data/team';
 
 // Logos
 import innovateonLogo from '@/assets/logos/innovateon.png.asset.json';
-import fednorLogo from '@/assets/logos/fednor.png';
-import sudburyLogo from '@/assets/logos/sudbury.png';
-import ociLogo from '@/assets/logos/oci.png';
-import nohfcLogo from '@/assets/logos/nohfc.png';
-import ontarioPartnerLogo from '@/assets/logos/ontario-logo-wordmark.png';
 
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
@@ -56,13 +51,6 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
-const partnerLogos = [
-  { name: 'FedNor', logo: fednorLogo },
-  { name: 'Ontario', logo: ontarioPartnerLogo },
-  { name: 'Ontario Centres of Innovation', logo: ociLogo },
-  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
-  { name: 'City of Greater Sudbury', logo: sudburyLogo },
-];
 
 function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: () => void }) {
   useEffect(() => {
