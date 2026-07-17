@@ -333,59 +333,6 @@ const MentorshipServices = () => {
           </div>
         </section>
 
-        {/* ───── FOUNDER VOICES: scrolling testimonials + logos ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.14), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.14), transparent 45%)`,
-          }} />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 mb-12 md:mb-16">
-            <div className="max-w-2xl">
-              <Eyebrow>Founder Voices</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Real founders.<br /><span style={{ color: TEAL }}>Real outcomes.</span>
-              </Display>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
-                The companies below built their momentum with NORCAT mentors in the room.
-              </p>
-            </div>
-          </div>
-
-          {/* Scrolling testimonial cards */}
-          <div className="relative">
-            {/* left fade */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
-                 style={{ background: `linear-gradient(to right, ${NAVY}, transparent)` }} />
-            {/* right fade */}
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
-                 style={{ background: `linear-gradient(to left, ${NAVY}, transparent)` }} />
-
-            <div className="flex animate-marquee hover:[animation-play-state:paused]">
-              {[...founderTestimonials, ...founderTestimonials].map((t, i) => (
-                <div
-                  key={`${t.name}-${i}`}
-                  className="shrink-0 w-[320px] sm:w-[380px] md:w-[420px] mx-3 md:mx-4"
-                >
-                  <div className="h-full rounded-2xl p-6 md:p-8 flex flex-col"
-                       style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${BORDER}` }}>
-                    <div className="h-14 mb-6 flex items-center justify-start rounded-lg px-3 py-2 bg-white/95">
-                      <img src={t.logo} alt={t.role.split(',')[0]} className="max-h-full max-w-[140px] object-contain" />
-                    </div>
-                    <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
-                    <p className="text-sm md:text-base leading-relaxed mb-6 flex-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                      "{t.quote}"
-                    </p>
-                    <div>
-                      <p className="font-bold text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
-                      <p className="text-xs md:text-sm" style={{ color: FG_MUTED }}>{t.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ───── MENTORS GRID (light) ───── */}
         <section id="meet-our-mentors" className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
@@ -550,6 +497,59 @@ const MentorshipServices = () => {
                 );
               })}
             </motion.div>
+          </div>
+        </section>
+
+        {/* ───── FOUNDER VOICES: scrolling testimonials + logos ───── */}
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: NAVY }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.14), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.14), transparent 45%)`,
+          }} />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 mb-12 md:mb-16">
+            <div className="max-w-2xl">
+              <Eyebrow>Founder Voices</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Real founders.<br /><span style={{ color: TEAL }}>Real outcomes.</span>
+              </Display>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
+                The companies below built their momentum with NORCAT mentors in the room.
+              </p>
+            </div>
+          </div>
+
+          {/* Scrolling testimonial cards */}
+          <div className="relative">
+            {/* left fade */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
+                 style={{ background: `linear-gradient(to right, ${NAVY}, transparent)` }} />
+            {/* right fade */}
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none"
+                 style={{ background: `linear-gradient(to left, ${NAVY}, transparent)` }} />
+
+            <div className="flex animate-marquee hover:[animation-play-state:paused]">
+              {[...founderTestimonials, ...founderTestimonials].map((t, i) => (
+                <div
+                  key={`${t.name}-${i}`}
+                  className="shrink-0 w-[320px] sm:w-[380px] md:w-[420px] mx-3 md:mx-4"
+                >
+                  <div className="h-full rounded-2xl p-6 md:p-8 flex flex-col"
+                       style={{ background: 'rgba(255,255,255,0.05)', border: `1px solid ${BORDER}` }}>
+                    <div className="h-14 mb-6 flex items-center justify-start rounded-lg px-3 py-2 bg-white/95">
+                      <img src={t.logo} alt={t.role.split(',')[0]} className="max-h-full max-w-[140px] object-contain" />
+                    </div>
+                    <Quote className="w-6 h-6 mb-3" style={{ color: TEAL }} />
+                    <p className="text-sm md:text-base leading-relaxed mb-6 flex-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                      "{t.quote}"
+                    </p>
+                    <div>
+                      <p className="font-bold text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{t.name}</p>
+                      <p className="text-xs md:text-sm" style={{ color: FG_MUTED }}>{t.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
