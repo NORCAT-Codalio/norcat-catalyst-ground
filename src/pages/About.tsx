@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import { motion, AnimatePresence } from 'framer-motion';
 import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
