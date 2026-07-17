@@ -127,7 +127,7 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (compact accordion timeline) ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        <section className="pt-20 md:pt-32 pb-14 md:pb-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-10 lg:gap-16 items-start">
 
