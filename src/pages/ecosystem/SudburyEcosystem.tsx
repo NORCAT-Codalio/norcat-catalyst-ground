@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight,
   ArrowUpRight,
   Globe,
   Users,
@@ -21,6 +20,7 @@ import {
   Sparkles,
   Search,
 } from 'lucide-react';
+
 import {
   Dialog,
   DialogContent,
