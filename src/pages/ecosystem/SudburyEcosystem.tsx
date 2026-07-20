@@ -15,11 +15,9 @@ import {
   Zap,
   Target,
   Rocket,
-  Award,
   FlaskConical,
   Shield,
   Sparkles,
-  X,
   Search,
 } from 'lucide-react';
 import {
