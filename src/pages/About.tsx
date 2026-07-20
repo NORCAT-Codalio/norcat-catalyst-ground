@@ -411,9 +411,25 @@ export default function About() {
                   className="rounded-2xl p-8 md:p-10 flex flex-col justify-between transition hover:-translate-y-1"
                   style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}
                 >
-                  <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                    "{t.quote}"
-                  </p>
+                  <div className="relative mb-8">
+                    <span
+                      className="absolute -top-2 -left-2 font-black select-none pointer-events-none"
+                      style={{ fontFamily: FONT, fontSize: '4rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
+                      aria-hidden="true"
+                    >
+                      “
+                    </span>
+                    <p className="relative text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                      {t.quote}
+                    </p>
+                    <span
+                      className="absolute -bottom-6 right-0 font-black select-none pointer-events-none"
+                      style={{ fontFamily: FONT, fontSize: '4rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
+                      aria-hidden="true"
+                    >
+                      ”
+                    </span>
+                  </div>
                   <div>
                     <p className="font-bold text-sm uppercase tracking-[0.12em]" style={{ color: NAVY, fontFamily: FONT }}>
                       {t.name}
