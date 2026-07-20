@@ -42,7 +42,7 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-type CategoryType = 'all' | 'support' | 'funding' | 'education' | 'research' | 'industry' | 'partners';
+type CategoryType = 'all' | 'support' | 'funding' | 'education' | 'research';
 
 interface EcosystemOrg {
   name: string;
@@ -62,8 +62,6 @@ const categories: { id: CategoryType; label: string; icon: React.ElementType }[]
   { id: 'funding', label: 'Funding', icon: DollarSign },
   { id: 'education', label: 'Education', icon: GraduationCap },
   { id: 'research', label: 'Research', icon: FlaskConical },
-  { id: 'industry', label: 'Industry', icon: Pickaxe },
-  { id: 'partners', label: 'Partner Programs', icon: Landmark },
 ];
 
 const ecosystemOrgs: EcosystemOrg[] = [
