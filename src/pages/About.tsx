@@ -344,10 +344,10 @@ export default function About() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
               {[
-                { icon: Target, title: 'Real-World Impact', desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy." },
+                { icon: Target, title: 'Real-World Results', desc: "Founders are building practical technologies that solve real industry challenges, create job opportunity, and strengthen Northern Ontario's innovation economy locally with global impact." },
                 { icon: Atom, title: 'Bold Experimentation', desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.' },
                 { icon: Rocket, title: 'Idea to Market', desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
-                { icon: Share2, title: 'Connected Ecosystem', desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.' },
+                { icon: Share2, title: 'Collaborative Ecosystem', desc: 'Successful companies do not scale in isolation. We connect founders, investors, industry, and partners together to scaffold and support your innovation.' },
               ].map((v) => (
                 <div key={v.title}
                      className="rounded-2xl p-7 md:p-10 flex items-center gap-6 md:gap-8 transition hover:-translate-y-1"
