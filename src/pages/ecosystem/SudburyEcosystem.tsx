@@ -106,10 +106,10 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 const stats = [
-  { number: '30+', label: 'Support Organizations', icon: Users },
-  { number: '$25M+', label: 'Available Funding', icon: DollarSign },
-  { number: '5', label: 'Post-Secondary Institutions', icon: GraduationCap },
-  { number: '8+', label: 'Research Centres', icon: FlaskConical },
+  { number: '8', label: 'Support Organizations', icon: Users },
+  { number: '4', label: 'Funding Programs', icon: DollarSign },
+  { number: '1', label: 'Post-Secondary Institution', icon: GraduationCap },
+  { number: '6', label: 'Research Centres', icon: FlaskConical },
 ];
 
 const SudburyEcosystem = () => {
