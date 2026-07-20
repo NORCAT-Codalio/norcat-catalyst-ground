@@ -15,11 +15,9 @@ import {
   Zap,
   Target,
   Rocket,
-  Award,
   FlaskConical,
   Shield,
   Sparkles,
-  X,
   Search,
 } from 'lucide-react';
 import {
@@ -42,7 +40,7 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-type CategoryType = 'all' | 'support' | 'funding' | 'education' | 'research' | 'industry' | 'partners';
+type CategoryType = 'all' | 'support' | 'funding' | 'education' | 'research';
 
 interface EcosystemOrg {
   name: string;
@@ -62,36 +60,32 @@ const categories: { id: CategoryType; label: string; icon: React.ElementType }[]
   { id: 'funding', label: 'Funding', icon: DollarSign },
   { id: 'education', label: 'Education', icon: GraduationCap },
   { id: 'research', label: 'Research', icon: FlaskConical },
-  { id: 'industry', label: 'Industry', icon: Pickaxe },
-  { id: 'partners', label: 'Partner Programs', icon: Landmark },
 ];
 
 const ecosystemOrgs: EcosystemOrg[] = [
   { name: 'NORCAT Innovation', category: 'support', description: "Sudbury's Regional Innovation Centre", longDescription: "Part of Ontario's 17-centre RIC Network, providing entrepreneurs with resources, mentorship, and funding to start and scale businesses.", internalLink: '/about', icon: Rocket, highlight: 'Regional Innovation Centre', tags: ['Mentorship', 'Programs', 'Funding'] },
-  { name: 'Greater Sudbury Development Corporation', category: 'support', description: 'Economic development agency for the city', longDescription: 'Provides business support services, investment attraction, and economic development initiatives for Greater Sudbury.', link: 'https://investsudbury.ca', icon: Building2, tags: ['Economic Development', 'Investment'] },
-  { name: 'Sudbury Chamber of Commerce', category: 'support', description: 'Business advocacy & networking', longDescription: 'Represents the interests of businesses in Greater Sudbury, providing networking opportunities and advocacy.', link: 'https://sudburychamber.ca', icon: Users, tags: ['Networking', 'Advocacy'] },
-  { name: 'FedNor', category: 'support', description: 'Federal economic development agency', longDescription: 'Federal Economic Development Agency for Northern Ontario, providing funding and support for businesses and communities.', link: 'https://fednor.gc.ca', icon: Landmark, highlight: 'Federal Agency', tags: ['Federal Funding', 'Economic Development'] },
-  { name: 'NOHFC', category: 'support', description: 'Northern Ontario Heritage Fund Corporation', longDescription: 'Provincial agency investing in projects that create jobs and strengthen Northern Ontario communities.', link: 'https://nohfc.ca', icon: Target, tags: ['Provincial Funding', 'Job Creation'] },
 
-  { name: 'Sudbury Catalyst Fund', category: 'funding', description: '$5M venture capital fund for startups', longDescription: 'A unique venture capital fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City, FedNor, and NORCAT.', internalLink: '/funding/sudbury-catalyst-fund', icon: Zap, highlight: '$5M Fund', tags: ['Venture Capital', 'Investment'] },
-  { name: 'Northern Ontario Angels', category: 'funding', description: 'Angel investor network', longDescription: 'Connects investment-ready founders with a network of 50+ active angel investors across Northern Ontario.', internalLink: '/funding/investor-hub', icon: Award, highlight: '50+ Angels', tags: ['Angel Investment', 'Network'] },
+  { name: 'MICA', category: 'support', description: 'Mining Innovation Commercialization Accelerator', longDescription: 'National accelerator supporting mining innovation, clean technology, and commercialization pathways for Northern Ontario ventures.', link: 'https://mininginnovation.ca', icon: Pickaxe, highlight: 'Mining Accelerator', tags: ['Mining', 'Clean Tech', 'Commercialization'] },
+  { name: 'Regional Business Centre', category: 'support', description: 'Business advisory & startup support', longDescription: 'Provides business counselling, workshops, and resources for entrepreneurs and small businesses in Greater Sudbury.', link: 'https://greatersudbury.ca/business', icon: Building2, tags: ['Advisory', 'Workshops'] },
+  { name: 'Greater Sudbury Chamber of Commerce', category: 'support', description: 'Business advocacy & networking', longDescription: 'Represents the interests of businesses in Greater Sudbury, providing networking opportunities and advocacy.', link: 'https://sudburychamber.ca', icon: Users, tags: ['Networking', 'Advocacy'] },
+  { name: 'MineConnect AI', category: 'support', description: 'Mining supply chain network', longDescription: 'Connects mining suppliers, operators, and innovators to accelerate procurement and technology adoption in the mining sector.', link: 'https://mineconnect.ca', icon: Zap, highlight: 'Mining Network', tags: ['Supply Chain', 'Mining'] },
+  { name: 'Gowling Law', category: 'support', description: 'IP protection & commercial law', longDescription: 'Full-service law firm helping founders protect intellectual property, structure deals, and navigate commercial growth.', link: 'https://gowlingwlg.com', icon: Shield, highlight: 'IP & Legal', tags: ['IP', 'Legal'] },
+  { name: 'IPON', category: 'support', description: 'Intellectual Property Ontario', longDescription: 'Supports Ontario innovators with IP strategy, education, and services to maximize the value of their intellectual property.', link: 'https://ipon.ca', icon: Shield, highlight: 'IP Strategy', tags: ['IP', 'Strategy'] },
+  { name: 'The Foundry', category: 'support', description: 'Jim Fielding Innovation Space', longDescription: 'Community innovation hub and coworking space in downtown Sudbury, hosting events, programs, and early-stage ventures.', link: 'https://thefoundrysudbury.ca', icon: Landmark, highlight: 'Innovation Hub', tags: ['Coworking', 'Events'] },
 
-  { name: 'Laurentian University', category: 'education', description: 'Research-intensive university', longDescription: "Northern Ontario's bilingual university offering programs in mining, environmental studies, and more.", link: 'https://laurentian.ca', icon: GraduationCap, tags: ['Research', 'Graduate Programs'] },
-  { name: 'Cambrian College', category: 'education', description: 'Applied learning & technical training', longDescription: 'Offers diploma programs in mining, trades, technology, and applied research through Cambrian R&D.', link: 'https://cambriancollege.ca', icon: GraduationCap, tags: ['Technical Training', 'Applied Research'] },
-  { name: 'College Boréal', category: 'education', description: 'Francophone post-secondary institution', longDescription: 'French-language college offering programs in trades, health sciences, and business.', link: 'https://collegeboreal.ca', icon: GraduationCap, tags: ['Francophone', 'Technical Training'] },
-  { name: 'Cambrian R&D', category: 'education', description: 'Applied research centre', longDescription: 'Applied research arm of Cambrian College, supporting industry partnerships and innovation projects.', link: 'https://cambrianresearch.ca', icon: FlaskConical, tags: ['Applied Research', 'Industry Partnerships'] },
+  { name: 'Ontario Centre of Innovation', category: 'funding', description: 'OCI', longDescription: 'Provincial innovation engine providing funding, commercialization support, and market access programs for Ontario startups.', link: 'https://oci-ric.ca', icon: DollarSign, highlight: 'Provincial Funder', tags: ['Funding', 'Commercialization'] },
+  { name: 'Futurepreneur', category: 'funding', description: 'Entrepreneur financing & mentorship', longDescription: 'Supports young and emerging entrepreneurs with startup financing, mentorship, and resources to launch and grow businesses.', link: 'https://futurepreneur.ca', icon: DollarSign, tags: ['Financing', 'Mentorship'] },
+  { name: 'NOHFC', category: 'funding', description: 'Northern Ontario Heritage Fund Corporation', longDescription: 'Provincial agency investing in projects that create jobs and strengthen Northern Ontario communities.', link: 'https://nohfc.ca', icon: Target, highlight: 'Provincial Funding', tags: ['Provincial Funding', 'Job Creation'] },
+  { name: 'NOBEEP', category: 'funding', description: 'Northern Ontario Business & Education Event Partnership', longDescription: 'Supports business and education partnership initiatives that drive entrepreneurship and workforce development in Northern Ontario.', link: 'https://no-beep.ca', icon: DollarSign, tags: ['Partnerships', 'Entrepreneurship'] },
 
-  { name: 'MIRARCO', category: 'research', description: 'Mining innovation research consortium', longDescription: 'Research consortium focused on mining innovation, safety, and environmental sustainability.', link: 'https://mirarco.org', icon: FlaskConical, highlight: 'Mining Research', tags: ['Mining', 'Innovation', 'Safety'] },
-  { name: 'CEMI', category: 'research', description: 'Centre for Excellence in Mining Innovation', longDescription: 'Industry-led research organization accelerating the development and adoption of mining innovation.', link: 'https://cemi.ca', icon: Landmark, tags: ['Mining Excellence', 'R&D'] },
-  { name: 'SNOLAB', category: 'research', description: 'World-class underground physics lab', longDescription: 'Deep underground research facility 2km below surface, conducting cutting-edge physics research.', link: 'https://snolab.ca', icon: Sparkles, highlight: '2km Underground', tags: ['Physics', 'World-Class Facility'] },
+  { name: 'Cambrian College Hanson Venture Lab', category: 'education', description: 'Entrepreneurship & applied learning', longDescription: 'Cambrian College initiative supporting student and community entrepreneurs through coaching, programming, and venture development.', link: 'https://cambriancollege.ca', icon: GraduationCap, highlight: 'Venture Lab', tags: ['Entrepreneurship', 'Applied Learning'] },
 
-  { name: 'Vale', category: 'industry', description: 'Global mining company', longDescription: "One of the world's largest producers of nickel and a major employer in Greater Sudbury.", link: 'https://vale.com', icon: Pickaxe, highlight: 'Major Employer', tags: ['Nickel', 'Global'] },
-  { name: 'Glencore', category: 'industry', description: 'Diversified mining company', longDescription: 'Major commodity company with significant mining operations in the Sudbury basin.', link: 'https://glencore.com', icon: Pickaxe, tags: ['Copper', 'Nickel', 'Zinc'] },
-  { name: 'Epiroc', category: 'industry', description: 'Mining equipment OEM', longDescription: 'Leading manufacturer of mining and construction equipment, with R&D presence in Sudbury.', link: 'https://epiroc.com', icon: Zap, tags: ['Equipment', 'Automation'] },
-  { name: 'Sandvik', category: 'industry', description: 'Mining technology solutions', longDescription: 'Global engineering company providing mining and rock technology solutions.', link: 'https://sandvik.com', icon: Target, tags: ['Technology', 'Engineering'] },
-
-  { name: 'Core5', category: 'partners', description: 'OVIN Regional Technology Site', longDescription: 'Pan-Northern Ontario initiative supporting SMEs in BEV and EV technology development.', internalLink: '/mining/core5', icon: Zap, highlight: 'EV Innovation', tags: ['EV', 'Battery Tech', 'Clean Tech'] },
-  { name: 'Rogers Cybersecure Catalyst', category: 'partners', description: 'Cybersecurity accelerator', longDescription: 'Partnership providing cybersecurity training and commercialization support.', internalLink: '/partners/rogers-cybersecure', icon: Shield, tags: ['Cybersecurity', 'Training'] },
+  { name: 'Ontario Vehicle Innovation Network', category: 'research', description: 'OVIN', longDescription: 'Supports the development and demonstration of electric, connected, and autonomous vehicle technologies in Ontario.', link: 'https://ovin.ca', icon: FlaskConical, highlight: 'EV & AV Research', tags: ['EV', 'AV', 'Research'] },
+  { name: 'MaRS', category: 'research', description: 'Discovery District innovation hub', longDescription: 'One of North America’s largest urban innovation hubs, supporting high-growth startups with capital, talent, and market access.', link: 'https://marsdd.com', icon: Building2, highlight: 'Innovation Hub', tags: ['Scale-Up', 'Market Access'] },
+  { name: 'AI Collective', category: 'research', description: 'Artificial intelligence research & adoption', longDescription: 'Supports applied AI research, talent development, and industry adoption of machine learning and artificial intelligence solutions.', link: 'https://norcat.org', icon: Sparkles, highlight: 'Applied AI', tags: ['AI', 'Machine Learning'] },
+  { name: 'NOSM', category: 'research', description: 'Northern Ontario School of Medicine', longDescription: 'Medical school with a social accountability mandate, advancing health research, education, and care for Northern Ontario communities.', link: 'https://nosm.ca', icon: FlaskConical, highlight: 'Medical Research', tags: ['Health', 'Education'] },
+  { name: 'HSNRI', category: 'research', description: 'Health Sciences North Research Institute', longDescription: 'Academic research institute affiliated with Health Sciences North, advancing patient-centred research and health innovation.', link: 'https://hsnri.ca', icon: FlaskConical, highlight: 'Health Research', tags: ['Health', 'Research'] },
+  { name: 'IRAP', category: 'research', description: 'Industrial Research Assistance Program', longDescription: 'NRC program providing technical and business advisory services, funding, and expertise to accelerate Canadian SME innovation.', link: 'https://nrc-cnrc.gc.ca/eng/irap', icon: FlaskConical, highlight: 'R&D Support', tags: ['R&D', 'Advisory'] },
 ];
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
@@ -110,10 +104,10 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 const stats = [
-  { number: '30+', label: 'Support Organizations', icon: Users },
-  { number: '$25M+', label: 'Available Funding', icon: DollarSign },
-  { number: '5', label: 'Post-Secondary Institutions', icon: GraduationCap },
-  { number: '8+', label: 'Research Centres', icon: FlaskConical },
+  { number: '8', label: 'Support Organizations', icon: Users },
+  { number: '4', label: 'Funding Programs', icon: DollarSign },
+  { number: '1', label: 'Post-Secondary Institution', icon: GraduationCap },
+  { number: '6', label: 'Research Centres', icon: FlaskConical },
 ];
 
 const SudburyEcosystem = () => {
