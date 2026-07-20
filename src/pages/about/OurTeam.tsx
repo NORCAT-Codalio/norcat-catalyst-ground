@@ -162,7 +162,7 @@ export default function OurTeam() {
               </div>
               <p className="flex-1 flex items-start text-base md:text-lg leading-relaxed md:pt-10"
                  style={{ color: '#5b6478' }}>
-                From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
+                Whether it's your first time jotting a business idea down on the back of a napkin or you're scaling and ready to demonstrate your technology to global operators, we are here to help.
               </p>
             </div>
 
