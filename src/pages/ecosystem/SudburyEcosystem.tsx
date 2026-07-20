@@ -15,6 +15,7 @@ import {
   Zap,
   Target,
   Rocket,
+  Award,
   FlaskConical,
   Shield,
   Sparkles,
