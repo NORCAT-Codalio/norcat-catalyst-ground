@@ -138,10 +138,10 @@ const SudburyEcosystem = () => {
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+        <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
-               style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />
+               style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }} />
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
@@ -150,52 +150,25 @@ const SudburyEcosystem = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">Greater Sudbury Innovation Ecosystem</Eyebrow>
-              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                CONNECTED TO <span style={{ color: TEAL }}>WHAT'S NEXT.</span>
+              <Eyebrow>THE SUDBURY ADVANTAGE</Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Explore the organizations, funding programs, research institutions, and industry partners helping startups build, validate, and grow in Greater Sudbury.
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Greater Sudbury punches well above its weight; take advantage of the holistic ecosystem support & the full capacity of Northern Ontario at your back.
               </p>
             </div>
-          </div>
-        </section>
 
-        {/* ───── WHAT IS THE ECOSYSTEM (light, Home2 pattern) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
-              <div className="lg:col-span-5">
-                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
-                  Built for Founders
-                </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  SUPPORT AT{' '}
-                  <span style={{ color: TEAL }}>EVERY STAGE.</span>
-                </h2>
-              </div>
-              <div className="lg:col-span-7 lg:pt-4">
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
-                </p>
-                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  NORCAT Innovation helps startups navigate the ecosystem and connect with the right people, programs, and opportunities when they need them.
-                </p>
-              </div>
-            </div>
-
-            {/* Stats row — full width, spread out beneath text */}
-            <div className="mt-14 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-8 md:py-10 px-4 md:px-8 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+            {/* Stats bar */}
+            <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 rounded-2xl p-5 md:p-8" style={{ background: 'white', border: '1px solid rgba(255,255,255,0.15)' }}>
               {stats.map((s) => (
-                <div key={s.label} className="flex items-center gap-4 md:gap-5">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)' }}>
-                    <s.icon className="w-6 h-6" style={{ color: TEAL }} />
+                <div key={s.label} className="flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)' }}>
+                    <s.icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: TEAL }} />
                   </div>
                   <div>
-                    <p className="text-xl md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
-                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
+                    <p className="text-lg md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
+                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
                   </div>
                 </div>
               ))}
