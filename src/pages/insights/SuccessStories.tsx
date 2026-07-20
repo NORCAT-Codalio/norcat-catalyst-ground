@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
-import { ArrowRight, Sparkles, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
+import { ArrowRight, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { SuccessStory } from '@/components/SuccessStoryCard';
 import { detailedStories } from '@/components/SuccessStoryModal';
 import signatureLines from '@/assets/signature-lines.png';
-import successStoriesHeroBg from '@/assets/success-stories-hero-bg-v2.png.asset.json';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import symxAiTeam from '@/assets/symx-ai-team.jpg';
 import flosonicsFlopatch from '@/assets/flosonics-flopatch.jpg';
@@ -380,39 +380,27 @@ const SuccessStories = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(220 30% 7%) 0%, hsl(215 28% 10%) 60%, hsl(220 25% 12%) 100%)' }}>
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <img src={successStoriesHeroBg.url} alt="" aria-hidden="true" className="w-full h-full object-cover object-right" />
-        </div>
+      <section className="relative overflow-hidden flex items-center py-16 md:py-24" style={{ background: 'linear-gradient(135deg, #001A4D 0%, #003DA5 50%, #00B398 100%)' }}>
+        {/* logo background */}
+        <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover" style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />
+        {/* radial glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)' }} />
+        {/* signature lines */}
+        <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
-        {/* Signature lines */}
-        <img
-          src={signatureLines}
-          alt=""
-          aria-hidden="true"
-          className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-80 pointer-events-none select-none mix-blend-overlay"
-        />
-
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <div className="max-w-3xl">
-            <ScrollReveal>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-xs font-semibold tracking-[0.15em] uppercase text-white mb-8">
-                <Sparkles className="w-3.5 h-3.5" />
-                PORTFOLIO SUCCESS STORIES&nbsp;
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.25rem] leading-[1.2] tracking-tight text-white mb-8 uppercase" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500 }}>
-                Built in Sudbury.<br />
-                <span style={{ color: 'hsl(0, 0%, 100%)', fontFamily: "'Open Sans', sans-serif", fontWeight: 700 }}>Scaling Globally.</span>
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-xl md:text-2xl leading-relaxed text-white max-w-2xl font-light">
-                Learn more about the companies that are deploying world-class ventures with the Northern Ontario advantage&nbsp;&nbsp;
-              </p>
-            </ScrollReveal>
+            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: "'Open Sans', system-ui, sans-serif", color: '#00B398' }}>
+              <span className="size-1.5 rounded-full inline-block" style={{ background: '#00B398' }} />
+              PORTFOLIO SUCCESS STORIES
+            </p>
+            <h1 className="font-black uppercase leading-[0.95] tracking-tight text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]" style={{ fontFamily: "'Open Sans', system-ui, sans-serif", letterSpacing: '-0.02em' }}>
+              BUILT IN SUDBURY.<br />
+              <span style={{ color: '#00B398' }}>SCALING GLOBALLY.</span>
+            </h1>
+            <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              Learn more about the companies that are deploying world-class ventures with the Northern Ontario advantage.
+            </p>
           </div>
         </div>
       </section>
