@@ -502,10 +502,6 @@ const MentorshipServices = () => {
 
         {/* ───── FOUNDER VOICES: scrolling testimonials + logos ───── */}
         <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: BLUE }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
-          }} />
-
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 mb-12 md:mb-16">
             <div className="max-w-2xl">
               <Eyebrow>Founder Voices</Eyebrow>
@@ -520,13 +516,6 @@ const MentorshipServices = () => {
 
           {/* Scrolling testimonial cards — contained to page margins */}
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            {/* left fade */}
-            <div className="absolute left-5 sm:left-6 md:left-10 top-0 bottom-0 w-12 md:w-24 z-10 pointer-events-none"
-                 style={{ background: `linear-gradient(to right, ${BLUE}, transparent)` }} />
-            {/* right fade */}
-            <div className="absolute right-5 sm:right-6 md:right-10 top-0 bottom-0 w-12 md:w-24 z-10 pointer-events-none"
-                 style={{ background: `linear-gradient(to left, ${BLUE}, transparent)` }} />
-
             <div className="flex animate-marquee hover:[animation-play-state:paused]">
               {[...founderTestimonials, ...founderTestimonials].map((t, i) => (
                 <div
