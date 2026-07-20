@@ -1,14 +1,33 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { ArrowUpRight, Mail } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, Mail, X } from 'lucide-react';
+import { team, type TeamMember } from '@/data/team';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
+
+// Partner logos
+import fednorLogo from '@/assets/logos/fednor.png';
+import sudburyLogo from '@/assets/logos/sudbury.png';
+import ociLogo from '@/assets/logos/oci.png';
+import nohfcLogo from '@/assets/logos/nohfc.png';
+import ontarioPartnerLogo from '@/assets/logos/ontario-logo-wordmark.png';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
 const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
 const FONT = "'Open Sans', system-ui, sans-serif";
+
+const partnerLogos = [
+  { name: 'FedNor', logo: fednorLogo },
+  { name: 'Ontario', logo: ontarioPartnerLogo },
+  { name: 'Ontario Centres of Innovation', logo: ociLogo },
+  { name: 'Northern Ontario Heritage Fund Corporation', logo: nohfcLogo },
+  { name: 'City of Greater Sudbury', logo: sudburyLogo },
+];
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
@@ -25,7 +44,81 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
+function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: () => void }) {
+  useEffect(() => {
+    if (!member) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [member, onClose]);
+
+  return (
+    <AnimatePresence>
+      {member && (
+        <>
+          <motion.div
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative"
+              style={{ background: 'white', border: '1px solid #d9dde5' }}
+              initial={{ scale: 0.92, y: 16, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.92, y: 16, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 280, damping: 26 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={onClose}
+                      className="absolute top-4 right-4 z-10 size-10 rounded-full flex items-center justify-center transition-colors hover:opacity-90"
+                      style={{ background: PAPER, color: NAVY }}
+                      aria-label="Close">
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex flex-col md:flex-row md:min-h-[520px]">
+                <div className="md:w-[45%] aspect-square md:aspect-auto md:h-auto">
+                  <img src={member.image} alt={member.name}
+                       className="w-full h-full object-cover object-top" />
+                </div>
+                <div className="md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl font-black uppercase mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] mb-6" style={{ color: TEAL, fontFamily: FONT }}>
+                    {member.role}
+                  </p>
+                  <p className="leading-relaxed mb-8 text-sm md:text-base" style={{ color: '#475068' }}>
+                    {member.bio}
+                  </p>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:scale-[1.02] self-start text-white"
+                     style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)', fontFamily: FONT }}>
+                    Connect on LinkedIn
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(255,255,255,0.18)', color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function OurTeam() {
+  const [modalMember, setModalMember] = useState<TeamMember | null>(null);
+
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
@@ -44,17 +137,169 @@ export default function OurTeam() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <Eyebrow className="text-lg !text-white">THE INNOVATION TEAM</Eyebrow>
+              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD</span>
+                MEET OUR <span style={{ color: TEAL }}>TEAM.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Whether it's your first time jotting a business idea down on the back of a napkin or you're scaling and ready to demonstrate your technology to global operators, we are here to help.
+                The people helping Northern Ontario founders build, validate, and grow.
               </p>
             </div>
           </div>
         </section>
 
+
+        {/* ───── TEAM GRID ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 md:mb-16">
+              <div className="flex-1 flex flex-col justify-start text-left">
+                <Eyebrow>THE INNOVATION TEAM</Eyebrow>
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  EXPERTISE TO HELP<br />YOU MOVE FORWARD
+                </h2>
+              </div>
+              <p className="flex-1 flex items-start text-base md:text-lg leading-relaxed md:pt-10"
+                 style={{ color: '#5b6478' }}>
+                From early-stage ideas to market-ready ventures, our Innovation team works alongside founders with practical guidance, strategic connections, and access to the resources needed to start and scale.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+              {team.map((member) => (
+                <motion.div
+                  key={member.name}
+                  whileHover={{ y: -6 }}
+                  transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+                  onClick={() => setModalMember(member)}
+                  className="group text-left rounded-2xl overflow-hidden cursor-pointer relative bg-white"
+                  style={{ border: '1px solid #d9dde5' }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setModalMember(member); }}
+                  aria-label={`Open profile for ${member.name}`}
+                >
+                  <div className="relative overflow-hidden aspect-square">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0"
+                         style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
+                  </div>
+
+                  <div className="p-5">
+                    <h3 className="font-black uppercase text-base md:text-lg mb-1"
+                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em]"
+                       style={{ color: TEAL, fontFamily: FONT }}>
+                      {member.role}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── MENTOR NETWORK ───── */}
+        <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 60%, ${NAVY} 100%)`, color: 'white' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 35%), radial-gradient(circle at 90% 80%, rgba(0,179,152,0.35), transparent 45%)`,
+          }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] rounded-full opacity-30 pointer-events-none"
+               style={{ background: `radial-gradient(circle, ${BLUE} 0%, transparent 70%)`, filter: 'blur(80px)' }} />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+                   style={{ fontFamily: FONT, color: 'white' }}>
+                  <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
+                  MENTOR NETWORK
+                </p>
+                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  WORLD-CLASS <span style={{ color: NAVY }}>MENTORS.</span>
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
+                  Our mentors are operators, founders, and industry experts who volunteer their time to help northern ventures scale. From pitch practice to go-to-market strategy, they bring decades of real-world experience.
+                </p>
+                <Link
+                  to="/programs/mentorship-services#meet-our-mentors"
+                  className="group inline-flex items-center px-8 py-4 rounded-full text-base font-bold transition-all duration-300 hover:-translate-y-1 whitespace-nowrap"
+                  style={{ background: 'white', color: NAVY, fontFamily: FONT }}
+                >
+                  Meet Our Mentors
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {[
+                  { number: '18', label: 'Active Mentors', desc: 'Vetted operators and founders across sectors.' },
+                  { number: '1000+', label: 'Hours Mentored in 2025', desc: 'Hands-on guidance for northern ventures.' },
+                  { number: '100', label: 'NPS Score', desc: 'Founder-rated mentorship experience.' },
+                  { number: '$0', label: 'To Access Mentorship', desc: 'No cost for qualifying ventures.' },
+                ].map((s, i) => (
+                  <div key={s.label}
+                       className="rounded-2xl p-6 md:p-8 transition-transform duration-300 hover:scale-[1.02]"
+                       style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.22)', transform: 'translateZ(0)', willChange: 'transform' }}>
+                    <p className="font-black text-3xl md:text-4xl mb-1" style={{ fontFamily: FONT, color: 'white' }}>{s.number}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] mb-3" style={{ color: 'white' }}>{s.label}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.80)' }}>{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── OUR PARTNERS ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="text-left mb-10 md:mb-12">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                 style={{ fontFamily: FONT, color: TEAL }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+                OUR PARTNERS
+              </p>
+              <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                SUPPORTING WHAT'S NEXT.
+              </h2>
+              <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
+                Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.{" "}
+                <Link
+                  to="/ecosystem/sudbury-ecosystem"
+                  className="inline-flex items-center gap-1 font-bold underline underline-offset-4 transition-colors hover:no-underline"
+                  style={{ color: TEAL, fontFamily: FONT }}
+                >
+                  Explore the full ecosystem directory
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+              {partnerLogos.map((p) => (
+                <div key={p.name}
+                     className="aspect-[3/2] rounded-lg flex items-center justify-center transition hover:-translate-y-0.5 p-5"
+                     style={{ background: 'white', border: '1px solid #e3e6ec' }}>
+                  <img
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    loading="lazy"
+                    className={`max-w-full object-contain ${p.name === 'City of Greater Sudbury' ? 'max-h-[70%]' : 'max-h-full'}`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ───── GET IN TOUCH ───── */}
         <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: PAPER }}>
@@ -88,6 +333,8 @@ export default function OurTeam() {
           </div>
         </section>
       </div>
+
+      <TeamModal member={modalMember} onClose={() => setModalMember(null)} />
     </Layout>
   );
 }

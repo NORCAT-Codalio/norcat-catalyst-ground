@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Rocket, Plus, Minus, Users, Star, X } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Target, Rocket, Atom, Share2, Plus, Minus, Users, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/Layout';
 import foundersImage from '@/assets/founders-collab.jpg';
 import norcatBuilding from '@/assets/norcat-building.jpg.asset.json';
+import signatureLines from '@/assets/signature-lines.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import storyLake from '@/assets/story/story-lake.jpg.asset.json';
 import storyMine from '@/assets/story/story-mine.jpg.asset.json';
 import storyHorse from '@/assets/story/story-horse.jpg.asset.json';
@@ -17,10 +19,6 @@ import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
-import valueResults from '@/assets/values/real-world-results.jpg';
-import valueValidation from '@/assets/values/validation-demo.jpg';
-import valueEcosystem from '@/assets/values/collaborative-ecosystem.jpg';
-import { team, type TeamMember } from '@/data/team';
 
 
 // Logos
@@ -51,82 +49,8 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   </As>
 );
 
-
-function TeamModal({ member, onClose }: { member: TeamMember | null; onClose: () => void }) {
-  useEffect(() => {
-    if (!member) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [member, onClose]);
-
-  return (
-    <AnimatePresence>
-      {member && (
-        <>
-          <motion.div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={onClose}
-          />
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative"
-              style={{ background: 'white', border: '1px solid #d9dde5' }}
-              initial={{ scale: 0.92, y: 16, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.92, y: 16, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 280, damping: 26 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button onClick={onClose}
-                      className="absolute top-4 right-4 z-10 size-10 rounded-full flex items-center justify-center transition-colors hover:opacity-90"
-                      style={{ background: PAPER, color: NAVY }}
-                      aria-label="Close">
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="flex flex-col md:flex-row md:min-h-[520px]">
-                <div className="md:w-[45%] aspect-square md:aspect-auto md:h-auto">
-                  <img src={member.image} alt={member.name}
-                       className="w-full h-full object-cover object-top" />
-                </div>
-                <div className="md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
-                  <h3 className="text-2xl md:text-3xl font-black uppercase mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                    {member.name}
-                  </h3>
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] mb-6" style={{ color: TEAL, fontFamily: FONT }}>
-                    {member.role}
-                  </p>
-                  <p className="leading-relaxed mb-8 text-sm md:text-base" style={{ color: '#475068' }}>
-                    {member.bio}
-                  </p>
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:scale-[1.02] self-start text-white"
-                     style={{ background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)', fontFamily: FONT }}>
-                    Connect on LinkedIn
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(255,255,255,0.18)', color: 'white' }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
-  );
-}
-
 export default function About() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
-  const [modalMember, setModalMember] = useState<TeamMember | null>(null);
 
   const toggleEvent = (idx: number) => {
     setOpenIdx((prev) => (prev === idx ? null : idx));
@@ -136,6 +60,40 @@ export default function About() {
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
+
+          {/* logo background (matches Home2 hero) */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+
+          {/* radial glow (matches Home2 hero) */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+          }} />
+
+          {/* signature lines */}
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl">
+              <Eyebrow className="text-lg !text-white">ABOUT NORCAT INNOVATION</Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                OUR <span style={{ color: TEAL }}>STORY.</span>
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Since 2014, we have been passionate about driving the growth of Northern Ontario's innovation ecosystem in Greater Sudbury and beyond.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        {/* ───── ROOTED IN NORTHERN ONTARIO ───── */}
         <section className="pt-20 md:pt-28 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -150,7 +108,7 @@ export default function About() {
                   Where Bold Ideas <span style={{ color: TEAL }}>Grow.</span>
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  <p>NORCAT Innovation was founded in 2014 to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
+                  <p>NORCAT Innovation was founded to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
                   <p>As a non-profit Regional Innovation Centre, we help entrepreneurs turn ideas into market-ready ventures through mentorship, capital connections, industry relationships, and access to the resources needed to build, test, and scale.</p>
                   <p>By bringing the right people, partners, and opportunities together, we help Northern Ontario innovators grow here and compete anywhere.</p>
                 </div>
@@ -186,9 +144,9 @@ export default function About() {
 
 
         {/* ───── RIC NETWORK ───── */}
-        <section className="py-20 md:py-32" style={{ background: BLUE, color: 'white' }}>
-          <div className="mx-auto w-full px-5 sm:px-6 md:px-10 lg:px-14">
-            <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-8 p-6 md:p-8 lg:p-10 rounded-2xl shadow-lg mb-[-48px] md:mb-[-72px] relative z-10" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+        <section className="pb-14 md:pb-20" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-8 md:p-10 rounded-2xl shadow-sm" style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
               <div className="shrink-0 flex items-center justify-center md:justify-start">
                 <img src={innovateonLogo.url} alt="InnovateON - Regional Innovation Centre Network"
                      className="h-8 md:h-10 w-auto object-contain" />
@@ -205,7 +163,7 @@ export default function About() {
 
 
         {/* ───── STORY OF NORCAT (compact accordion timeline) ───── */}
-        <section className="pt-20 md:pt-32 pb-14 md:pb-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-10 lg:gap-16 items-start">
 
@@ -218,7 +176,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  From Idea to <span style={{ color: TEAL }}>RESULT.</span>
+                  From Idea to <span style={{ color: TEAL }}>Impact.</span>
                 </h2>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
@@ -367,104 +325,39 @@ export default function About() {
         </section>
 
 
-        {/* ───── EXPERTISE TO HELP YOU MOVE FORWARD ───── */}
-        <section className="py-12 md:py-16 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
-          }} />
-
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: 'white' }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
-                THE INNOVATION TEAM
-              </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                EXPERTISE TO HELP<br />YOU <span style={{ color: TEAL }}>MOVE FORWARD</span>
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Whether it's your first time jotting a business idea down on the back of a napkin or you're scaling and ready to demonstrate your technology to global operators, we are here to help.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ───── TEAM GRID ───── */}
-        <section className="py-10 md:py-14" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-              {team.map((member) => (
-                <motion.div
-                  key={member.name}
-                  whileHover={{ y: -6 }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 28 }}
-                  onClick={() => setModalMember(member)}
-                  className="group text-left rounded-2xl overflow-hidden cursor-pointer relative bg-white"
-                  style={{ border: '1px solid #d9dde5' }}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setModalMember(member); }}
-                  aria-label={`Open profile for ${member.name}`}
-                >
-                  <div className="relative overflow-hidden aspect-square">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0"
-                         style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(0,26,77,0.15) 100%)' }} />
-                  </div>
-
-                  <div className="p-5">
-                    <h3 className="font-black uppercase text-base md:text-lg mb-1"
-                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                      {member.name}
-                    </h3>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em]"
-                       style={{ color: TEAL, fontFamily: FONT }}>
-                      {member.role}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
 
         {/* ───── OUR VALUES (dark, 2x2 icon cards) ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden"
+        <section className="py-20 md:py-28 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.06), transparent 45%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-8 md:mb-10">
-              <Eyebrow>OUR VALUES&nbsp;&nbsp;</Eyebrow>
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>What Drives Innovation</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
-                ACCELERATING INNOVATION&nbsp;
+                Our <span style={{ color: TEAL }}>Values.</span>
               </Display>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
               {[
-                { image: valueResults, title: 'REAL-WORLD RESULTS', desc: "Founders are building practical technologies that solve real industry challenges, create job opportunity, and strengthen Northern Ontario's innovation economy locally with global impact." },
-                { image: valueValidation, title: 'VALIDATION & DEMONSTRATION', desc: 'Much more than just creating a product, innovation takes curiosity, speed, and a willingness to challenge the standard; we foster the ecosystem for ambitious ideas like yours to come to life.' },
-                { image: valueEcosystem, title: 'COLLABORATIVE ECOSYSTEM', desc: 'successful companies do not scale in isolation. We connect founders, investors, industry, and partners together to scaffold and support your innovation.' },
+                { icon: Target, title: 'Real-World Impact', desc: "We support founders building practical technologies that solve real industry challenges, create opportunity, and strengthen Northern Ontario's innovation economy." },
+                { icon: Atom, title: 'Bold Experimentation', desc: 'Innovation takes curiosity, speed, and a willingness to challenge what exists. We create space for ambitious ideas to be built, tested, refined, and moved forward.' },
+                { icon: Rocket, title: 'Idea to Market', desc: 'From early validation to growth, we connect entrepreneurs with mentorship, capital, industry relationships, and hands-on support to help ventures scale with purpose.' },
+                { icon: Share2, title: 'Connected Ecosystem', desc: 'Great companies do not grow in isolation. We bring together founders, investors, industry, and partners to turn local innovation into lasting impact.' },
               ].map((v) => (
                 <div key={v.title}
-                     className="rounded-2xl overflow-hidden flex flex-col transition hover:-translate-y-1"
+                     className="rounded-2xl p-7 md:p-10 flex items-center gap-6 md:gap-8 transition hover:-translate-y-1"
                      style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.14)' }}>
-                  <div className="aspect-[4/3] w-full overflow-hidden">
-                    <img src={v.image} alt={v.title} loading="lazy" width={1024} height={1024}
-                         className="w-full h-full object-cover" />
+                  <div className="shrink-0 inline-flex items-center justify-center rounded-full size-20 md:size-24"
+                       style={{ border: `1.5px solid ${TEAL}`, background: 'rgba(0,179,152,0.06)' }}>
+                    <v.icon className="w-10 h-10 md:w-11 md:h-11" strokeWidth={1.4} style={{ color: TEAL }} />
                   </div>
-                  <div className="p-7 md:p-8 flex-1 flex flex-col">
-                    <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-3 text-white"
+                  <div className="flex-1 min-w-0 border-l border-white/15 pl-6 md:pl-8">
+                    <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2 text-white"
                         style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                       {v.title}
                     </h3>
@@ -481,17 +374,17 @@ export default function About() {
 
 
         {/* ───── TESTIMONIAL BLURBS ───── */}
-        <section className="py-14 md:py-20" style={{ background: PAPER, color: NAVY }}>
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-8 md:mb-10">
+            <div className="max-w-3xl mb-12 md:mb-16">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
-                HEAR FOUNDER VOICES
+                Founder Voices
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                BUILT WITH NORCAT.<br /><span style={{ color: TEAL }}>BACKED BY THE NORTH.</span>
+                Built Here.<br /><span style={{ color: TEAL }}>Backed by NORCAT.</span>
               </h2>
             </div>
 
@@ -519,7 +412,7 @@ export default function About() {
                   style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}
                 >
                   <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                    <span className="opacity-30 mr-1" aria-hidden="true">"</span>{t.quote}<span className="opacity-30 ml-1" aria-hidden="true">"</span>
+                    "{t.quote}"
                   </p>
                   <div>
                     <p className="font-bold text-sm uppercase tracking-[0.12em]" style={{ color: NAVY, fontFamily: FONT }}>
@@ -536,17 +429,15 @@ export default function About() {
         </section>
 
 
-
-
         {/* ───── AWARDS BANNER (colour) ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden"
+        <section className="py-20 md:py-24 relative overflow-hidden"
                  style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 85% 80%, rgba(255,255,255,0.06), transparent 45%)`,
           }} />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="mb-8 md:mb-10 text-left">
+            <div className="mb-12 md:mb-14 text-left">
               <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
                 <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -556,6 +447,9 @@ export default function About() {
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Awards & <span style={{ color: TEAL }}>Accolades.</span>
               </h2>
+              <p className="mt-5 text-base sm:text-lg leading-relaxed md:whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Recognized nationally and globally for building a world-class innovation ecosystem in the North.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
@@ -634,21 +528,21 @@ export default function About() {
         </section>
 
         {/* ───── FINAL CTA (white) ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            {/* Eyebrow removed */}
+            <Eyebrow className="justify-center">Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-              LET'S BUILD SOMETHING<br /><span style={{ color: TEAL }}>EXTRAORDINARY!</span>
+              Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
             </h2>
-            <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: '#475068' }}>
-              <br />
+            <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: '#475068' }}>
+              Whether you're just starting out or ready to scale, we're here to help you build something extraordinary.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
-                Apply&nbsp;
+                Apply to NORCAT Innovation
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </span>
@@ -664,8 +558,6 @@ export default function About() {
 
 
       </div>
-
-      <TeamModal member={modalMember} onClose={() => setModalMember(null)} />
     </Layout>
   );
 }

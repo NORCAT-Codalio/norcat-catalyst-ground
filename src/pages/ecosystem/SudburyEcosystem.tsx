@@ -67,17 +67,12 @@ const categories: { id: CategoryType; label: string; icon: React.ElementType }[]
 ];
 
 const ecosystemOrgs: EcosystemOrg[] = [
+  { name: 'NORCAT Innovation', category: 'support', description: "Sudbury's Regional Innovation Centre", longDescription: "Part of Ontario's 17-centre RIC Network, providing entrepreneurs with resources, mentorship, and funding to start and scale businesses.", internalLink: '/about', icon: Rocket, highlight: 'Regional Innovation Centre', tags: ['Mentorship', 'Programs', 'Funding'] },
   { name: 'Greater Sudbury Development Corporation', category: 'support', description: 'Economic development agency for the city', longDescription: 'Provides business support services, investment attraction, and economic development initiatives for Greater Sudbury.', link: 'https://investsudbury.ca', icon: Building2, tags: ['Economic Development', 'Investment'] },
-  { name: 'Greater Sudbury Chamber of Commerce', category: 'support', description: 'Business advocacy & networking', longDescription: 'Represents the interests of businesses in Greater Sudbury, providing networking opportunities and advocacy.', link: 'https://sudburychamber.ca', icon: Users, tags: ['Networking', 'Advocacy'] },
-  { name: 'Regional Business Centre', category: 'support', description: 'Small business advisory & entrepreneurship hub', longDescription: 'Provides business counselling, training, and resources for entrepreneurs and small businesses in Greater Sudbury.', link: 'https://regionalbusinesscentre.ca', icon: Building2, tags: ['Small Business', 'Advisory'] },
-  { name: 'MICA', category: 'support', description: 'Mining Innovation Commercialization Accelerator', longDescription: 'A national mining innovation accelerator helping Canadian SMEs commercialize clean mining technologies.', link: 'https://mininginnovation.ca', icon: Pickaxe, highlight: 'Mining Accelerator', tags: ['Mining', 'Commercialization'] },
-  { name: 'MineConnect', category: 'support', description: 'Mining supply & services association', longDescription: 'Connects mining suppliers to domestic and global opportunities, strengthening Northern Ontario’s mining service sector.', link: 'https://mineconnect.ca', icon: Pickaxe, tags: ['Mining', 'Supply Chain'] },
+  { name: 'Sudbury Chamber of Commerce', category: 'support', description: 'Business advocacy & networking', longDescription: 'Represents the interests of businesses in Greater Sudbury, providing networking opportunities and advocacy.', link: 'https://sudburychamber.ca', icon: Users, tags: ['Networking', 'Advocacy'] },
   { name: 'FedNor', category: 'support', description: 'Federal economic development agency', longDescription: 'Federal Economic Development Agency for Northern Ontario, providing funding and support for businesses and communities.', link: 'https://fednor.gc.ca', icon: Landmark, highlight: 'Federal Agency', tags: ['Federal Funding', 'Economic Development'] },
+  { name: 'NOHFC', category: 'support', description: 'Northern Ontario Heritage Fund Corporation', longDescription: 'Provincial agency investing in projects that create jobs and strengthen Northern Ontario communities.', link: 'https://nohfc.ca', icon: Target, tags: ['Provincial Funding', 'Job Creation'] },
 
-  { name: 'NOHFC', category: 'funding', description: 'Northern Ontario Heritage Fund Corporation', longDescription: 'Provincial agency investing in projects that create jobs and strengthen Northern Ontario communities.', link: 'https://nohfc.ca', icon: Target, tags: ['Provincial Funding', 'Job Creation'] },
-  { name: 'Ontario Centre of Innovation (OCI)', category: 'funding', description: 'Provincial innovation commercialization funding', longDescription: 'Funds and supports university-industry R&D partnerships and the commercialization of Ontario-made technologies.', link: 'https://ontariocentreofinnovation.ca', icon: Landmark, tags: ['Provincial Funding', 'Commercialization'] },
-  { name: 'Futurepreneur', category: 'funding', description: 'Entrepreneurship financing & mentorship', longDescription: 'Provides startup financing, mentoring, and resources to young entrepreneurs across Canada.', link: 'https://futurepreneur.ca', icon: Rocket, tags: ['Startup Financing', 'Mentorship'] },
-  { name: 'NOBEEP', category: 'funding', description: 'Northern Ontario Business & Entrepreneurship Partnership', longDescription: 'Supports Northern Ontario entrepreneurship and business development through regional partnership programs.', link: 'https://nobeep.ca', icon: DollarSign, tags: ['Entrepreneurship', 'Regional Funding'] },
   { name: 'Sudbury Catalyst Fund', category: 'funding', description: '$5M venture capital fund for startups', longDescription: 'A unique venture capital fund administered by the Nickel Basin Federal Development Corporation in collaboration with the City, FedNor, and NORCAT.', internalLink: '/funding/sudbury-catalyst-fund', icon: Zap, highlight: '$5M Fund', tags: ['Venture Capital', 'Investment'] },
   { name: 'Northern Ontario Angels', category: 'funding', description: 'Angel investor network', longDescription: 'Connects investment-ready founders with a network of 50+ active angel investors across Northern Ontario.', internalLink: '/funding/investor-hub', icon: Award, highlight: '50+ Angels', tags: ['Angel Investment', 'Network'] },
 
@@ -88,16 +83,12 @@ const ecosystemOrgs: EcosystemOrg[] = [
 
   { name: 'MIRARCO', category: 'research', description: 'Mining innovation research consortium', longDescription: 'Research consortium focused on mining innovation, safety, and environmental sustainability.', link: 'https://mirarco.org', icon: FlaskConical, highlight: 'Mining Research', tags: ['Mining', 'Innovation', 'Safety'] },
   { name: 'CEMI', category: 'research', description: 'Centre for Excellence in Mining Innovation', longDescription: 'Industry-led research organization accelerating the development and adoption of mining innovation.', link: 'https://cemi.ca', icon: Landmark, tags: ['Mining Excellence', 'R&D'] },
-  { name: 'Ontario Vehicle Innovation Network (OVIN)', category: 'research', description: 'EV & smart mobility R&D network', longDescription: 'Provincial network accelerating Ontario’s leadership in electric, connected, and autonomous vehicles.', link: 'https://ovin.ca', icon: Zap, highlight: 'EV R&D', tags: ['EV', 'Smart Mobility'] },
-  { name: 'MaRS', category: 'research', description: 'Toronto-based innovation & venture hub', longDescription: 'Canada’s largest urban innovation hub, providing resources for high-growth startups and research commercialization.', link: 'https://marsdd.com', icon: Building2, tags: ['Innovation Hub', 'Venture Support'] },
-  { name: 'Cambrian College Hanson Venture Lab', category: 'research', description: 'Entrepreneurship & venture incubator', longDescription: 'Cambrian College’s venture lab supporting student and community entrepreneurs with coaching and resources.', link: 'https://cambriancollege.ca', icon: Rocket, tags: ['Incubator', 'Entrepreneurship'] },
-  { name: 'AI Collective', category: 'research', description: 'Applied AI research & adoption hub', longDescription: 'Supports applied AI research, talent development, and industry adoption across Northern Ontario.', link: 'https://norcat.org', icon: Sparkles, tags: ['Artificial Intelligence', 'Adoption'] },
-  { name: 'Northern Ontario School of Medicine (NOSM)', category: 'research', description: 'Medical education & health research', longDescription: 'Northern Ontario’s medical school advancing health education, research, and care for rural and remote communities.', link: 'https://nosm.ca', icon: FlaskConical, tags: ['Health Research', 'Medical Education'] },
-  { name: 'Health Sciences North Research Institute (HSNRI)', category: 'research', description: 'Hospital-based health research institute', longDescription: 'Conducts patient-centred research and clinical trials in partnership with Health Sciences North.', link: 'https://hsnri.ca', icon: FlaskConical, tags: ['Health Research', 'Clinical Trials'] },
-  { name: 'IRAP', category: 'research', description: 'Industrial Research Assistance Program', longDescription: 'NRC program providing technical and business advisory services, funding, and expertise to Canadian SMEs.', link: 'https://nrc.canada.ca/en/support-technology-innovation/industrial-research-assistance-program-irap', icon: FlaskConical, highlight: 'NRC Program', tags: ['R&D Support', 'SME Funding'] },
-  { name: 'Gowling Law: IP Protection', category: 'research', description: 'Intellectual property legal services', longDescription: 'Provides patent, trademark, and IP strategy services to protect innovation and commercialize technology.', link: 'https://gowlingwlg.com', icon: Shield, tags: ['IP Law', 'Patents'] },
-  { name: 'IPON', category: 'research', description: 'Intellectual Property Ontario', longDescription: 'Provincial resource helping Ontario innovators protect, manage, and commercialize intellectual property.', link: 'https://ipontario.ca', icon: Shield, tags: ['IP Strategy', 'Commercialization'] },
-  { name: 'The Foundry (Jim Fielding Innovation Space)', category: 'research', description: 'Innovation & maker space', longDescription: 'A collaborative innovation space supporting entrepreneurs, makers, and researchers in Greater Sudbury.', link: 'https://thefoundry.ca', icon: Rocket, tags: ['Innovation Space', 'Makerspace'] },
+  { name: 'SNOLAB', category: 'research', description: 'World-class underground physics lab', longDescription: 'Deep underground research facility 2km below surface, conducting cutting-edge physics research.', link: 'https://snolab.ca', icon: Sparkles, highlight: '2km Underground', tags: ['Physics', 'World-Class Facility'] },
+
+  { name: 'Vale', category: 'industry', description: 'Global mining company', longDescription: "One of the world's largest producers of nickel and a major employer in Greater Sudbury.", link: 'https://vale.com', icon: Pickaxe, highlight: 'Major Employer', tags: ['Nickel', 'Global'] },
+  { name: 'Glencore', category: 'industry', description: 'Diversified mining company', longDescription: 'Major commodity company with significant mining operations in the Sudbury basin.', link: 'https://glencore.com', icon: Pickaxe, tags: ['Copper', 'Nickel', 'Zinc'] },
+  { name: 'Epiroc', category: 'industry', description: 'Mining equipment OEM', longDescription: 'Leading manufacturer of mining and construction equipment, with R&D presence in Sudbury.', link: 'https://epiroc.com', icon: Zap, tags: ['Equipment', 'Automation'] },
+  { name: 'Sandvik', category: 'industry', description: 'Mining technology solutions', longDescription: 'Global engineering company providing mining and rock technology solutions.', link: 'https://sandvik.com', icon: Target, tags: ['Technology', 'Engineering'] },
 
   { name: 'Core5', category: 'partners', description: 'OVIN Regional Technology Site', longDescription: 'Pan-Northern Ontario initiative supporting SMEs in BEV and EV technology development.', internalLink: '/mining/core5', icon: Zap, highlight: 'EV Innovation', tags: ['EV', 'Battery Tech', 'Clean Tech'] },
   { name: 'Rogers Cybersecure Catalyst', category: 'partners', description: 'Cybersecurity accelerator', longDescription: 'Partnership providing cybersecurity training and commercialization support.', internalLink: '/partners/rogers-cybersecure', icon: Shield, tags: ['Cybersecurity', 'Training'] },
@@ -146,8 +137,8 @@ const SudburyEcosystem = () => {
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
-        {/* ───── HERO: Built for Founders (blue gradient) ───── */}
-        <section className="relative overflow-hidden py-16 md:py-24">
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />
@@ -158,19 +149,39 @@ const SudburyEcosystem = () => {
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-4xl">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                THE SUDBURY ADVANTAGE
+            <div className="max-w-3xl">
+              <Eyebrow className="text-lg !text-white">Greater Sudbury Innovation Ecosystem</Eyebrow>
+              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                CONNECTED TO <span style={{ color: TEAL }}>WHAT'S NEXT.</span>
+              </Display>
+              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Explore the organizations, funding programs, research institutions, and industry partners helping startups build, validate, and grow in Greater Sudbury.
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
-                SUPPORT AT{' '}
-                <span style={{ color: TEAL }}>EVERY STAGE.</span>
-              </h2>
-              <div className="mt-8 md:mt-10">
-                <p className="text-lg sm:text-xl md:text-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  Greater Sudbury punches well above its weight; take advantage of the holistic ecosystem support & the full capacity of Northern Ontario at your back
+            </div>
+          </div>
+        </section>
+
+        {/* ───── WHAT IS THE ECOSYSTEM (light, Home2 pattern) ───── */}
+        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
+              <div className="lg:col-span-5">
+                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: TEAL }}>
+                  Built for Founders
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                  SUPPORT AT{' '}
+                  <span style={{ color: TEAL }}>EVERY STAGE.</span>
+                </h2>
+              </div>
+              <div className="lg:col-span-7 lg:pt-4">
+                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
+                </p>
+                <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  NORCAT Innovation helps startups navigate the ecosystem and connect with the right people, programs, and opportunities when they need them.
                 </p>
               </div>
             </div>
@@ -371,24 +382,35 @@ const SudburyEcosystem = () => {
         </Dialog>
 
         {/* ───── CTA (dark) ───── */}
-        <section className="py-10 md:py-14 relative overflow-hidden"
+        <section className="py-20 md:py-28 relative overflow-hidden"
                  style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
           }} />
+          <img src={signatureLines} alt="" aria-hidden="true"
+               className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
 
-          <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
-              <Display className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center md:text-left">
-                GET CONNECTED TO THE&nbsp;<span style={{ color: TEAL }}>REGION</span>
-              </Display>
+          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
+            <Eyebrow className="justify-center">Get Connected</Eyebrow>
+            <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              Ready to Join the<br /><span style={{ color: TEAL }}>Ecosystem?</span>
+            </Display>
+            <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: FG_MUTED }}>
+              Connect with NORCAT Innovation to access the full network of resources, mentors, and funding opportunities available to founders in Greater Sudbury.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/apply"
-                    className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02] shrink-0"
+                    className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                Apply Now
+                Apply to NORCAT Innovation
                 <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
+              </Link>
+              <Link to="/about"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', fontFamily: FONT }}>
+                Learn About NORCAT
               </Link>
             </div>
           </div>

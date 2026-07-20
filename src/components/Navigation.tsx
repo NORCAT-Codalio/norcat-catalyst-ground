@@ -21,6 +21,7 @@ type MenuEntry = {
 // Menu structure
 const aboutItems: MenuEntry[] = [
   { name: 'Our Story', href: '/about', icon: BookOpen, description: 'How NORCAT Innovation became the North\'s launchpad for tough-tech.' },
+  { name: 'Our Team', href: '/about/our-team', icon: Users, description: 'Meet the people behind the Innovation engine.' },
   { name: 'Ecosystem Partners', href: '/ecosystem/sudbury', icon: Network, description: 'The industry, government, and community partners powering the ecosystem.' },
   { name: 'Underground Centre', href: '/mining/norcat-underground', icon: Mountain, description: 'The world\'s only fully operational mine for tech testing.' },
 ];
@@ -337,7 +338,7 @@ export function Navigation() {
             <div className="container mx-auto px-4 lg:px-8 py-10 relative">
               {(() => {
                 const menus = {
-                  about: { label: 'ABOUT NORCAT INNOVATION', items: aboutItems, eyebrow: 'The story of Northern Ontario\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
+                  about: { label: 'About', items: aboutItems, eyebrow: 'The story of the North\'s launchpad', featured: { title: 'Meet the ecosystem', body: 'Founders, partners, and the community building tough-tech in Sudbury.', href: '/about', cta: 'Read our story' } },
                   programs: { label: 'Programs', items: programsItems, eyebrow: 'Build. Test. Scale.', featured: { title: 'Explore all programs', body: 'CIT, Core5, Rogers Cybersecure Catalyst, and funding pathways - find the right fit for your venture.', href: '/programs', cta: 'View programs overview' } },
                   services: { label: 'Services', items: servicesItems, eyebrow: 'The infrastructure behind every venture', featured: { title: 'Become a Client', body: 'Get access to mentors, prototyping space, and the Underground Centre.', href: '/apply', cta: 'Become a Client' } },
                   insights: { label: 'Insights', items: insightsItems, eyebrow: 'Proof in the numbers', featured: { title: 'Venture North PITCH', body: 'Applications to pitch are now closed. Join us to watch the finalists compete live.', href: '/events', cta: 'Learn more' } },
@@ -357,8 +358,8 @@ export function Navigation() {
                         {menu.eyebrow}
                       </h3>
                       <div className="mt-4 h-px w-12 bg-gradient-to-r from-primary to-transparent" />
-                      <p className="mt-4 text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
-                        {"\n"}
+                      <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                        Explore the full {menu.label.toLowerCase()} stack - built for tough-tech founders.
                       </p>
                     </div>
 
