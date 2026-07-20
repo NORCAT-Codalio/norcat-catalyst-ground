@@ -143,13 +143,15 @@ const SudburyEcosystem = () => {
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl">
-              <Eyebrow>THE SUDBURY ADVANTAGE</Eyebrow>
-              <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
-              </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Greater Sudbury punches well above its weight; take advantage of the holistic ecosystem support & the full capacity of Northern Ontario at your back.
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              <div>
+                <Eyebrow>BUILT FOR FOUNDERS</Eyebrow>
+                <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                  SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
+                </Display>
+              </div>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed lg:pt-10" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Greater Sudbury punches well above its weight, bringing together funding, research, industry expertise, and startup support in one connected ecosystem.
               </p>
             </div>
 
