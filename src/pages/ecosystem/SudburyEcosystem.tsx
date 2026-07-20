@@ -104,10 +104,10 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 const stats = [
-  { number: '8', label: 'Support Organizations', icon: Users },
-  { number: '4', label: 'Funding Programs', icon: DollarSign },
-  { number: '1', label: 'Post-Secondary Institution', icon: GraduationCap },
-  { number: '6', label: 'Research Centres', icon: FlaskConical },
+  { number: '12', label: 'Support Organizations', icon: Users },
+  { number: '6', label: 'Funding Programs', icon: DollarSign },
+  { number: '3', label: 'Post-Secondary Institutions', icon: GraduationCap },
+  { number: '9', label: 'Research Centres', icon: FlaskConical },
 ];
 
 const SudburyEcosystem = () => {
@@ -181,7 +181,7 @@ const SudburyEcosystem = () => {
                 <Eyebrow className="mb-2">Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  Connect with <span style={{ color: TEAL }}>{ecosystemOrgs.length}</span> local organizations
+                  Connect with <span style={{ color: TEAL }}>30</span> local organizations
                 </h2>
               </div>
 
