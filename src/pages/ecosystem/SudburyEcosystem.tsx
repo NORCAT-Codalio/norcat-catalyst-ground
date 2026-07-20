@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight,
   ArrowUpRight,
   Globe,
   Users,
@@ -21,6 +20,7 @@ import {
   Sparkles,
   Search,
 } from 'lucide-react';
+
 import {
   Dialog,
   DialogContent,
@@ -362,40 +362,6 @@ const SudburyEcosystem = () => {
           </DialogContent>
         </Dialog>
 
-        {/* ───── CTA (dark) ───── */}
-        <section className="py-20 md:py-28 relative overflow-hidden"
-                 style={{ background: 'linear-gradient(180deg, #003da5 0%, #001a4d 100%)' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.15), transparent 45%)`,
-          }} />
-          <img src={signatureLines} alt="" aria-hidden="true"
-               className="absolute top-0 right-0 w-auto h-1/2 object-contain object-right-top opacity-50 pointer-events-none select-none mix-blend-overlay" />
-
-          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <Eyebrow className="justify-center">Get Connected</Eyebrow>
-            <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              Ready to Join the<br /><span style={{ color: TEAL }}>Ecosystem?</span>
-            </Display>
-            <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: FG_MUTED }}>
-              Connect with NORCAT Innovation to access the full network of resources, mentors, and funding opportunities available to founders in Greater Sudbury.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/apply"
-                    className="group inline-flex items-center gap-2 pl-6 pr-2 py-3 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                    style={{ background: TEAL, color: NAVY, fontFamily: FONT }}>
-                Apply to NORCAT Innovation
-                <span className="inline-flex items-center justify-center size-8 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </Link>
-              <Link to="/about"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-colors"
-                    style={{ background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', fontFamily: FONT }}>
-                Learn About NORCAT
-              </Link>
-            </div>
-          </div>
-        </section>
 
       </div>
     </Layout>
