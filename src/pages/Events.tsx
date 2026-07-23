@@ -247,9 +247,9 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
             )}
           </div>
 
-          <a href="#" className={cn("rounded-full px-6 py-2.5 text-sm font-semibold inline-flex items-center gap-2 no-underline", event.registrationOpen ? "glass-frosted-btn-teal" : "bg-muted text-muted-foreground cursor-not-allowed")}>
-            {event.registrationOpen ? 'Register' : 'Applications Closed'}
-            {event.registrationOpen && <ChevronRight className="w-4 h-4" />}
+          <a href="#" className={cn("rounded-full px-6 py-2.5 text-sm font-semibold inline-flex items-center gap-2 no-underline", event.registrationOpen ? "glass-frosted-btn-teal" : "glass-frosted-btn-teal")}>
+            {event.registrationOpen ? 'Register' : 'Coming Soon'}
+            <ChevronRight className="w-4 h-4" />
           </a>
         </div>
       </div>
