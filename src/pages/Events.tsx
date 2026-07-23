@@ -43,7 +43,7 @@ const upcomingEvents: Event[] = [
     title: 'Venture North PITCH 2026',
     date: 'October 1, 2026',
     time: '5:00 PM EST',
-    location: 'Sudbury, ON',
+    location: 'College Boréal',
     type: 'Pitch Competition',
     description: "Northern Ontario's premier startup pitch competition returns. Save the date — details, applications, and venue announcement coming soon.",
     featured: true,
