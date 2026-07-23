@@ -33,41 +33,10 @@ interface Event {
   maxAttendees?: number;
   image?: string;
   host?: string;
+  highlight?: string;
 }
 
 const upcomingEvents: Event[] = [
-  {
-    id: 'mining-transformed-2024',
-    title: 'Mining Transformed 2024',
-    date: 'March 15, 2024',
-    time: '9:00 AM EST',
-    endDate: 'March 16, 2024',
-    location: 'NORCAT Underground Centre, Sudbury',
-    type: 'Conference',
-    description: 'Our flagship annual conference bringing together mining innovators, technology companies, and industry leaders from around the world. Two days of keynotes, demos, and networking.',
-    featured: true,
-    registrationOpen: true,
-    isVirtual: false,
-    attendees: 342,
-    maxAttendees: 500,
-    image: pitchEventImage,
-    host: 'NORCAT Innovation',
-  },
-  {
-    id: 'venture-north-pitch',
-    title: 'Venture North PITCH 2025',
-    date: 'October 2, 2024',
-    time: '5:00 PM EST',
-    location: '@ College Boreal',
-    type: 'Pitch Competition',
-    description: "Northern Ontario's premier startup pitch competition. $100K in prizes and direct access to investors. Pitch applications are now closed — register to attend the showcase.",
-    featured: true,
-    registrationOpen: false,
-    isVirtual: false,
-    attendees: 156,
-    maxAttendees: 200,
-    host: 'NORCAT Innovation',
-  },
   {
     id: 'demo-day-q1',
     title: 'Q1 Portfolio Demo Day',
@@ -125,6 +94,59 @@ const upcomingEvents: Event[] = [
     isVirtual: true,
     attendees: 112,
     host: 'NORCAT & Mining Innovation Council',
+  },
+];
+
+const pastHighlights: Event[] = [
+  {
+    id: 'mining-transformed-2024',
+    title: 'Mining Transformed 2024',
+    date: 'March 15, 2024',
+    time: '9:00 AM EST',
+    endDate: 'March 16, 2024',
+    location: 'NORCAT Underground Centre, Sudbury',
+    type: 'Conference',
+    description: 'Our flagship annual conference bringing together mining innovators, technology companies, and industry leaders from around the world. Two days of keynotes, demos, and networking.',
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 342,
+    maxAttendees: 500,
+    image: pitchEventImage,
+    host: 'NORCAT Innovation',
+    highlight: '40+ speakers',
+  },
+  {
+    id: 'venture-north-pitch',
+    title: 'Venture North PITCH 2025',
+    date: 'October 2, 2024',
+    time: '5:00 PM EST',
+    location: '@ College Boreal',
+    type: 'Pitch Competition',
+    description: "Northern Ontario's premier startup pitch competition. $100K in prizes and direct access to investors. Pitch applications are now closed — register to attend the showcase.",
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 156,
+    maxAttendees: 200,
+    host: 'NORCAT Innovation',
+    highlight: '$100K awarded',
+  },
+  {
+    id: 'underground-demo-day-2023',
+    title: 'Underground Demo Day',
+    date: 'September 28, 2023',
+    time: '1:00 PM EST',
+    location: 'NORCAT Underground Centre, Sudbury',
+    type: 'Showcase',
+    description: 'Eight portfolio companies delivered live technology demonstrations to global mining operators and investors.',
+    featured: false,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 150,
+    maxAttendees: 200,
+    host: 'NORCAT Innovation',
+    highlight: '8 live demos',
   },
 ];
 
@@ -325,18 +347,18 @@ export default function Events() {
               {/* Animated stats marquee */}
               <div className="liquid-glass rounded-full py-3 px-6 overflow-hidden max-w-xl mx-auto">
                 <div className="flex animate-marquee whitespace-nowrap">
-                  {[
-                    '🎤 6 Upcoming Events',
-                    '👥 768 Attendees Expected',
-                    '🏆 $100K in Prizes',
-                    '🌍 3 Virtual Events',
-                    '📍 Sudbury & Online',
-                    '🎤 6 Upcoming Events',
-                    '👥 768 Attendees Expected',
-                    '🏆 $100K in Prizes',
-                    '🌍 3 Virtual Events',
-                    '📍 Sudbury & Online',
-                  ].map((stat, i) => (
+                {[
+                  '🎤 4 Upcoming Events',
+                  '👥 270 Attendees Expected',
+                  '🏆 $100K in Prizes',
+                  '🌍 3 Virtual Events',
+                  '📍 Sudbury & Online',
+                  '🎤 4 Upcoming Events',
+                  '👥 270 Attendees Expected',
+                  '🏆 $100K in Prizes',
+                  '🌍 3 Virtual Events',
+                  '📍 Sudbury & Online',
+                ].map((stat, i) => (
                     <span key={i} className="text-white/70 text-sm mx-8">{stat}</span>
                   ))}
                 </div>
@@ -491,33 +513,33 @@ export default function Events() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: 'Mining Transformed 2023', date: 'March 2023', attendees: '500+', stat: '40 speakers', icon: Mic },
-              { title: 'Venture North PITCH 2023', date: 'April 2023', attendees: '200+', stat: '$100K awarded', icon: Presentation },
-              { title: 'Underground Demo Day', date: 'September 2023', attendees: '150+', stat: '8 live demos', icon: Globe },
-            ].map((event, i) => (
-              <ScrollReveal key={event.title} delay={i * 100}>
-                <div className="p-6 rounded-3xl liquid-glass-light hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={iconContainerStyle}>
-                      <event.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+            {pastHighlights.map((event, i) => {
+              const Icon = typeIconMap[event.type] || Calendar;
+              const displayDate = new Date(event.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+              return (
+                <ScrollReveal key={event.id} delay={i * 100}>
+                  <div className="p-6 rounded-3xl liquid-glass-light hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={iconContainerStyle}>
+                        <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      </div>
+                      <div className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {displayDate}
+                      </div>
                     </div>
-                    <div className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {event.date}
+                    <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
+                    <div className="flex items-center gap-4 text-sm">
+                      <span className="flex items-center gap-1 text-muted-foreground">
+                        <Users className="w-4 h-4" />
+                        {event.attendees}{event.maxAttendees && '+'}
+                      </span>
+                      <span className="text-primary font-medium">{event.highlight}</span>
                     </div>
                   </div>
-                  <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <span className="flex items-center gap-1 text-muted-foreground">
-                      <Users className="w-4 h-4" />
-                      {event.attendees}
-                    </span>
-                    <span className="text-primary font-medium">{event.stat}</span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
