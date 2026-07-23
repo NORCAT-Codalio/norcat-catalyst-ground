@@ -38,6 +38,21 @@ interface Event {
 
 const upcomingEvents: Event[] = [
   {
+    id: 'venture-north-pitch-2026',
+    title: 'Venture North PITCH 2026',
+    date: 'October 1, 2026',
+    time: '5:00 PM EST',
+    location: 'Sudbury, ON',
+    type: 'Pitch Competition',
+    description: "Northern Ontario's premier startup pitch competition returns. Save the date — details, applications, and venue announcement coming soon.",
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    image: pitchEventImage,
+    host: 'NORCAT Innovation',
+    highlight: 'Save the date',
+  },
+  {
     id: 'demo-day-q1',
     title: 'Q1 Portfolio Demo Day',
     date: 'February 28, 2024',
@@ -232,9 +247,9 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
             )}
           </div>
 
-          <a href="#" className={cn("rounded-full px-6 py-2.5 text-sm font-semibold inline-flex items-center gap-2 no-underline", event.registrationOpen ? "glass-frosted-btn-teal" : "bg-muted text-muted-foreground cursor-not-allowed")}>
-            {event.registrationOpen ? 'Register' : 'Applications Closed'}
-            {event.registrationOpen && <ChevronRight className="w-4 h-4" />}
+          <a href="#" className={cn("rounded-full px-6 py-2.5 text-sm font-semibold inline-flex items-center gap-2 no-underline", event.registrationOpen ? "glass-frosted-btn-teal" : "glass-frosted-btn-teal")}>
+            {event.registrationOpen ? 'Register' : 'Coming Soon'}
+            <ChevronRight className="w-4 h-4" />
           </a>
         </div>
       </div>
@@ -390,7 +405,7 @@ export default function Events() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className={cn("gap-8", featuredEvents.length === 1 ? "max-w-3xl mx-auto" : "grid md:grid-cols-2")}>
             {featuredEvents.map((event, i) => (
               <ScrollReveal key={event.id} delay={i * 100}>
                 <FeaturedEventCard event={event} />
