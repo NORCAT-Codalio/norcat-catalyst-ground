@@ -513,33 +513,33 @@ export default function Events() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: 'Mining Transformed 2023', date: 'March 2023', attendees: '500+', stat: '40 speakers', icon: Mic },
-              { title: 'Venture North PITCH 2023', date: 'April 2023', attendees: '200+', stat: '$100K awarded', icon: Presentation },
-              { title: 'Underground Demo Day', date: 'September 2023', attendees: '150+', stat: '8 live demos', icon: Globe },
-            ].map((event, i) => (
-              <ScrollReveal key={event.title} delay={i * 100}>
-                <div className="p-6 rounded-3xl liquid-glass-light hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={iconContainerStyle}>
-                      <event.icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+            {pastHighlights.map((event, i) => {
+              const Icon = typeIconMap[event.type] || Calendar;
+              const displayDate = new Date(event.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+              return (
+                <ScrollReveal key={event.id} delay={i * 100}>
+                  <div className="p-6 rounded-3xl liquid-glass-light hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={iconContainerStyle}>
+                        <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
+                      </div>
+                      <div className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {displayDate}
+                      </div>
                     </div>
-                    <div className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {event.date}
+                    <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
+                    <div className="flex items-center gap-4 text-sm">
+                      <span className="flex items-center gap-1 text-muted-foreground">
+                        <Users className="w-4 h-4" />
+                        {event.attendees}{event.maxAttendees && '+'}
+                      </span>
+                      <span className="text-primary font-medium">{event.highlight}</span>
                     </div>
                   </div>
-                  <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <span className="flex items-center gap-1 text-muted-foreground">
-                      <Users className="w-4 h-4" />
-                      {event.attendees}
-                    </span>
-                    <span className="text-primary font-medium">{event.stat}</span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
