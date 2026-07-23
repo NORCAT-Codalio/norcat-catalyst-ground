@@ -80,7 +80,7 @@ const programTabs: ProgramTab[] = [
       'Market validation and pilot matchmaking',
     ],
     href: '/funding/innovation-acceleration-program',
-    image: featuredIap,
+    image: featuredIap.url,
     partners: [
       { logo: ontarioLogo, alt: 'Ontario', height: 28 },
       { logo: noaLogo, alt: 'Northern Ontario Angels', height: 32 },
