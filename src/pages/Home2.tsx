@@ -21,7 +21,7 @@ import stateOfSudburyImpactAsset from '@/assets/state-of-sudbury-impact-card.png
 import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset.json';
 import featuredCitPhoto from '@/assets/featured-cit-photo.png';
 import featuredCore5Photo from '@/assets/featured-core5-photo.png';
-import featuredIapPhoto from '@/assets/featured-iap-photo.png';
+import featuredIapPhoto from '@/assets/featured-iap-photo.jpg.asset.json';
 import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
 import featuredScfPhoto from '@/assets/featured-scf-photo.png';
 import citLogo from '@/assets/logos/cit-logo.png';
@@ -31,7 +31,7 @@ import ovinLogo from '@/assets/logos/ovin-logo.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
-const featuredIapImg = featuredIapPhoto;
+const featuredIapImg = featuredIapPhoto.url;
 const featuredRaiiImg = featuredRaiiPhoto;
 const featuredScfImg = featuredScfPhoto;
 const featuredCore5Img = featuredCore5Photo;
