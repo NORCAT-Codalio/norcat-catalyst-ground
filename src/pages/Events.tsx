@@ -228,8 +228,8 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
               {event.time}
             </div>
             <div className="flex items-center gap-1.5">
-              {event.isVirtual ? <Video className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
-              {event.isVirtual ? 'Virtual' : event.location.split(',')[0]}
+              {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
+              {event.isVirtual ? 'Virtual' : event.isHybrid ? 'Hybrid' : event.location.split(',')[0]}
             </div>
           </div>
         </div>
