@@ -96,6 +96,56 @@ const upcomingEvents: Event[] = [
   },
 ];
 
+const pastHighlights: Event[] = [
+  {
+    id: 'mining-transformed-2024',
+    title: 'Mining Transformed 2024',
+    date: 'March 15, 2024',
+    time: '9:00 AM EST',
+    endDate: 'March 16, 2024',
+    location: 'NORCAT Underground Centre, Sudbury',
+    type: 'Conference',
+    description: 'Our flagship annual conference bringing together mining innovators, technology companies, and industry leaders from around the world. Two days of keynotes, demos, and networking.',
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 342,
+    maxAttendees: 500,
+    image: pitchEventImage,
+    host: 'NORCAT Innovation',
+  },
+  {
+    id: 'venture-north-pitch',
+    title: 'Venture North PITCH 2025',
+    date: 'October 2, 2024',
+    time: '5:00 PM EST',
+    location: '@ College Boreal',
+    type: 'Pitch Competition',
+    description: "Northern Ontario's premier startup pitch competition. $100K in prizes and direct access to investors. Pitch applications are now closed — register to attend the showcase.",
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 156,
+    maxAttendees: 200,
+    host: 'NORCAT Innovation',
+  },
+  {
+    id: 'underground-demo-day-2023',
+    title: 'Underground Demo Day',
+    date: 'September 28, 2023',
+    time: '1:00 PM EST',
+    location: 'NORCAT Underground Centre, Sudbury',
+    type: 'Showcase',
+    description: 'Eight portfolio companies delivered live technology demonstrations to global mining operators and investors.',
+    featured: false,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 150,
+    maxAttendees: 200,
+    host: 'NORCAT Innovation',
+  },
+];
+
 const eventTypes = ['All', 'Conference', 'Workshop', 'Networking', 'Pitch Competition', 'Showcase', 'Webinar'];
 
 const typeIconMap: Record<string, React.ElementType> = {
