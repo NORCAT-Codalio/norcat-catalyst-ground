@@ -249,7 +249,7 @@ const pastHighlights: Event[] = [
   {
     id: 'noa-pitch-health',
     title: 'NOA Private Pitch - Health & Science Innovation',
-    date: 'March 5, 2024',
+    date: 'March 5, 2025',
     time: '11:00 AM EST',
     location: 'In-person',
     type: 'PITCH EVENT',
