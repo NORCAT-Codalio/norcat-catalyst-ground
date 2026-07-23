@@ -293,18 +293,18 @@ export default function Events() {
               {/* Animated stats marquee */}
               <div className="liquid-glass rounded-full py-3 px-6 overflow-hidden max-w-xl mx-auto">
                 <div className="flex animate-marquee whitespace-nowrap">
-                  {[
-                    '🎤 6 Upcoming Events',
-                    '👥 768 Attendees Expected',
-                    '🏆 $100K in Prizes',
-                    '🌍 3 Virtual Events',
-                    '📍 Sudbury & Online',
-                    '🎤 6 Upcoming Events',
-                    '👥 768 Attendees Expected',
-                    '🏆 $100K in Prizes',
-                    '🌍 3 Virtual Events',
-                    '📍 Sudbury & Online',
-                  ].map((stat, i) => (
+                {[
+                  '🎤 4 Upcoming Events',
+                  '👥 270 Attendees Expected',
+                  '🏆 $100K in Prizes',
+                  '🌍 3 Virtual Events',
+                  '📍 Sudbury & Online',
+                  '🎤 4 Upcoming Events',
+                  '👥 270 Attendees Expected',
+                  '🏆 $100K in Prizes',
+                  '🌍 3 Virtual Events',
+                  '📍 Sudbury & Online',
+                ].map((stat, i) => (
                     <span key={i} className="text-white/70 text-sm mx-8">{stat}</span>
                   ))}
                 </div>
