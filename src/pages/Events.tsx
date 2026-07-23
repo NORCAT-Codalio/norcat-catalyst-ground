@@ -169,7 +169,7 @@ const pastHighlights: Event[] = [
   {
     id: 'mining-transformed-2024',
     title: 'Mining Transformed 2024',
-    date: 'March 15, 2024',
+    date: 'March 15, 2025',
     time: '9:00 AM EST',
     endDate: 'March 16, 2024',
     location: 'NORCAT Underground Centre, Sudbury',
