@@ -169,7 +169,7 @@ const pastHighlights: Event[] = [
   {
     id: 'mining-transformed-2024',
     title: 'Mining Transformed 2024',
-    date: 'March 15, 2024',
+    date: 'March 15, 2025',
     time: '9:00 AM EST',
     endDate: 'March 16, 2024',
     location: 'NORCAT Underground Centre, Sudbury',
@@ -187,7 +187,7 @@ const pastHighlights: Event[] = [
   {
     id: 'venture-north-pitch',
     title: 'Venture North PITCH 2025',
-    date: 'October 2, 2024',
+    date: 'October 2, 2025',
     time: '5:00 PM EST',
     location: '@ College Boreal',
     type: 'Pitch Competition',
@@ -203,7 +203,7 @@ const pastHighlights: Event[] = [
   {
     id: 'ask-expert-ip-2026',
     title: 'Ask an Expert: IP Protection with Kushal Shah (Gowling Law)',
-    date: 'May 15, 2026',
+    date: 'May 15, 2025',
     time: '12:00 PM EST',
     location: 'Hybrid Event',
     type: 'Workshop',
@@ -218,7 +218,7 @@ const pastHighlights: Event[] = [
   {
     id: 'ai-workshop-vibe-coding',
     title: 'AI Workshop: Vibe Coding & Bridging the Technical Gap',
-    date: 'July 2, 2024',
+    date: 'July 2, 2026',
     time: '10:00 - 11:30 AM EST',
     location: 'Hybrid Event',
     type: 'Workshop',
@@ -233,7 +233,7 @@ const pastHighlights: Event[] = [
   {
     id: 'ai-101-codalio',
     title: 'AI 101 - Building an MVP with Codalio',
-    date: 'May 13, 2024',
+    date: 'May 13, 2025',
     time: '8:30 AM EST',
     location: 'Hybrid Event',
     type: 'Workshop',
@@ -249,7 +249,7 @@ const pastHighlights: Event[] = [
   {
     id: 'noa-pitch-health',
     title: 'NOA Private Pitch - Health & Science Innovation',
-    date: 'March 5, 2024',
+    date: 'March 5, 2025',
     time: '11:00 AM EST',
     location: 'In-person',
     type: 'PITCH EVENT',
@@ -264,7 +264,7 @@ const pastHighlights: Event[] = [
   {
     id: 'noa-pitch-mining',
     title: 'NOA Private Pitch - Mining Innovation',
-    date: 'January 14, 2024',
+    date: 'January 14, 2025',
     time: '11:00 AM EST',
     location: 'In-person',
     type: 'PITCH EVENT',
