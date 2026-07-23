@@ -429,14 +429,14 @@ export default function Events() {
                 <div className="flex animate-marquee whitespace-nowrap">
                 {[
                   '🎤 4 Upcoming Events',
-                  '👥 270 Attendees Expected',
+                  '🤖 6-Part AI Collective Series',
                   '🏆 $100K in Prizes',
-                  '🌍 3 Virtual Events',
+                  '🌍 Hybrid & In-person',
                   '📍 Sudbury & Online',
                   '🎤 4 Upcoming Events',
-                  '👥 270 Attendees Expected',
+                  '🤖 6-Part AI Collective Series',
                   '🏆 $100K in Prizes',
-                  '🌍 3 Virtual Events',
+                  '🌍 Hybrid & In-person',
                   '📍 Sudbury & Online',
                 ].map((stat, i) => (
                     <span key={i} className="text-white/70 text-sm mx-8">{stat}</span>
