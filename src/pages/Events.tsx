@@ -152,7 +152,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'noa-ai-pitch-2027',
-    title: 'NOA AI Private Pitch',
+    title: 'NOA Private Pitch - AI',
     date: 'January 15, 2027',
     time: 'TBD',
     location: 'Sudbury, ON',
