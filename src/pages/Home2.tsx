@@ -342,7 +342,7 @@ export default function Home2() {
               Featured Programs
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-4"
-                style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: '#003DA6' }}>
+                style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
               Featured Programs
             </h2>
             <div className="h-1.5 w-16 mb-8" style={{ background: TEAL }} />
