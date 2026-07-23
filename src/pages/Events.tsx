@@ -114,6 +114,7 @@ const pastHighlights: Event[] = [
     maxAttendees: 500,
     image: pitchEventImage,
     host: 'NORCAT Innovation',
+    highlight: '40+ speakers',
   },
   {
     id: 'venture-north-pitch',
@@ -126,9 +127,10 @@ const pastHighlights: Event[] = [
     featured: true,
     registrationOpen: false,
     isVirtual: false,
-    attendees: 156,
+    attendees:  effect,
     maxAttendees: 200,
     host: 'NORCAT Innovation',
+    highlight: '$100K awarded',
   },
   {
     id: 'underground-demo-day-2023',
@@ -144,6 +146,7 @@ const pastHighlights: Event[] = [
     attendees: 150,
     maxAttendees: 200,
     host: 'NORCAT Innovation',
+    highlight: '8 live demos',
   },
 ];
 
