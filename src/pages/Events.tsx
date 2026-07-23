@@ -264,7 +264,7 @@ const pastHighlights: Event[] = [
   {
     id: 'noa-pitch-mining',
     title: 'NOA Private Pitch - Mining Innovation',
-    date: 'January 14, 2024',
+    date: 'January 14, 2025',
     time: '11:00 AM EST',
     location: 'In-person',
     type: 'PITCH EVENT',
