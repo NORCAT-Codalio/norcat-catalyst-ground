@@ -452,7 +452,7 @@ export default function About() {
             
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-              Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
+              <span style={{ color: BLUE }}>Ready to join</span><br /><span style={{ color: TEAL }}>our community?</span>
             </h2>
             <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: '#475068' }}>
               Whether you're just starting out or ready to scale, we're here to help you build something extraordinary.
