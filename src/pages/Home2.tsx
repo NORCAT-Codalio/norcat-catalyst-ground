@@ -23,7 +23,7 @@ import featuredCitPhoto from '@/assets/featured-cit-photo.png';
 import featuredCore5Photo from '@/assets/featured-core5-photo.png';
 import featuredIapPhoto from '@/assets/featured-iap-photo.jpg.asset.json';
 import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
-import featuredScfPhoto from '@/assets/featured-scf-photo.png';
+import featuredScfPhoto from '@/assets/featured-scf-photo.jpg.asset.json';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoInlineAsset from '@/assets/logos/ontario-logo-wordmark.png';
@@ -33,7 +33,7 @@ import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto.url;
 const featuredRaiiImg = featuredRaiiPhoto;
-const featuredScfImg = featuredScfPhoto;
+const featuredScfImg = featuredScfPhoto.url;
 const featuredCore5Img = featuredCore5Photo;
 
 
