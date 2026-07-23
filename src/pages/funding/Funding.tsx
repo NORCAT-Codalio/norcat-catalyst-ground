@@ -7,7 +7,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
 import core5Placeholder from '@/assets/core5-ev-charging.png.asset.json';
 import featuredCit from '@/assets/featured-cit-photo.png';
-import featuredIap from '@/assets/featured-iap-photo.png';
+import featuredIap from '@/assets/featured-iap-photo.jpg.asset.json';
 import featuredRaii from '@/assets/featured-raii-photo.png';
 import featuredScf from '@/assets/featured-scf-photo.png';
 import featuredCore5 from '@/assets/featured-core5-photo.png';
@@ -80,7 +80,7 @@ const programTabs: ProgramTab[] = [
       'Market validation and pilot matchmaking',
     ],
     href: '/funding/innovation-acceleration-program',
-    image: featuredIap,
+    image: featuredIap.url,
     partners: [
       { logo: ontarioLogo, alt: 'Ontario', height: 28 },
       { logo: noaLogo, alt: 'Northern Ontario Angels', height: 32 },
