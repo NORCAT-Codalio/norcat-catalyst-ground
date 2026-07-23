@@ -187,7 +187,7 @@ const pastHighlights: Event[] = [
   {
     id: 'venture-north-pitch',
     title: 'Venture North PITCH 2025',
-    date: 'October 2, 2024',
+    date: 'October 2, 2025',
     time: '5:00 PM EST',
     location: '@ College Boreal',
     type: 'Pitch Competition',
