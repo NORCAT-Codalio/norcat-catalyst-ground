@@ -24,11 +24,12 @@ interface Event {
   time: string;
   endDate?: string;
   location: string;
-  type: 'Conference' | 'Workshop' | 'Networking' | 'Pitch Competition' | 'Showcase' | 'Webinar';
+  type: string;
   description: string;
   featured: boolean;
   registrationOpen: boolean;
   isVirtual: boolean;
+  isHybrid?: boolean;
   attendees?: number;
   maxAttendees?: number;
   image?: string;
@@ -58,11 +59,12 @@ const upcomingEvents: Event[] = [
     date: 'February 28, 2024',
     time: '10:00 - 11:30 AM EST',
     location: 'Hybrid Event',
-    type: 'Showcase',
+    type: 'Workshop',
     description: '',
     featured: false,
     registrationOpen: true,
-    isVirtual: true,
+    isVirtual: false,
+    isHybrid: true,
     attendees: 30,
     host: 'NORCAT Innovation',
   },
@@ -98,15 +100,15 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-mining-webinar',
-    title: 'AI in Mining: What Works',
+    title: 'NOA Private Pitch - Mining Innovation',
     date: 'March 12, 2024',
     time: '11:00 AM EST',
-    location: 'Virtual Event',
-    type: 'Webinar',
-    description: 'Industry experts share real case studies of successful AI implementations in mining operations.',
+    location: 'In-person',
+    type: 'PITCH EVENT',
+    description: '',
     featured: false,
     registrationOpen: true,
-    isVirtual: true,
+    isVirtual: false,
     attendees: 112,
     host: 'NORCAT & Mining Innovation Council',
   },
@@ -226,8 +228,8 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
               {event.time}
             </div>
             <div className="flex items-center gap-1.5">
-              {event.isVirtual ? <Video className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
-              {event.isVirtual ? 'Virtual' : event.location.split(',')[0]}
+              {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
+              {event.isVirtual ? 'Virtual' : event.isHybrid ? 'Hybrid' : event.location.split(',')[0]}
             </div>
           </div>
         </div>
@@ -284,6 +286,12 @@ const EventCard = ({ event }: { event: Event }) => {
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">
                   <Video className="w-3 h-3" />
                   Virtual
+                </span>
+              )}
+              {event.isHybrid && (
+                <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                  <Video className="w-3 h-3" />
+                  Hybrid
                 </span>
               )}
             </div>
