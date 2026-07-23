@@ -288,6 +288,12 @@ const EventCard = ({ event }: { event: Event }) => {
                   Virtual
                 </span>
               )}
+              {event.isHybrid && (
+                <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                  <Video className="w-3 h-3" />
+                  Hybrid
+                </span>
+              )}
             </div>
 
             <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1 truncate" style={{ fontFamily: "'Open Sans', sans-serif" }}>
