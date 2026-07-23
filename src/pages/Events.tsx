@@ -59,7 +59,7 @@ const upcomingEvents: Event[] = [
     time: '10:00 - 11:30 AM EST',
     location: 'Hybrid Event',
     type: 'Showcase',
-    description: 'Quarterly showcase featuring 8 portfolio companies presenting their latest milestones and product updates to investors.',
+    description: '',
     featured: false,
     registrationOpen: true,
     isVirtual: true,
