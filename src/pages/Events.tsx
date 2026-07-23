@@ -203,7 +203,7 @@ const pastHighlights: Event[] = [
   {
     id: 'ask-expert-ip-2026',
     title: 'Ask an Expert: IP Protection with Kushal Shah (Gowling Law)',
-    date: 'May 15, 2026',
+    date: 'May 15, 2025',
     time: '12:00 PM EST',
     location: 'Hybrid Event',
     type: 'Workshop',
