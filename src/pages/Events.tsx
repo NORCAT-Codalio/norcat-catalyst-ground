@@ -497,13 +497,13 @@ export default function Events() {
               <div className="liquid-glass rounded-full py-3 px-6 overflow-hidden max-w-xl mx-auto">
                 <div className="flex animate-marquee whitespace-nowrap">
                 {[
-                  '🎤 4 Upcoming Events',
-                  '🤖 6-Part AI Collective Series',
+                  '🎤 9 Upcoming Events',
+                  '🤖 6 AI Collective Workshops',
                   '🏆 $100K in Prizes',
                   '🌍 Hybrid & In-person',
                   '📍 Sudbury & Online',
-                  '🎤 4 Upcoming Events',
-                  '🤖 6-Part AI Collective Series',
+                  '🎤 9 Upcoming Events',
+                  '🤖 6 AI Collective Workshops',
                   '🏆 $100K in Prizes',
                   '🌍 Hybrid & In-person',
                   '📍 Sudbury & Online',
