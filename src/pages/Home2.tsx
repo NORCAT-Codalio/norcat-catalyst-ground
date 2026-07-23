@@ -609,7 +609,7 @@ export default function Home2() {
             <div className="mb-12 md:mb-16">
               <div>
                 <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
+                   style={{ fontFamily: FONT, color: NAVY }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Here to Support
                 </p>
