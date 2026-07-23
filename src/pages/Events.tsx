@@ -24,11 +24,12 @@ interface Event {
   time: string;
   endDate?: string;
   location: string;
-  type: 'Conference' | 'Workshop' | 'Networking' | 'Pitch Competition' | 'Showcase' | 'Webinar';
+  type: string;
   description: string;
   featured: boolean;
   registrationOpen: boolean;
   isVirtual: boolean;
+  isHybrid?: boolean;
   attendees?: number;
   maxAttendees?: number;
   image?: string;
