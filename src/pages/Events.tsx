@@ -127,7 +127,7 @@ const pastHighlights: Event[] = [
     featured: true,
     registrationOpen: false,
     isVirtual: false,
-    attendees:  effect,
+    attendees: 156,
     maxAttendees: 200,
     host: 'NORCAT Innovation',
     highlight: '$100K awarded',
