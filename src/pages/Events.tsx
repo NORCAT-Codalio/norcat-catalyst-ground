@@ -33,6 +33,7 @@ interface Event {
   maxAttendees?: number;
   image?: string;
   host?: string;
+  highlight?: string;
 }
 
 const upcomingEvents: Event[] = [
