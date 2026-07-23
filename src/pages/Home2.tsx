@@ -700,7 +700,7 @@ export default function Home2() {
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
             <Eyebrow>Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+                style={{ fontFamily: FONT, color: '#003DA6', letterSpacing: '-0.02em' }}>
               Ready to build<br /><span style={{ color: TEAL }}>something real?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
