@@ -233,7 +233,7 @@ const pastHighlights: Event[] = [
   {
     id: 'ai-101-codalio',
     title: 'AI 101 - Building an MVP with Codalio',
-    date: 'May 13, 2024',
+    date: 'May 13, 2025',
     time: '8:30 AM EST',
     location: 'Hybrid Event',
     type: 'Workshop',
