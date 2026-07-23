@@ -68,7 +68,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-collective-aug-2026',
-    title: 'AI Collective Workshop — August',
+    title: 'AI Collective Workshop — #1',
     date: 'August 27, 2026',
     time: 'TBD',
     location: 'Hybrid Event',
@@ -82,7 +82,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-collective-sep-2026',
-    title: 'AI Collective Workshop — September',
+    title: 'AI Collective Workshop — #2',
     date: 'September 24, 2026',
     time: 'TBD',
     location: 'Hybrid Event',
@@ -96,7 +96,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-collective-oct-2026',
-    title: 'AI Collective Workshop — October',
+    title: 'AI Collective Workshop — #3',
     date: 'October 29, 2026',
     time: 'TBD',
     location: 'Hybrid Event',
@@ -110,7 +110,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-collective-nov-2026',
-    title: 'AI Collective Workshop — November',
+    title: 'AI Collective Workshop — #4',
     date: 'November 26, 2026',
     time: 'TBD',
     location: 'Hybrid Event',
@@ -124,7 +124,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-collective-dec-2026',
-    title: 'AI Collective Workshop — December',
+    title: 'AI Collective Workshop — #5',
     date: 'December 31, 2026',
     time: 'TBD',
     location: 'Hybrid Event',
@@ -138,7 +138,7 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 'ai-collective-jan-2027',
-    title: 'AI Collective Workshop — January',
+    title: 'AI Collective Workshop — #6',
     date: 'January 28, 2027',
     time: 'TBD',
     location: 'Hybrid Event',
