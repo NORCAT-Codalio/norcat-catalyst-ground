@@ -218,7 +218,7 @@ const pastHighlights: Event[] = [
   {
     id: 'ai-workshop-vibe-coding',
     title: 'AI Workshop: Vibe Coding & Bridging the Technical Gap',
-    date: 'July 2, 2024',
+    date: 'July 2, 2026',
     time: '10:00 - 11:30 AM EST',
     location: 'Hybrid Event',
     type: 'Workshop',
