@@ -38,6 +38,21 @@ interface Event {
 
 const upcomingEvents: Event[] = [
   {
+    id: 'venture-north-pitch-2026',
+    title: 'Venture North PITCH 2026',
+    date: 'October 1, 2026',
+    time: '5:00 PM EST',
+    location: 'Sudbury, ON',
+    type: 'Pitch Competition',
+    description: "Northern Ontario's premier startup pitch competition returns. Save the date — details, applications, and venue announcement coming soon.",
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    image: pitchEventImage,
+    host: 'NORCAT Innovation',
+    highlight: 'Save the date',
+  },
+  {
     id: 'demo-day-q1',
     title: 'Q1 Portfolio Demo Day',
     date: 'February 28, 2024',
