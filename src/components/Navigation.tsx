@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, LogIn, Phone,
   TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
-  Banknote,
   Network, BarChart3, Star, Newspaper, Calendar, BookOpen,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,7 +27,6 @@ const aboutItems: MenuEntry[] = [
 
 
 const programsItems: MenuEntry[] = [
-  { name: 'Funding Programs', href: '/funding', icon: Banknote, description: 'IAP, RAIP, Sudbury Catalyst Fund, Capital Navigation and more.' },
   { name: 'Critical Industrial Technologies', href: '/mining/critical-industrial-tech', icon: Cpu, description: 'Build, test, and validate tough-tech for industry.' },
   { name: 'Core5', href: '/mining/core5', icon: Layers, description: 'The five-pillar growth playbook for industrial founders.' },
   { name: 'Rogers Cybersecure Catalyst', href: '/partners/rogers-cybersecure', icon: ShieldCheck, description: 'Cybersecurity acceleration with our national partner.' },
@@ -257,6 +255,19 @@ export function Navigation() {
               </div>
             ))}
 
+            {/* Funding */}
+            <Link
+              to="/funding"
+              className={cn(
+                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                location.pathname.startsWith('/funding')
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-foreground'
+              )}
+            >
+              Funding
+            </Link>
+
             {/* Events */}
             <Link
               to="/events"
@@ -483,14 +494,18 @@ export function Navigation() {
                 ))}
 
                 <Link
+                  to="/funding"
+                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  Funding
+                </Link>
+
+                <Link
                   to="/events"
                   className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
                 >
                   Events
                 </Link>
-
-
-
 
                 <Link
                   to="/portal/auth"
