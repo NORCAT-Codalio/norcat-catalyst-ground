@@ -86,7 +86,7 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
-    image: discoveryLabImg,
+    image: discoveryLabImg.url,
     imageAlt: 'Advanced prototyping and fabrication equipment in the Fortin Discovery Lab',
     features: [
       '3D printing and additive manufacturing',
