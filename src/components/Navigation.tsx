@@ -232,8 +232,6 @@ export function Navigation() {
               {([
                 { key: 'about', label: 'About' },
                 { key: 'programs', label: 'Programs' },
-                { key: 'services', label: 'Services' },
-                { key: 'insights', label: 'Insights' },
               ] as const).map(({ key, label }) => (
               <div
                 key={key}
@@ -267,6 +265,30 @@ export function Navigation() {
             >
               Funding
             </Link>
+
+            {([
+              { key: 'services', label: 'Services' },
+              { key: 'insights', label: 'Insights' },
+            ] as const).map(({ key, label }) => (
+              <div
+                key={key}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(key)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={cn(
+                    'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                    activeDropdown === key
+                      ? 'text-primary'
+                      : 'text-foreground/70 hover:text-foreground'
+                  )}
+                >
+                  {label}
+                  <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
+                </button>
+              </div>
+            ))}
 
             {/* Events */}
             <Link
