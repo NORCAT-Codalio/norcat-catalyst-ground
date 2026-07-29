@@ -81,7 +81,7 @@ const locations = [
     best: 'Prototyping, day-to-day operations, team workspace, and community connection.',
     exteriorImage: norcatBuildingImg,
     exteriorImageAlt: 'Exterior of the NORCAT Innovation building in downtown Sudbury',
-    imagePosition: 'object-top',
+    imagePosition: 'object-[center_60%]',
   },
   {
     name: 'NORCAT Underground Centre',
