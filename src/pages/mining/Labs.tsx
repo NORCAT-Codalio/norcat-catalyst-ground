@@ -185,7 +185,7 @@ const facilities = [
     location: 'NORCAT Underground Centre, Onaping',
     description:
       "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
-    image: ugAditImg.url,
+    image: ugAditNewImg.url,
     imageAlt: 'Adit 2 entrance to the NORCAT Underground Centre with robotic test vehicles',
     features: [
       '1.5 km of underground development',
@@ -196,6 +196,7 @@ const facilities = [
       'Safe, controlled access for demonstrations',
     ],
     gallery: [
+      { src: ugAditImg.url, alt: 'Adit 2 entrance to the NORCAT Underground Centre with robotic test vehicles' },
       { src: ugSafeboxImg.url, alt: 'Technology demonstration of an underground safety isolation system' },
       { src: ugBoltingImg.url, alt: 'Ground support work underground with sparks flying at the NORCAT Underground Centre' },
       { src: ugTourImg.url, alt: 'Visitor capturing an underground technology demonstration on a phone' },
