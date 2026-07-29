@@ -356,12 +356,6 @@ const Labs = () => {
                       alt={loc.exteriorImageAlt}
                       className={`w-full h-full object-cover ${loc.imagePosition}`}
                     />
-                    <span
-                      className="absolute inset-0"
-                      style={{
-                        background: `linear-gradient(to top, rgba(0,179,152,0.55) 0%, rgba(0,179,152,0.15) 45%, transparent 75%)`,
-                      }}
-                    />
                     <div className="absolute bottom-4 left-4 flex items-center gap-2">
                       <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
                       <span
