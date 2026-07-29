@@ -232,8 +232,6 @@ export function Navigation() {
               {([
                 { key: 'about', label: 'About' },
                 { key: 'programs', label: 'Programs' },
-                { key: 'services', label: 'Services' },
-                { key: 'insights', label: 'Insights' },
               ] as const).map(({ key, label }) => (
               <div
                 key={key}
@@ -267,6 +265,30 @@ export function Navigation() {
             >
               Funding
             </Link>
+
+            {([
+              { key: 'services', label: 'Services' },
+              { key: 'insights', label: 'Insights' },
+            ] as const).map(({ key, label }) => (
+              <div
+                key={key}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(key)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={cn(
+                    'flex items-center gap-1 px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
+                    activeDropdown === key
+                      ? 'text-primary'
+                      : 'text-foreground/70 hover:text-foreground'
+                  )}
+                >
+                  {label}
+                  <ChevronDown className={cn('w-3.5 h-3.5 opacity-60 transition-transform duration-300', activeDropdown === key && 'rotate-180 opacity-100')} />
+                </button>
+              </div>
+            ))}
 
             {/* Events */}
             <Link
@@ -457,8 +479,6 @@ export function Navigation() {
                 {([
                   { key: 'mobile-about', label: 'About', items: aboutItems },
                   { key: 'mobile-programs', label: 'Programs', items: programsItems },
-                  { key: 'mobile-services', label: 'Services', items: servicesItems },
-                  { key: 'mobile-insights', label: 'Insights', items: insightsItems },
                 ] as const).map((menu) => (
                   <div key={menu.key}>
                     <button
@@ -499,6 +519,43 @@ export function Navigation() {
                 >
                   Funding
                 </Link>
+
+                {([
+                  { key: 'mobile-services', label: 'Services', items: servicesItems },
+                  { key: 'mobile-insights', label: 'Insights', items: insightsItems },
+                ] as const).map((menu) => (
+                  <div key={menu.key}>
+                    <button
+                      onClick={() => toggleMobileAccordion(menu.key)}
+                      className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                    >
+                      {menu.label}
+                      <ChevronDown className={cn('w-5 h-5 transition-transform', mobileAccordion === menu.key && 'rotate-180')} />
+                    </button>
+                    <AnimatePresence>
+                      {mobileAccordion === menu.key && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pl-4 py-2">
+                            {menu.items.map((item) => (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
 
                 <Link
                   to="/events"
