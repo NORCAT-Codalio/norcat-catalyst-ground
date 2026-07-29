@@ -32,7 +32,8 @@ import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
 import surfacePresentationImg from '@/assets/surface-presentation.jpg.asset.json';
 import hotdeskImg from '@/assets/hot-desk-space.png.asset.json';
 import officesImg from '@/assets/cta-photo-3.jpg';
-import meetingSpaceImg from '@/assets/meeting-space.jpg';
+import presentationShowcaseImg from '@/assets/presentation-space-showcase.png.asset.json';
+import presentationPodiumImg from '@/assets/presentation-space-podium.png.asset.json';
 import {
   Dialog,
   DialogContent,
