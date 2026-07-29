@@ -77,6 +77,8 @@ const facilities = [
     location: 'Onaping, ON',
     description:
       "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
+    image: undergroundImg.url,
+    imageAlt: 'Underground mining environment at the NORCAT Underground Centre',
     features: [
       '1.5 km of underground development',
       'Active mining environment with real conditions',
@@ -93,6 +95,8 @@ const facilities = [
     location: 'NORCAT Underground Centre, Onaping',
     description:
       'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
+    image: surfaceImg,
+    imageAlt: 'Surface support infrastructure at the NORCAT Underground Centre',
     features: [
       'Meeting and presentation spaces',
       'Equipment staging areas',
@@ -109,6 +113,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
+    image: discoveryLabImg,
+    imageAlt: 'Advanced prototyping and fabrication equipment in the Fortin Discovery Lab',
     features: [
       '3D printing and additive manufacturing',
       'Electronics workbenches and tools',
@@ -125,6 +131,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
+    image: hotdeskImg,
+    imageAlt: 'Founders collaborating in the NORCAT Innovation coworking space',
     features: [
       'Flexible day-use access',
       'High-speed internet',
@@ -141,6 +149,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Dedicated private offices for growing teams who need their own space while staying connected to the innovation ecosystem and support services.',
+    image: officesImg,
+    imageAlt: 'Professional private office spaces at NORCAT Innovation',
     features: [
       'Private, lockable offices',
       'Various sizes available',
