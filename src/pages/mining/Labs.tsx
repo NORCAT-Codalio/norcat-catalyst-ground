@@ -91,12 +91,17 @@ const facilities = [
   {
     id: 'hotdesk',
     icon: Users,
-    name: 'Hot Desk Space',
+    name: 'Meeting & Hot Desk Space',
     location: 'NORCAT Innovation, Sudbury',
     description:
-      'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
-    image: hotdeskImg.url,
-    imageAlt: 'Bright coworking space at NORCAT Innovation with the "Be bold. Do hard things." wall graphic',
+      'Flexible coworking and meeting space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
+    image: lobbyImg.url,
+    imageAlt: 'NORCAT Innovation lobby with blue feature wall and NORCAT signage',
+    gallery: [
+      { src: meetingRoomImg.url, alt: 'Meeting room at NORCAT Innovation with boardroom table and whiteboard' },
+      { src: meetingSignImg.url, alt: 'Virtual meeting in progress sign on a meeting room table' },
+      { src: hotdeskImg.url, alt: 'Bright coworking space at NORCAT Innovation with the "Be bold. Do hard things." wall graphic' },
+    ],
     features: [
       'Flexible day-use access',
       'High-speed internet',
@@ -105,6 +110,7 @@ const facilities = [
       'Networking opportunities',
       'Community events access',
     ],
+
   },
   {
     id: 'offices',
