@@ -30,7 +30,7 @@ import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
 import surfacePresentationImg from '@/assets/surface-presentation.jpg.asset.json';
-import hotdeskImg from '@/assets/founders-collab.jpg';
+import hotdeskImg from '@/assets/hot-desk-space.png.asset.json';
 import officesImg from '@/assets/cta-photo-3.jpg';
 import meetingSpaceImg from '@/assets/meeting-space.jpg';
 import {
@@ -94,8 +94,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
-    image: hotdeskImg,
-    imageAlt: 'Founders collaborating in the NORCAT Innovation coworking space',
+    image: hotdeskImg.url,
+    imageAlt: 'Bright coworking space at NORCAT Innovation with the "Be bold. Do hard things." wall graphic',
     features: [
       'Flexible day-use access',
       'High-speed internet',
