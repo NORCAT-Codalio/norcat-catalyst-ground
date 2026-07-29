@@ -21,7 +21,7 @@ import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
 import undergroundExteriorImg from '@/assets/underground/underground-1.jpg.asset.json';
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
 import surfaceImg from '@/assets/underground-workers.png';
-import discoveryLabImg from '@/assets/lab-equipment-3d.png';
+import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import hotdeskImg from '@/assets/founders-collab.jpg';
 import officesImg from '@/assets/cta-photo-3.jpg';
 import meetingSpaceImg from '@/assets/meeting-space.jpg';
@@ -86,7 +86,7 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
-    image: discoveryLabImg,
+    image: discoveryLabImg.url,
     imageAlt: 'Advanced prototyping and fabrication equipment in the Fortin Discovery Lab',
     features: [
       '3D printing and additive manufacturing',
