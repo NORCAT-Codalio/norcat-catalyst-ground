@@ -359,7 +359,7 @@ const Labs = () => {
                     <span
                       className="absolute inset-0"
                       style={{
-                        background: `linear-gradient(to top, ${NAVY} 0%, transparent 60%)`,
+                        background: `linear-gradient(to top, ${TEAL} 0%, transparent 60%)`,
                       }}
                     />
                     <div className="absolute bottom-4 left-4 flex items-center gap-2">
