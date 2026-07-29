@@ -357,10 +357,10 @@ const Labs = () => {
                       className={`w-full h-full object-cover ${loc.imagePosition}`}
                     />
                     <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
+                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL, filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
                       <span
                         className="text-xs font-bold uppercase tracking-[0.14em]"
-                        style={{ color: 'white' }}
+                        style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}
                       >
                         {loc.place}
                       </span>
