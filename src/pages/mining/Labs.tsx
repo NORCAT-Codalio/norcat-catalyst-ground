@@ -163,6 +163,8 @@ const facilities = [
 ];
 
 const Labs = () => {
+  const [lightbox, setLightbox] = React.useState<{ src: string; alt: string } | null>(null);
+
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
