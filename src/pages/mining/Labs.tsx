@@ -30,7 +30,7 @@ import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
 import surfacePresentationImg from '@/assets/surface-presentation.jpg.asset.json';
-import hotdeskImg from '@/assets/founders-collab.jpg';
+import hotdeskImg from '@/assets/hot-desk-space.png.asset.json';
 import officesImg from '@/assets/cta-photo-3.jpg';
 import meetingSpaceImg from '@/assets/meeting-space.jpg';
 import {
