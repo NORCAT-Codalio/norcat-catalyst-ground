@@ -22,6 +22,11 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
 import undergroundExteriorImg from '@/assets/underground/underground-1.jpg.asset.json';
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
+import ugAditImg from '@/assets/underground/ug-adit-entrance.jpg.asset.json';
+import ugExhibitorMapImg from '@/assets/underground/ug-exhibitor-map.jpg.asset.json';
+import ugSafeboxImg from '@/assets/underground/ug-safebox-demo.jpg.asset.json';
+import ugBoltingImg from '@/assets/underground/ug-bolting-sparks.jpg.asset.json';
+import ugTourImg from '@/assets/underground/ug-tour-phone.jpg.asset.json';
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
@@ -159,12 +164,12 @@ const facilities = [
   {
     id: 'underground',
     icon: Mountain,
-    name: 'NORCAT Underground Centre',
-    location: 'Onaping, ON',
+    name: 'Underground Facility',
+    location: 'NORCAT Underground Centre, Onaping',
     description:
       "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
-    image: undergroundImg,
-    imageAlt: 'Underground mining environment at the NORCAT Underground Centre',
+    image: ugAditImg.url,
+    imageAlt: 'Adit 2 entrance to the NORCAT Underground Centre with robotic test vehicles',
     features: [
       '1.5 km of underground development',
       'Active mining environment with real conditions',
@@ -172,6 +177,12 @@ const facilities = [
       'Connectivity infrastructure (WiFi, LTE)',
       'Compressed air, water, and ventilation',
       'Safe, controlled access for demonstrations',
+    ],
+    gallery: [
+      { src: ugExhibitorMapImg.url, alt: 'Underground exhibitor map signage along a drift at the NORCAT Underground Centre' },
+      { src: ugSafeboxImg.url, alt: 'Technology demonstration of an underground safety isolation system' },
+      { src: ugBoltingImg.url, alt: 'Ground support work underground with sparks flying at the NORCAT Underground Centre' },
+      { src: ugTourImg.url, alt: 'Visitor capturing an underground technology demonstration on a phone' },
     ],
   },
   {
