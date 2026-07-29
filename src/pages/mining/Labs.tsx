@@ -22,7 +22,6 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
 import undergroundExteriorImg from '@/assets/underground/underground-1.jpg.asset.json';
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
-import surfaceImg from '@/assets/underground-workers.png';
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
