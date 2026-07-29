@@ -94,8 +94,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
-    image: hotdeskImg,
-    imageAlt: 'Founders collaborating in the NORCAT Innovation coworking space',
+    image: hotdeskImg.url,
+    imageAlt: 'Bright coworking space at NORCAT Innovation with the "Be bold. Do hard things." wall graphic',
     features: [
       'Flexible day-use access',
       'High-speed internet',
