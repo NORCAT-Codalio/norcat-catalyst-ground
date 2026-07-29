@@ -22,6 +22,7 @@ import surfaceImg from '@/assets/underground-workers.png';
 import discoveryLabImg from '@/assets/lab-equipment-3d.png';
 import hotdeskImg from '@/assets/founders-collab.jpg';
 import officesImg from '@/assets/cta-photo-3.jpg';
+import meetingSpaceImg from '@/assets/meeting-space.jpg';
 import {
   Dialog,
   DialogContent,
