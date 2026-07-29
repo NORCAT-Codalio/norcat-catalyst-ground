@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   Eye,
   X,
+  Presentation,
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
