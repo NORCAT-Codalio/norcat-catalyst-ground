@@ -22,6 +22,9 @@ import undergroundExteriorImg from '@/assets/underground/underground-1.jpg.asset
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
 import surfaceImg from '@/assets/underground-workers.png';
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
+import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
+import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
+import surfacePresentationImg from '@/assets/surface-presentation.jpg.asset.json';
 import hotdeskImg from '@/assets/founders-collab.jpg';
 import officesImg from '@/assets/cta-photo-3.jpg';
 import meetingSpaceImg from '@/assets/meeting-space.jpg';
@@ -187,8 +190,23 @@ const facilities = [
       'Visitor hosting capabilities',
       'Direct access to underground',
     ],
+    gallery: [
+      { src: surfaceExteriorImg.url, alt: 'Exterior of the NORCAT surface facility' },
+      { src: surfaceHubImg.url, alt: 'Open collaboration and coworking area inside the NORCAT surface facility' },
+      { src: surfacePresentationImg.url, alt: 'Presentation and event space in use at the NORCAT surface facility' },
+    ],
   },
-];
+] as {
+  id: string;
+  icon: any;
+  name: string;
+  location: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  features: string[];
+  gallery?: { src: string; alt: string }[];
+}[];
 
 const Labs = () => {
   const [lightbox, setLightbox] = React.useState<{ src: string; alt: string } | null>(null);
