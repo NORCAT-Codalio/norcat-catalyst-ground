@@ -14,13 +14,14 @@ import {
   Eye,
   X,
   Presentation,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
 import undergroundExteriorImg from '@/assets/underground/underground-1.jpg.asset.json';
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
-import surfaceImg from '@/assets/underground-workers.png';
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
@@ -180,8 +181,8 @@ const facilities = [
     location: 'NORCAT Underground Centre, Onaping',
     description:
       'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
-    image: surfaceImg,
-    imageAlt: 'Surface support infrastructure at the NORCAT Underground Centre',
+    image: surfaceExteriorImg.url,
+    imageAlt: 'Exterior of the NORCAT surface facility at the Underground Centre',
     features: [
       'Meeting and presentation spaces',
       'Equipment staging areas',
@@ -191,7 +192,6 @@ const facilities = [
       'Direct access to underground',
     ],
     gallery: [
-      { src: surfaceExteriorImg.url, alt: 'Exterior of the NORCAT surface facility' },
       { src: surfaceHubImg.url, alt: 'Open collaboration and coworking area inside the NORCAT surface facility' },
       { src: surfacePresentationImg.url, alt: 'Presentation and event space in use at the NORCAT surface facility' },
     ],
@@ -209,7 +209,16 @@ const facilities = [
 }[];
 
 const Labs = () => {
-  const [lightbox, setLightbox] = React.useState<{ src: string; alt: string } | null>(null);
+  const [lightbox, setLightbox] = React.useState<{
+    images: { src: string; alt: string }[];
+    index: number;
+  } | null>(null);
+
+  const current = lightbox ? lightbox.images[lightbox.index] : null;
+  const step = (dir: number) =>
+    setLightbox((lb) =>
+      lb ? { ...lb, index: (lb.index + dir + lb.images.length) % lb.images.length } : lb,
+    );
 
   return (
     <Layout>
@@ -425,7 +434,15 @@ const Labs = () => {
                     {/* Image */}
                     <button
                       type="button"
-                      onClick={() => setLightbox({ src: facility.image, alt: facility.imageAlt })}
+                      onClick={() =>
+                        setLightbox({
+                          images: [
+                            { src: facility.image, alt: facility.imageAlt },
+                            ...(facility.gallery ?? []),
+                          ],
+                          index: 0,
+                        })
+                      }
                       className="relative block w-full h-56 sm:h-64 lg:h-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-inset"
                       aria-label={`View larger image of ${facility.name}`}
                     >
@@ -437,7 +454,9 @@ const Labs = () => {
                       <span className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r" />
                       <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-black/50 backdrop-blur-sm border border-white/30 transition-opacity group-hover:bg-black/70">
                         <Eye className="w-3.5 h-3.5" />
-                        View image
+                        {facility.gallery?.length
+                          ? `View images (${facility.gallery.length + 1})`
+                          : 'View image'}
                       </span>
                     </button>
 
@@ -482,33 +501,6 @@ const Labs = () => {
                         ))}
                       </div>
 
-                      {facility.gallery && facility.gallery.length > 0 && (
-                        <div className="mt-6 pt-6" style={{ borderTop: '1px solid #e3e7ee' }}>
-                          <p
-                            className="text-xs font-bold uppercase tracking-[0.14em] mb-3"
-                            style={{ color: NAVY }}
-                          >
-                            More photos
-                          </p>
-                          <div className="flex flex-wrap gap-3">
-                            {facility.gallery.map((shot) => (
-                              <button
-                                key={shot.src}
-                                type="button"
-                                onClick={() => setLightbox({ src: shot.src, alt: shot.alt })}
-                                className="relative w-28 h-20 sm:w-32 sm:h-24 rounded-lg overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
-                                style={{ border: '1px solid #d9dde5' }}
-                                aria-label={`View larger image: ${shot.alt}`}
-                              >
-                                <img src={shot.src} alt={shot.alt} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-                                <span className="absolute bottom-1 right-1 inline-flex items-center justify-center w-6 h-6 rounded-full bg-black/55 text-white">
-                                  <Eye className="w-3 h-3" />
-                                </span>
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      )}
                     </div>
 
                   </div>
@@ -523,8 +515,8 @@ const Labs = () => {
               className="max-w-5xl w-[calc(100%-2rem)] p-0 border-0 bg-transparent overflow-hidden shadow-2xl"
               style={{ background: 'transparent' }}
             >
-              <DialogTitle className="sr-only">{lightbox?.alt || 'Facility image'}</DialogTitle>
-              {lightbox && (
+              <DialogTitle className="sr-only">{current?.alt || 'Facility image'}</DialogTitle>
+              {current && lightbox && (
                 <div className="relative">
                   <button
                     type="button"
@@ -534,12 +526,54 @@ const Labs = () => {
                   >
                     <X className="w-5 h-5" />
                   </button>
+
+                  {lightbox.images.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => step(-1)}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                        aria-label="Previous image"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => step(1)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                        aria-label="Next image"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </>
+                  )}
+
                   <img
-                    src={lightbox.src}
-                    alt={lightbox.alt}
-                    className="w-full max-h-[80vh] object-contain rounded-lg bg-black/90"
+                    src={current.src}
+                    alt={current.alt}
+                    className="w-full max-h-[75vh] object-contain rounded-lg bg-black/90"
                   />
-                  <p className="mt-3 text-sm text-white/80 text-center px-4">{lightbox.alt}</p>
+                  <p className="mt-3 text-sm text-white/80 text-center px-4">{current.alt}</p>
+
+                  {lightbox.images.length > 1 && (
+                    <div className="mt-3 flex justify-center gap-2">
+                      {lightbox.images.map((shot, idx) => (
+                        <button
+                          key={shot.src}
+                          type="button"
+                          onClick={() => setLightbox({ ...lightbox, index: idx })}
+                          className="w-16 h-12 rounded-md overflow-hidden transition-opacity"
+                          style={{
+                            border: idx === lightbox.index ? `2px solid ${TEAL}` : '2px solid transparent',
+                            opacity: idx === lightbox.index ? 1 : 0.6,
+                          }}
+                          aria-label={`View image ${idx + 1}`}
+                        >
+                          <img src={shot.src} alt="" className="w-full h-full object-cover" />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </DialogContent>
