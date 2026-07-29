@@ -32,7 +32,8 @@ import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
 import surfacePresentationImg from '@/assets/surface-presentation.jpg.asset.json';
 import hotdeskImg from '@/assets/hot-desk-space.png.asset.json';
 import officesImg from '@/assets/cta-photo-3.jpg';
-import meetingSpaceImg from '@/assets/meeting-space.jpg';
+import presentationShowcaseImg from '@/assets/presentation-space-showcase.png.asset.json';
+import presentationPodiumImg from '@/assets/presentation-space-podium.png.asset.json';
 import {
   Dialog,
   DialogContent,
@@ -124,22 +125,25 @@ const facilities = [
     ],
   },
   {
-    id: 'meeting-presentation-space',
+    id: 'presentation-space',
     icon: Presentation,
-    name: 'Meeting & Presentation Space',
+    name: 'Presentation Space',
     location: 'NORCAT Innovation, Sudbury',
     description:
-      'Professional boardrooms, meeting rooms, and presentation spaces equipped for client pitches, team sessions, video calls, and hosted events — with on-site tech support when you need it.',
-    image: meetingSpaceImg,
-    imageAlt: 'Modern boardroom and presentation setup at NORCAT Innovation',
+      'Professional presentation space equipped for client pitches, team sessions, video calls, and hosted events — with on-site tech support when you need it.',
+    image: presentationShowcaseImg.url,
+    imageAlt: 'Audience watching a presentation on the video wall at NORCAT Innovation',
     features: [
-      'Boardrooms and flexible meeting rooms',
-      'TV displays and presentation setups',
+      'Large-format video wall displays',
+      'Presentation and AV setups',
       'Video conferencing equipment',
       'Space for pitches, demos, and hosted events',
       'On-site tech support',
       'Flexible booking options',
       'Professional hosting environment',
+    ],
+    gallery: [
+      { src: presentationPodiumImg.url, alt: 'Speaker presenting at the podium in front of the video wall at NORCAT Innovation' },
     ],
   },
   {
