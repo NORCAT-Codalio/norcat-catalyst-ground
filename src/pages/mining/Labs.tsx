@@ -20,7 +20,7 @@ import {
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
-import undergroundExteriorImg from '@/assets/underground/underground-1.jpg.asset.json';
+import undergroundExteriorImg from '@/assets/underground-building-new.png.asset.json';
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
 import ugAditImg from '@/assets/underground/ug-adit-entrance.jpg.asset.json';
 import ugAditNewImg from '@/assets/underground/ug-adit-entrance-new.png.asset.json';
@@ -89,7 +89,7 @@ const locations = [
     copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
     best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
     exteriorImage: undergroundExteriorImg,
-    exteriorImageAlt: 'Exterior of the NORCAT Underground Centre in Onaping',
+    exteriorImageAlt: 'Exterior of the NORCAT Underground Centre building in Onaping',
     imagePosition: 'object-center',
   },
 ];
