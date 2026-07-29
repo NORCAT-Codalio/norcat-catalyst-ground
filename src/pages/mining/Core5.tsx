@@ -1,8 +1,19 @@
 import { Layout } from '@/components/Layout';
-import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap, FlaskConical, Handshake, Battery, Cpu, MapPin, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import {
+  ArrowUpRight,
+  ExternalLink,
+  Zap,
+  FlaskConical,
+  Handshake,
+  Battery,
+  Cpu,
+  MapPin,
+} from 'lucide-react';
+
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import signatureLines from '@/assets/signature-lines.png';
 import core5Logo from '@/assets/logos/core5.png';
 import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
@@ -11,243 +22,343 @@ import iionLogo from '@/assets/logos/iion.png';
 import icampLogo from '@/assets/logos/icamp.png';
 import tedcLogo from '@/assets/logos/tedc.png';
 
+// ── Brand tokens (mirrors Home2 / About / Rogers Cybersecure) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p
+    className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+    style={{ fontFamily: FONT, color: TEAL }}
+  >
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
+
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As
+    className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
+  >
+    {children}
+  </As>
+);
+
+const pillars = [
+  {
+    icon: Zap,
+    title: 'Startup & SME Support',
+    description: 'Tailored funding and support solutions to accelerate EV technology development.',
+  },
+  {
+    icon: FlaskConical,
+    title: 'Testing & R&D Facilities',
+    description: 'Access state-of-the-art testing and R&D facilities across Northern Ontario.',
+  },
+  {
+    icon: Handshake,
+    title: 'Buyers Meet Builders',
+    description: 'Matchmaking that connects tech developers with industry leaders and live test-beds.',
+  },
+];
+
+const highlights = [
+  { icon: Battery, label: 'OVIN REGIONAL TECH SITE' },
+  { icon: Cpu, label: 'FULL EV VALUE CHAIN' },
+  { icon: MapPin, label: 'PAN-NORTHERN NETWORK' },
+];
+
+const partners = [
+  { name: 'NORCAT', logo: norcatLogo },
+  { name: 'Cambrian R&D', logo: cambrianRdLogo },
+  { name: 'IION', logo: iionLogo },
+  { name: 'ICAMP', logo: icampLogo },
+  { name: 'TEDC', logo: tedcLogo },
+];
+
 const Core5 = () => {
-  const pillars = [
-    {
-      icon: Zap,
-      title: 'Startup & SME Support',
-      description: 'Tailored funding and support solutions to accelerate EV technology development.',
-    },
-    {
-      icon: FlaskConical,
-      title: 'Testing & R&D Facilities',
-      description: 'Access state-of-the-art testing and R&D facilities across Northern Ontario.',
-    },
-    {
-      icon: Handshake,
-      title: 'Connecting Buyers & Builders',
-      description: 'Matchmaking services connecting tech developers with industry leaders and live test-beds.',
-    },
-  ];
-
-  const partners = [
-    { name: 'NORCAT', logo: norcatLogo },
-    { name: 'Cambrian R&D', logo: cambrianRdLogo },
-    { name: 'IION', logo: iionLogo },
-    { name: 'ICAMP', logo: icampLogo },
-    { name: 'TEDC', logo: tedcLogo },
-  ];
-
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gray-950">
-        {/* Animated background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/30 via-gray-950 to-teal-900/20" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-emerald-500/20 rounded-full blur-[150px] animate-pulse" />
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal-500/15 rounded-full blur-[120px]" />
-        </div>
-        
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        
-        {/* Floating elements */}
-        <motion.div 
-          className="absolute top-32 right-20 w-20 h-20 border border-emerald-500/30 rounded-xl hidden lg:block"
-          animate={{ rotate: 360, y: [0, -20, 0] }}
-          transition={{ rotate: { duration: 20, repeat: Infinity }, y: { duration: 4, repeat: Infinity } }}
-        />
-        <motion.div 
-          className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-br from-emerald-500/40 to-teal-500/40 rounded-lg hidden lg:block"
-          animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-          transition={{ rotate: { duration: 15, repeat: Infinity }, scale: { duration: 3, repeat: Infinity } }}
-        />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-sm mb-8"
-            >
-              <Battery className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm text-emerald-300">OVIN Northern Regional Technology Development Site</span>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-8"
-            >
-              <img 
-                src={core5Logo} 
-                alt="Core5" 
-                className="h-20 md:h-28 lg:h-32 object-contain mx-auto"
-              />
-            </motion.div>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto mb-10 leading-relaxed"
-            >
-              A Pan-Northern Ontario initiative supporting SMEs in developing Battery Electric Vehicle 
-              and EV technologies-from critical minerals extraction to manufacturing.
-            </motion.p>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <Button asChild size="lg" className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 px-8 py-6 text-lg rounded-xl shadow-lg shadow-emerald-500/25">
-                <a href="https://core5.tech/" target="_blank" rel="noopener noreferrer">
-                  Visit Core5.tech
-                  <ExternalLink className="w-5 h-5 ml-2" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl">
-                <a href="https://core5.tech/contact/" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </a>
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
+          <div
+            className="absolute inset-0"
+            style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+            }}
+          />
+          <img
+            src={signatureLines}
+            alt=""
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay"
+          />
 
-      {/* What is Core5 */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[100px]" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          {/* Centered header */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <ScrollReveal>
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                <Cpu className="w-4 h-4" />
-                EV Innovation Hub
-              </span>
-              <h2 className="headline-lg mb-6">Powering Northern Ontario's EV Future</h2>
-              <p className="body-lg text-muted-foreground">
-                Core5 is one of six regional technology development sites within the Ontario Vehicle 
-                Innovation Network (OVIN). We're building a connected ecosystem across Northern Ontario 
-                to support the entire EV value chain.
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-3xl">
+              <Eyebrow className="!text-white">OVIN Northern Regional Technology Development Site</Eyebrow>
+
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                Core5.<br />
+                <span style={{ color: TEAL }}>Northern EV Innovation.</span>
+              </Display>
+
+              <p
+                className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
+                style={{ color: 'rgba(255,255,255,0.85)' }}
+              >
+                A pan-Northern Ontario initiative supporting SMEs developing Battery Electric Vehicle
+                and EV technologies - from critical minerals extraction through to manufacturing.
               </p>
-            </ScrollReveal>
-          </div>
 
-          {/* Two column layout - boxes and graphic */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            {/* Left side - Stacked boxes */}
-            <div className="flex flex-col gap-4">
-              {pillars.map((pillar, i) => (
-                <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative bg-card border border-border rounded-2xl p-6 flex items-start gap-5 transition-all duration-300 group-hover:border-emerald-500/30 group-hover:-translate-y-1">
-                      <div className="w-14 h-14 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <pillar.icon className="w-7 h-7 text-emerald-500" />
+              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://core5.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                >
+                  Visit Core5.tech <ExternalLink className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://core5.tech/contact/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                  style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                >
+                  Apply Now
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── WHAT IS CORE5 (light) ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+              <div>
+                <Eyebrow>EV Innovation Hub</Eyebrow>
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
+                  POWERING THE NORTH'S<br />
+                  <span style={{ color: TEAL }}>EV FUTURE.</span>
+                </h2>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>
+                    Core5 is one of six regional technology development sites within the Ontario Vehicle
+                    Innovation Network (OVIN). We're building a connected ecosystem across Northern
+                    Ontario to support the entire EV value chain.
+                  </p>
+                  <p>
+                    From the mines that supply critical minerals to the shops that build and test
+                    vehicles, Core5 links founders to the facilities, funding and buyers that move
+                    technology from prototype to production.
+                  </p>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  {highlights.map((h) => (
+                    <div
+                      key={h.label}
+                      className="flex items-center gap-3 p-4 rounded-xl"
+                      style={{ background: 'white', border: '1px solid #d9dde5' }}
+                    >
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
+                      >
+                        <h.icon className="w-5 h-5" style={{ color: TEAL }} />
                       </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-1">{pillar.title}</h3>
-                        <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                      </div>
+                      <p className="text-xs font-bold uppercase tracking-[0.08em]" style={{ color: NAVY }}>
+                        {h.label}
+                      </p>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div
+                  className="flex items-center justify-center rounded-2xl p-8"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <img src={core5Map} alt="Core5 Northern Ontario network map" className="w-full max-w-md object-contain" />
+                </div>
+                <div
+                  className="flex items-center justify-center rounded-2xl p-8"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <img src={core5Logo} alt="Core5" className="h-14 object-contain" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── WHAT WE OFFER (dark) ───── */}
+        <section
+          className="py-16 md:py-24 relative overflow-hidden"
+          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)`,
+            }}
+          />
+          <img
+            src={norcatHalfLogo.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow className="!text-white">What Core5 Delivers</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Funding, facilities,<br />
+                <span style={{ color: TEAL }}>and real buyers.</span>
+              </Display>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                Three pillars built around what EV technology companies in the North actually need to
+                get to market.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4 md:gap-5">
+              {pillars.map((p, i) => (
+                <motion.article
+                  key={p.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl p-7 h-full"
+                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                >
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                  >
+                    <p.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                </ScrollReveal>
+                  <h3
+                    className="font-black uppercase text-lg mb-2 text-white"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                    {p.description}
+                  </p>
+                </motion.article>
               ))}
             </div>
-
-            {/* Right side - Map graphic */}
-            <ScrollReveal delay={0.2}>
-              <div className="flex items-center justify-center">
-                <img 
-                  src={core5Map} 
-                  alt="Core5 Northern Ontario Network" 
-                  className="w-full max-w-lg object-contain"
-                />
-              </div>
-            </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Regional Partners */}
-      <section className="py-24 lg:py-32 bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                <MapPin className="w-4 h-4" />
-                Pan-Northern Network
-              </span>
-              <h2 className="headline-lg mb-4">Regional Partners</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Core5 connects innovation hubs across Northern Ontario, creating a unified 
-                ecosystem for EV technology development.
+        {/* ───── PARTNERS (light) ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-10 md:mb-14">
+              <Eyebrow>Pan-Northern Network</Eyebrow>
+              <h2
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+              >
+                REGIONAL<br />
+                <span style={{ color: TEAL }}>PARTNERS.</span>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                Core5 connects innovation hubs across Northern Ontario into one unified ecosystem for
+                EV technology development.
               </p>
             </div>
-          </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-            {partners.map((partner, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-card border border-border rounded-xl p-6 flex items-center justify-center h-24 hover:border-emerald-500/30 transition-colors">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {partners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="rounded-2xl p-6 flex items-center justify-center h-28"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
                   <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
                 </div>
-              </ScrollReveal>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-24 lg:py-32 bg-gray-950 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-teal-900/20" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[100px]" />
-        </div>
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal>
-              <img 
-                src={core5Logo} 
-                alt="Core5" 
-                className="h-12 md:h-16 object-contain mx-auto mb-8"
+        {/* ───── CTA (light) ───── */}
+        <section className="pb-16 md:pb-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div
+              className="rounded-3xl p-9 md:p-14 relative overflow-hidden"
+              style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
+                }}
               />
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Innovate in the EV Space?
-              </h2>
-              <p className="text-xl text-white/60 mb-10 max-w-xl mx-auto">
-                Learn more about funding opportunities, R&D facilities, and how Core5 can 
-                accelerate your EV technology development.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 px-8 py-6 text-lg rounded-xl shadow-lg shadow-emerald-500/25">
-                  <a href="https://core5.tech/" target="_blank" rel="noopener noreferrer">
-                    Explore Core5.tech
-                    <ExternalLink className="w-5 h-5 ml-2" />
+              <div className="relative max-w-3xl">
+                <Eyebrow className="!text-white">
+                  <Battery className="w-3.5 h-3.5" /> Get Started
+                </Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl">
+                  Ready to innovate<br />
+                  <span style={{ color: TEAL }}>in the EV space?</span>
+                </Display>
+                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                  Learn more about funding opportunities, R&D facilities, and how Core5 can accelerate
+                  your EV technology development.
+                </p>
+                <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://core5.tech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  >
+                    Explore Core5.tech <ExternalLink className="w-4 h-4" />
                   </a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-emerald-500/50 text-emerald-300 hover:bg-emerald-500/10 px-8 py-6 text-lg rounded-xl">
-                  <a href="https://core5.tech/contact/" target="_blank" rel="noopener noreferrer">
-                    Contact Core5
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </a>
-                </Button>
+                  <Link
+                    to="/contact"
+                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                  >
+                    Talk to NORCAT
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </Link>
+                </div>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Layout>
   );
 };
