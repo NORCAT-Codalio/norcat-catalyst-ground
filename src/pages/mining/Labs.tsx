@@ -122,8 +122,11 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Dedicated private offices for growing teams who need their own space while staying connected to the innovation ecosystem and support services.',
-    image: officesImg,
-    imageAlt: 'Professional private office spaces at NORCAT Innovation',
+    image: atriumImg.url,
+    imageAlt: 'NORCAT Innovation atrium lounge with NORCAT wall signage and tenant seating area',
+    gallery: [
+      { src: officesImg, alt: 'Professional private office spaces at NORCAT Innovation' },
+    ],
     features: [
       'Private, lockable offices',
       'Various sizes available',
