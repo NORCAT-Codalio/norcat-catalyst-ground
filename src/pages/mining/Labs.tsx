@@ -354,7 +354,7 @@ const Labs = () => {
                     <img
                       src={loc.exteriorImage.url}
                       alt={loc.exteriorImageAlt}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${loc.imagePosition}`}
                     />
                     <span
                       className="absolute inset-0"
