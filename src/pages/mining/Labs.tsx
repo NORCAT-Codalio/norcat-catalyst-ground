@@ -89,7 +89,7 @@ const locations = [
     copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
     best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
     exteriorImage: undergroundExteriorImg,
-    exteriorImageAlt: 'Exterior of the NORCAT Underground Centre in Onaping',
+    exteriorImageAlt: 'Exterior of the NORCAT Underground Centre building in Onaping',
     imagePosition: 'object-center',
   },
 ];
