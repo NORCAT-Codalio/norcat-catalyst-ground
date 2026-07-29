@@ -1,9 +1,61 @@
 import { Layout } from '@/components/Layout';
-import { ScrollReveal } from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mountain, Building2, Users, Briefcase, FlaskConical, MapPin, CheckCircle2 } from 'lucide-react';
-import robotCharacter from '@/assets/robot-character.png';
+import { motion } from 'framer-motion';
+import {
+  ArrowUpRight,
+  Mountain,
+  Building2,
+  Users,
+  Briefcase,
+  FlaskConical,
+  MapPin,
+  CheckCircle2,
+} from 'lucide-react';
+import signatureLines from '@/assets/signature-lines.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+
+// ── Brand tokens (mirrors Home2 / About / OurTeam) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const PAPER = '#F2F3F6';
+const BORDER = 'rgba(255,255,255,0.10)';
+const FG_MUTED = 'rgba(255,255,255,0.72)';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p
+    className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+    style={{ fontFamily: FONT, color: TEAL }}
+  >
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
+
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As
+    className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+    style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
+  >
+    {children}
+  </As>
+);
+
+const locations = [
+  {
+    name: 'NORCAT Underground Centre',
+    place: 'Onaping, ON',
+    copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
+    best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
+  },
+  {
+    name: 'NORCAT Innovation',
+    place: 'Downtown Sudbury, ON',
+    copy: 'Our innovation hub featuring the Fortin Discovery Lab, coworking spaces, and private offices.',
+    best: 'Prototyping, day-to-day operations, team workspace, and community connection.',
+  },
+];
 
 const facilities = [
   {
@@ -11,259 +63,357 @@ const facilities = [
     icon: Mountain,
     name: 'NORCAT Underground Centre',
     location: 'Onaping, ON',
-    description: 'The world\'s first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.',
+    description:
+      "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
     features: [
       '1.5 km of underground development',
       'Active mining environment with real conditions',
       'Multiple test zones for different applications',
       'Connectivity infrastructure (WiFi, LTE)',
       'Compressed air, water, and ventilation',
-      'Safe, controlled access for demonstrations'
+      'Safe, controlled access for demonstrations',
     ],
-    highlight: true
   },
   {
     id: 'surface',
     icon: Building2,
     name: 'NORCAT Surface Facility',
     location: 'NORCAT Underground Centre, Onaping',
-    description: 'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
+    description:
+      'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
     features: [
       'Meeting and presentation spaces',
       'Equipment staging areas',
       'Networking infrastructure',
       'On-site support services',
       'Visitor hosting capabilities',
-      'Direct access to underground'
+      'Direct access to underground',
     ],
-    highlight: false
   },
   {
     id: 'discovery-lab',
     icon: FlaskConical,
     name: 'Fortin Discovery Lab',
     location: 'NORCAT Innovation, Sudbury',
-    description: 'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
+    description:
+      'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
     features: [
       '3D printing and additive manufacturing',
       'Electronics workbenches and tools',
       'Prototyping equipment',
       'Collaboration workspace',
       'Technical mentorship access',
-      'Startup-friendly access model'
+      'Startup-friendly access model',
     ],
-    highlight: true
   },
   {
     id: 'hotdesk',
     icon: Users,
     name: 'Hot Desk Space',
     location: 'NORCAT Innovation, Sudbury',
-    description: 'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
+    description:
+      'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
     features: [
       'Flexible day-use access',
       'High-speed internet',
       'Meeting room booking',
       'Coffee and amenities',
       'Networking opportunities',
-      'Community events access'
+      'Community events access',
     ],
-    highlight: false
   },
   {
     id: 'offices',
     icon: Briefcase,
     name: 'Private Office Spaces',
     location: 'NORCAT Innovation, Sudbury',
-    description: 'Dedicated private offices for growing teams who need their own space while staying connected to the innovation ecosystem and support services.',
+    description:
+      'Dedicated private offices for growing teams who need their own space while staying connected to the innovation ecosystem and support services.',
     features: [
       'Private, lockable offices',
       'Various sizes available',
       '24/7 building access',
       'Shared amenities access',
       'Professional business address',
-      'On-site programming and events'
+      'On-site programming and events',
     ],
-    highlight: false
-  }
+  },
 ];
 
 const Labs = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-glow opacity-50" />
-        <div className="orb orb-teal w-96 h-96 -top-48 -right-48" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-32 pb-20">
-          <ScrollReveal>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+        {/* ───── HERO ───── */}
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
+          <div
+            className="absolute inset-0"
+            style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+            }}
+          />
+          <img
+            src={signatureLines}
+            alt=""
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay"
+          />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 badge-dark mb-8">
-                <Building2 className="w-4 h-4" />
-                Infrastructure & Facilities
-              </div>
-              <h1 className="headline-hero text-white mb-6">
-                Labs, Offices & <span className="text-gradient">Innovation Spaces</span>
-              </h1>
-              <p className="body-xl text-white/70 max-w-2xl mb-10">
-                From underground testing facilities to collaborative workspaces, 
-                NORCAT provides the infrastructure startups need to develop, test, 
-                and scale their innovations.
+              <Eyebrow className="!text-white">Infrastructure &amp; Facilities</Eyebrow>
+
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+                Innovation Space.<br />
+                <span style={{ color: TEAL }}>Built to Build In.</span>
+              </Display>
+
+              <p
+                className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
+                style={{ color: 'rgba(255,255,255,0.85)' }}
+              >
+                From underground testing facilities to labs, hot desks and private offices - NORCAT
+                provides the infrastructure startups need to develop, test, and scale their
+                innovations.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild className="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 text-lg rounded-xl">
-                  <Link to="/apply">
-                    Access Our Facilities
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="btn-outline-lg">
-                  <Link to="/mining/norcat-underground">
-                    Explore Underground Centre
-                  </Link>
-                </Button>
+
+              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/apply"
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                  style={{
+                    fontFamily: FONT,
+                    background: TEAL,
+                    color: NAVY,
+                    boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)',
+                  }}
+                >
+                  Access Our Facilities <ArrowUpRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/mining/norcat-underground"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                  style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                >
+                  Explore Underground Centre
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </Link>
               </div>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Locations Overview */}
-      <section className="pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-16 lg:pb-20 bg-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="headline-lg mb-4">Two Locations, Endless Possibilities</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Our facilities span across Northern Ontario, offering unique environments 
-                for every stage of your innovation journey.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <ScrollReveal direction="left">
-              <div className="card-modern p-8 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <MapPin className="w-6 h-6 text-primary" />
-                  <h3 className="headline-sm">NORCAT Underground Centre</h3>
-                </div>
-                <p className="body-md text-muted-foreground mb-4">
-                  Located in Onaping, approximately 40 minutes from Sudbury. Home to our 
-                  underground testing facility and surface support infrastructure.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  <strong>Best for:</strong> Technology testing, validation, demonstrations, 
-                  and pilot projects in real mining conditions.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div className="card-modern p-8 h-full relative overflow-visible">
-                {/* Robot character sitting on top right */}
-                <img 
-                  src={robotCharacter} 
-                  alt="Friendly robot mascot" 
-                  className="absolute -top-16 -right-4 w-32 h-auto z-10 drop-shadow-lg"
-                />
-                <div className="flex items-center gap-3 mb-4">
-                  <MapPin className="w-6 h-6 text-primary" />
-                  <h3 className="headline-sm">NORCAT Innovation</h3>
-                </div>
-                <p className="body-md text-muted-foreground mb-4">
-                  Located in downtown Sudbury. Our innovation hub featuring the Fortin 
-                  Discovery Lab, coworking spaces, and private offices.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  <strong>Best for:</strong> Prototyping, day-to-day operations, team workspace, 
-                  and community connection.
-                </p>
-              </div>
-            </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Facilities Grid */}
-      <section className="pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="headline-lg mb-4">Our Facilities</h2>
-              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                World-class infrastructure designed to support technology companies 
-                at every stage of development.
+        {/* ───── LOCATIONS (light) ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-10 md:mb-14">
+              <Eyebrow>Where We Work</Eyebrow>
+              <h2
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+              >
+                TWO LOCATIONS,<br />
+                <span style={{ color: TEAL }}>ENDLESS POSSIBILITIES.</span>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                Our facilities span Northern Ontario, offering unique environments for every stage of
+                your innovation journey.
               </p>
             </div>
-          </ScrollReveal>
 
-          <div className="space-y-8">
-            {facilities.map((facility, index) => (
-              <ScrollReveal key={facility.id} delay={index * 0.1}>
-                <div className={`card-modern overflow-hidden ${facility.highlight ? 'ring-2 ring-primary/20' : ''}`}>
-                  <div className="grid lg:grid-cols-5 gap-0">
-                    {/* Icon & Title Section */}
-                    <div className={`lg:col-span-2 p-8 ${facility.highlight ? 'bg-primary/5' : 'bg-secondary/30'}`}>
-                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${facility.highlight ? 'bg-primary/10' : 'bg-background'}`}>
-                        <facility.icon className={`w-8 h-8 ${facility.highlight ? 'text-primary' : 'text-foreground'}`} />
+            <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+              {locations.map((loc, i) => (
+                <motion.div
+                  key={loc.name}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl p-7 md:p-8 h-full"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
+                    >
+                      <MapPin className="w-5 h-5" style={{ color: TEAL }} />
+                    </div>
+                    <h3
+                      className="font-black uppercase text-lg md:text-xl"
+                      style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
+                    >
+                      {loc.name}
+                    </h3>
+                  </div>
+                  <p
+                    className="text-xs font-bold uppercase tracking-[0.14em] mb-3"
+                    style={{ color: TEAL }}
+                  >
+                    {loc.place}
+                  </p>
+                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: '#475068' }}>
+                    {loc.copy}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                    <strong style={{ color: NAVY }}>Best for:</strong> {loc.best}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── FACILITIES (dark) ───── */}
+        <section
+          className="py-16 md:py-24 relative overflow-hidden"
+          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)`,
+            }}
+          />
+          <img
+            src={norcatHalfLogo.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
+          />
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="max-w-2xl mb-12 md:mb-16">
+              <Eyebrow className="!text-white">Our Facilities</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                World-class space<br />
+                <span style={{ color: TEAL }}>at every stage.</span>
+              </Display>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                Infrastructure designed to support technology companies from first prototype to
+                commercial deployment.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:gap-5">
+              {facilities.map((facility, i) => (
+                <motion.article
+                  key={facility.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="rounded-2xl p-7 md:p-9"
+                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                >
+                  <div className="grid lg:grid-cols-5 gap-8 lg:gap-10">
+                    <div className="lg:col-span-2">
+                      <div
+                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                        style={{ background: 'rgba(0,179,152,0.18)' }}
+                      >
+                        <facility.icon className="w-5 h-5" style={{ color: TEAL }} />
                       </div>
-                      <h3 className="headline-md mb-2">{facility.name}</h3>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                        <MapPin className="w-4 h-4" />
+                      <h3
+                        className="font-black uppercase text-lg md:text-xl mb-2 text-white"
+                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                      >
+                        {facility.name}
+                      </h3>
+                      <p
+                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] mb-4"
+                        style={{ color: TEAL }}
+                      >
+                        <MapPin className="w-3.5 h-3.5" />
                         {facility.location}
-                      </div>
-                      <p className="body-md text-muted-foreground">
+                      </p>
+                      <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
                         {facility.description}
                       </p>
                     </div>
 
-                    {/* Features Section */}
-                    <div className="lg:col-span-3 p-8 bg-background">
-                      <h4 className="font-semibold mb-4">What's Included</h4>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {facility.features.map((feature, i) => (
-                          <div key={i} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                            <span className="text-sm">{feature}</span>
+                    <div className="lg:col-span-3">
+                      <p
+                        className="text-xs font-bold uppercase tracking-[0.18em] mb-5 text-white/90"
+                        style={{ fontFamily: FONT }}
+                      >
+                        What's Included
+                      </p>
+                      <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                        {facility.features.map((feature) => (
+                          <div key={feature} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
+                            <span className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                              {feature}
+                            </span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-gray-900">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="headline-lg text-white mb-4">Ready to Build Something Great?</h2>
-            <p className="body-lg text-white/70 max-w-2xl mx-auto mb-8">
-              Whether you need to test underground, prototype in the lab, or find 
-              your team's home base, we have the space for you.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild className="btn-primary-lg">
-                <Link to="/apply">
-                  Get Started
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                <Link to="/contact">
-                  Contact Us
-                </Link>
-              </Button>
+                </motion.article>
+              ))}
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
+          </div>
+        </section>
+
+        {/* ───── CTA (light) ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div
+              className="rounded-3xl p-9 md:p-14 relative overflow-hidden"
+              style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
+                }}
+              />
+              <div className="relative max-w-3xl">
+                <Eyebrow className="!text-white">Get Started</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl">
+                  Ready to build<br />
+                  <span style={{ color: TEAL }}>something great?</span>
+                </Display>
+                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                  Whether you need to test underground, prototype in the lab, or find your team's home
+                  base, we have the space for you.
+                </p>
+                <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/apply"
+                    className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{
+                      fontFamily: FONT,
+                      background: TEAL,
+                      color: NAVY,
+                      boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)',
+                    }}
+                  >
+                    Get Started <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                  >
+                    Contact Us
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 };
