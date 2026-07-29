@@ -463,7 +463,36 @@ const Labs = () => {
                           </div>
                         ))}
                       </div>
+
+                      {facility.gallery && facility.gallery.length > 0 && (
+                        <div className="mt-6 pt-6" style={{ borderTop: '1px solid #e3e7ee' }}>
+                          <p
+                            className="text-xs font-bold uppercase tracking-[0.14em] mb-3"
+                            style={{ color: NAVY }}
+                          >
+                            More photos
+                          </p>
+                          <div className="flex flex-wrap gap-3">
+                            {facility.gallery.map((shot) => (
+                              <button
+                                key={shot.src}
+                                type="button"
+                                onClick={() => setLightbox({ src: shot.src, alt: shot.alt })}
+                                className="relative w-28 h-20 sm:w-32 sm:h-24 rounded-lg overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+                                style={{ border: '1px solid #d9dde5' }}
+                                aria-label={`View larger image: ${shot.alt}`}
+                              >
+                                <img src={shot.src} alt={shot.alt} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                                <span className="absolute bottom-1 right-1 inline-flex items-center justify-center w-6 h-6 rounded-full bg-black/55 text-white">
+                                  <Eye className="w-3 h-3" />
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
+
                   </div>
                 </motion.article>
               ))}
