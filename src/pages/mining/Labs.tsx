@@ -297,31 +297,22 @@ const Labs = () => {
           </div>
         </section>
 
-        {/* ───── FACILITIES (dark) ───── */}
+        {/* ───── FACILITIES (light) ───── */}
         <section
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+          style={{ background: PAPER, color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)`,
-            }}
-          />
-          <img
-            src={norcatHalfLogo.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow className="!text-white">Our Facilities</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Eyebrow>Our Facilities</Eyebrow>
+              <h2
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+              >
                 World-class space<br />
                 <span style={{ color: TEAL }}>at every stage.</span>
-              </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.88)' }}>
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 Infrastructure designed to support technology companies from first prototype to
                 commercial deployment.
               </p>
@@ -335,8 +326,8 @@ const Labs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/[0.09] focus-within:bg-white/[0.09]"
-                  style={{ background: 'rgba(255,255,255,0.08)', border: `1px solid ${BORDER}` }}
+                  className="group rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
                   <div className="grid lg:grid-cols-[1.1fr_1.9fr]">
                     {/* Image */}
@@ -351,8 +342,8 @@ const Labs = () => {
                         alt={facility.imageAlt}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <span className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent lg:bg-gradient-to-r" />
-                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-black/40 backdrop-blur-sm border border-white/20 transition-opacity group-hover:bg-black/60">
+                      <span className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r" />
+                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-black/50 backdrop-blur-sm border border-white/30 transition-opacity group-hover:bg-black/70">
                         <Eye className="w-3.5 h-3.5" />
                         View image
                       </span>
@@ -363,14 +354,14 @@ const Labs = () => {
                       <div className="flex items-start gap-4 mb-4">
                         <div
                           className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                          style={{ background: 'rgba(0,179,152,0.18)' }}
+                          style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
                         >
                           <facility.icon className="w-5 h-5" style={{ color: TEAL }} />
                         </div>
                         <div>
                           <h3
-                            className="font-black uppercase text-lg md:text-xl text-white"
-                            style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                            className="font-black uppercase text-lg md:text-xl"
+                            style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
                           >
                             {facility.name}
                           </h3>
@@ -384,7 +375,7 @@ const Labs = () => {
                         </div>
                       </div>
 
-                      <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                      <p className="text-base leading-relaxed mb-6" style={{ color: '#475068' }}>
                         {facility.description}
                       </p>
 
@@ -392,7 +383,7 @@ const Labs = () => {
                         {facility.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2.5">
                             <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
-                            <span className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.82)' }}>
+                            <span className="text-sm leading-relaxed font-medium" style={{ color: '#2d3342' }}>
                               {feature}
                             </span>
                           </div>
