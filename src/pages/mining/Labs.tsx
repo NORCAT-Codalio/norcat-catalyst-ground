@@ -1,6 +1,7 @@
+import * as React from 'react';
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowUpRight,
   Mountain,
@@ -10,9 +11,21 @@ import {
   FlaskConical,
   MapPin,
   CheckCircle2,
+  Eye,
+  X,
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import undergroundImg from '@/assets/mining-underground-hero.jpg';
+import surfaceImg from '@/assets/underground-workers.png';
+import discoveryLabImg from '@/assets/lab-equipment-3d.png';
+import hotdeskImg from '@/assets/founders-collab.jpg';
+import officesImg from '@/assets/cta-photo-3.jpg';
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 // ── Brand tokens (mirrors Home2 / About / OurTeam) ──
 const NAVY = '#001A4D';
@@ -65,6 +78,8 @@ const facilities = [
     location: 'Onaping, ON',
     description:
       "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
+    image: undergroundImg,
+    imageAlt: 'Underground mining environment at the NORCAT Underground Centre',
     features: [
       '1.5 km of underground development',
       'Active mining environment with real conditions',
@@ -81,6 +96,8 @@ const facilities = [
     location: 'NORCAT Underground Centre, Onaping',
     description:
       'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
+    image: surfaceImg,
+    imageAlt: 'Surface support infrastructure at the NORCAT Underground Centre',
     features: [
       'Meeting and presentation spaces',
       'Equipment staging areas',
@@ -97,6 +114,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
+    image: discoveryLabImg,
+    imageAlt: 'Advanced prototyping and fabrication equipment in the Fortin Discovery Lab',
     features: [
       '3D printing and additive manufacturing',
       'Electronics workbenches and tools',
@@ -113,6 +132,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Flexible coworking space perfect for early-stage founders and remote workers. Drop in when you need focused workspace with access to the innovation community.',
+    image: hotdeskImg,
+    imageAlt: 'Founders collaborating in the NORCAT Innovation coworking space',
     features: [
       'Flexible day-use access',
       'High-speed internet',
@@ -129,6 +150,8 @@ const facilities = [
     location: 'NORCAT Innovation, Sudbury',
     description:
       'Dedicated private offices for growing teams who need their own space while staying connected to the innovation ecosystem and support services.',
+    image: officesImg,
+    imageAlt: 'Professional private office spaces at NORCAT Innovation',
     features: [
       'Private, lockable offices',
       'Various sizes available',
@@ -141,6 +164,8 @@ const facilities = [
 ];
 
 const Labs = () => {
+  const [lightbox, setLightbox] = React.useState<{ src: string; alt: string } | null>(null);
+
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
@@ -296,13 +321,13 @@ const Labs = () => {
                 World-class space<br />
                 <span style={{ color: TEAL }}>at every stage.</span>
               </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.88)' }}>
                 Infrastructure designed to support technology companies from first prototype to
                 commercial deployment.
               </p>
             </div>
 
-            <div className="grid gap-4 md:gap-5">
+            <div className="grid gap-5 md:gap-6">
               {facilities.map((facility, i) => (
                 <motion.article
                   key={facility.id}
@@ -310,47 +335,64 @@ const Labs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-2xl p-7 md:p-9"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="group rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/[0.09] focus-within:bg-white/[0.09]"
+                  style={{ background: 'rgba(255,255,255,0.08)', border: `1px solid ${BORDER}` }}
                 >
-                  <div className="grid lg:grid-cols-5 gap-8 lg:gap-10">
-                    <div className="lg:col-span-2">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                        style={{ background: 'rgba(0,179,152,0.18)' }}
-                      >
-                        <facility.icon className="w-5 h-5" style={{ color: TEAL }} />
+                  <div className="grid lg:grid-cols-[1.1fr_1.9fr]">
+                    {/* Image */}
+                    <button
+                      type="button"
+                      onClick={() => setLightbox({ src: facility.image, alt: facility.imageAlt })}
+                      className="relative block w-full h-56 sm:h-64 lg:h-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-inset"
+                      aria-label={`View larger image of ${facility.name}`}
+                    >
+                      <img
+                        src={facility.image}
+                        alt={facility.imageAlt}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <span className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent lg:bg-gradient-to-r" />
+                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-black/40 backdrop-blur-sm border border-white/20 transition-opacity group-hover:bg-black/60">
+                        <Eye className="w-3.5 h-3.5" />
+                        View image
+                      </span>
+                    </button>
+
+                    {/* Content */}
+                    <div className="p-6 md:p-8 lg:p-10">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div
+                          className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                          style={{ background: 'rgba(0,179,152,0.18)' }}
+                        >
+                          <facility.icon className="w-5 h-5" style={{ color: TEAL }} />
+                        </div>
+                        <div>
+                          <h3
+                            className="font-black uppercase text-lg md:text-xl text-white"
+                            style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                          >
+                            {facility.name}
+                          </h3>
+                          <p
+                            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] mt-1"
+                            style={{ color: TEAL }}
+                          >
+                            <MapPin className="w-3.5 h-3.5" />
+                            {facility.location}
+                          </p>
+                        </div>
                       </div>
-                      <h3
-                        className="font-black uppercase text-lg md:text-xl mb-2 text-white"
-                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
-                      >
-                        {facility.name}
-                      </h3>
-                      <p
-                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] mb-4"
-                        style={{ color: TEAL }}
-                      >
-                        <MapPin className="w-3.5 h-3.5" />
-                        {facility.location}
-                      </p>
-                      <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+
+                      <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>
                         {facility.description}
                       </p>
-                    </div>
 
-                    <div className="lg:col-span-3">
-                      <p
-                        className="text-xs font-bold uppercase tracking-[0.18em] mb-5 text-white/90"
-                        style={{ fontFamily: FONT }}
-                      >
-                        What's Included
-                      </p>
                       <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
                         {facility.features.map((feature) => (
                           <div key={feature} className="flex items-start gap-2.5">
                             <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
-                            <span className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                            <span className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.82)' }}>
                               {feature}
                             </span>
                           </div>
@@ -362,6 +404,34 @@ const Labs = () => {
               ))}
             </div>
           </div>
+
+          {/* Lightbox */}
+          <Dialog open={!!lightbox} onOpenChange={(open) => !open && setLightbox(null)}>
+            <DialogContent
+              className="max-w-5xl w-[calc(100%-2rem)] p-0 border-0 bg-transparent overflow-hidden shadow-2xl"
+              style={{ background: 'transparent' }}
+            >
+              <DialogTitle className="sr-only">{lightbox?.alt || 'Facility image'}</DialogTitle>
+              {lightbox && (
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setLightbox(null)}
+                    className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                    aria-label="Close image"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  <img
+                    src={lightbox.src}
+                    alt={lightbox.alt}
+                    className="w-full max-h-[80vh] object-contain rounded-lg bg-black/90"
+                  />
+                  <p className="mt-3 text-sm text-white/80 text-center px-4">{lightbox.alt}</p>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </section>
 
         {/* ───── CTA (light) ───── */}
