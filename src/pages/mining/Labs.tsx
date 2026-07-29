@@ -288,35 +288,47 @@ const Labs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-7 md:p-8 h-full"
+                  className="rounded-2xl overflow-hidden h-full"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
-                    >
-                      <MapPin className="w-5 h-5" style={{ color: TEAL }} />
+                  {/* Exterior building photo */}
+                  <div className="relative h-52 sm:h-60 w-full overflow-hidden">
+                    <img
+                      src={loc.exteriorImage.url}
+                      alt={loc.exteriorImageAlt}
+                      className="w-full h-full object-cover"
+                    />
+                    <span
+                      className="absolute inset-0"
+                      style={{
+                        background: `linear-gradient(to top, ${NAVY} 0%, transparent 60%)`,
+                      }}
+                    />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
+                      <span
+                        className="text-xs font-bold uppercase tracking-[0.14em]"
+                        style={{ color: 'white' }}
+                      >
+                        {loc.place}
+                      </span>
                     </div>
+                  </div>
+
+                  <div className="p-7 md:p-8">
                     <h3
-                      className="font-black uppercase text-lg md:text-xl"
+                      className="font-black uppercase text-lg md:text-xl mb-3"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
                     >
                       {loc.name}
                     </h3>
+                    <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: '#475068' }}>
+                      {loc.copy}
+                    </p>
+                    <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                      <strong style={{ color: NAVY }}>Best for:</strong> {loc.best}
+                    </p>
                   </div>
-                  <p
-                    className="text-xs font-bold uppercase tracking-[0.14em] mb-3"
-                    style={{ color: TEAL }}
-                  >
-                    {loc.place}
-                  </p>
-                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: '#475068' }}>
-                    {loc.copy}
-                  </p>
-                  <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
-                    <strong style={{ color: NAVY }}>Best for:</strong> {loc.best}
-                  </p>
                 </motion.div>
               ))}
             </div>
