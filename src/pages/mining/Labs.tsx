@@ -78,7 +78,7 @@ const facilities = [
     location: 'Onaping, ON',
     description:
       "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
-    image: undergroundImg.url,
+    image: undergroundImg,
     imageAlt: 'Underground mining environment at the NORCAT Underground Centre',
     features: [
       '1.5 km of underground development',
