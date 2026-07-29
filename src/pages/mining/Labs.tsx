@@ -76,11 +76,12 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 const locations = [
   {
     name: 'NORCAT Innovation',
-    place: 'Downtown Sudbury, ON',
+    place: 'Sudbury, ON',
     copy: 'Our innovation hub featuring the Fortin Discovery Lab, coworking spaces, and private offices.',
     best: 'Prototyping, day-to-day operations, team workspace, and community connection.',
     exteriorImage: norcatBuildingImg,
     exteriorImageAlt: 'Exterior of the NORCAT Innovation building in downtown Sudbury',
+    imagePosition: 'object-top',
   },
   {
     name: 'NORCAT Underground Centre',
@@ -89,6 +90,7 @@ const locations = [
     best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
     exteriorImage: undergroundExteriorImg,
     exteriorImageAlt: 'Exterior of the NORCAT Underground Centre in Onaping',
+    imagePosition: 'object-center',
   },
 ];
 
@@ -352,7 +354,7 @@ const Labs = () => {
                     <img
                       src={loc.exteriorImage.url}
                       alt={loc.exteriorImageAlt}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${loc.imagePosition}`}
                     />
                     <span
                       className="absolute inset-0"
