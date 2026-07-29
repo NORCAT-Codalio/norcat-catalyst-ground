@@ -177,7 +177,7 @@ const facilities = [
   {
     id: 'surface',
     icon: Building2,
-    name: 'NORCAT Surface Facility',
+    name: 'Surface Facility',
     location: 'NORCAT Underground Centre, Onaping',
     description:
       'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
