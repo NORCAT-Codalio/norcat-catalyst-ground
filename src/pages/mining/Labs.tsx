@@ -84,24 +84,6 @@ const locations = [
 
 const facilities = [
   {
-    id: 'discovery-lab',
-    icon: FlaskConical,
-    name: 'Fortin Discovery Lab',
-    location: 'NORCAT Innovation, Sudbury',
-    description:
-      'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
-    image: discoveryLabImg.url,
-    imageAlt: 'Advanced prototyping and fabrication equipment in the Fortin Discovery Lab',
-    features: [
-      '3D printing and additive manufacturing',
-      'Electronics workbenches and tools',
-      'Prototyping equipment',
-      'Collaboration workspace',
-      'Technical mentorship access',
-      'Startup-friendly access model',
-    ],
-  },
-  {
     id: 'hotdesk',
     icon: Users,
     name: 'Hot Desk Space',
@@ -154,6 +136,24 @@ const facilities = [
       'On-site tech support',
       'Flexible booking options',
       'Professional hosting environment',
+    ],
+  },
+  {
+    id: 'discovery-lab',
+    icon: FlaskConical,
+    name: 'Fortin Discovery Lab',
+    location: 'NORCAT Innovation, Sudbury',
+    description:
+      'A state-of-the-art prototyping and fabrication lab equipped with advanced tools for rapid prototyping, electronics development, and hardware innovation.',
+    image: discoveryLabImg.url,
+    imageAlt: 'Advanced prototyping and fabrication equipment in the Fortin Discovery Lab',
+    features: [
+      '3D printing and additive manufacturing',
+      'Electronics workbenches and tools',
+      'Prototyping equipment',
+      'Collaboration workspace',
+      'Technical mentorship access',
+      'Startup-friendly access model',
     ],
   },
   {
