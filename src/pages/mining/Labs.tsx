@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import undergroundImg from '@/assets/underground/underground-1.jpg.asset.json';
+import undergroundImg from '@/assets/mining-underground-hero.jpg';
 import surfaceImg from '@/assets/underground-workers.png';
 import discoveryLabImg from '@/assets/lab-equipment-3d.png';
 import hotdeskImg from '@/assets/founders-collab.jpg';
