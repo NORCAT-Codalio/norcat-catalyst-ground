@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowUpRight,
   Mountain,
@@ -10,9 +10,21 @@ import {
   FlaskConical,
   MapPin,
   CheckCircle2,
+  Eye,
+  X,
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import undergroundImg from '@/assets/underground/underground-1.jpg.asset.json';
+import surfaceImg from '@/assets/underground-workers.png';
+import discoveryLabImg from '@/assets/lab-equipment-3d.png';
+import hotdeskImg from '@/assets/founders-collab.jpg';
+import officesImg from '@/assets/cta-photo-3.jpg';
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 // ── Brand tokens (mirrors Home2 / About / OurTeam) ──
 const NAVY = '#001A4D';
