@@ -74,42 +74,6 @@ const locations = [
 
 const facilities = [
   {
-    id: 'underground',
-    icon: Mountain,
-    name: 'NORCAT Underground Centre',
-    location: 'Onaping, ON',
-    description:
-      "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
-    image: undergroundImg,
-    imageAlt: 'Underground mining environment at the NORCAT Underground Centre',
-    features: [
-      '1.5 km of underground development',
-      'Active mining environment with real conditions',
-      'Multiple test zones for different applications',
-      'Connectivity infrastructure (WiFi, LTE)',
-      'Compressed air, water, and ventilation',
-      'Safe, controlled access for demonstrations',
-    ],
-  },
-  {
-    id: 'surface',
-    icon: Building2,
-    name: 'NORCAT Surface Facility',
-    location: 'NORCAT Underground Centre, Onaping',
-    description:
-      'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
-    image: surfaceImg,
-    imageAlt: 'Surface support infrastructure at the NORCAT Underground Centre',
-    features: [
-      'Meeting and presentation spaces',
-      'Equipment staging areas',
-      'Networking infrastructure',
-      'On-site support services',
-      'Visitor hosting capabilities',
-      'Direct access to underground',
-    ],
-  },
-  {
     id: 'discovery-lab',
     icon: FlaskConical,
     name: 'Fortin Discovery Lab',
@@ -161,6 +125,60 @@ const facilities = [
       'Shared amenities access',
       'Professional business address',
       'On-site programming and events',
+    ],
+  },
+  {
+    id: 'meeting-space',
+    icon: Presentation,
+    name: 'Meeting Space',
+    location: 'NORCAT Innovation, Sudbury',
+    description:
+      'Professional boardrooms and meeting spaces equipped for presentations, video calls, and team collaboration — with on-site tech support when you need it.',
+    image: meetingSpaceImg,
+    imageAlt: 'Modern boardroom with video conferencing setup at NORCAT Innovation',
+    features: [
+      'Boardrooms and meeting rooms',
+      'TV displays and presentation setups',
+      'Video conferencing equipment',
+      'On-site tech support',
+      'Flexible booking options',
+      'Professional hosting environment',
+    ],
+  },
+  {
+    id: 'underground',
+    icon: Mountain,
+    name: 'NORCAT Underground Centre',
+    location: 'Onaping, ON',
+    description:
+      "The world's first underground centre for mining innovation. A fully operational underground mine environment for testing, validating, and demonstrating new technologies in real mining conditions.",
+    image: undergroundImg,
+    imageAlt: 'Underground mining environment at the NORCAT Underground Centre',
+    features: [
+      '1.5 km of underground development',
+      'Active mining environment with real conditions',
+      'Multiple test zones for different applications',
+      'Connectivity infrastructure (WiFi, LTE)',
+      'Compressed air, water, and ventilation',
+      'Safe, controlled access for demonstrations',
+    ],
+  },
+  {
+    id: 'surface',
+    icon: Building2,
+    name: 'NORCAT Surface Facility',
+    location: 'NORCAT Underground Centre, Onaping',
+    description:
+      'Purpose-built surface facility at the Underground Centre providing workspace, meeting rooms, and staging areas for companies conducting underground testing and demonstrations.',
+    image: surfaceImg,
+    imageAlt: 'Surface support infrastructure at the NORCAT Underground Centre',
+    features: [
+      'Meeting and presentation spaces',
+      'Equipment staging areas',
+      'Networking infrastructure',
+      'On-site support services',
+      'Visitor hosting capabilities',
+      'Direct access to underground',
     ],
   },
 ];
