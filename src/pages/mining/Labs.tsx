@@ -44,16 +44,16 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 
 const locations = [
   {
-    name: 'NORCAT Underground Centre',
-    place: 'Onaping, ON',
-    copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
-    best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
-  },
-  {
     name: 'NORCAT Innovation',
     place: 'Downtown Sudbury, ON',
     copy: 'Our innovation hub featuring the Fortin Discovery Lab, coworking spaces, and private offices.',
     best: 'Prototyping, day-to-day operations, team workspace, and community connection.',
+  },
+  {
+    name: 'NORCAT Underground Centre',
+    place: 'Onaping, ON',
+    copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
+    best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
   },
 ];
 
