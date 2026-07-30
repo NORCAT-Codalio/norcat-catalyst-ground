@@ -548,10 +548,10 @@ const SuccessStories = () => {
                             <X className="w-5 h-5 text-white" />
                           </button>
                           
-                          <span className="absolute top-4 left-4 md:top-6 md:left-6 px-3 py-1 rounded-full text-xs font-bold" style={{
-                            background: 'hsl(168 100% 35% / 0.2)',
-                            color: 'hsl(168, 100%, 60%)',
-                            border: '0.5px solid hsl(168 100% 50% / 0.3)',
+                          <span className="absolute top-4 left-4 md:top-6 md:left-6 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase" style={{
+                            background: '#ffffff',
+                            color: '#003DA5',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                           }}>
                             {story.sector}
                           </span>
