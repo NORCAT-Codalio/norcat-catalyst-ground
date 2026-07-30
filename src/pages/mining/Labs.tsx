@@ -372,36 +372,97 @@ const Labs = () => {
           </div>
         </section>
 
-        {/* ───── BRIDGE: separates the two light sections ───── */}
-        <section className="relative overflow-hidden py-12 md:py-16" style={{ background: NAVY }}>
+        {/* ───── FROM FIRST BUILD TO FIELD-READY ───── */}
+        <section className="relative overflow-hidden py-16 md:py-24" style={{ background: NAVY }}>
+          <div
+            className="absolute inset-0 pointer-events-none bg-cover bg-right"
+            style={{
+              backgroundImage: `url(${undergroundImg})`,
+              opacity: 0.16,
+            }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `linear-gradient(90deg, ${NAVY} 0%, ${NAVY}e6 55%, ${NAVY}99 100%)`,
+            }}
+          />
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0,179,152,0.16), transparent 45%), radial-gradient(circle at 85% 50%, rgba(47,111,214,0.14), transparent 45%)`,
             }}
           />
+
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
-              <p
-                className="max-w-2xl text-lg md:text-xl lg:text-2xl font-semibold leading-snug"
-                style={{ color: 'rgba(255,255,255,0.95)' }}
-              >
-                From downtown Sudbury to an active mine site — infrastructure built for every stage of
-                innovation.
-              </p>
-              <div className="flex gap-10 md:gap-14 shrink-0">
-                <div>
-                  <p className="text-3xl md:text-4xl font-black" style={{ color: TEAL }}>6</p>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>Facilities</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-black" style={{ color: TEAL }}>2</p>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>Locations</p>
-                </div>
-                <div>
-                  <p className="text-3xl md:text-4xl font-black" style={{ color: TEAL }}>1.5km</p>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>Underground</p>
-                </div>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: 'white', letterSpacing: '-0.02em' }}
+                >
+                  From First Build<br />
+                  <span style={{ color: TEAL }}>To Field-Ready.</span>
+                </h2>
+                <p
+                  className="text-base md:text-lg leading-relaxed max-w-xl"
+                  style={{ color: 'rgba(255,255,255,0.85)' }}
+                >
+                  Develop, test and demonstrate emerging technologies across interconnected
+                  innovation spaces and an active underground mine environment.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0">
+                {[
+                  {
+                    icon: Settings,
+                    title: 'BUILD',
+                    desc: 'Purpose-built workspaces',
+                  },
+                  {
+                    icon: ClipboardCheck,
+                    title: 'TEST',
+                    desc: 'Real-world conditions',
+                  },
+                  {
+                    icon: Users,
+                    title: 'SCALE',
+                    desc: 'Industry connections',
+                  },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className={`text-center ${i > 0 ? 'sm:border-l sm:border-white/10' : ''}`}
+                  >
+                    <div
+                      className="w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center mx-auto mb-4"
+                      style={{ border: `2px solid ${TEAL}`, background: 'rgba(0,179,152,0.08)' }}
+                    >
+                      <item.icon
+                        className="w-8 h-8 md:w-10 md:h-10"
+                        style={{ color: TEAL }}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <p
+                      className="font-black text-lg md:text-xl uppercase mb-1"
+                      style={{ fontFamily: FONT, color: TEAL, letterSpacing: '-0.01em' }}
+                    >
+                      {item.title}
+                    </p>
+                    <p
+                      className="text-sm md:text-base leading-snug"
+                      style={{ color: 'rgba(255,255,255,0.85)' }}
+                    >
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
