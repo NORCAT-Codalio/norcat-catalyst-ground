@@ -16,12 +16,9 @@ import {
   Presentation,
   ChevronLeft,
   ChevronRight,
-  Settings,
-  ClipboardCheck,
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import undergroundImg from '@/assets/mining-underground-hero.jpg';
 import ugAditImg from '@/assets/underground/ug-adit-entrance.jpg.asset.json';
 import ugAditNewImg from '@/assets/underground/ug-adit-entrance-new.png.asset.json';
 import ugSafeboxImg from '@/assets/underground/ug-safebox-demo.jpg.asset.json';
