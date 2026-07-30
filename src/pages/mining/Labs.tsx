@@ -349,25 +349,16 @@ const Labs = () => {
                   className="rounded-2xl overflow-hidden h-full"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  {/* Exterior building photo */}
-                  <div className="relative h-52 sm:h-60 w-full overflow-hidden">
-                    <img
-                      src={loc.exteriorImage.url}
-                      alt={loc.exteriorImageAlt}
-                      className={`w-full h-full object-cover ${loc.imagePosition}`}
-                    />
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL, filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-center gap-2 mb-4">
+                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
                       <span
                         className="text-xs font-bold uppercase tracking-[0.14em]"
-                        style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}
+                        style={{ color: TEAL }}
                       >
                         {loc.place}
                       </span>
                     </div>
-                  </div>
-
-                  <div className="p-7 md:p-8">
                     <h3
                       className="font-black uppercase text-lg md:text-xl mb-3"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
