@@ -275,17 +275,16 @@ const Labs = () => {
               <Eyebrow className="!text-white">Infrastructure &amp; Facilities</Eyebrow>
 
               <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Innovation Space.<br />
-                <span style={{ color: TEAL }}>Built to Build In.</span>
+                From First Build<br />
+                <span style={{ color: TEAL }}>To Field-Ready.</span>
               </Display>
 
               <p
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 style={{ color: 'rgba(255,255,255,0.85)' }}
               >
-                From underground testing facilities to labs, hot desks and private offices - NORCAT
-                provides the infrastructure startups need to develop, test, and scale their
-                innovations.
+                Develop, test and demonstrate emerging technologies across interconnected innovation
+                spaces and an active underground mine environment.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
