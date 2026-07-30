@@ -67,14 +67,20 @@ export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {
         
         {/* Status Badge */}
         <div className={cn(
-          "absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold border",
+          "absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold border shadow-sm",
           statusColors[story.status]
         )}>
           {statusLabels[story.status]}
         </div>
 
         {/* Sector tag */}
-        <div className="absolute top-12 left-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-white/20 backdrop-blur-sm text-white border border-white/20">
+        <div
+          className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-white shadow-lg"
+          style={{
+            backgroundColor: 'rgba(0, 26, 77, 0.92)',
+            textShadow: '0 1px 2px rgba(0,0,0,0.25)',
+          }}
+        >
           {story.sector}
         </div>
 
