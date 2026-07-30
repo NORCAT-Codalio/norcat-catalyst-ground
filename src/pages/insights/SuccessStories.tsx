@@ -483,9 +483,8 @@ const SuccessStories = () => {
                         <div className="relative aspect-[16/10] overflow-hidden">
                           <img src={story.image} alt={story.company} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
                           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsla(220, 25%, 12%, 0.8) 0%, hsla(220, 25%, 12%, 0.2) 40%, transparent 100%)' }} />
-                          <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase" style={{
-                            background: '#ffffff',
-                            color: '#003DA5',
+                          <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase text-white" style={{
+                            background: '#003DA5',
                             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                           }}>{story.sector}</span>
                           {story.hasVideo && (
@@ -548,9 +547,8 @@ const SuccessStories = () => {
                             <X className="w-5 h-5 text-white" />
                           </button>
                           
-                          <span className="absolute top-4 left-4 md:top-6 md:left-6 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase" style={{
-                            background: '#ffffff',
-                            color: '#003DA5',
+                          <span className="absolute top-4 left-4 md:top-6 md:left-6 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase text-white" style={{
+                            background: '#003DA5',
                             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                           }}>
                             {story.sector}
