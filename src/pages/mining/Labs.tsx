@@ -19,8 +19,6 @@ import {
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
-import undergroundExteriorImg from '@/assets/underground-centre-exterior.jpg.asset.json';
 import undergroundImg from '@/assets/mining-underground-hero.jpg';
 import ugAditImg from '@/assets/underground/ug-adit-entrance.jpg.asset.json';
 import ugAditNewImg from '@/assets/underground/ug-adit-entrance-new.png.asset.json';
@@ -79,18 +77,12 @@ const locations = [
     place: 'Sudbury, ON',
     copy: 'Our innovation hub featuring the Fortin Discovery Lab, coworking spaces, and private offices.',
     best: 'Prototyping, day-to-day operations, team workspace, and community connection.',
-    exteriorImage: norcatBuildingImg,
-    exteriorImageAlt: 'Exterior of the NORCAT Innovation building in downtown Sudbury',
-    imagePosition: 'object-[center_60%]',
   },
   {
     name: 'NORCAT Underground Centre',
     place: 'Onaping, ON',
     copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
     best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
-    exteriorImage: undergroundExteriorImg,
-    exteriorImageAlt: 'Exterior of the NORCAT Underground Centre building in Onaping',
-    imagePosition: 'object-center',
   },
 ];
 
@@ -349,25 +341,16 @@ const Labs = () => {
                   className="rounded-2xl overflow-hidden h-full"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  {/* Exterior building photo */}
-                  <div className="relative h-52 sm:h-60 w-full overflow-hidden">
-                    <img
-                      src={loc.exteriorImage.url}
-                      alt={loc.exteriorImageAlt}
-                      className={`w-full h-full object-cover ${loc.imagePosition}`}
-                    />
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL, filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }} />
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-center gap-2 mb-4">
+                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
                       <span
                         className="text-xs font-bold uppercase tracking-[0.14em]"
-                        style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}
+                        style={{ color: TEAL }}
                       >
                         {loc.place}
                       </span>
                     </div>
-                  </div>
-
-                  <div className="p-7 md:p-8">
                     <h3
                       className="font-black uppercase text-lg md:text-xl mb-3"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
