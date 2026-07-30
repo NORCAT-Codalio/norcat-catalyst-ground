@@ -75,10 +75,9 @@ export function SuccessStoryCard({ story, onClick }: SuccessStoryCardProps) {
 
         {/* Sector tag */}
         <div
-          className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-white shadow-lg"
+          className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-background shadow-lg"
           style={{
-            backgroundColor: 'rgba(0, 26, 77, 0.92)',
-            textShadow: '0 1px 2px rgba(0,0,0,0.25)',
+            color: '#003DA5',
           }}
         >
           {story.sector}
