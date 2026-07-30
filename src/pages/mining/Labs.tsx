@@ -16,6 +16,8 @@ import {
   Presentation,
   ChevronLeft,
   ChevronRight,
+  Settings,
+  ClipboardCheck,
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
