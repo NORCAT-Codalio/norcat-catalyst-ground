@@ -100,6 +100,7 @@ const programTabs: ProgramTab[] = [
     href: '/funding/regional-ai-program',
     image: featuredRaii,
     partners: [
+      { logo: ociLogo, alt: 'Ontario Centre of Innovation', height: 36 },
       { logo: ontarioLogo, alt: 'Ontario', height: 28 },
     ],
   },
@@ -265,15 +266,16 @@ const Funding = () => {
                     <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
                       Delivered in partnership with
                     </p>
-                    <div className="flex flex-wrap items-center gap-6">
+                    <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
                       {activeProgram.partners.map((partner) => (
-                        <img
-                          key={partner.alt}
-                          src={partner.logo}
-                          alt={partner.alt}
-                          className="object-contain"
-                          style={{ height: partner.height || 32, maxWidth: 140 }}
-                        />
+                        <div key={partner.alt} className="flex h-12 items-center">
+                          <img
+                            src={partner.logo}
+                            alt={partner.alt}
+                            loading="lazy"
+                            className="max-h-12 w-auto max-w-[160px] object-contain object-left"
+                          />
+                        </div>
                       ))}
                     </div>
                   </div>
