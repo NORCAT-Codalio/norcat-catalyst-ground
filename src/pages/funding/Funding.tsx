@@ -14,7 +14,11 @@ import featuredCore5 from '@/assets/featured-core5-photo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 import ovinLogo from '@/assets/logos/ovin-logo.png';
-import noaLogo from '@/assets/logos/northern-ontario-angels.png';
+import canadaLogo from '@/assets/logos/government-of-canada.png';
+import fednorFullLogo from '@/assets/logos/fednor-full.png';
+import fednorLogo from '@/assets/logos/fednor.png';
+import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
+import sudburyLogo from '@/assets/logos/sudbury-logo.png';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
