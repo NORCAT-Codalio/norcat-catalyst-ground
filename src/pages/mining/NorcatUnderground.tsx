@@ -258,29 +258,19 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── CAPABILITIES (dark) ───── */}
+        {/* ───── CAPABILITIES (light) ───── */}
         <section
           id="capabilities"
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+          style={{ background: 'white', color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
-          />
-          <img
-            src={norcatHalfLogo.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow className="!text-white">What You Can Test</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Eyebrow>What You Can Test</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
                 If it belongs in a mine,<br /><span style={{ color: TEAL }}>we can run it underground.</span>
               </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 From autonomous vehicles and battery-electric equipment to 5G, sensors and AI
                 platforms - every category of mining technology has been tested here.
               </p>
@@ -291,16 +281,16 @@ const NorcatUnderground = () => {
                 <motion.article
                   key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}
-                  className="group rounded-2xl p-6 transition-colors h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="group rounded-2xl p-6 transition-shadow hover:shadow-lg h-full"
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}
                   >
                     <c.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="text-sm md:text-[15px] font-bold text-white leading-snug" style={{ fontFamily: FONT }}>
+                  <h3 className="text-sm md:text-[15px] font-bold leading-snug" style={{ fontFamily: FONT, color: NAVY }}>
                     {c.title}
                   </h3>
                 </motion.article>
