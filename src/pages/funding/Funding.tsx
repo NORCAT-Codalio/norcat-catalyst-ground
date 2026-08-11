@@ -278,7 +278,7 @@ const Funding = () => {
                             src={partner.logo}
                             alt={partner.alt}
                             loading="lazy"
-                            className="max-h-12 w-auto max-w-[160px] object-contain object-left"
+                            className="max-h-12 w-auto max-w-[190px] object-contain object-left"
                           />
                         </div>
                       ))}
