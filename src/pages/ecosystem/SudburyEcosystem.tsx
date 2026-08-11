@@ -242,7 +242,7 @@ const SudburyEcosystem = () => {
                   return (
                     <motion.div
                       key={org.name}
-                      className={`text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] ${isExpanded ? 'z-20 shadow-md' : 'z-0'}`}
+                      className={`relative text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] ${isExpanded ? 'z-20 shadow-md' : 'z-0'}`}
                       style={{ borderColor: '#e2e8f0', color: NAVY }}
                     >
                       <button
