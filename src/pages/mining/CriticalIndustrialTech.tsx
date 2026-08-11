@@ -512,8 +512,9 @@ const CriticalIndustrialTech = () => {
                     'Your BDM initiates the application in AccessOCI on your behalf.',
                     'Receive tailored support matching your tech to the right mining applications.',
                   ].map((step, i) => (
-                    <li key={i} className="flex items-start gap-3" style={{ color: FG_MUTED }}>
-                      <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 font-black text-xs" style={{ background: 'rgba(0,179,152,0.18)', color: TEAL }}>{i + 1}</span>
+                    <li key={i} className="flex items-start gap-3" style={{ color: '#475068' }}>
+                      <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 font-black text-xs" style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>{i + 1}</span>
+
                       <span className="text-sm md:text-base">{step}</span>
                     </li>
                   ))}
