@@ -238,34 +238,90 @@ const SudburyEcosystem = () => {
               >
                 {filteredOrgs.map((org) => {
                   const categoryLabel = categories.find((c) => c.id === org.category)?.label;
+                  const isExpanded = expandedOrg === org.name;
                   return (
-                    <motion.button
+                    <motion.div
                       key={org.name}
                       layout
-                      onClick={() => setSelectedOrg(org)}
-                      whileHover={{ y: -2 }}
-                      className="text-left bg-white border rounded-lg p-3 transition-all group hover:shadow-md hover:border-[#00B398]"
+                      className="text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] overflow-hidden"
                       style={{ borderColor: '#e2e8f0', color: NAVY }}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
-                          <org.icon className="w-5 h-5" />
+                      <button
+                        onClick={() => setExpandedOrg(isExpanded ? null : org.name)}
+                        className="w-full text-left p-3"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
+                            <org.icon className="w-5 h-5" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between gap-2">
+                              <h4 className="font-bold text-sm leading-tight mb-0.5 truncate"
+                                  style={{ fontFamily: FONT, color: NAVY }}>
+                                {org.name}
+                              </h4>
+                              <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                                           style={{ color: TEAL }} />
+                            </div>
+                            <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
+                              {org.description}
+                            </p>
+                            <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
+                                  style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
+                              {org.highlight || categoryLabel}
+                            </span>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-sm leading-tight mb-0.5 truncate"
-                              style={{ fontFamily: FONT, color: NAVY }}>
-                            {org.name}
-                          </h4>
-                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
-                            {org.description}
-                          </p>
-                          <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
-                                style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
-                            {org.highlight || categoryLabel}
-                          </span>
-                        </div>
-                      </div>
-                    </motion.button>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-3 pb-3 pt-0 border-t" style={{ borderColor: '#e2e8f0' }}>
+                              <p className="text-xs leading-relaxed pt-3" style={{ color: '#475068' }}>
+                                {org.longDescription || org.description}
+                              </p>
+
+                              {org.tags && (
+                                <div className="flex flex-wrap gap-1.5 mt-3">
+                                  {org.tags.map((tag) => (
+                                    <span key={tag} className="px-2 py-0.5 rounded-full text-[10px]"
+                                          style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+
+                              <div className="mt-3">
+                                {org.internalLink ? (
+                                  <Link to={org.internalLink}
+                                        onClick={() => setExpandedOrg(null)}
+                                        className="group/link inline-flex items-center gap-1.5 text-xs font-bold"
+                                        style={{ color: TEAL }}>
+                                    Learn More
+                                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                                  </Link>
+                                ) : org.link ? (
+                                  <a href={org.link} target="_blank" rel="noopener noreferrer"
+                                     className="group/link inline-flex items-center gap-1.5 text-xs font-bold"
+                                     style={{ color: TEAL }}>
+                                    Visit Website
+                                    <ExternalLink className="w-3 h-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                                  </a>
+                                ) : null}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
                   );
                 })}
               </motion.div>
