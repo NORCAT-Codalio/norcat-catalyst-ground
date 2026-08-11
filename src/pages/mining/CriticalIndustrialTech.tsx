@@ -288,8 +288,7 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── CRITICAL TECHNOLOGY AREAS + KEY SECTORS (light) ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: PAPER, color: NAVY }}>
-
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Key Sectors</Eyebrow>
@@ -313,7 +312,7 @@ const CriticalIndustrialTech = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-6 flex flex-col items-start gap-4"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
                     <s.icon className="w-5 h-5" style={{ color: TEAL }} />
@@ -339,7 +338,7 @@ const CriticalIndustrialTech = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   className="group rounded-2xl p-6 transition-colors flex flex-col"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
@@ -491,16 +490,19 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── HOW TO APPLY + VIDEO (light) ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6">
                 <Eyebrow>How to Apply</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl mb-6">
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
                   Start with the<br /><span style={{ color: TEAL }}>NORCAT team.</span>
-                </Display>
-                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.82)' }}>
-                  CIT is <strong style={{ color: 'white' }}>open for applications on a rolling basis.</strong> Applications MUST be initiated in AccessOCI by an OCI Business Development Manager (BDM) or CIT Sector Manager.
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: '#475068' }}>
+                  CIT is <strong style={{ color: NAVY }}>open for applications on a rolling basis.</strong> Applications MUST be initiated in AccessOCI by an OCI Business Development Manager (BDM) or CIT Sector Manager.
                 </p>
 
                 <ul className="space-y-3 mb-8">
@@ -510,8 +512,8 @@ const CriticalIndustrialTech = () => {
                     'Your BDM initiates the application in AccessOCI on your behalf.',
                     'Receive tailored support matching your tech to the right mining applications.',
                   ].map((step, i) => (
-                    <li key={i} className="flex items-start gap-3" style={{ color: 'rgba(255,255,255,0.82)' }}>
-                      <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 font-black text-xs" style={{ background: 'rgba(255,255,255,0.16)', color: 'white' }}>{i + 1}</span>
+                    <li key={i} className="flex items-start gap-3" style={{ color: '#475068' }}>
+                      <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 font-black text-xs" style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>{i + 1}</span>
 
                       <span className="text-sm md:text-base">{step}</span>
                     </li>
@@ -529,8 +531,8 @@ const CriticalIndustrialTech = () => {
                   </a>
                   <Link
                     to="/apply"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/10"
-                    style={{ fontFamily: FONT, color: 'white', border: '2px solid rgba(255,255,255,0.6)' }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-black/5"
+                    style={{ fontFamily: FONT, color: NAVY, border: `2px solid ${TEAL}` }}
                   >
                     Contact NORCAT Innovation <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -538,7 +540,7 @@ const CriticalIndustrialTech = () => {
               </div>
 
               <div className="lg:col-span-6">
-                <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.22)', background: 'rgba(255,255,255,0.10)', backdropFilter: 'blur(10px)' }}>
+                <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid #d9dde5', background: PAPER, boxShadow: '0 24px 60px -30px rgba(0,26,77,0.35)' }}>
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                     <iframe
                       className="absolute inset-0 w-full h-full"
@@ -549,13 +551,13 @@ const CriticalIndustrialTech = () => {
                     />
                   </div>
                   <div className="p-5 flex items-center justify-between gap-4">
-                    <p className="text-xs uppercase tracking-[0.18em] font-bold" style={{ color: 'white' }}>CIT Initiative · Overview</p>
+                    <p className="text-xs uppercase tracking-[0.18em] font-bold" style={{ color: TEAL }}>CIT Initiative · Overview</p>
                     <a
                       href="https://www.oc-innovation.ca/programs/cit/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
-                      style={{ color: 'white' }}
+                      style={{ color: NAVY }}
                     >
                       OCI website <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
