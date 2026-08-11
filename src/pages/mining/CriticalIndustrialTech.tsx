@@ -489,25 +489,22 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── HOW TO APPLY + VIDEO (dark) ───── */}
-        <section
-          className="py-20 md:py-32 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 10% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 90% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
-          />
+        {/* ───── HOW TO APPLY + VIDEO (light) ───── */}
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6">
                 <Eyebrow>How to Apply</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl mb-6">
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
                   Start with the<br /><span style={{ color: TEAL }}>NORCAT team.</span>
-                </Display>
-                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: FG_MUTED }}>
-                  CIT is <strong style={{ color: 'white' }}>open for applications on a rolling basis.</strong> Applications MUST be initiated in AccessOCI by an OCI Business Development Manager (BDM) or CIT Sector Manager.
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: '#475068' }}>
+                  CIT is <strong style={{ color: NAVY }}>open for applications on a rolling basis.</strong> Applications MUST be initiated in AccessOCI by an OCI Business Development Manager (BDM) or CIT Sector Manager.
                 </p>
+
                 <ul className="space-y-3 mb-8">
                   {[
                     'Contact the NORCAT Innovation team to discuss your technology.',
