@@ -3,7 +3,7 @@ import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
-  ChevronDown,
+  ChevronRight,
   Globe,
   Users,
   Building2,
@@ -25,6 +25,13 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from '@/components/ui/sheet';
 
 // ── Brand tokens (mirrors About / Home2) ──
 const NAVY = '#001A4D';
