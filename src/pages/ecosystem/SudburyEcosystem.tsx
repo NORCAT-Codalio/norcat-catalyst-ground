@@ -304,7 +304,83 @@ const SudburyEcosystem = () => {
           </div>
         </section>
 
+        {/* ───── DETAIL DRAWER ───── */}
+        <Sheet open={!!selectedOrg} onOpenChange={(open) => !open && setSelectedOrg(null)}>
+          <SheetContent
+            side="right"
+            className="w-full sm:max-w-md border-l p-0 overflow-y-auto"
+            style={{ borderColor: '#e2e8f0', background: 'white' }}
+          >
+            {selectedOrg && (
+              <div className="h-full flex flex-col">
+                {/* Header band */}
+                <div className="px-6 pt-10 pb-6" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 60%, ${TEAL} 100%)` }}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                      <selectedOrg.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <SheetHeader className="space-y-1 text-left p-0">
+                        <SheetTitle className="text-xl font-black text-white leading-tight" style={{ fontFamily: FONT }}>
+                          {selectedOrg.name}
+                        </SheetTitle>
+                        <SheetDescription className="text-xs text-white/80 uppercase tracking-wider font-semibold">
+                          {selectedOrg.highlight || categories.find((c) => c.id === selectedOrg.category)?.label}
+                        </SheetDescription>
+                      </SheetHeader>
+                    </div>
+                  </div>
+                </div>
 
+                {/* Body */}
+                <div className="flex-1 px-6 py-6">
+                  <p className="text-sm leading-relaxed mb-6" style={{ color: '#475068' }}>
+                    {selectedOrg.longDescription || selectedOrg.description}
+                  </p>
+
+                  {selectedOrg.tags && (
+                    <div className="mb-8">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: '#9ca3af' }}>Focus Areas</p>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedOrg.tags.map((tag) => (
+                          <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold"
+                                style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="pt-6 border-t" style={{ borderColor: '#e2e8f0' }}>
+                    {selectedOrg.internalLink ? (
+                      <Link
+                        to={selectedOrg.internalLink}
+                        onClick={() => setSelectedOrg(null)}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90"
+                        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}
+                      >
+                        Learn More
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    ) : selectedOrg.link ? (
+                      <a
+                        href={selectedOrg.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90"
+                        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}
+                      >
+                        Visit Website
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            )}
+          </SheetContent>
+        </Sheet>
 
       </div>
     </Layout>
