@@ -125,7 +125,7 @@ const stats = [
 
 const SudburyEcosystem = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
-  const [expandedOrg, setExpandedOrg] = useState<string | null>(null);
+  const [selectedOrg, setSelectedOrg] = useState<EcosystemOrg | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredOrgs = ecosystemOrgs.filter((o) => {
