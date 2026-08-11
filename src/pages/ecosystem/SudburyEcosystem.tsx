@@ -3,7 +3,7 @@ import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
-  ChevronRight,
+  ChevronDown,
   Globe,
   Users,
   Building2,
@@ -25,13 +25,6 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
-} from '@/components/ui/sheet';
 
 // ── Brand tokens (mirrors About / Home2) ──
 const NAVY = '#001A4D';
@@ -125,7 +118,7 @@ const stats = [
 
 const SudburyEcosystem = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
-  const [selectedOrg, setSelectedOrg] = useState<EcosystemOrg | null>(null);
+  const [expandedOrg, setExpandedOrg] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredOrgs = ecosystemOrgs.filter((o) => {
@@ -245,38 +238,91 @@ const SudburyEcosystem = () => {
               >
                 {filteredOrgs.map((org) => {
                   const categoryLabel = categories.find((c) => c.id === org.category)?.label;
+                  const isExpanded = expandedOrg === org.name;
                   return (
-                    <motion.button
+                    <motion.div
                       key={org.name}
-                      onClick={() => setSelectedOrg(org)}
-                      whileHover={{ y: -2 }}
-                      transition={{ duration: 0.15 }}
-                      className="text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] p-3"
+                      className={`relative text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] ${isExpanded ? 'z-20 shadow-md' : 'z-0'}`}
                       style={{ borderColor: '#e2e8f0', color: NAVY }}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
-                          <org.icon className="w-5 h-5" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between gap-2">
-                            <h4 className="font-bold text-sm leading-tight mb-0.5 truncate"
-                                style={{ fontFamily: FONT, color: NAVY }}>
-                              {org.name}
-                            </h4>
-                            <ChevronRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-0.5"
-                                         style={{ color: TEAL }} />
+                      <button
+                        onClick={() => setExpandedOrg(isExpanded ? null : org.name)}
+                        className={`w-full text-left p-3 ${isExpanded ? 'border-b' : ''}`}
+                        style={{ borderColor: isExpanded ? '#e2e8f0' : 'transparent' }}
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
+                            <org.icon className="w-5 h-5" />
                           </div>
-                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
-                            {org.description}
-                          </p>
-                          <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
-                                style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
-                            {org.highlight || categoryLabel}
-                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between gap-2">
+                              <h4 className="font-bold text-sm leading-tight mb-0.5 truncate"
+                                  style={{ fontFamily: FONT, color: NAVY }}>
+                                {org.name}
+                              </h4>
+                              <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                                           style={{ color: TEAL }} />
+                            </div>
+                            <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
+                              {org.description}
+                            </p>
+                            <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
+                                  style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
+                              {org.highlight || categoryLabel}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </motion.button>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -4 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-0 right-0 top-[calc(100%-1px)] bg-white border border-t-0 rounded-b-lg shadow-xl"
+                            style={{ borderColor: '#e2e8f0' }}
+                          >
+                            <div className="px-3 pb-3 pt-2">
+                              <p className="text-xs leading-relaxed" style={{ color: '#475068' }}>
+                                {org.longDescription || org.description}
+                              </p>
+
+                              {org.tags && (
+                                <div className="flex flex-wrap gap-1.5 mt-3">
+                                  {org.tags.map((tag) => (
+                                    <span key={tag} className="px-2 py-0.5 rounded-full text-[10px]"
+                                          style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+
+                              <div className="mt-3">
+                                {org.internalLink ? (
+                                  <Link to={org.internalLink}
+                                        onClick={() => setExpandedOrg(null)}
+                                        className="group/link inline-flex items-center gap-1.5 text-xs font-bold"
+                                        style={{ color: TEAL }}>
+                                    Learn More
+                                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                                  </Link>
+                                ) : org.link ? (
+                                  <a href={org.link} target="_blank" rel="noopener noreferrer"
+                                     className="group/link inline-flex items-center gap-1.5 text-xs font-bold"
+                                     style={{ color: TEAL }}>
+                                    Visit Website
+                                    <ExternalLink className="w-3 h-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                                  </a>
+                                ) : null}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
                   );
                 })}
               </motion.div>
@@ -304,83 +350,7 @@ const SudburyEcosystem = () => {
           </div>
         </section>
 
-        {/* ───── DETAIL DRAWER ───── */}
-        <Sheet open={!!selectedOrg} onOpenChange={(open) => !open && setSelectedOrg(null)}>
-          <SheetContent
-            side="right"
-            className="w-full sm:max-w-md border-l p-0 overflow-y-auto"
-            style={{ borderColor: '#e2e8f0', background: 'white' }}
-          >
-            {selectedOrg && (
-              <div className="h-full flex flex-col">
-                {/* Header band */}
-                <div className="px-6 pt-10 pb-6" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 60%, ${TEAL} 100%)` }}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.15)' }}>
-                      <selectedOrg.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <SheetHeader className="space-y-1 text-left p-0">
-                        <SheetTitle className="text-xl font-black text-white leading-tight" style={{ fontFamily: FONT }}>
-                          {selectedOrg.name}
-                        </SheetTitle>
-                        <SheetDescription className="text-xs text-white/80 uppercase tracking-wider font-semibold">
-                          {selectedOrg.highlight || categories.find((c) => c.id === selectedOrg.category)?.label}
-                        </SheetDescription>
-                      </SheetHeader>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Body */}
-                <div className="flex-1 px-6 py-6">
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: '#475068' }}>
-                    {selectedOrg.longDescription || selectedOrg.description}
-                  </p>
-
-                  {selectedOrg.tags && (
-                    <div className="mb-8">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: '#9ca3af' }}>Focus Areas</p>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedOrg.tags.map((tag) => (
-                          <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold"
-                                style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="pt-6 border-t" style={{ borderColor: '#e2e8f0' }}>
-                    {selectedOrg.internalLink ? (
-                      <Link
-                        to={selectedOrg.internalLink}
-                        onClick={() => setSelectedOrg(null)}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90"
-                        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}
-                      >
-                        Learn More
-                        <ArrowUpRight className="w-4 h-4" />
-                      </Link>
-                    ) : selectedOrg.link ? (
-                      <a
-                        href={selectedOrg.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white transition-all hover:opacity-90"
-                        style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}
-                      >
-                        Visit Website
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            )}
-          </SheetContent>
-        </Sheet>
 
       </div>
     </Layout>
