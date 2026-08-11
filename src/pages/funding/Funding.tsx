@@ -100,6 +100,7 @@ const programTabs: ProgramTab[] = [
     href: '/funding/regional-ai-program',
     image: featuredRaii,
     partners: [
+      { logo: ociLogo, alt: 'Ontario Centre of Innovation', height: 36 },
       { logo: ontarioLogo, alt: 'Ontario', height: 28 },
     ],
   },
