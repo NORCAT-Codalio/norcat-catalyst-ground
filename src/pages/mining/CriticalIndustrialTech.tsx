@@ -413,7 +413,7 @@ const CriticalIndustrialTech = () => {
                 transition={{ duration: 0.25 }}
               >
                 {/* Header card */}
-                <div className="rounded-2xl p-8 md:p-10 mb-6" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 100%)`, border: `1px solid ${BORDER}` }}>
+                <div className="rounded-2xl p-8 md:p-10 mb-6" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`, border: `1px solid ${BORDER}` }}>
                   <div className="grid lg:grid-cols-12 gap-8 items-center">
                     <div className="lg:col-span-7">
                       <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.16em] mb-4" style={{ background: 'rgba(0,179,152,0.18)', color: TEAL }}>
