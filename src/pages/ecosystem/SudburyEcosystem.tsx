@@ -349,68 +349,6 @@ const SudburyEcosystem = () => {
           </div>
         </section>
 
-        {/* ───── DETAIL MODAL ───── */}
-        <Dialog open={!!selectedOrg} onOpenChange={(open) => !open && setSelectedOrg(null)}>
-          <DialogContent className="max-w-lg p-0 overflow-hidden border-0" style={{ background: PAPER, color: NAVY }}>
-            <div className="p-6 md:p-8 relative">
-              <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.12)' }} />
-              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.10)' }} />
-
-              <DialogHeader className="relative z-10 text-left space-y-3">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md" style={{ background: TEAL }}>
-                  {selectedOrg && <selectedOrg.icon className="w-7 h-7" style={{ color: 'white' }} />}
-                </div>
-                <DialogTitle className="text-xl font-black uppercase leading-tight"
-                              style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>
-                  {selectedOrg?.name}
-                </DialogTitle>
-                {selectedOrg?.highlight && (
-                  <span className="inline-block w-fit px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.14em]"
-                        style={{ background: 'rgba(0,179,152,0.12)', color: '#006A5B' }}>
-                    {selectedOrg.highlight}
-                  </span>
-                )}
-                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#475068' }}>
-                  {selectedOrg?.longDescription || selectedOrg?.description}
-                </DialogDescription>
-              </DialogHeader>
-
-              {selectedOrg?.tags && (
-                <div className="flex flex-wrap gap-2 mt-5 relative z-10">
-                  {selectedOrg.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 rounded-full text-xs"
-                          style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              <div className="mt-6 relative z-10">
-                {selectedOrg?.internalLink ? (
-                  <Link to={selectedOrg.internalLink}
-                        onClick={() => setSelectedOrg(null)}
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
-                    Learn More
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: TEAL, color: NAVY }}>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                ) : selectedOrg?.link ? (
-                  <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
-                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                     style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
-                    Visit Website
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: TEAL, color: NAVY }}>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </span>
-                  </a>
-                ) : null}
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
 
 
       </div>
