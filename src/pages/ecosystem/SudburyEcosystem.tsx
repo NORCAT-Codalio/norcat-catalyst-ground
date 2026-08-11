@@ -242,13 +242,13 @@ const SudburyEcosystem = () => {
                   return (
                     <motion.div
                       key={org.name}
-                      layout
-                      className="text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] overflow-hidden"
+                      className={`relative text-left bg-white border rounded-lg transition-all group hover:shadow-md hover:border-[#00B398] ${isExpanded ? 'z-20 shadow-md' : 'z-0'}`}
                       style={{ borderColor: '#e2e8f0', color: NAVY }}
                     >
                       <button
                         onClick={() => setExpandedOrg(isExpanded ? null : org.name)}
-                        className="w-full text-left p-3"
+                        className={`w-full text-left p-3 ${isExpanded ? 'border-b' : ''}`}
+                        style={{ borderColor: isExpanded ? '#e2e8f0' : 'transparent' }}
                       >
                         <div className="flex items-start gap-3">
                           <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
@@ -277,14 +277,15 @@ const SudburyEcosystem = () => {
                       <AnimatePresence initial={false}>
                         {isExpanded && (
                           <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25 }}
-                            className="overflow-hidden"
+                            initial={{ opacity: 0, y: -4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -4 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-0 right-0 top-[calc(100%-1px)] bg-white border border-t-0 rounded-b-lg shadow-xl"
+                            style={{ borderColor: '#e2e8f0' }}
                           >
-                            <div className="px-3 pb-3 pt-0 border-t" style={{ borderColor: '#e2e8f0' }}>
-                              <p className="text-xs leading-relaxed pt-3" style={{ color: '#475068' }}>
+                            <div className="px-3 pb-3 pt-2">
+                              <p className="text-xs leading-relaxed" style={{ color: '#475068' }}>
                                 {org.longDescription || org.description}
                               </p>
 
