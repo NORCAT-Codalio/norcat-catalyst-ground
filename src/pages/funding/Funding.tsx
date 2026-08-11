@@ -14,7 +14,11 @@ import featuredCore5 from '@/assets/featured-core5-photo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 import ovinLogo from '@/assets/logos/ovin-logo.png';
-import noaLogo from '@/assets/logos/northern-ontario-angels.png';
+import canadaLogo from '@/assets/logos/government-of-canada.png';
+import fednorFullLogo from '@/assets/logos/fednor-full.png';
+import fednorLogo from '@/assets/logos/fednor.png';
+import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
+import sudburyLogo from '@/assets/logos/sudbury-logo.png';
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
@@ -64,8 +68,8 @@ const programTabs: ProgramTab[] = [
     href: '/mining/critical-industrial-tech',
     image: featuredCit,
     partners: [
-      { logo: ociLogo, alt: 'Ontario Centre of Innovation', height: 36 },
-      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
+      { logo: ociLogo, alt: 'Ontario Centre of Innovation' },
+      { logo: ontarioLogo, alt: 'Government of Ontario' },
     ],
   },
   {
@@ -82,8 +86,8 @@ const programTabs: ProgramTab[] = [
     href: '/funding/innovation-acceleration-program',
     image: featuredIap.url,
     partners: [
-      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
-      { logo: noaLogo, alt: 'Northern Ontario Angels', height: 32 },
+      { logo: canadaLogo, alt: 'Government of Canada' },
+      { logo: fednorFullLogo, alt: 'FedNor' },
     ],
   },
   {
@@ -100,8 +104,8 @@ const programTabs: ProgramTab[] = [
     href: '/funding/regional-ai-program',
     image: featuredRaii,
     partners: [
-      { logo: ociLogo, alt: 'Ontario Centre of Innovation', height: 36 },
-      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
+      { logo: canadaLogo, alt: 'Government of Canada' },
+      { logo: fednorFullLogo, alt: 'FedNor' },
     ],
   },
   {
@@ -118,8 +122,9 @@ const programTabs: ProgramTab[] = [
     href: '/funding/sudbury-catalyst-fund',
     image: featuredScf.url,
     partners: [
-      { logo: noaLogo, alt: 'Northern Ontario Angels', height: 32 },
-      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
+      { logo: fednorLogo, alt: 'FedNor' },
+      { logo: nickelBasinLogo, alt: 'Nickel Basin Federal Development Corporation' },
+      { logo: sudburyLogo, alt: 'City of Greater Sudbury' },
     ],
   },
   {
@@ -136,8 +141,8 @@ const programTabs: ProgramTab[] = [
     href: '/mining/core5',
     image: featuredCore5,
     partners: [
-      { logo: ovinLogo, alt: 'OVIN', height: 32 },
-      { logo: ontarioLogo, alt: 'Ontario', height: 28 },
+      { logo: ovinLogo, alt: 'Ontario Vehicle Innovation Network' },
+      { logo: ontarioLogo, alt: 'Government of Ontario' },
     ],
   },
 ];
@@ -273,7 +278,7 @@ const Funding = () => {
                             src={partner.logo}
                             alt={partner.alt}
                             loading="lazy"
-                            className="max-h-12 w-auto max-w-[160px] object-contain object-left"
+                            className="max-h-12 w-auto max-w-[190px] object-contain object-left"
                           />
                         </div>
                       ))}
