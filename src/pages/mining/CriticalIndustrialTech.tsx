@@ -287,30 +287,18 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── CRITICAL TECHNOLOGY AREAS + KEY SECTORS (dark) ───── */}
-        <section
-          className="py-20 md:py-32 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${NAVY} 0%, ${BLUE} 100%)` }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)`,
-            }}
-          />
-          <img
-            src={norcatHalfLogo.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
-          />
+        {/* ───── CRITICAL TECHNOLOGY AREAS + KEY SECTORS (light) ───── */}
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Key Sectors</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <h2
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+              >
                 Four sectors<br /><span style={{ color: TEAL }}>powering Ontario.</span>
-              </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+              </h2>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 CIT funds the development and commercialization of Ontario-made products and services that integrate critical technologies across four key sectors.
               </p>
             </div>
@@ -324,22 +312,22 @@ const CriticalIndustrialTech = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-6 flex flex-col items-start gap-4"
-                  style={{ background: 'rgba(10,42,107,0.6)', border: `1px solid ${BORDER}` }}
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.18)', border: `1px solid ${TEAL}33` }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
                     <s.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-bold text-sm md:text-base text-white" style={{ fontFamily: FONT }}>{s.name}</h3>
+                  <h3 className="font-bold text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
                 </motion.div>
               ))}
             </div>
 
             <div className="flex items-center gap-4 mb-8 md:mb-10">
-              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,179,152,0.4))' }} />
+              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,179,152,0.45))' }} />
               <p className="text-[10px] uppercase tracking-[0.22em] font-bold" style={{ color: TEAL }}>
                 Technology Streams
               </p>
-              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(0,179,152,0.4), transparent)' }} />
+              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(0,179,152,0.45), transparent)' }} />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {technologies.map((tech, i) => (
@@ -350,15 +338,15 @@ const CriticalIndustrialTech = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   className="group rounded-2xl p-6 transition-colors flex flex-col"
-                  style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    style={{ background: 'rgba(0,179,152,0.12)' }}
                   >
                     <tech.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="text-sm md:text-[15px] font-bold text-white leading-snug mb-4" style={{ fontFamily: FONT }}>
+                  <h3 className="text-sm md:text-[15px] font-bold leading-snug mb-4" style={{ fontFamily: FONT, color: NAVY }}>
                     {tech.name}
                   </h3>
                   <div className="mt-auto flex flex-wrap gap-1.5">
@@ -366,7 +354,7 @@ const CriticalIndustrialTech = () => {
                       <span
                         key={tag}
                         className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
-                        style={{ background: 'rgba(0,179,152,0.12)', color: TEAL, border: `1px solid rgba(0,179,152,0.25)` }}
+                        style={{ background: 'white', color: BLUE, border: '1px solid #d9dde5' }}
                       >
                         {tag}
                       </span>
@@ -377,6 +365,7 @@ const CriticalIndustrialTech = () => {
             </div>
           </div>
         </section>
+
 
         {/* ───── PROGRAM STREAMS - TABS (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
