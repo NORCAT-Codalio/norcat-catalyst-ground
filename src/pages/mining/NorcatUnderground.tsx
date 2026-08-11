@@ -374,35 +374,25 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── CIT PROGRAM (dark) ───── */}
+        {/* ───── CIT PROGRAM (light) ───── */}
         <section
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+          style={{ background: 'white', color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)` }}
-          />
-          <img
-            src={norcatHalfLogo.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute -right-20 -top-20 w-[420px] opacity-[0.06] pointer-events-none select-none"
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
                 className="lg:col-span-7"
               >
-                <Eyebrow className="!text-white">Critical Industrial Technologies</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Eyebrow>Critical Industrial Technologies</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
                   The proving ground for<br /><span style={{ color: TEAL }}>CIT ventures.</span>
                 </Display>
-                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Underground is the test-and-validation backbone of our Critical Industrial Technologies (CIT) program. CIT companies use the facility to run structured trials, capture real-world performance data, and earn the credibility needed to sell into global mining and industrial markets.
                 </p>
-                <p className="mt-4 text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                <p className="mt-4 text-base leading-relaxed" style={{ color: '#475068' }}>
                   From early-stage prototypes to production-ready systems, we help CIT participants move from lab to mine faster - with engineering support, customer introductions, and a facility no one else can replicate.
                 </p>
               </motion.div>
@@ -410,7 +400,7 @@ const NorcatUnderground = () => {
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}
                 className="lg:col-span-5"
               >
-                <div className="rounded-2xl p-7 md:p-9" style={{ background: 'rgba(0,26,77,0.45)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
+                <div className="rounded-2xl p-7 md:p-9" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`, border: `1px solid ${BORDER}`, boxShadow: '0 24px 60px -30px rgba(0,26,77,0.35)' }}>
                   <h3 className="font-black uppercase text-lg mb-5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     Why CIT companies use NORCAT Underground
                   </h3>
