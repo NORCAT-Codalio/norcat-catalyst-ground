@@ -3,6 +3,7 @@ import { Layout } from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
+  ChevronDown,
   Globe,
   Users,
   Building2,
@@ -21,13 +22,6 @@ import {
   Search,
 } from 'lucide-react';
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
 import { motion, AnimatePresence } from 'framer-motion';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
