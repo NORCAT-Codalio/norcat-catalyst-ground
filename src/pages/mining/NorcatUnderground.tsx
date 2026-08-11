@@ -93,9 +93,9 @@ const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; clas
   </p>
 );
 
-const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
-  <As className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
-     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+const Display = ({ children, className = '', as: As = 'h2' as any, color = 'white' }: any) => (
+  <As className={`font-black uppercase leading-[0.95] tracking-tight ${className}`}
+     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color }}>
     {children}
   </As>
 );
