@@ -271,17 +271,32 @@ const Funding = () => {
                     <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
                       Delivered in partnership with
                     </p>
-                    <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
-                      {activeProgram.partners.map((partner) => (
-                        <div key={partner.alt} className="flex h-12 items-center">
-                          <img
-                            src={partner.logo}
-                            alt={partner.alt}
-                            loading="lazy"
-                            className="max-h-12 w-auto max-w-[190px] object-contain object-left"
-                          />
-                        </div>
-                      ))}
+                    <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5">
+                      {activeProgram.partners.map((partner) => {
+                        const isCanada = partner.alt === 'Government of Canada';
+                        const isFednor = partner.alt === 'FedNor';
+                        const isOntario = partner.alt === 'Government of Ontario';
+                        return (
+                          <div key={partner.alt} className="flex items-center justify-start rounded-lg py-1">
+                            <img
+                              src={partner.logo}
+                              alt={partner.alt}
+                              loading="lazy"
+                              width={160}
+                              height={48}
+                              className={`w-auto object-contain ${
+                                isCanada
+                                  ? 'h-9 sm:h-10 md:h-11 max-w-[180px] sm:max-w-[200px]'
+                                  : isFednor
+                                  ? 'h-8 sm:h-9 md:h-10 max-w-[160px] sm:max-w-[180px]'
+                                  : isOntario
+                                  ? 'h-7 sm:h-8 md:h-9 max-w-[140px] sm:max-w-[160px]'
+                                  : 'h-7 sm:h-8 md:h-9 max-w-[130px] sm:max-w-[150px]'
+                              }`}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
