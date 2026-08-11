@@ -336,22 +336,18 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── WHY (dark) ───── */}
+        {/* ───── WHY (light) ───── */}
         <section
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+          style={{ background: PAPER, color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 10% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 90% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow className="!text-white">Why Operators Choose Us</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Eyebrow>Why Operators Choose Us</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
                 The credibility<br /><span style={{ color: TEAL }}>you need to win.</span>
               </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 Mining companies do not buy on promises. They buy on proof - and proof is what
                 we manufacture, underground, every day.
               </p>
@@ -362,16 +358,16 @@ const NorcatUnderground = () => {
                 <motion.article
                   key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-7 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="rounded-2xl p-7 h-full transition-shadow hover:shadow-lg"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,179,152,0.18)' }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
                     <b.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-lg mb-2 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                  <h3 className="font-black uppercase text-lg mb-2" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>
                     {b.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{b.description}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>{b.description}</p>
                 </motion.article>
               ))}
             </div>
