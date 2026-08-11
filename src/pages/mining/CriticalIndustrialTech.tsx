@@ -531,8 +531,8 @@ const CriticalIndustrialTech = () => {
                   </a>
                   <Link
                     to="/apply"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-black/5"
+                    style={{ fontFamily: FONT, color: NAVY, border: `2px solid ${TEAL}` }}
                   >
                     Contact NORCAT Innovation <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -540,7 +540,7 @@ const CriticalIndustrialTech = () => {
               </div>
 
               <div className="lg:col-span-6">
-                <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `1px solid ${BORDER}`, background: '#0a2a6b' }}>
+                <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid #d9dde5', background: PAPER, boxShadow: '0 24px 60px -30px rgba(0,26,77,0.35)' }}>
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                     <iframe
                       className="absolute inset-0 w-full h-full"
@@ -557,10 +557,11 @@ const CriticalIndustrialTech = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
-                      style={{ color: 'white' }}
+                      style={{ color: NAVY }}
                     >
                       OCI website <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
+
                   </div>
                 </div>
               </div>
