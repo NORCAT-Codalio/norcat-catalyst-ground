@@ -313,7 +313,7 @@ const CriticalIndustrialTech = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-6 flex flex-col items-start gap-4"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
                     <s.icon className="w-5 h-5" style={{ color: TEAL }} />
@@ -339,7 +339,7 @@ const CriticalIndustrialTech = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   className="group rounded-2xl p-6 transition-colors flex flex-col"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
