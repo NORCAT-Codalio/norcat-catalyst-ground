@@ -93,9 +93,9 @@ const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; clas
   </p>
 );
 
-const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
-  <As className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
-     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+const Display = ({ children, className = '', as: As = 'h2' as any, color = 'white' }: any) => (
+  <As className={`font-black uppercase leading-[0.95] tracking-tight ${className}`}
+     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color }}>
     {children}
   </As>
 );
@@ -258,29 +258,19 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── CAPABILITIES (dark) ───── */}
+        {/* ───── CAPABILITIES (light) ───── */}
         <section
           id="capabilities"
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+          style={{ background: 'white', color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
-          />
-          <img
-            src={norcatHalfLogo.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute -right-20 -bottom-20 w-[420px] opacity-[0.05] pointer-events-none select-none"
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow className="!text-white">What You Can Test</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Eyebrow>What You Can Test</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
                 If it belongs in a mine,<br /><span style={{ color: TEAL }}>we can run it underground.</span>
               </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 From autonomous vehicles and battery-electric equipment to 5G, sensors and AI
                 platforms - every category of mining technology has been tested here.
               </p>
@@ -291,16 +281,16 @@ const NorcatUnderground = () => {
                 <motion.article
                   key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }}
-                  className="group rounded-2xl p-6 transition-colors h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="group rounded-2xl p-6 transition-shadow hover:shadow-lg h-full"
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}
                   >
                     <c.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="text-sm md:text-[15px] font-bold text-white leading-snug" style={{ fontFamily: FONT }}>
+                  <h3 className="text-sm md:text-[15px] font-bold leading-snug" style={{ fontFamily: FONT, color: NAVY }}>
                     {c.title}
                   </h3>
                 </motion.article>
@@ -346,22 +336,18 @@ const NorcatUnderground = () => {
           </div>
         </section>
 
-        {/* ───── WHY (dark) ───── */}
+        {/* ───── WHY (light) ───── */}
         <section
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
+          style={{ background: PAPER, color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 10% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 90% 90%, rgba(47,111,214,0.15), transparent 45%)` }}
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow className="!text-white">Why Operators Choose Us</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Eyebrow>Why Operators Choose Us</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
                 The credibility<br /><span style={{ color: TEAL }}>you need to win.</span>
               </Display>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 Mining companies do not buy on promises. They buy on proof - and proof is what
                 we manufacture, underground, every day.
               </p>
@@ -372,51 +358,41 @@ const NorcatUnderground = () => {
                 <motion.article
                   key={i}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-7 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="rounded-2xl p-7 h-full transition-shadow hover:shadow-lg"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,179,152,0.18)' }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
                     <b.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-lg mb-2 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                  <h3 className="font-black uppercase text-lg mb-2" style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>
                     {b.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{b.description}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>{b.description}</p>
                 </motion.article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ───── CIT PROGRAM (dark) ───── */}
+        {/* ───── CIT PROGRAM (light) ───── */}
         <section
           className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}
+          style={{ background: 'white', color: NAVY }}
         >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)` }}
-          />
-          <img
-            src={norcatHalfLogo.url}
-            alt=""
-            aria-hidden="true"
-            className="absolute -right-20 -top-20 w-[420px] opacity-[0.06] pointer-events-none select-none"
-          />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
                 className="lg:col-span-7"
               >
-                <Eyebrow className="!text-white">Critical Industrial Technologies</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Eyebrow>Critical Industrial Technologies</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
                   The proving ground for<br /><span style={{ color: TEAL }}>CIT ventures.</span>
                 </Display>
-                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Underground is the test-and-validation backbone of our Critical Industrial Technologies (CIT) program. CIT companies use the facility to run structured trials, capture real-world performance data, and earn the credibility needed to sell into global mining and industrial markets.
                 </p>
-                <p className="mt-4 text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                <p className="mt-4 text-base leading-relaxed" style={{ color: '#475068' }}>
                   From early-stage prototypes to production-ready systems, we help CIT participants move from lab to mine faster - with engineering support, customer introductions, and a facility no one else can replicate.
                 </p>
               </motion.div>
@@ -424,7 +400,7 @@ const NorcatUnderground = () => {
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}
                 className="lg:col-span-5"
               >
-                <div className="rounded-2xl p-7 md:p-9" style={{ background: 'rgba(0,26,77,0.45)', border: `1px solid ${BORDER}`, backdropFilter: 'blur(8px)' }}>
+                <div className="rounded-2xl p-7 md:p-9" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`, border: `1px solid ${BORDER}`, boxShadow: '0 24px 60px -30px rgba(0,26,77,0.35)' }}>
                   <h3 className="font-black uppercase text-lg mb-5 text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
                     Why CIT companies use NORCAT Underground
                   </h3>
