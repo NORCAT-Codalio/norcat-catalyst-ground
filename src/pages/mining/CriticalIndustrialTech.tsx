@@ -288,7 +288,8 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── CRITICAL TECHNOLOGY AREAS + KEY SECTORS (light) ───── */}
-        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
+        <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: PAPER, color: NAVY }}>
+
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Key Sectors</Eyebrow>
