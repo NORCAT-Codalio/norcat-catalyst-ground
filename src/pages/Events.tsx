@@ -8,6 +8,28 @@ import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import pitchEventImage from '@/assets/pitch-event.jpg';
 import signatureLines from '@/assets/signature-lines.png';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+
+// ── Brand tokens (mirrors About / Home2) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+     style={{ fontFamily: FONT, color: TEAL }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+    {children}
+  </p>
+);
+
+const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
+  <As className={`font-black uppercase leading-[0.95] tracking-tight text-white ${className}`}
+     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+    {children}
+  </As>
+);
 
 // ── Neumorphic icon container (matches homepage) ──
 const iconContainerStyle: React.CSSProperties = {
