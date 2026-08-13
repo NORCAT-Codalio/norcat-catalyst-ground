@@ -630,7 +630,7 @@ export default function Events() {
           <ScrollReveal>
             <SectionHead
               eyebrow="FLAGSHIP"
-              title={<>EVENTS WORTH<br />CLEARING YOUR CALENDAR FOR.</>}
+              title={<>THE MAIN STAGE.</>}
               aside={`${featuredEvents.length} featured`}
             />
           </ScrollReveal>
