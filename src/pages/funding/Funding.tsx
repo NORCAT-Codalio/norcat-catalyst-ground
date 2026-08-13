@@ -50,6 +50,7 @@ type ProgramTab = {
   benefits: string[];
   href: string;
   image: string;
+  imagePosition?: string;
   partners: { logo: string; alt: string; height?: number }[];
 };
 
@@ -121,6 +122,7 @@ const programTabs: ProgramTab[] = [
     ],
     href: '/funding/sudbury-catalyst-fund',
     image: featuredScf.url,
+    imagePosition: 'left center',
     partners: [
       { logo: fednorLogo, alt: 'FedNor' },
       { logo: nickelBasinLogo, alt: 'Nickel Basin Federal Development Corporation' },
@@ -236,6 +238,7 @@ const Funding = () => {
                     src={activeProgram.image}
                     alt={activeProgram.name}
                     className="absolute inset-0 w-full h-full object-cover"
+                    style={{ objectPosition: (activeProgram as { imagePosition?: string }).imagePosition ?? 'center' }}
                   />
                 </div>
                 <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
