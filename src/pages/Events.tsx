@@ -517,14 +517,12 @@ export default function Events() {
 
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-              <div>
-                <Eyebrow style={{ color: '#FFFFFF' }}>Discover What's Happening</Eyebrow>
-                <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                  Upcoming <span style={{ color: TEAL }}>Events.</span>
-                </Display>
-              </div>
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed lg:pt-10" style={{ color: 'rgba(255,255,255,0.85)' }}>
+            <div className="max-w-4xl">
+              <Eyebrow style={{ color: '#FFFFFF' }}>Discover What's Happening</Eyebrow>
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                Upcoming <span style={{ color: TEAL }}>Events.</span>
+              </Display>
+              <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Connect with founders, investors, and industry leaders at our conferences, workshops, and networking events.
               </p>
             </div>
