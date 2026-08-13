@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import pitchEventImage from '@/assets/pitch-event.jpg';
-import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // ── Brand tokens (mirrors About / Home2) ──
@@ -515,11 +514,6 @@ export default function Events() {
         <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }} />
         <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
              style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }} />
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
-        }} />
-        <img src={signatureLines} alt="" aria-hidden="true"
-             className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
