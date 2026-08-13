@@ -592,7 +592,7 @@ export default function Events() {
             />
           </ScrollReveal>
 
-          <div className={cn("gap-6 md:gap-8", featuredEvents.length === 1 ? "max-w-3xl" : "grid md:grid-cols-2")}>
+          <div className="grid gap-6 md:gap-8">
             {featuredEvents.map((event, i) => (
               <ScrollReveal key={event.id} delay={i * 100}>
                 <FeaturedEventCard event={event} />
