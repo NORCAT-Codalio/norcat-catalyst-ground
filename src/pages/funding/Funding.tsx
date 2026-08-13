@@ -50,6 +50,7 @@ type ProgramTab = {
   benefits: string[];
   href: string;
   image: string;
+  imagePosition?: string;
   partners: { logo: string; alt: string; height?: number }[];
 };
 
