@@ -57,6 +57,7 @@ interface Event {
   host?: string;
   highlight?: string;
   learnMoreUrl?: string;
+  ticketsUrl?: string;
 }
 
 const upcomingEvents: Event[] = [
@@ -75,6 +76,7 @@ const upcomingEvents: Event[] = [
     host: 'NORCAT Innovation',
     highlight: 'Learn more',
     learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
+    ticketsUrl: 'https://www.eventbrite.ca/e/venture-north-pitch-2026-tickets-1976742143965',
   },
   {
     id: 'gdg-workshop-2026',
@@ -422,6 +424,33 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
         <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: BODY }}>{event.description}</p>
 
         <div className="mt-auto flex flex-wrap items-center gap-4">
+          {event.ticketsUrl ? (
+            <a href={event.ticketsUrl}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
+               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
+              Tickets
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          ) : event.learnMoreUrl ? (
+            <a href={event.learnMoreUrl}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
+               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
+              Learn More
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          ) : (
+            <a href="#"
+               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
+               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
+              {event.registrationOpen ? 'Register' : 'Coming Soon'}
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          )}
+
           {event.attendees ? (
             <span className="flex items-center gap-1.5 text-sm" style={{ color: BODY }}>
               <Users className="w-4 h-4" />{event.attendees} attended
@@ -435,24 +464,6 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
               <span className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{event.highlight}</span>
             )
           ) : <span />}
-
-          {event.learnMoreUrl ? (
-            <a href={event.learnMoreUrl}
-               target="_blank"
-               rel="noopener noreferrer"
-               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
-               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
-              Tickets
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          ) : (
-            <a href="#"
-               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
-               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
-              {event.registrationOpen ? 'Register' : 'Coming Soon'}
-              <ChevronRight className="w-4 h-4" />
-            </a>
-          )}
         </div>
       </div>
     </div>
