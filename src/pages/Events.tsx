@@ -742,7 +742,9 @@ export default function Events() {
           </ScrollReveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {pastHighlights.map((event, i) => {
+            {[...pastHighlights]
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((event, i) => {
               const Icon = typeIconMap[event.type] || Calendar;
               const displayDate = new Date(event.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
               return (
