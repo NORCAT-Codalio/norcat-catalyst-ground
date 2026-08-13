@@ -356,10 +356,10 @@ const PAPER = '#F2F3F6';
 const CARD_BORDER = '#d9dde5';
 const BODY = '#5b6478';
 
-const SectionHead = ({ eyebrow, title, aside }: { eyebrow: string; title: React.ReactNode; aside?: React.ReactNode }) => (
+const SectionHead = ({ eyebrow, title, aside, eyebrowStyle }: { eyebrow: string; title: React.ReactNode; aside?: React.ReactNode; eyebrowStyle?: React.CSSProperties }) => (
   <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14">
     <div className="text-left">
-      <Eyebrow>{eyebrow}</Eyebrow>
+      <Eyebrow style={eyebrowStyle}>{eyebrow}</Eyebrow>
       <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
           style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
         {title}
@@ -574,7 +574,8 @@ export default function Events() {
           <ScrollReveal>
             <SectionHead
               eyebrow="FLAGSHIP"
-              title={<span style={{ color: BLUE }}>FEATURED EVENTS</span>}
+              eyebrowStyle={{ color: BLUE }}
+              title={<span style={{ color: TEAL }}>FEATURED EVENTS</span>}
               aside={`${featuredEvents.length} featured`}
             />
           </ScrollReveal>
