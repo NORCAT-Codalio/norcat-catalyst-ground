@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, MapPin, Users, Clock, Video, Search, ChevronRight, Sparkles, Mic, Presentation, Globe, Coffee, GraduationCap, Radio } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Users, Clock, Video, Search, ChevronRight, Sparkles, Mic, Presentation, Globe, Coffee, GraduationCap, Radio, ExternalLink } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Input } from '@/components/ui/input';
@@ -56,6 +56,7 @@ interface Event {
   image?: string;
   host?: string;
   highlight?: string;
+  learnMoreUrl?: string;
 }
 
 const upcomingEvents: Event[] = [
@@ -66,13 +67,14 @@ const upcomingEvents: Event[] = [
     time: '5:00 PM EST',
     location: 'College Boréal',
     type: 'Pitch Competition',
-    description: "Northern Ontario's premier startup pitch competition returns. Save the date — details, applications, and venue announcement coming soon.",
+    description: "Northern Ontario's premier startup pitch competition returns to College Boréal this fall. Join founders, investors, and ecosystem partners for an evening of high-impact pitches, networking, and celebration — where the region's most promising ventures compete for recognition and a share of $100,000 in prizes.",
     featured: true,
     registrationOpen: false,
     isVirtual: false,
     image: pitchEventImage,
     host: 'NORCAT Innovation',
     highlight: 'Save the date',
+    learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
   },
   {
     id: 'gdg-workshop-2026',
@@ -377,9 +379,9 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
   const Icon = typeIconMap[event.type] || Calendar;
 
   return (
-    <div className="group rounded-2xl overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-1.5 h-full flex flex-col"
+    <div className="group rounded-2xl overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-1.5 h-full flex flex-col md:flex-row"
          style={{ border: `1px solid ${CARD_BORDER}` }}>
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative md:w-1/2 lg:w-5/12 h-64 md:h-auto overflow-hidden">
         <img
           src={event.image || pitchEventImage}
           alt={event.title}
@@ -403,13 +405,13 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
         </div>
       </div>
 
-      <div className="p-7 flex flex-col flex-1">
-        <h3 className="font-black uppercase text-xl md:text-2xl leading-[1.05] mb-3"
+      <div className="p-7 md:p-10 flex flex-col flex-1 justify-center">
+        <h3 className="font-black uppercase text-2xl md:text-3xl lg:text-4xl leading-[1.05] mb-4"
             style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
           {event.title}
         </h3>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm mb-4" style={{ color: BODY }}>
+        <div className="flex flex-wrap items-center gap-4 text-sm mb-6" style={{ color: BODY }}>
           <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" style={{ color: TEAL }} />{event.time}</span>
           <span className="flex items-center gap-1.5">
             {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" style={{ color: TEAL }} /> : <MapPin className="w-4 h-4" style={{ color: TEAL }} />}
@@ -417,9 +419,9 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
           </span>
         </div>
 
-        <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: BODY }}>{event.description}</p>
+        <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: BODY }}>{event.description}</p>
 
-        <div className="mt-auto flex items-center justify-between gap-4">
+        <div className="mt-auto flex flex-wrap items-center gap-4">
           {event.attendees ? (
             <span className="flex items-center gap-1.5 text-sm" style={{ color: BODY }}>
               <Users className="w-4 h-4" />{event.attendees} attended
@@ -428,12 +430,23 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
             <span className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{event.highlight}</span>
           ) : <span />}
 
-          <a href="#"
-             className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
-             style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
-            {event.registrationOpen ? 'Register' : 'Coming Soon'}
-            <ChevronRight className="w-4 h-4" />
-          </a>
+          {event.learnMoreUrl ? (
+            <a href={event.learnMoreUrl}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
+               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
+              Learn More
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          ) : (
+            <a href="#"
+               className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
+               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
+              {event.registrationOpen ? 'Register' : 'Coming Soon'}
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -579,7 +592,7 @@ export default function Events() {
             />
           </ScrollReveal>
 
-          <div className={cn("gap-6 md:gap-8", featuredEvents.length === 1 ? "max-w-3xl" : "grid md:grid-cols-2")}>
+          <div className="grid gap-6 md:gap-8">
             {featuredEvents.map((event, i) => (
               <ScrollReveal key={event.id} delay={i * 100}>
                 <FeaturedEventCard event={event} />
