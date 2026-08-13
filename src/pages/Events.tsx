@@ -16,10 +16,10 @@ const BLUE = '#003DA5';
 const TEAL = '#00B398';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
   <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+     style={{ fontFamily: FONT, color: TEAL, ...style }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: style?.color || TEAL }} />
     {children}
   </p>
 );
@@ -525,7 +525,7 @@ export default function Events() {
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <div>
-                <Eyebrow>Discover What's Happening</Eyebrow>
+                <Eyebrow style={{ color: '#FFFFFF' }}>Discover What's Happening</Eyebrow>
                 <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                   Upcoming <span style={{ color: TEAL }}>Events.</span>
                 </Display>
