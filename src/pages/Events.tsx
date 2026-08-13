@@ -421,7 +421,11 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
           </span>
         </div>
 
-        <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: BODY }}>{event.description}</p>
+        <div className="mb-8 space-y-4">
+          {event.description.split('\n\n').map((paragraph, i) => (
+            <p key={i} className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>{paragraph}</p>
+          ))}
+        </div>
 
         <div className="mt-auto flex flex-wrap items-center gap-4">
           {event.ticketsUrl ? (
