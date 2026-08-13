@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import pitchEventImage from '@/assets/pitch-event.jpg';
+import ventureNorthPitch2026Image from '@/assets/venture-north-pitch-2026.jpg.asset.json';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // ── Brand tokens (mirrors About / Home2) ──
@@ -73,7 +74,7 @@ const upcomingEvents: Event[] = [
     featured: true,
     registrationOpen: false,
     isVirtual: false,
-    image: pitchEventImage,
+    image: ventureNorthPitch2026Image.url,
     host: 'NORCAT Innovation',
     highlight: 'Learn more',
     learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
