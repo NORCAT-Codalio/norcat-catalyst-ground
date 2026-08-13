@@ -574,7 +574,8 @@ export default function Events() {
           <ScrollReveal>
             <SectionHead
               eyebrow="FLAGSHIP"
-              title={<span style={{ color: BLUE }}>FEATURED EVENTS</span>}
+              eyebrowStyle={{ color: BLUE }}
+              title={<span style={{ color: TEAL }}>FEATURED EVENTS</span>}
               aside={`${featuredEvents.length} featured`}
             />
           </ScrollReveal>
