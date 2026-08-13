@@ -427,7 +427,13 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
               <Users className="w-4 h-4" />{event.attendees} attended
             </span>
           ) : event.highlight ? (
-            <span className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{event.highlight}</span>
+            event.learnMoreUrl ? (
+              <a href={event.learnMoreUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-[0.16em] hover:underline" style={{ color: TEAL }}>
+                {event.highlight}
+              </a>
+            ) : (
+              <span className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{event.highlight}</span>
+            )
           ) : <span />}
 
           {event.learnMoreUrl ? (
