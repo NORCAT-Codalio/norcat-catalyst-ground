@@ -352,69 +352,85 @@ const formatDate = (dateStr: string) => {
   };
 };
 
+const PAPER = '#F2F3F6';
+const CARD_BORDER = '#d9dde5';
+const BODY = '#5b6478';
+
+const SectionHead = ({ eyebrow, title, aside }: { eyebrow: string; title: React.ReactNode; aside?: React.ReactNode }) => (
+  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-14">
+    <div className="text-left">
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+          style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+        {title}
+      </h2>
+    </div>
+    {aside && (
+      <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: BODY, fontFamily: FONT }}>{aside}</p>
+    )}
+  </div>
+);
+
 // ── Featured Event Card ──
 const FeaturedEventCard = ({ event }: { event: Event }) => {
   const dateInfo = formatDate(event.date);
   const Icon = typeIconMap[event.type] || Calendar;
 
   return (
-    <div className="group relative rounded-3xl overflow-hidden liquid-glass-light-strong hover:-translate-y-1 transition-all duration-500">
-      {/* Image */}
+    <div className="group rounded-2xl overflow-hidden bg-white transition-transform duration-300 hover:-translate-y-1.5 h-full flex flex-col"
+         style={{ border: `1px solid ${CARD_BORDER}` }}>
       <div className="relative h-56 overflow-hidden">
         <img
           src={event.image || pitchEventImage}
           alt={event.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(0,26,77,0.55) 100%)' }} />
 
         {/* Date badge */}
-        <div className="absolute top-4 left-4 liquid-glass-light-strong rounded-2xl px-4 py-3 text-center">
-          <div className="text-xs font-semibold text-muted-foreground">{dateInfo.month}</div>
-          <div className="text-2xl font-black text-foreground leading-none">{dateInfo.day}</div>
+        <div className="absolute top-4 left-4 rounded-xl px-4 py-3 text-center bg-white">
+          <div className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{dateInfo.month}</div>
+          <div className="text-2xl font-black leading-none" style={{ color: NAVY, fontFamily: FONT }}>{dateInfo.day}</div>
         </div>
 
         {/* Type badge */}
-        <div className="absolute top-24 left-4">
-          <span className="glass-frosted-btn rounded-full px-3 py-1.5 text-xs font-semibold flex items-center gap-1.5">
+        <div className="absolute top-4 right-4">
+          <span className="rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] flex items-center gap-1.5 text-white"
+                style={{ background: 'rgba(0,26,77,0.75)', backdropFilter: 'blur(6px)' }}>
             <Icon className="w-3 h-3" />
             {event.type}
           </span>
         </div>
-
-        {/* Bottom info */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-            {event.title}
-          </h3>
-          <div className="flex items-center gap-4 text-white/80 text-sm">
-            <div className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4" />
-              {event.time}
-            </div>
-            <div className="flex items-center gap-1.5">
-              {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" /> : <MapPin className="w-4 h-4" />}
-              {event.isVirtual ? 'Virtual' : event.isHybrid ? 'Hybrid' : event.location.split(',')[0]}
-            </div>
-          </div>
-        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <p className="text-muted-foreground mb-4 line-clamp-2">{event.description}</p>
+      <div className="p-7 flex flex-col flex-1">
+        <h3 className="font-black uppercase text-xl md:text-2xl leading-[1.05] mb-3"
+            style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+          {event.title}
+        </h3>
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {event.attendees && (
-              <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                <Users className="w-4 h-4" />
-                <span>{event.attendees} going</span>
-              </div>
-            )}
-          </div>
+        <div className="flex flex-wrap items-center gap-4 text-sm mb-4" style={{ color: BODY }}>
+          <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" style={{ color: TEAL }} />{event.time}</span>
+          <span className="flex items-center gap-1.5">
+            {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" style={{ color: TEAL }} /> : <MapPin className="w-4 h-4" style={{ color: TEAL }} />}
+            {event.isVirtual ? 'Virtual' : event.isHybrid ? 'Hybrid' : event.location}
+          </span>
+        </div>
 
-          <a href="#" className={cn("rounded-full px-6 py-2.5 text-sm font-semibold inline-flex items-center gap-2 no-underline", event.registrationOpen ? "glass-frosted-btn-teal" : "glass-frosted-btn-teal")}>
+        <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: BODY }}>{event.description}</p>
+
+        <div className="mt-auto flex items-center justify-between gap-4">
+          {event.attendees ? (
+            <span className="flex items-center gap-1.5 text-sm" style={{ color: BODY }}>
+              <Users className="w-4 h-4" />{event.attendees} attended
+            </span>
+          ) : event.highlight ? (
+            <span className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{event.highlight}</span>
+          ) : <span />}
+
+          <a href="#"
+             className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
+             style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
             {event.registrationOpen ? 'Register' : 'Coming Soon'}
             <ChevronRight className="w-4 h-4" />
           </a>
@@ -430,64 +446,60 @@ const EventCard = ({ event }: { event: Event }) => {
   const Icon = typeIconMap[event.type] || Calendar;
 
   return (
-    <div className="group flex gap-5 p-5 rounded-3xl liquid-glass-light hover:-translate-y-0.5 transition-all duration-300">
+    <div className="group flex flex-col sm:flex-row gap-5 p-5 md:p-6 rounded-2xl bg-white transition-transform duration-300 hover:-translate-y-0.5"
+         style={{ border: `1px solid ${CARD_BORDER}` }}>
       {/* Date column */}
-      <div className="flex-shrink-0 w-16 text-center pt-1">
-        <div className="text-xs font-semibold text-primary uppercase">{dateInfo.month}</div>
-        <div className="text-3xl font-black text-foreground leading-none">{dateInfo.day}</div>
-        <div className="text-xs text-muted-foreground mt-1">{dateInfo.weekday}</div>
+      <div className="flex-shrink-0 sm:w-20 text-left sm:text-center">
+        <div className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>{dateInfo.month}</div>
+        <div className="text-3xl font-black leading-none" style={{ color: NAVY, fontFamily: FONT }}>{dateInfo.day}</div>
+        <div className="text-xs mt-1" style={{ color: BODY }}>{dateInfo.weekday}</div>
       </div>
 
-      {/* Content */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="min-w-0">
-            <div className="flex items-center gap-2 mb-1.5">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center" style={iconContainerStyle}>
-                <Icon className="w-3.5 h-3.5" style={{ color: 'hsl(168, 100%, 35%)' }} />
-              </div>
-              <span className="text-xs font-semibold text-primary uppercase tracking-wider">{event.type}</span>
-              {event.isVirtual && (
-                <span className="flex items-center gap-1 text-xs text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-3 mb-2">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>
+                <Icon className="w-3.5 h-3.5" />
+                {event.type}
+              </span>
+              {(event.isVirtual || event.isHybrid) && (
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: BODY }}>
                   <Video className="w-3 h-3" />
-                  Virtual
-                </span>
-              )}
-              {event.isHybrid && (
-                <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <Video className="w-3 h-3" />
-                  Hybrid
+                  {event.isVirtual ? 'Virtual' : 'Hybrid'}
                 </span>
               )}
             </div>
 
-            <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors mb-1 truncate" style={{ fontFamily: "'Open Sans', sans-serif" }}>
+            <h3 className="font-black uppercase text-base md:text-lg leading-tight mb-2"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
               {event.title}
             </h3>
 
-            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-2">
-              <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
-                {event.time}
-              </span>
-              <span className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5" />
-                {event.location}
-              </span>
+            <div className="flex flex-wrap items-center gap-4 text-sm" style={{ color: BODY }}>
+              <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" />{event.time}</span>
+              <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" />{event.location}</span>
             </div>
-
-            <p className="text-sm text-muted-foreground line-clamp-1">{event.description}</p>
           </div>
 
-          <div className="flex-shrink-0 flex flex-col items-end gap-2">
+          <div className="flex-shrink-0 flex items-center gap-3">
             {event.attendees && (
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1 text-xs" style={{ color: BODY }}>
                 <Users className="w-3.5 h-3.5" />
                 {event.attendees}{event.maxAttendees && `/${event.maxAttendees}`}
-              </div>
+              </span>
             )}
-            <a href="#" className={cn("rounded-full px-5 py-2 text-xs font-semibold inline-flex items-center gap-1.5 no-underline", event.registrationOpen ? "glass-frosted-btn-teal" : "bg-muted text-muted-foreground cursor-not-allowed")}>
-              {event.registrationOpen ? 'Register' : 'Applications Closed'}
+            <a
+              href="#"
+              className={cn(
+                "rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] inline-flex items-center gap-1.5 no-underline transition-all duration-300",
+                event.registrationOpen ? "text-white hover:-translate-y-0.5" : ""
+              )}
+              style={event.registrationOpen
+                ? { background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }
+                : { background: PAPER, color: BODY, fontFamily: FONT, border: `1px solid ${CARD_BORDER}` }}
+            >
+              {event.registrationOpen ? 'Register' : 'Coming Soon'}
             </a>
           </div>
         </div>
@@ -557,21 +569,17 @@ export default function Events() {
       </section>
 
       {/* ── Featured Events ── */}
-      <section className="section-padding-sm" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-16 md:py-24" style={{ background: PAPER }}>
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
-            <div className="flex items-center justify-between mb-10">
-              <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                Featured{' '}
-                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
-                  Events
-                </span>
-              </h2>
-              <span className="text-sm text-muted-foreground">{featuredEvents.length} flagship events</span>
-            </div>
+            <SectionHead
+              eyebrow="FLAGSHIP"
+              title={<>EVENTS WORTH<br />CLEARING YOUR CALENDAR FOR.</>}
+              aside={`${featuredEvents.length} featured`}
+            />
           </ScrollReveal>
 
-          <div className={cn("gap-8", featuredEvents.length === 1 ? "max-w-3xl mx-auto" : "grid md:grid-cols-2")}>
+          <div className={cn("gap-6 md:gap-8", featuredEvents.length === 1 ? "max-w-3xl" : "grid md:grid-cols-2")}>
             {featuredEvents.map((event, i) => (
               <ScrollReveal key={event.id} delay={i * 100}>
                 <FeaturedEventCard event={event} />
@@ -581,40 +589,48 @@ export default function Events() {
         </div>
       </section>
 
-      {/* ── Search & Filter Bar ── */}
-      <section className="sticky top-16 z-30 border-y border-border" style={{ background: 'hsla(220, 15%, 92%, 0.85)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="py-4 flex flex-col md:flex-row gap-4 items-center">
-            {/* Search */}
-            <div className="relative w-full md:w-80">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+      {/* ── All Events ── */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+          <ScrollReveal>
+            <SectionHead
+              eyebrow="WHAT'S NEXT"
+              title={<>ALL UPCOMING EVENTS.</>}
+              aside={`${filteredEvents.length} events`}
+            />
+          </ScrollReveal>
+
+          {/* Search & filters */}
+          <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center mb-8">
+            <div className="relative w-full lg:w-80">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: BODY }} />
               <Input
                 type="text"
                 placeholder="Search events..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 rounded-full border-border focus:border-primary focus:ring-primary"
+                className="pl-11 h-11 rounded-full bg-white"
+                style={{ borderColor: CARD_BORDER }}
               />
             </div>
 
-            {/* Type filters with animated pill */}
-            <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide flex-1">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide flex-1">
               {eventTypes.map((type) => (
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={cn(
-                    "relative px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
-                    selectedType === type
-                      ? "text-primary-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
+                  className="relative px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.12em] whitespace-nowrap transition-colors"
+                  style={{
+                    color: selectedType === type ? '#FFFFFF' : BODY,
+                    border: `1px solid ${selectedType === type ? 'transparent' : CARD_BORDER}`,
+                    fontFamily: FONT,
+                  }}
                 >
                   {selectedType === type && (
                     <motion.div
                       layoutId="events-filter-pill"
                       className="absolute inset-0 rounded-full"
-                      style={{ background: 'hsl(168 100% 35%)' }}
+                      style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)` }}
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -622,27 +638,9 @@ export default function Events() {
                 </button>
               ))}
             </div>
-
-            <div className="text-sm text-muted-foreground whitespace-nowrap">
-              {filteredEvents.length} events
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── All Events List ── */}
-      <section className="section-padding-sm" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="container mx-auto px-4 lg:px-8">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-8" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-              All Upcoming{' '}
-              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
-                Events
-              </span>
-            </h2>
-          </ScrollReveal>
-
-          <div className="space-y-3">
+          <div className="space-y-4">
             <AnimatePresence mode="popLayout">
               {filteredEvents.map((event, i) => (
                 <motion.div
@@ -650,7 +648,7 @@ export default function Events() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.04 }}
                 >
                   <EventCard event={event} />
                 </motion.div>
@@ -659,14 +657,15 @@ export default function Events() {
           </div>
 
           {filteredEvents.length === 0 && (
-            <div className="text-center py-16 liquid-glass-light rounded-3xl">
-              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={iconContainerStyle}>
-                <Calendar className="w-6 h-6" style={{ color: 'hsl(168, 100%, 35%)' }} />
+            <div className="text-center py-16 rounded-2xl bg-white" style={{ border: `1px solid ${CARD_BORDER}` }}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: PAPER }}>
+                <Calendar className="w-6 h-6" style={{ color: TEAL }} />
               </div>
-              <p className="text-muted-foreground mb-4">No events match your search.</p>
+              <p className="mb-6" style={{ color: BODY }}>No events match your search.</p>
               <button
                 onClick={() => { setSelectedType('All'); setSearchQuery(''); }}
-                className="glass-frosted-btn-teal rounded-full px-6 py-2.5 text-sm font-semibold"
+                className="rounded-full px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white"
+                style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}
               >
                 Clear filters
               </button>
@@ -676,46 +675,45 @@ export default function Events() {
       </section>
 
       {/* ── Past Highlights ── */}
-      <section className="section-padding-sm bg-background border-t border-border">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-16 md:py-24" style={{ background: PAPER }}>
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
-            <div className="flex items-center justify-between mb-10">
-              <h2 className="text-3xl md:text-4xl font-medium text-foreground" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                Past{' '}
-                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
-                  Highlights
-                </span>
-              </h2>
-              <Link to="#" className="text-primary font-medium text-sm hover:underline flex items-center gap-1">
-                View all
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-            </div>
+            <SectionHead
+              eyebrow="LOOKING BACK"
+              title={<>PAST HIGHLIGHTS.</>}
+              aside={`${pastHighlights.length} events`}
+            />
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {pastHighlights.map((event, i) => {
               const Icon = typeIconMap[event.type] || Calendar;
               const displayDate = new Date(event.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
               return (
-                <ScrollReveal key={event.id} delay={i * 100}>
-                  <div className="p-6 rounded-3xl liquid-glass-light hover:-translate-y-1 transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={iconContainerStyle}>
-                        <Icon className="w-5 h-5" style={{ color: 'hsl(168, 100%, 35%)' }} />
-                      </div>
-                      <div className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5" />
-                        {displayDate}
-                      </div>
-                    </div>
-                    <h3 className="font-bold text-lg text-foreground mb-3" style={{ fontFamily: "'Open Sans', sans-serif" }}>{event.title}</h3>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="flex items-center gap-1 text-muted-foreground">
-                        <Users className="w-4 h-4" />
-                        {event.attendees}{event.maxAttendees && '+'}
+                <ScrollReveal key={event.id} delay={i * 80}>
+                  <div className="h-full p-6 md:p-7 rounded-2xl bg-white transition-transform duration-300 hover:-translate-y-1"
+                       style={{ border: `1px solid ${CARD_BORDER}` }}>
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: TEAL }}>
+                        <Icon className="w-3.5 h-3.5" />
+                        {event.type}
                       </span>
-                      <span className="text-primary font-medium">{event.highlight}</span>
+                      <span className="text-xs" style={{ color: BODY }}>{displayDate}</span>
+                    </div>
+                    <h3 className="font-black uppercase text-lg leading-tight mb-4"
+                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      {event.title}
+                    </h3>
+                    <div className="flex items-center gap-4 text-sm pt-4" style={{ borderTop: `1px solid ${CARD_BORDER}` }}>
+                      {event.attendees && (
+                        <span className="flex items-center gap-1.5" style={{ color: BODY }}>
+                          <Users className="w-4 h-4" />
+                          {event.attendees}{event.maxAttendees && '+'}
+                        </span>
+                      )}
+                      {event.highlight && (
+                        <span className="text-xs font-bold uppercase tracking-[0.14em]" style={{ color: TEAL }}>{event.highlight}</span>
+                      )}
                     </div>
                   </div>
                 </ScrollReveal>
@@ -725,62 +723,64 @@ export default function Events() {
         </div>
       </section>
 
-      {/* ── Newsletter CTA ── */}
-      <section className="relative py-24 overflow-hidden" style={{ background: 'hsl(224 71% 4%)' }}>
-        <div className="absolute top-[-30%] right-[-10%] w-[500px] h-[500px] rounded-full blur-3xl opacity-15 pointer-events-none" style={{ background: 'hsl(168 100% 35%)' }} />
+      {/* ── CTA: Newsletter + Host ── */}
+      <section className="py-16 md:py-24 relative overflow-hidden"
+               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 60%, ${NAVY} 100%)`, color: 'white' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255,255,255,0.16), transparent 35%), radial-gradient(circle at 90% 80%, rgba(0,179,152,0.32), transparent 45%)`,
+        }} />
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                Never Miss an{' '}
-                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
-                  Event
-                </span>
+        <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+                 style={{ fontFamily: FONT, color: 'white' }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
+                STAY IN THE LOOP
+              </p>
+              <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                NEVER MISS AN <span style={{ color: NAVY }}>EVENT.</span>
               </h2>
-              <p className="text-white/50 text-lg mb-10">
+              <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
                 Get notified about upcoming events, early registration, and exclusive invites.
               </p>
-            </ScrollReveal>
 
-            <ScrollReveal delay={100}>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 max-w-md">
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-primary liquid-glass"
+                  className="flex-1 h-12 px-5 rounded-full text-sm text-white placeholder:text-white/60"
+                  style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.28)' }}
                 />
-                <button className="glass-frosted-btn rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2">
+                <button className="rounded-full px-7 py-3.5 text-sm font-bold inline-flex items-center justify-center gap-2 transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap"
+                        style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
                   Subscribe
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* ── Host CTA ── */}
-      <section className="section-padding-sm" style={{ background: 'hsl(220 15% 92%)' }}>
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-              Want to Host an{' '}
-              <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
-                Event?
-              </span>
-            </h2>
-            <p className="body-md max-w-xl mx-auto mb-8">
-              Partner with NORCAT Innovation to host your next event at our facilities or collaborate on programming.
-            </p>
-            <Link
-              to="/apply"
-              className="glass-frosted-btn-teal rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2 no-underline"
-            >
-              Get in Touch
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </ScrollReveal>
+            <div className="rounded-2xl p-8 md:p-10"
+                 style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.22)' }}>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] mb-4" style={{ color: 'white' }}>Host with us</p>
+              <h3 className="font-black uppercase leading-[0.95] tracking-tight text-2xl md:text-3xl mb-4"
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                WANT TO HOST AN EVENT?
+              </h3>
+              <p className="text-sm md:text-base leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                Partner with NORCAT Innovation to host your next event at our facilities or collaborate on programming.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-transform duration-300 hover:-translate-y-1 no-underline"
+                style={{ background: 'white', color: NAVY, fontFamily: FONT }}
+              >
+                Get in Touch
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
