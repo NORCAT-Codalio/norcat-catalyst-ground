@@ -511,57 +511,53 @@ export default function Events() {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="relative pt-32 pb-20 overflow-hidden" style={{ background: 'hsl(224 71% 4%)' }}>
-        {/* Orbs */}
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full blur-3xl opacity-20 pointer-events-none" style={{ background: 'hsl(168 100% 35%)' }} />
-        <div className="absolute bottom-[-30%] right-[-5%] w-[500px] h-[500px] rounded-full blur-3xl opacity-15 pointer-events-none" style={{ background: 'hsl(172 100% 30%)' }} />
+      <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16" style={{ background: NAVY }}>
+        <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }} />
+        <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+             style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }} />
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+        }} />
+        <img src={signatureLines} alt="" aria-hidden="true"
+             className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="badge-dark mb-6 mx-auto w-fit">
-                <Sparkles className="w-4 h-4" />
-                Discover What's Happening
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              <div>
+                <Eyebrow>Discover What's Happening</Eyebrow>
+                <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                  Upcoming <span style={{ color: TEAL }}>Events.</span>
+                </Display>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[0.95] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-                Upcoming{' '}
-                <span style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 700, color: 'hsl(168, 100%, 35%)' }}>
-                  Events
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed lg:pt-10" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Connect with founders, investors, and industry leaders at our conferences, workshops, and networking events.
               </p>
+            </div>
+          </ScrollReveal>
 
-              {/* Animated stats marquee */}
-              <div className="liquid-glass rounded-full py-3 px-6 overflow-hidden max-w-xl mx-auto">
-                <div className="flex animate-marquee whitespace-nowrap">
-                {[
-                  '🎤 9 Upcoming Events',
-                  '🤖 6 AI Collective Workshops',
-                  '🏆 $100K in Prizes',
-                  '🌍 Hybrid & In-person',
-                  '📍 Sudbury & Online',
-                  '🎤 9 Upcoming Events',
-                  '🤖 6 AI Collective Workshops',
-                  '🏆 $100K in Prizes',
-                  '🌍 Hybrid & In-person',
-                  '📍 Sudbury & Online',
-                ].map((stat, i) => (
-                    <span key={i} className="text-white/70 text-sm mx-8">{stat}</span>
-                  ))}
+          {/* Stats bar */}
+          <ScrollReveal delay={100}>
+            <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 rounded-2xl p-5 md:p-8" style={{ background: 'white', border: '1px solid rgba(255,255,255,0.15)' }}>
+              {[
+                { number: '9', label: 'Upcoming Events', icon: Calendar },
+                { number: '6', label: 'AI Collective Workshops', icon: GraduationCap },
+                { number: '$100K', label: 'In Prizes', icon: Sparkles },
+                { number: 'Hybrid', label: 'In-person & Online', icon: Video },
+              ].map((s) => (
+                <div key={s.label} className="flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)' }}>
+                    <s.icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: TEAL }} />
+                  </div>
+                  <div>
+                    <p className="text-lg md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
+                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>
-
-        {/* Signature lines */}
-        <img
-          src={signatureLines}
-          alt="" aria-hidden="true"
-          className="absolute bottom-0 left-0 w-full opacity-[0.03] pointer-events-none"
-        />
       </section>
 
       {/* ── Featured Events ── */}
