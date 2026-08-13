@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, MapPin, Users, Clock, Video, Search, ChevronRight, Sparkles, Mic, Presentation, Globe, Coffee, GraduationCap, Radio, ExternalLink } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Users, Clock, Video, Search, ChevronRight, Sparkles, Mic, Presentation, Globe, Coffee, GraduationCap, Radio, ExternalLink, Trophy } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Input } from '@/components/ui/input';
@@ -58,6 +58,7 @@ interface Event {
   highlight?: string;
   learnMoreUrl?: string;
   ticketsUrl?: string;
+  prizePool?: string;
 }
 
 const upcomingEvents: Event[] = [
@@ -77,6 +78,7 @@ const upcomingEvents: Event[] = [
     highlight: 'Learn more',
     learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
     ticketsUrl: 'https://www.eventbrite.ca/e/venture-north-pitch-2026-tickets-1976742143965',
+    prizePool: '$15,000 CAD',
   },
   {
     id: 'gdg-workshop-2026',
@@ -419,6 +421,12 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
             {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" style={{ color: TEAL }} /> : <MapPin className="w-4 h-4" style={{ color: TEAL }} />}
             {event.isVirtual ? 'Virtual' : event.isHybrid ? 'Hybrid' : event.location}
           </span>
+          {event.prizePool && (
+            <span className="flex items-center gap-1.5">
+              <Trophy className="w-4 h-4" style={{ color: TEAL }} />
+              {event.prizePool}
+            </span>
+          )}
         </div>
 
         <div className="mb-8 space-y-4">
