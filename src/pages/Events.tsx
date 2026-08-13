@@ -421,6 +421,12 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
             {(event.isVirtual || event.isHybrid) ? <Video className="w-4 h-4" style={{ color: TEAL }} /> : <MapPin className="w-4 h-4" style={{ color: TEAL }} />}
             {event.isVirtual ? 'Virtual' : event.isHybrid ? 'Hybrid' : event.location}
           </span>
+          {event.prizePool && (
+            <span className="flex items-center gap-1.5">
+              <Trophy className="w-4 h-4" style={{ color: TEAL }} />
+              {event.prizePool}
+            </span>
+          )}
         </div>
 
         <div className="mb-8 space-y-4">
