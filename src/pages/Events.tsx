@@ -56,6 +56,7 @@ interface Event {
   image?: string;
   host?: string;
   highlight?: string;
+  learnMoreUrl?: string;
 }
 
 const upcomingEvents: Event[] = [
