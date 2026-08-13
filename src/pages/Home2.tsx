@@ -22,7 +22,7 @@ import ovinMiningInnovationAsset from '@/assets/ovin-mining-innovation.png.asset
 import featuredCitPhoto from '@/assets/featured-cit-photo.png';
 import featuredCore5Photo from '@/assets/featured-core5-photo.png';
 import featuredIapPhoto from '@/assets/featured-iap-photo.jpg.asset.json';
-import featuredRaiiPhoto from '@/assets/featured-raii-photo.png';
+import featuredRaiiPhoto from '@/assets/featured-raii-photo.png.asset.json';
 import featuredScfPhoto from '@/assets/featured-scf-photo.jpg.asset.json';
 import citLogo from '@/assets/logos/cit-logo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
@@ -32,7 +32,7 @@ import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
 const featuredCitImg = featuredCitPhoto;
 const featuredIapImg = featuredIapPhoto.url;
-const featuredRaiiImg = featuredRaiiPhoto;
+const featuredRaiiImg = featuredRaiiPhoto.url;
 const featuredScfImg = featuredScfPhoto.url;
 const featuredCore5Img = featuredCore5Photo;
 
