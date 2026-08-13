@@ -536,25 +536,29 @@ export default function Events() {
             </div>
           </ScrollReveal>
 
-          {/* Stats bar */}
+          {/* Scrolling highlights bar */}
           <ScrollReveal delay={100}>
-            <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 rounded-2xl p-5 md:p-8" style={{ background: 'white', border: '1px solid rgba(255,255,255,0.15)' }}>
-              {[
-                { number: '9', label: 'Upcoming Events', icon: Calendar },
-                { number: '6', label: 'AI Collective Workshops', icon: GraduationCap },
-                { number: '$100K', label: 'In Prizes', icon: Sparkles },
-                { number: 'Hybrid', label: 'In-person & Online', icon: Video },
-              ].map((s) => (
-                <div key={s.label} className="flex items-center gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)' }}>
-                    <s.icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: TEAL }} />
+            <div className="mt-10 md:mt-14 overflow-hidden rounded-2xl py-4 md:py-5" style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+              <div className="flex animate-marquee whitespace-nowrap">
+                {[...Array(2)].map((_, setIndex) => (
+                  <div key={setIndex} className="flex items-center gap-8 md:gap-12 px-4 md:px-6">
+                    {[
+                      { text: 'Venture North PITCH 2026', date: 'Oct 1, 2026' },
+                      { text: 'AI Collective Workshops', date: '6-Part Series' },
+                      { text: 'Google Developers Group Workshop', date: 'Sept 2026' },
+                      { text: 'NOA Private Pitch — AI', date: 'Jan 2027' },
+                      { text: 'Mining Transformed', date: 'Mar 2026' },
+                      { text: '$100K in Prizes', date: 'Venture North PITCH' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 md:gap-4">
+                        <span className="text-xs font-bold uppercase tracking-[0.14em]" style={{ color: TEAL }}>{item.date}</span>
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.35)' }} />
+                        <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">{item.text}</span>
+                      </div>
+                    ))}
                   </div>
-                  <div>
-                    <p className="text-lg md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
-                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>
