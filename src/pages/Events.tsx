@@ -68,7 +68,7 @@ const upcomingEvents: Event[] = [
     time: '5:00 PM EST',
     location: 'College Boréal',
     type: 'Pitch Competition',
-    description: "Northern Ontario's premier startup pitch competition returns to College Boréal this fall. Join founders, investors, and ecosystem partners for an evening of high-impact pitches, networking, and celebration — where the region's most promising ventures compete for recognition and a share of $100,000 in prizes.",
+    description: "Venture North PITCH is a catalyst for innovation, investment, and entrepreneurship across the North. For over a decade, NORCAT and Northern Ontario Angels have given founders a platform to pitch to Accredited Angel Investors, building companies that have grown into key contributors across mining tech, health sciences, clean tech, and beyond.\n\nNow in its third year as a unified event, Venture North PITCH brings together everyone who's building, backing, and believing in the future of the region, for one action packed night.",
     featured: true,
     registrationOpen: false,
     isVirtual: false,
