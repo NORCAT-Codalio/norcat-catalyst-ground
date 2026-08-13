@@ -8,7 +8,7 @@ import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
 import core5Placeholder from '@/assets/core5-ev-charging.png.asset.json';
 import featuredCit from '@/assets/featured-cit-photo.png';
 import featuredIap from '@/assets/featured-iap-photo.jpg.asset.json';
-import featuredRaii from '@/assets/featured-raii-photo.png';
+import featuredRaii from '@/assets/featured-raii-photo.png.asset.json';
 import featuredScf from '@/assets/featured-scf-photo.jpg.asset.json';
 import featuredCore5 from '@/assets/featured-core5-photo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
@@ -102,7 +102,7 @@ const programTabs: ProgramTab[] = [
       'Connections to enterprise AI buyers',
     ],
     href: '/funding/regional-ai-program',
-    image: featuredRaii,
+    image: featuredRaii.url,
     partners: [
       { logo: canadaLogo, alt: 'Government of Canada' },
       { logo: fednorFullLogo, alt: 'FedNor' },
