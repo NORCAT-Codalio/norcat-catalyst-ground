@@ -196,6 +196,7 @@ export default function Home2() {
       short: 'SCF',
       icon: Banknote,
       image: featuredScfImg,
+      imagePosition: 'left center',
       description: '$3M early-stage fund co-investing up to $250K alongside qualified angel investors in Northern Ontario ventures.',
       bullets: [
         'Up to $250K in seed equity co-investment',
@@ -379,6 +380,7 @@ export default function Home2() {
                   src={activeProgram.image}
                   alt={activeProgram.name}
                   className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: (activeProgram as { imagePosition?: string }).imagePosition ?? 'center' }}
                 />
               </div>
 
