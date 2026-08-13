@@ -73,7 +73,7 @@ const upcomingEvents: Event[] = [
     isVirtual: false,
     image: pitchEventImage,
     host: 'NORCAT Innovation',
-    highlight: 'Save the date',
+    highlight: 'Learn more',
     learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
   },
   {
@@ -436,7 +436,7 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
                rel="noopener noreferrer"
                className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
                style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
-              Learn More
+              Tickets
               <ExternalLink className="w-4 h-4" />
             </a>
           ) : (
