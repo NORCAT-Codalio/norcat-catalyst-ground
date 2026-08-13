@@ -532,18 +532,31 @@ const EventCard = ({ event }: { event: Event }) => {
                 {event.attendees}{event.maxAttendees && `/${event.maxAttendees}`}
               </span>
             )}
-            <a
-              href="#"
-              className={cn(
-                "rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] inline-flex items-center gap-1.5 no-underline transition-all duration-300",
-                event.registrationOpen ? "text-white hover:-translate-y-0.5" : ""
-              )}
-              style={event.registrationOpen
-                ? { background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }
-                : { background: PAPER, color: BODY, fontFamily: FONT, border: `1px solid ${CARD_BORDER}` }}
-            >
-              {event.registrationOpen ? 'Register' : 'Coming Soon'}
-            </a>
+            {event.learnMoreUrl || event.ticketsUrl ? (
+              <a
+                href={event.learnMoreUrl || event.ticketsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] inline-flex items-center gap-1.5 no-underline transition-all duration-300 hover:-translate-y-0.5 text-white"
+                style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}
+              >
+                {event.learnMoreUrl ? 'Learn More' : 'Tickets'}
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            ) : (
+              <a
+                href="#"
+                className={cn(
+                  "rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] inline-flex items-center gap-1.5 no-underline transition-all duration-300",
+                  event.registrationOpen ? "text-white hover:-translate-y-0.5" : ""
+                )}
+                style={event.registrationOpen
+                  ? { background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }
+                  : { background: PAPER, color: BODY, fontFamily: FONT, border: `1px solid ${CARD_BORDER}` }}
+              >
+                {event.registrationOpen ? 'Register' : 'Coming Soon'}
+              </a>
+            )}
           </div>
         </div>
       </div>
