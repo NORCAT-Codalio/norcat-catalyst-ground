@@ -525,7 +525,7 @@ export default function Events() {
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <div>
-                <Eyebrow>Discover What's Happening</Eyebrow>
+                <Eyebrow style={{ color: '#FFFFFF' }}>Discover What's Happening</Eyebrow>
                 <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                   Upcoming <span style={{ color: TEAL }}>Events.</span>
                 </Display>
