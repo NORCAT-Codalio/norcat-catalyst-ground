@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import pitchEventImage from '@/assets/pitch-event.jpg';
-import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // ── Brand tokens (mirrors About / Home2) ──
