@@ -380,14 +380,6 @@ const Core5 = () => {
               ))}
             </div>
 
-            <div
-              className="mt-8 rounded-2xl p-8 flex items-center justify-center"
-              style={{ background: 'white', border: '1px solid #d9dde5' }}
-            >
-              <p className="text-sm font-bold text-center" style={{ color: NAVY }}>
-                + additional research, innovation and industry partners across Northern Ontario
-              </p>
-            </div>
           </div>
         </section>
 
