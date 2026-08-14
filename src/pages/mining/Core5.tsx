@@ -327,16 +327,8 @@ const Core5 = () => {
                   </p>
                 </div>
 
-                <div
-                  className="mt-8 inline-flex flex-wrap items-center gap-3 px-6 py-4 rounded-xl"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
-                >
-                  <span className="text-xs font-bold uppercase tracking-wider" style={{ color: NAVY }}>NORCAT INNOVATION</span>
-                  <ArrowUpRight className="w-4 h-4" style={{ color: TEAL }} />
-                  <span className="text-xs font-bold uppercase tracking-wider" style={{ color: BLUE }}>CORE5</span>
-                  <ArrowUpRight className="w-4 h-4" style={{ color: TEAL }} />
-                  <span className="text-xs font-bold uppercase tracking-wider" style={{ color: NAVY }}>OVIN</span>
-                </div>
+
+
 
                 <div className="mt-6">
                   <a
