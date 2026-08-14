@@ -310,8 +310,9 @@ const Core5 = () => {
                 <span style={{ color: TEAL }}>WORKING TOGETHER.</span>
               </SectionTitle>
               <p className="text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
-                CORE5 connects capabilities across Northern Ontario so companies can access the support best suited to
-                their technology and stage of development.
+                CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
+                facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
+                Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
               </p>
             </div>
 
