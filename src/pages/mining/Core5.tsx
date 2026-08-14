@@ -116,8 +116,8 @@ const Core5 = () => {
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 style={{ color: 'rgba(255,255,255,0.85)' }}
               >
-                A pan-Northern Ontario initiative supporting SMEs developing Battery Electric Vehicle
-                and EV technologies - from critical minerals extraction through to manufacturing.
+                A pan-Northern Ontario initiative supporting Ontario SMEs in developing EV technologies
+                across the value chain, from critical minerals extraction to EV technology manufacturing.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
