@@ -218,37 +218,33 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 2. CAPABILITIES (white, 5 cards) ───── */}
+        {/* ───── 2. STATS ROW (white) ───── */}
         <section className="py-8 md:py-12" style={{ background: 'white', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-              {networkAccess.map((item, i) => (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
+              {coreStats.map((stat, i) => (
                 <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 24 }}
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-6 h-full"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    className="font-black leading-none text-[clamp(2.5rem,5vw,3.75rem)] bg-clip-text text-transparent"
+                    style={{ fontFamily: FONT, backgroundImage: `linear-gradient(135deg, ${BLUE} 0%, ${TEAL} 100%)` }}
                   >
-                    <item.icon className="w-5 h-5" style={{ color: TEAL }} />
+                    {stat.value}
                   </div>
-                  <h3 className="font-black uppercase text-base mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
-                    {item.description}
+                  <p className="mt-3 text-base sm:text-lg" style={{ color: BODY }}>
+                    {stat.label}
                   </p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
+
 
         {/* ───── 3. UNDERGROUND CENTRE (blue, image right) ───── */}
         <section className="py-16 md:py-24" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}>
