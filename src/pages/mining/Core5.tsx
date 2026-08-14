@@ -13,7 +13,6 @@ import {
   Wrench,
   Network,
   Users,
-  Landmark,
   CircleDollarSign,
 } from 'lucide-react';
 
@@ -54,24 +53,6 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
   >
     {children}
   </As>
-);
-
-const SectionHeading = ({ children, className = '', as: As = 'h2' as any }: any) => (
-  <As
-    className={`font-black uppercase leading-[0.95] tracking-tight ${className}`}
-    style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
-  >
-    {children}
-  </As>
-);
-
-const Body = ({ children, className = '', light = false }: { children: React.ReactNode; className?: string; light?: boolean }) => (
-  <p
-    className={`text-base sm:text-lg leading-relaxed ${className}`}
-    style={{ color: light ? 'rgba(255,255,255,0.85)' : '#475068' }}
-  >
-    {children}
-  </p>
 );
 
 const stages = [
@@ -130,11 +111,11 @@ const networkAccess = [
 ];
 
 const partners = [
-  { name: 'NORCAT Innovation', location: 'Greater Sudbury', logo: norcatLogo },
-  { name: 'Cambrian R&D / Cambrian College', location: 'Greater Sudbury', logo: cambrianRdLogo },
-  { name: 'Innovation Initiatives Ontario North (IION)', location: 'North Bay', logo: iionLogo },
-  { name: 'ICAMP at Canadore College', location: 'North Bay', logo: icampLogo },
-  { name: 'Timmins Economic Development Corporation', location: 'Timmins', logo: tedcLogo },
+  { name: 'NORCAT', logo: norcatLogo },
+  { name: 'Cambrian R&D', logo: cambrianRdLogo },
+  { name: 'IION', logo: iionLogo },
+  { name: 'ICAMP', logo: icampLogo },
+  { name: 'TEDC', logo: tedcLogo },
 ];
 
 const Core5 = () => {
@@ -160,38 +141,18 @@ const Core5 = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-4xl">
-              <Display as="h1" className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 CORE5
               </Display>
-
-              <p
-                className="mt-8 text-sm font-bold uppercase tracking-[0.18em]"
-                style={{ color: TEAL }}
-              >
-                NORCAT INNOVATION + CORE5
-              </p>
-
-              <h2
-                className="mt-4 font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-                style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
-              >
-                YOUR CONNECTION TO NORTHERN ONTARIO’S INNOVATION ECOSYSTEM.
-              </h2>
 
               <p
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 style={{ color: 'rgba(255,255,255,0.85)' }}
               >
                 NORCAT Innovation leads CORE5, Northern Ontario’s Regional Technology Development Site within the
-                Ontario Vehicle Innovation Network (OVIN).
-              </p>
-              <p
-                className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
-                style={{ color: 'rgba(255,255,255,0.85)' }}
-              >
-                Through one connected network, startups and SMEs can access expertise, facilities, testing environments
-                and industry connections across Northern Ontario — with support to develop, validate and commercialize
-                new technologies.
+                Ontario Vehicle Innovation Network (OVIN). Through one connected network, startups and SMEs can access
+                expertise, facilities, testing environments and industry connections across Northern Ontario — with
+                support to develop, validate and commercialize new technologies.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
@@ -233,25 +194,28 @@ const Core5 = () => {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <div>
                 <Eyebrow>NORCAT Innovation</Eyebrow>
-                <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
                   START WITH NORCAT.<br />
                   <span style={{ color: TEAL }}>CONNECT ACROSS THE NORTH.</span>
-                </SectionHeading>
-                <Body className="mb-4">
-                  You don’t have to navigate the innovation ecosystem on your own.
-                </Body>
-                <Body className="mb-4">
-                  NORCAT Innovation works with startups and SMEs to understand what you’re building, where you are in
-                  your journey and what you need to move forward.
-                </Body>
-                <Body>
-                  Through CORE5, we can connect you with a broader network of innovation organizations, research
-                  institutions, specialized facilities and industry partners across Northern Ontario.
-                </Body>
-                <Body className="mt-4">
-                  Whether you need business guidance, technical expertise, a place to test your technology or
-                  connections to industry, we’ll help you find the right next step.
-                </Body>
+                </h2>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>
+                    You don’t have to navigate the innovation ecosystem on your own. NORCAT Innovation works with
+                    startups and SMEs to understand what you’re building, where you are in your journey and what you need
+                    to move forward.
+                  </p>
+                  <p>
+                    Through CORE5, we can connect you with a broader network of innovation organizations, research
+                    institutions, specialized facilities and industry partners across Northern Ontario.
+                  </p>
+                  <p>
+                    Whether you need business guidance, technical expertise, a place to test your technology or
+                    connections to industry, we’ll help you find the right next step.
+                  </p>
+                </div>
 
                 <div className="mt-8">
                   <Link
@@ -346,22 +310,27 @@ const Core5 = () => {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <Eyebrow>Real-World Innovation Starts Here</Eyebrow>
-                <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
                   THE NORCAT<br />
                   <span style={{ color: TEAL }}>UNDERGROUND CENTRE.</span>
-                </SectionHeading>
-                <Body className="mb-4">
-                  For technology companies working in mining, electrification and related industries, validation often
-                  requires more than a traditional lab.
-                </Body>
-                <Body className="mb-4">
-                  The NORCAT Underground Centre is an operating mine and active innovation environment where startups
-                  and SMEs can develop, test and demonstrate emerging technologies under real-world conditions.
-                </Body>
-                <Body>
-                  It also creates opportunities to connect technology developers with the mining companies and industry
-                  leaders looking for new solutions.
-                </Body>
+                </h2>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>
+                    For technology companies working in mining, electrification and related industries, validation
+                    often requires more than a traditional lab.
+                  </p>
+                  <p>
+                    The NORCAT Underground Centre is an operating mine and active innovation environment where startups
+                    and SMEs can develop, test and demonstrate emerging technologies under real-world conditions.
+                  </p>
+                  <p>
+                    It also creates opportunities to connect technology developers with the mining companies and industry
+                    leaders looking for new solutions.
+                  </p>
+                </div>
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Link
@@ -375,7 +344,7 @@ const Core5 = () => {
               </div>
 
               <div
-                className="rounded-3xl p-10 flex flex-col items-center justify-center text-center"
+                className="rounded-3xl p-10 flex flex-col items-center justify-center text-center min-h-[300px]"
                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
               >
                 <Display className="text-2xl sm:text-3xl md:text-4xl mb-6">
@@ -418,8 +387,8 @@ const Core5 = () => {
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
                 NORCAT is one part of a much larger support system. CORE5 brings together 20+ partners across Northern
-                Ontario, including innovation centres, post-secondary institutions, R&D and testing facilities,
-                economic development organizations and industry partners.
+                Ontario, including innovation centres, post-secondary institutions, R&D and testing facilities, economic
+                development organizations and industry partners.
               </p>
               <p className="mt-4 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
                 That means the support you receive isn’t limited by one organization, one facility or one city. Through
@@ -475,50 +444,38 @@ const Core5 = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-10 md:mb-14">
               <Eyebrow>Regional Partners</Eyebrow>
-              <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5">
+              <h2
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-5"
+                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+              >
                 NORTHERN EXPERTISE.<br />
                 <span style={{ color: TEAL }}>WORKING TOGETHER.</span>
-              </SectionHeading>
-              <Body>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 CORE5 connects capabilities across Northern Ontario so companies can access the support best suited to
                 their technology and stage of development.
-              </Body>
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {partners.map((partner) => (
                 <div
                   key={partner.name}
-                  className="rounded-2xl p-6 flex items-center gap-4"
+                  className="rounded-2xl p-6 flex items-center justify-center h-28"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <img src={partner.logo} alt={partner.name} className="h-10 w-auto object-contain shrink-0" />
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: NAVY }}>{partner.name}</p>
-                    <p className="text-xs uppercase tracking-wider" style={{ color: '#475068' }}>{partner.location}</p>
-                  </div>
+                  <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
                 </div>
               ))}
-              <div
-                className="rounded-2xl p-6 flex items-center"
-                style={{ background: 'white', border: '1px solid #d9dde5' }}
-              >
-                <p className="text-sm font-bold" style={{ color: NAVY }}>
-                  + additional research, innovation and industry partners across Northern Ontario
-                </p>
-              </div>
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://core5.tech/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                style={{ fontFamily: FONT, color: NAVY, border: `2px solid ${TEAL}` }}
-              >
-                View the Core5 Network <ExternalLink className="w-4 h-4" />
-              </a>
+            <div
+              className="mt-8 rounded-2xl p-8 flex items-center justify-center"
+              style={{ background: 'white', border: '1px solid #d9dde5' }}
+            >
+              <p className="text-sm font-bold text-center" style={{ color: NAVY }}>
+                + additional research, innovation and industry partners across Northern Ontario
+              </p>
             </div>
           </div>
         </section>
@@ -529,23 +486,28 @@ const Core5 = () => {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <Eyebrow>Part of Something Even Bigger</Eyebrow>
-                <SectionHeading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
                   NORTHERN ONTARIO, CONNECTED TO ONTARIO’S MOBILITY INNOVATION NETWORK.
-                </SectionHeading>
-                <Body className="mb-4">
-                  CORE5 is Northern Ontario’s Regional Technology Development Site within the Ontario Vehicle Innovation
-                  Network (OVIN).
-                </Body>
-                <Body className="mb-4">
-                  OVIN’s network of nine Regional Technology Development Sites connects regional strengths,
-                  infrastructure and expertise across Ontario to help companies develop, test, prototype and
-                  commercialize automotive and mobility technologies.
-                </Body>
-                <Body>
-                  For Northern Ontario companies, CORE5 provides a gateway into that larger provincial ecosystem — while
-                  bringing the North’s unique strengths in mining, critical minerals, electrification and real-world
-                  technology validation to the rest of Ontario.
-                </Body>
+                </h2>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                  <p>
+                    CORE5 is Northern Ontario’s Regional Technology Development Site within the Ontario Vehicle
+                    Innovation Network (OVIN).
+                  </p>
+                  <p>
+                    OVIN’s network of nine Regional Technology Development Sites connects regional strengths,
+                    infrastructure and expertise across Ontario to help companies develop, test, prototype and
+                    commercialize automotive and mobility technologies.
+                  </p>
+                  <p>
+                    For Northern Ontario companies, CORE5 provides a gateway into that larger provincial ecosystem —
+                    while bringing the North’s unique strengths in mining, critical minerals, electrification and
+                    real-world technology validation to the rest of Ontario.
+                  </p>
+                </div>
 
                 <div
                   className="mt-8 inline-flex items-center gap-4 px-6 py-4 rounded-xl"
