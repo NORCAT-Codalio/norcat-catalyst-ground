@@ -144,7 +144,7 @@ const SudburyEcosystem = () => {
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16">
+        <section className="relative overflow-hidden py-16 md:py-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }} />
