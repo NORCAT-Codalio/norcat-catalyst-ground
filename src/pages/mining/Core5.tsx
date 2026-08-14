@@ -207,19 +207,20 @@ const Core5 = () => {
               <ImageSlot label="Image placeholder — NORCAT Innovation team with a founder" ratio="aspect-[4/3]" />
 
               <div>
-                <Eyebrow>NORCAT Innovation + CORE5</Eyebrow>
+                <Eyebrow>NORCAT Innovation</Eyebrow>
                 <SectionTitle>
-                  START HERE.<br />
-                  <span style={{ color: TEAL }}>WE'LL CONNECT THE REST.</span>
+                  START WITH NORCAT.<br />
+                  <span style={{ color: TEAL }}>CONNECT ACROSS THE NORTH.</span>
                 </SectionTitle>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
                   <p>
-                    NORCAT Innovation leads CORE5, Northern Ontario's Regional Technology Development Site within the
-                    Ontario Vehicle Innovation Network (OVIN).
+                    You don't have to navigate the innovation ecosystem on your own.
                   </p>
                   <p>
-                    One conversation opens access to expertise, facilities, testing environments and industry
-                    connections across the North — no need to know who to call first.
+                    Through CORE5, we can connect you with a broader network of innovation organizations, research institutions, specialized facilities and industry partners across Northern Ontario.
+                  </p>
+                  <p>
+                    Whether you need business guidance, technical expertise, a place to test your technology or connections to industry, we'll help you find the right next step.
                   </p>
                 </div>
                 <Link
@@ -229,10 +230,6 @@ const Core5 = () => {
                 >
                   Talk to Us <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
-                <div className="mt-8 flex items-center gap-6">
-                  <img src={core5Logo.url} alt="CORE5" className="h-10 object-contain" />
-                  <img src={ovinBadge.url} alt="OVIN partner" className="h-10 object-contain" />
-                </div>
               </div>
             </div>
           </div>
