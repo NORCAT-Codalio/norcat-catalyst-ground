@@ -587,7 +587,7 @@ export default function Events() {
           <ScrollReveal>
             <div className="max-w-4xl">
               <Eyebrow style={{ color: '#FFFFFF' }}>Discover What's Happening</Eyebrow>
-              <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Upcoming <span style={{ color: TEAL }}>Events.</span>
               </Display>
               <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
