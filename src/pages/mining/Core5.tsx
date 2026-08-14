@@ -16,6 +16,7 @@ import {
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
+import ovinCumulativeMetrics from '@/assets/ovin-cumulative-metrics.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
