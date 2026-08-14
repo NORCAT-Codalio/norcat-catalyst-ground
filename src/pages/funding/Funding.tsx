@@ -165,7 +165,7 @@ const Funding = () => {
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* HERO */}
-        <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-8 pb-8 md:pt-12 md:pb-12">
+        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.15 }} />

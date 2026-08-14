@@ -578,7 +578,7 @@ export default function Events() {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-16" style={{ background: NAVY }}>
+      <section className="relative overflow-hidden py-16 md:py-24" style={{ background: NAVY }}>
         <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }} />
         <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
              style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }} />
