@@ -14,7 +14,7 @@ import {
 
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
-import core5Logo from '@/assets/logos/core5.png';
+import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
 import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
