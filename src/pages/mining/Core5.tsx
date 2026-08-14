@@ -342,7 +342,11 @@ const Core5 = () => {
         <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <ImageSlot label="Image placeholder — EV / mobility technology in the field" ratio="aspect-[4/3]" />
+              <img
+                src={ovinCumulativeMetrics.url}
+                alt="OVIN cumulative metrics up to March 31, 2026: 8,560 jobs created or retained, $347.2M Ontario SMEs revenue growth catalyzed, $905M follow-on investment generated, 902 R&D job placements facilitated, $311.1M co-investment secured, 191 commercialization partnerships enabled, 860 Ontario SMEs supported"
+                className="w-full rounded-3xl object-contain"
+              />
 
               <div>
                 <Eyebrow>Part of Something Bigger</Eyebrow>
