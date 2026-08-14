@@ -20,7 +20,6 @@ import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
 import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
-import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
