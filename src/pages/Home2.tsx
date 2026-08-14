@@ -342,7 +342,7 @@ export default function Home2() {
           }} />
           <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
-              Featured Programs
+              FUNDING OPPORTUNITIES
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-4"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
