@@ -100,6 +100,14 @@ const networkAccess = [
   { icon: CircleDollarSign, title: 'FUNDING', description: 'Help finding the programs that fit your technology.' },
 ];
 
+const coreStats = [
+  { value: '60+', label: 'Startups Supported' },
+  { value: '6', label: 'Northern Regions' },
+  { value: '20+', label: 'Partner Facilities' },
+  { value: '40+', label: 'Pilots & Demos' },
+];
+
+
 const partners = [
   { name: 'NORCAT', logo: norcatLogo },
   { name: 'Cambrian R&D', logo: cambrianRdLogo },
