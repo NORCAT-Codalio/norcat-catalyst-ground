@@ -5,19 +5,15 @@ import {
   ArrowUpRight,
   ExternalLink,
   Image as ImageIcon,
-  Zap,
   FlaskConical,
   Handshake,
   Cpu,
-  Wrench,
   Network,
   Users,
   CircleDollarSign,
 } from 'lucide-react';
 
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
-import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
@@ -93,29 +89,6 @@ const ImageSlot = ({
     </p>
   </div>
 );
-
-const stages = [
-  {
-    icon: Wrench,
-    title: 'BUILD',
-    description: 'Mentorship, market intelligence, funding guidance and commercialization support.',
-  },
-  {
-    icon: FlaskConical,
-    title: 'TEST',
-    description: 'Specialized R&D and testing infrastructure across the CORE5 network.',
-  },
-  {
-    icon: Zap,
-    title: 'VALIDATE',
-    description: 'Prove your solution in real-world conditions and reduce technical risk.',
-  },
-  {
-    icon: Handshake,
-    title: 'CONNECT',
-    description: 'Industry relationships that lead to pilots, customers and growth.',
-  },
-];
 
 const networkAccess = [
   { icon: Users, title: 'BUSINESS SUPPORT', description: 'Advisors, mentorship and commercialization guidance.' },
@@ -233,33 +206,33 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 2. HOW WE HELP (white, 4 cards, no heading) ───── */}
+        {/* ───── 2. CAPABILITIES (white, 5 cards) ───── */}
         <section className="py-8 md:py-12" style={{ background: 'white', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-              {stages.map((s, i) => (
-                <motion.article
-                  key={s.title}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+              {networkAccess.map((item, i) => (
+                <motion.div
+                  key={item.title}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-7 h-full"
+                  className="rounded-2xl p-6 h-full"
                   style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: 'rgba(0,179,152,0.18)' }}
                   >
-                    <s.icon className="w-5 h-5" style={{ color: TEAL }} />
+                    <item.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-lg mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
-                    {s.title}
+                  <h3 className="font-black uppercase text-base mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
+                    {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: BODY }}>
-                    {s.description}
+                    {item.description}
                   </p>
-                </motion.article>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -300,60 +273,7 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 4. THE NETWORK (white, capabilities) ───── */}
-        <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-3xl mb-12 md:mb-16">
-              <Eyebrow>The Core5 Advantage</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl mb-5 text-[#001A4D]">
-                ONE CONNECTION.<br />
-                <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
-              </Display>
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
-                CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
-                facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
-                Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-10">
-              {networkAccess.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-6 h-full"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
-                >
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
-                  >
-                    <item.icon className="w-5 h-5" style={{ color: TEAL }} />
-                  </div>
-                  <h3 className="font-black uppercase text-base mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <Link
-              to="/ecosystem"
-              className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-              style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-            >
-              Explore the Ecosystem <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-            </Link>
-          </div>
-        </section>
-
-        {/* ───── 5. PARTNERS (light, original logo grid) ───── */}
+        {/* ───── 4. PARTNERS (light, original logo grid) ───── */}
         <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-10 md:mb-14">
@@ -363,8 +283,9 @@ const Core5 = () => {
                 <span style={{ color: TEAL }}>WORKING TOGETHER.</span>
               </SectionTitle>
               <p className="text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
-                CORE5 connects capabilities across Northern Ontario so companies can access the support best suited to
-                their technology and stage of development.
+                CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
+                facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
+                Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
               </p>
             </div>
 
