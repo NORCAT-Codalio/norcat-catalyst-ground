@@ -225,7 +225,11 @@ const Core5 = () => {
                 </div>
               </div>
 
-              <ImageSlot label="Image placeholder — NORCAT Innovation team with a founder" ratio="aspect-[4/3]" />
+              <img
+                src={core5NetworkStats.url}
+                alt="CORE5 Northern Ontario network: 70,000 sq. ft. R&D space, 3 km+ underground mine, 26 industry partners"
+                className="w-full rounded-3xl object-contain"
+              />
             </div>
           </div>
         </section>
