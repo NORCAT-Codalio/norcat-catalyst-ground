@@ -229,21 +229,12 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 2. HOW WE HELP (dark, 4 cards) ───── */}
-        <section
-          className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)`,
-            }}
-          />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        {/* ───── 2. HOW WE HELP (white, 4 cards) ───── */}
+        <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12">
-              <Eyebrow className="!text-white">How We Help</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl">
+              <Eyebrow>How We Help</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl text-[#001A4D]">
                 SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
               </Display>
             </div>
@@ -257,7 +248,7 @@ const Core5 = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-7 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
@@ -265,10 +256,10 @@ const Core5 = () => {
                   >
                     <s.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-lg mb-2 text-white" style={{ fontFamily: FONT }}>
+                  <h3 className="font-black uppercase text-lg mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
                     {s.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
                     {s.description}
                   </p>
                 </motion.article>
@@ -277,17 +268,17 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 3. UNDERGROUND CENTRE (light, image right) ───── */}
-        <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
+        {/* ───── 3. UNDERGROUND CENTRE (blue, image right) ───── */}
+        <section className="py-16 md:py-24" style={{ background: BLUE, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <Eyebrow>Real-World Validation</Eyebrow>
-                <SectionTitle>
+                <SectionTitle className="!text-white">
                   TEST IT<br />
                   <span style={{ color: TEAL }}>UNDERGROUND.</span>
                 </SectionTitle>
-                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
+                <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   <p>
                     The NORCAT Underground Centre is an operating mine and active innovation environment where startups
                     and SMEs develop, test and demonstrate technology in real conditions.
@@ -297,7 +288,7 @@ const Core5 = () => {
                 <Link
                   to="/mining/underground-centre"
                   className="group mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,0,0,0.25)' }}
                 >
                   Visit the Underground Centre <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
@@ -312,26 +303,17 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 4. THE NETWORK (dark, cards + map) ───── */}
-        <section
-          className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${NAVY} 0%, ${BLUE} 100%)` }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
-            }}
-          />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        {/* ───── 4. THE NETWORK (white, cards + map) ───── */}
+        <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 md:mb-16">
               <div>
-                <Eyebrow className="!text-white">The Core5 Advantage</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl mb-5">
+                <Eyebrow>The Core5 Advantage</Eyebrow>
+                <Display className="text-3xl sm:text-4xl md:text-5xl mb-5 text-[#001A4D]">
                   ONE CONNECTION.<br />
                   <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
                 </Display>
-                <p className="text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
                   CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
                   facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
                   Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
@@ -339,7 +321,7 @@ const Core5 = () => {
               </div>
               <div
                 className="rounded-3xl p-8 flex items-center justify-center"
-                style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                style={{ background: PAPER, border: '1px solid #d9dde5' }}
               >
                 <img src={core5Map} alt="CORE5 Northern Ontario network map" className="w-full max-w-md object-contain" />
               </div>
@@ -354,7 +336,7 @@ const Core5 = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-6 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
@@ -362,10 +344,10 @@ const Core5 = () => {
                   >
                     <item.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-base mb-2 text-white" style={{ fontFamily: FONT }}>
+                  <h3 className="font-black uppercase text-base mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
                     {item.description}
                   </p>
                 </motion.div>
