@@ -195,8 +195,8 @@ const Core5 = () => {
               <div>
                 <Eyebrow>NORCAT Innovation</Eyebrow>
                 <SectionTitle>
-                  START WITH NORCAT.<br />
-                  <span style={{ color: TEAL }}>CONNECT ACROSS THE NORTH.</span>
+                  YOUR CRITICAL<br />
+                  <span style={{ color: TEAL }}>NORTHERN ADVANTAGE.</span>
                 </SectionTitle>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
                   <p>
