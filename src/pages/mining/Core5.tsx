@@ -105,13 +105,6 @@ const Core5 = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
-              <img
-                src={core5Logo.url}
-                alt="Core5"
-                className="h-12 sm:h-14 mb-6 object-contain"
-              />
-              <Eyebrow className="!text-white">OVIN Northern Regional Technology Development Site</Eyebrow>
-
               <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Core5.<br />
                 <span style={{ color: TEAL }}>Northern EV Innovation.</span>
