@@ -256,30 +256,31 @@ export default function Home2() {
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.32), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
-          <div className="relative w-full flex-1 flex flex-col items-stretch">
-            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: 'white' }}>
+          <div className="relative w-full flex-1 flex flex-col items-stretch justify-center">
+            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
+                <p className="inline-flex items-center gap-2 font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: 'white', fontSize: 'clamp(0.75rem, 0.25vw + 0.68rem, 1rem)' }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
                   Sudbury's Regional Innovation Centre
                 </p>
 
-                <div className="font-black uppercase leading-[1.05] tracking-tight text-white max-w-5xl"
-                     style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">BUILD, TEST</div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                <div className="font-black uppercase leading-[1.05] tracking-tight text-white"
+                     style={{ fontFamily: FONT, letterSpacing: '-0.03em', fontSize: 'clamp(2.25rem, 5.2vw, 7rem)', maxWidth: '18ch' }}>
+                  <div>BUILD, TEST</div>
+                  <div>
                     <span className="text-white">& </span>
                     <span className="text-white">SCALE</span>
                     <span className="text-white"> YOUR</span>
                   </div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white">
+                  <div className="text-white">
                     TECH VENTURE.
                   </div>
                 </div>
 
-                <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="mt-6 md:mt-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1rem, 0.9vw + 0.6rem, 1.5rem)', maxWidth: '46ch' }}>
                   We help Northern Ontario startups move from idea to market by connecting them to the mentorship, capital, industry relationships, and real-world validation they need to grow here and compete anywhere.
                 </p>
+
 
                 <div className="mt-8 flex flex-wrap gap-2.5">
                   {sectors.map((s) => (
