@@ -317,6 +317,33 @@ const Core5 = () => {
               ))}
             </div>
 
+            <div className="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+              {networkAccess.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl p-6 h-full"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                  >
+                    <item.icon className="w-5 h-5" style={{ color: TEAL }} />
+                  </div>
+                  <h3 className="font-black uppercase text-base mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
         </section>
 
