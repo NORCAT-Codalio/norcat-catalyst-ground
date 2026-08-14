@@ -240,11 +240,8 @@ export default function Home2() {
           {/* Background image - no-person version on mobile/tablet, new people-right banner on desktop */}
           <div className="absolute inset-0 bg-no-repeat lg:hidden"
                style={{ backgroundImage: `url(${heroHeaderNoPersonImg})`, backgroundSize: 'cover', backgroundPosition: 'left center' }} />
-          <div className="absolute inset-0 bg-no-repeat hidden lg:block 2xl:hidden"
+          <div className="absolute inset-0 bg-no-repeat hidden lg:block"
                style={{ backgroundImage: `url(${heroHeaderDesktopImg})`, backgroundSize: 'cover', backgroundPosition: 'right bottom' }} />
-          {/* Ultra-wide: fit the full banner width so the right-side subjects aren't cropped */}
-          <div className="absolute inset-0 bg-no-repeat hidden 2xl:block"
-               style={{ backgroundImage: `url(${heroHeaderDesktopImg})`, backgroundSize: '100% auto', backgroundPosition: 'right bottom' }} />
 
           {/* Readability gradient - lighter on desktop because the new banner already has a clean left side */}
           <div className="absolute inset-0 pointer-events-none lg:hidden" style={{
