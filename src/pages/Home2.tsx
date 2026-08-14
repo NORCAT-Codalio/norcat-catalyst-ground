@@ -223,7 +223,7 @@ export default function Home2() {
       ],
       href: '/mining/core5',
       partners: [
-        { logo: ovinLogo, name: 'Ontario Vehicle Innovation Network' },
+        { logo: ovinLogoAsset.url, name: 'Ontario Vehicle Innovation Network' },
         { logo: ontarioLogoInlineAsset, name: 'Government of Ontario' },
       ],
     },

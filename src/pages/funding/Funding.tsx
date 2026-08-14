@@ -143,7 +143,7 @@ const programTabs: ProgramTab[] = [
     href: '/mining/core5',
     image: featuredCore5,
     partners: [
-      { logo: ovinLogo, alt: 'Ontario Vehicle Innovation Network' },
+      { logo: ovinLogoAsset.url, alt: 'Ontario Vehicle Innovation Network' },
       { logo: ontarioLogo, alt: 'Government of Ontario' },
     ],
   },
