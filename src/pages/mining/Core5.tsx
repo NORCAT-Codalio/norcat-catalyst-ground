@@ -17,7 +17,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
 import core5LogoWhite from '@/assets/core5-logo-white.png.asset.json';
-import ovinCumulativeMetrics from '@/assets/ovin-cumulative-metrics.png.asset.json';
+import core5OntarioMap from '@/assets/core5-ontario-map.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
@@ -346,8 +346,8 @@ const Core5 = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <img
-                src={ovinCumulativeMetrics.url}
-                alt="OVIN cumulative metrics up to March 31, 2026: 8,560 jobs created or retained, $347.2M Ontario SMEs revenue growth catalyzed, $905M follow-on investment generated, 902 R&D job placements facilitated, $311.1M co-investment secured, 191 commercialization partnerships enabled, 860 Ontario SMEs supported"
+                src={core5OntarioMap.url}
+                alt="Map of Ontario showing CORE5 partner and testing locations across Northern Ontario and the broader province"
                 className="w-full rounded-3xl object-contain"
               />
 
