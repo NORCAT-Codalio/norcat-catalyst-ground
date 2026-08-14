@@ -251,7 +251,7 @@ const Core5 = () => {
         </section>
 
         {/* ───── 3. UNDERGROUND CENTRE (blue, image right) ───── */}
-        <section className="py-16 md:py-24" style={{ background: BLUE, color: 'white' }}>
+        <section className="py-16 md:py-24" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
