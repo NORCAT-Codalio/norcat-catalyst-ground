@@ -393,26 +393,20 @@ const Core5 = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-10 gap-y-8 md:gap-x-14">
               {partners.map((partner) => (
-                <div
+                <img
                   key={partner.name}
-                  className="rounded-2xl p-6 flex items-center justify-center h-28"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
-                >
-                  <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
-                </div>
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-10 md:h-12 max-w-[140px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
               ))}
             </div>
 
-            <div
-              className="mt-8 rounded-2xl p-8 flex items-center justify-center"
-              style={{ background: 'white', border: '1px solid #d9dde5' }}
-            >
-              <p className="text-sm font-bold text-center" style={{ color: NAVY }}>
-                + additional research, innovation and industry partners across Northern Ontario
-              </p>
-            </div>
+            <p className="mt-10 text-sm font-bold" style={{ color: BODY }}>
+              + additional research, innovation and industry partners across Northern Ontario
+            </p>
           </div>
         </section>
 
