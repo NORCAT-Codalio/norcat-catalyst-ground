@@ -285,9 +285,9 @@ export default function Home2() {
                 <div className="mt-8 flex flex-wrap gap-2.5">
                   {sectors.map((s) => (
                     <span key={s.label}
-                          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)' }}>
-                      <s.icon className="w-3.5 h-3.5" />
+                          className="inline-flex items-center gap-2 px-3.5 py-1.5 xl:px-5 xl:py-2.5 rounded-full font-semibold"
+                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)', fontSize: 'clamp(0.75rem, 0.3vw + 0.66rem, 1rem)' }}>
+                      <s.icon className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
                       {s.label}
                     </span>
                   ))}
@@ -295,22 +295,23 @@ export default function Home2() {
 
                 <div className="mt-9 flex flex-col sm:flex-row gap-4">
                   <Link to="/apply"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 xl:pl-7 xl:pr-3 xl:py-3 rounded-full font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: TEAL, color: NAVY, fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
                     Apply to NORCAT Innovation
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    <span className="inline-flex items-center justify-center size-7 xl:size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
                   <Link to="/about"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 xl:pl-7 xl:pr-3 xl:py-3 rounded-full font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
                     Learn More
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    <span className="inline-flex items-center justify-center size-7 xl:size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
                 </div>
+
               </div>
             </div>
           </section>
