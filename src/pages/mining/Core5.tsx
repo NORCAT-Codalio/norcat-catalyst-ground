@@ -424,6 +424,19 @@ const Core5 = () => {
             </div>
           </div>
         </section>
+
+        {/* ───── OVIN / ONTARIO ATTRIBUTION (bottom, centered) ───── */}
+        <section className="py-10 md:py-14" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] mb-6" style={{ color: NAVY }}>
+              Part of the Ontario Vehicle Innovation Network (OVIN)
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              <img src={ovinLogoAsset.url} alt="Ontario Vehicle Innovation Network (OVIN) logo" className="h-10 md:h-12 object-contain" />
+              <img src={ontarioLogo} alt="Government of Ontario logo" className="h-8 md:h-10 object-contain" />
+            </div>
+          </div>
+        </section>
       </div>
     </Layout>
   );
