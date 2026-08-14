@@ -253,7 +253,7 @@ const Core5 = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
-                <Eyebrow className="!bg-clip-text !text-transparent bg-gradient-to-r from-[#00B398] via-[#00D4B8] to-white">Real-World Validation</Eyebrow>
+                <Eyebrow className="!text-white">Real-World Validation</Eyebrow>
                 <SectionTitle className="!text-white">
                   TEST IT<br />
                   <span style={{ color: TEAL }}>UNDERGROUND.</span>
