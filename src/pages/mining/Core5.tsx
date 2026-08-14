@@ -200,12 +200,10 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 1. INTRO — START HERE (light, image left) ───── */}
+        {/* ───── 1. INTRO — START HERE (light, image right) ───── */}
         <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <ImageSlot label="Image placeholder — NORCAT Innovation team with a founder" ratio="aspect-[4/3]" />
-
               <div>
                 <Eyebrow>NORCAT Innovation</Eyebrow>
                 <SectionTitle>
@@ -223,14 +221,9 @@ const Core5 = () => {
                     Whether you need business guidance, technical expertise, a place to test your technology or connections to industry, we'll help you find the right next step.
                   </p>
                 </div>
-                <Link
-                  to="/contact"
-                  className="group mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                >
-                  Talk to Us <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </Link>
               </div>
+
+              <ImageSlot label="Image placeholder — NORCAT Innovation team with a founder" ratio="aspect-[4/3]" />
             </div>
           </div>
         </section>
