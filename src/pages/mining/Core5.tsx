@@ -91,29 +91,6 @@ const ImageSlot = ({
   </div>
 );
 
-const stages = [
-  {
-    icon: Wrench,
-    title: 'BUILD',
-    description: 'Mentorship, market intelligence, funding guidance and commercialization support.',
-  },
-  {
-    icon: FlaskConical,
-    title: 'TEST',
-    description: 'Specialized R&D and testing infrastructure across the CORE5 network.',
-  },
-  {
-    icon: Zap,
-    title: 'VALIDATE',
-    description: 'Prove your solution in real-world conditions and reduce technical risk.',
-  },
-  {
-    icon: Handshake,
-    title: 'CONNECT',
-    description: 'Industry relationships that lead to pilots, customers and growth.',
-  },
-];
-
 const networkAccess = [
   { icon: Users, title: 'BUSINESS SUPPORT', description: 'Advisors, mentorship and commercialization guidance.' },
   { icon: Cpu, title: 'R&D EXPERTISE', description: 'Researchers, applied research and product development.' },
