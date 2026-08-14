@@ -158,7 +158,7 @@ const SudburyEcosystem = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <div>
                 <Eyebrow>BUILT FOR FOUNDERS</Eyebrow>
-                <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                   SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
                 </Display>
               </div>

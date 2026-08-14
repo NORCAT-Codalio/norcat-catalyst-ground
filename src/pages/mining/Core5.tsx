@@ -106,7 +106,7 @@ const Core5 = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-4xl">
-              <Display as="h1" className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 CORE5
               </Display>
 

@@ -175,7 +175,7 @@ const CriticalIndustrialTech = () => {
                 Ontario Centre of Innovation Program
               </Eyebrow>
 
-              <Display as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Critical Industrial<br /><span style={{ color: TEAL }}>Technologies.</span>
               </Display>
 
