@@ -213,16 +213,6 @@ const Core5 = () => {
                 className="w-full rounded-3xl object-contain"
               />
             </div>
-
-            <div className="mt-12 md:mt-16 pt-8 border-t" style={{ borderColor: 'rgba(0,26,77,0.12)' }}>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] mb-5" style={{ color: NAVY }}>
-                Part of the Ontario Vehicle Innovation Network (OVIN)
-              </p>
-              <div className="flex flex-wrap items-center gap-8 md:gap-12">
-                <img src={ovinLogoAsset.url} alt="Ontario Vehicle Innovation Network (OVIN) logo" className="h-10 md:h-12 object-contain" />
-                <img src={ontarioLogo} alt="Government of Ontario logo" className="h-8 md:h-10 object-contain" />
-              </div>
-            </div>
           </div>
         </section>
 
