@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, CheckCircle2, Layers, Banknote, DollarSign } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import signatureLines from '@/assets/signature-lines.png';
+
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
@@ -120,10 +120,10 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+const Eyebrow = ({ children, color = TEAL, dotColor = TEAL }: { children: React.ReactNode; color?: string; dotColor?: string }) => (
   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+     style={{ fontFamily: FONT, color }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: dotColor }} />
     {children}
   </p>
 );
@@ -506,13 +506,10 @@ export default function Home2() {
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
         <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <img src={signatureLines} alt="" aria-hidden="true" className="absolute top-0 right-0 w-[600px] opacity-100" />
-          </div>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div className="max-w-2xl">
-                <Eyebrow>Latest Updates</Eyebrow>
+                <Eyebrow color="white" dotColor="white">Latest Updates</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Real Stories.<br />Unique Insights.
                 </Display>
