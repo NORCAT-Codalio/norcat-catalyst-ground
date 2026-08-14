@@ -21,7 +21,7 @@ import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
 import icampLogo from '@/assets/logos/icamp.png';
 import tedcLogo from '@/assets/logos/tedc.png';
-import ovinLogo from '@/assets/logos/ovin-logo.png';
+import ovinLogoAsset from '@/assets/logos/ovin-logo.png.asset.json';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 
 // ── Brand tokens (mirrors Home2 / About / Rogers Cybersecure) ──
@@ -211,7 +211,7 @@ const Core5 = () => {
                 Part of the Ontario Vehicle Innovation Network (OVIN)
               </p>
               <div className="flex flex-wrap items-center gap-8 md:gap-12">
-                <img src={ovinLogo} alt="Ontario Vehicle Innovation Network (OVIN) logo" className="h-10 md:h-12 object-contain" />
+                <img src={ovinLogoAsset.url} alt="Ontario Vehicle Innovation Network (OVIN) logo" className="h-10 md:h-12 object-contain" />
                 <img src={ontarioLogo} alt="Government of Ontario logo" className="h-8 md:h-10 object-contain" />
               </div>
             </div>

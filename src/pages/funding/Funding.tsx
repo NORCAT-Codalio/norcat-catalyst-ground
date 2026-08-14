@@ -13,7 +13,7 @@ import featuredScf from '@/assets/featured-scf-photo.jpg.asset.json';
 import featuredCore5 from '@/assets/featured-core5-photo.png';
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
-import ovinLogo from '@/assets/logos/ovin-logo.png';
+import ovinLogoAsset from '@/assets/logos/ovin-logo.png.asset.json';
 import canadaLogo from '@/assets/logos/government-of-canada.png';
 import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import fednorLogo from '@/assets/logos/fednor.png';
@@ -143,7 +143,7 @@ const programTabs: ProgramTab[] = [
     href: '/mining/core5',
     image: featuredCore5,
     partners: [
-      { logo: ovinLogo, alt: 'Ontario Vehicle Innovation Network' },
+      { logo: ovinLogoAsset.url, alt: 'Ontario Vehicle Innovation Network' },
       { logo: ontarioLogo, alt: 'Government of Ontario' },
     ],
   },
