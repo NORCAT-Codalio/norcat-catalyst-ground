@@ -16,6 +16,7 @@ import {
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
+import core5LogoWhite from '@/assets/core5-logo-white.png.asset.json';
 import ovinCumulativeMetrics from '@/assets/ovin-cumulative-metrics.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
@@ -140,9 +141,11 @@ const Core5 = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-4xl">
-              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                CORE5
-              </Display>
+              <img
+                src={core5LogoWhite.url}
+                alt="CORE5"
+                className="w-56 sm:w-72 md:w-80 lg:w-96 h-auto object-contain"
+              />
 
               <p
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
