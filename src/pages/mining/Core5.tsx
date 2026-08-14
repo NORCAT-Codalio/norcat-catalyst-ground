@@ -14,8 +14,6 @@ import {
 } from 'lucide-react';
 
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
-import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
