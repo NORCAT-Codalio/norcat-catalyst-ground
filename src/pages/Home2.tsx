@@ -120,10 +120,10 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+const Eyebrow = ({ children, color = TEAL, dotColor = TEAL }: { children: React.ReactNode; color?: string; dotColor?: string }) => (
   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+     style={{ fontFamily: FONT, color }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: dotColor }} />
     {children}
   </p>
 );
