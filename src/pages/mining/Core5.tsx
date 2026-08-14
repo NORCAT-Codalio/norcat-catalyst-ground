@@ -149,10 +149,8 @@ const Core5 = () => {
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 style={{ color: 'rgba(255,255,255,0.85)' }}
               >
-                NORCAT Innovation leads CORE5, Northern Ontario’s Regional Technology Development Site within the
-                Ontario Vehicle Innovation Network (OVIN). Through one connected network, startups and SMEs can access
-                expertise, facilities, testing environments and industry connections across Northern Ontario — with
-                support to develop, validate and commercialize new technologies.
+                A pan-Northern Ontario initiative supporting Ontario SMEs in developing EV technologies across the
+                value chain, from critical minerals extraction to EV technology manufacturing.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
