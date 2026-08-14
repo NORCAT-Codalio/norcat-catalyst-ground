@@ -203,7 +203,7 @@ const Core5 = () => {
                   className="flex items-center justify-center rounded-2xl p-8"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <img src={core5Logo} alt="Core5" className="h-14 object-contain" />
+                  <img src={core5Logo.url} alt="Core5" className="h-14 object-contain" />
                 </div>
               </div>
             </div>
