@@ -238,7 +238,7 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 2. HOW WE HELP (dark, 4 cards) ───── */}
+        {/* ───── 2. HOW WE HELP (dark, continuous band) ───── */}
         <section
           className="py-16 md:py-24 relative overflow-hidden"
           style={{ background: `linear-gradient(180deg, ${BLUE} 0%, ${NAVY} 100%)` }}
@@ -246,18 +246,18 @@ const Core5 = () => {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.18), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.15), transparent 45%)`,
+              backgroundImage: `radial-gradient(circle at 80% 10%, rgba(0,179,152,0.14), transparent 40%), radial-gradient(circle at 10% 90%, rgba(47,111,214,0.12), transparent 45%)`,
             }}
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12">
+            <div className="max-w-2xl mb-12 md:mb-14">
               <Eyebrow className="!text-white">How We Help</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl">
                 SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
               </Display>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {stages.map((s, i) => (
                 <motion.article
                   key={s.title}
@@ -266,18 +266,18 @@ const Core5 = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
                   className="rounded-2xl p-7 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  style={{ background: 'white', boxShadow: '0 18px 40px -18px rgba(0,0,0,0.35)' }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    style={{ background: 'rgba(0,179,152,0.12)' }}
                   >
                     <s.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-lg mb-2 text-white" style={{ fontFamily: FONT }}>
+                  <h3 className="font-black uppercase text-lg mb-2" style={{ fontFamily: FONT, color: NAVY }}>
                     {s.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
                     {s.description}
                   </p>
                 </motion.article>
@@ -317,34 +317,25 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 4. THE NETWORK (dark, cards + map) ───── */}
-        <section
-          className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: `linear-gradient(180deg, ${NAVY} 0%, ${BLUE} 100%)` }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
-            }}
-          />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 md:mb-16">
+        {/* ───── 4. THE NETWORK (light, cards + map) ───── */}
+        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 md:mb-14">
               <div>
-                <Eyebrow className="!text-white">The Core5 Advantage</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl mb-5">
+                <Eyebrow>The Core5 Advantage</Eyebrow>
+                <SectionTitle>
                   ONE CONNECTION.<br />
                   <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
-                </Display>
-                <p className="text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
+                </SectionTitle>
+                <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
                   CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
                   facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
                   Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
                 </p>
               </div>
               <div
-                className="rounded-3xl p-8 flex items-center justify-center"
-                style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                className="rounded-3xl p-8 flex items-center justify-center bg-white"
+                style={{ boxShadow: '0 18px 40px -18px rgba(0,26,77,0.12)' }}
               >
                 <img src={core5Map} alt="CORE5 Northern Ontario network map" className="w-full max-w-md object-contain" />
               </div>
@@ -358,19 +349,19 @@ const Core5 = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-6 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="rounded-2xl p-6 h-full bg-white"
+                  style={{ boxShadow: '0 14px 34px -16px rgba(0,26,77,0.10)' }}
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    style={{ background: 'rgba(0,179,152,0.10)' }}
                   >
                     <item.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
-                  <h3 className="font-black uppercase text-base mb-2 text-white" style={{ fontFamily: FONT }}>
+                  <h3 className="font-black uppercase text-base mb-2" style={{ fontFamily: FONT, color: NAVY }}>
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
                     {item.description}
                   </p>
                 </motion.div>
@@ -402,26 +393,20 @@ const Core5 = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-10 gap-y-8 md:gap-x-14">
               {partners.map((partner) => (
-                <div
+                <img
                   key={partner.name}
-                  className="rounded-2xl p-6 flex items-center justify-center h-28"
-                  style={{ background: 'white', border: '1px solid #d9dde5' }}
-                >
-                  <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
-                </div>
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-10 md:h-12 max-w-[140px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
               ))}
             </div>
 
-            <div
-              className="mt-8 rounded-2xl p-8 flex items-center justify-center"
-              style={{ background: 'white', border: '1px solid #d9dde5' }}
-            >
-              <p className="text-sm font-bold text-center" style={{ color: NAVY }}>
-                + additional research, innovation and industry partners across Northern Ontario
-              </p>
-            </div>
+            <p className="mt-10 text-sm font-bold" style={{ color: BODY }}>
+              + additional research, innovation and industry partners across Northern Ontario
+            </p>
           </div>
         </section>
 
