@@ -21,6 +21,8 @@ import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
 import icampLogo from '@/assets/logos/icamp.png';
 import tedcLogo from '@/assets/logos/tedc.png';
+import ovinLogo from '@/assets/logos/ovin-logo.png';
+import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 
 // ── Brand tokens (mirrors Home2 / About / Rogers Cybersecure) ──
 const NAVY = '#001A4D';
