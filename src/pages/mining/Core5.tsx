@@ -150,7 +150,7 @@ const Core5 = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <div>
-                <Eyebrow>Led by NORCAT Innovation</Eyebrow>
+                <Eyebrow>NORCAT Innovation</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
