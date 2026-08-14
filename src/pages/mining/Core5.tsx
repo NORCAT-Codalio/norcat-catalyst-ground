@@ -19,6 +19,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
 import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
 import core5Map from '@/assets/core5-map.png';
+import core5EvCharging from '@/assets/core5-ev-charging.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
@@ -203,14 +204,25 @@ const Core5 = () => {
         {/* ───── 1. INTRO — START HERE (light, image left) ───── */}
         <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <ImageSlot label="Image placeholder — NORCAT Innovation team with a founder" ratio="aspect-[4/3]" />
+            <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
+              <div className="relative">
+                <div
+                  className="absolute -inset-3 rounded-[28px] hidden lg:block"
+                  style={{ background: 'linear-gradient(140deg, rgba(0,179,152,0.14), rgba(0,61,166,0.10))' }}
+                />
+                <img
+                  src={core5EvCharging.url}
+                  alt="EV technology development in Northern Ontario"
+                  className="relative w-full aspect-[4/3] object-cover rounded-2xl"
+                  style={{ boxShadow: '0 30px 70px -30px rgba(0,26,77,0.45)' }}
+                />
+              </div>
 
-              <div>
+              <div className="max-w-xl">
                 <Eyebrow>NORCAT Innovation + CORE5</Eyebrow>
                 <SectionTitle>
                   START HERE.<br />
-                  <span style={{ color: TEAL }}>WE'LL CONNECT THE REST.</span>
+                  <span style={{ color: TEAL }}>WE CONNECT THE REST.</span>
                 </SectionTitle>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
                   <p>
@@ -229,9 +241,15 @@ const Core5 = () => {
                 >
                   Talk to Us <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
-                <div className="mt-8 flex items-center gap-6">
-                  <img src={core5Logo.url} alt="CORE5" className="h-10 object-contain" />
-                  <img src={ovinBadge.url} alt="OVIN partner" className="h-10 object-contain" />
+                <div
+                  className="mt-10 pt-6 flex flex-wrap items-center gap-x-8 gap-y-4"
+                  style={{ borderTop: '1px solid rgba(0,26,77,0.10)' }}
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ fontFamily: FONT, color: 'rgba(0,26,77,0.45)' }}>
+                    Part of
+                  </span>
+                  <img src={core5Logo.url} alt="CORE5" className="h-8 object-contain" />
+                  <img src={ovinBadge.url} alt="OVIN partner" className="h-9 object-contain" />
                 </div>
               </div>
             </div>
