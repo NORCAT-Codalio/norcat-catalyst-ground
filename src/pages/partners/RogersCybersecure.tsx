@@ -118,7 +118,7 @@ const RogersCybersecure = () => {
             <div className="max-w-3xl">
               <Eyebrow className="!text-white">Partner Program</Eyebrow>
 
-              <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
+              <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Rogers Cybersecure<br />
                 <span style={{ color: TEAL }}>Catalyst.</span>
               </Display>
