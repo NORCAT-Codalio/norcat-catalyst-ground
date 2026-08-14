@@ -256,37 +256,38 @@ export default function Home2() {
             backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.32), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
           }} />
 
-          <div className="relative w-full flex-1 flex flex-col items-stretch">
-            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: 'white' }}>
+          <div className="relative w-full flex-1 flex flex-col items-stretch justify-center">
+            <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
+                <p className="inline-flex items-center gap-2 font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: 'white', fontSize: 'clamp(0.75rem, 0.25vw + 0.68rem, 1rem)' }}>
                   <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
                   Sudbury's Regional Innovation Centre
                 </p>
 
-                <div className="font-black uppercase leading-[1.05] tracking-tight text-white max-w-5xl"
-                     style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">BUILD, TEST</div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                <div className="font-black uppercase leading-[1.05] tracking-tight text-white"
+                     style={{ fontFamily: FONT, letterSpacing: '-0.03em', fontSize: 'clamp(2.25rem, 5.2vw, 7rem)', maxWidth: '18ch' }}>
+                  <div>BUILD, TEST</div>
+                  <div>
                     <span className="text-white">& </span>
                     <span className="text-white">SCALE</span>
                     <span className="text-white"> YOUR</span>
                   </div>
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white">
+                  <div className="text-white">
                     TECH VENTURE.
                   </div>
                 </div>
 
-                <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="mt-6 md:mt-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1rem, 0.9vw + 0.6rem, 1.5rem)', maxWidth: '46ch' }}>
                   We help Northern Ontario startups move from idea to market by connecting them to the mentorship, capital, industry relationships, and real-world validation they need to grow here and compete anywhere.
                 </p>
+
 
                 <div className="mt-8 flex flex-wrap gap-2.5">
                   {sectors.map((s) => (
                     <span key={s.label}
-                          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)' }}>
-                      <s.icon className="w-3.5 h-3.5" />
+                          className="inline-flex items-center gap-2 px-3.5 py-1.5 xl:px-5 xl:py-2.5 rounded-full font-semibold"
+                          style={{ fontFamily: FONT, color: 'rgba(255,255,255,0.85)', border: `1px solid ${TEAL}66`, background: 'rgba(0,179,152,0.10)', fontSize: 'clamp(0.75rem, 0.3vw + 0.66rem, 1rem)' }}>
+                      <s.icon className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
                       {s.label}
                     </span>
                   ))}
@@ -294,22 +295,23 @@ export default function Home2() {
 
                 <div className="mt-9 flex flex-col sm:flex-row gap-4">
                   <Link to="/apply"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: TEAL, color: NAVY }}>
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 xl:pl-7 xl:pr-3 xl:py-3 rounded-full font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: TEAL, color: NAVY, fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
                     Apply to NORCAT Innovation
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    <span className="inline-flex items-center justify-center size-7 xl:size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
                   <Link to="/about"
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D' }}>
+                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 xl:pl-7 xl:pr-3 xl:py-3 rounded-full font-bold transition-transform hover:scale-[1.02]"
+                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
                     Learn More
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    <span className="inline-flex items-center justify-center size-7 xl:size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                      <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>
                 </div>
+
               </div>
             </div>
           </section>
