@@ -15,6 +15,7 @@ import {
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
+import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
 import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
@@ -114,8 +115,9 @@ const Core5 = () => {
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 style={{ color: 'rgba(255,255,255,0.85)' }}
               >
-                A pan-Northern Ontario initiative supporting Ontario SMEs in developing EV technologies
-                across the value chain, from critical minerals extraction to EV technology manufacturing.
+                Led by NORCAT Innovation, Core5 is a pan-Northern Ontario initiative supporting Ontario
+                SMEs in developing EV technologies across the value chain — from critical minerals extraction
+                to EV technology manufacturing.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
@@ -148,7 +150,7 @@ const Core5 = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <div>
-                <Eyebrow>EV Innovation Hub</Eyebrow>
+                <Eyebrow>Led by NORCAT Innovation</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
@@ -159,13 +161,14 @@ const Core5 = () => {
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   <p>
                     Core5 is one of six regional technology development sites within the Ontario Vehicle
-                    Innovation Network (OVIN). We're building a connected ecosystem across Northern
-                    Ontario to support the entire EV value chain.
+                    Innovation Network (OVIN), led by NORCAT Innovation. We support Ontario startups and
+                    SMEs across Northern Ontario with the funding, facilities, and industry connections
+                    needed to build and scale EV technologies.
                   </p>
                   <p>
-                    From the mines that supply critical minerals to the shops that build and test
-                    vehicles, Core5 links founders to the facilities, funding and buyers that move
-                    technology from prototype to production.
+                    Through NORCAT's innovation infrastructure — including the NORCAT Underground Centre —
+                    founders can test, validate, and demonstrate their technologies in real-world
+                    conditions, moving ideas from the lab to market faster.
                   </p>
                 </div>
 
@@ -298,6 +301,17 @@ const Core5 = () => {
                   <img src={partner.logo} alt={partner.name} className="max-h-12 max-w-full object-contain" />
                 </div>
               ))}
+            </div>
+
+            <div
+              className="mt-8 rounded-2xl p-8 flex items-center justify-center"
+              style={{ background: 'white', border: '1px solid #d9dde5' }}
+            >
+              <img
+                src={ovinBadge.url}
+                alt="Part of the Ontario Vehicle Innovation Network (OVIN)"
+                className="max-w-full max-h-20 object-contain"
+              />
             </div>
           </div>
         </section>
