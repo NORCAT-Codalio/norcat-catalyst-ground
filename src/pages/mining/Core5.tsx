@@ -300,28 +300,20 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 4. THE NETWORK (white, cards + map) ───── */}
+        {/* ───── 4. THE NETWORK (white, capabilities) ───── */}
         <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 md:mb-16">
-              <div>
-                <Eyebrow>The Core5 Advantage</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl mb-5 text-[#001A4D]">
-                  ONE CONNECTION.<br />
-                  <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
-                </Display>
-                <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
-                  CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
-                  facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
-                  Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
-                </p>
-              </div>
-              <div
-                className="rounded-3xl p-8 flex items-center justify-center"
-                style={{ background: PAPER, border: '1px solid #d9dde5' }}
-              >
-                <img src={core5Map} alt="CORE5 Northern Ontario network map" className="w-full max-w-md object-contain" />
-              </div>
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>The Core5 Advantage</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl mb-5 text-[#001A4D]">
+                ONE CONNECTION.<br />
+                <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
+              </Display>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
+                CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
+                facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
+                Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-10">
