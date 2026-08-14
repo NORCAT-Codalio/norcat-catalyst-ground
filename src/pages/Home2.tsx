@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, CheckCircle2, Layers, Banknote, DollarSign } from 'lucide-react';
 import { Layout } from '@/components/Layout';
-import signatureLines from '@/assets/signature-lines.png';
+
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
 import ctaPhoto2 from '@/assets/cta-photo-2.jpg';
 import loopxTeam from '@/assets/loopx-team.jpg';
