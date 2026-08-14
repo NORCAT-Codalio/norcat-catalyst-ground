@@ -19,7 +19,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
 import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
-import core5Map from '@/assets/core5-map.png';
+import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
 import iionLogo from '@/assets/logos/iion.png';
@@ -224,7 +224,11 @@ const Core5 = () => {
                 </div>
               </div>
 
-              <ImageSlot label="Image placeholder — NORCAT Innovation team with a founder" ratio="aspect-[4/3]" />
+              <img
+                src={core5NetworkStats.url}
+                alt="CORE5 Northern Ontario network: 70,000 sq. ft. R&D space, 3 km+ underground mine, 26 industry partners"
+                className="w-full rounded-3xl object-contain"
+              />
             </div>
           </div>
         </section>
@@ -296,28 +300,20 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 4. THE NETWORK (white, cards + map) ───── */}
+        {/* ───── 4. THE NETWORK (white, capabilities) ───── */}
         <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12 md:mb-16">
-              <div>
-                <Eyebrow>The Core5 Advantage</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl mb-5 text-[#001A4D]">
-                  ONE CONNECTION.<br />
-                  <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
-                </Display>
-                <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
-                  CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
-                  facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
-                  Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
-                </p>
-              </div>
-              <div
-                className="rounded-3xl p-8 flex items-center justify-center"
-                style={{ background: PAPER, border: '1px solid #d9dde5' }}
-              >
-                <img src={core5Map} alt="CORE5 Northern Ontario network map" className="w-full max-w-md object-contain" />
-              </div>
+            <div className="max-w-3xl mb-12 md:mb-16">
+              <Eyebrow>The Core5 Advantage</Eyebrow>
+              <Display className="text-3xl sm:text-4xl md:text-5xl mb-5 text-[#001A4D]">
+                ONE CONNECTION.<br />
+                <span style={{ color: TEAL }}>THE WHOLE NORTH.</span>
+              </Display>
+              <p className="text-base md:text-lg leading-relaxed" style={{ color: BODY }}>
+                CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
+                facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
+                Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 mb-10">
