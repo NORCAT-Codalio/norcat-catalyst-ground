@@ -18,6 +18,7 @@ import {
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
 import ovinBadge from '@/assets/ovin-partner-badge.png.asset.json';
+import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
 import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
@@ -302,7 +303,11 @@ const Core5 = () => {
                 </Link>
               </div>
 
-              <ImageSlot label="Image placeholder — Underground Centre equipment testing" ratio="aspect-[4/3]" />
+              <img
+                src={undergroundTesting.url}
+                alt="Technology testing at the NORCAT Underground Centre"
+                className="w-full rounded-3xl object-cover aspect-[4/3]"
+              />
             </div>
           </div>
         </section>
