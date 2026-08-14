@@ -14,7 +14,7 @@ import {
 
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
-import core5Logo from '@/assets/logos/core5.png';
+import core5Logo from '@/assets/logos/core5-logo.png.asset.json';
 import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
 import cambrianRdLogo from '@/assets/logos/cambrian-rd.png';
@@ -105,6 +105,11 @@ const Core5 = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl">
+              <img
+                src={core5Logo.url}
+                alt="Core5"
+                className="h-12 sm:h-14 mb-6 object-contain"
+              />
               <Eyebrow className="!text-white">OVIN Northern Regional Technology Development Site</Eyebrow>
 
               <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
@@ -203,7 +208,7 @@ const Core5 = () => {
                   className="flex items-center justify-center rounded-2xl p-8"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <img src={core5Logo} alt="Core5" className="h-14 object-contain" />
+                  <img src={core5Logo.url} alt="Core5" className="h-14 object-contain" />
                 </div>
               </div>
             </div>
