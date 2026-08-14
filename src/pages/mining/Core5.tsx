@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
-import signatureLines from '@/assets/signature-lines.png';
+
 import core5Logo from '@/assets/logos/core5.png';
 import core5Map from '@/assets/core5-map.png';
 import norcatLogo from '@/assets/logos/norcat.png';
