@@ -302,6 +302,17 @@ const Core5 = () => {
                 </div>
               ))}
             </div>
+
+            <div
+              className="mt-8 rounded-2xl p-8 flex items-center justify-center"
+              style={{ background: 'white', border: '1px solid #d9dde5' }}
+            >
+              <img
+                src={ovinBadge.url}
+                alt="Part of the Ontario Vehicle Innovation Network (OVIN)"
+                className="max-w-full max-h-20 object-contain"
+              />
+            </div>
           </div>
         </section>
 
