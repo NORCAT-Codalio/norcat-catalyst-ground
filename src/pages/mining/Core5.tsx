@@ -229,44 +229,6 @@ const Core5 = () => {
           </div>
         </section>
 
-        {/* ───── 2. HOW WE HELP (white, 4 cards) ───── */}
-        <section className="py-16 md:py-24" style={{ background: 'white', color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12">
-              <Eyebrow>How We Help</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl text-[#001A4D]">
-                SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
-              </Display>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-              {stages.map((s, i) => (
-                <motion.article
-                  key={s.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-7 h-full"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
-                >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
-                  >
-                    <s.icon className="w-5 h-5" style={{ color: TEAL }} />
-                  </div>
-                  <h3 className="font-black uppercase text-lg mb-2 text-[#001A4D]" style={{ fontFamily: FONT }}>
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: BODY }}>
-                    {s.description}
-                  </p>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ───── 3. UNDERGROUND CENTRE (blue, image right) ───── */}
         <section className="py-16 md:py-24" style={{ background: BLUE, color: 'white' }}>
