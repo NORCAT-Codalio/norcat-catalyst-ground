@@ -206,7 +206,7 @@ const InvestorHub = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>The New VC Playbook</Eyebrow>
+              <Eyebrow className="!text-white">The New VC Playbook</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Capital navigation<br /><span style={{ color: TEAL }}>for the new era.</span>
               </Display>
@@ -326,7 +326,7 @@ const InvestorHub = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Exclusive Access</Eyebrow>
+              <Eyebrow className="!text-white">Exclusive Access</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Private<br /><span style={{ color: TEAL }}>pitch events.</span>
               </Display>

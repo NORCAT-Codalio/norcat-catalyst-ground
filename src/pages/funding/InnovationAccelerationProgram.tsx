@@ -200,7 +200,7 @@ const InnovationAccelerationProgram = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Eligible Activities</Eyebrow>
+              <Eyebrow className="!text-white">Eligible Activities</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Two pillars<br />driving growth.
               </Display>

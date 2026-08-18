@@ -147,8 +147,8 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
      style={{ fontFamily: FONT, color: TEAL }}>
     <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
@@ -185,7 +185,7 @@ export default function Home3() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>Greater Sudbury · Northern Ontario</Eyebrow>
+              <Eyebrow className="!text-white">Greater Sudbury · Northern Ontario</Eyebrow>
 
               <Display className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
                 Build, Test, and<br />
@@ -284,7 +284,7 @@ export default function Home3() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
-                <Eyebrow>The Commercialization Pathway</Eyebrow>
+                <Eyebrow className="!text-white">The Commercialization Pathway</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Support that adapts<br />as your <span style={{ color: TEAL }}>company grows.</span>
                 </Display>
@@ -486,7 +486,7 @@ export default function Home3() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
               <div className="max-w-2xl">
-                <Eyebrow>Insights</Eyebrow>
+                <Eyebrow className="!text-white">Insights</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Real Stories.<br />Unique Insights.
                 </Display>

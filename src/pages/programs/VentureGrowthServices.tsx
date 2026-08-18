@@ -43,7 +43,7 @@ const differentiators = [
 
 const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
   <p
-    className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+    className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
     style={{ fontFamily: FONT, color: light ? TEAL : TEAL }}
   >
     <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -88,7 +88,7 @@ export default function VentureGrowthServices() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>Core Program</Eyebrow>
+              <Eyebrow className="!text-white">Core Program</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Venture Growth<br /><span style={{ color: TEAL }}>Services.</span>
               </Display>
@@ -183,7 +183,7 @@ export default function VentureGrowthServices() {
           `}</style>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-6 md:mb-8">
-              <Eyebrow>Your Journey</Eyebrow>
+              <Eyebrow className="!text-white">Your Journey</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 How it<br /><span style={{ color: TEAL }}>works.</span>
               </Display>
