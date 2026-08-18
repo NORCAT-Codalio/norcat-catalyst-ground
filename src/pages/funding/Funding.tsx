@@ -218,7 +218,7 @@ const Funding = () => {
                 return (
                   <div key={program.key} className="rounded-3xl overflow-hidden bg-white border border-black/5 shadow-lg">
                     <div className="grid lg:grid-cols-2">
-                      <div className={`relative h-56 sm:h-72 lg:h-auto min-h-[280px] lg:min-h-[420px] ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                      <div className={`relative h-56 sm:h-72 lg:h-auto min-h-[280px] lg:min-h-[420px] hidden lg:block ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                         <img
                           src={program.image}
                           alt={program.name}
