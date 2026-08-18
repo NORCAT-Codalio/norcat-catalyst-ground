@@ -570,6 +570,13 @@ export function Navigation() {
                 ))}
 
                 <Link
+                  to="/insights/news"
+                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  News
+                </Link>
+
+                <Link
                   to="/events"
                   className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
                 >
