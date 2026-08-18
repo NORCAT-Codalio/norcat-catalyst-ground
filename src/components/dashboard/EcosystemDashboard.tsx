@@ -213,9 +213,9 @@ export default function EcosystemDashboard() {
               onClick={() => setActiveFilter(filter.key)}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300"
               style={activeFilter === filter.key ? {
-                background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)',
+                background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(199 85% 52%) 100%)',
                 color: 'white',
-                boxShadow: '0 4px 16px hsla(168, 100%, 20%, 0.3)',
+                boxShadow: '0 4px 16px hsla(168, 100%, 30%, 0.3)',
               } : {
                 ...glassCardStyle,
                 color: 'hsl(220, 15%, 30%)',
