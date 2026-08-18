@@ -1,104 +1,109 @@
 import { motion } from 'framer-motion';
-import {
-  Users,
-  FileText,
-  Building2,
-  DollarSign,
-  Target,
-  Lightbulb,
-  Scale,
-  Globe,
-  Briefcase,
-  PresentationIcon,
-  UserPlus,
-  TrendingUp,
-} from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
+import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
-const supportItems = [
-  { icon: PresentationIcon, label: 'Build my pitch deck' },
-  { icon: Users, label: 'Find a co-founder' },
-  { icon: UserPlus, label: 'Hire my first employee' },
-  { icon: Building2, label: 'Register my business' },
-  { icon: DollarSign, label: 'Raise funding' },
-  { icon: Target, label: 'Find product-market fit' },
-  { icon: FileText, label: 'Draft investor documents' },
-  { icon: Globe, label: 'Expand internationally' },
-  { icon: Lightbulb, label: 'Validate my idea' },
-  { icon: Scale, label: 'Legal & IP strategy' },
-  { icon: Briefcase, label: 'Connect with mentors' },
-  { icon: TrendingUp, label: 'Scale my operations' },
+// ── Brand tokens (mirrors About / Events / Home2) ──
+const NAVY = '#001A4D';
+const BLUE = '#003DA5';
+const TEAL = '#00B398';
+const FONT = "'Open Sans', system-ui, sans-serif";
+
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+  <p
+    className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+    style={{ fontFamily: FONT, color: '#FFFFFF' }}
+  >
+    <span className="size-1.5 rounded-full inline-block" style={{ background: '#FFFFFF' }} />
+    {children}
+  </p>
+);
+
+const highlights = [
+  { text: 'Mentorship Network', date: 'MIT VMS Model' },
+  { text: 'Sudbury Catalyst Fund', date: 'Equity Investment' },
+  { text: 'Innovation Acceleration', date: 'IAP' },
+  { text: 'Regional AI Program', date: 'RAII' },
+  { text: 'Northern Ontario Angels', date: 'Investor Access' },
+  { text: 'Core5 EV Initiative', date: 'Pan-Northern' },
+  { text: 'Critical Minerals', date: 'Sector Expertise' },
+  { text: 'No Equity Required', date: 'Free for Founders' },
 ];
 
 export function VentureHero() {
   return (
-    <section className="relative pt-20 pb-14 overflow-hidden bg-gradient-hero">
-      {/* Background effects consistent with brand */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      </div>
+    <section className="relative overflow-hidden py-16 md:py-24" style={{ background: NAVY }}>
+      {/* Gradient base */}
+      <div
+        className="absolute inset-0"
+        style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
+      />
+      {/* Faded half-logo overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }}
+      />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center text-white font-semibold text-sm tracking-[0.2em] uppercase mb-5"
-        >
-          Become a Client
-        </motion.p>
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        <ScrollReveal>
+          <div className="max-w-4xl">
+            <Eyebrow>Become a Client</Eyebrow>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-black uppercase leading-[0.95] tracking-tight text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
+              style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
+            >
+              Your venture's <span style={{ color: TEAL }}>unfair advantage.</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
+              style={{ color: 'rgba(255,255,255,0.85)' }}
+            >
+              Whatever you're building, wherever you're building it — we help you scale.
+            </motion.p>
+          </div>
+        </ScrollReveal>
 
-        {/* Main Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight"
-        >
-          Your venture's{' '}
-          <span className="text-gradient-teal">unfair advantage.</span>
-        </motion.h1>
-
-        {/* Sub-text */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-muted-foreground text-lg mb-10 max-w-2xl mx-auto"
-        >
-          Whatever you're building, wherever you're building it — we help you scale.
-        </motion.p>
-
-        {/* Scrolling Carousel */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="overflow-hidden"
-        >
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-            <div className="flex animate-marquee gap-4">
-              {[...supportItems, ...supportItems].map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={i}
-                    className="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-sm shadow-sm"
-                  >
-                    <Icon className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-foreground/80 whitespace-nowrap">
-                      {item.label}
-                    </span>
-                  </div>
-                );
-              })}
+        {/* Scrolling highlights bar */}
+        <ScrollReveal delay={100}>
+          <div
+            className="mt-10 md:mt-14 overflow-hidden rounded-2xl py-4 md:py-5"
+            style={{
+              background: 'rgba(255,255,255,0.10)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+            }}
+          >
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...Array(2)].map((_, setIndex) => (
+                <div key={setIndex} className="flex items-center gap-8 md:gap-12 px-4 md:px-6">
+                  {highlights.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 md:gap-4">
+                      <span
+                        className="text-xs font-bold uppercase tracking-[0.14em]"
+                        style={{ color: TEAL }}
+                      >
+                        {item.date}
+                      </span>
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ background: 'rgba(255,255,255,0.35)' }}
+                      />
+                      <span className="text-sm md:text-base font-semibold text-white whitespace-nowrap">
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   );
