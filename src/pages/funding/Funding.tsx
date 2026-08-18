@@ -5,11 +5,11 @@ import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
 import core5Placeholder from '@/assets/core5-ev-charging.png.asset.json';
-import featuredCit from '@/assets/featured-cit-photo.png';
+
 import featuredIap from '@/assets/featured-iap-photo.jpg.asset.json';
 import featuredRaii from '@/assets/featured-raii-photo.png.asset.json';
 import featuredScf from '@/assets/featured-scf-photo.jpg.asset.json';
-import featuredCore5 from '@/assets/featured-core5-photo.png';
+
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 import ovinLogoAsset from '@/assets/logos/ovin-logo.png.asset.json';
@@ -54,24 +54,6 @@ type ProgramTab = {
 };
 
 const programTabs: ProgramTab[] = [
-  {
-    key: 'CIT',
-    shortName: 'CIT',
-    name: 'Critical Industrial Technologies (CIT)',
-    eyebrow: 'Featured Program',
-    description: 'Supporting SMEs in developing and adopting advanced mining and industrial technologies through access to the NORCAT Underground Centre.',
-    benefits: [
-      'Non-dilutive project funding',
-      'Access to world-class testing and validation facilities',
-      'Connections to industry and innovation partners',
-    ],
-    href: '/mining/critical-industrial-tech',
-    image: featuredCit,
-    partners: [
-      { logo: ociLogo, alt: 'Ontario Centre of Innovation' },
-      { logo: ontarioLogo, alt: 'Government of Ontario' },
-    ],
-  },
   {
     key: 'IAP',
     shortName: 'IAP',
@@ -126,24 +108,6 @@ const programTabs: ProgramTab[] = [
       { logo: fednorLogo, alt: 'FedNor' },
       { logo: nickelBasinLogo, alt: 'Nickel Basin Federal Development Corporation' },
       { logo: sudburyLogo, alt: 'City of Greater Sudbury' },
-    ],
-  },
-  {
-    key: 'Core5',
-    shortName: 'Core5',
-    name: 'Core5',
-    eyebrow: 'BEV / EV Ventures',
-    description: 'The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.',
-    benefits: [
-      'Startup & SME funding support',
-      'Access to R&D and testing facilities',
-      'Buyer / builder matchmaking',
-    ],
-    href: '/mining/core5',
-    image: featuredCore5,
-    partners: [
-      { logo: ovinLogoAsset.url, alt: 'Ontario Vehicle Innovation Network' },
-      { logo: ontarioLogo, alt: 'Government of Ontario' },
     ],
   },
 ];
@@ -204,7 +168,7 @@ const Funding = () => {
                 Choose your <span style={{ color: TEAL }}>capital path.</span>
               </h2>
               <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Five flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
+                Three flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
               </p>
             </div>
 
