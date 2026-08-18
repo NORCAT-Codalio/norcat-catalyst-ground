@@ -54,7 +54,7 @@ const timelineData = [
 ];
 
 const sectorData = [
-  { name: 'Mining Tech', value: 35, color: 'hsl(168, 100%, 28%)' },
+  { name: 'Mining Tech', value: 35, color: 'hsl(168, 100%, 35%)' },
   { name: 'Cleantech', value: 22, color: 'hsl(168, 100%, 35%)' },
   { name: 'Industrial IoT', value: 18, color: 'hsl(168, 80%, 45%)' },
   { name: 'AI & ML', value: 15, color: 'hsl(168, 60%, 55%)' },
@@ -154,7 +154,7 @@ const StatCard = ({
         {trend && (
           <div className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full mb-2" style={{
             background: 'hsl(168 100% 35% / 0.1)',
-            color: 'hsl(168, 100%, 28%)',
+            color: 'hsl(168, 100%, 35%)',
           }}>
             <TrendingUp className="h-3 w-3" />
             +{Math.abs(trend)}%
@@ -334,7 +334,7 @@ export default function EcosystemDashboard() {
                               border: '1px solid hsla(168, 30%, 90%, 0.5)',
                             }}>
                               <p className="font-semibold" style={{ color: 'hsl(220, 15%, 20%)' }}>{payload[0].name}</p>
-                              <p className="font-bold" style={{ color: 'hsl(168, 100%, 28%)' }}>{payload[0].value}%</p>
+                              <p className="font-bold" style={{ color: 'hsl(168, 100%, 35%)' }}>{payload[0].value}%</p>
                             </div>
                           );
                         }
@@ -428,7 +428,7 @@ export default function EcosystemDashboard() {
                       </div>
                       <span className="text-sm" style={{ color: 'hsl(220, 15%, 30%)' }}>{item.label}</span>
                     </div>
-                    <span className="font-bold text-sm" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.value}</span>
+                    <span className="font-bold text-sm" style={{ color: 'hsl(168, 100%, 35%)' }}>{item.value}</span>
                   </div>
                   <div className="h-2 rounded-full overflow-hidden" style={{ background: 'hsla(220, 15%, 80%, 0.4)' }}>
                     <div 
@@ -466,7 +466,7 @@ export default function EcosystemDashboard() {
                 <div className="text-2xl font-black mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{stage.companies}</div>
                 <div className="text-sm font-medium mb-2" style={{ color: 'hsl(220, 15%, 25%)' }}>{stage.stage}</div>
                 <div className="text-xs font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                  Avg raise: <span className="font-medium" style={{ color: 'hsl(168, 100%, 28%)' }}>${stage.avgRaise}M</span>
+                  Avg raise: <span className="font-medium" style={{ color: 'hsl(168, 100%, 35%)' }}>${stage.avgRaise}M</span>
                 </div>
               </div>
             ))}
