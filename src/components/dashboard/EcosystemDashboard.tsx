@@ -53,14 +53,14 @@ const timelineData = [
   { year: '2024', companies: 187, investment: 92.5, revenue: 156, jobs: 2150 },
 ];
 
-const LIGHT_BLUE = 'hsl(199, 85%, 52%)';
+const LIGHT_BLUE = 'hsl(210, 90%, 45%)';
 const TEAL = 'hsl(168, 100%, 35%)';
 
 const sectorData = [
   { name: 'Mining Tech', value: 35, color: TEAL },
   { name: 'Cleantech', value: 22, color: LIGHT_BLUE },
   { name: 'Industrial IoT', value: 18, color: 'hsl(168, 80%, 45%)' },
-  { name: 'AI & ML', value: 15, color: 'hsl(199, 75%, 62%)' },
+  { name: 'AI & ML', value: 15, color: 'hsl(210, 80%, 55%)' },
   { name: 'Critical Minerals', value: 10, color: 'hsl(168, 55%, 65%)' },
 ];
 
@@ -213,7 +213,7 @@ export default function EcosystemDashboard() {
               onClick={() => setActiveFilter(filter.key)}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300"
               style={activeFilter === filter.key ? {
-                background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(199 85% 52%) 100%)',
+                background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(210 90% 45%) 100%)',
                 color: 'white',
                 boxShadow: '0 4px 16px hsla(168, 100%, 30%, 0.3)',
               } : {
@@ -254,7 +254,7 @@ export default function EcosystemDashboard() {
                   <span style={{ color: 'hsl(220, 15%, 40%)' }}>Investment ($M)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(199, 85%, 52%)' }} />
+                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(210, 90%, 45%)' }} />
                   <span style={{ color: 'hsl(220, 15%, 40%)' }}>Revenue ($M)</span>
                 </div>
               </div>
@@ -267,8 +267,8 @@ export default function EcosystemDashboard() {
                     <stop offset="95%" stopColor="hsl(168, 100%, 35%)" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="hsl(199, 85%, 52%)" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="hsl(199, 85%, 52%)" stopOpacity={0} />
+                    <stop offset="5%" stopColor="hsl(210, 90%, 45%)" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="hsl(210, 90%, 45%)" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsla(220, 13%, 70%, 0.3)" />
@@ -286,7 +286,7 @@ export default function EcosystemDashboard() {
                 <Area 
                   type="monotone" 
                   dataKey="revenue" 
-                  stroke="hsl(199, 85%, 52%)" 
+                  stroke="hsl(210, 90%, 45%)" 
                   strokeWidth={2}
                   fill="url(#revenueGradient)" 
                   name="Revenue ($M)"
@@ -400,7 +400,7 @@ export default function EcosystemDashboard() {
                 <Bar 
                   yAxisId="right"
                   dataKey="partnerships" 
-                  fill="hsl(199, 85%, 52%)" 
+                  fill="hsl(210, 90%, 45%)" 
                   radius={[4, 4, 0, 0]}
                   name="New Partnerships"
                 />
@@ -431,12 +431,12 @@ export default function EcosystemDashboard() {
                       </div>
                       <span className="text-sm" style={{ color: 'hsl(220, 15%, 30%)' }}>{item.label}</span>
                     </div>
-                    <span className="font-bold text-sm" style={{ color: 'hsl(199, 85%, 52%)' }}>{item.value}</span>
+                    <span className="font-bold text-sm" style={{ color: 'hsl(210, 90%, 45%)' }}>{item.value}</span>
                   </div>
                   <div className="h-2 rounded-full overflow-hidden" style={{ background: 'hsla(220, 15%, 80%, 0.4)' }}>
                     <div 
                       className="h-full rounded-full transition-all duration-1000"
-                      style={{ width: item.width, background: 'linear-gradient(90deg, hsl(168, 100%, 35%), hsl(199, 85%, 52%))' }}
+                      style={{ width: item.width, background: 'linear-gradient(90deg, hsl(168, 100%, 35%), hsl(210, 90%, 45%))' }}
                     />
                   </div>
                 </div>
@@ -462,14 +462,14 @@ export default function EcosystemDashboard() {
               >
                 <div className="w-8 h-8 rounded-full flex items-center justify-center absolute top-3 right-3 text-xs font-bold" style={{
                   ...neumorphicIconStyle,
-                  color: 'hsl(199, 85%, 52%)',
+                  color: 'hsl(210, 90%, 45%)',
                 }}>
                   {index + 1}
                 </div>
                 <div className="text-2xl font-black mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{stage.companies}</div>
                 <div className="text-sm font-medium mb-2" style={{ color: 'hsl(220, 15%, 25%)' }}>{stage.stage}</div>
                 <div className="text-xs font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                  Avg raise: <span className="font-medium" style={{ color: 'hsl(199, 85%, 52%)' }}>${stage.avgRaise}M</span>
+                  Avg raise: <span className="font-medium" style={{ color: 'hsl(210, 90%, 45%)' }}>${stage.avgRaise}M</span>
                 </div>
               </div>
             ))}
