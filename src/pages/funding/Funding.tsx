@@ -9,7 +9,7 @@ import core5Placeholder from '@/assets/core5-ev-charging.png.asset.json';
 import featuredIap from '@/assets/featured-iap-photo.jpg.asset.json';
 import featuredRaii from '@/assets/featured-raii-photo.png.asset.json';
 import featuredScf from '@/assets/featured-scf-photo.jpg.asset.json';
-import featuredCore5 from '@/assets/featured-core5-photo.png';
+
 import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
 import ovinLogoAsset from '@/assets/logos/ovin-logo.png.asset.json';
