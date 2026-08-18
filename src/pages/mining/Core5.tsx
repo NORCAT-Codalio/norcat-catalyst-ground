@@ -203,7 +203,7 @@ const Core5 = () => {
                     You don't have to navigate the innovation ecosystem on your own.
                   </p>
                   <p>
-                    Through CORE5, we can connect you with a broader network of innovation organizations, research institutions, specialized facilities and industry partners across Northern Ontario.
+                    Through Core5, we can connect you with a broader network of innovation organizations, research institutions, specialized facilities and industry partners across Northern Ontario.
                   </p>
                   <p>
                     Whether you need business guidance, technical expertise, a place to test your technology or connections to industry, we'll help you find the right next step.
@@ -293,7 +293,7 @@ const Core5 = () => {
                 <span style={{ color: TEAL }}>WORKING TOGETHER.</span>
               </SectionTitle>
               <p className="text-base sm:text-lg leading-relaxed" style={{ color: BODY }}>
-                CORE5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
+                Core5 brings together 20+ partners — innovation centres, universities and colleges, R&D and testing
                 facilities, economic development organizations and industry — across Greater Sudbury, North Bay,
                 Sault Ste. Marie, Timmins, Temiskaming Shores and Thunder Bay.
               </p>
@@ -363,7 +363,7 @@ const Core5 = () => {
                     province to help companies develop, prototype and commercialize mobility technologies.
                   </p>
                   <p>
-                    CORE5 is the North's gateway into that network — and the North's strengths in mining, critical
+                    Core5 is the North's gateway into that network — and the North's strengths in mining, critical
                     minerals and electrification flowing back out to Ontario.
                   </p>
                 </div>
