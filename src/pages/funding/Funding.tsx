@@ -311,66 +311,87 @@ const Funding = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* CIT Card */}
-              <div className="group relative rounded-2xl overflow-hidden border border-black/5 bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div className="relative h-48 sm:h-56 md:h-52 overflow-hidden">
-                  <img src={citPlaceholder.url} alt="Critical Industrial Technologies" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="relative px-6 pb-8 pt-0 -mt-7 flex flex-col flex-1">
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg mb-5 z-10" style={{ background: TEAL, color: 'white' }}>
-                    <Cpu className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold leading-tight text-[#001A4D] mb-2">Critical Industrial Technologies</h3>
-                  <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: TEAL }}>Ontario mining & industrial tough-tech</p>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                    Build, test, and validate hard-tech for the mining and industrial sector with access to funding, facilities, and buyers.
-                  </p>
-                  <ul className="space-y-2.5 mb-6">
-                    {['Non-dilutive project funding', 'Real-world testing in the Underground Centre', 'Direct pathways to mining OEMs'].map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
-                        <CheckCircle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/mining/critical-industrial-tech"
-                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start border hover:bg-[#00B398] hover:text-white transition-colors"
-                        style={{ borderColor: TEAL, color: TEAL }}>
-                    Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
+            <div className="space-y-8">
+              {industryTracks.map((program, idx) => {
+                const imageLeft = idx % 2 === 0;
+                return (
+                  <div key={program.key} className="rounded-3xl overflow-hidden bg-white border border-black/5 shadow-lg">
+                    <div className="grid lg:grid-cols-2">
+                      <div className={`relative h-56 sm:h-72 lg:h-auto min-h-[280px] lg:min-h-[420px] ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                        <img
+                          src={program.image}
+                          alt={program.name}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover"
+                          style={{ objectPosition: (program as { imagePosition?: string }).imagePosition ?? 'center' }}
+                        />
+                      </div>
+                      <div className={`p-8 md:p-10 lg:p-12 flex flex-col justify-center ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+                        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>
+                          {program.eyebrow}
+                        </p>
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase leading-[0.95] mb-4" style={{ color: NAVY, letterSpacing: '-0.02em' }}>
+                          {program.name}
+                        </h3>
+                        <div className="w-16 h-1.5 mb-6" style={{ background: TEAL }} />
+                        <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.72)' }}>
+                          {program.description}
+                        </p>
+                        <ul className="space-y-3 mb-8">
+                          {program.benefits.map((b) => (
+                            <li key={b} className="flex items-start gap-3 text-sm md:text-base" style={{ color: 'rgba(0,26,77,0.85)' }}>
+                              <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: `${TEAL}15`, color: TEAL }}>
+                                <CheckCircle className="w-3.5 h-3.5" />
+                              </span>
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                        <Link
+                          to={program.href}
+                          className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 rounded-full font-semibold text-sm text-white transition-all hover:opacity-90"
+                          style={{ background: TEAL }}
+                        >
+                          View This Program <ArrowRight className="w-4 h-4" />
+                        </Link>
 
-              {/* Core5 Card */}
-              <div className="group relative rounded-2xl overflow-hidden border border-black/5 bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div className="relative h-48 sm:h-56 md:h-52 overflow-hidden">
-                  <img src={core5Placeholder.url} alt="Core5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="relative px-6 pb-8 pt-0 -mt-7 flex flex-col flex-1">
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg mb-5 z-10" style={{ background: TEAL, color: 'white' }}>
-                    <Layers className="w-7 h-7" />
+                        <div className="mt-8 pt-6 border-t border-black/10">
+                          <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
+                            Delivered in partnership with
+                          </p>
+                          <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5">
+                            {program.partners.map((partner) => {
+                              const isCanada = partner.alt === 'Government of Canada';
+                              const isFednor = partner.alt === 'FedNor';
+                              const isOntario = partner.alt === 'Government of Ontario';
+                              return (
+                                <div key={partner.alt} className="flex items-center justify-start rounded-lg py-1">
+                                  <img
+                                    src={partner.logo}
+                                    alt={partner.alt}
+                                    loading="lazy"
+                                    width={160}
+                                    height={48}
+                                    className={`w-auto object-contain ${
+                                      isCanada
+                                        ? 'h-9 sm:h-10 md:h-11 max-w-[180px] sm:max-w-[200px]'
+                                        : isFednor
+                                        ? 'h-8 sm:h-9 md:h-10 max-w-[160px] sm:max-w-[180px]'
+                                        : isOntario
+                                        ? 'h-7 sm:h-8 md:h-9 max-w-[140px] sm:max-w-[160px]'
+                                        : 'h-7 sm:h-8 md:h-9 max-w-[130px] sm:max-w-[150px]'
+                                    }`}
+                                  />
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold leading-tight text-[#001A4D] mb-2">Core5</h3>
-                  <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: TEAL }}>BEV / EV ventures across Northern Ontario</p>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                    The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.
-                  </p>
-                  <ul className="space-y-2.5 mb-6">
-                    {['Startup & SME funding support', 'Access to R&D and testing facilities', 'Buyer / builder matchmaking'].map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(0,26,77,0.8)' }}>
-                        <CheckCircle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/mining/core5"
-                        className="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm self-start border hover:bg-[#00B398] hover:text-white transition-colors"
-                        style={{ borderColor: TEAL, color: TEAL }}>
-                    Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>
