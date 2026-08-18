@@ -168,7 +168,7 @@ const Funding = () => {
                 Choose your <span style={{ color: TEAL }}>capital path.</span>
               </h2>
               <p className="mt-5 text-base md:text-lg" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                Five flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
+                Three flagship pathways designed for different stages, sectors, and outcomes. Each one is a direct link to the team, funding, and support you need.
               </p>
             </div>
 
