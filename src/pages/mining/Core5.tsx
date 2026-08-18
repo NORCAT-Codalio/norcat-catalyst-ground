@@ -15,7 +15,7 @@ import {
 
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import undergroundTesting from '@/assets/core5-underground-testing.png.asset.json';
-import core5NetworkStats from '@/assets/core5-network-stats.png.asset.json';
+import core5NetworkStats from '@/assets/core5-network-stats-v2.png';
 import core5LogoWhite from '@/assets/core5-logo-white.png.asset.json';
 import core5OntarioMap from '@/assets/core5-ontario-map.png.asset.json';
 import norcatLogo from '@/assets/logos/norcat.png';
