@@ -431,7 +431,7 @@ export default function EcosystemDashboard() {
                       </div>
                       <span className="text-sm" style={{ color: 'hsl(220, 15%, 30%)' }}>{item.label}</span>
                     </div>
-                    <span className="font-bold text-sm" style={{ color: 'hsl(168, 100%, 35%)' }}>{item.value}</span>
+                    <span className="font-bold text-sm" style={{ color: 'hsl(199, 85%, 52%)' }}>{item.value}</span>
                   </div>
                   <div className="h-2 rounded-full overflow-hidden" style={{ background: 'hsla(220, 15%, 80%, 0.4)' }}>
                     <div 
@@ -462,14 +462,14 @@ export default function EcosystemDashboard() {
               >
                 <div className="w-8 h-8 rounded-full flex items-center justify-center absolute top-3 right-3 text-xs font-bold" style={{
                   ...neumorphicIconStyle,
-                  color: 'hsl(168, 100%, 35%)',
+                  color: 'hsl(199, 85%, 52%)',
                 }}>
                   {index + 1}
                 </div>
                 <div className="text-2xl font-black mb-1" style={{ color: 'hsl(220, 15%, 20%)' }}>{stage.companies}</div>
                 <div className="text-sm font-medium mb-2" style={{ color: 'hsl(220, 15%, 25%)' }}>{stage.stage}</div>
                 <div className="text-xs font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                  Avg raise: <span className="font-medium" style={{ color: 'hsl(168, 100%, 35%)' }}>${stage.avgRaise}M</span>
+                  Avg raise: <span className="font-medium" style={{ color: 'hsl(199, 85%, 52%)' }}>${stage.avgRaise}M</span>
                 </div>
               </div>
             ))}
