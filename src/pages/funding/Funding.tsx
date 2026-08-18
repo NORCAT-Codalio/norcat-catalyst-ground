@@ -5,7 +5,7 @@ import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
 import core5Placeholder from '@/assets/core5-ev-charging.png.asset.json';
-import featuredCit from '@/assets/featured-cit-photo.png';
+
 import featuredIap from '@/assets/featured-iap-photo.jpg.asset.json';
 import featuredRaii from '@/assets/featured-raii-photo.png.asset.json';
 import featuredScf from '@/assets/featured-scf-photo.jpg.asset.json';
