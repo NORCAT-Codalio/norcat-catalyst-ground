@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ArrowRight, Cpu, Layers, DollarSign, TrendingUp, Rocket, CheckCircle, Compass } from 'lucide-react';
