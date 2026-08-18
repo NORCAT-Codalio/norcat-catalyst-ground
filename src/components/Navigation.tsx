@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   Menu, X, ArrowRight, ChevronDown, Rocket, DollarSign, Globe, LogIn, Phone,
   TrendingUp, Users, Cpu, Layers, Mountain, ShieldCheck, Building2,
-  Network, BarChart3, Star, Calendar, BookOpen,
+  Network, BarChart3, Star, Newspaper, Calendar, BookOpen,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -40,6 +40,7 @@ const servicesItems: MenuEntry[] = [
 
 const insightsItems: MenuEntry[] = [
   { name: 'Success Stories', href: '/insights/success-stories', icon: Star, description: 'Founder journeys and case studies from the portfolio.' },
+  { name: 'News', href: '/insights/news', icon: Newspaper, description: 'Latest funding rounds, partnerships, and ecosystem announcements.' },
   { name: 'Impact', href: '/impact', icon: BarChart3, description: 'The numbers behind the innovation happening across the ecosystem.' },
 ];
 
@@ -288,19 +289,6 @@ export function Navigation() {
                 </button>
               </div>
             ))}
-
-            {/* News */}
-            <Link
-              to="/insights/news"
-              className={cn(
-                'px-3 py-2 text-[15px] font-medium transition-colors rounded-md',
-                location.pathname.startsWith('/insights/news')
-                  ? 'text-primary'
-                  : 'text-foreground/70 hover:text-foreground'
-              )}
-            >
-              News
-            </Link>
 
             {/* Events */}
             <Link
@@ -568,13 +556,6 @@ export function Navigation() {
                     </AnimatePresence>
                   </div>
                 ))}
-
-                <Link
-                  to="/insights/news"
-                  className="block px-4 py-3 text-base font-medium rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                >
-                  News
-                </Link>
 
                 <Link
                   to="/events"
