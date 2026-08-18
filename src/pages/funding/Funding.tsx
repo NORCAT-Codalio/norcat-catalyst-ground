@@ -55,24 +55,6 @@ type ProgramTab = {
 
 const programTabs: ProgramTab[] = [
   {
-    key: 'CIT',
-    shortName: 'CIT',
-    name: 'Critical Industrial Technologies (CIT)',
-    eyebrow: 'Featured Program',
-    description: 'Supporting SMEs in developing and adopting advanced mining and industrial technologies through access to the NORCAT Underground Centre.',
-    benefits: [
-      'Non-dilutive project funding',
-      'Access to world-class testing and validation facilities',
-      'Connections to industry and innovation partners',
-    ],
-    href: '/mining/critical-industrial-tech',
-    image: featuredCit,
-    partners: [
-      { logo: ociLogo, alt: 'Ontario Centre of Innovation' },
-      { logo: ontarioLogo, alt: 'Government of Ontario' },
-    ],
-  },
-  {
     key: 'IAP',
     shortName: 'IAP',
     name: 'Innovation Acceleration Program',
