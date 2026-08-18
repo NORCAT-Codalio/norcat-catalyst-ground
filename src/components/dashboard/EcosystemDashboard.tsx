@@ -53,12 +53,15 @@ const timelineData = [
   { year: '2024', companies: 187, investment: 92.5, revenue: 156, jobs: 2150 },
 ];
 
+const LIGHT_BLUE = 'hsl(199, 85%, 52%)';
+const TEAL = 'hsl(168, 100%, 35%)';
+
 const sectorData = [
-  { name: 'Mining Tech', value: 35, color: 'hsl(168, 100%, 35%)' },
-  { name: 'Cleantech', value: 22, color: 'hsl(168, 100%, 35%)' },
+  { name: 'Mining Tech', value: 35, color: TEAL },
+  { name: 'Cleantech', value: 22, color: LIGHT_BLUE },
   { name: 'Industrial IoT', value: 18, color: 'hsl(168, 80%, 45%)' },
-  { name: 'AI & ML', value: 15, color: 'hsl(168, 60%, 55%)' },
-  { name: 'Critical Minerals', value: 10, color: 'hsl(168, 45%, 65%)' },
+  { name: 'AI & ML', value: 15, color: 'hsl(199, 75%, 62%)' },
+  { name: 'Critical Minerals', value: 10, color: 'hsl(168, 55%, 65%)' },
 ];
 
 const monthlyMetrics = [
