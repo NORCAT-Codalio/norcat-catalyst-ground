@@ -64,7 +64,8 @@ export function VentureHero() {
               className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
               style={{ color: 'rgba(255,255,255,0.85)' }}
             >
-              Whatever you're building, wherever you're building it — we help you scale.
+              Whatever you're building, wherever you're building it — <br className="hidden sm:block" />
+              we help you scale.
             </motion.p>
           </div>
         </ScrollReveal>
