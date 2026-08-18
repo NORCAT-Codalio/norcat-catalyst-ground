@@ -212,8 +212,8 @@ const Core5 = () => {
               </div>
 
               <img
-                src={core5NetworkStats.url}
-                alt="CORE5 Northern Ontario network: 70,000 sq. ft. R&D space, 3 km+ underground mine, 26 industry partners"
+                src={core5NetworkStats}
+                alt="CORE5 Northern Ontario network: 70,000 sq. ft. R&D space, 3 km+ underground mine, 22 industry partners"
                 className="w-full rounded-3xl object-contain"
               />
             </div>
