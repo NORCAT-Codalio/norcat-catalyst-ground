@@ -254,7 +254,7 @@ export default function EcosystemDashboard() {
                   <span style={{ color: 'hsl(220, 15%, 40%)' }}>Investment ($M)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(168, 60%, 55%)' }} />
+                  <div className="w-3 h-3 rounded-full" style={{ background: 'hsl(199, 85%, 52%)' }} />
                   <span style={{ color: 'hsl(220, 15%, 40%)' }}>Revenue ($M)</span>
                 </div>
               </div>
@@ -267,8 +267,8 @@ export default function EcosystemDashboard() {
                     <stop offset="95%" stopColor="hsl(168, 100%, 35%)" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="hsl(168, 60%, 55%)" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="hsl(168, 60%, 55%)" stopOpacity={0} />
+                    <stop offset="5%" stopColor="hsl(199, 85%, 52%)" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="hsl(199, 85%, 52%)" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsla(220, 13%, 70%, 0.3)" />
@@ -286,7 +286,7 @@ export default function EcosystemDashboard() {
                 <Area 
                   type="monotone" 
                   dataKey="revenue" 
-                  stroke="hsl(168, 60%, 55%)" 
+                  stroke="hsl(199, 85%, 52%)" 
                   strokeWidth={2}
                   fill="url(#revenueGradient)" 
                   name="Revenue ($M)"
@@ -400,7 +400,7 @@ export default function EcosystemDashboard() {
                 <Bar 
                   yAxisId="right"
                   dataKey="partnerships" 
-                  fill="hsl(168, 60%, 55%)" 
+                  fill="hsl(199, 85%, 52%)" 
                   radius={[4, 4, 0, 0]}
                   name="New Partnerships"
                 />
@@ -436,7 +436,7 @@ export default function EcosystemDashboard() {
                   <div className="h-2 rounded-full overflow-hidden" style={{ background: 'hsla(220, 15%, 80%, 0.4)' }}>
                     <div 
                       className="h-full rounded-full transition-all duration-1000"
-                      style={{ width: item.width, background: 'linear-gradient(90deg, hsl(168, 100%, 35%), hsl(168, 80%, 50%))' }}
+                      style={{ width: item.width, background: 'linear-gradient(90deg, hsl(168, 100%, 35%), hsl(199, 85%, 52%))' }}
                     />
                   </div>
                 </div>
