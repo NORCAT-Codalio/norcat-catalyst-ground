@@ -193,7 +193,7 @@ const SudburyEcosystem = () => {
                 <Eyebrow className="mb-2">Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  Connect with <span style={{ color: TEAL }}>30</span> local organizations
+                  Connect with <span style={{ color: TEAL }}>local</span> organizations
                 </h2>
               </div>
 
