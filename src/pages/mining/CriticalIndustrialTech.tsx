@@ -39,9 +39,9 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, color = TEAL }: { children: React.ReactNode; color?: string }) => (
+const Eyebrow = ({ children, color = TEAL, className = '' }: { children: React.ReactNode; color?: string; className?: string }) => (
   <p
-    className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+    className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
     style={{ fontFamily: FONT, color }}
   >
     <span className="size-1.5 rounded-full inline-block" style={{ background: color }} />
@@ -170,7 +170,7 @@ const CriticalIndustrialTech = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>
+              <Eyebrow className="!text-white">
                 <Factory className="w-3.5 h-3.5" />
                 Ontario Centre of Innovation Program
               </Eyebrow>

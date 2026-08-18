@@ -35,9 +35,9 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, center = false }: { children: React.ReactNode; center?: boolean }) => (
+const Eyebrow = ({ children, center = false, className = '' }: { children: React.ReactNode; center?: boolean; className?: string }) => (
   <p
-    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
+    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
     style={{ fontFamily: FONT, color: TEAL }}
   >
     <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
@@ -130,7 +130,7 @@ const SudburyCatalystFund = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow>Sudbury Catalyst Fund</Eyebrow>
+              <Eyebrow className="!text-white">Sudbury Catalyst Fund</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Investing in Sudbury’s<br /><span style={{ color: TEAL }}>tech-based entrepreneurial ecosystem.</span>
               </Display>
@@ -246,7 +246,7 @@ const SudburyCatalystFund = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Investment Criteria</Eyebrow>
+              <Eyebrow className="!text-white">Investment Criteria</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 What we look<br />for in founders.
               </Display>
@@ -332,7 +332,7 @@ const SudburyCatalystFund = () => {
           />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>NORCAT Innovation Mentors</Eyebrow>
+              <Eyebrow className="!text-white">NORCAT Innovation Mentors</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                 The front line<br />of the SCF process.
               </Display>
