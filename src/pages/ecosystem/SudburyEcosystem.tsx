@@ -100,10 +100,10 @@ const ecosystemOrgs: EcosystemOrg[] = [
   { name: 'CEMI', category: 'research', description: 'Centre for Excellence in Mining Innovation', longDescription: 'Industry-led research organization accelerating the development and adoption of mining innovation.', link: 'https://cemi.ca', icon: Landmark, tags: ['Mining Excellence', 'R&D'] },
 ];
 
-const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
   <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+     style={{ fontFamily: FONT, color: TEAL, ...style }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: (style && style.color) || TEAL }} />
     {children}
   </p>
 );
