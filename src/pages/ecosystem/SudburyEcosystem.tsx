@@ -100,10 +100,10 @@ const ecosystemOrgs: EcosystemOrg[] = [
   { name: 'CEMI', category: 'research', description: 'Centre for Excellence in Mining Innovation', longDescription: 'Industry-led research organization accelerating the development and adoption of mining innovation.', link: 'https://cemi.ca', icon: Landmark, tags: ['Mining Excellence', 'R&D'] },
 ];
 
-const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
   <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-     style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
+     style={{ fontFamily: FONT, color: TEAL, ...style }}>
+    <span className="size-1.5 rounded-full inline-block" style={{ background: (style && style.color) || TEAL }} />
     {children}
   </p>
 );
@@ -157,7 +157,7 @@ const SudburyEcosystem = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <div>
-                <Eyebrow>BUILT FOR FOUNDERS</Eyebrow>
+                <Eyebrow style={{ color: 'white' }}>BUILT FOR FOUNDERS</Eyebrow>
                 <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                   SUPPORT AT <span style={{ color: TEAL }}>EVERY STAGE.</span>
                 </Display>
@@ -193,7 +193,7 @@ const SudburyEcosystem = () => {
                 <Eyebrow className="mb-2">Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  Connect with <span style={{ color: TEAL }}>30</span> local organizations
+                  Connect with <span style={{ color: TEAL }}>local</span> organizations
                 </h2>
               </div>
 
