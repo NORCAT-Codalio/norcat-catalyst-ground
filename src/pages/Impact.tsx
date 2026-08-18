@@ -124,8 +124,10 @@ export default function Impact() {
                 Ecosystem Metrics
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                The Numbers <span style={{ color: TEAL }}>Behind the North.</span>
+                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                <span style={{ color: NAVY }}>The Numbers</span><br />
+                <span style={{ color: BLUE }}>Behind</span>{' '}
+                <span style={{ color: TEAL }}>the North.</span>
               </h2>
               <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                 A live look at the founders, capital, and partnerships shaping Greater Sudbury's innovation economy.
