@@ -54,7 +54,8 @@ export function VentureHero() {
               className="font-black uppercase leading-[0.95] tracking-tight text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
               style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
             >
-              Your venture's <span style={{ color: TEAL }}>unfair advantage.</span>
+              Your venture's <br />
+              <span style={{ color: TEAL }}>unfair advantage.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
