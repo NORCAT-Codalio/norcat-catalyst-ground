@@ -156,9 +156,6 @@ const impactStats = [
 ];
 
 const Funding = () => {
-  const [activeTab, setActiveTab] = useState('CIT');
-  const activeProgram = programTabs.find((p) => p.key === activeTab) || programTabs[0];
-
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
