@@ -501,7 +501,7 @@ export default function EcosystemDashboard() {
         <StatCard icon={Handshake} value={ecosystemStats.partnerships} label="Total Partnerships" trend={28} delay={0} />
         <StatCard icon={DollarSign} value={ecosystemStats.totalRevenue} label="Total Revenue" prefix="$" suffix="M" trend={10} delay={50} />
         <StatCard icon={Award} value={ecosystemStats.patents + ecosystemStats.trademarks} label="IP Assets" trend={15} delay={100} />
-        <StatCard icon={Clock} value={ecosystemStats.mentorshipHours} label="Mentorship Hours" delay={150} />
+        <StatCard icon={Clock} value={ecosystemStats.mentorshipHours} label="Mentorship Hours" trend={14} delay={150} />
       </div>
     </div>
   );
