@@ -404,7 +404,10 @@ const Funding = () => {
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-20">
-              <Eyebrow><TrendingUp className="w-3.5 h-3.5" />Funding Impact</Eyebrow>
+              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: FONT, color: 'white' }}>
+                <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
+                <TrendingUp className="w-3.5 h-3.5" />Funding Impact
+              </p>
               <Display className="text-3xl md:text-5xl">
                 Capital that <span style={{ color: TEAL }}>compounds.</span>
               </Display>
