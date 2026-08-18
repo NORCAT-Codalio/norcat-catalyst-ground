@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ArrowRight, Cpu, Layers, DollarSign, TrendingUp, Rocket, CheckCircle, Compass } from 'lucide-react';
@@ -157,9 +156,6 @@ const impactStats = [
 ];
 
 const Funding = () => {
-  const [activeTab, setActiveTab] = useState('CIT');
-  const activeProgram = programTabs.find((p) => p.key === activeTab) || programTabs[0];
-
   return (
     <Layout>
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
@@ -212,98 +208,88 @@ const Funding = () => {
               </p>
             </div>
 
-            {/* Program Tabs */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              {programTabs.map((p) => (
-                <button
-                  key={p.key}
-                  onClick={() => setActiveTab(p.key)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                    activeTab === p.key
-                      ? 'text-white shadow-md'
-                      : 'bg-white text-[#001A4D] border border-black/10 hover:border-teal-400 hover:text-teal-600'
-                  }`}
-                  style={activeTab === p.key ? { background: TEAL } : undefined}
-                >
-                  {p.shortName}
-                </button>
-              ))}
-            </div>
+            {/* Individual Program Cards */}
+            <div className="space-y-8">
+              {programTabs.map((program, idx) => {
+                const imageLeft = idx % 2 === 0;
+                return (
+                  <div key={program.key} className="rounded-3xl overflow-hidden bg-white border border-black/5 shadow-lg">
+                    <div className="grid lg:grid-cols-2">
+                      <div className={`relative h-56 sm:h-72 lg:h-auto min-h-[280px] lg:min-h-[420px] ${imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                        <img
+                          src={program.image}
+                          alt={program.name}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover"
+                          style={{ objectPosition: (program as { imagePosition?: string }).imagePosition ?? 'center' }}
+                        />
+                      </div>
+                      <div className={`p-8 md:p-10 lg:p-12 flex flex-col justify-center ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+                        <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>
+                          {program.eyebrow}
+                        </p>
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase leading-[0.95] mb-4" style={{ color: NAVY, letterSpacing: '-0.02em' }}>
+                          {program.name}
+                        </h3>
+                        <div className="w-16 h-1.5 mb-6" style={{ background: TEAL }} />
+                        <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.72)' }}>
+                          {program.description}
+                        </p>
+                        <ul className="space-y-3 mb-8">
+                          {program.benefits.map((b) => (
+                            <li key={b} className="flex items-start gap-3 text-sm md:text-base" style={{ color: 'rgba(0,26,77,0.85)' }}>
+                              <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: `${TEAL}15`, color: TEAL }}>
+                                <CheckCircle className="w-3.5 h-3.5" />
+                              </span>
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                        <Link
+                          to={program.href}
+                          className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 rounded-full font-semibold text-sm text-white transition-all hover:opacity-90"
+                          style={{ background: TEAL }}
+                        >
+                          View This Program <ArrowRight className="w-4 h-4" />
+                        </Link>
 
-            {/* Featured Program Card */}
-            <div className="rounded-3xl overflow-hidden bg-white border border-black/5 shadow-lg">
-              <div className="grid lg:grid-cols-2">
-                <div className="relative h-64 sm:h-80 lg:h-auto min-h-[320px] lg:min-h-[480px]">
-                  <img
-                    src={activeProgram.image}
-                    alt={activeProgram.name}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{ objectPosition: (activeProgram as { imagePosition?: string }).imagePosition ?? 'center' }}
-                  />
-                </div>
-                <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
-                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>
-                    {activeProgram.eyebrow}
-                  </p>
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase leading-[0.95] mb-4" style={{ color: NAVY, letterSpacing: '-0.02em' }}>
-                    {activeProgram.name}
-                  </h3>
-                  <div className="w-16 h-1.5 mb-6" style={{ background: TEAL }} />
-                  <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: 'rgba(0,26,77,0.72)' }}>
-                    {activeProgram.description}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {activeProgram.benefits.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-sm md:text-base" style={{ color: 'rgba(0,26,77,0.85)' }}>
-                        <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: `${TEAL}15`, color: TEAL }}>
-                          <CheckCircle className="w-3.5 h-3.5" />
-                        </span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={activeProgram.href}
-                    className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 rounded-full font-semibold text-sm text-white transition-all hover:opacity-90"
-                    style={{ background: TEAL }}
-                  >
-                    View This Program <ArrowRight className="w-4 h-4" />
-                  </Link>
-
-                  <div className="mt-8 pt-6 border-t border-black/10">
-                    <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
-                      Delivered in partnership with
-                    </p>
-                    <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5">
-                      {activeProgram.partners.map((partner) => {
-                        const isCanada = partner.alt === 'Government of Canada';
-                        const isFednor = partner.alt === 'FedNor';
-                        const isOntario = partner.alt === 'Government of Ontario';
-                        return (
-                          <div key={partner.alt} className="flex items-center justify-start rounded-lg py-1">
-                            <img
-                              src={partner.logo}
-                              alt={partner.alt}
-                              loading="lazy"
-                              width={160}
-                              height={48}
-                              className={`w-auto object-contain ${
-                                isCanada
-                                  ? 'h-9 sm:h-10 md:h-11 max-w-[180px] sm:max-w-[200px]'
-                                  : isFednor
-                                  ? 'h-8 sm:h-9 md:h-10 max-w-[160px] sm:max-w-[180px]'
-                                  : isOntario
-                                  ? 'h-7 sm:h-8 md:h-9 max-w-[140px] sm:max-w-[160px]'
-                                  : 'h-7 sm:h-8 md:h-9 max-w-[130px] sm:max-w-[150px]'
-                              }`}
-                            />
+                        <div className="mt-8 pt-6 border-t border-black/10">
+                          <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
+                            Delivered in partnership with
+                          </p>
+                          <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-5">
+                            {program.partners.map((partner) => {
+                              const isCanada = partner.alt === 'Government of Canada';
+                              const isFednor = partner.alt === 'FedNor';
+                              const isOntario = partner.alt === 'Government of Ontario';
+                              return (
+                                <div key={partner.alt} className="flex items-center justify-start rounded-lg py-1">
+                                  <img
+                                    src={partner.logo}
+                                    alt={partner.alt}
+                                    loading="lazy"
+                                    width={160}
+                                    height={48}
+                                    className={`w-auto object-contain ${
+                                      isCanada
+                                        ? 'h-9 sm:h-10 md:h-11 max-w-[180px] sm:max-w-[200px]'
+                                        : isFednor
+                                        ? 'h-8 sm:h-9 md:h-10 max-w-[160px] sm:max-w-[180px]'
+                                        : isOntario
+                                        ? 'h-7 sm:h-8 md:h-9 max-w-[140px] sm:max-w-[160px]'
+                                        : 'h-7 sm:h-8 md:h-9 max-w-[130px] sm:max-w-[150px]'
+                                    }`}
+                                  />
+                                </div>
+                              );
+                            })}
                           </div>
-                        );
-                      })}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>
