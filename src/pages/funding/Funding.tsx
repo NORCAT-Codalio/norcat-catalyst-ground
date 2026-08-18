@@ -110,24 +110,6 @@ const programTabs: ProgramTab[] = [
       { logo: sudburyLogo, alt: 'City of Greater Sudbury' },
     ],
   },
-  {
-    key: 'Core5',
-    shortName: 'Core5',
-    name: 'Core5',
-    eyebrow: 'BEV / EV Ventures',
-    description: 'The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.',
-    benefits: [
-      'Startup & SME funding support',
-      'Access to R&D and testing facilities',
-      'Buyer / builder matchmaking',
-    ],
-    href: '/mining/core5',
-    image: featuredCore5,
-    partners: [
-      { logo: ovinLogoAsset.url, alt: 'Ontario Vehicle Innovation Network' },
-      { logo: ontarioLogo, alt: 'Government of Ontario' },
-    ],
-  },
 ];
 
 const impactStats = [
