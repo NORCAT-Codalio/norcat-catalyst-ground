@@ -355,7 +355,7 @@ const Funding = () => {
                           View This Program <ArrowRight className="w-4 h-4" />
                         </Link>
 
-                        <div className="mt-8 pt-6 border-t border-black/10">
+                        <div className="mt-8 pt-6 border-t border-black/10 hidden md:block">
                           <p className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: 'rgba(0,26,77,0.5)' }}>
                             Delivered in partnership with
                           </p>
