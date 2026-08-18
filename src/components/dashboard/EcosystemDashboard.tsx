@@ -385,6 +385,16 @@ export default function EcosystemDashboard() {
             </div>
             <ResponsiveContainer width="100%" height="85%">
               <BarChart data={monthlyMetrics} barGap={8}>
+                <defs>
+                  <linearGradient id="mentorshipBar" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="hsl(168, 100%, 42%)" />
+                    <stop offset="100%" stopColor="hsl(168, 80%, 30%)" />
+                  </linearGradient>
+                  <linearGradient id="partnershipsBar" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="hsl(210, 95%, 55%)" />
+                    <stop offset="100%" stopColor="hsl(213, 90%, 38%)" />
+                  </linearGradient>
+                </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsla(220, 13%, 70%, 0.3)" vertical={false} />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
                 <YAxis yAxisId="left" tick={{ fontSize: 11, fill: 'hsl(220, 15%, 40%)' }} stroke="hsla(220, 13%, 70%, 0.3)" />
@@ -393,14 +403,14 @@ export default function EcosystemDashboard() {
                 <Bar 
                   yAxisId="left"
                   dataKey="mentorship" 
-                  fill="hsl(168, 100%, 35%)" 
+                  fill="url(#mentorshipBar)" 
                   radius={[4, 4, 0, 0]}
                   name="Mentorship Hours"
                 />
                 <Bar 
                   yAxisId="right"
                   dataKey="partnerships" 
-                  fill="hsl(210, 90%, 45%)" 
+                  fill="url(#partnershipsBar)" 
                   radius={[4, 4, 0, 0]}
                   name="New Partnerships"
                 />
