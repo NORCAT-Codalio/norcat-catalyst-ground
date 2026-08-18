@@ -202,6 +202,8 @@ export default function EcosystemDashboard() {
     { key: 'innovation', label: 'Innovation', icon: Lightbulb },
   ];
 
+  const shows = (...keys: MetricFilter[]) => activeFilter === 'all' || keys.includes(activeFilter);
+
   return (
     <div className="space-y-8">
       {/* Filter Tabs */}
