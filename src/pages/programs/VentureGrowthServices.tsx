@@ -41,7 +41,7 @@ const differentiators = [
   { icon: Zap, title: 'Northern Advantage', description: "Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada's most established mining ecosystems." },
 ];
 
-const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
+const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
   <p
     className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
     style={{ fontFamily: FONT, color: light ? TEAL : TEAL }}

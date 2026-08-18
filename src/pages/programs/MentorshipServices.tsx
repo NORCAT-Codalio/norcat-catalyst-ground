@@ -60,7 +60,7 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 const Eyebrow = ({ children, center = false }: { children: React.ReactNode; center?: boolean }) => (
   <p
     className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
-    style={{ fontFamily: FONT, color: TEAL }}
+    style={{ fontFamily: FONT, color: '#FFFFFF' }}
   >
     <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}

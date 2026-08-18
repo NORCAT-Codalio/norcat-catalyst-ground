@@ -35,9 +35,9 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, center = false }: { children: React.ReactNode; center?: boolean }) => (
+const Eyebrow = ({ children, center = false, className = '' }: { children: React.ReactNode; center?: boolean; className?: string }) => (
   <p
-    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
+    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
     style={{ fontFamily: FONT, color: TEAL }}
   >
     <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
