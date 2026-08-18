@@ -202,6 +202,8 @@ export default function EcosystemDashboard() {
     { key: 'innovation', label: 'Innovation', icon: Lightbulb },
   ];
 
+  const shows = (...keys: MetricFilter[]) => activeFilter === 'all' || keys.includes(activeFilter);
+
   return (
     <div className="space-y-8">
       {/* Filter Tabs */}
@@ -230,18 +232,24 @@ export default function EcosystemDashboard() {
       </ScrollReveal>
 
       {/* Main Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-        <StatCard icon={Building2} value={ecosystemStats.totalCompanies} label="Total Companies" trend={12} delay={0} />
-        <StatCard icon={Rocket} value={ecosystemStats.newCompanies} label="New This Year" trend={18} delay={50} />
-        <StatCard icon={DollarSign} value={ecosystemStats.totalInvestment} label="Total Investment" prefix="$" suffix="M" trend={15} delay={100} />
-        <StatCard icon={Globe} value={ecosystemStats.exportRevenue} label="Export Revenue" prefix="$" suffix="M" trend={22} delay={150} />
-        <StatCard icon={Users} value={2150} label="Jobs Created" trend={10} delay={200} />
+      <div className={cn(
+        "grid grid-cols-2 gap-5",
+        activeFilter === 'all' ? "md:grid-cols-3 lg:grid-cols-5" : "md:grid-cols-3"
+      )}>
+        {shows('growth') && <StatCard icon={Building2} value={ecosystemStats.totalCompanies} label="Total Companies" trend={12} delay={0} />}
+        {shows('growth') && <StatCard icon={Rocket} value={ecosystemStats.newCompanies} label="New This Year" trend={18} delay={50} />}
+        {shows('investment') && <StatCard icon={DollarSign} value={ecosystemStats.totalInvestment} label="Total Investment" prefix="$" suffix="M" trend={15} delay={100} />}
+        {shows('investment', 'growth') && <StatCard icon={Globe} value={ecosystemStats.exportRevenue} label="Export Revenue" prefix="$" suffix="M" trend={22} delay={150} />}
+        {shows('growth') && <StatCard icon={Users} value={2150} label="Jobs Created" trend={10} delay={200} />}
+        {shows('innovation') && <StatCard icon={Award} value={ecosystemStats.patents} label="Patents Filed" trend={15} delay={0} />}
+        {shows('innovation') && <StatCard icon={Lightbulb} value={ecosystemStats.trademarks} label="Trademarks" trend={12} delay={50} />}
+        {shows('innovation') && <StatCard icon={Package} value={ecosystemStats.productsLaunched} label="Products Launched" trend={20} delay={100} />}
       </div>
 
       {/* Charts Row 1 */}
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Growth Timeline */}
-        <ScrollReveal delay={100}>
+        {shows('investment', 'growth') && <ScrollReveal delay={100}>
           <div className="rounded-[20px] p-7 h-[400px]" style={glassCardStyle}>
             <div className="flex items-center justify-between mb-6">
               <div>
@@ -294,10 +302,10 @@ export default function EcosystemDashboard() {
               </AreaChart>
             </ResponsiveContainer>
           </div>
-        </ScrollReveal>
+        </ScrollReveal>}
 
         {/* Sector Distribution */}
-        <ScrollReveal delay={150}>
+        {shows('growth', 'innovation') && <ScrollReveal delay={150}>
           <div className="rounded-[20px] p-7 h-[400px]" style={glassCardStyle}>
             <div className="mb-6">
               <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Portfolio by Sector</h3>
@@ -369,13 +377,13 @@ export default function EcosystemDashboard() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal>}
       </div>
 
       {/* Charts Row 2 - Innovation Metrics */}
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Monthly Activity */}
-        <ScrollReveal delay={100} className="lg:col-span-2">
+        {shows('growth', 'innovation') && <ScrollReveal delay={100} className={activeFilter === 'innovation' ? '' : 'lg:col-span-2'}>
           <div className="rounded-[20px] p-7 h-[350px]" style={glassCardStyle}>
             <div className="flex items-center justify-between mb-6">
               <div>
@@ -417,10 +425,10 @@ export default function EcosystemDashboard() {
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </ScrollReveal>
+        </ScrollReveal>}
 
         {/* IP & Innovation Stats */}
-        <ScrollReveal delay={150}>
+        {shows('innovation') && <ScrollReveal delay={150}>
           <div className="rounded-[20px] p-7 h-[350px]" style={glassCardStyle}>
             <div className="mb-4">
               <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>IP Portfolio</h3>
@@ -453,11 +461,11 @@ export default function EcosystemDashboard() {
               ))}
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal>}
       </div>
 
       {/* Funding Stages */}
-      <ScrollReveal delay={100}>
+      {shows('investment') && <ScrollReveal delay={100}>
         <div className="rounded-[20px] p-7" style={glassCardStyle}>
           <div className="mb-6">
             <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Companies by Funding Stage</h3>
@@ -485,14 +493,14 @@ export default function EcosystemDashboard() {
             ))}
           </div>
         </div>
-      </ScrollReveal>
+      </ScrollReveal>}
 
       {/* Bottom Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-        <StatCard icon={Handshake} value={ecosystemStats.partnerships} label="Total Partnerships" trend={28} delay={0} />
-        <StatCard icon={DollarSign} value={ecosystemStats.totalRevenue} label="Total Revenue" prefix="$" suffix="M" trend={10} delay={50} />
-        <StatCard icon={Award} value={ecosystemStats.patents + ecosystemStats.trademarks} label="IP Assets" trend={15} delay={100} />
-        <StatCard icon={Clock} value={ecosystemStats.mentorshipHours} label="Mentorship Hours" delay={150} />
+        {shows('growth') && <StatCard icon={Handshake} value={ecosystemStats.partnerships} label="Total Partnerships" trend={28} delay={0} />}
+        {shows('investment', 'growth') && <StatCard icon={DollarSign} value={ecosystemStats.totalRevenue} label="Total Revenue" prefix="$" suffix="M" trend={10} delay={50} />}
+        {shows('innovation') && <StatCard icon={Award} value={ecosystemStats.patents + ecosystemStats.trademarks} label="IP Assets" trend={15} delay={100} />}
+        {shows('innovation', 'growth') && <StatCard icon={Clock} value={ecosystemStats.mentorshipHours} label="Mentorship Hours" delay={150} />}
       </div>
     </div>
   );
