@@ -415,10 +415,10 @@ const Funding = () => {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {impactStats.map((s) => (
-                <div key={s.label} className="rounded-2xl p-6 md:p-8 border border-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <div key={s.label} className="rounded-2xl p-6 md:p-8 border border-black/5 shadow-lg" style={{ background: 'white' }}>
                   <div className="text-4xl md:text-5xl font-black mb-2" style={{ color: TEAL, letterSpacing: '-0.02em' }}>{s.number}</div>
-                  <div className="text-sm md:text-base font-semibold text-white mb-1">{s.label}</div>
-                  <div className="text-xs md:text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.sub}</div>
+                  <div className="text-sm md:text-base font-semibold mb-1" style={{ color: NAVY }}>{s.label}</div>
+                  <div className="text-xs md:text-sm" style={{ color: 'rgba(0,26,77,0.6)' }}>{s.sub}</div>
                 </div>
               ))}
             </div>
