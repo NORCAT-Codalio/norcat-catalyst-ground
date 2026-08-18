@@ -112,6 +112,45 @@ const programTabs: ProgramTab[] = [
   },
 ];
 
+const industryTracks: ProgramTab[] = [
+  {
+    key: 'CIT',
+    shortName: 'CIT',
+    name: 'Critical Industrial Technologies',
+    eyebrow: 'Ontario Mining & Industrial Tough-Tech',
+    description: 'Build, test, and validate hard-tech for the mining and industrial sector with access to funding, facilities, and buyers.',
+    benefits: [
+      'Non-dilutive project funding',
+      'Real-world testing in the Underground Centre',
+      'Direct pathways to mining OEMs',
+    ],
+    href: '/mining/critical-industrial-tech',
+    image: citPlaceholder.url,
+    partners: [
+      { logo: ociLogo, alt: 'Ontario Centre of Innovation' },
+      { logo: ontarioLogo, alt: 'Government of Ontario' },
+    ],
+  },
+  {
+    key: 'Core5',
+    shortName: 'Core5',
+    name: 'Core5',
+    eyebrow: 'BEV / EV Ventures Across Northern Ontario',
+    description: 'The OVIN Northern Regional Technology Development Site supporting SMEs across the full EV value chain.',
+    benefits: [
+      'Startup & SME funding support',
+      'Access to R&D and testing facilities',
+      'Buyer / builder matchmaking',
+    ],
+    href: '/mining/core5',
+    image: core5Placeholder.url,
+    partners: [
+      { logo: ovinLogoAsset.url, alt: 'Ontario Vehicle Innovation Network' },
+      { logo: ontarioLogo, alt: 'Government of Ontario' },
+    ],
+  },
+];
+
 const impactStats = [
   { number: '$92M', label: 'Capital Invested', sub: 'Deployed across the ecosystem' },
   { number: '187', label: 'Active Companies', sub: 'Funded and supported ventures' },
