@@ -223,7 +223,7 @@ export default function VentureGrowthServices() {
                     style={{ fontFamily: FONT, fontWeight: 500, color: NAVY }}
                   >
                     {service.headline}{' '}
-                    <span style={{ color: TEAL, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
+                    <span style={{ color: BLUE, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
                       {service.headlineItalic}
                     </span>
                   </h3>
