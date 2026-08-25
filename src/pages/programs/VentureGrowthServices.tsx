@@ -258,7 +258,7 @@ export default function VentureGrowthServices() {
               <div className="lg:col-span-5">
                 <Eyebrow>Capital Navigation</Eyebrow>
                 <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
-                  Find the right<br /><span style={{ color: BLUE }}>funding.</span>
+                  Find the right<br /><span style={{ color: TEAL }}>funding.</span>
                 </Display>
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
                   Our dedicated capital navigation team helps you identify, prepare for, and secure the
