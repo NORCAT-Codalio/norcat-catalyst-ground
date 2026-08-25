@@ -236,6 +236,9 @@ const facilities = [
       { src: surfaceTeleopDemoImg.url, alt: 'Teleremote operation demonstration room at the NORCAT Underground Centre' },
       { src: ugcAditSandvikImg.url, alt: 'Drill rig staged outside the adit entrance of the NORCAT Underground Centre' },
       { src: ugcOperatorVehicleImg.url, alt: 'Operator seated in a utility vehicle at the NORCAT Underground Centre' },
+      { src: ugMinovaImg.url, alt: 'Technician operating a resin injection unit underground at the NORCAT Underground Centre' },
+      { src: ugJumboImg.url, alt: 'Operator using a digital drill control console underground' },
+      { src: ugTestingImg.url, alt: 'Technician beside equipment behind Testing in Progress banners underground' },
     ],
   },
 ] as {
