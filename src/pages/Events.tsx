@@ -17,9 +17,8 @@ const TEAL = '#00B398';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
-  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+  <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
      style={{ fontFamily: FONT, color: TEAL, ...style }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: style?.color || TEAL }} />
     {children}
   </p>
 );
@@ -791,9 +790,8 @@ export default function Events() {
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-6"
                  style={{ fontFamily: FONT, color: 'white' }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
                 STAY IN THE LOOP
               </p>
               <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"

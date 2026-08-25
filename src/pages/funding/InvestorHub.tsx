@@ -35,10 +35,9 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 
 const Eyebrow = ({ children, center = false, className = '' }: { children: React.ReactNode; center?: boolean; className?: string }) => (
   <p
-    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
     style={{ fontFamily: FONT, color: TEAL }}
   >
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
   </p>
 );
@@ -246,7 +245,7 @@ const InvestorHub = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: FONT, color: TEAL }}>
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: FONT, color: TEAL }}>
                   <Star className="w-3.5 h-3.5" />
                   Strategic Partner
                 </p>
@@ -376,7 +375,7 @@ const InvestorHub = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
               <p
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+                className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-6"
                 style={{ fontFamily: FONT, color: TEAL }}
               >
                 <span className="size-1.5 rounded-full bg-current animate-pulse" />

@@ -35,9 +35,8 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+  <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
      style={{ fontFamily: FONT, color: '#FFFFFF' }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
   </p>
 );
@@ -98,9 +97,8 @@ export default function About() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Rooted in Northern Ontario
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
@@ -169,9 +167,8 @@ export default function About() {
 
               {/* Left: intro */}
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Our Journey
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
@@ -377,9 +374,8 @@ export default function About() {
         <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 Founder Voices
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"

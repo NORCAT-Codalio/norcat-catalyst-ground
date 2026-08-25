@@ -30,9 +30,8 @@ const partnerLogos = [
 ];
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+  <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
      style={{ fontFamily: FONT, color: TEAL }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
   </p>
 );
@@ -217,9 +216,8 @@ export default function OurTeam() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-6"
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-6"
                    style={{ fontFamily: FONT, color: 'white' }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
                   MENTOR NETWORK
                 </p>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
@@ -262,9 +260,8 @@ export default function OurTeam() {
         <section className="py-16 md:py-24" style={{ background: PAPER }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-left mb-10 md:mb-12">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-4"
                  style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 OUR PARTNERS
               </p>
               <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"

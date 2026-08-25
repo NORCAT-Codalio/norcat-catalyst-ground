@@ -119,10 +119,9 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
-const Eyebrow = ({ children, color = TEAL, dotColor = TEAL, showDot = true }: { children: React.ReactNode; color?: string; dotColor?: string; showDot?: boolean }) => (
-  <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase mb-5"
+const Eyebrow = ({ children, color = TEAL }: { children: React.ReactNode; color?: string }) => (
+  <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
      style={{ fontFamily: FONT, color }}>
-    {showDot && <span className="size-1.5 rounded-full inline-block" style={{ background: dotColor }} />}
     {children}
   </p>
 );
@@ -259,7 +258,6 @@ export default function Home2() {
             <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
                 <p className="inline-flex items-center gap-2 font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: 'white', fontSize: 'clamp(0.75rem, 0.25vw + 0.68rem, 1rem)' }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
                   Sudbury's Regional Innovation Centre
                 </p>
 
@@ -504,7 +502,7 @@ export default function Home2() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div className="max-w-2xl">
-                <Eyebrow color="white" dotColor="white" showDot={false}>Latest Updates</Eyebrow>
+                <Eyebrow color="white">Latest Updates</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Real Stories.<br />Unique Insights.
                 </Display>
@@ -613,7 +611,7 @@ export default function Home2() {
             {/* Header */}
             <div className="mb-12 md:mb-16">
               <div>
-                <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase mb-5"
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: NAVY }}>
                   Here to Support
                 </p>
