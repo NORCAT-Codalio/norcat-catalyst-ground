@@ -109,7 +109,7 @@ const capitalServices = [
 const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
   <p
     className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-    style={{ fontFamily: FONT, color: light ? TEAL : TEAL }}
+    style={{ fontFamily: FONT, color: light ? TEAL : BLUE }}
   >
     {children}
   </p>
