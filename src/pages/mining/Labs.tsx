@@ -209,6 +209,9 @@ const facilities = [
       { src: ugSafeboxImg.url, alt: 'Underground safety isolation system demonstration' },
       { src: ugBoltingImg.url, alt: 'Ground support work underground with sparks flying at the NORCAT Underground Centre' },
       { src: ugTourImg.url, alt: 'Visitor capturing an underground technology demonstration on a phone' },
+      { src: ugMinovaImg.url, alt: 'Technician operating a resin injection unit underground at the NORCAT Underground Centre' },
+      { src: ugJumboImg.url, alt: 'Operator using a digital drill control console underground' },
+      { src: ugTestingImg.url, alt: 'Technician beside equipment behind Testing in Progress banners underground' },
     ],
   },
   {
