@@ -106,10 +106,10 @@ const capitalServices = [
   { icon: TrendingUp, title: 'Investor Introductions', desc: 'Connect with our network of angel investors, VCs, and strategic partners.' },
 ];
 
-const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
+const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <p
     className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-    style={{ fontFamily: FONT, color: light ? TEAL : BLUE }}
+    style={{ fontFamily: FONT, color: TEAL }}
   >
     {children}
   </p>
