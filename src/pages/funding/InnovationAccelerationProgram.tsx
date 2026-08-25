@@ -110,7 +110,7 @@ const InnovationAccelerationProgram = () => {
 
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
 
         {/* ───── PROGRAM OVERVIEW (light) ───── */}
         <section id="overview" className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
@@ -386,7 +386,7 @@ const InnovationAccelerationProgram = () => {
                 <Link
                   to="/validate-idea"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: NAVY, color: 'white' }}
+                  style={{ fontFamily: FONT, background: 'white', color: NAVY }}
                 >
                   Submit your Discovery Document
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>

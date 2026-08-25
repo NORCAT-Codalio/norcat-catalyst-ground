@@ -121,7 +121,7 @@ const partners = [
 const Core5 = () => {
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
         {/* ───── HERO (unchanged) ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
           <div

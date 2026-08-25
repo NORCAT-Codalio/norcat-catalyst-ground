@@ -141,7 +141,7 @@ const CriticalIndustrialTech = () => {
 
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">

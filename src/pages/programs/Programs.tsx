@@ -83,7 +83,7 @@ const fundingPathways = [
 const Programs = () => {
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
 
         {/* HERO */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -162,7 +162,7 @@ const Programs = () => {
         </section>
 
         {/* FUNDING PATHWAYS */}
-        <section className="py-20 md:py-28" style={{ background: NAVY, color: 'white' }}>
+        <section className="py-20 md:py-28" style={{ background: 'white', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
