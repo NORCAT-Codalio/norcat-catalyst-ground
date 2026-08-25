@@ -63,7 +63,7 @@ const Display = ({ children, className = '', light = false, as: As = 'h2' as any
 export default function VentureGrowthServices() {
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -106,7 +106,7 @@ export default function VentureGrowthServices() {
                   style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}
                 >
                   Apply to NORCAT Innovation
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
                 </Link>

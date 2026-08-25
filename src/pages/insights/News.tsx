@@ -366,7 +366,7 @@ const News = () => {
 
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
 
         {/* ───── HERO (About-style) ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -606,7 +606,7 @@ const News = () => {
                 style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
               >
                 Subscribe
-                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: 'white', color: NAVY }}>
                   <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
                 </span>
               </button>

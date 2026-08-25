@@ -88,7 +88,7 @@ const InvestorHub = () => {
 
   return (
     <Layout>
-      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -133,7 +133,7 @@ const InvestorHub = () => {
                   style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
                 >
                   Navigate Your Path
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
                 </Link>
@@ -406,7 +406,7 @@ const InvestorHub = () => {
                   style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
                 >
                   Apply to Compete
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
                 </Link>
