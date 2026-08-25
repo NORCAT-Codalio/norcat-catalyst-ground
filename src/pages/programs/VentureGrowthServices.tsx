@@ -619,7 +619,7 @@ export default function VentureGrowthServices() {
                         </div>
                       </div>
                     )}
-                    <div className="font-black text-5xl mb-4" style={{ color: LIGHT_BLUE, opacity: 0.4, fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.4, fontFamily: FONT, letterSpacing: '-0.02em' }}>
                       {phase.phase}
                     </div>
                     <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
