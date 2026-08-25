@@ -457,7 +457,10 @@ export default function Home2() {
 
         {/* ───── PROGRAM HIGHLIGHTS ───── */}
         <section className="py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.14), transparent 50%), radial-gradient(ellipse at top left, rgba(0,179,152,0.09), transparent 45%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.08), transparent 55%)`,
+          }} />
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
               {highlights.map((h, i) => {
                 const bg = ['#001A4D', '#003DA5', TEAL][i];
