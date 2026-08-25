@@ -31,6 +31,11 @@ import ugTestingImg from '@/assets/underground/ug-testing-progress.jpg.asset.jso
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
+import surfacePresentationMinersImg from '@/assets/underground/surface-presentation-miners.jpg.asset.json';
+import surfaceHubCollabImg from '@/assets/underground/surface-hub-collab.jpg.asset.json';
+import surfaceTeleopDemoImg from '@/assets/underground/surface-teleop-demo.jpg.asset.json';
+import ugcAditSandvikImg from '@/assets/underground/ugc-adit-sandvik.jpg.asset.json';
+import ugcOperatorVehicleImg from '@/assets/underground/ugc-operator-vehicle.jpg.asset.json';
 import surfacePresentationImg from '@/assets/surface-presentation.jpg.asset.json';
 import hotdeskImg from '@/assets/hot-desk-space.png.asset.json';
 import lobbyImg from '@/assets/norcat-innovation-lobby.png.asset.json';
@@ -229,6 +234,11 @@ const facilities = [
     gallery: [
       { src: surfaceHubImg.url, alt: 'Open collaboration and coworking area inside the NORCAT surface facility' },
       { src: surfacePresentationImg.url, alt: 'Presentation and event space in use at the NORCAT surface facility' },
+      { src: surfacePresentationMinersImg.url, alt: 'Presenter addressing a room of mining crews at the NORCAT surface facility' },
+      { src: surfaceHubCollabImg.url, alt: 'Mining crews working at tables in the collaboration hub at the NORCAT surface facility' },
+      { src: surfaceTeleopDemoImg.url, alt: 'Teleremote operation demonstration room at the NORCAT Underground Centre' },
+      { src: ugcAditSandvikImg.url, alt: 'Drill rig staged outside the adit entrance of the NORCAT Underground Centre' },
+      { src: ugcOperatorVehicleImg.url, alt: 'Operator seated in a utility vehicle at the NORCAT Underground Centre' },
     ],
   },
 ] as {
