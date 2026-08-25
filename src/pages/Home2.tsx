@@ -497,6 +497,7 @@ export default function Home2() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* ───── REAL STORIES. UNIQUE INSIGHTS. ───── */}
         <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }}>
