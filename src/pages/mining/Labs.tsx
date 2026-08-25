@@ -634,16 +634,6 @@ const Labs = () => {
                         </div>
                       ))}
                     </div>
-                    {detail.location.includes('Onaping') && (
-                      <Link
-                        to="/mining/norcat-underground"
-                        onClick={() => setDetail(null)}
-                        className="mt-8 inline-flex items-center gap-1.5 text-sm font-bold"
-                        style={{ color: TEAL }}
-                      >
-                        Explore the Underground Centre <ArrowUpRight className="w-4 h-4" />
-                      </Link>
-                    )}
                   </div>
                 </div>
               )}
