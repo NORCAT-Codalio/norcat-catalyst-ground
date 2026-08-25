@@ -323,8 +323,8 @@ const Labs = () => {
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#facilities"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                   style={{
                     fontFamily: FONT,
@@ -333,8 +333,8 @@ const Labs = () => {
                     boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)',
                   }}
                 >
-                  Explore Our Facilities <ArrowUpRight className="w-4 h-4" />
-                </a>
+                  Book a Tour <ArrowUpRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>
