@@ -638,12 +638,12 @@ export default function VentureGrowthServices() {
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-start">
               <div className="lg:col-span-5">
                 <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
+                   style={{ fontFamily: FONT, color: BLUE }}>
                   Why NORCAT
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  What makes us<br /><span style={{ color: TEAL }}>different?</span>
+                  What makes us<br /><span style={{ color: BLUE }}>different?</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   There are a lot of accelerators and programs out there. Here's why founders choose to build with us.
