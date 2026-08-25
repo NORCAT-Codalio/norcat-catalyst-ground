@@ -655,12 +655,12 @@ export default function VentureGrowthServices() {
                   <div key={item.title} className="rounded-2xl p-6 md:p-7 flex gap-5 transition-transform hover:-translate-y-0.5"
                        style={{ background: 'white', border: '1px solid #d9dde5' }}>
                     <div className="size-12 rounded-lg flex items-center justify-center shrink-0"
-                         style={{ background: 'rgba(0,61,165,0.10)', color: BLUE }}>
+                         style={{ background: 'rgba(0,179,152,0.10)', color: TEAL }}>
                       <item.icon className="size-6" strokeWidth={2} />
                     </div>
                     <div>
                       <h3 className="font-black uppercase text-base md:text-lg mb-1"
-                          style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>{item.title}</h3>
+                          style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{item.title}</h3>
                       <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{item.description}</p>
                     </div>
                   </div>
