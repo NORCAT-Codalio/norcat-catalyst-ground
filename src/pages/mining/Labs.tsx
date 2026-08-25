@@ -159,7 +159,7 @@ const facilities = [
       'Professional hosting environment',
     ],
     gallery: [
-      { src: presentationPodiumImg.url, alt: 'Speaker presenting at the podium in front of the video wall at NORCAT Innovation' },
+      { src: presentationPodiumImg.url, alt: 'Speaker presenting at the podium in front of the video wall at NORCAT Innovation', objectPosition: 'center 20%' },
     ],
   },
   {
@@ -235,7 +235,7 @@ const facilities = [
   image: string;
   imageAlt: string;
   features: string[];
-  gallery?: { src: string; alt: string }[];
+  gallery?: { src: string; alt: string; objectPosition?: string }[];
 }[];
 
 const blurbs: Record<string, string> = {
@@ -261,7 +261,10 @@ const Labs = () => {
   const [detailIndex, setDetailIndex] = React.useState(0);
 
   const detailImages = detail
-    ? [{ src: detail.image, alt: detail.imageAlt }, ...(detail.gallery ?? [])]
+    ? [
+        { src: detail.image, alt: detail.imageAlt, objectPosition: undefined as string | undefined },
+        ...(detail.gallery ?? []),
+      ]
     : [];
 
   const openDetail = (facility: (typeof facilities)[number]) => {
@@ -548,6 +551,7 @@ const Labs = () => {
                         src={detailImages[detailIndex]?.src}
                         alt={detailImages[detailIndex]?.alt}
                         className="w-full h-64 sm:h-96 object-cover"
+                        style={{ objectPosition: detailImages[detailIndex]?.objectPosition }}
                       />
                     <button
                       type="button"
