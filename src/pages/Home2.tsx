@@ -328,12 +328,13 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── FEATURED PROGRAMS (tabbed) ───── */}
-        <section className="py-10 md:py-14 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
+        {/* ───── FEATURED PROGRAMS + PROGRAM HIGHLIGHTS (shared gradient) ───── */}
+        <div className="relative overflow-hidden" style={{ background: '#F2F3F6' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.14), transparent 50%), radial-gradient(ellipse at top left, rgba(0,179,152,0.09), transparent 45%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.08), transparent 55%)`,
           }} />
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        <section className="relative z-10 py-10 md:py-14" style={{ color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
               FUNDING OPPORTUNITIES
             </p>
