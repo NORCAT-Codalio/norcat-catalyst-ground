@@ -268,7 +268,7 @@ const Core5 = () => {
                 <Link
                   to="/mining/underground-centre"
                   className="group mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,0,0,0.25)' }}
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,0,0,0.25)' }}
                 >
                   Visit the Underground Centre <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
@@ -377,7 +377,7 @@ const Core5 = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                   >
                     About OVIN <ExternalLink className="w-4 h-4" />
                   </a>
@@ -414,7 +414,7 @@ const Core5 = () => {
                   <Link
                     to="/contact"
                     className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                   >
                     Get in Touch <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </Link>

@@ -138,7 +138,7 @@ const RogersCybersecure = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                 >
                   Learn More <ExternalLink className="w-4 h-4" />
                 </a>
@@ -336,7 +336,7 @@ const RogersCybersecure = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                   >
                     Visit Cybersecure Catalyst <ExternalLink className="w-4 h-4" />
                   </a>

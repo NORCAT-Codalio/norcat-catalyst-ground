@@ -211,7 +211,7 @@ export default function Home3() {
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
                 <Link to="/apply"
                       className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
+                      style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}>
                   Apply to Become a Client <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
                 <Link to="/ecosystem"
@@ -458,7 +458,7 @@ export default function Home3() {
                 <div className="flex flex-wrap items-center gap-3 mt-6">
                   <Link to="/apply"
                         className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
+                        style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
                     Apply
                     <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
@@ -640,7 +640,7 @@ export default function Home3() {
             </p>
             <Link to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
               Apply to Become a Client
               <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />

@@ -141,7 +141,7 @@ const SudburyCatalystFund = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
+                  style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
                 >
                   Apply for Funding
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
@@ -475,7 +475,7 @@ const SudburyCatalystFund = () => {
             <Link
               to="/apply"
               className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-              style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}
+              style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}
             >
               Apply to NORCAT Innovation
               <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>

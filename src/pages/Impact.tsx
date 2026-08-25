@@ -220,7 +220,7 @@ export default function Impact() {
             </p>
             <Link to="/apply"
                   className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}>
+                  style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}>
               Validate my Idea
               <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
                 <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
