@@ -543,11 +543,11 @@ const Labs = () => {
               <DialogTitle className="sr-only">{detail?.name || 'Facility details'}</DialogTitle>
               {detail && (
                 <div>
-                  <div className="relative" style={{ background: '#0b1430' }}>
+                  <div className="relative">
                       <img
                         src={detailImages[detailIndex]?.src}
                         alt={detailImages[detailIndex]?.alt}
-                        className="w-full h-64 sm:h-80 object-contain"
+                        className="w-full h-64 sm:h-96 object-cover"
                       />
                     <button
                       type="button"
