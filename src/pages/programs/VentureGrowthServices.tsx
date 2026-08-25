@@ -55,48 +55,75 @@ const differentiators = [
 const startupServices = [
   {
     icon: UserCheck,
-    title: '1-on-1 Advisory',
-    headline: 'A dedicated advisor in',
-    headlineItalic: 'your corner',
+    title: 'Dedicated Advisory',
     description:
-      'Work one-on-one with a seasoned advisor who gets your business, challenges your thinking, and helps you make sharper decisions at every stage of growth.',
-    features: ['Dedicated advisor relationship', 'Strategic planning support', 'Operational guidance', 'Leadership development'],
-  },
-  {
-    icon: Briefcase,
-    title: 'MaRS Startup Toolkit',
-    headline: 'Proven tools to',
-    headlineItalic: 'structure and scale',
-    description:
-      'Access the curated MaRS Startup Toolkit \u2014 frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
-    features: ['Business model canvas', 'Financial planning templates', 'Investor pitch frameworks', 'Growth milestone trackers'],
+      'Get one-on-one guidance from experienced advisors who understand your business and help you make better decisions, faster. Plus, join small-group advisory sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
+    features: [
+      'Dedicated advisor relationship',
+      'Small-group founder sessions',
+      'Strategic planning & operational guidance',
+      'Peer-driven accountability circles',
+    ],
   },
   {
     icon: Handshake,
-    title: 'Mentorship',
-    headline: 'Tactical advice from those who\u2019ve',
-    headlineItalic: 'been there',
+    title: 'Mentorship & Expertise',
     description:
-      'Get matched with experienced operators and founders who have built, scaled, and exited companies in your sector. Real guidance from real builders.',
-    features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
-  },
-  {
-    icon: Users,
-    title: 'Small Group Advisory Sessions',
-    headline: 'Learn alongside fellow',
-    headlineItalic: 'founders',
-    description:
-      'Join focused, small-group sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
-    features: ['Peer cohort sessions', 'Founder roundtables', 'Problem-solving workshops', 'Accountability circles'],
+      'Access a network of mentors and subject matter experts who provide practical insights and peer-driven support. Real guidance from operators who have built, scaled, and exited companies in your sector.',
+    features: [
+      'Domain expert matching',
+      'Structured mentorship sessions',
+      'Ongoing relationship building',
+      'Peer mentor connections',
+    ],
   },
   {
     icon: BarChart3,
-    title: 'Data & Market Intelligence Services',
-    headline: 'Insights that drive',
-    headlineItalic: 'smarter decisions',
+    title: 'Market Intelligence',
     description:
       'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market, product roadmap, and fundraising strategy.',
-    features: ['Market landscape analysis', 'Competitive intelligence', 'Customer & sector research', 'Data-driven growth reports'],
+    features: [
+      'Market landscape analysis',
+      'Competitive intelligence',
+      'Customer & sector research',
+      'Data-driven growth reports',
+    ],
+  },
+  {
+    icon: DollarSign,
+    title: 'Capital & Funding',
+    description:
+      'Navigate funding options \u2014 from grants and loans to angel and venture capital \u2014 and connect with investors aligned to your stage and sector.',
+    features: [
+      'Grant writing support',
+      'Investment readiness prep',
+      'Funding strategy development',
+      'Investor introductions',
+    ],
+  },
+  {
+    icon: FlaskConical,
+    title: 'Testing & Validation',
+    description:
+      'Leverage NORCAT\u2019s labs, equipment, and real-world testing environments \u2014 including the Underground Centre \u2014 to refine, validate, and de-risk your solution.',
+    features: [
+      'Access to NORCAT Underground Centre',
+      'Product testing & prototyping',
+      'Real-world validation environments',
+      'Technical feedback & iteration',
+    ],
+  },
+  {
+    icon: Network,
+    title: 'Industry & Ecosystem Connections',
+    description:
+      'Strategic introductions to industry partners, customers, and ecosystem players across mining, industrial, and technology sectors who can accelerate your path to market.',
+    features: [
+      'Mining & industrial sector intros',
+      'Customer & pilot connections',
+      'Strategic partnerships',
+      'Ecosystem events & networking',
+    ],
   },
 ];
 
