@@ -387,7 +387,7 @@ export default function VentureGrowthServices() {
             <div className="max-w-2xl mb-6 md:mb-8">
               <Eyebrow className="!text-white">Your Journey</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                How it<br /><span style={{ color: LIGHT_BLUE }}>works.</span>
+                How it<br /><span style={{ color: TEAL }}>works.</span>
               </Display>
             </div>
 
