@@ -687,39 +687,52 @@ export default function Home2() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="relative overflow-hidden py-20 md:py-32 lg:py-40">
-          {/* Deep navy gradient backdrop */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #001A4D 0%, #002B6B 45%, #003DA6 100%)' }} />
-          {/* Teal radial glow */}
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 0%, hsla(168,100%,40%,0.28) 0%, transparent 60%)' }} />
-          {/* Subtle mesh orbs */}
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'hsl(168 100% 40%)' }} />
-          <div className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] rounded-full blur-3xl opacity-15" style={{ background: 'hsl(200 100% 55%)' }} />
+        <section className="relative overflow-hidden py-24 md:py-36 lg:py-44" style={{ background: '#F2F3F6' }}>
+          {/* Soft teal radial glow from top */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 65% 55% at 50% 0%, hsla(168,100%,40%,0.12) 0%, transparent 65%)' }} />
           {/* Faint grid lines */}
-          <div className="absolute inset-0 opacity-[0.06]" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          <div className="absolute inset-0 opacity-[0.5]" style={{
+            backgroundImage: 'linear-gradient(rgba(0,61,166,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,61,166,0.04) 1px, transparent 1px)',
             backgroundSize: '64px 64px',
           }} />
 
-          <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-white/90 backdrop-blur-md border border-white/20" style={{ background: 'rgba(255,255,255,0.08)' }}>
-              Your Innovation Ecosystem
-            </span>
-            <h2 className="font-black uppercase leading-[0.92] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-7 text-white"
-                style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
-              See What's<br /><span style={{ color: '#2DE7C7' }}>Possible.</span>
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 max-w-2xl mx-auto text-white/80">
-              Gain access to the facilities, infrastructure, expertise and industry connections within our innovation ecosystem.
-            </p>
-            <Link to="/mining/labs"
-                  className="group inline-flex items-center gap-2 text-base font-bold px-8 py-4 rounded-full text-[#001A4D] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
-                  style={{ fontFamily: FONT, background: 'linear-gradient(135deg, #2DE7C7 0%, #00b398 100%)', boxShadow: '0 0 40px -8px hsla(168,100%,60%,0.6), 0 8px 24px -8px rgba(0,0,0,0.4)' }}>
-              Explore Our Facilities
-              <span className="inline-flex items-center justify-center size-7 rounded-full bg-[#001A4D]/10">
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
+          {/* Glass card container */}
+          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10">
+            <div className="relative rounded-[2rem] md:rounded-[2.5rem] px-6 py-14 md:px-16 md:py-20 text-center overflow-hidden"
+                 style={{
+                   background: 'linear-gradient(160deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 100%)',
+                   backdropFilter: 'blur(20px)',
+                   WebkitBackdropFilter: 'blur(20px)',
+                   border: '1px solid rgba(255,255,255,0.9)',
+                   boxShadow: '0 1px 0 0 rgba(255,255,255,1), 0 24px 60px -16px rgba(0,26,77,0.18), 0 8px 24px -12px rgba(0,26,77,0.12)',
+                 }}>
+              {/* Inner teal glow */}
+              <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 100%, hsla(168,100%,45%,0.08) 0%, transparent 70%)' }} />
+              {/* Top accent line */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-1 w-32 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #00b398, transparent)' }} />
+
+              <div className="relative">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-7 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
+                      style={{ color: '#003DA6', background: 'rgba(0,61,166,0.08)', border: '1px solid rgba(0,61,166,0.15)' }}>
+                  Your Innovation Ecosystem
+                </span>
+                <h2 className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+                    style={{ fontFamily: FONT, color: '#003DA6', letterSpacing: '-0.03em' }}>
+                  See What's<br /><span style={{ color: TEAL }}>Possible.</span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
+                  Gain access to the facilities, infrastructure, expertise and industry connections within our innovation ecosystem.
+                </p>
+                <Link to="/mining/labs"
+                      className="group inline-flex items-center gap-2 text-base font-bold px-8 py-4 rounded-full text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                      style={{ fontFamily: FONT, background: 'linear-gradient(135deg, #00b398 0%, #003DA6 100%)', boxShadow: '0 8px 24px -6px hsla(168,100%,35%,0.45)' }}>
+                  Explore Our Facilities
+                  <span className="inline-flex items-center justify-center size-7 rounded-full bg-white/20">
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
