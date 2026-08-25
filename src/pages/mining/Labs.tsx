@@ -74,16 +74,25 @@ const locations = [
   {
     name: 'NORCAT Innovation',
     place: 'Sudbury, ON',
-    copy: 'Our innovation hub featuring the Fortin Discovery Lab, coworking spaces, and private offices.',
-    best: 'Prototyping, day-to-day operations, team workspace, and community connection.',
+    icon: Building2,
+    image: lobbyImg.url,
+    imageAlt: 'NORCAT Innovation lobby with blue feature wall and NORCAT signage',
+    copy: 'Workspace, prototyping, collaboration and day-to-day operations for startups and technology companies.',
+    best: 'Founders, startups, product development, team space',
+    href: '/contact',
   },
   {
     name: 'NORCAT Underground Centre',
     place: 'Onaping, ON',
-    copy: 'Located approximately 40 minutes from Sudbury. Home to our underground testing facility and surface support infrastructure.',
-    best: 'Technology testing, validation, demonstrations, and pilot projects in real mining conditions.',
+    icon: Mountain,
+    image: ugAditNewImg.url,
+    imageAlt: 'Adit 2 entrance to the NORCAT Underground Centre with robotic test vehicles',
+    copy: 'Underground and surface environments for testing, validation and demonstration of mining technologies.',
+    best: 'Mining technology, pilot projects, demonstrations, field validation',
+    href: '/mining/norcat-underground',
   },
 ];
+
 
 const facilities = [
   {
