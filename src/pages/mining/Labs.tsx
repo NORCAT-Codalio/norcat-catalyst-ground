@@ -129,7 +129,7 @@ const facilities = [
     image: atriumImg.url,
     imageAlt: 'NORCAT Innovation atrium lounge with NORCAT wall signage and tenant seating area',
     gallery: [
-      { src: officesImg, alt: 'Professional private office spaces at NORCAT Innovation' },
+      { src: officesImg.url, alt: 'Team collaborating over a device in a private office space at NORCAT Innovation' },
     ],
     features: [
       'Private, lockable offices',
