@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import norcatBuildingImg from '@/assets/norcat-building.jpg.asset.json';
 import ugAditImg from '@/assets/underground/ug-adit-entrance.jpg.asset.json';
 import ugAditNewImg from '@/assets/underground/ug-adit-entrance-new.png.asset.json';
 import ugSafeboxImg from '@/assets/underground/ug-safebox-demo.jpg.asset.json';
@@ -74,8 +75,8 @@ const locations = [
     name: 'NORCAT Innovation',
     place: 'Sudbury, ON',
     icon: Building2,
-    image: lobbyImg.url,
-    imageAlt: 'NORCAT Innovation lobby with blue feature wall and NORCAT signage',
+    image: norcatBuildingImg.url,
+    imageAlt: 'NORCAT Innovation building exterior',
     copy: 'Workspace, prototyping, collaboration and day-to-day operations for startups and technology companies.',
     best: 'Founders, startups, product development, team space',
     href: '/contact',
