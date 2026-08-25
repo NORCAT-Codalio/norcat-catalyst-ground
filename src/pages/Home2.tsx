@@ -309,8 +309,13 @@ export default function Home2() {
             </div>
           </section>
 
+        {/* ───── STATS + FEATURED PROGRAMS + PROGRAM HIGHLIGHTS (shared gradient) ───── */}
+        <div className="relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.14), transparent 50%), radial-gradient(ellipse at top left, rgba(0,179,152,0.09), transparent 45%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.08), transparent 55%)`,
+          }} />
         {/* ───── IMPACT STATS ───── */}
-        <section className="py-6 md:py-8" style={{ background: PAPER, color: NAVY }}>
+        <section className="relative z-10 py-6 md:py-8" style={{ color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -328,11 +333,7 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ───── FEATURED PROGRAMS + PROGRAM HIGHLIGHTS (shared gradient) ───── */}
-        <div className="relative overflow-hidden" style={{ background: '#F2F3F6' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(ellipse at top right, rgba(0,179,152,0.14), transparent 50%), radial-gradient(ellipse at top left, rgba(0,179,152,0.09), transparent 45%), radial-gradient(ellipse at bottom left, rgba(47,111,214,0.08), transparent 55%)`,
-          }} />
+        {/* ───── FEATURED PROGRAMS ───── */}
         <section className="relative z-10 py-10 md:py-14" style={{ color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
