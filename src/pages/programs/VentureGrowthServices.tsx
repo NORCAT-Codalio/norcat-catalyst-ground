@@ -655,7 +655,7 @@ export default function VentureGrowthServices() {
                   <div key={item.title} className="rounded-2xl p-6 md:p-7 flex gap-5 transition-transform hover:-translate-y-0.5"
                        style={{ background: 'white', border: '1px solid #d9dde5' }}>
                     <div className="size-12 rounded-lg flex items-center justify-center shrink-0"
-                         style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>
+                         style={{ background: 'rgba(0,61,165,0.10)', color: BLUE }}>
                       <item.icon className="size-6" strokeWidth={2} />
                     </div>
                     <div>
