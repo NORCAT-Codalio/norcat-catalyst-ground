@@ -390,8 +390,7 @@ const SuccessStories = () => {
 
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: "'Open Sans', system-ui, sans-serif", color: '#00B398' }}>
-              <span className="size-1.5 rounded-full inline-block" style={{ background: '#00B398' }} />
+            <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: "'Open Sans', system-ui, sans-serif", color: '#00B398' }}>
               PORTFOLIO SUCCESS STORIES
             </p>
             <h1 className="font-black uppercase leading-[0.95] tracking-tight text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]" style={{ fontFamily: "'Open Sans', system-ui, sans-serif", letterSpacing: '-0.02em' }}>

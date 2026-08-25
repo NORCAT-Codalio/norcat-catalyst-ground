@@ -59,10 +59,9 @@ const FONT = "'Open Sans', system-ui, sans-serif";
 
 const Eyebrow = ({ children, center = false }: { children: React.ReactNode; center?: boolean }) => (
   <p
-    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5`}
+    className={`${center ? 'inline-flex justify-center' : 'inline-flex'} items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5`}
     style={{ fontFamily: FONT, color: '#FFFFFF' }}
   >
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
   </p>
 );
@@ -240,9 +239,8 @@ const MentorshipServices = () => {
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 Our Approach
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
@@ -338,9 +336,8 @@ const MentorshipServices = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Our Network
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
@@ -555,9 +552,8 @@ const MentorshipServices = () => {
         {/* ───── FINAL CTA ───── */}
         <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: PAPER }}>
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <p className="inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+            <p className="inline-flex items-center justify-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                style={{ fontFamily: FONT, color: TEAL }}>
-              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
               Your Move
             </p>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"

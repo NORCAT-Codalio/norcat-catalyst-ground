@@ -101,9 +101,8 @@ const ecosystemOrgs: EcosystemOrg[] = [
 ];
 
 const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
-  <p className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
+  <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
      style={{ fontFamily: FONT, color: TEAL, ...style }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: (style && style.color) || TEAL }} />
     {children}
   </p>
 );

@@ -26,9 +26,8 @@ const PAPER = '#F2F3F6';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
 const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+  <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
      style={{ fontFamily: FONT, color: '#FFFFFF' }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
     {children}
   </p>
 );
@@ -404,8 +403,7 @@ const Funding = () => {
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-20">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: FONT, color: 'white' }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: 'white' }} />
+              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5" style={{ fontFamily: FONT, color: 'white' }}>
                 <TrendingUp className="w-3.5 h-3.5" />Funding Impact
               </p>
               <Display className="text-3xl md:text-5xl">
@@ -434,9 +432,8 @@ const Funding = () => {
             backgroundImage: `radial-gradient(circle at 20% 20%, rgba(0,179,152,0.10), transparent 45%), radial-gradient(circle at 80% 80%, rgba(47,111,214,0.10), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+            <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                style={{ fontFamily: FONT, color: TEAL }}>
-              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
               <Rocket className="w-3.5 h-3.5" />Ready to raise?
             </p>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl md:text-5xl lg:text-6xl"

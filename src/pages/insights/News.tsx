@@ -379,9 +379,8 @@ const News = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                  style={{ fontFamily: FONT, color: TEAL }}>
-                <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                 <Sparkles className="w-3.5 h-3.5" />
                 News & Updates
               </p>
@@ -428,9 +427,8 @@ const News = () => {
           <div className="container mx-auto px-6 relative z-10">
             <div className="flex items-end justify-between mb-12 md:mb-16">
               <div className="max-w-2xl">
-                <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
-                  <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
                   Latest Stories
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
@@ -581,9 +579,8 @@ const News = () => {
         {/* ───── Newsletter CTA (paper) ───── */}
         <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+            <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                style={{ fontFamily: FONT, color: TEAL }}>
-              <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
               Stay in the Loop
             </p>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"

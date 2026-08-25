@@ -105,10 +105,9 @@ const GrantFAQSection = ({ program, eyebrow = 'FAQ', heading }: Props) => {
       <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10">
         <div className="text-center mb-12">
           <p
-            className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-4 justify-center"
+            className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-4 justify-center"
             style={{ color: TEAL }}
           >
-            <span className="size-1.5 rounded-full inline-block" style={{ background: TEAL }} />
             {eyebrow}
           </p>
           <HelpCircle className="w-10 h-10 mx-auto mb-5" style={{ color: TEAL }} />
