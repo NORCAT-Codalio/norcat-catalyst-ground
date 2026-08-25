@@ -270,10 +270,10 @@ export default function VentureGrowthServices() {
                   style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <ExternalLink className="w-4 h-4" style={{ color: TEAL }} />
+                    <ExternalLink className="w-4 h-4" style={{ color: BLUE }} />
                     <span
                       className="text-xs font-bold uppercase tracking-[0.15em]"
-                      style={{ fontFamily: FONT, color: TEAL }}
+                      style={{ fontFamily: FONT, color: BLUE }}
                     >
                       External Resource
                     </span>
