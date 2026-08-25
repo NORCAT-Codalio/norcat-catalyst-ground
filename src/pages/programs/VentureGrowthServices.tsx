@@ -11,13 +11,14 @@ import {
   UserCheck,
   Briefcase,
   Handshake,
-  Users,
   BarChart3,
   Check,
   FileText,
   PieChart,
   TrendingUp,
   ExternalLink,
+  FlaskConical,
+  Network,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
@@ -53,48 +54,75 @@ const differentiators = [
 const startupServices = [
   {
     icon: UserCheck,
-    title: '1-on-1 Advisory',
-    headline: 'A dedicated advisor in',
-    headlineItalic: 'your corner',
+    title: 'Dedicated Advisory',
     description:
-      'Work one-on-one with a seasoned advisor who gets your business, challenges your thinking, and helps you make sharper decisions at every stage of growth.',
-    features: ['Dedicated advisor relationship', 'Strategic planning support', 'Operational guidance', 'Leadership development'],
-  },
-  {
-    icon: Briefcase,
-    title: 'MaRS Startup Toolkit',
-    headline: 'Proven tools to',
-    headlineItalic: 'structure and scale',
-    description:
-      'Access the curated MaRS Startup Toolkit \u2014 frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
-    features: ['Business model canvas', 'Financial planning templates', 'Investor pitch frameworks', 'Growth milestone trackers'],
+      'Get one-on-one guidance from experienced advisors who understand your business and help you make better decisions, faster. Plus, join small-group advisory sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
+    features: [
+      'Dedicated advisor relationship',
+      'Small-group founder sessions',
+      'Strategic planning & operational guidance',
+      'Peer-driven accountability circles',
+    ],
   },
   {
     icon: Handshake,
-    title: 'Mentorship',
-    headline: 'Tactical advice from those who\u2019ve',
-    headlineItalic: 'been there',
+    title: 'Mentorship & Expertise',
     description:
-      'Get matched with experienced operators and founders who have built, scaled, and exited companies in your sector. Real guidance from real builders.',
-    features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
-  },
-  {
-    icon: Users,
-    title: 'Small Group Advisory Sessions',
-    headline: 'Learn alongside fellow',
-    headlineItalic: 'founders',
-    description:
-      'Join focused, small-group sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
-    features: ['Peer cohort sessions', 'Founder roundtables', 'Problem-solving workshops', 'Accountability circles'],
+      'Access a network of mentors and subject matter experts who provide practical insights and peer-driven support. Real guidance from operators who have built, scaled, and exited companies in your sector.',
+    features: [
+      'Domain expert matching',
+      'Structured mentorship sessions',
+      'Ongoing relationship building',
+      'Peer mentor connections',
+    ],
   },
   {
     icon: BarChart3,
-    title: 'Data & Market Intelligence Services',
-    headline: 'Insights that drive',
-    headlineItalic: 'smarter decisions',
+    title: 'Market Intelligence',
     description:
       'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market, product roadmap, and fundraising strategy.',
-    features: ['Market landscape analysis', 'Competitive intelligence', 'Customer & sector research', 'Data-driven growth reports'],
+    features: [
+      'Market landscape analysis',
+      'Competitive intelligence',
+      'Customer & sector research',
+      'Data-driven growth reports',
+    ],
+  },
+  {
+    icon: DollarSign,
+    title: 'Capital & Funding',
+    description:
+      'Navigate funding options \u2014 from grants and loans to angel and venture capital \u2014 and connect with investors aligned to your stage and sector.',
+    features: [
+      'Grant writing support',
+      'Investment readiness prep',
+      'Funding strategy development',
+      'Investor introductions',
+    ],
+  },
+  {
+    icon: FlaskConical,
+    title: 'Testing & Validation',
+    description:
+      'Leverage NORCAT\u2019s labs, equipment, and real-world testing environments \u2014 including the Underground Centre \u2014 to refine, validate, and de-risk your solution.',
+    features: [
+      'Access to NORCAT Underground Centre',
+      'Product testing & prototyping',
+      'Real-world validation environments',
+      'Technical feedback & iteration',
+    ],
+  },
+  {
+    icon: Network,
+    title: 'Industry & Ecosystem Connections',
+    description:
+      'Strategic introductions to industry partners, customers, and ecosystem players across mining, industrial, and technology sectors who can accelerate your path to market.',
+    features: [
+      'Mining & industrial sector intros',
+      'Customer & pilot connections',
+      'Strategic partnerships',
+      'Ecosystem events & networking',
+    ],
   },
 ];
 
@@ -205,29 +233,22 @@ export default function VentureGrowthServices() {
                   className="rounded-2xl p-7 md:p-8 flex flex-col transition-transform hover:-translate-y-1"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <div
-                    className="size-12 rounded-xl flex items-center justify-center shrink-0 mb-5"
-                    style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}` }}
-                  >
-                    <service.icon className="size-6" style={{ color: TEAL }} strokeWidth={2} />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="size-11 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}` }}
+                    >
+                      <service.icon className="size-5" style={{ color: TEAL }} strokeWidth={2} />
+                    </div>
+                    <h3
+                      className="text-lg md:text-xl font-bold leading-tight"
+                      style={{ fontFamily: FONT, color: NAVY }}
+                    >
+                      {service.title}
+                    </h3>
                   </div>
-                  <div
-                    className="text-xs font-black uppercase tracking-wider mb-2"
-                    style={{ fontFamily: FONT, color: TEAL, letterSpacing: '0.08em' }}
-                  >
-                    {service.title}
-                  </div>
-                  <h3
-                    className="text-xl md:text-2xl leading-tight mb-3"
-                    style={{ fontFamily: FONT, fontWeight: 500, color: NAVY }}
-                  >
-                    {service.headline}{' '}
-                    <span style={{ color: TEAL, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
-                      {service.headlineItalic}
-                    </span>
-                  </h3>
                   <p
-                    className="text-sm md:text-base font-light leading-relaxed mb-6"
+                    className="text-sm md:text-base font-light leading-relaxed mb-5"
                     style={{ color: 'rgba(0,26,77,0.72)', fontFamily: FONT }}
                   >
                     {service.description}
@@ -242,6 +263,57 @@ export default function VentureGrowthServices() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* ── Featured Resource – MaRS Startup Toolkit ── */}
+            <div className="mt-8 md:mt-10">
+              <div
+                className="rounded-2xl p-7 md:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10"
+                style={{ background: 'linear-gradient(135deg, #F4FAF9 0%, #FFFFFF 100%)', border: '1px solid rgba(0,179,152,0.25)' }}
+              >
+                <div className="flex items-center gap-4 lg:min-w-[260px]">
+                  <div
+                    className="size-14 rounded-2xl flex items-center justify-center shrink-0"
+                    style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}` }}
+                  >
+                    <Briefcase className="size-7" style={{ color: TEAL }} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: TEAL, fontFamily: FONT }}>
+                      Featured Resource
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold mt-1" style={{ fontFamily: FONT, color: NAVY }}>
+                      MaRS <span style={{ color: TEAL }}>Startup Toolkit</span>
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(0,26,77,0.72)', fontFamily: FONT }}>
+                    Access the curated MaRS Startup Toolkit — practical resources and proven frameworks used by
+                    thousands of ventures to plan, pitch, and execute faster.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-5">
+                    {['Step-by-step frameworks', 'Templates & playbooks', 'Tools to plan, pitch & scale'].map((item) => (
+                      <div key={item} className="flex items-center gap-2">
+                        <Check className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
+                        <span className="text-xs md:text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a
+                    href="https://marsdd.com/startup-toolkit/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}
+                  >
+                    Explore the Toolkit
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
