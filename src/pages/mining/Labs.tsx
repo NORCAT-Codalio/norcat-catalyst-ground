@@ -295,21 +295,21 @@ const Labs = () => {
               <Eyebrow className="!text-white">Infrastructure &amp; Facilities</Eyebrow>
 
               <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                From First Build<br />
-                <span style={{ color: TEAL }}>To Field-Ready.</span>
+                Spaces to build,<br />
+                <span style={{ color: TEAL }}>test and grow.</span>
               </Display>
 
               <p
                 className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 style={{ color: 'rgba(255,255,255,0.85)' }}
               >
-                Develop, test and demonstrate emerging technologies across interconnected innovation
-                spaces and an active underground mine environment.
+                Access the facilities, infrastructure and real-world environments that help technology
+                companies move from development to demonstration and deployment.
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/apply"
+                <a
+                  href="#facilities"
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                   style={{
                     fontFamily: FONT,
@@ -318,8 +318,9 @@ const Labs = () => {
                     boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)',
                   }}
                 >
-                  Access Our Facilities <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                  Explore Our Facilities <ArrowUpRight className="w-4 h-4" />
+                </a>
+
                 <Link
                   to="/mining/norcat-underground"
                   className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
