@@ -190,7 +190,7 @@ const facilities = [
     image: ugAditNewImg.url,
     imageAlt: 'Adit 2 entrance to the NORCAT Underground Centre with robotic test vehicles',
     features: [
-      '1.5 km of underground development',
+      '3 km of underground development',
       'Active mining environment with real conditions',
       'Multiple test zones for different applications',
       'Connectivity infrastructure (WiFi, LTE)',
