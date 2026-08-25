@@ -29,6 +29,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 // ── Brand tokens (mirrors About / Home2) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
+const LIGHT_BLUE = '#2F6FD6';
 const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
 const BORDER = 'rgba(255,255,255,0.10)';
