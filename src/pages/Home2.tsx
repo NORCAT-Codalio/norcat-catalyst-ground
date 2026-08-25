@@ -277,7 +277,7 @@ export default function Home2() {
                   </div>
                 </div>
 
-                <p className="mt-6 md:mt-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1rem, 0.9vw + 0.6rem, 1.5rem)', maxWidth: '46ch' }}>
+                <p className="mt-6 md:mt-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1rem, 0.9vw + 0.6rem, 1.5rem)', maxWidth: '59ch' }}>
                   We help Northern Ontario startups move from idea to market by connecting them to the mentorship, capital, industry relationships, and real-world validation they need to grow here and compete anywhere.
                 </p>
 
