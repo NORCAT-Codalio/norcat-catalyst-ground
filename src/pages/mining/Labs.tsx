@@ -238,6 +238,20 @@ const facilities = [
   gallery?: { src: string; alt: string }[];
 }[];
 
+const blurbs: Record<string, string> = {
+  hotdesk: 'Flexible coworking and meeting space ideal for early-stage teams.',
+  offices: 'Dedicated private offices for growing teams that need their own space.',
+  'presentation-space': 'Professional presentation space equipped for pitches, demos and events.',
+  'discovery-lab': 'Prototyping and fabrication lab with tools and tech support when you need it.',
+  underground: 'Access to underground mine environments for testing and validation in real-world conditions.',
+  surface: 'Purpose-built surface facility for testing, staging and demonstrations with infrastructure support.',
+};
+
+const sudburyFacilities = facilities.filter((f) => f.location.includes('Sudbury'));
+const onapingFacilities = facilities.filter((f) => f.location.includes('Onaping'));
+
+
+
 const Labs = () => {
   const [lightbox, setLightbox] = React.useState<{
     images: { src: string; alt: string }[];
