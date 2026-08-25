@@ -130,7 +130,7 @@ const InvestorHub = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                 >
                   Navigate Your Path
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
@@ -403,7 +403,7 @@ const InvestorHub = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center justify-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: TEAL, color: NAVY, fontFamily: FONT }}
+                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                 >
                   Apply to Compete
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
