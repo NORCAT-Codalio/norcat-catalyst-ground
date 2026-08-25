@@ -50,6 +50,61 @@ const differentiators = [
   { icon: Zap, title: 'Northern Advantage', description: "Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada's most established mining ecosystems." },
 ];
 
+const startupServices = [
+  {
+    icon: UserCheck,
+    title: '1-on-1 Advisory',
+    headline: 'A dedicated advisor in',
+    headlineItalic: 'your corner',
+    description:
+      'Work one-on-one with a seasoned advisor who gets your business, challenges your thinking, and helps you make sharper decisions at every stage of growth.',
+    features: ['Dedicated advisor relationship', 'Strategic planning support', 'Operational guidance', 'Leadership development'],
+  },
+  {
+    icon: Briefcase,
+    title: 'MaRS Startup Toolkit',
+    headline: 'Proven tools to',
+    headlineItalic: 'structure and scale',
+    description:
+      'Access the curated MaRS Startup Toolkit \u2014 frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
+    features: ['Business model canvas', 'Financial planning templates', 'Investor pitch frameworks', 'Growth milestone trackers'],
+  },
+  {
+    icon: Handshake,
+    title: 'Mentorship',
+    headline: 'Tactical advice from those who\u2019ve',
+    headlineItalic: 'been there',
+    description:
+      'Get matched with experienced operators and founders who have built, scaled, and exited companies in your sector. Real guidance from real builders.',
+    features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
+  },
+  {
+    icon: Users,
+    title: 'Small Group Advisory Sessions',
+    headline: 'Learn alongside fellow',
+    headlineItalic: 'founders',
+    description:
+      'Join focused, small-group sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
+    features: ['Peer cohort sessions', 'Founder roundtables', 'Problem-solving workshops', 'Accountability circles'],
+  },
+  {
+    icon: BarChart3,
+    title: 'Data & Market Intelligence Services',
+    headline: 'Insights that drive',
+    headlineItalic: 'smarter decisions',
+    description:
+      'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market, product roadmap, and fundraising strategy.',
+    features: ['Market landscape analysis', 'Competitive intelligence', 'Customer & sector research', 'Data-driven growth reports'],
+  },
+];
+
+const capitalServices = [
+  { icon: FileText, title: 'Grant Writing Support', desc: 'Expert assistance with government funding applications including SR&ED, IRAP, and provincial programs.' },
+  { icon: PieChart, title: 'Investment Readiness', desc: 'Prepare your pitch deck, financial models, and data room for investor conversations.' },
+  { icon: DollarSign, title: 'Funding Strategy', desc: 'Develop a comprehensive capital strategy aligned with your growth milestones.' },
+  { icon: TrendingUp, title: 'Investor Introductions', desc: 'Connect with our network of angel investors, VCs, and strategic partners.' },
+];
+
 const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
   <p
     className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
