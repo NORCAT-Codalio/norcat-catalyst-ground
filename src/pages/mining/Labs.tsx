@@ -582,7 +582,7 @@ const Labs = () => {
                   </div>
 
                   {detailImages.length > 1 && (
-                    <div className="flex gap-2 px-6 sm:px-8 pt-5 flex-wrap">
+                    <div className="flex gap-2 px-8 sm:px-10 pt-5 flex-wrap">
                       {detailImages.map((shot, idx) => (
                         <button
                           key={shot.src}
