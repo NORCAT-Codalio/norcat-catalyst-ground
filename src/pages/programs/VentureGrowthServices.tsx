@@ -179,16 +179,16 @@ export default function VentureGrowthServices() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow className="!text-white">Core Program</Eyebrow>
+              <Eyebrow className="!text-white">Venture Growth Services</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Venture Growth<br /><span style={{ color: TEAL }}>Services.</span>
+                Your Next Stage<br /><span style={{ color: TEAL }}>Starts Here.</span>
               </Display>
-              <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                The operating system for ambitious founders. Hands-on support, education, network,
-                and resources to build a category-defining company.
+              <p className="mt-6 md:mt-8 text-lg sm:text-xl md:text-2xl leading-snug max-w-2xl" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Growing a company takes more than good advice.
               </p>
-              <p className="mt-3 text-sm sm:text-base leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                We work alongside you to find customers, raise capital, build teams, and navigate the challenges of scaling.
+              <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
+                NORCAT Innovation gives founders access to the people, insight, capital pathways, industry connections
+                and real-world resources they need to overcome challenges and keep moving.
               </p>
               <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
                 <Link
