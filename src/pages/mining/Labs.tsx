@@ -475,20 +475,13 @@ const Labs = () => {
                     </p>
                     <button
                       type="button"
-                      onClick={() =>
-                        setLightbox({
-                          images: [
-                            { src: facility.image, alt: facility.imageAlt },
-                            ...(facility.gallery ?? []),
-                          ],
-                          index: 0,
-                        })
-                      }
+                      onClick={() => openDetail(facility)}
                       className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold self-start"
                       style={{ color: TEAL }}
                     >
-                      View Images <ArrowUpRight className="w-4 h-4" />
+                      Learn More <ArrowUpRight className="w-4 h-4" />
                     </button>
+
                   </div>
                 </motion.article>
               ))}
