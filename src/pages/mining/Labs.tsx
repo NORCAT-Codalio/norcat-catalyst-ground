@@ -235,7 +235,7 @@ const facilities = [
   image: string;
   imageAlt: string;
   features: string[];
-  gallery?: { src: string; alt: string }[];
+  gallery?: { src: string; alt: string; objectPosition?: string }[];
 }[];
 
 const blurbs: Record<string, string> = {
