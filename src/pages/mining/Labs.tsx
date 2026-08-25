@@ -198,6 +198,7 @@ const facilities = [
       'Safe, controlled access for demonstrations',
     ],
     gallery: [
+      { src: ugSchauenbergImg.url, alt: 'Underground mine environment with worker in safety gear at the NORCAT Underground Centre' },
       { src: ugSafeboxImg.url, alt: 'Underground safety isolation system demonstration' },
       { src: ugBoltingImg.url, alt: 'Ground support work underground with sparks flying at the NORCAT Underground Centre' },
       { src: ugTourImg.url, alt: 'Visitor capturing an underground technology demonstration on a phone' },
