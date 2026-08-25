@@ -315,7 +315,7 @@ export default function VentureGrowthServices() {
                       <item.icon className="size-6" strokeWidth={2} />
                     </div>
                     <div>
-                      <h3 className="font-black uppercase text-base md:text-lg mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      <h3 className="font-black uppercase text-base md:text-lg mb-1" style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>
                         {item.title}
                       </h3>
                       <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{item.desc}</p>
