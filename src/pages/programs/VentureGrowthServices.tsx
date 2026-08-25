@@ -703,7 +703,7 @@ export default function VentureGrowthServices() {
             <Eyebrow>Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-              Ready to<br /><span style={{ color: BLUE }}>accelerate?</span>
+              Ready to<br /><span style={{ color: TEAL }}>accelerate?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
               Join the next cohort of ambitious founders building category-defining companies. Applications are open.
