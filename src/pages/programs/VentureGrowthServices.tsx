@@ -270,15 +270,15 @@ export default function VentureGrowthServices() {
                   style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <ExternalLink className="w-4 h-4" style={{ color: BLUE }} />
+                    <ExternalLink className="w-4 h-4" style={{ color: TEAL }} />
                     <span
                       className="text-xs font-bold uppercase tracking-[0.15em]"
-                      style={{ fontFamily: FONT, color: BLUE }}
+                      style={{ fontFamily: FONT, color: TEAL }}
                     >
                       External Resource
                     </span>
                   </div>
-                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>
+                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     Invest Sudbury Funding & Incentives
                   </h3>
                   <p className="text-sm leading-relaxed mb-5" style={{ color: '#475068', fontFamily: FONT }}>
