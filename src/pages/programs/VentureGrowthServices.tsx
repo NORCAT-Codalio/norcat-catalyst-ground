@@ -310,7 +310,7 @@ export default function VentureGrowthServices() {
                   >
                     <div
                       className="size-12 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}
+                      style={{ background: 'rgba(0,61,165,0.10)', color: BLUE }}
                     >
                       <item.icon className="size-6" strokeWidth={2} />
                     </div>
