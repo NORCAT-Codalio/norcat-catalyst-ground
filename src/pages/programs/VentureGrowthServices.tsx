@@ -331,7 +331,7 @@ export default function VentureGrowthServices() {
                     { number: '50+', label: 'Investor Partners' },
                   ].map((stat) => (
                     <div key={stat.label} className="text-center rounded-2xl p-5" style={{ background: NAVY }}>
-                      <div className="text-2xl md:text-3xl font-black mb-1" style={{ color: LIGHT_BLUE, fontFamily: FONT }}>{stat.number}</div>
+                      <div className="text-2xl md:text-3xl font-black mb-1" style={{ color: TEAL, fontFamily: FONT }}>{stat.number}</div>
                       <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.72)', fontFamily: FONT }}>{stat.label}</p>
                     </div>
                   ))}
