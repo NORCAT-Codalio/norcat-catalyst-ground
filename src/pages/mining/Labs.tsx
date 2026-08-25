@@ -335,15 +335,6 @@ const Labs = () => {
                 >
                   Explore Our Facilities <ArrowUpRight className="w-4 h-4" />
                 </a>
-
-                <Link
-                  to="/mining/norcat-underground"
-                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                  style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
-                >
-                  Explore Underground Centre
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </Link>
               </div>
             </div>
           </div>
@@ -634,6 +625,16 @@ const Labs = () => {
                         </div>
                       ))}
                     </div>
+                    {detail.location.includes('Onaping') && (
+                      <Link
+                        to="/mining/norcat-underground"
+                        onClick={() => setDetail(null)}
+                        className="mt-8 inline-flex items-center gap-1.5 text-sm font-bold"
+                        style={{ color: TEAL }}
+                      >
+                        Explore the Underground Centre <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               )}
