@@ -237,7 +237,6 @@ const facilities = [
       { src: surfaceHubCollabImg.url, alt: 'Mining crews working at tables in the collaboration hub at the NORCAT surface facility' },
       { src: surfaceTeleopDemoImg.url, alt: 'Teleremote operation demonstration room at the NORCAT Underground Centre' },
       { src: ugcAditSandvikImg.url, alt: 'Drill rig staged outside the adit entrance of the NORCAT Underground Centre' },
-      { src: ugcOperatorVehicleImg.url, alt: 'Operator seated in a utility vehicle at the NORCAT Underground Centre' },
     ],
   },
 ] as {
