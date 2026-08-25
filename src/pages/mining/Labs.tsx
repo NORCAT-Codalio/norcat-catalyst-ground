@@ -159,7 +159,7 @@ const facilities = [
       'Professional hosting environment',
     ],
     gallery: [
-      { src: presentationPodiumImg.url, alt: 'Speaker presenting at the podium in front of the video wall at NORCAT Innovation' },
+      { src: presentationPodiumImg.url, alt: 'Speaker presenting at the podium in front of the video wall at NORCAT Innovation', objectPosition: 'center 20%' },
     ],
   },
   {
