@@ -449,7 +449,7 @@ const Funding = () => {
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <Link to="/apply"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                    style={{ background: TEAL, color: 'white' }}>
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                 Become a Client <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/programs/capital-navigation"

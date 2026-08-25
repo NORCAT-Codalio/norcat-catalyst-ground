@@ -414,7 +414,7 @@ export default function Home2() {
                   <Link
                     to={activeProgram.href}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base w-full sm:w-auto transition-transform hover:translate-x-0.5"
-                    style={{ background: TEAL, color: 'white', fontFamily: FONT }}
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                   >
                     View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
