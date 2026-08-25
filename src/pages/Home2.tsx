@@ -300,7 +300,7 @@ export default function Home2() {
                   </Link>
                   <Link to="/about"
                         className="inline-flex items-center gap-2 px-5 py-2 xl:px-7 xl:py-3 rounded-full font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.5)', color: NAVY, border: '1px solid #001A4D', fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
+                        style={{ fontFamily: FONT, background: 'rgba(255,255,255,0.85)', color: NAVY, border: '1px solid #001A4D', fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
                     Learn More
                   </Link>
                 </div>
