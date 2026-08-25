@@ -544,13 +544,11 @@ const Labs = () => {
               {detail && (
                 <div>
                   <div className="relative" style={{ background: '#0b1430' }}>
-                    <div className="px-6 pt-6 sm:px-8 sm:pt-8">
                       <img
                         src={detailImages[detailIndex]?.src}
                         alt={detailImages[detailIndex]?.alt}
-                        className="w-full h-72 sm:h-96 object-contain rounded-xl"
+                        className="w-full h-64 sm:h-80 object-contain"
                       />
-                    </div>
                     <button
                       type="button"
                       onClick={() => setDetail(null)}
