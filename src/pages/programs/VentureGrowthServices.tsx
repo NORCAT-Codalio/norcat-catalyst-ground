@@ -29,6 +29,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 // ── Brand tokens (mirrors About / Home2) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
+const LIGHT_BLUE = '#2F6FD6';
 const TEAL = '#00B398';
 const PAPER = '#F2F3F6';
 const BORDER = 'rgba(255,255,255,0.10)';
@@ -108,7 +109,7 @@ const capitalServices = [
 const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
   <p
     className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-    style={{ fontFamily: FONT, color: light ? TEAL : TEAL }}
+    style={{ fontFamily: FONT, color: light ? TEAL : BLUE }}
   >
     {children}
   </p>
@@ -153,7 +154,7 @@ export default function VentureGrowthServices() {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="!text-white">Core Program</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Venture Growth<br /><span style={{ color: TEAL }}>Services.</span>
+                Venture Growth<br /><span style={{ color: LIGHT_BLUE }}>Services.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 The operating system for ambitious founders. Hands-on support, education, network,
@@ -194,7 +195,7 @@ export default function VentureGrowthServices() {
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>What's Included</Eyebrow>
               <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
+                Everything you need<br /><span style={{ color: BLUE }}>to accelerate.</span>
               </Display>
             </div>
 
@@ -207,13 +208,13 @@ export default function VentureGrowthServices() {
                 >
                   <div
                     className="size-12 rounded-xl flex items-center justify-center shrink-0 mb-5"
-                    style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}` }}
+                    style={{ background: 'rgba(0,61,165,0.10)', border: `1px solid ${BLUE}` }}
                   >
-                    <service.icon className="size-6" style={{ color: TEAL }} strokeWidth={2} />
+                    <service.icon className="size-6" style={{ color: BLUE }} strokeWidth={2} />
                   </div>
                   <div
                     className="text-xs font-black uppercase tracking-wider mb-2"
-                    style={{ fontFamily: FONT, color: TEAL, letterSpacing: '0.08em' }}
+                    style={{ fontFamily: FONT, color: BLUE, letterSpacing: '0.08em' }}
                   >
                     {service.title}
                   </div>
@@ -222,7 +223,7 @@ export default function VentureGrowthServices() {
                     style={{ fontFamily: FONT, fontWeight: 500, color: NAVY }}
                   >
                     {service.headline}{' '}
-                    <span style={{ color: TEAL, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
+                    <span style={{ color: BLUE, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
                       {service.headlineItalic}
                     </span>
                   </h3>
@@ -235,7 +236,7 @@ export default function VentureGrowthServices() {
                   <div className="grid grid-cols-1 gap-2.5 mt-auto">
                     {service.features.map((feature, j) => (
                       <div key={j} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: BLUE }} />
                         <span className="text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{feature}</span>
                       </div>
                     ))}
@@ -257,7 +258,7 @@ export default function VentureGrowthServices() {
               <div className="lg:col-span-5">
                 <Eyebrow>Capital Navigation</Eyebrow>
                 <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
-                  Find the right<br /><span style={{ color: TEAL }}>funding.</span>
+                  Find the right<br /><span style={{ color: BLUE }}>funding.</span>
                 </Display>
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
                   Our dedicated capital navigation team helps you identify, prepare for, and secure the
@@ -269,15 +270,15 @@ export default function VentureGrowthServices() {
                   style={{ background: PAPER, border: '1px solid #d9dde5' }}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <ExternalLink className="w-4 h-4" style={{ color: TEAL }} />
+                    <ExternalLink className="w-4 h-4" style={{ color: BLUE }} />
                     <span
                       className="text-xs font-bold uppercase tracking-[0.15em]"
-                      style={{ fontFamily: FONT, color: TEAL }}
+                      style={{ fontFamily: FONT, color: BLUE }}
                     >
                       External Resource
                     </span>
                   </div>
-                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>
                     Invest Sudbury Funding & Incentives
                   </h3>
                   <p className="text-sm leading-relaxed mb-5" style={{ color: '#475068', fontFamily: FONT }}>
@@ -309,12 +310,12 @@ export default function VentureGrowthServices() {
                   >
                     <div
                       className="size-12 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}
+                      style={{ background: 'rgba(0,61,165,0.10)', color: BLUE }}
                     >
                       <item.icon className="size-6" strokeWidth={2} />
                     </div>
                     <div>
-                      <h3 className="font-black uppercase text-base md:text-lg mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      <h3 className="font-black uppercase text-base md:text-lg mb-1" style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>
                         {item.title}
                       </h3>
                       <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{item.desc}</p>
@@ -330,7 +331,7 @@ export default function VentureGrowthServices() {
                     { number: '50+', label: 'Investor Partners' },
                   ].map((stat) => (
                     <div key={stat.label} className="text-center rounded-2xl p-5" style={{ background: NAVY }}>
-                      <div className="text-2xl md:text-3xl font-black mb-1" style={{ color: TEAL, fontFamily: FONT }}>{stat.number}</div>
+                      <div className="text-2xl md:text-3xl font-black mb-1" style={{ color: LIGHT_BLUE, fontFamily: FONT }}>{stat.number}</div>
                       <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.72)', fontFamily: FONT }}>{stat.label}</p>
                     </div>
                   ))}
@@ -386,7 +387,7 @@ export default function VentureGrowthServices() {
             <div className="max-w-2xl mb-6 md:mb-8">
               <Eyebrow className="!text-white">Your Journey</Eyebrow>
               <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                How it<br /><span style={{ color: TEAL }}>works.</span>
+                How it<br /><span style={{ color: LIGHT_BLUE }}>works.</span>
               </Display>
             </div>
 
@@ -618,7 +619,7 @@ export default function VentureGrowthServices() {
                         </div>
                       </div>
                     )}
-                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.35, fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    <div className="font-black text-5xl mb-4" style={{ color: LIGHT_BLUE, opacity: 0.4, fontFamily: FONT, letterSpacing: '-0.02em' }}>
                       {phase.phase}
                     </div>
                     <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
@@ -637,12 +638,12 @@ export default function VentureGrowthServices() {
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-start">
               <div className="lg:col-span-5">
                 <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
+                   style={{ fontFamily: FONT, color: BLUE }}>
                   Why NORCAT
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  What makes us<br /><span style={{ color: TEAL }}>different?</span>
+                  What makes us<br /><span style={{ color: BLUE }}>different?</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   There are a lot of accelerators and programs out there. Here's why founders choose to build with us.
@@ -654,12 +655,12 @@ export default function VentureGrowthServices() {
                   <div key={item.title} className="rounded-2xl p-6 md:p-7 flex gap-5 transition-transform hover:-translate-y-0.5"
                        style={{ background: 'white', border: '1px solid #d9dde5' }}>
                     <div className="size-12 rounded-lg flex items-center justify-center shrink-0"
-                         style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}>
+                         style={{ background: 'rgba(0,61,165,0.10)', color: BLUE }}>
                       <item.icon className="size-6" strokeWidth={2} />
                     </div>
                     <div>
                       <h3 className="font-black uppercase text-base md:text-lg mb-1"
-                          style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{item.title}</h3>
+                          style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>{item.title}</h3>
                       <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{item.description}</p>
                     </div>
                   </div>
@@ -688,7 +689,7 @@ export default function VentureGrowthServices() {
                    style={{ border: `3px solid ${TEAL}` }} />
               <div className="text-left">
                 <p className="font-black uppercase text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>Luke Begley</p>
-                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: TEAL, fontFamily: FONT }}>
+                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: LIGHT_BLUE, fontFamily: FONT }}>
                   CEO & Co-Founder, CircuitIQ
                 </p>
               </div>
@@ -702,7 +703,7 @@ export default function VentureGrowthServices() {
             <Eyebrow>Your move</Eyebrow>
             <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-              Ready to<br /><span style={{ color: TEAL }}>accelerate?</span>
+              Ready to<br /><span style={{ color: BLUE }}>accelerate?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
               Join the next cohort of ambitious founders building category-defining companies. Applications are open.
