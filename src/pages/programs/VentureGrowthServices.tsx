@@ -11,7 +11,6 @@ import {
   UserCheck,
   Briefcase,
   Handshake,
-  Users,
   BarChart3,
   Check,
   FileText,
