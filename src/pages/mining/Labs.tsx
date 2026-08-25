@@ -33,7 +33,7 @@ import lobbyImg from '@/assets/norcat-innovation-lobby.png.asset.json';
 import meetingRoomImg from '@/assets/norcat-meeting-room.jpg.asset.json';
 import meetingSignImg from '@/assets/norcat-meeting-sign.png.asset.json';
 import atriumImg from '@/assets/norcat-innovation-atrium.png.asset.json';
-import officesImg from '@/assets/cta-photo-3.jpg';
+import officesImg from '@/assets/private-office-team.jpg.asset.json';
 import presentationShowcaseImg from '@/assets/presentation-space-showcase.png.asset.json';
 import presentationPodiumImg from '@/assets/presentation-space-podium.png.asset.json';
 import {
