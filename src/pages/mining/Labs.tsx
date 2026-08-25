@@ -534,7 +534,110 @@ const Labs = () => {
           </div>
 
 
+          {/* Facility detail modal */}
+          <Dialog open={!!detail} onOpenChange={(open) => !open && setDetail(null)}>
+            <DialogContent
+              className="max-w-4xl w-[calc(100%-2rem)] p-0 border-0 overflow-hidden max-h-[90vh] overflow-y-auto"
+              style={{ background: 'white' }}
+            >
+              <DialogTitle className="sr-only">{detail?.name || 'Facility details'}</DialogTitle>
+              {detail && (
+                <div>
+                  <div className="relative">
+                    <img
+                      src={detailImages[detailIndex]?.src}
+                      alt={detailImages[detailIndex]?.alt}
+                      className="w-full h-64 sm:h-80 object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setDetail(null)}
+                      className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                      aria-label="Close"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                    {detailImages.length > 1 && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setDetailIndex((i) => (i - 1 + detailImages.length) % detailImages.length)
+                          }
+                          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                          aria-label="Previous image"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setDetailIndex((i) => (i + 1) % detailImages.length)}
+                          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                          aria-label="Next image"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </>
+                    )}
+                  </div>
+
+                  {detailImages.length > 1 && (
+                    <div className="flex gap-2 px-6 pt-4 flex-wrap">
+                      {detailImages.map((shot, idx) => (
+                        <button
+                          key={shot.src}
+                          type="button"
+                          onClick={() => setDetailIndex(idx)}
+                          className="w-16 h-12 rounded-md overflow-hidden transition-opacity"
+                          style={{
+                            border: idx === detailIndex ? `2px solid ${TEAL}` : '2px solid transparent',
+                            opacity: idx === detailIndex ? 1 : 0.6,
+                          }}
+                          aria-label={`View image ${idx + 1}`}
+                        >
+                          <img src={shot.src} alt="" className="w-full h-full object-cover" />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="p-6 md:p-8" style={{ color: NAVY }}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
+                      <span
+                        className="text-xs font-bold uppercase tracking-[0.14em]"
+                        style={{ color: TEAL }}
+                      >
+                        {detail.location}
+                      </span>
+                    </div>
+                    <h3
+                      className="font-black text-2xl md:text-3xl mb-4"
+                      style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
+                    >
+                      {detail.name}
+                    </h3>
+                    <p className="text-base leading-relaxed mb-6" style={{ color: '#475068' }}>
+                      {detail.description}
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                      {detail.features.map((feature) => (
+                        <div key={feature} className="flex items-start gap-2.5">
+                          <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
+                          <span className="text-sm leading-relaxed font-medium" style={{ color: '#2d3342' }}>
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
+
           {/* Lightbox */}
+
           <Dialog open={!!lightbox} onOpenChange={(open) => !open && setLightbox(null)}>
             <DialogContent
               className="max-w-5xl w-[calc(100%-2rem)] p-0 border-0 bg-transparent overflow-hidden shadow-2xl"
