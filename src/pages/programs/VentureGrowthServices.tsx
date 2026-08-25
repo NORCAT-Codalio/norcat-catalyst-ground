@@ -214,7 +214,7 @@ export default function VentureGrowthServices() {
                   </div>
                   <div
                     className="text-xs font-black uppercase tracking-wider mb-2"
-                    style={{ fontFamily: FONT, color: TEAL, letterSpacing: '0.08em' }}
+                    style={{ fontFamily: FONT, color: BLUE, letterSpacing: '0.08em' }}
                   >
                     {service.title}
                   </div>
