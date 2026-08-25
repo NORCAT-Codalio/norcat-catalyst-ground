@@ -261,7 +261,10 @@ const Labs = () => {
   const [detailIndex, setDetailIndex] = React.useState(0);
 
   const detailImages = detail
-    ? [{ src: detail.image, alt: detail.imageAlt }, ...(detail.gallery ?? [])]
+    ? [
+        { src: detail.image, alt: detail.imageAlt, objectPosition: undefined as string | undefined },
+        ...(detail.gallery ?? []),
+      ]
     : [];
 
   const openDetail = (facility: (typeof facilities)[number]) => {
