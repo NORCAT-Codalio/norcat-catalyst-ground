@@ -88,7 +88,7 @@ const InvestorHub = () => {
 
   return (
     <Layout>
-      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -130,10 +130,10 @@ const InvestorHub = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
+                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                 >
                   Navigate Your Path
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
                 </Link>
@@ -284,7 +284,7 @@ const InvestorHub = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
+                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                 >
                   Learn About NOA
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
@@ -403,10 +403,10 @@ const InvestorHub = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center justify-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
+                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                 >
                   Apply to Compete
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
                 </Link>
@@ -477,7 +477,7 @@ const InvestorHub = () => {
               <Link
                 to="/apply"
                 className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}
+                style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}
               >
                 Apply to NORCAT Innovation
                 <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>

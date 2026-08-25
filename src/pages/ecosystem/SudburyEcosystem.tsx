@@ -141,7 +141,7 @@ const SudburyEcosystem = () => {
 
   return (
     <Layout>
-      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden py-16 md:py-24">
@@ -220,7 +220,7 @@ const SudburyEcosystem = () => {
                     onClick={() => setActiveCategory(cat.id)}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
-                      background: 'white', color: NAVY, border: `1px solid ${NAVY}`, fontFamily: FONT,
+                      background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT,
                     } : {
                       background: 'white', color: NAVY, border: '1px solid #d9dde5', fontFamily: FONT,
                     }}
@@ -341,18 +341,18 @@ const SudburyEcosystem = () => {
                   <Link to={selectedOrg.internalLink}
                         onClick={() => setSelectedOrg(null)}
                         className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+                        style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
                     Learn More
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                       <ArrowUpRight className="w-4 h-4" />
                     </span>
                   </Link>
                 ) : selectedOrg?.link ? (
                   <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
                      className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                     style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+                     style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
                     Visit Website
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </span>
                   </a>

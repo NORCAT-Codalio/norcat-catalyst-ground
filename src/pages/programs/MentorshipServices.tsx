@@ -176,7 +176,7 @@ const MentorshipServices = () => {
 
   return (
     <Layout>
-      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -211,9 +211,9 @@ const MentorshipServices = () => {
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
                 <Link to="/apply"
                       className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                      style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                      style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                   Apply to NORCAT Innovation
-                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                  <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                     <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                   </span>
                 </Link>
@@ -481,10 +481,10 @@ const MentorshipServices = () => {
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
                                 className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                                style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white', fontFamily: FONT }}
+                                style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                               >
                                 <ExternalLink className="w-4 h-4" /> View Full Profile
-                                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                                 </span>
                               </a>
@@ -571,7 +571,7 @@ const MentorshipServices = () => {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link to="/apply"
                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                 Apply to NORCAT Innovation
                 <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
@@ -581,7 +581,7 @@ const MentorshipServices = () => {
                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
                     style={{ background: 'white', color: NAVY, border: `1px solid ${NAVY}`, fontFamily: FONT }}>
                 Learn more
-                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </span>
               </Link>

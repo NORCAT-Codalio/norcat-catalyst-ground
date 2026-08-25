@@ -469,7 +469,7 @@ export function ServicesExplorer({ activeAudience, light = false }: { activeAudi
                     }}
                   >
                     {activeItem.linkText}
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: NAVY, color: 'white' }}>
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </Link>

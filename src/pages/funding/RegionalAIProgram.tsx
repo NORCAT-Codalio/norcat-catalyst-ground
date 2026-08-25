@@ -108,7 +108,7 @@ const RegionalAIProgram = () => {
 
   return (
     <Layout>
-      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── PROGRAM OVERVIEW (light) ───── */}
         <section id="overview" className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
@@ -384,7 +384,7 @@ const RegionalAIProgram = () => {
                 <Link
                   to="/validate-idea"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'white', color: NAVY }}
+                  style={{ fontFamily: FONT, background: NAVY, color: 'white' }}
                 >
                   Submit your Discovery Document
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: NAVY }}>
@@ -397,7 +397,7 @@ const RegionalAIProgram = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}
                 >
                   Submit your RAII now
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>

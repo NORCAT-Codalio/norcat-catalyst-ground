@@ -161,7 +161,7 @@ const impactStats = [
 const Funding = () => {
   return (
     <Layout>
-      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* HERO */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -186,7 +186,7 @@ const Funding = () => {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/apply"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                      style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                      style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                   Become a Client <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/programs/capital-navigation"
@@ -449,7 +449,7 @@ const Funding = () => {
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <Link to="/apply"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                    style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                 Become a Client <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/programs/capital-navigation"

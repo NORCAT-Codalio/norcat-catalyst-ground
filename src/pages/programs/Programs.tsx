@@ -83,7 +83,7 @@ const fundingPathways = [
 const Programs = () => {
   return (
     <Layout>
-      <div style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
+      <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* HERO */}
         <section className="relative overflow-hidden flex items-center py-16 md:py-24">
@@ -108,7 +108,7 @@ const Programs = () => {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/apply"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                      style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                      style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                   Become a Client <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -162,7 +162,7 @@ const Programs = () => {
         </section>
 
         {/* FUNDING PATHWAYS */}
-        <section className="py-20 md:py-28" style={{ background: 'white', color: NAVY }}>
+        <section className="py-20 md:py-28" style={{ background: NAVY, color: 'white' }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
@@ -175,7 +175,7 @@ const Programs = () => {
                 </p>
                 <Link to="/funding"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                      style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                      style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                   View All Funding <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -227,7 +227,7 @@ const Programs = () => {
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/apply"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                    style={{ background: 'rgba(0, 179, 152, 0.9)', color: 'white' }}>
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                 Become a Client <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/funding"
