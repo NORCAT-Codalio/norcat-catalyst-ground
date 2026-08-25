@@ -236,7 +236,7 @@ export default function VentureGrowthServices() {
                   <div className="grid grid-cols-1 gap-2.5 mt-auto">
                     {service.features.map((feature, j) => (
                       <div key={j} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: BLUE }} />
                         <span className="text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{feature}</span>
                       </div>
                     ))}
