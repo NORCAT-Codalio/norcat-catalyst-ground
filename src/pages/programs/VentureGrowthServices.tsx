@@ -18,6 +18,8 @@ import {
   PieChart,
   TrendingUp,
   ExternalLink,
+  FlaskConical,
+  Network,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
