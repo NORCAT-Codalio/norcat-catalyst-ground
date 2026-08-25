@@ -195,7 +195,7 @@ export default function VentureGrowthServices() {
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>What's Included</Eyebrow>
               <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                Everything you need<br /><span style={{ color: BLUE }}>to accelerate.</span>
+                Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
               </Display>
             </div>
 
