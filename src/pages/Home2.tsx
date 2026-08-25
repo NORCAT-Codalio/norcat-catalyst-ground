@@ -119,10 +119,10 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const SIGNATURE_GRADIENT = `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 55%, ${NAVY} 100%)`;
 
-const Eyebrow = ({ children, color = TEAL, dotColor = TEAL }: { children: React.ReactNode; color?: string; dotColor?: string }) => (
+const Eyebrow = ({ children, color = TEAL, dotColor = TEAL, showDot = true }: { children: React.ReactNode; color?: string; dotColor?: string; showDot?: boolean }) => (
   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase mb-5"
      style={{ fontFamily: FONT, color }}>
-    <span className="size-1.5 rounded-full inline-block" style={{ background: dotColor }} />
+    {showDot && <span className="size-1.5 rounded-full inline-block" style={{ background: dotColor }} />}
     {children}
   </p>
 );
@@ -502,7 +502,7 @@ export default function Home2() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div className="max-w-2xl">
-                <Eyebrow color="white" dotColor="white">Latest Updates</Eyebrow>
+                <Eyebrow color="white" dotColor="white" showDot={false}>Latest Updates</Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Real Stories.<br />Unique Insights.
                 </Display>
@@ -512,52 +512,59 @@ export default function Home2() {
               </div>
             </div>
 
-            {/* Carousel - 4 cards visible, equal sizing */}
+            {/* Carousel - infinite track (duplicated for seamless wrap) */}
             <div className="relative">
-              <div ref={storiesScrollRef} className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory pb-2">
-                {[
+              {(() => {
+                const posts = [
                   { category: 'Events', title: 'Venture North PITCH Returns this October', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'OVIN RTDS Renewed for Northern Ontario', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
                   { category: 'Impact', title: 'Innovation Ecosystem Snapshot', image: stateOfSudburyImpactImg, link: '/impact' },
-                  
                   { category: 'Success Stories', title: 'CircuitIQ: From Sudbury Startup to Industry Leader', image: circuitiqTeam, link: '/insights/success-stories' },
                   { category: 'Impact', title: 'Annual Impact Report: Jobs, Capital & Growth Metrics', image: loopxTeam, link: '/impact' },
-                ].map((post) => (
-                  <Link key={post.title} to={post.link} className="group flex-shrink-0 snap-start w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
-                    <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300">
-                      <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.72) 0%, hsl(0 0% 0% / 0.40) 35%, transparent 60%)' }} />
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.75) 30%, hsl(0 0% 0% / 0.35) 60%, hsl(0 0% 0% / 0.15) 100%)' }} />
-                      <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
-                        background: 'hsla(168, 100%, 35%, 0.25)',
-                        color: 'hsl(168, 100%, 65%)',
-                        border: '1px solid hsla(168, 100%, 50%, 0.35)',
-                        backdropFilter: 'blur(8px)',
-                      }}>{post.category}</span>
-                      <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                        <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-2 break-words" style={{ fontFamily: FONT }}>{post.title}</h3>
-                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 group-hover:text-white transition-colors">
-                          Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                ];
+                const looped = [...posts, ...posts];
+                return (
+                  <div ref={storiesScrollRef} className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide pb-2">
+                    {looped.map((post, i) => (
+                      <Link key={`${post.title}-${i}`} to={post.link} className="group flex-shrink-0 w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+                        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] hover:scale-[1.02] transition-transform duration-300">
+                          <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+                          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.72) 0%, hsl(0 0% 0% / 0.40) 35%, transparent 60%)' }} />
+                          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, hsl(0 0% 0%) 0%, hsl(0 0% 0% / 0.75) 30%, hsl(0 0% 0% / 0.35) 60%, hsl(0 0% 0% / 0.15) 100%)' }} />
+                          <span className="absolute top-4 left-4 inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider" style={{
+                            background: 'hsla(168, 100%, 35%, 0.25)',
+                            color: 'hsl(168, 100%, 65%)',
+                            border: '1px solid hsla(168, 100%, 50%, 0.35)',
+                            backdropFilter: 'blur(8px)',
+                          }}>{post.category}</span>
+                          <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                            <h3 className="text-white font-bold text-base md:text-lg leading-snug mb-2 break-words" style={{ fontFamily: FONT }}>{post.title}</h3>
+                            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 group-hover:text-white transition-colors">
+                              Read More <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
 
 
-            {/* Navigation arrows */}
+            {/* Navigation arrows - continuous infinite scroll */}
             <div className="flex justify-end mt-6 gap-3">
               <button
                 onClick={() => {
                   const el = storiesScrollRef.current;
                   if (!el) return;
                   const step = el.clientWidth / 4;
-                  const maxScroll = el.scrollWidth - el.clientWidth;
-                  if (el.scrollLeft <= 10) {
-                    el.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                  const setWidth = el.scrollWidth / 2;
+                  if (el.scrollLeft < step) {
+                    // near start: silently jump forward one set, then scroll back smoothly
+                    el.scrollTo({ left: el.scrollLeft + setWidth, behavior: 'auto' });
+                    requestAnimationFrame(() => el.scrollBy({ left: -step, behavior: 'smooth' }));
                   } else {
                     el.scrollBy({ left: -step, behavior: 'smooth' });
                   }
@@ -573,12 +580,14 @@ export default function Home2() {
                   const el = storiesScrollRef.current;
                   if (!el) return;
                   const step = el.clientWidth / 4;
-                  const maxScroll = el.scrollWidth - el.clientWidth;
-                  if (el.scrollLeft + step >= maxScroll - 10) {
-                    el.scrollTo({ left: 0, behavior: 'smooth' });
-                  } else {
-                    el.scrollBy({ left: step, behavior: 'smooth' });
-                  }
+                  const setWidth = el.scrollWidth / 2;
+                  el.scrollBy({ left: step, behavior: 'smooth' });
+                  // after the smooth scroll, if past the first set, silently shift back
+                  window.setTimeout(() => {
+                    if (el.scrollLeft >= setWidth) {
+                      el.scrollTo({ left: el.scrollLeft - setWidth, behavior: 'auto' });
+                    }
+                  }, 360);
                 }}
                 className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
                 style={{ background: 'hsla(0, 0%, 100%, 0.15)', border: '1px solid hsla(0, 0%, 100%, 0.25)', backdropFilter: 'blur(10px)' }}
