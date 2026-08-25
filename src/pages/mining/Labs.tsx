@@ -24,6 +24,7 @@ import ugAditNewImg from '@/assets/underground/ug-adit-entrance-new.png.asset.js
 import ugSafeboxImg from '@/assets/underground/ug-safebox-demo.jpg.asset.json';
 import ugBoltingImg from '@/assets/underground/ug-bolting-sparks.jpg.asset.json';
 import ugTourImg from '@/assets/underground/ug-tour-phone.jpg.asset.json';
+import ugSchauenbergImg from '@/assets/underground/ug-schauenberg.jpg.asset.json';
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
