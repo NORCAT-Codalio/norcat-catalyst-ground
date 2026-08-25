@@ -537,18 +537,20 @@ const Labs = () => {
           {/* Facility detail modal */}
           <Dialog open={!!detail} onOpenChange={(open) => !open && setDetail(null)}>
             <DialogContent
-              className="max-w-4xl w-[calc(100%-2rem)] p-0 border-0 overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="max-w-4xl w-[calc(100%-2rem)] p-0 border-0 overflow-hidden max-h-[92vh] overflow-y-auto rounded-2xl"
               style={{ background: 'white' }}
             >
               <DialogTitle className="sr-only">{detail?.name || 'Facility details'}</DialogTitle>
               {detail && (
                 <div>
-                  <div className="relative">
-                    <img
-                      src={detailImages[detailIndex]?.src}
-                      alt={detailImages[detailIndex]?.alt}
-                      className="w-full h-64 sm:h-80 object-cover"
-                    />
+                  <div className="relative" style={{ background: '#0b1430' }}>
+                    <div className="px-6 pt-6 sm:px-8 sm:pt-8">
+                      <img
+                        src={detailImages[detailIndex]?.src}
+                        alt={detailImages[detailIndex]?.alt}
+                        className="w-full h-72 sm:h-96 object-contain rounded-xl"
+                      />
+                    </div>
                     <button
                       type="button"
                       onClick={() => setDetail(null)}
@@ -582,7 +584,7 @@ const Labs = () => {
                   </div>
 
                   {detailImages.length > 1 && (
-                    <div className="flex gap-2 px-6 pt-4 flex-wrap">
+                    <div className="flex gap-2 px-6 sm:px-8 pt-5 flex-wrap">
                       {detailImages.map((shot, idx) => (
                         <button
                           key={shot.src}
@@ -601,8 +603,8 @@ const Labs = () => {
                     </div>
                   )}
 
-                  <div className="p-6 md:p-8" style={{ color: NAVY }}>
-                    <div className="flex items-center gap-2 mb-3">
+                  <div className="p-8 md:p-10" style={{ color: NAVY }}>
+                    <div className="flex items-center gap-2 mb-4">
                       <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
                       <span
                         className="text-xs font-bold uppercase tracking-[0.14em]"
@@ -612,15 +614,15 @@ const Labs = () => {
                       </span>
                     </div>
                     <h3
-                      className="font-black text-2xl md:text-3xl mb-4"
+                      className="font-black text-2xl md:text-3xl mb-5"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
                     >
                       {detail.name}
                     </h3>
-                    <p className="text-base leading-relaxed mb-6" style={{ color: '#475068' }}>
+                    <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
                       {detail.description}
                     </p>
-                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
                       {detail.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
