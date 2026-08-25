@@ -65,10 +65,9 @@ const stats = [
 const sectors = [
   { icon: Cpu, label: 'Mining Tech' },
   { icon: Leaf, label: 'Clean Tech' },
-  { icon: Brain, label: 'AI / ML' },
+  { icon: Brain, label: 'AI' },
   { icon: Stethoscope, label: 'Med Tech' },
   { icon: Cog, label: 'Robotics' },
-  { icon: Rocket, label: 'and more' },
 ];
 
 const testimonials = [
