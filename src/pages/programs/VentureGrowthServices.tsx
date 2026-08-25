@@ -689,7 +689,7 @@ export default function VentureGrowthServices() {
                    style={{ border: `3px solid ${TEAL}` }} />
               <div className="text-left">
                 <p className="font-black uppercase text-white" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>Luke Begley</p>
-                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: LIGHT_BLUE, fontFamily: FONT }}>
+                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: TEAL, fontFamily: FONT }}>
                   CEO & Co-Founder, CircuitIQ
                 </p>
               </div>
