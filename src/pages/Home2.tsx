@@ -609,7 +609,7 @@ export default function Home2() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  <span className="block" style={{ color: NAVY }}>
+                  <span className="block" style={{ color: BLUE }}>
                     Northern Ontario
                   </span>
                   <span className="block" style={{ color: TEAL }}>
