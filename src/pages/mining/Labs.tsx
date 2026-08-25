@@ -551,6 +551,7 @@ const Labs = () => {
                         src={detailImages[detailIndex]?.src}
                         alt={detailImages[detailIndex]?.alt}
                         className="w-full h-64 sm:h-96 object-cover"
+                        style={{ objectPosition: detailImages[detailIndex]?.objectPosition }}
                       />
                     <button
                       type="button"
