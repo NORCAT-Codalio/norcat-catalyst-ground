@@ -257,8 +257,20 @@ const Labs = () => {
     images: { src: string; alt: string }[];
     index: number;
   } | null>(null);
+  const [detail, setDetail] = React.useState<(typeof facilities)[number] | null>(null);
+  const [detailIndex, setDetailIndex] = React.useState(0);
+
+  const detailImages = detail
+    ? [{ src: detail.image, alt: detail.imageAlt }, ...(detail.gallery ?? [])]
+    : [];
+
+  const openDetail = (facility: (typeof facilities)[number]) => {
+    setDetail(facility);
+    setDetailIndex(0);
+  };
 
   const current = lightbox ? lightbox.images[lightbox.index] : null;
+
   const step = (dir: number) =>
     setLightbox((lb) =>
       lb ? { ...lb, index: (lb.index + dir + lb.images.length) % lb.images.length } : lb,
