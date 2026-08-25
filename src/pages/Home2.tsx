@@ -687,20 +687,36 @@ export default function Home2() {
         </section>
 
         {/* ───── FINAL CTA ───── */}
-        <section className="pt-10 md:pt-12 pb-20 md:pb-32 relative overflow-hidden" style={{ background: '#F2F3F6' }}>
+        <section className="relative overflow-hidden py-20 md:py-32 lg:py-40">
+          {/* Deep navy gradient backdrop */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #001A4D 0%, #002B6B 45%, #003DA6 100%)' }} />
+          {/* Teal radial glow */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 0%, hsla(168,100%,40%,0.28) 0%, transparent 60%)' }} />
+          {/* Subtle mesh orbs */}
+          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: 'hsl(168 100% 40%)' }} />
+          <div className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] rounded-full blur-3xl opacity-15" style={{ background: 'hsl(200 100% 55%)' }} />
+          {/* Faint grid lines */}
+          <div className="absolute inset-0 opacity-[0.06]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }} />
+
           <div className="relative mx-auto w-full max-w-4xl px-5 sm:px-6 md:px-10 text-center">
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-                style={{ fontFamily: FONT, color: '#003DA6', letterSpacing: '-0.02em' }}>
-              See What's<br /><span style={{ color: TEAL }}>Possible.</span>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-white/90 backdrop-blur-md border border-white/20" style={{ background: 'rgba(255,255,255,0.08)' }}>
+              Your Innovation Ecosystem
+            </span>
+            <h2 className="font-black uppercase leading-[0.92] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-7 text-white"
+                style={{ fontFamily: FONT, letterSpacing: '-0.03em' }}>
+              See What's<br /><span style={{ color: '#2DE7C7' }}>Possible.</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
+            <p className="text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 max-w-2xl mx-auto text-white/80">
               Gain access to the facilities, infrastructure, expertise and industry connections within our innovation ecosystem.
             </p>
             <Link to="/mining/labs"
-                  className="group inline-flex items-center gap-1.5 text-sm font-bold px-5 py-2.5 rounded-full text-white transition-all duration-300 shadow-[0_2px_10px_-2px_hsla(168,100%,35%,0.4)] hover:shadow-[0_4px_16px_-2px_hsla(168,100%,35%,0.55)] hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'linear-gradient(135deg, #00b398 0%, #003da5 100%)' }}>
+                  className="group inline-flex items-center gap-2 text-base font-bold px-8 py-4 rounded-full text-[#001A4D] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                  style={{ fontFamily: FONT, background: 'linear-gradient(135deg, #2DE7C7 0%, #00b398 100%)', boxShadow: '0 0 40px -8px hsla(168,100%,60%,0.6), 0 8px 24px -8px rgba(0,0,0,0.4)' }}>
               Explore Our Facilities
-              <span className="inline-flex items-center justify-center size-7 rounded-full bg-white/20">
+              <span className="inline-flex items-center justify-center size-7 rounded-full bg-[#001A4D]/10">
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </span>
             </Link>
