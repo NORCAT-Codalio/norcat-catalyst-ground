@@ -334,25 +334,24 @@ const Labs = () => {
           </div>
         </section>
 
-        {/* ───── LOCATIONS (light) ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
+        {/* ───── LOCATIONS (white) ───── */}
+        <section className="py-16 md:py-24" style={{ background: '#FFFFFF', color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-10 md:mb-14">
-              <Eyebrow>Where We Work</Eyebrow>
+            <div className="max-w-3xl mb-10 md:mb-14">
+              <Eyebrow>Two Locations</Eyebrow>
               <h2
                 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
-                TWO LOCATIONS,<br />
-                <span style={{ color: TEAL }}>ENDLESS POSSIBILITIES.</span>
+                One connected ecosystem.
               </h2>
               <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                Our facilities span Northern Ontario, offering unique environments for every stage of
-                your innovation journey.
+                Our facilities span Northern Ontario, giving companies access to the space, tools and
+                environments needed to prototype, collaborate, test and validate new technologies.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-6">
               {locations.map((loc, i) => (
                 <motion.div
                   key={loc.name}
@@ -360,31 +359,44 @@ const Labs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl overflow-hidden h-full"
+                  className="rounded-2xl overflow-hidden h-full flex flex-col"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <div className="p-7 md:p-8">
-                    <div className="flex items-center gap-2 mb-4">
-                      <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
-                      <span
-                        className="text-xs font-bold uppercase tracking-[0.14em]"
-                        style={{ color: TEAL }}
-                      >
-                        {loc.place}
-                      </span>
+                  <img
+                    src={loc.image}
+                    alt={loc.imageAlt}
+                    className="w-full h-52 sm:h-60 object-cover"
+                    loading="lazy"
+                  />
+                  <div className="p-7 md:p-8 flex flex-col flex-1">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                      style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
+                    >
+                      <loc.icon className="w-5 h-5" style={{ color: TEAL }} />
                     </div>
                     <h3
-                      className="font-black uppercase text-lg md:text-xl mb-3"
+                      className="font-black text-lg md:text-xl"
                       style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
                     >
                       {loc.name}
                     </h3>
-                    <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: '#475068' }}>
+                    <p className="text-sm font-bold mb-4" style={{ color: TEAL }}>
+                      {loc.place}
+                    </p>
+                    <p className="text-sm md:text-base leading-relaxed mb-3" style={{ color: '#475068' }}>
                       {loc.copy}
                     </p>
-                    <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                    <p className="text-sm leading-relaxed mb-6" style={{ color: '#475068' }}>
                       <strong style={{ color: NAVY }}>Best for:</strong> {loc.best}
                     </p>
+                    <Link
+                      to={loc.href}
+                      className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold"
+                      style={{ color: TEAL }}
+                    >
+                      Learn More <ArrowUpRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </motion.div>
               ))}
@@ -392,41 +404,63 @@ const Labs = () => {
           </div>
         </section>
 
-
-        {/* ───── FACILITIES (white to contrast PAPER above) ───── */}
+        {/* ───── FACILITIES ───── */}
         <section
-          className="py-16 md:py-24 relative overflow-hidden"
-          style={{ background: '#FFFFFF', color: NAVY }}
+          id="facilities"
+          className="py-16 md:py-24 relative overflow-hidden scroll-mt-24"
+          style={{ background: PAPER, color: NAVY }}
         >
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
+            <div className="max-w-3xl mb-12 md:mb-16">
               <Eyebrow>Our Facilities</Eyebrow>
               <h2
                 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
-                World-class space<br />
-                <span style={{ color: TEAL }}>at every stage.</span>
+                The right space at every stage.
               </h2>
               <p className="text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                Infrastructure designed to support technology companies from first prototype to
-                commercial deployment.
+                From meeting and office space to prototyping labs and underground testing environments,
+                NORCAT Innovation offers flexible infrastructure to support the full innovation journey.
               </p>
             </div>
 
-            <div className="grid gap-5 md:gap-6">
-              {facilities.map((facility, i) => (
+            {/* Sudbury */}
+            <p
+              className="text-sm font-bold uppercase tracking-[0.18em] mb-5"
+              style={{ fontFamily: FONT, color: TEAL }}
+            >
+              Sudbury Facilities
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14 md:mb-16">
+              {sudburyFacilities.map((facility, i) => (
                 <motion.article
                   key={facility.id}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+                  className="group rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <div className="grid lg:grid-cols-[1.1fr_1.9fr]">
-                    {/* Image */}
+                  <div className="overflow-hidden">
+                    <img
+                      src={facility.image}
+                      alt={facility.imageAlt}
+                      loading="lazy"
+                      className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3
+                      className="font-bold text-base mb-2"
+                      style={{ fontFamily: FONT, color: NAVY }}
+                    >
+                      {facility.name}
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-5" style={{ color: '#475068' }}>
+                      {blurbs[facility.id] ?? facility.description}
+                    </p>
                     <button
                       type="button"
                       onClick={() =>
@@ -438,71 +472,69 @@ const Labs = () => {
                           index: 0,
                         })
                       }
-                      className="relative block w-full h-56 sm:h-64 lg:h-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-inset"
-                      aria-label={`View larger image of ${facility.name}`}
+                      className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold self-start"
+                      style={{ color: TEAL }}
                     >
-                      <img
-                        src={facility.image}
-                        alt={facility.imageAlt}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <span className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r" />
-                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-black/50 backdrop-blur-sm border border-white/30 transition-opacity group-hover:bg-black/70">
-                        <Eye className="w-3.5 h-3.5" />
-                        {facility.gallery?.length
-                          ? `View images (${facility.gallery.length + 1})`
-                          : 'View image'}
-                      </span>
+                      View Images <ArrowUpRight className="w-4 h-4" />
                     </button>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
 
-                    {/* Content */}
-                    <div className="p-6 md:p-8 lg:p-10">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div
-                          className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                          style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
-                        >
-                          <facility.icon className="w-5 h-5" style={{ color: TEAL }} />
-                        </div>
-                        <div>
-                          <h3
-                            className="font-black uppercase text-lg md:text-xl"
-                            style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}
-                          >
-                            {facility.name}
-                          </h3>
-                          <p
-                            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] mt-1"
-                            style={{ color: TEAL }}
-                          >
-                            <MapPin className="w-3.5 h-3.5" />
-                            {facility.location}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-base leading-relaxed mb-6" style={{ color: '#475068' }}>
-                        {facility.description}
-                      </p>
-
-                      <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
-                        {facility.features.map((feature) => (
-                          <div key={feature} className="flex items-start gap-2.5">
-                            <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
-                            <span className="text-sm leading-relaxed font-medium" style={{ color: '#2d3342' }}>
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                    </div>
-
+            {/* Onaping */}
+            <p
+              className="text-sm font-bold uppercase tracking-[0.18em] mb-5"
+              style={{ fontFamily: FONT, color: TEAL }}
+            >
+              Onaping Facilities
+            </p>
+            <div className="grid md:grid-cols-2 gap-5">
+              {onapingFacilities.map((facility, i) => (
+                <motion.article
+                  key={facility.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="group rounded-2xl overflow-hidden grid sm:grid-cols-2 transition-all duration-300 hover:shadow-lg"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <img
+                    src={facility.image}
+                    alt={facility.imageAlt}
+                    loading="lazy"
+                    className="w-full h-48 sm:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="p-6 flex flex-col">
+                    <h3 className="font-bold text-base mb-2" style={{ fontFamily: FONT, color: NAVY }}>
+                      {facility.name}
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-5" style={{ color: '#475068' }}>
+                      {blurbs[facility.id] ?? facility.description}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setLightbox({
+                          images: [
+                            { src: facility.image, alt: facility.imageAlt },
+                            ...(facility.gallery ?? []),
+                          ],
+                          index: 0,
+                        })
+                      }
+                      className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold self-start"
+                      style={{ color: TEAL }}
+                    >
+                      View Images <ArrowUpRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </motion.article>
               ))}
             </div>
           </div>
+
 
           {/* Lightbox */}
           <Dialog open={!!lightbox} onOpenChange={(open) => !open && setLightbox(null)}>
