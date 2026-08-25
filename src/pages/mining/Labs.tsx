@@ -601,7 +601,7 @@ const Labs = () => {
                     </div>
                   )}
 
-                  <div className="p-8 md:p-10" style={{ color: NAVY }}>
+                  <div className="p-10 md:p-12" style={{ color: NAVY }}>
                     <div className="flex items-center gap-2 mb-4">
                       <MapPin className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
                       <span
@@ -620,7 +620,7 @@ const Labs = () => {
                     <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
                       {detail.description}
                     </p>
-                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
+                    <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                       {detail.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
