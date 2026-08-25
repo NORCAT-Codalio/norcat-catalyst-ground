@@ -712,7 +712,7 @@ export default function Home2() {
               <div className="relative">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-7 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
                       style={{ color: '#003DA6', background: 'rgba(0,61,166,0.08)', border: '1px solid rgba(0,61,166,0.15)' }}>
-                  Your Innovation Ecosystem
+                  Your Northern Advantage
                 </span>
                 <h2 className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                     style={{ fontFamily: FONT, color: '#003DA6', letterSpacing: '-0.03em' }}>
