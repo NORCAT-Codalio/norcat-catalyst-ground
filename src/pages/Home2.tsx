@@ -708,8 +708,6 @@ export default function Home2() {
                  }}>
               {/* Inner teal glow */}
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 100%, hsla(168,100%,45%,0.08) 0%, transparent 70%)' }} />
-              {/* Top accent line */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-1 w-32 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #00b398, transparent)' }} />
 
               <div className="relative">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-7 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
