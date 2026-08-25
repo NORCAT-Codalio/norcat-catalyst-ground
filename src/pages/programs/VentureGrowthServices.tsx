@@ -154,7 +154,7 @@ export default function VentureGrowthServices() {
             <div className="max-w-3xl xl:max-w-4xl">
               <Eyebrow className="!text-white">Core Program</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
-                Venture Growth<br /><span style={{ color: TEAL }}>Services.</span>
+                Venture Growth<br /><span style={{ color: LIGHT_BLUE }}>Services.</span>
               </Display>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 The operating system for ambitious founders. Hands-on support, education, network,
