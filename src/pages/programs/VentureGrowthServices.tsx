@@ -208,13 +208,13 @@ export default function VentureGrowthServices() {
                 >
                   <div
                     className="size-12 rounded-xl flex items-center justify-center shrink-0 mb-5"
-                    style={{ background: 'rgba(0,61,165,0.10)', border: `1px solid ${BLUE}` }}
+                    style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}` }}
                   >
-                    <service.icon className="size-6" style={{ color: BLUE }} strokeWidth={2} />
+                    <service.icon className="size-6" style={{ color: TEAL }} strokeWidth={2} />
                   </div>
                   <div
                     className="text-xs font-black uppercase tracking-wider mb-2"
-                    style={{ fontFamily: FONT, color: BLUE, letterSpacing: '0.08em' }}
+                    style={{ fontFamily: FONT, color: TEAL, letterSpacing: '0.08em' }}
                   >
                     {service.title}
                   </div>
@@ -223,7 +223,7 @@ export default function VentureGrowthServices() {
                     style={{ fontFamily: FONT, fontWeight: 500, color: NAVY }}
                   >
                     {service.headline}{' '}
-                    <span style={{ color: BLUE, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
+                    <span style={{ color: TEAL, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
                       {service.headlineItalic}
                     </span>
                   </h3>
@@ -236,7 +236,7 @@ export default function VentureGrowthServices() {
                   <div className="grid grid-cols-1 gap-2.5 mt-auto">
                     {service.features.map((feature, j) => (
                       <div key={j} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: BLUE }} />
+                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
                         <span className="text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{feature}</span>
                       </div>
                     ))}
