@@ -25,6 +25,9 @@ import ugSafeboxImg from '@/assets/underground/ug-safebox-demo.jpg.asset.json';
 import ugBoltingImg from '@/assets/underground/ug-bolting-sparks.jpg.asset.json';
 import ugTourImg from '@/assets/underground/ug-tour-phone.jpg.asset.json';
 import ugSchauenbergImg from '@/assets/underground/ug-schauenberg.jpg.asset.json';
+import ugMinovaImg from '@/assets/underground/ug-minova-shotcrete.jpg.asset.json';
+import ugJumboImg from '@/assets/underground/ug-jumbo-console.jpg.asset.json';
+import ugTestingImg from '@/assets/underground/ug-testing-progress.jpg.asset.json';
 import discoveryLabImg from '@/assets/fortin-discovery-lab.jpg.asset.json';
 import surfaceExteriorImg from '@/assets/surface-exterior.jpg.asset.json';
 import surfaceHubImg from '@/assets/surface-hub.jpg.asset.json';
@@ -201,6 +204,9 @@ const facilities = [
       { src: ugSafeboxImg.url, alt: 'Underground safety isolation system demonstration' },
       { src: ugBoltingImg.url, alt: 'Ground support work underground with sparks flying at the NORCAT Underground Centre' },
       { src: ugTourImg.url, alt: 'Visitor capturing an underground technology demonstration on a phone' },
+      { src: ugMinovaImg.url, alt: 'Technician operating a resin injection unit underground at the NORCAT Underground Centre' },
+      { src: ugJumboImg.url, alt: 'Operator using a digital drill control console underground' },
+      { src: ugTestingImg.url, alt: 'Technician beside equipment behind Testing in Progress banners underground' },
     ],
   },
   {
