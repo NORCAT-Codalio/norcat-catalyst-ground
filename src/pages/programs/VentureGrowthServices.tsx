@@ -8,10 +8,19 @@ import {
   Zap,
   Quote,
   DollarSign,
+  UserCheck,
+  Briefcase,
+  Handshake,
+  Users,
+  BarChart3,
+  Check,
+  FileText,
+  PieChart,
+  TrendingUp,
+  ExternalLink,
 } from 'lucide-react';
 
 import { Layout } from '@/components/Layout';
-import { ServicesExplorer } from '@/components/ServicesExplorer';
 import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
@@ -39,6 +48,61 @@ const differentiators = [
   { icon: Compass, title: 'Hands-On, Not Hands-Off', description: "We roll up our sleeves and work alongside you. This isn't passive mentorship - it's active partnership in your success." },
   { icon: Target, title: 'Industry-Connected', description: 'Deep relationships with mining, industrial, and technology sectors mean real customer introductions, not just advice.' },
   { icon: Zap, title: 'Northern Advantage', description: "Access to unique infrastructure like the NORCAT Underground Centre, embedded within one of Canada's most established mining ecosystems." },
+];
+
+const startupServices = [
+  {
+    icon: UserCheck,
+    title: '1-on-1 Advisory',
+    headline: 'A dedicated advisor in',
+    headlineItalic: 'your corner',
+    description:
+      'Work one-on-one with a seasoned advisor who gets your business, challenges your thinking, and helps you make sharper decisions at every stage of growth.',
+    features: ['Dedicated advisor relationship', 'Strategic planning support', 'Operational guidance', 'Leadership development'],
+  },
+  {
+    icon: Briefcase,
+    title: 'MaRS Startup Toolkit',
+    headline: 'Proven tools to',
+    headlineItalic: 'structure and scale',
+    description:
+      'Access the curated MaRS Startup Toolkit \u2014 frameworks, templates, and playbooks used by thousands of ventures to plan, pitch, and execute faster.',
+    features: ['Business model canvas', 'Financial planning templates', 'Investor pitch frameworks', 'Growth milestone trackers'],
+  },
+  {
+    icon: Handshake,
+    title: 'Mentorship',
+    headline: 'Tactical advice from those who\u2019ve',
+    headlineItalic: 'been there',
+    description:
+      'Get matched with experienced operators and founders who have built, scaled, and exited companies in your sector. Real guidance from real builders.',
+    features: ['Domain expert matching', 'Structured mentorship sessions', 'Ongoing relationship building', 'Peer mentor connections'],
+  },
+  {
+    icon: Users,
+    title: 'Small Group Advisory Sessions',
+    headline: 'Learn alongside fellow',
+    headlineItalic: 'founders',
+    description:
+      'Join focused, small-group sessions where founders share challenges, pressure-test ideas, and gain collective insights from a trusted peer circle.',
+    features: ['Peer cohort sessions', 'Founder roundtables', 'Problem-solving workshops', 'Accountability circles'],
+  },
+  {
+    icon: BarChart3,
+    title: 'Data & Market Intelligence Services',
+    headline: 'Insights that drive',
+    headlineItalic: 'smarter decisions',
+    description:
+      'Actionable market research, competitive intelligence, and data-driven insights to inform your go-to-market, product roadmap, and fundraising strategy.',
+    features: ['Market landscape analysis', 'Competitive intelligence', 'Customer & sector research', 'Data-driven growth reports'],
+  },
+];
+
+const capitalServices = [
+  { icon: FileText, title: 'Grant Writing Support', desc: 'Expert assistance with government funding applications including SR&ED, IRAP, and provincial programs.' },
+  { icon: PieChart, title: 'Investment Readiness', desc: 'Prepare your pitch deck, financial models, and data room for investor conversations.' },
+  { icon: DollarSign, title: 'Funding Strategy', desc: 'Develop a comprehensive capital strategy aligned with your growth milestones.' },
+  { icon: TrendingUp, title: 'Investor Introductions', desc: 'Connect with our network of angel investors, VCs, and strategic partners.' },
 ];
 
 const Eyebrow = ({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) => (
@@ -121,7 +185,7 @@ export default function VentureGrowthServices() {
           </div>
         </section>
 
-        {/* ───── SERVICES EXPLORER (light) ───── */}
+        {/* ───── WHAT'S INCLUDED (light) ───── */}
         <section
           className="py-20 md:py-28 relative overflow-hidden"
           style={{ background: PAPER, color: NAVY }}
@@ -134,7 +198,145 @@ export default function VentureGrowthServices() {
               </Display>
             </div>
 
-            <ServicesExplorer light activeAudience="Startup Support" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+              {startupServices.map((service) => (
+                <div
+                  key={service.title}
+                  className="rounded-2xl p-7 md:p-8 flex flex-col transition-transform hover:-translate-y-1"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <div
+                    className="size-12 rounded-xl flex items-center justify-center shrink-0 mb-5"
+                    style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}` }}
+                  >
+                    <service.icon className="size-6" style={{ color: TEAL }} strokeWidth={2} />
+                  </div>
+                  <div
+                    className="text-xs font-black uppercase tracking-wider mb-2"
+                    style={{ fontFamily: FONT, color: TEAL, letterSpacing: '0.08em' }}
+                  >
+                    {service.title}
+                  </div>
+                  <h3
+                    className="text-xl md:text-2xl leading-tight mb-3"
+                    style={{ fontFamily: FONT, fontWeight: 500, color: NAVY }}
+                  >
+                    {service.headline}{' '}
+                    <span style={{ color: TEAL, fontFamily: FONT, fontWeight: 700, fontSize: 'inherit' }}>
+                      {service.headlineItalic}
+                    </span>
+                  </h3>
+                  <p
+                    className="text-sm md:text-base font-light leading-relaxed mb-6"
+                    style={{ color: 'rgba(0,26,77,0.72)', fontFamily: FONT }}
+                  >
+                    {service.description}
+                  </p>
+                  <div className="grid grid-cols-1 gap-2.5 mt-auto">
+                    {service.features.map((feature, j) => (
+                      <div key={j} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                        <span className="text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ───── CAPITAL NAVIGATION (light) ───── */}
+        <section
+          className="py-20 md:py-28 relative overflow-hidden"
+          style={{ background: 'white', color: NAVY }}
+        >
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+              {/* Left – heading + Invest Sudbury portal */}
+              <div className="lg:col-span-5">
+                <Eyebrow>Capital Navigation</Eyebrow>
+                <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+                  Find the right<br /><span style={{ color: TEAL }}>funding.</span>
+                </Display>
+                <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
+                  Our dedicated capital navigation team helps you identify, prepare for, and secure the
+                  right funding — from grants and loans to angel and venture capital.
+                </p>
+
+                <div
+                  className="rounded-2xl p-7 md:p-8"
+                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <ExternalLink className="w-4 h-4" style={{ color: TEAL }} />
+                    <span
+                      className="text-xs font-bold uppercase tracking-[0.15em]"
+                      style={{ fontFamily: FONT, color: TEAL }}
+                    >
+                      External Resource
+                    </span>
+                  </div>
+                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    Invest Sudbury Funding & Incentives
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: '#475068', fontFamily: FONT }}>
+                    Explore the official Greater Sudbury funding directory to find municipal, provincial, and
+                    federal programs matched to your business stage.
+                  </p>
+                  <a
+                    href="https://investsudbury.ca/incentives-and-programs/funding-and-incentives/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}
+                  >
+                    Open Funding Portal
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Right – capital services */}
+              <div className="lg:col-span-7 flex flex-col gap-4">
+                {capitalServices.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl p-6 md:p-7 flex gap-5 transition-transform hover:-translate-y-0.5"
+                    style={{ background: PAPER, border: '1px solid #d9dde5' }}
+                  >
+                    <div
+                      className="size-12 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(0,179,152,0.12)', color: TEAL }}
+                    >
+                      <item.icon className="size-6" strokeWidth={2} />
+                    </div>
+                    <div>
+                      <h3 className="font-black uppercase text-base md:text-lg mb-1" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                        {item.title}
+                      </h3>
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Stats row */}
+                <div className="grid grid-cols-3 gap-4 mt-2">
+                  {[
+                    { number: '$150M+', label: 'Capital Raised' },
+                    { number: '85%', label: 'Grant Success Rate' },
+                    { number: '50+', label: 'Investor Partners' },
+                  ].map((stat) => (
+                    <div key={stat.label} className="text-center rounded-2xl p-5" style={{ background: NAVY }}>
+                      <div className="text-2xl md:text-3xl font-black mb-1" style={{ color: TEAL, fontFamily: FONT }}>{stat.number}</div>
+                      <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.72)', fontFamily: FONT }}>{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
