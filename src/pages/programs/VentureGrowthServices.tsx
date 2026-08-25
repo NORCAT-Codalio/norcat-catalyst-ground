@@ -278,7 +278,7 @@ export default function VentureGrowthServices() {
                       External Resource
                     </span>
                   </div>
-                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                  <h3 className="font-black uppercase text-lg md:text-xl mb-3" style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.01em' }}>
                     Invest Sudbury Funding & Incentives
                   </h3>
                   <p className="text-sm leading-relaxed mb-5" style={{ color: '#475068', fontFamily: FONT }}>
