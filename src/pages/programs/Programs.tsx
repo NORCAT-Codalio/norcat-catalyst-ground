@@ -108,7 +108,7 @@ const Programs = () => {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/apply"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                      style={{ background: TEAL, color: NAVY }}>
+                      style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                   Become a Client <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -175,7 +175,7 @@ const Programs = () => {
                 </p>
                 <Link to="/funding"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                      style={{ background: TEAL, color: NAVY }}>
+                      style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                   View All Funding <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -227,7 +227,7 @@ const Programs = () => {
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/apply"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                    style={{ background: TEAL, color: NAVY }}>
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
                 Become a Client <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/funding"

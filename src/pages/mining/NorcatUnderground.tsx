@@ -183,7 +183,7 @@ const NorcatUnderground = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: NAVY, boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                 >
                   Book a Tour <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                 </Link>
@@ -453,7 +453,7 @@ const NorcatUnderground = () => {
                 <Link
                   to="/apply"
                   className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: TEAL, color: 'white' }}
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}
                 >
                   Book a Tour
                   <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>

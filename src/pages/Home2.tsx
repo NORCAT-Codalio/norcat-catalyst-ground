@@ -296,7 +296,7 @@ export default function Home2() {
                 <div className="mt-9 flex flex-col sm:flex-row gap-4">
                   <Link to="/apply"
                         className="group inline-flex items-center gap-2 pl-5 pr-2 py-2 xl:pl-7 xl:pr-3 xl:py-3 rounded-full font-bold transition-transform hover:scale-[1.02]"
-                        style={{ fontFamily: FONT, background: TEAL, color: NAVY, fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
+                        style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontSize: 'clamp(0.875rem, 0.3vw + 0.78rem, 1.125rem)' }}>
                     Apply to NORCAT Innovation
                     <span className="inline-flex items-center justify-center size-7 xl:size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
                       <ArrowUpRight className="w-4 h-4 xl:w-5 xl:h-5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
@@ -414,7 +414,7 @@ export default function Home2() {
                   <Link
                     to={activeProgram.href}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base w-full sm:w-auto transition-transform hover:translate-x-0.5"
-                    style={{ background: TEAL, color: 'white', fontFamily: FONT }}
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                   >
                     View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
