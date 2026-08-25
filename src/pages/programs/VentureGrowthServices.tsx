@@ -208,9 +208,9 @@ export default function VentureGrowthServices() {
                 >
                   <div
                     className="size-12 rounded-xl flex items-center justify-center shrink-0 mb-5"
-                    style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}` }}
+                    style={{ background: 'rgba(0,61,165,0.10)', border: `1px solid ${BLUE}` }}
                   >
-                    <service.icon className="size-6" style={{ color: TEAL }} strokeWidth={2} />
+                    <service.icon className="size-6" style={{ color: BLUE }} strokeWidth={2} />
                   </div>
                   <div
                     className="text-xs font-black uppercase tracking-wider mb-2"
