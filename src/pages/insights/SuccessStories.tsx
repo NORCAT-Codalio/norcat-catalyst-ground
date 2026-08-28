@@ -367,8 +367,9 @@ const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const visibleCount = 2;
-  const maxIndex = Math.max(0, testimonials.length - visibleCount);
+  const [visibleCount, setVisibleCount] = useState(9);
+  const testimonialVisibleCount = 2;
+  const maxIndex = Math.max(0, testimonials.length - testimonialVisibleCount);
   const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
   const prevTestimonial = () => setTestimonialIndex((i) => (i <= 0 ? maxIndex : i - 1));
 
@@ -376,6 +377,13 @@ const SuccessStories = () => {
     if (selectedSector !== 'All' && story.sector !== selectedSector) return false;
     return true;
   });
+
+  useEffect(() => {
+    setVisibleCount(9);
+  }, [selectedSector]);
+
+  const visibleStories = filteredStories.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredStories.length;
 
   return (
     <Layout>
