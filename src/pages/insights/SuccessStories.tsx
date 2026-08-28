@@ -712,15 +712,21 @@ const SuccessStories = () => {
       </section>
 
       {/* ───── TESTIMONIALS: FROM FOUNDERS, FIRSTHAND ───── */}
-      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'hsl(168, 100%, 32%)' }}>
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001A4D 0%, #003DA5 45%, #0FA88C 100%)' }}>
+        {/* Ambient teal glows */}
+        <div aria-hidden className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, rgba(0,179,152,0.55) 0%, transparent 70%)' }} />
+        <div aria-hidden className="pointer-events-none absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, rgba(0,61,165,0.6) 0%, transparent 70%)' }} />
+        {/* Faint grid lines */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
         <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10">
           <div className="max-w-2xl mb-12 md:mb-16">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-4">Success Stories</p>
             <h2 className="font-bold uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl text-white"
                 style={{ fontFamily: "'Open Sans', sans-serif", letterSpacing: '-0.02em' }}>
               From Founders,<br />Firsthand
             </h2>
-            <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'hsla(0, 0%, 100%, 0.5)' }} />
-            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/90">
+            <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'linear-gradient(90deg, #00B398, rgba(255,255,255,0.6))' }} />
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/85">
               Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
             </p>
           </div>
