@@ -412,6 +412,7 @@ const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.cate
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(9);
   const [searchParams] = useSearchParams();
   const newsListRef = useRef<HTMLDivElement>(null);
 
@@ -428,6 +429,13 @@ const News = () => {
   const filteredNews = activeCategory === 'All' 
     ? newsItems 
     : newsItems.filter(item => item.category === activeCategory);
+
+  useEffect(() => {
+    setVisibleCount(9);
+  }, [activeCategory]);
+
+  const visibleNews = filteredNews.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredNews.length;
 
   // Brand tokens (mirrors About)
   const NAVY = '#001A4D';
@@ -514,7 +522,7 @@ const News = () => {
             </div>
 
             <motion.div ref={newsListRef} layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredNews.map((item) => {
+            {visibleNews.map((item) => {
               const Icon = item.icon;
               const isExpanded = selectedNews === item.id;
 
@@ -647,6 +655,21 @@ const News = () => {
               );
             })}
           </motion.div>
+
+          {hasMore && (
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => setVisibleCount((c) => c + 6)}
+                className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
+              >
+                See More
+                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+                </span>
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

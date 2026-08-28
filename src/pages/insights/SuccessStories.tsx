@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { ArrowRight, X, DollarSign, Users, Globe, TrendingUp, CheckCircle, MapPin, Play, Award, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
@@ -367,7 +367,6 @@ const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(9);
   const testimonialVisibleCount = 2;
   const maxIndex = Math.max(0, testimonials.length - testimonialVisibleCount);
   const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
@@ -377,13 +376,6 @@ const SuccessStories = () => {
     if (selectedSector !== 'All' && story.sector !== selectedSector) return false;
     return true;
   });
-
-  useEffect(() => {
-    setVisibleCount(9);
-  }, [selectedSector]);
-
-  const visibleStories = filteredStories.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredStories.length;
 
   return (
     <Layout>
@@ -451,7 +443,7 @@ const SuccessStories = () => {
       <section className="py-28 relative" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="container mx-auto px-6">
           <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visibleStories.map((story) => {
+            {filteredStories.map((story) => {
               const isExpanded = selectedStory === story.id;
               const details = detailedStories[story.id];
 
@@ -703,21 +695,6 @@ const SuccessStories = () => {
             })}
           </motion.div>
 
-          {hasMore && (
-            <div className="flex justify-center mt-12">
-              <button
-                onClick={() => setVisibleCount((c) => c + 6)}
-                className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: "'Open Sans', system-ui, sans-serif" }}
-              >
-                See More
-                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: '#001A4D', color: 'white' }}>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
-                </span>
-              </button>
-            </div>
-          )}
-
           {filteredStories.length === 0 && (
             <div className="text-center py-20">
               <p className="text-lg font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>No companies match your filters.</p>
@@ -752,10 +729,10 @@ const SuccessStories = () => {
             <div className="overflow-hidden -mx-4 px-4 py-6">
               <div
                 className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
+                style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${testimonialVisibleCount})))` }}
               >
                 {testimonials.map((t, idx) => {
-                  const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
+                  const isVisible = idx >= testimonialIndex && idx < testimonialIndex + testimonialVisibleCount;
                   return (
                     <div
                       key={t.headline}
