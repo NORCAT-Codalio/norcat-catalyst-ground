@@ -703,6 +703,21 @@ const SuccessStories = () => {
             })}
           </motion.div>
 
+          {hasMore && (
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => setVisibleCount((c) => c + 6)}
+                className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
+                style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: "'Open Sans', system-ui, sans-serif" }}
+              >
+                See More
+                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: '#001A4D', color: 'white' }}>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+                </span>
+              </button>
+            </div>
+          )}
+
           {filteredStories.length === 0 && (
             <div className="text-center py-20">
               <p className="text-lg font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>No companies match your filters.</p>
