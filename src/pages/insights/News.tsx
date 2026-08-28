@@ -606,14 +606,14 @@ const News = () => {
                             <span className="text-xs" style={{ color: 'hsl(220, 15%, 50%)' }}>{item.date}</span>
                           </div>
 
-                          <h2 className="text-2xl md:text-3xl font-bold mb-4 max-w-3xl" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
+                          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
                             {item.title}
                           </h2>
                         </div>
 
                         {/* Content */}
                         <div className="p-8 md:p-12 pt-4">
-                          <div className="max-w-3xl">
+                          <div>
                             {item.fullContent.split('\n\n').map((paragraph, idx) => (
                               <p key={idx} className="text-base leading-relaxed mb-4 last:mb-0" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
                                 {renderMarkdownLinks(paragraph)}
@@ -624,16 +624,18 @@ const News = () => {
                             {item.aboutSections && item.aboutSections.length > 0 && (
                               <>
                                 <div className="my-8" style={{ borderTop: '1px solid hsla(220, 15%, 75%, 0.4)' }} />
-                                {item.aboutSections.map((about, idx) => (
-                                  <div key={idx} className="mb-6 last:mb-0">
-                                    <h4 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
-                                      {about.title}
-                                    </h4>
-                                    <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
-                                      {about.text}
-                                    </p>
-                                  </div>
-                                ))}
+                                <div className="grid md:grid-cols-2 gap-6">
+                                  {item.aboutSections.map((about, idx) => (
+                                    <div key={idx}>
+                                      <h4 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 15%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                        {about.title}
+                                      </h4>
+                                      <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
+                                        {about.text}
+                                      </p>
+                                    </div>
+                                  ))}
+                                </div>
                               </>
                             )}
                           </div>
