@@ -673,38 +673,61 @@ const News = () => {
         </div>
       </section>
 
-        {/* ───── Newsletter CTA (paper) ───── */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-               style={{ fontFamily: FONT, color: TEAL }}>
-              Stay in the Loop
-            </p>
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
-                style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-              Never Miss<br /><span style={{ color: TEAL }}>an Update.</span>
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: '#475068' }}>
-              Get weekly insights on Sudbury's innovation ecosystem delivered straight to your inbox.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-5 py-3 rounded-full text-sm focus:outline-none focus:ring-2"
-                style={{ background: 'white', border: '1px solid rgba(0,26,77,0.12)', color: NAVY }}
-              />
-              <button
-                type="submit"
-                className="group inline-flex items-center justify-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
-              >
-                Subscribe
-                <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
+        {/* ───── Newsletter CTA (homepage-style glass card) ───── */}
+        <section className="relative overflow-hidden py-24 md:py-36 lg:py-44" style={{ background: PAPER }}>
+          {/* Soft teal radial glow from top */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 65% 55% at 50% 0%, hsla(168,100%,40%,0.12) 0%, transparent 65%)' }} />
+          {/* Faint grid lines */}
+          <div className="absolute inset-0 opacity-[0.5]" style={{
+            backgroundImage: 'linear-gradient(rgba(0,61,166,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,61,166,0.04) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }} />
+
+          {/* Glass card container */}
+          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10">
+            <div className="relative rounded-[2rem] md:rounded-[2.5rem] px-6 py-14 md:px-16 md:py-20 text-center overflow-hidden"
+                 style={{
+                   background: 'linear-gradient(160deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 100%)',
+                   backdropFilter: 'blur(20px)',
+                   WebkitBackdropFilter: 'blur(20px)',
+                   border: '1px solid rgba(255,255,255,0.9)',
+                   boxShadow: '0 1px 0 0 rgba(255,255,255,1), 0 24px 60px -16px rgba(0,26,77,0.18), 0 8px 24px -12px rgba(0,26,77,0.12)',
+                 }}>
+              {/* Inner teal glow */}
+              <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 100%, hsla(168,100%,45%,0.08) 0%, transparent 70%)' }} />
+
+              <div className="relative">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-7 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
+                      style={{ color: BLUE, background: 'rgba(0,61,166,0.08)', border: '1px solid rgba(0,61,166,0.15)' }}>
+                  Stay in the Loop
                 </span>
-              </button>
-            </form>
+                <h2 className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+                    style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.03em' }}>
+                  Never Miss<br /><span style={{ color: TEAL }}>an Update.</span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
+                  Get weekly insights on Sudbury's innovation ecosystem delivered straight to your inbox.
+                </p>
+                <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-5 py-3 rounded-full text-sm focus:outline-none focus:ring-2"
+                    style={{ background: 'white', border: '1px solid rgba(0,26,77,0.12)', color: NAVY }}
+                  />
+                  <button
+                    type="submit"
+                    className="group inline-flex items-center justify-center gap-2 text-base font-bold px-6 py-3 rounded-full text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                    style={{ fontFamily: FONT, background: 'linear-gradient(135deg, #00b398 0%, #003DA6 100%)', boxShadow: '0 8px 24px -6px hsla(168,100%,35%,0.45)' }}
+                  >
+                    Subscribe
+                    <span className="inline-flex items-center justify-center size-7 rounded-full bg-white/20">
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
 
