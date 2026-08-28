@@ -367,7 +367,6 @@ const SuccessStories = () => {
   const [selectedSector, setSelectedSector] = useState('All');
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(9);
   const testimonialVisibleCount = 2;
   const maxIndex = Math.max(0, testimonials.length - testimonialVisibleCount);
   const nextTestimonial = () => setTestimonialIndex((i) => (i >= maxIndex ? 0 : i + 1));
