@@ -567,22 +567,22 @@ const SuccessStories = () => {
                             <div>
                               {/* The Problem */}
                               <div className="mb-10">
-                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Problem</span>
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(164, 100%, 26%)' }}>The Problem</span>
                                 <p className="text-lg font-medium leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{details.problem}</p>
                               </div>
 
                               {/* The Breakthrough */}
                               <div className="mb-10">
-                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Breakthrough</span>
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(164, 100%, 26%)' }}>The Breakthrough</span>
                                 <p className="text-lg font-medium leading-relaxed" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>{details.breakthrough.text}</p>
                               </div>
 
                               {/* Founder Quote */}
                               <div className="rounded-2xl p-6 mb-10" style={{
-                                background: 'linear-gradient(145deg, hsla(168, 20%, 88%, 0.4) 0%, hsla(168, 15%, 85%, 0.2) 100%)',
-                                border: '1px solid hsla(168, 25%, 85%, 0.3)',
+                                background: 'linear-gradient(145deg, hsla(164, 30%, 90%, 0.4) 0%, hsla(164, 25%, 88%, 0.2) 100%)',
+                                border: '1px solid hsla(164, 30%, 82%, 0.3)',
                               }}>
-                                <div className="text-4xl leading-none mb-3" style={{ color: 'hsl(168, 100%, 28%)' }}>"</div>
+                                <div className="text-4xl leading-none mb-3" style={{ color: 'hsl(164, 100%, 26%)' }}>"</div>
                                 <blockquote className="text-sm italic leading-relaxed mb-4" style={{ color: 'hsl(220, 15%, 25%)' }}>
                                   {details.founderQuote.text}
                                 </blockquote>
@@ -595,7 +595,7 @@ const SuccessStories = () => {
                               {/* Full Story */}
                               {details.fullStory && (
                                 <div className="mb-10">
-                                  <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(168, 100%, 28%)' }}>The Full Story</span>
+                                  <span className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block" style={{ color: 'hsl(164, 100%, 26%)' }}>The Full Story</span>
                                   {details.fullStory.split('\n\n').map((paragraph, idx) => (
                                     <p key={idx} className="text-lg font-medium leading-relaxed mb-4 last:mb-0" style={{ color: 'hsl(220, 15%, 20%)', fontFamily: "'Open Sans', sans-serif" }}>
                                       {paragraph}
@@ -605,17 +605,17 @@ const SuccessStories = () => {
                               )}
                             </div>
 
-                            {/* Right column */}
-                            <div>
+                            {/* Right column — sticky so it scrolls alongside the story */}
+                            <div className="md:sticky md:top-24 self-start">
                               {/* Impact Metrics */}
                               <div className="mb-10">
-                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(168, 100%, 28%)' }}>Impact</span>
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(164, 100%, 26%)' }}>Impact</span>
                                 <div className="grid grid-cols-2 gap-4">
                                   {[
                                     { icon: Users, label: 'Jobs Created', value: details.impactMetrics.jobs, color: 'hsl(217, 91%, 60%)' },
                                     { icon: DollarSign, label: details.impactMetrics.publicValuation ? 'Public Valuation' : 'Capital Raised', value: details.impactMetrics.publicValuation || details.impactMetrics.capital, color: 'hsl(45, 93%, 47%)' },
                                     ...(details.impactMetrics.patents !== undefined ? [{ icon: Award, label: 'Patents', value: details.impactMetrics.patents, color: 'hsl(340, 82%, 52%)' }] : []),
-                                    { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(168, 100%, 35%)' },
+                                    { icon: Globe, label: 'Markets', value: details.impactMetrics.markets, color: 'hsl(164, 100%, 35%)' },
                                   ].map((metric) => (
                                     <div key={metric.label} className="rounded-xl p-4" style={{
                                       background: 'hsla(220, 15%, 88%, 0.5)',
@@ -631,17 +631,17 @@ const SuccessStories = () => {
 
                               {/* Timeline */}
                               <div className="mb-10">
-                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(168, 100%, 28%)' }}>Journey</span>
+                                <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(164, 100%, 26%)' }}>Journey</span>
                                 <div className="relative pl-6">
-                                  <div className="absolute left-[7px] top-2 bottom-2 w-0.5" style={{ background: 'hsl(168 100% 35% / 0.2)' }} />
+                                  <div className="absolute left-[7px] top-2 bottom-2 w-0.5" style={{ background: 'hsl(164 100% 35% / 0.2)' }} />
                                   {details.timeline.map((item, idx) => (
                                     <div key={idx} className="relative flex items-start gap-4 mb-4 last:mb-0">
                                       <div className="absolute left-[-19px] top-1.5 w-3 h-3 rounded-full shrink-0" style={{
-                                        background: 'hsl(168, 100%, 35%)',
-                                        boxShadow: '0 0 8px hsl(168 100% 35% / 0.4)',
+                                        background: 'hsl(164, 100%, 35%)',
+                                        boxShadow: '0 0 8px hsl(164 100% 35% / 0.4)',
                                       }} />
                                       <div>
-                                        <span className="text-xs font-bold" style={{ color: 'hsl(168, 100%, 28%)' }}>{item.year}</span>
+                                        <span className="text-xs font-bold" style={{ color: 'hsl(164, 100%, 26%)' }}>{item.year}</span>
                                         <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 30%)' }}>{item.event}</p>
                                       </div>
                                     </div>
@@ -651,7 +651,7 @@ const SuccessStories = () => {
 
                               {/* Where They Are Now */}
                               <div className="rounded-2xl p-6" style={{
-                                background: 'linear-gradient(135deg, hsl(168 100% 28%) 0%, hsl(168 80% 22%) 100%)',
+                                background: 'linear-gradient(135deg, hsl(164 100% 26%) 0%, hsl(217 80% 25%) 100%)',
                               }}>
                                 <span className="text-xs font-bold tracking-[0.15em] uppercase mb-2 block" style={{ color: 'hsla(0, 0%, 100%, 0.6)' }}>Where They Are Now</span>
                                 <h3 className="text-xl font-bold text-white mb-2">{details.currentStage}</h3>
@@ -674,13 +674,13 @@ const SuccessStories = () => {
                           </div>
 
                           {/* Programs bar */}
-                          <div className="mt-8 pt-6 flex flex-wrap items-center gap-3" style={{ borderTop: '1px solid hsla(168, 20%, 80%, 0.3)' }}>
+                          <div className="mt-8 pt-6 flex flex-wrap items-center gap-3" style={{ borderTop: '1px solid hsla(164, 25%, 82%, 0.3)' }}>
                             <span className="text-xs font-medium" style={{ color: 'hsl(220, 15%, 50%)' }}>Supported by:</span>
                             {story.programs.map((prog) => (
                               <span key={prog} className="px-3 py-1 rounded-full text-xs font-medium" style={{
-                                background: 'hsl(168 100% 35% / 0.08)',
-                                color: 'hsl(168, 100%, 28%)',
-                                border: '0.5px solid hsl(168 100% 35% / 0.15)',
+                                background: 'hsl(164 100% 35% / 0.08)',
+                                color: 'hsl(164, 100%, 26%)',
+                                border: '0.5px solid hsl(164 100% 35% / 0.15)',
                               }}>
                                 {prog}
                               </span>
@@ -701,7 +701,7 @@ const SuccessStories = () => {
               <Button 
                 variant="ghost" 
                 className="mt-4"
-                style={{ color: 'hsl(168, 100%, 28%)' }}
+                style={{ color: 'hsl(164, 100%, 26%)' }}
                 onClick={() => setSelectedSector('All')}
               >
                 Clear filters
@@ -757,11 +757,11 @@ const SuccessStories = () => {
                         {/* Header: logo + closing quote */}
                         <div className="flex items-start justify-between mb-5">
                           <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
-                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: 'white' }}>
+                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(164, 100%, 32%, 0.35)', background: 'white' }}>
                             {t.logo ? (
                               <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
                             ) : (
-                              <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(168, 100%, 32%, 0.55)' }} />
+                              <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(164, 100%, 32%, 0.55)' }} />
                             )}
                           </div>
                           <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: '#00B398', opacity: 0.9 }}>&rdquo;</div>
