@@ -606,7 +606,7 @@ const SuccessStories = () => {
                             </div>
 
                             {/* Right column — sticky so it scrolls alongside the story */}
-                            <div className="self-start md:sticky md:top-20">
+                            <div className="self-start md:sticky md:top-24 md:max-h-[calc(100vh-8rem)] md:overflow-y-auto md:pr-2">
                               {/* Impact Metrics */}
                               <div className="mb-10">
                                 <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(164, 100%, 26%)' }}>Impact</span>
