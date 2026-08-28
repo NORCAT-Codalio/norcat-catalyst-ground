@@ -458,7 +458,7 @@ const SuccessStories = () => {
                 >
                   <motion.div
                     layout
-                    className="rounded-[20px] overflow-hidden"
+                    className={`rounded-[20px] ${isExpanded ? 'overflow-visible' : 'overflow-hidden'}`}
                     style={{
                       background: 'linear-gradient(165deg, hsla(168, 25%, 78%, 0.3) 0%, hsla(168, 20%, 75%, 0.18) 50%, hsla(168, 15%, 82%, 0.1) 100%)',
                       backdropFilter: 'blur(20px)',
@@ -606,7 +606,7 @@ const SuccessStories = () => {
                             </div>
 
                             {/* Right column — sticky so it scrolls alongside the story */}
-                            <div className="md:sticky md:top-24 self-start">
+                            <div className="self-start md:sticky md:top-20">
                               {/* Impact Metrics */}
                               <div className="mb-10">
                                 <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(164, 100%, 26%)' }}>Impact</span>
