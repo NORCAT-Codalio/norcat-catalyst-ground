@@ -468,8 +468,7 @@ const News = () => {
                 Ecosystem<br /><span style={{ color: TEAL }}>Newsroom.</span>
               </h1>
               <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                The latest from NORCAT Innovation and our portfolio companies-funding rounds,
-                partnerships, program launches, and ecosystem milestones.
+                The latest news, announcements and milestones from NORCAT Innovation, our portfolio companies and partners across Northern Ontario.
               </p>
             </div>
           </div>
