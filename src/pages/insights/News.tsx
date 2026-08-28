@@ -48,6 +48,65 @@ export const newsItems = [
     ],
   },
   {
+    id: 'venture-north-pitch-2026-finalists-announced',
+    title: 'NORCAT Innovation and Northern Ontario Angels Reveal Finalists for Venture North PITCH 2026',
+    date: 'July 24, 2026',
+    excerpt: 'Four standout regional tech startups — Enabled Talent, Eudai Motors, Moon Trades, and Scribewire — will compete for $15,000 in cash prizes on October 1, 2026.',
+    category: 'Event',
+    icon: Rocket,
+    fullContent: `SUDBURY, ON – July 24, 2026 – NORCAT Innovation, in partnership with Northern Ontario Angels (NOA), is proud to announce the four standout regional tech startups selected to compete at Venture North PITCH 2026. Marking the third unified iteration of Northern Ontario's premier pitch competition, the event takes place on October 1st at Collège Boréal's Au pied du rocher and performance hall.
+
+From a standout pool of regional applicants, this year's selection process highlighted the accelerating depth and sophistication of Northern Ontario's startup landscape. Emerging from this competitive field, Enabled Talent, Eudai Motors, Moon Trades, and Scribewire have been named this year's official finalists. The founders will deliver high-stakes, 10-minute presentations to a panel of three judges from Regional Innovation Centres: Sandra Moore, Executive Director of the Sault Ste. Marie Innovation Centre (SSMIC); Richard Gemmill, Executive Director of the Northwestern Ontario Innovation Centre (NOIC); and Matthew Doherty, Executive Director of Innovation Initiatives Ontario North (IION). The finalists will compete for $15,000 in cash prizes before an audience of over 250 investors, industry stakeholders, and community leaders.
+
+"Northern Ontario continues to prove that world-class ideas can be built and scaled here," said Pejman Salehi, CEO of NORCAT. "These four finalists reflect the ambition shaping our region's innovation economy, and Venture North PITCH gives them the platform, mentorship and connections to take their next step."
+
+**Enabled Talent**
+
+An inclusive, AI-powered platform that breaks down barriers for employers to connect with skilled job seekers with disabilities. By integrating job matching, digital accessibility, and workplace accommodation tools into one online ecosystem, it drastically simplifies the employment journey to improve long-term hiring and retention outcomes.
+
+**Eudai Motors**
+
+A new operating model for rail networks. By replacing traditional locomotive-based systems with autonomous, self-powered rail units coordinated through an intelligent logistics platform, the company transforms rail networks into continuous, high-efficiency freight systems.
+
+**Moon Trades**
+
+An AI-powered platform designed to revolutionize mineral exploration. The company helps mining firms de-risk projects by analyzing geospatial data to identify high-probability drilling targets; this process reduces costs and boosts success rates by over 30% in early tests. The company's long-term vision extends beyond Earth; the same technology powering exploration today is being programmed for future off-world resource discovery.
+
+**Scribewire**
+
+Founded as Closed Caption Services (aka "CCS") in 1994 and reborn as Scribewire in 2024, this organization has transformed from a pioneering captioning company to an industry leader and key innovator in digital accessibility. Today, it provides fast, reliable service in live broadcast captioning, post-production captioning, web captioning, described video, ASL, and much more.
+
+"The quality of this year's applicants made the selection process incredibly competitive," said Brendan Skiffington, Innovation Manager at NORCAT. "These four finalists demonstrate the strength of Northern Ontario's advanced technology sector, with innovative solutions addressing real-world challenges across accessibility, transportation, mineral exploration and digital services while maximizing the economic potential of our region."
+
+Built from the ground up to offer early-stage validation and critical market exposure, this collaborative initiative ensures that regional innovators receive continued, scaffolded support long after the final pitch. In addition to the main competition, the evening features an interactive roundtable discussion with Venture North PITCH alumni sharing insights on scaling Northern ideas to gain global traction; concluding with locally catered after-hours networking and deal-making opportunities.
+
+"Driving prosperous innovation requires a two-pronged approach that combines capital with credibility," adds Ian Lane, Executive Director of NOA. "This partnership gives local innovators the wraparound support, validation, opportunities, and resources they need to demonstrate their solutions and connect with the right people to move their businesses forward."
+
+Secure your seat to see Northern Ontario's next generation of high-growth companies take the stage, connect with industry and investment leaders, and discover emerging opportunities across the region.
+
+Organizations can also join the ecosystem as an Innovator or Accelerator Partner, gaining meaningful brand exposure, direct access to emerging regional talent and stronger connections to the investors, founders and industry leaders driving Northern Ontario's economic growth.
+
+To learn more, purchase tickets or explore partnership opportunities, visit: [https://norcat.org/venture-north-pitch-2026/](https://norcat.org/venture-north-pitch-2026/)
+
+**Media Contact**
+
+Cynthia Furlotte | Marketing Manager | NORCAT | cfurlotte@norcat.org | 705-521-8324 ext. 293
+
+**Partnership Inquiries**
+
+Kimberley Wahamaa-Deschenes | Operations & Events Manager | Northern Ontario Angels | kim@northernontarioangels.ca | 705-207-2658
+
+Brendan Skiffington | Innovation Manager | NORCAT Innovation | bskiffington@norcat.org | 705-521-8324 ext. 257
+
+Thank you to this year's gracious partners:
+
+CircuitIQ | Plan A & StaffStat | Compass CPA | Eastlink Community TV | Innova Wealth Partners | City of Greater Sudbury | Sudbury Tourism | Cambrian College - Hanson Venture Lab | Querney's Office Plus | Laurentian University | Ontario Centre of Innovation`,
+    aboutSections: [
+      { title: 'About NORCAT Innovation', text: 'NORCAT is a global leader in skilled labour training, development, and innovation services. As Sudbury’s Regional Innovation Centre, NORCAT Innovation focuses on supporting early-stage tech startups and their founders. The organization provides access to essential resources and connects founders with the networks necessary to start, grow, and scale their ventures. To learn more, please visit: https://www.norcat.org/innovation/' },
+      { title: 'About Northern Ontario Angels', text: 'Northern Ontario Angels (NOA) stands as the only sole Angel Organization in Northern Ontario. As a proud member of both the National Angel Capital Organization (NACO) and Angel Investors Ontario (AIO), NOA connects accredited angel investors to Northern Ontario entrepreneurs looking for growth capital and investments. To learn more, please visit: http://www.northernontarioangels.ca/' },
+    ],
+  },
+  {
     id: 'ovin-core5-renewed-2026',
     title: 'OVIN Regional Technology Development Site in Northern Ontario renewed to Accelerate Mining Electrification and Critical Mineral Innovation',
     date: 'June 1, 2026',
