@@ -712,15 +712,21 @@ const SuccessStories = () => {
       </section>
 
       {/* ───── TESTIMONIALS: FROM FOUNDERS, FIRSTHAND ───── */}
-      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'hsl(168, 100%, 32%)' }}>
+      <section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001A4D 0%, #003DA5 45%, #0FA88C 100%)' }}>
+        {/* Ambient teal glows */}
+        <div aria-hidden className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, rgba(0,179,152,0.55) 0%, transparent 70%)' }} />
+        <div aria-hidden className="pointer-events-none absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, rgba(0,61,165,0.6) 0%, transparent 70%)' }} />
+        {/* Faint grid lines */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
         <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10">
           <div className="max-w-2xl mb-12 md:mb-16">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-4">Success Stories</p>
             <h2 className="font-bold uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl text-white"
                 style={{ fontFamily: "'Open Sans', sans-serif", letterSpacing: '-0.02em' }}>
               From Founders,<br />Firsthand
             </h2>
-            <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'hsla(0, 0%, 100%, 0.5)' }} />
-            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/90">
+            <div className="mt-6 h-1 w-20 rounded-full" style={{ background: 'linear-gradient(90deg, #00B398, rgba(255,255,255,0.6))' }} />
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/85">
               Real reflections from founders who have worked with NORCAT Innovation to strengthen their strategy, expand their networks, and grow beyond the region.
             </p>
           </div>
@@ -740,19 +746,25 @@ const SuccessStories = () => {
                       style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
                     >
                       <figure
-                        className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
-                        style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+                        className="relative overflow-hidden rounded-[20px] p-6 md:p-8 flex flex-col h-full"
+                        style={{
+                          background: 'linear-gradient(165deg, rgba(255,255,255,0.96) 0%, rgba(240,248,250,0.92) 100%)',
+                          backdropFilter: 'blur(20px)',
+                          WebkitBackdropFilter: 'blur(20px)',
+                          border: '1px solid rgba(255,255,255,0.65)',
+                          boxShadow: '0 20px 50px -12px rgba(0,26,77,0.35), 0 4px 12px rgba(0,26,77,0.12)',
+                        }}>
                         {/* Header: logo + closing quote */}
                         <div className="flex items-start justify-between mb-5">
-                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
-                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: t.logo ? 'white' : 'hsla(168, 100%, 32%, 0.08)' }}>
+                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: 'white' }}>
                             {t.logo ? (
                               <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
                             ) : (
                               <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(168, 100%, 32%, 0.55)' }} />
                             )}
                           </div>
-                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: 'hsl(168, 100%, 32%)', opacity: 0.85 }}>&rdquo;</div>
+                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: '#00B398', opacity: 0.9 }}>&rdquo;</div>
                         </div>
 
                         <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>
@@ -760,14 +772,14 @@ const SuccessStories = () => {
                         </blockquote>
 
                         <figcaption className="relative mt-8 pt-5" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
-                          <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 15%, 20%)' }}>
+                          <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: "'Open Sans', sans-serif", color: '#003DA5' }}>
                             {t.headline}
                           </p>
                           <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: 'hsl(220, 15%, 40%)' }}>
                             {t.subline}
                           </p>
                           {t.tag && (
-                            <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: 'hsl(168, 100%, 32%)' }}>
+                            <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: '#00B398' }}>
                               {t.tag}
                             </p>
                           )}
@@ -784,7 +796,7 @@ const SuccessStories = () => {
               onClick={prevTestimonial}
               aria-label="Previous testimonial"
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
-              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              style={{ background: '#001A4D', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}>
               <ChevronLeft className="size-6" />
             </button>
             <button
@@ -792,7 +804,7 @@ const SuccessStories = () => {
               onClick={nextTestimonial}
               aria-label="Next testimonial"
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
-              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              style={{ background: '#001A4D', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}>
               <ChevronRight className="size-6" />
             </button>
           </div>
@@ -813,47 +825,58 @@ const SuccessStories = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-28 relative overflow-hidden" style={{ background: 'hsl(220 15% 92%)' }}>
+      {/* CTA Section — matches homepage glass-card CTA */}
+      <section className="py-24 md:py-28 relative overflow-hidden" style={{ background: 'hsl(210 30% 97%)' }}>
+        {/* Ambient teal glow */}
+        <div aria-hidden className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, rgba(0,179,152,0.5) 0%, transparent 70%)' }} />
+        {/* Faint grid lines */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(rgba(0,61,165,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(0,61,165,0.8) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div
+            className="max-w-4xl mx-auto text-center rounded-[28px] px-6 py-14 md:px-16 md:py-20 relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(165deg, rgba(255,255,255,0.9) 0%, rgba(240,248,250,0.8) 100%)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255,255,255,0.9)',
+              boxShadow: '0 24px 60px -16px rgba(0,26,77,0.18), 0 4px 16px rgba(0,26,77,0.06)',
+            }}
+          >
             <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-6" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 500, color: 'hsl(220, 15%, 20%)' }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-6 uppercase font-bold" style={{ fontFamily: "'Open Sans', sans-serif", color: '#003DA5' }}>
                 Your Company Could Be{' '}
-                <span style={{ color: 'hsl(168, 100%, 28%)', fontWeight: 700 }}>Next</span>
+                <span style={{ color: '#00B398' }}>Next</span>
               </h2>
             </ScrollReveal>
-            
+
             <ScrollReveal delay={100}>
               <p className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: 'hsl(220, 15%, 40%)' }}>
-                These aren't outliers. This is what happens when the right founders 
+                These aren't outliers. This is what happens when the right founders
                 meet the right ecosystem.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  to="/apply" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                <Link
+                  to="/apply"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
                   style={{
-                    background: 'linear-gradient(145deg, hsla(168, 30%, 85%, 0.5) 0%, hsla(168, 25%, 80%, 0.25) 100%)',
-                    border: '1.5px solid hsla(168, 30%, 75%, 0.4)',
-                    color: 'hsl(168, 50%, 22%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(168, 30%, 95%, 0.4), inset 0 -2px 4px 0 hsla(168, 20%, 50%, 0.08), 0 4px 12px hsla(168, 20%, 30%, 0.12), 0 1px 3px hsla(0, 0%, 0%, 0.06)',
+                    background: 'linear-gradient(135deg, #00B398 0%, #003DA5 100%)',
+                    boxShadow: '0 10px 24px -8px rgba(0,61,165,0.5), 0 2px 6px rgba(0,179,152,0.25)',
                   }}
                 >
                   Apply to NORCAT Innovation
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <Link 
-                  to="/programs/venture-growth-services" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                <Link
+                  to="/programs/venture-growth-services"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
                   style={{
-                    background: 'linear-gradient(145deg, hsla(220, 15%, 90%, 0.5) 0%, hsla(220, 15%, 85%, 0.25) 100%)',
-                    border: '1.5px solid hsla(220, 15%, 80%, 0.4)',
-                    color: 'hsl(220, 15%, 30%)',
-                    boxShadow: 'inset 0 2px 4px 0 hsla(220, 15%, 95%, 0.4), inset 0 -2px 4px 0 hsla(220, 15%, 50%, 0.08), 0 4px 12px hsla(220, 15%, 30%, 0.08)',
+                    background: 'rgba(255,255,255,0.85)',
+                    border: '1.5px solid rgba(0,61,165,0.25)',
+                    color: '#003DA5',
+                    boxShadow: '0 4px 12px rgba(0,26,77,0.08)',
                   }}
                 >
                   Explore Programs
