@@ -522,7 +522,7 @@ const News = () => {
             </div>
 
             <motion.div ref={newsListRef} layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredNews.map((item) => {
+            {visibleNews.map((item) => {
               const Icon = item.icon;
               const isExpanded = selectedNews === item.id;
 
