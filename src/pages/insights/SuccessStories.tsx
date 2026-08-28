@@ -796,7 +796,7 @@ const SuccessStories = () => {
               onClick={prevTestimonial}
               aria-label="Previous testimonial"
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:-translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
-              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              style={{ background: '#001A4D', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}>
               <ChevronLeft className="size-6" />
             </button>
             <button
@@ -804,7 +804,7 @@ const SuccessStories = () => {
               onClick={nextTestimonial}
               aria-label="Next testimonial"
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 size-12 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110"
-              style={{ background: 'hsl(220, 15%, 20%)', color: 'white' }}>
+              style={{ background: '#001A4D', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}>
               <ChevronRight className="size-6" />
             </button>
           </div>
