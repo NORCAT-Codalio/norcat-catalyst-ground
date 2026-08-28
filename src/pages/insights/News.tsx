@@ -412,6 +412,7 @@ const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.cate
 const News = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(9);
   const [searchParams] = useSearchParams();
   const newsListRef = useRef<HTMLDivElement>(null);
 
@@ -428,6 +429,13 @@ const News = () => {
   const filteredNews = activeCategory === 'All' 
     ? newsItems 
     : newsItems.filter(item => item.category === activeCategory);
+
+  useEffect(() => {
+    setVisibleCount(9);
+  }, [activeCategory]);
+
+  const visibleNews = filteredNews.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredNews.length;
 
   // Brand tokens (mirrors About)
   const NAVY = '#001A4D';
