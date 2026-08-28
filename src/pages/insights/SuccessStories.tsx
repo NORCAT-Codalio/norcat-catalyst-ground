@@ -746,19 +746,25 @@ const SuccessStories = () => {
                       style={{ opacity: isVisible ? 1 : 0.4, transform: isVisible ? 'scale(1)' : 'scale(0.96)' }}
                     >
                       <figure
-                        className="relative overflow-hidden rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-xl"
-                        style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)' }}>
+                        className="relative overflow-hidden rounded-[20px] p-6 md:p-8 flex flex-col h-full"
+                        style={{
+                          background: 'linear-gradient(165deg, rgba(255,255,255,0.96) 0%, rgba(240,248,250,0.92) 100%)',
+                          backdropFilter: 'blur(20px)',
+                          WebkitBackdropFilter: 'blur(20px)',
+                          border: '1px solid rgba(255,255,255,0.65)',
+                          boxShadow: '0 20px 50px -12px rgba(0,26,77,0.35), 0 4px 12px rgba(0,26,77,0.12)',
+                        }}>
                         {/* Header: logo + closing quote */}
                         <div className="flex items-start justify-between mb-5">
-                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden"
-                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: t.logo ? 'white' : 'hsla(168, 100%, 32%, 0.08)' }}>
+                          <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: 'white' }}>
                             {t.logo ? (
                               <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
                             ) : (
                               <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(168, 100%, 32%, 0.55)' }} />
                             )}
                           </div>
-                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: 'hsl(168, 100%, 32%)', opacity: 0.85 }}>&rdquo;</div>
+                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: '#00B398', opacity: 0.9 }}>&rdquo;</div>
                         </div>
 
                         <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>
@@ -766,14 +772,14 @@ const SuccessStories = () => {
                         </blockquote>
 
                         <figcaption className="relative mt-8 pt-5" style={{ borderTop: '1px solid rgba(0,26,77,0.12)' }}>
-                          <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: "'Open Sans', sans-serif", color: 'hsl(220, 15%, 20%)' }}>
+                          <p className="font-bold uppercase tracking-wider text-sm md:text-base" style={{ fontFamily: "'Open Sans', sans-serif", color: '#003DA5' }}>
                             {t.headline}
                           </p>
                           <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: 'hsl(220, 15%, 40%)' }}>
                             {t.subline}
                           </p>
                           {t.tag && (
-                            <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: 'hsl(168, 100%, 32%)' }}>
+                            <p className="mt-3 text-xs font-black uppercase tracking-[0.18em]" style={{ color: '#00B398' }}>
                               {t.tag}
                             </p>
                           )}
