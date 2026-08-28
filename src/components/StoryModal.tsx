@@ -430,7 +430,7 @@ export function StoryModal({ story, open, onClose }: StoryModalProps) {
   
   if (!story) return null;
 
-  const accentColor = story.accentColor || '#14b8a6';
+  const accentColor = story.accentColor || '#00B398';
   
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
@@ -544,7 +544,7 @@ export const storyData: Record<string, StoryData> = {
     company: 'MineTech Robotics',
     tagline: 'Series A Success',
     year: '2024',
-    accentColor: '#14b8a6', // teal
+    accentColor: '#00B398', // brand teal
     scenes: [
       {
         type: 'text',
