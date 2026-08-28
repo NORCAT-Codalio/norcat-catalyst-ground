@@ -459,9 +459,8 @@ const News = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: TEAL }}>
-                <Sparkles className="w-3.5 h-3.5" />
+              <p className="inline-flex items-center text-base font-semibold tracking-[0.18em] uppercase mb-5"
+                 style={{ fontFamily: FONT, color: 'white' }}>
                 News & Updates
               </p>
               <h1 className="font-black uppercase leading-[0.95] tracking-tight text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]"
