@@ -605,8 +605,8 @@ const SuccessStories = () => {
                               )}
                             </div>
 
-                            {/* Right column */}
-                            <div>
+                            {/* Right column — sticky so it scrolls alongside the story */}
+                            <div className="md:sticky md:top-24 self-start">
                               {/* Impact Metrics */}
                               <div className="mb-10">
                                 <span className="text-xs font-bold tracking-[0.15em] uppercase mb-4 block" style={{ color: 'hsl(164, 100%, 26%)' }}>Impact</span>
@@ -757,11 +757,11 @@ const SuccessStories = () => {
                         {/* Header: logo + closing quote */}
                         <div className="flex items-start justify-between mb-5">
                           <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden"
-                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(168, 100%, 32%, 0.35)', background: 'white' }}>
+                               style={{ border: t.logo ? '1px solid rgba(0,26,77,0.10)' : '2px dashed hsla(164, 100%, 32%, 0.35)', background: 'white' }}>
                             {t.logo ? (
                               <img src={t.logo} alt={`${t.headline} logo`} className="max-w-[90%] max-h-[90%] object-contain" loading="lazy" />
                             ) : (
-                              <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(168, 100%, 32%, 0.55)' }} />
+                              <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(164, 100%, 32%, 0.55)' }} />
                             )}
                           </div>
                           <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: '#00B398', opacity: 0.9 }}>&rdquo;</div>
