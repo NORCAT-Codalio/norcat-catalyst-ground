@@ -451,7 +451,7 @@ const SuccessStories = () => {
       <section className="py-28 relative" style={{ background: 'hsl(220 15% 92%)' }}>
         <div className="container mx-auto px-6">
           <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredStories.map((story) => {
+            {visibleStories.map((story) => {
               const isExpanded = selectedStory === story.id;
               const details = detailedStories[story.id];
 
