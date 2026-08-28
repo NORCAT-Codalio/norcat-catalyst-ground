@@ -729,10 +729,10 @@ const SuccessStories = () => {
             <div className="overflow-hidden -mx-4 px-4 py-6">
               <div
                 className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${visibleCount})))` }}
+                style={{ transform: `translateX(calc(5% - ${testimonialIndex} * (90% / ${testimonialVisibleCount})))` }}
               >
                 {testimonials.map((t, idx) => {
-                  const isVisible = idx >= testimonialIndex && idx < testimonialIndex + visibleCount;
+                  const isVisible = idx >= testimonialIndex && idx < testimonialIndex + testimonialVisibleCount;
                   return (
                     <div
                       key={t.headline}
