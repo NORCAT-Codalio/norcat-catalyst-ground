@@ -378,13 +378,6 @@ const SuccessStories = () => {
     return true;
   });
 
-  useEffect(() => {
-    setVisibleCount(9);
-  }, [selectedSector]);
-
-  const visibleStories = filteredStories.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredStories.length;
-
   return (
     <Layout>
       {/* Hero */}
