@@ -22,6 +22,10 @@ import {
   Users,
   Building2,
   TrendingUp,
+  Lightbulb,
+  Settings,
+  CheckCircle,
+  BarChart3,
 } from 'lucide-react';
 
 import citLogo from '@/assets/logos/cit-logo.png';
@@ -29,6 +33,7 @@ import ociLogo from '@/assets/logos/oci-logo.png';
 import ontarioLogoAsset from '@/assets/logos/ontario-logo-wordmark.png';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import undergroundProofImg from '@/assets/underground/underground-2.jpg.asset.json';
 
 // ── Brand tokens (mirrors Home2 / About) ──
 const NAVY = '#001A4D';
