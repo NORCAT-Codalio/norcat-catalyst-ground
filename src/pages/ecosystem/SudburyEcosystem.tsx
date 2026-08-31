@@ -319,12 +319,9 @@ const SudburyEcosystem = () => {
               </div>
               <div className="relative flex-shrink-0">
                 <Link to="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-[1.02]"
+                      className="inline-flex items-center px-7 py-3.5 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-[1.02]"
                       style={{ fontFamily: FONT, background: 'white', color: NAVY }}>
                   Contact Us
-                  <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: TEAL, color: 'white' }}>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </span>
                 </Link>
               </div>
             </div>
