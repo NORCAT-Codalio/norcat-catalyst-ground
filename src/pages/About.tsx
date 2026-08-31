@@ -199,12 +199,12 @@ export default function About() {
               {/* Left: intro */}
               <div>
                 <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: TEAL }}>
+                   style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Our Journey
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  From Idea to <span style={{ color: TEAL }}>Impact.</span>
+                  <span style={{ color: BLUE }}>From Idea to</span> <span style={{ color: TEAL }}>Impact.</span>
                 </h2>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   NORCAT Innovation was created to give entrepreneurs in Northern Ontario the support, connections, and opportunities needed to turn strong ideas into growing businesses.
