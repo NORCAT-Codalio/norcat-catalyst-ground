@@ -473,7 +473,7 @@ export default function VentureGrowthServices() {
                   <article
                     key={phase.phase}
                     className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale || isOnboarding ? 'hover:rounded-t-none' : ''}`}
-                    style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                    style={{ background: 'white', border: '1px solid #d9dde5' }}
                   >
                     {isBuild && (
                       <div
@@ -541,10 +541,10 @@ export default function VentureGrowthServices() {
                           className="pointer-events-none absolute -left-px -right-px bottom-full origin-bottom scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-center"
                           style={{
                             height: '22px',
-                            background: '#0a2a6b',
-                            borderTop: `1px solid ${BORDER}`,
-                            borderLeft: `1px solid ${BORDER}`,
-                            borderRight: `1px solid ${BORDER}`,
+                            background: 'white',
+                            borderTop: '1px solid #d9dde5',
+                            borderLeft: '1px solid #d9dde5',
+                            borderRight: '1px solid #d9dde5',
                             borderTopLeftRadius: '14px',
                             borderTopRightRadius: '14px',
                           }}
@@ -572,16 +572,16 @@ export default function VentureGrowthServices() {
                           <div
                             className="w-10 h-3"
                             style={{
-                              background: '#0a2a6b',
-                              borderLeft: `1px solid ${BORDER}`,
-                              borderRight: `1px solid ${BORDER}`,
+                              background: 'white',
+                              borderLeft: '1px solid #d9dde5',
+                              borderRight: '1px solid #d9dde5',
                             }}
                           />
                           <div
                             className="w-2/3 h-2 rounded-b-lg"
                             style={{
-                              background: '#0a2a6b',
-                              border: `1px solid ${BORDER}`,
+                              background: 'white',
+                              border: '1px solid #d9dde5',
                               borderTop: 'none',
                             }}
                           />
@@ -591,7 +591,7 @@ export default function VentureGrowthServices() {
                         <div
                           className="pointer-events-none absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                           style={{
-                            background: 'rgba(0,0,0,0.45)',
+                            background: 'rgba(0,26,77,0.75)',
                             border: '1px solid rgba(255,255,255,0.12)',
                             transitionDelay: '650ms',
                           }}
@@ -606,17 +606,17 @@ export default function VentureGrowthServices() {
                         {/* Step 1 (shortest, left third) */}
                         <div
                           className="absolute bottom-0 left-0 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '40px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}`, borderTopLeftRadius: '18px', transitionDelay: '0ms' }}
+                          style={{ height: '40px', background: 'white', borderTop: '1px solid #d9dde5', borderLeft: '1px solid #d9dde5', borderTopLeftRadius: '18px', transitionDelay: '0ms' }}
                         />
                         {/* Step 2 (middle third) */}
                         <div
                           className="absolute bottom-0 left-1/3 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '70px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderTopLeftRadius: '12px', transitionDelay: '140ms' }}
+                          style={{ height: '70px', background: 'white', borderTop: '1px solid #d9dde5', borderTopLeftRadius: '12px', transitionDelay: '140ms' }}
                         />
                         {/* Step 3 (tallest, right third) */}
                         <div
                           className="absolute bottom-0 left-2/3 w-1/3 origin-bottom transition-all duration-500 ease-out scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100"
-                          style={{ height: '100px', background: '#0a2a6b', borderTop: `1px solid ${BORDER}`, borderRight: `1px solid ${BORDER}`, borderTopLeftRadius: '12px', borderTopRightRadius: '12px', transitionDelay: '280ms' }}
+                          style={{ height: '100px', background: 'white', borderTop: '1px solid #d9dde5', borderRight: '1px solid #d9dde5', borderTopLeftRadius: '12px', borderTopRightRadius: '12px', transitionDelay: '280ms' }}
                         />
                         {/* Money bag drops onto top step */}
                         <div
@@ -631,7 +631,7 @@ export default function VentureGrowthServices() {
                           <DollarSign
                             size={44}
                             strokeWidth={2.5}
-                            className="text-white"
+                            style={{ color: TEAL }}
                             aria-hidden="true"
                           />
                         </div>
@@ -690,12 +690,12 @@ export default function VentureGrowthServices() {
                         </div>
                       </div>
                     )}
-                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.4, fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.55, fontFamily: FONT, letterSpacing: '-0.02em' }}>
                       {phase.phase}
                     </div>
-                    <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
-                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{phase.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{phase.description}</p>
+                    <h3 className="font-black uppercase text-lg md:text-xl mb-2"
+                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{phase.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>{phase.description}</p>
                   </article>
                 );
               })}
