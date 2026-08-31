@@ -134,7 +134,7 @@ export default function About() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl mb-6"
                     style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                  Where Bold Ideas <span style={{ color: TEAL }}>Grow.</span>
+                  <span style={{ color: BLUE }}>Where Bold Ideas</span> <span style={{ color: TEAL }}>Grow.</span>
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   <p>NORCAT Innovation was founded to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
