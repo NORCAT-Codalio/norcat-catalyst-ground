@@ -311,7 +311,7 @@ const SudburyEcosystem = () => {
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
-                  Become a Partner <span style={{ color: TEAL }}>or Get Connected.</span>
+                  Become a <span style={{ color: TEAL }}>Partner.</span>
                 </h2>
                 <p className="text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Want to add your organization to the directory or explore collaboration opportunities? Reach out and let's build something together.
