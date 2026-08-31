@@ -214,7 +214,7 @@ const CriticalIndustrialTech = () => {
               <div>
                 <Eyebrow>Your Technology Development Site</Eyebrow>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   From Prototype to<br /><span style={{ color: TEAL }}>Real-World Proof.</span>
@@ -299,7 +299,7 @@ const CriticalIndustrialTech = () => {
               <div className="lg:col-span-6">
                 <Eyebrow>About the Initiative</Eyebrow>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   Converging industry with<br /><span style={{ color: TEAL }}>innovation.</span>
@@ -354,7 +354,7 @@ const CriticalIndustrialTech = () => {
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Key Sectors</Eyebrow>
               <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
                 Four sectors<br /><span style={{ color: TEAL }}>powering Ontario.</span>
@@ -433,7 +433,7 @@ const CriticalIndustrialTech = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-10">
               <Eyebrow color={TEAL}>Two Program Streams</Eyebrow>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 Choose your<br /><span style={{ color: TEAL }}>pathway.</span>
               </h2>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
