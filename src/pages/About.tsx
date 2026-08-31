@@ -163,7 +163,7 @@ export default function About() {
                 { number: '$50M+', label: 'Capital Raised' },
               ].map((s) => (
                 <div key={s.label} className="pl-4" style={{ borderLeft: `2px solid ${TEAL}` }}>
-                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: BLUE }}>{s.number}</p>
+                  <p className="font-black text-3xl md:text-4xl" style={{ fontFamily: FONT, color: NAVY }}>{s.number}</p>
                   <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
                 </div>
               ))}
