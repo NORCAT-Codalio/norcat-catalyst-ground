@@ -19,6 +19,7 @@ import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import sudburyCatalystPeople from '@/assets/sudbury-catalyst-people.jpg.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
 import raiiCompositeCropped from '@/assets/raii-composite-cropped.png.asset.json';
+import schauenbergOntario from '@/assets/schauenberg-ontario.jpg.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
