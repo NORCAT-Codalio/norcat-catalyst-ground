@@ -317,7 +317,7 @@ const CriticalIndustrialTech = () => {
 
               <div className="lg:col-span-6">
                 <div className="rounded-2xl p-8 md:p-10" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <p className="text-[10px] uppercase tracking-[0.22em] font-bold mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
                   <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
                     <img src={citLogo} alt="Critical Industrial Technologies" className="h-14 object-contain" />
                   <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain" />
@@ -385,7 +385,7 @@ const CriticalIndustrialTech = () => {
 
             <div className="flex items-center gap-4 mb-8 md:mb-10">
               <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,179,152,0.45))' }} />
-              <p className="text-[10px] uppercase tracking-[0.22em] font-bold" style={{ color: TEAL }}>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: TEAL }}>
                 Technology Streams
               </p>
               <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(0,179,152,0.45), transparent)' }} />

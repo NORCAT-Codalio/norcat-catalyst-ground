@@ -319,7 +319,7 @@ const RogersCybersecure = () => {
               />
               <div className="relative max-w-3xl">
                 <Eyebrow className="!text-white">
-                  <Shield className="w-3.5 h-3.5" /> Get Protected
+                  Get Protected
                 </Eyebrow>
                 <Display className="text-3xl sm:text-4xl md:text-5xl">
                   Ready to strengthen<br />

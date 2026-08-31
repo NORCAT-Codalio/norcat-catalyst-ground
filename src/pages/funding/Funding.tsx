@@ -201,7 +201,7 @@ const Funding = () => {
         <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-20">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-6" style={{ color: TEAL }}>Funding Programs</p>
+              <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-6" style={{ color: TEAL }}>Funding Programs</p>
               <h2 className="text-3xl md:text-5xl font-black uppercase leading-[0.95]" style={{ letterSpacing: '-0.02em' }}>
                 Choose your <span style={{ color: TEAL }}>capital path.</span>
               </h2>
@@ -301,7 +301,7 @@ const Funding = () => {
         <section className="pt-10 pb-16 md:pt-14 md:pb-24" style={{ background: `linear-gradient(180deg, ${PAPER} 0%, white 100%)`, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-14 md:mb-16">
-              <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-6" style={{ color: TEAL }}>Industry Tracks</p>
+              <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-6" style={{ color: TEAL }}>Industry Tracks</p>
               <h2 className="text-3xl md:text-5xl font-black uppercase leading-[0.95]" style={{ letterSpacing: '-0.02em' }}>
                 Built for <span style={{ color: TEAL }}>Ontario's sectors.</span>
               </h2>
