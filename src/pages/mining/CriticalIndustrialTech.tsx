@@ -207,6 +207,66 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
+        {/* ───── FROM PROTOTYPE TO REAL-WORLD PROOF ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <Eyebrow>Your Technology Development Site</Eyebrow>
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                >
+                  From Prototype to<br /><span style={{ color: TEAL }}>Real-World Proof.</span>
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
+                  The NORCAT Underground Centre gives mining technology companies an operating environment to move beyond controlled testing and see how their solutions perform underground.
+                </p>
+                <p className="text-base sm:text-lg leading-relaxed mb-10" style={{ color: '#475068' }}>
+                  Companies can develop, test, validate and demonstrate technology in conditions that reflect the realities of mining operations.
+                </p>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  {[
+                    { icon: Lightbulb, label: 'Develop' },
+                    { icon: Settings, label: 'Test' },
+                    { icon: CheckCircle, label: 'Validate' },
+                    { icon: BarChart3, label: 'Demonstrate' },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="flex flex-col items-center text-center p-4 rounded-xl"
+                      style={{ background: 'white', border: '1px solid #d9dde5' }}
+                    >
+                      <item.icon className="w-6 h-6 mb-3" style={{ color: TEAL }} />
+                      <span className="text-xs font-bold uppercase tracking-[0.14em]" style={{ color: NAVY }}>{item.label}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl overflow-hidden"
+                style={{ border: '1px solid #d9dde5', boxShadow: '0 24px 60px -30px rgba(0,26,77,0.35)' }}
+              >
+                <img
+                  src={undergroundProofImg.url}
+                  alt="Mining technology being tested in the NORCAT Underground Centre"
+                  className="w-full h-auto object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* ───── STATS STRIP ───── */}
         <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
