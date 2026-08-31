@@ -169,10 +169,7 @@ const CriticalIndustrialTech = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow className="!text-white">
-                <Factory className="w-3.5 h-3.5" />
-                Ontario Centre of Innovation Program
-              </Eyebrow>
+              <Eyebrow className="!text-white">Ontario Centre of Innovation Program</Eyebrow>
 
               <Display as="h1" className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Critical Industrial<br /><span style={{ color: TEAL }}>Technologies.</span>
