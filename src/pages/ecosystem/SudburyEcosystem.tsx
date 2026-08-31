@@ -184,9 +184,9 @@ const SudburyEcosystem = () => {
         </section>
 
         {/* ───── DIRECTORY ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: '#F5F9FF', color: NAVY }}>
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 10%, rgba(0,61,165,0.06), transparent 40%), radial-gradient(circle at 85% 90%, rgba(0,179,152,0.06), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 15% 10%, rgba(107,114,128,0.05), transparent 40%), radial-gradient(circle at 85% 90%, rgba(0,179,152,0.05), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             {/* Header */}
@@ -194,20 +194,20 @@ const SudburyEcosystem = () => {
               <div>
                 <Eyebrow className="mb-2">Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: BLUE }}>
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
                   Connect with <span style={{ color: TEAL }}>local</span> organizations
                 </h2>
               </div>
 
               <div className="relative w-full md:w-64 lg:w-72 shrink-0 group">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-colors" style={{ color: '#8fa3c4' }} />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-colors" style={{ color: '#9ca3af' }} />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search directory..."
                   className="w-full pl-9 pr-3 py-2 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(0,179,152,0.20)] focus:border-[#00B398] transition-all"
-                  style={{ borderColor: '#dbe6f5', color: NAVY, fontFamily: FONT, background: 'white', boxShadow: '0 1px 2px rgba(0,61,165,0.04)' }}
+                  style={{ borderColor: '#e5e7eb', color: NAVY, fontFamily: FONT, background: 'white', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}
                 />
               </div>
             </div>
@@ -222,9 +222,9 @@ const SudburyEcosystem = () => {
                     onClick={() => setActiveCategory(cat.id)}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
-                      background: BLUE, color: 'white', border: `1px solid ${BLUE}`, fontFamily: FONT, boxShadow: '0 6px 16px -6px rgba(0,61,165,0.35)',
+                      background: TEAL, color: 'white', border: `1px solid ${TEAL}`, fontFamily: FONT, boxShadow: '0 6px 16px -6px rgba(0,179,152,0.35)',
                     } : {
-                      background: 'white', color: BLUE, border: '1px solid #dbe6f5', fontFamily: FONT,
+                      background: 'white', color: '#4b5563', border: '1px solid #e5e7eb', fontFamily: FONT,
                     }}
                   >
                     <cat.icon className="w-3 h-3" />
