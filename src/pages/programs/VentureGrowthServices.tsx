@@ -268,38 +268,24 @@ export default function VentureGrowthServices() {
             {/* ── Featured Resource – MaRS Startup Toolkit ── */}
             <div className="mt-8 md:mt-10">
               <div
-                className="rounded-2xl p-7 md:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10"
+                className="rounded-2xl p-7 md:p-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-12"
                 style={{ background: 'linear-gradient(135deg, #F4FAF9 0%, #FFFFFF 100%)', border: '1px solid rgba(0,179,152,0.25)' }}
               >
-                <div className="flex items-center gap-4 lg:min-w-[260px]">
-                  <div
-                    className="size-14 rounded-2xl flex items-center justify-center shrink-0"
-                    style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}` }}
-                  >
-                    <Briefcase className="size-7" style={{ color: TEAL }} strokeWidth={2} />
-                  </div>
-                  <div>
+                <div className="flex flex-col items-start gap-4 lg:min-w-[280px] lg:max-w-[320px]">
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="size-14 rounded-2xl flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}` }}
+                    >
+                      <Briefcase className="size-7" style={{ color: TEAL }} strokeWidth={2} />
+                    </div>
                     <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: TEAL, fontFamily: FONT }}>
                       Featured Resource
                     </span>
-                    <h3 className="text-xl md:text-2xl font-bold mt-1" style={{ fontFamily: FONT, color: NAVY }}>
-                      MaRS <span style={{ color: TEAL }}>Startup Toolkit</span>
-                    </h3>
                   </div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(0,26,77,0.72)', fontFamily: FONT }}>
-                    Access the curated MaRS Startup Toolkit — practical resources and proven frameworks used by
-                    thousands of ventures to plan, pitch, and execute faster.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-5">
-                    {['Step-by-step frameworks', 'Templates & playbooks', 'Tools to plan, pitch & scale'].map((item) => (
-                      <div key={item} className="flex items-center gap-2">
-                        <Check className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
-                        <span className="text-xs md:text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{item}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold leading-tight" style={{ fontFamily: FONT, color: NAVY }}>
+                    MaRS <span style={{ color: TEAL }}>Startup Toolkit</span>
+                  </h3>
                   <a
                     href="https://marsdd.com/startup-toolkit/"
                     target="_blank"
@@ -312,6 +298,20 @@ export default function VentureGrowthServices() {
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
                     </span>
                   </a>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: 'rgba(0,26,77,0.72)', fontFamily: FONT }}>
+                    Access the curated MaRS Startup Toolkit — practical resources and proven frameworks used by
+                    thousands of ventures to plan, pitch, and execute faster.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {['Step-by-step frameworks', 'Templates & playbooks', 'Tools to plan, pitch & scale'].map((item) => (
+                      <div key={item} className="flex items-center gap-2">
+                        <Check className="w-4 h-4 shrink-0" style={{ color: TEAL }} />
+                        <span className="text-xs md:text-sm" style={{ color: 'rgba(0,26,77,0.80)', fontFamily: FONT }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
