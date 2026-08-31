@@ -81,9 +81,9 @@ const eligibility = [
 ];
 
 const highlights = [
-  { icon: Lock, label: 'MINING-SPECIFIC CYBER TRAINING' },
-  { icon: Building2, label: 'BASED AT TORONTO MET UNIVERSITY' },
-  { icon: Globe, label: 'NATIONAL CYBERSECURITY HUB' },
+  { icon: Lock, label: 'Mining-Specific Cyber Training' },
+  { icon: Building2, label: 'Based at Toronto Met University' },
+  { icon: Globe, label: 'National Cybersecurity Hub' },
 ];
 
 const RogersCybersecure = () => {
@@ -184,35 +184,15 @@ const RogersCybersecure = () => {
                     supported by the Government of Ontario.
                   </p>
                 </div>
-
-                <div className="mt-8 grid sm:grid-cols-3 gap-3">
-                  {highlights.map((h) => (
-                    <div
-                      key={h.label}
-                      className="flex items-center gap-3 p-4 rounded-xl"
-                      style={{ background: 'white', border: '1px solid #d9dde5' }}
-                    >
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
-                      >
-                        <h.icon className="w-5 h-5" style={{ color: TEAL }} />
-                      </div>
-                      <p className="text-xs font-bold uppercase tracking-[0.08em]" style={{ color: NAVY }}>
-                        {h.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               <div className="space-y-6">
                 <div
-                  className="flex flex-wrap items-center justify-center gap-8 rounded-2xl p-8"
+                  className="flex flex-wrap items-center justify-center gap-8 md:gap-12 rounded-2xl p-8 md:p-10"
                   style={{ background: 'white', border: '1px solid #d9dde5' }}
                 >
-                  <img src={rogersCatalystLogo} alt="Rogers Cybersecure Catalyst" className="h-16 object-contain" />
-                  <img src={torontoMetroLogo} alt="Toronto Metropolitan University" className="h-16 object-contain" />
+                  <img src={rogersCatalystLogo} alt="Rogers Cybersecure Catalyst" className="h-16 md:h-20 object-contain" />
+                  <img src={torontoMetroLogo} alt="Toronto Metropolitan University" className="h-20 md:h-28 object-contain" />
                 </div>
 
                 <div className="rounded-2xl p-7 md:p-9" style={{ background: 'white', border: '1px solid #d9dde5' }}>
@@ -238,6 +218,26 @@ const RogersCybersecure = () => {
                   </ul>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-10 md:mt-14 grid md:grid-cols-3 gap-4 lg:gap-6">
+              {highlights.map((h) => (
+                <div
+                  key={h.label}
+                  className="flex items-center gap-4 p-5 md:p-6 rounded-2xl"
+                  style={{ background: 'white', border: '1px solid #d9dde5' }}
+                >
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}
+                  >
+                    <h.icon className="w-6 h-6" style={{ color: TEAL }} />
+                  </div>
+                  <p className="text-sm md:text-base font-bold uppercase tracking-[0.06em] leading-tight" style={{ color: NAVY }}>
+                    {h.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
