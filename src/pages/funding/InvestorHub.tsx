@@ -161,7 +161,7 @@ const InvestorHub = () => {
                   The Reality
                 </p>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   2025: The worst year<br /><span style={{ color: TEAL }}>for Canadian VC since 2016.</span>
@@ -206,7 +206,7 @@ const InvestorHub = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow className="!text-white">The New VC Playbook</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Capital navigation<br /><span style={{ color: TEAL }}>for the new era.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
@@ -326,7 +326,7 @@ const InvestorHub = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow className="!text-white">Exclusive Access</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Private<br /><span style={{ color: TEAL }}>pitch events.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>

@@ -119,7 +119,7 @@ const InnovationAccelerationProgram = () => {
               <div className="lg:col-span-7">
                 <Eyebrow>About the Program</Eyebrow>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   Powering up<br /><span style={{ color: TEAL }}>Sudbury founders.</span>
@@ -200,7 +200,7 @@ const InnovationAccelerationProgram = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow className="!text-white">Eligible Activities</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Two pillars<br />driving growth.
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
@@ -319,7 +319,7 @@ const InnovationAccelerationProgram = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Program Requirements</Eyebrow>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 What you'll need<br /><span style={{ color: TEAL }}>to participate.</span>
               </h2>
             </div>

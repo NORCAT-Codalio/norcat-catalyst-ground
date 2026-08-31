@@ -721,7 +721,7 @@ const SuccessStories = () => {
         <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10">
           <div className="max-w-2xl mb-12 md:mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-4">Success Stories</p>
-            <h2 className="font-bold uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl text-white"
+            <h2 className="font-bold uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl text-white"
                 style={{ fontFamily: "'Open Sans', sans-serif", letterSpacing: '-0.02em' }}>
               From Founders,<br />Firsthand
             </h2>

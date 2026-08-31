@@ -167,7 +167,7 @@ const SudburyCatalystFund = () => {
             <div className="max-w-3xl mb-14 md:mb-20">
               <Eyebrow>Fund Overview</Eyebrow>
               <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
                 Investing in scalable<br /><span style={{ color: TEAL }}>tech start-ups.</span>
@@ -246,7 +246,7 @@ const SudburyCatalystFund = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow className="!text-white">Investment Criteria</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 What we look<br />for in founders.
               </Display>
             </div>
@@ -332,7 +332,7 @@ const SudburyCatalystFund = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow className="!text-white">NORCAT Innovation Mentors</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 The front line<br />of the SCF process.
               </Display>
               <p className="mt-5 text-base sm:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
@@ -385,7 +385,7 @@ const SudburyCatalystFund = () => {
               <div className="max-w-2xl">
                 <Eyebrow>Leadership Team</Eyebrow>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
                 >
                   Guiding investments<br /><span style={{ color: TEAL }}>in Sudbury's future.</span>

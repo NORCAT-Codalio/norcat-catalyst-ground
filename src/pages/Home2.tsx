@@ -503,7 +503,7 @@ export default function Home2() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div className="max-w-2xl">
                 <Eyebrow color="white">Latest Updates</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Display className="text-3xl sm:text-4xl md:text-5xl">
                   Real Stories.<br />Unique Insights.
                 </Display>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
@@ -615,7 +615,7 @@ export default function Home2() {
                    style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Here to Support
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   <span className="block" style={{ color: BLUE }}>
                     Northern Ontario
