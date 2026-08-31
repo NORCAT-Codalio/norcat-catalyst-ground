@@ -129,7 +129,7 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: NAVY }}>
+                   style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Rooted in Northern Ontario
                 </p>
                 <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl mb-6"
