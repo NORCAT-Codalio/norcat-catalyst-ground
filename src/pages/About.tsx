@@ -46,6 +46,20 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
+const portfolio = [
+  { name: 'Turnkey', logo: turnkeyLogo },
+  { name: 'Rogers', logo: rogersLogo },
+  { name: 'Hard-Line', logo: hardlineLogo },
+  { name: 'Waive', logo: waiveLogoAsset.url },
+  { name: 'Symx AI', logo: symxLogo },
+  { name: 'Codalio', logo: codalioLogo },
+  { name: 'Flosonics', logo: flosonicsLogo },
+  { name: 'Kinmetrix', logo: kinmetrixLogo },
+  { name: 'LoopX', logo: loopxLogo },
+  { name: 'CircuitIQ', logo: circuitiqLogo },
+  { name: 'RNA Diagnostics', logo: rnaLogoAsset.url },
+];
+
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
