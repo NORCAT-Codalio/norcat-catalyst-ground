@@ -442,11 +442,11 @@ export default function About() {
                     >
                       “
                     </span>
-                    <p className="relative pl-10 pt-3 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                    <p className="relative pl-10 pr-10 pt-3 pb-8 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                       {t.quote}
                     </p>
                     <span
-                      className="absolute -bottom-5 right-0 font-black select-none pointer-events-none"
+                      className="absolute bottom-0 right-0 font-black select-none pointer-events-none"
                       style={{ fontFamily: FONT, fontSize: '3.5rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
                       aria-hidden="true"
                     >
