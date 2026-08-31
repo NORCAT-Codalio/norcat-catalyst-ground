@@ -280,22 +280,21 @@ const RogersCybersecure = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-7 h-full"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}
+                  className="rounded-2xl p-7 h-full bg-white border border-gray-100 shadow-sm"
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'rgba(0,179,152,0.18)' }}
+                    style={{ background: 'rgba(0,179,152,0.12)' }}
                   >
                     <s.icon className="w-5 h-5" style={{ color: TEAL }} />
                   </div>
                   <h3
-                    className="font-black uppercase text-lg mb-2 text-white"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}
+                    className="font-black uppercase text-lg mb-2"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}
                   >
                     {s.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#5b6478' }}>
                     {s.description}
                   </p>
                 </motion.article>
