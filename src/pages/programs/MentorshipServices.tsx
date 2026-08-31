@@ -243,7 +243,7 @@ const MentorshipServices = () => {
                  style={{ fontFamily: FONT, color: TEAL }}>
                 Our Approach
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 A different kind<br /><span style={{ color: TEAL }}>of mentoring.</span>
               </h2>
@@ -279,7 +279,7 @@ const MentorshipServices = () => {
             <div className="grid gap-12 lg:gap-16 lg:grid-cols-12 items-start">
               <div className="lg:col-span-6">
                 <Eyebrow>Process</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Display className="text-3xl sm:text-4xl md:text-5xl">
                   How it<br /><span style={{ color: TEAL }}>works.</span>
                 </Display>
                 <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
@@ -340,7 +340,7 @@ const MentorshipServices = () => {
                    style={{ fontFamily: FONT, color: TEAL }}>
                   Our Network
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   Meet our<br /><span style={{ color: TEAL }}>mentors.</span>
                 </h2>
@@ -502,7 +502,7 @@ const MentorshipServices = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 mb-12 md:mb-16">
             <div className="max-w-2xl">
               <Eyebrow>Founder Voices</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Real founders.<br /><span style={{ color: TEAL }}>Real outcomes.</span>
               </Display>
               <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>

@@ -221,7 +221,7 @@ export default function VentureGrowthServices() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>What's Included</Eyebrow>
-              <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display light className="text-3xl sm:text-4xl md:text-5xl">
                 Everything you need<br /><span style={{ color: TEAL }}>to accelerate.</span>
               </Display>
             </div>
@@ -328,7 +328,7 @@ export default function VentureGrowthServices() {
               {/* Left – heading + Invest Sudbury portal */}
               <div className="lg:col-span-5">
                 <Eyebrow>Capital Navigation</Eyebrow>
-                <Display light className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+                <Display light className="text-3xl sm:text-4xl md:text-5xl mb-6">
                   Find the right<br /><span style={{ color: TEAL }}>funding.</span>
                 </Display>
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
@@ -457,7 +457,7 @@ export default function VentureGrowthServices() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-6 md:mb-8">
               <Eyebrow className="!text-white">Your Journey</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 How it<br /><span style={{ color: TEAL }}>works.</span>
               </Display>
             </div>
@@ -712,7 +712,7 @@ export default function VentureGrowthServices() {
                    style={{ fontFamily: FONT, color: TEAL }}>
                   Why NORCAT
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   What makes us<br /><span style={{ color: TEAL }}>different?</span>
                 </h2>

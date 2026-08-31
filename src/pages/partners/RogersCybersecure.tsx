@@ -161,7 +161,7 @@ const RogersCybersecure = () => {
               <div>
                 <Eyebrow>About the Partnership</Eyebrow>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   CYBER READINESS<br />
@@ -262,7 +262,7 @@ const RogersCybersecure = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow className="!text-white">Program Services</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Practical support,<br />
                 <span style={{ color: TEAL }}>not theory.</span>
               </Display>

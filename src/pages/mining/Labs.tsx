@@ -359,7 +359,7 @@ const Labs = () => {
             <div className="max-w-3xl mb-10 md:mb-14">
               <Eyebrow>Two Locations</Eyebrow>
               <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
                 One connected ecosystem.
@@ -433,7 +433,7 @@ const Labs = () => {
             <div className="max-w-3xl mb-12 md:mb-16">
               <Eyebrow>Our Facilities</Eyebrow>
               <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
                 The right space at every stage.

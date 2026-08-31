@@ -205,7 +205,7 @@ const NorcatUnderground = () => {
               <div>
                 <Eyebrow>THE NORCAT UNDERGROUND CENTRE</Eyebrow>
                 <h2
-                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   BUILT FOR<br /><span style={{ color: TEAL }}>REAL-WORLD TESTING.</span>
@@ -266,7 +266,7 @@ const NorcatUnderground = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>What You Can Test</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
+              <Display className="text-3xl sm:text-4xl md:text-5xl" color={NAVY}>
                 If it belongs in a mine,<br /><span style={{ color: TEAL }}>we can run it underground.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
@@ -304,7 +304,7 @@ const NorcatUnderground = () => {
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Who It's For</Eyebrow>
               <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
                 Built for the people<br /><span style={{ color: TEAL }}>shaping mining's future.</span>
@@ -343,7 +343,7 @@ const NorcatUnderground = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Why Operators Choose Us</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
+              <Display className="text-3xl sm:text-4xl md:text-5xl" color={NAVY}>
                 The credibility<br /><span style={{ color: TEAL }}>you need to win.</span>
               </Display>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
@@ -385,7 +385,7 @@ const NorcatUnderground = () => {
                 className="lg:col-span-7"
               >
                 <Eyebrow>Critical Industrial Technologies</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl" color={NAVY}>
+                <Display className="text-3xl sm:text-4xl md:text-5xl" color={NAVY}>
                   The proving ground for<br /><span style={{ color: TEAL }}>CIT ventures.</span>
                 </Display>
                 <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>

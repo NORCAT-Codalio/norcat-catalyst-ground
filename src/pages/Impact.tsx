@@ -147,7 +147,7 @@ export default function Impact() {
 
             <div className="max-w-2xl mb-12 md:mb-16">
               <Eyebrow>Portfolio Highlights</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Recent <span style={{ color: TEAL }}>Wins.</span>
               </Display>
               <p className="mt-6 text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
@@ -208,7 +208,7 @@ export default function Impact() {
                style={{ fontFamily: FONT, color: TEAL }}>
               Join the Ecosystem
             </p>
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
               Be Part of Our<br /><span style={{ color: TEAL }}>Next Chapter.</span>
             </h2>

@@ -132,7 +132,7 @@ export default function About() {
                    style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Rooted in Northern Ontario
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl mb-6"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                   <span style={{ color: BLUE }}>Where Bold Ideas</span> <span style={{ color: TEAL }}>Grow.</span>
                 </h2>
@@ -202,7 +202,7 @@ export default function About() {
                    style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Our Journey
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
                   <span style={{ color: BLUE }}>From Idea to</span> <span style={{ color: TEAL }}>Impact.</span>
                 </h2>
@@ -365,7 +365,7 @@ export default function About() {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
               <Eyebrow>What Drives Innovation</Eyebrow>
-              <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl">
+              <Display className="text-3xl sm:text-4xl md:text-5xl">
                 Our <span style={{ color: TEAL }}>Values.</span>
               </Display>
             </div>
@@ -409,7 +409,7 @@ export default function About() {
                  style={{ fontFamily: FONT, color: '#6B7280' }}>
                 Founder Voices
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 <span style={{ color: BLUE }}>Built Here.</span><br /><span style={{ color: TEAL }}>Backed by NORCAT.</span>
               </h2>

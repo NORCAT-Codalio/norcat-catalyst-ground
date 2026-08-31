@@ -240,7 +240,7 @@ export default function Home3() {
                    style={{ fontFamily: FONT, color: TEAL }}>
                   What is NORCAT Innovation?
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   Northern Ontario isn't <span className="whitespace-nowrap">just growing.</span>{' '}
                   <span style={{ color: TEAL }}>We're redefining what's possible.</span>
@@ -283,7 +283,7 @@ export default function Home3() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
               <div className="max-w-2xl">
                 <Eyebrow className="!text-white">The Commercialization Pathway</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Display className="text-3xl sm:text-4xl md:text-5xl">
                   Support that adapts<br />as your <span style={{ color: TEAL }}>company grows.</span>
                 </Display>
               </div>
@@ -407,7 +407,7 @@ export default function Home3() {
                  style={{ fontFamily: FONT, color: TEAL }}>
                 Built for
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Built for the builders of the North.
               </h2>
@@ -484,7 +484,7 @@ export default function Home3() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
               <div className="max-w-2xl">
                 <Eyebrow className="!text-white">Insights</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                <Display className="text-3xl sm:text-4xl md:text-5xl">
                   Real Stories.<br />Unique Insights.
                 </Display>
                 <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: FG_MUTED }}>
