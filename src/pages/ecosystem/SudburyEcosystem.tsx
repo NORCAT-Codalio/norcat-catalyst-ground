@@ -336,7 +336,7 @@ const SudburyEcosystem = () => {
           <DialogContent className="max-w-lg p-0 overflow-hidden border-0" style={{ background: PAPER, color: NAVY }}>
             <div className="p-6 md:p-8 relative">
               <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.12)' }} />
-              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.10)' }} />
+              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(107,114,128,0.10)' }} />
 
               <DialogHeader className="relative z-10 text-left space-y-3">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md" style={{ background: TEAL }}>
@@ -352,7 +352,7 @@ const SudburyEcosystem = () => {
                     {selectedOrg.highlight}
                   </span>
                 )}
-                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#4b5563' }}>
                   {selectedOrg?.longDescription || selectedOrg?.description}
                 </DialogDescription>
               </DialogHeader>
