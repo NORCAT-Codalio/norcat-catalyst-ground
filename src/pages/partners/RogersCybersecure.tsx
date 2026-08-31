@@ -82,7 +82,7 @@ const eligibility = [
 
 const highlights = [
   { icon: Lock, label: 'Mining-Specific Cyber Training' },
-  { icon: Building2, label: 'Based at Toronto Metropolitan University' },
+  { icon: Building2, label: 'Based at Toronto Met University' },
   { icon: Globe, label: 'National Cybersecurity Hub' },
 ];
 
