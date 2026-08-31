@@ -718,10 +718,10 @@ export default function Home2() {
               <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 100%, hsla(168,100%,45%,0.08) 0%, transparent 70%)' }} />
 
               <div className="relative">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-7 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
-                      style={{ color: '#6B7280', background: 'rgba(0,61,166,0.08)', border: '1px solid rgba(0,61,166,0.15)' }}>
+                <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
+                   style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Your Northern Advantage
-                </span>
+                </p>
                 <h2 className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                     style={{ fontFamily: FONT, color: '#003DA6', letterSpacing: '-0.03em' }}>
                   See What's<br /><span style={{ color: TEAL }}>Possible.</span>
