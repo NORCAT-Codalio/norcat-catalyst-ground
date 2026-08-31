@@ -24,6 +24,19 @@ import { LocationsMap } from '@/components/LocationsMap';
 // Logos
 import innovateonLogo from '@/assets/logos/innovateon.png.asset.json';
 
+// Portfolio logos (same as homepage reel)
+import turnkeyLogo from '@/assets/logos/turnkey.png';
+import rogersLogo from '@/assets/logos/rogers.png';
+import hardlineLogo from '@/assets/logos/hardline.png';
+import waiveLogoAsset from '@/assets/logos/waive.png.asset.json';
+import symxLogo from '@/assets/logos/symx.png';
+import codalioLogo from '@/assets/logos/codalio.png';
+import flosonicsLogo from '@/assets/logos/flosonics.png';
+import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
+import loopxLogo from '@/assets/logos/loopx.png';
+import circuitiqLogo from '@/assets/logos/circuitiq.webp';
+import rnaLogoAsset from '@/assets/logos/rna-diagnostics.png.asset.json';
+
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
@@ -32,6 +45,20 @@ const PAPER = '#F2F3F6';
 const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
+
+const portfolio = [
+  { name: 'Turnkey', logo: turnkeyLogo },
+  { name: 'Rogers', logo: rogersLogo },
+  { name: 'Hard-Line', logo: hardlineLogo },
+  { name: 'Waive', logo: waiveLogoAsset.url },
+  { name: 'Symx AI', logo: symxLogo },
+  { name: 'Codalio', logo: codalioLogo },
+  { name: 'Flosonics', logo: flosonicsLogo },
+  { name: 'Kinmetrix', logo: kinmetrixLogo },
+  { name: 'LoopX', logo: loopxLogo },
+  { name: 'CircuitIQ', logo: circuitiqLogo },
+  { name: 'RNA Diagnostics', logo: rnaLogoAsset.url },
+];
 
 
 const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
@@ -440,6 +467,30 @@ export default function About() {
           </div>
         </section>
 
+
+        {/* ───── PORTFOLIO COMPANIES - Logo Carousel (same as homepage) ───── */}
+        <section className="relative py-10 overflow-hidden" style={{ background: 'white' }}>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolio, ...portfolio].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
 
 
         {/* ───── FINAL CTA (white) ───── */}
