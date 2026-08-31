@@ -24,6 +24,19 @@ import { LocationsMap } from '@/components/LocationsMap';
 // Logos
 import innovateonLogo from '@/assets/logos/innovateon.png.asset.json';
 
+// Portfolio logos (same as homepage reel)
+import turnkeyLogo from '@/assets/logos/turnkey.png';
+import rogersLogo from '@/assets/logos/rogers.png';
+import hardlineLogo from '@/assets/logos/hardline.png';
+import waiveLogoAsset from '@/assets/logos/waive.png.asset.json';
+import symxLogo from '@/assets/logos/symx.png';
+import codalioLogo from '@/assets/logos/codalio.png';
+import flosonicsLogo from '@/assets/logos/flosonics.png';
+import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
+import loopxLogo from '@/assets/logos/loopx.png';
+import circuitiqLogo from '@/assets/logos/circuitiq.webp';
+import rnaLogoAsset from '@/assets/logos/rna-diagnostics.png.asset.json';
+
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
