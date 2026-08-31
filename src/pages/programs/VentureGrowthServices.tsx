@@ -473,7 +473,7 @@ export default function VentureGrowthServices() {
                   <article
                     key={phase.phase}
                     className={`group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 ${needsOverflow ? 'overflow-visible' : 'overflow-hidden'} ${isScale || isOnboarding ? 'hover:rounded-t-none' : ''}`}
-                    style={{ background: '#0a2a6b', border: `1px solid ${BORDER}` }}
+                    style={{ background: 'white', border: '1px solid #d9dde5' }}
                   >
                     {isBuild && (
                       <div
