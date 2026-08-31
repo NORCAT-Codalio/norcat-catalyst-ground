@@ -18,6 +18,7 @@ import featuredCore5 from '@/assets/featured-core5.png.asset.json';
 import undergroundCentre from '@/assets/underground-centre-v3.png.asset.json';
 import sudburyCatalystPeople from '@/assets/sudbury-catalyst-people.jpg.asset.json';
 import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.json';
+import raiiCompositeCropped from '@/assets/raii-composite-cropped.png.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
@@ -223,7 +224,7 @@ export default function About() {
                     { year: '2019', title: 'Launch of the Sudbury Catalyst Fund', desc: 'The ecosystem hits its stride, supporting 100+ tech jobs, $35M+ in equity capital, and the $5M Sudbury Catalyst Fund.', image: sudburyCatalystPeople.url, cta: { label: 'View the SCF Recipients!', href: '/funding/sudbury-catalyst-fund' } },
                     { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine.", image: storyMine.url },
                     { year: '2024', title: 'Venture North PITCH', desc: 'NORCAT and the Northern Ontario Angels merge their flagship events, bringing top startup talent and Angel Investors together.', image: ventureNorthPitch.url },
-                    { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands Underground Centre demonstration spaces, rolls out AI workshops, and overhauls tech startup services.', image: featuredCit.url },
+                    { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands Underground Centre demonstration spaces, rolls out AI workshops, and overhauls tech startup services.', image: raiiCompositeCropped.url },
                     { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: stateOfSudbury.url },
                   ].map((event, idx, arr) => {
                     const isOpen = openIdx === idx;
