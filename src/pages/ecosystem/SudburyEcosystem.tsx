@@ -361,7 +361,7 @@ const SudburyEcosystem = () => {
                 <div className="flex flex-wrap gap-2 mt-5 relative z-10">
                   {selectedOrg.tags.map((tag) => (
                     <span key={tag} className="px-3 py-1 rounded-full text-xs"
-                          style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
+                          style={{ background: 'white', color: '#6b7280', border: '1px solid #e5e7eb' }}>
                       {tag}
                     </span>
                   ))}
