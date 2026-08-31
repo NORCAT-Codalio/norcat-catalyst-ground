@@ -179,7 +179,7 @@ const RogersCybersecure = () => {
                     sector program and provides mining-specific mentorship to their clients - connecting
                     operators with the right resources for the challenges they actually face.
                   </p>
-                  <p className="text-sm" style={{ color: '#5b6478' }}>
+                  <p style={{ color: '#5b6478' }}>
                     Developed in collaboration with the Canadian Cyber Threat Exchange (CCTX) and
                     supported by the Government of Ontario.
                   </p>
