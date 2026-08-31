@@ -406,12 +406,12 @@ export default function About() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-12 md:mb-16">
               <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-                 style={{ fontFamily: FONT, color: TEAL }}>
+                 style={{ fontFamily: FONT, color: '#6B7280' }}>
                 Founder Voices
               </p>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                Built Here.<br /><span style={{ color: TEAL }}>Backed by NORCAT.</span>
+                <span style={{ color: BLUE }}>Built Here.</span><br /><span style={{ color: TEAL }}>Backed by NORCAT.</span>
               </h2>
             </div>
 
