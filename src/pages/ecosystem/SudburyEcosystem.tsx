@@ -184,10 +184,7 @@ const SudburyEcosystem = () => {
         </section>
 
         {/* ───── DIRECTORY ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 10%, rgba(107,114,128,0.05), transparent 40%), radial-gradient(circle at 85% 90%, rgba(0,179,152,0.05), transparent 45%)`,
-          }} />
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6 md:mb-8">
@@ -199,15 +196,15 @@ const SudburyEcosystem = () => {
                 </h2>
               </div>
 
-              <div className="relative w-full md:w-64 lg:w-72 shrink-0 group">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-colors" style={{ color: '#9ca3af' }} />
+              <div className="relative w-full md:w-64 lg:w-72 shrink-0">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style={{ color: '#9ca3af' }} />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search directory..."
-                  className="w-full pl-9 pr-3 py-2 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(0,179,152,0.20)] focus:border-[#00B398] transition-all"
-                  style={{ borderColor: '#e5e7eb', color: NAVY, fontFamily: FONT, background: 'white', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}
+                  className="w-full pl-9 pr-3 py-2 text-xs border rounded-md focus:outline-none focus:ring-1 transition-all"
+                  style={{ borderColor: '#d9dde5', color: NAVY, fontFamily: FONT, background: 'white' }}
                 />
               </div>
             </div>
@@ -222,9 +219,9 @@ const SudburyEcosystem = () => {
                     onClick={() => setActiveCategory(cat.id)}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
-                      background: TEAL, color: 'white', border: `1px solid ${TEAL}`, fontFamily: FONT, boxShadow: '0 6px 16px -6px rgba(0,179,152,0.35)',
+                      background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT,
                     } : {
-                      background: 'white', color: '#4b5563', border: '1px solid #e5e7eb', fontFamily: FONT,
+                      background: 'white', color: NAVY, border: '1px solid #d9dde5', fontFamily: FONT,
                     }}
                   >
                     <cat.icon className="w-3 h-3" />
@@ -252,15 +249,15 @@ const SudburyEcosystem = () => {
                       layout
                       onClick={() => setSelectedOrg(org)}
                       whileHover={{ y: -2 }}
-                      className="text-left bg-white border rounded-xl p-3 transition-all group hover:shadow-xl hover:shadow-[rgba(0,0,0,0.06)] hover:border-[#00B398]"
-                      style={{ borderColor: '#e5e7eb', color: NAVY, boxShadow: '0 1px 2px rgba(0,0,0,0.02)' }}
+                      className="text-left bg-white border rounded-lg p-3 transition-all group hover:shadow-md hover:border-[#00B398]"
+                      style={{ borderColor: '#e2e8f0', color: NAVY }}
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-gray-100 text-[#4b5563] group-hover:bg-[#00B398] group-hover:text-white">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
                           <org.icon className="w-5 h-5" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-sm leading-tight mb-0.5 truncate group-hover:text-[#00B398] transition-colors"
+                          <h4 className="font-bold text-sm leading-tight mb-0.5 truncate"
                               style={{ fontFamily: FONT, color: NAVY }}>
                             {org.name}
                           </h4>
@@ -268,7 +265,7 @@ const SudburyEcosystem = () => {
                             {org.description}
                           </p>
                           <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
-                                style={{ background: 'rgba(0,179,152,0.10)', color: TEAL }}>
+                                style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
                             {org.highlight || categoryLabel}
                           </span>
                         </div>
@@ -280,7 +277,7 @@ const SudburyEcosystem = () => {
             </AnimatePresence>
 
             {filteredOrgs.length === 0 && (
-              <div className="text-center py-12" style={{ color: '#64748b' }}>
+              <div className="text-center py-12" style={{ color: '#6b7280' }}>
                 <p className="text-sm">No organizations match your search.</p>
                 <button
                   onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
@@ -293,9 +290,9 @@ const SudburyEcosystem = () => {
             )}
 
             {/* Result count */}
-            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#e5e7eb' }}>
+            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#e2e8f0' }}>
               <p className="text-xs" style={{ color: '#6b7280' }}>
-                Showing <span style={{ color: NAVY, fontWeight: 700 }}>{filteredOrgs.length}</span> of {ecosystemOrgs.length} results
+                Showing {filteredOrgs.length} of {ecosystemOrgs.length} results
               </p>
             </div>
           </div>
@@ -336,7 +333,7 @@ const SudburyEcosystem = () => {
           <DialogContent className="max-w-lg p-0 overflow-hidden border-0" style={{ background: PAPER, color: NAVY }}>
             <div className="p-6 md:p-8 relative">
               <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.12)' }} />
-              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(107,114,128,0.10)' }} />
+              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.10)' }} />
 
               <DialogHeader className="relative z-10 text-left space-y-3">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md" style={{ background: TEAL }}>
@@ -352,7 +349,7 @@ const SudburyEcosystem = () => {
                     {selectedOrg.highlight}
                   </span>
                 )}
-                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#4b5563' }}>
+                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#475068' }}>
                   {selectedOrg?.longDescription || selectedOrg?.description}
                 </DialogDescription>
               </DialogHeader>
@@ -361,7 +358,7 @@ const SudburyEcosystem = () => {
                 <div className="flex flex-wrap gap-2 mt-5 relative z-10">
                   {selectedOrg.tags.map((tag) => (
                     <span key={tag} className="px-3 py-1 rounded-full text-xs"
-                          style={{ background: 'white', color: '#6b7280', border: '1px solid #e5e7eb' }}>
+                          style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
                       {tag}
                     </span>
                   ))}
