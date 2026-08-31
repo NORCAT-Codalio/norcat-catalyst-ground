@@ -21,6 +21,7 @@ import ventureNorthPitch from '@/assets/venture-north-pitch-returning.png.asset.
 import raiiCompositeCropped from '@/assets/raii-composite-cropped.png.asset.json';
 import schauenbergOntario from '@/assets/schauenberg-ontario.jpg.asset.json';
 import stateOfSudbury from '@/assets/state-of-sudbury-impact-card.png.asset.json';
+import globalInnovation from '@/assets/global-innovation.png.asset.json';
 import { LocationsMap } from '@/components/LocationsMap';
 
 
@@ -226,7 +227,7 @@ export default function About() {
                     { year: '2022', title: 'Mining Transformed', desc: "NORCAT debuts the world's only technology exhibition held inside an active underground mine.", image: schauenbergOntario.url },
                     { year: '2024', title: 'Venture North PITCH', desc: 'NORCAT and the Northern Ontario Angels merge their flagship events, bringing top startup talent and Angel Investors together.', image: ventureNorthPitch.url },
                     { year: '2026', title: 'Digital & AI Expansion', desc: 'NORCAT expands Underground Centre demonstration spaces, rolls out AI workshops, and overhauls tech startup services.', image: raiiCompositeCropped.url },
-                    { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: stateOfSudbury.url },
+                    { year: 'TODAY', title: 'Global Innovation', desc: 'A premier hub of Northern innovation, turning rugged, regional ideas into globally scalable technologies.', image: globalInnovation.url },
                   ].map((event, idx, arr) => {
                     const isOpen = openIdx === idx;
                     const ExpandIcon = isOpen ? Minus : Plus;
