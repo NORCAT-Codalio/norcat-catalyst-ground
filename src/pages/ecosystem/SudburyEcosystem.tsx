@@ -184,9 +184,9 @@ const SudburyEcosystem = () => {
         </section>
 
         {/* ───── DIRECTORY ───── */}
-        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: '#F5F9FF', color: NAVY }}>
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: '#F2F3F6', color: NAVY }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 15% 10%, rgba(0,61,165,0.06), transparent 40%), radial-gradient(circle at 85% 90%, rgba(0,179,152,0.06), transparent 45%)`,
+            backgroundImage: `radial-gradient(circle at 15% 10%, rgba(107,114,128,0.05), transparent 40%), radial-gradient(circle at 85% 90%, rgba(0,179,152,0.05), transparent 45%)`,
           }} />
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             {/* Header */}
@@ -194,20 +194,20 @@ const SudburyEcosystem = () => {
               <div>
                 <Eyebrow className="mb-2">Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
-                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: BLUE }}>
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
                   Connect with <span style={{ color: TEAL }}>local</span> organizations
                 </h2>
               </div>
 
               <div className="relative w-full md:w-64 lg:w-72 shrink-0 group">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-colors" style={{ color: '#8fa3c4' }} />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 transition-colors" style={{ color: '#9ca3af' }} />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search directory..."
                   className="w-full pl-9 pr-3 py-2 text-xs border rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(0,179,152,0.20)] focus:border-[#00B398] transition-all"
-                  style={{ borderColor: '#dbe6f5', color: NAVY, fontFamily: FONT, background: 'white', boxShadow: '0 1px 2px rgba(0,61,165,0.04)' }}
+                  style={{ borderColor: '#e5e7eb', color: NAVY, fontFamily: FONT, background: 'white', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}
                 />
               </div>
             </div>
@@ -222,9 +222,9 @@ const SudburyEcosystem = () => {
                     onClick={() => setActiveCategory(cat.id)}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
-                      background: BLUE, color: 'white', border: `1px solid ${BLUE}`, fontFamily: FONT, boxShadow: '0 6px 16px -6px rgba(0,61,165,0.35)',
+                      background: TEAL, color: 'white', border: `1px solid ${TEAL}`, fontFamily: FONT, boxShadow: '0 6px 16px -6px rgba(0,179,152,0.35)',
                     } : {
-                      background: 'white', color: BLUE, border: '1px solid #dbe6f5', fontFamily: FONT,
+                      background: 'white', color: '#4b5563', border: '1px solid #e5e7eb', fontFamily: FONT,
                     }}
                   >
                     <cat.icon className="w-3 h-3" />
@@ -252,19 +252,19 @@ const SudburyEcosystem = () => {
                       layout
                       onClick={() => setSelectedOrg(org)}
                       whileHover={{ y: -2 }}
-                      className="text-left bg-white border rounded-xl p-3 transition-all group hover:shadow-xl hover:shadow-[rgba(0,61,165,0.08)] hover:border-[#00B398]"
-                      style={{ borderColor: '#e6effa', color: NAVY, boxShadow: '0 1px 2px rgba(0,61,165,0.03)' }}
+                      className="text-left bg-white border rounded-xl p-3 transition-all group hover:shadow-xl hover:shadow-[rgba(0,0,0,0.06)] hover:border-[#00B398]"
+                      style={{ borderColor: '#e5e7eb', color: NAVY, boxShadow: '0 1px 2px rgba(0,0,0,0.02)' }}
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-blue-50 text-[#003DA5] group-hover:bg-[#00B398] group-hover:text-white">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-gray-100 text-[#4b5563] group-hover:bg-[#00B398] group-hover:text-white">
                           <org.icon className="w-5 h-5" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm leading-tight mb-0.5 truncate group-hover:text-[#00B398] transition-colors"
-                              style={{ fontFamily: FONT, color: BLUE }}>
+                              style={{ fontFamily: FONT, color: NAVY }}>
                             {org.name}
                           </h4>
-                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#64748b' }}>
+                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
                             {org.description}
                           </p>
                           <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
@@ -293,9 +293,9 @@ const SudburyEcosystem = () => {
             )}
 
             {/* Result count */}
-            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#dbe6f5' }}>
-              <p className="text-xs" style={{ color: '#64748b' }}>
-                Showing <span style={{ color: BLUE, fontWeight: 700 }}>{filteredOrgs.length}</span> of {ecosystemOrgs.length} results
+            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#e5e7eb' }}>
+              <p className="text-xs" style={{ color: '#6b7280' }}>
+                Showing <span style={{ color: NAVY, fontWeight: 700 }}>{filteredOrgs.length}</span> of {ecosystemOrgs.length} results
               </p>
             </div>
           </div>
@@ -336,7 +336,7 @@ const SudburyEcosystem = () => {
           <DialogContent className="max-w-lg p-0 overflow-hidden border-0" style={{ background: PAPER, color: NAVY }}>
             <div className="p-6 md:p-8 relative">
               <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.12)' }} />
-              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.10)' }} />
+              <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(107,114,128,0.10)' }} />
 
               <DialogHeader className="relative z-10 text-left space-y-3">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md" style={{ background: TEAL }}>
@@ -352,7 +352,7 @@ const SudburyEcosystem = () => {
                     {selectedOrg.highlight}
                   </span>
                 )}
-                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                <DialogDescription className="text-sm leading-relaxed" style={{ color: '#4b5563' }}>
                   {selectedOrg?.longDescription || selectedOrg?.description}
                 </DialogDescription>
               </DialogHeader>
@@ -361,7 +361,7 @@ const SudburyEcosystem = () => {
                 <div className="flex flex-wrap gap-2 mt-5 relative z-10">
                   {selectedOrg.tags.map((tag) => (
                     <span key={tag} className="px-3 py-1 rounded-full text-xs"
-                          style={{ background: 'white', color: '#5b6478', border: '1px solid #d9dde5' }}>
+                          style={{ background: 'white', color: '#6b7280', border: '1px solid #e5e7eb' }}>
                       {tag}
                     </span>
                   ))}
