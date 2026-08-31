@@ -690,12 +690,12 @@ export default function VentureGrowthServices() {
                         </div>
                       </div>
                     )}
-                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.4, fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                    <div className="font-black text-5xl mb-4" style={{ color: TEAL, opacity: 0.55, fontFamily: FONT, letterSpacing: '-0.02em' }}>
                       {phase.phase}
                     </div>
-                    <h3 className="font-black uppercase text-lg md:text-xl text-white mb-2"
-                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>{phase.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: FG_MUTED }}>{phase.description}</p>
+                    <h3 className="font-black uppercase text-lg md:text-xl mb-2"
+                        style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>{phase.title}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>{phase.description}</p>
                   </article>
                 );
               })}
