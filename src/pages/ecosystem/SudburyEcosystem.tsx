@@ -298,6 +298,39 @@ const SudburyEcosystem = () => {
           </div>
         </section>
 
+        {/* ───── BECOME A PARTNER CTA ───── */}
+        <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: PAPER, color: NAVY }}>
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="relative rounded-2xl overflow-hidden p-8 md:p-12 lg:p-14 flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-12"
+                 style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}>
+              <div className="absolute inset-0 pointer-events-none opacity-20"
+                   style={{ backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.35), transparent 45%), radial-gradient(circle at 80% 90%, rgba(255,255,255,0.15), transparent 50%)` }} />
+              <div className="relative flex-1 text-center lg:text-left">
+                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-3" style={{ color: 'rgba(255,255,255,0.8)', fontFamily: FONT }}>
+                  Join the Ecosystem
+                </p>
+                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4"
+                    style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: 'white' }}>
+                  Become a Partner <span style={{ color: TEAL }}>or Get Connected.</span>
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Want to add your organization to the directory or explore collaboration opportunities? Reach out and let's build something together.
+                </p>
+              </div>
+              <div className="relative flex-shrink-0">
+                <Link to="/contact"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm md:text-base transition-transform hover:scale-[1.02]"
+                      style={{ fontFamily: FONT, background: 'white', color: NAVY }}>
+                  Contact Us
+                  <span className="inline-flex items-center justify-center size-6 rounded-full" style={{ background: TEAL, color: 'white' }}>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ───── DETAIL MODAL ───── */}
         <Dialog open={!!selectedOrg} onOpenChange={(open) => !open && setSelectedOrg(null)}>
           <DialogContent className="max-w-lg p-0 overflow-hidden border-0" style={{ background: PAPER, color: NAVY }}>
