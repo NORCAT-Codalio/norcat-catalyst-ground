@@ -436,18 +436,18 @@ export default function About() {
                 >
                   <div className="relative mb-8">
                     <span
-                      className="absolute -top-2 -left-2 font-black select-none pointer-events-none"
-                      style={{ fontFamily: FONT, fontSize: '4rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
+                      className="absolute top-0 left-0 font-black select-none pointer-events-none"
+                      style={{ fontFamily: FONT, fontSize: '3.5rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
                       aria-hidden="true"
                     >
                       “
                     </span>
-                    <p className="relative text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                    <p className="relative pl-10 pt-3 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
                       {t.quote}
                     </p>
                     <span
-                      className="absolute -bottom-6 right-0 font-black select-none pointer-events-none"
-                      style={{ fontFamily: FONT, fontSize: '4rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
+                      className="absolute -bottom-5 right-0 font-black select-none pointer-events-none"
+                      style={{ fontFamily: FONT, fontSize: '3.5rem', lineHeight: 1, color: TEAL, opacity: 0.12 }}
                       aria-hidden="true"
                     >
                       ”
