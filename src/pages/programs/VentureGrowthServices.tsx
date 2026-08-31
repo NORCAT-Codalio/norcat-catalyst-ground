@@ -268,10 +268,10 @@ export default function VentureGrowthServices() {
             {/* ── Featured Resource – MaRS Startup Toolkit ── */}
             <div className="mt-8 md:mt-10">
               <div
-                className="rounded-2xl p-7 md:p-10 flex flex-col lg:flex-row items-start gap-8 lg:gap-12"
+                className="rounded-2xl p-7 md:p-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
                 style={{ background: 'linear-gradient(135deg, #F4FAF9 0%, #FFFFFF 100%)', border: '1px solid rgba(0,179,152,0.25)' }}
               >
-                <div className="flex flex-col items-start gap-4 lg:min-w-[280px] lg:max-w-[320px]">
+                <div className="flex flex-col items-start gap-3 lg:min-w-[280px] lg:max-w-[320px]">
                   <div className="flex items-center gap-4">
                     <div
                       className="size-14 rounded-2xl flex items-center justify-center shrink-0"
