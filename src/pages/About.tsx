@@ -468,6 +468,30 @@ export default function About() {
         </section>
 
 
+        {/* ───── PORTFOLIO COMPANIES - Logo Carousel (same as homepage) ───── */}
+        <section className="relative py-10 overflow-hidden" style={{ background: 'white' }}>
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-8"
+              animate={{ x: [0, -1200] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+              {[...portfolio, ...portfolio].map((company, i) => (
+                <div
+                  key={`${company.name}-${i}`}
+                  className="flex-shrink-0 flex items-center justify-center w-36 h-16 px-4"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
 
         {/* ───── FINAL CTA (white) ───── */}
         <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
