@@ -293,9 +293,9 @@ const SudburyEcosystem = () => {
             )}
 
             {/* Result count */}
-            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#dbe6f5' }}>
-              <p className="text-xs" style={{ color: '#64748b' }}>
-                Showing <span style={{ color: BLUE, fontWeight: 700 }}>{filteredOrgs.length}</span> of {ecosystemOrgs.length} results
+            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#e5e7eb' }}>
+              <p className="text-xs" style={{ color: '#6b7280' }}>
+                Showing <span style={{ color: NAVY, fontWeight: 700 }}>{filteredOrgs.length}</span> of {ecosystemOrgs.length} results
               </p>
             </div>
           </div>
