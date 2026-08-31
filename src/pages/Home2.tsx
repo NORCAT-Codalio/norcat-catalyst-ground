@@ -257,7 +257,7 @@ export default function Home2() {
           <div className="relative w-full flex-1 flex flex-col items-stretch justify-center">
             <div className="flex flex-col justify-center px-5 sm:px-6 md:px-10 lg:pl-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] lg:pr-[max(2.5rem,calc((100vw-96rem)/2+2.5rem))] pt-8 pb-8 md:pt-12 md:pb-12">
                 <p className="inline-flex items-center gap-2 font-semibold tracking-[0.18em] uppercase mb-5"
-                   style={{ fontFamily: FONT, color: 'white', fontSize: 'clamp(0.75rem, 0.25vw + 0.68rem, 1rem)' }}>
+                   style={{ fontFamily: FONT, color: 'white', fontSize: '0.875rem' }}>
                   Sudbury's Regional Innovation Centre
                 </p>
 
@@ -333,7 +333,7 @@ export default function Home2() {
           }} />
         <section className="relative z-10 py-10 md:py-14" style={{ color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
+            <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL, fontFamily: FONT }}>
               FUNDING OPPORTUNITIES
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-4"

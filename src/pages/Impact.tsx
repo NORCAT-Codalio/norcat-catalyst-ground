@@ -82,8 +82,7 @@ export default function Impact() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow className="text-lg">
-                <BarChart3 className="w-3.5 h-3.5" />
+              <Eyebrow>
                 Greater Sudbury Innovation Ecosystem
               </Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">

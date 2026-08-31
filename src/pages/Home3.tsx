@@ -236,7 +236,7 @@ export default function Home3() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12">
               <div className="lg:col-span-5">
-                <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-5"
+                <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-5"
                    style={{ fontFamily: FONT, color: TEAL }}>
                   What is NORCAT Innovation?
                 </p>
