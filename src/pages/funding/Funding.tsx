@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { ArrowRight, Cpu, Layers, DollarSign, TrendingUp, Rocket, CheckCircle, Compass } from 'lucide-react';
+import { ArrowRight, Cpu, Layers, TrendingUp, Rocket, CheckCircle, Compass } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import citPlaceholder from '@/assets/cit-loopx-wide.jpg.asset.json';
