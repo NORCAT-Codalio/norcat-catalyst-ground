@@ -97,7 +97,7 @@ const Programs = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl xl:max-w-4xl">
-              <Eyebrow><Rocket className="w-3.5 h-3.5" />Programs & Pathways</Eyebrow>
+              <Eyebrow>Programs &amp; Pathways</Eyebrow>
               <Display className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[4.5rem]">
                 Built to Scale<br /><span style={{ color: TEAL }}>Tough-Tech.</span>
               </Display>

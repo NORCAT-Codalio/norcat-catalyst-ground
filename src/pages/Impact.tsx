@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Play, BarChart3 } from 'lucide-react';
+import { ArrowRight, TrendingUp, Play } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import EcosystemDashboard from '@/components/dashboard/EcosystemDashboard';
 import { StoryModal, storyData } from '@/components/StoryModal';
