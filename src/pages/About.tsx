@@ -375,17 +375,17 @@ export default function About() {
               ].map((v) => (
                 <div key={v.title}
                      className="rounded-2xl p-7 md:p-10 flex items-center gap-6 md:gap-8 transition hover:-translate-y-1"
-                     style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.14)' }}>
+                     style={{ background: 'white', border: '1px solid rgba(0,26,77,0.08)', boxShadow: '0 8px 30px -16px rgba(0,26,77,0.18)' }}>
                   <div className="shrink-0 inline-flex items-center justify-center rounded-full size-20 md:size-24"
-                       style={{ border: `1.5px solid ${TEAL}`, background: 'rgba(0,179,152,0.06)' }}>
+                       style={{ border: `1.5px solid ${TEAL}`, background: 'rgba(0,179,152,0.08)' }}>
                     <v.icon className="w-10 h-10 md:w-11 md:h-11" strokeWidth={1.4} style={{ color: TEAL }} />
                   </div>
-                  <div className="flex-1 min-w-0 border-l border-white/15 pl-6 md:pl-8">
-                    <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2 text-white"
-                        style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                  <div className="flex-1 min-w-0 border-l pl-6 md:pl-8" style={{ borderColor: 'rgba(0,26,77,0.08)' }}>
+                    <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2"
+                        style={{ fontFamily: FONT, letterSpacing: '-0.01em', color: NAVY }}>
                       {v.title}
                     </h3>
-                    <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
+                    <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
                       {v.desc}
                     </p>
                   </div>
