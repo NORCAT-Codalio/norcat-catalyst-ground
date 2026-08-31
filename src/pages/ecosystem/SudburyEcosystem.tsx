@@ -252,19 +252,19 @@ const SudburyEcosystem = () => {
                       layout
                       onClick={() => setSelectedOrg(org)}
                       whileHover={{ y: -2 }}
-                      className="text-left bg-white border rounded-xl p-3 transition-all group hover:shadow-xl hover:shadow-[rgba(0,61,165,0.08)] hover:border-[#00B398]"
-                      style={{ borderColor: '#e6effa', color: NAVY, boxShadow: '0 1px 2px rgba(0,61,165,0.03)' }}
+                      className="text-left bg-white border rounded-xl p-3 transition-all group hover:shadow-xl hover:shadow-[rgba(0,0,0,0.06)] hover:border-[#00B398]"
+                      style={{ borderColor: '#e5e7eb', color: NAVY, boxShadow: '0 1px 2px rgba(0,0,0,0.02)' }}
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-blue-50 text-[#003DA5] group-hover:bg-[#00B398] group-hover:text-white">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-gray-100 text-[#4b5563] group-hover:bg-[#00B398] group-hover:text-white">
                           <org.icon className="w-5 h-5" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="font-bold text-sm leading-tight mb-0.5 truncate group-hover:text-[#00B398] transition-colors"
-                              style={{ fontFamily: FONT, color: BLUE }}>
+                              style={{ fontFamily: FONT, color: NAVY }}>
                             {org.name}
                           </h4>
-                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#64748b' }}>
+                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
                             {org.description}
                           </p>
                           <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
