@@ -434,9 +434,12 @@ const News = () => {
     }
   }, [searchParams]);
 
-  const filteredNews = activeCategory === 'All' 
-    ? newsItems 
-    : newsItems.filter(item => item.category === activeCategory);
+  const sortedNews = [...newsItems].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const filteredNews = activeCategory === 'All'
+    ? sortedNews
+    : sortedNews.filter(item => item.category === activeCategory);
 
   useEffect(() => {
     setVisibleCount(9);

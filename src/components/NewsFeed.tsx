@@ -50,7 +50,10 @@ export function NewsFeed() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<string | null>(null);
 
-  const filtered = activeCategory === 'All' ? newsItems : newsItems.filter(i => i.category === activeCategory);
+  const sortedNews = [...newsItems].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const filtered = activeCategory === 'All' ? sortedNews : sortedNews.filter(i => i.category === activeCategory);
 
   return (
     <div>
