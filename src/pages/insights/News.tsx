@@ -366,13 +366,13 @@ Cynthia Furlotte | NORCAT | Marketing et communications | 705-521-8324, poste 29
   },
 ];
 
-// Helper to render markdown-style links in news content
-const renderMarkdownLinks = (text: string): React.ReactNode[] => {
-  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+// Helper to render markdown-style links and bold text in news content
+const renderInlineMarkdown = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
-    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (match) {
-      const [, label, url] = match;
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, label, url] = linkMatch;
       return (
         <a
           key={i}
@@ -382,6 +382,14 @@ const renderMarkdownLinks = (text: string): React.ReactNode[] => {
         >
           {label}
         </a>
+      );
+    }
+    const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
+    if (boldMatch) {
+      return (
+        <strong key={i} className="font-bold" style={{ color: 'hsl(220, 15%, 15%)' }}>
+          {boldMatch[1]}
+        </strong>
       );
     }
     return <span key={i}>{part}</span>;
