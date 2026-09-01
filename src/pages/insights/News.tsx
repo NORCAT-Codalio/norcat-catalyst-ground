@@ -524,9 +524,6 @@ const News = () => {
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
                   Fresh from <span style={{ color: TEAL }}>the North.</span>
                 </h2>
-                <p className="mt-4 text-base sm:text-lg" style={{ color: '#475068' }}>
-                  {filteredNews.length} {filteredNews.length === 1 ? 'story' : 'stories'}
-                </p>
               </div>
             </div>
 
