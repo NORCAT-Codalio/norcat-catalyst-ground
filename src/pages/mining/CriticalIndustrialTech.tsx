@@ -1,4 +1,8 @@
 import { Layout } from '@/components/Layout';
+import sectorManufacturing from '@/assets/cit-sector-manufacturing.jpg';
+import sectorAgrifood from '@/assets/cit-sector-agrifood.jpg';
+import sectorConstruction from '@/assets/cit-sector-construction.jpg';
+import sectorMining from '@/assets/cit-sector-mining.jpg';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
