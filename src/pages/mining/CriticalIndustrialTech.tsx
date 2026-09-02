@@ -406,10 +406,11 @@ const CriticalIndustrialTech = () => {
                         className="rounded-2xl overflow-hidden group flex flex-col"
                         style={{ background: 'white', border: '1px solid #d9dde5' }}
                       >
-                        <div className="p-5 text-center min-h-[4.5rem] flex items-center justify-center">
-                          <h3 className="font-bold text-base leading-snug" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
+                        <div className="px-4 py-4 text-center h-[4.5rem] flex items-center justify-center">
+                          <h3 className="font-bold text-sm sm:text-base leading-tight" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
                         </div>
-                        <div className="relative h-36 md:h-40 overflow-hidden flex-1">
+                        <div className="relative h-36 md:h-40 overflow-hidden">
+
                           <img
                             src={s.image}
                             alt={s.name}
