@@ -72,11 +72,12 @@ const technologies = [
 ];
 
 const sectors = [
-  { name: 'Advanced Manufacturing', icon: Factory },
-  { name: 'Agri-Food', icon: Briefcase },
-  { name: 'Construction', icon: Building2 },
-  { name: 'Mining', icon: TrendingUp },
+  { name: 'Advanced Manufacturing', icon: Factory, image: sectorManufacturing },
+  { name: 'Agri-Food', icon: Briefcase, image: sectorAgrifood },
+  { name: 'Construction', icon: Building2, image: sectorConstruction },
+  { name: 'Mining', icon: TrendingUp, image: sectorMining },
 ];
+
 
 const streams = {
   dc: {
