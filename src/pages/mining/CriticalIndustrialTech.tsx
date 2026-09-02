@@ -395,7 +395,7 @@ const CriticalIndustrialTech = () => {
                   <div className="mx-auto w-px h-5" style={{ background: 'rgba(0,179,152,0.5)' }} />
 
                   {/* Tier 3 - sectors */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
                     {sectors.map((s, i) => (
                       <motion.div
                         key={s.name}
@@ -403,10 +403,16 @@ const CriticalIndustrialTech = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.06 }}
-                        className="rounded-2xl overflow-hidden group"
+                        className="rounded-2xl overflow-hidden group flex flex-col"
                         style={{ background: 'white', border: '1px solid #d9dde5' }}
                       >
-                        <div className="relative h-28 md:h-32 overflow-hidden">
+                        <div className="p-5 pb-4 flex items-start gap-3">
+                          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
+                            <s.icon className="w-5 h-5" style={{ color: TEAL }} />
+                          </div>
+                          <h3 className="font-bold text-base leading-snug pt-1" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
+                        </div>
+                        <div className="relative h-36 md:h-40 overflow-hidden flex-1">
                           <img
                             src={s.image}
                             alt={s.name}
@@ -415,13 +421,6 @@ const CriticalIndustrialTech = () => {
                             height={600}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,26,77,0) 40%, rgba(0,26,77,0.35) 100%)' }} />
-                        </div>
-                        <div className="p-4 flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                            <s.icon className="w-4 h-4" style={{ color: TEAL }} />
-                          </div>
-                          <h3 className="font-bold text-sm leading-tight" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
                         </div>
                       </motion.div>
                     ))}
