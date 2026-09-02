@@ -403,37 +403,30 @@ const CriticalIndustrialTech = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.06 }}
-                        className="rounded-2xl p-5 flex flex-col items-center text-center gap-3"
+                        className="rounded-2xl overflow-hidden group"
                         style={{ background: 'white', border: '1px solid #d9dde5' }}
                       >
-                        <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                          <s.icon className="w-5 h-5" style={{ color: TEAL }} />
+                        <div className="relative h-28 md:h-32 overflow-hidden">
+                          <img
+                            src={s.image}
+                            alt={s.name}
+                            loading="lazy"
+                            width={800}
+                            height={600}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,26,77,0) 40%, rgba(0,26,77,0.35) 100%)' }} />
                         </div>
-                        <h3 className="font-bold text-sm" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
+                        <div className="p-4 flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
+                            <s.icon className="w-4 h-4" style={{ color: TEAL }} />
+                          </div>
+                          <h3 className="font-bold text-sm leading-tight" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
 
-                  {/* Streams note */}
-                  <div className="mt-6 rounded-2xl p-5 md:p-6" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] mb-4" style={{ color: TEAL }}>Two ways to work with a Dev Site</p>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {(['dc', 'tap'] as const).map((key) => {
-                        const s = streams[key];
-                        return (
-                          <div key={key} className="flex items-start gap-3">
-                            <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,61,165,0.08)' }}>
-                              <s.icon className="w-4 h-4" style={{ color: BLUE }} />
-                            </div>
-                            <div>
-                              <p className="text-sm font-bold" style={{ color: NAVY }}>{s.code} · {s.name}</p>
-                              <p className="text-xs mt-1 leading-relaxed" style={{ color: '#6b7387' }}>{s.tagline}</p>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
 
                   {/* Different environment note */}
                   <div className="mt-5 flex items-start gap-4 px-1">
