@@ -406,11 +406,8 @@ const CriticalIndustrialTech = () => {
                         className="rounded-2xl overflow-hidden group flex flex-col"
                         style={{ background: 'white', border: '1px solid #d9dde5' }}
                       >
-                        <div className="p-5 pb-4 flex items-start gap-3">
-                          <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                            <s.icon className="w-5 h-5" style={{ color: TEAL }} />
-                          </div>
-                          <h3 className="font-bold text-base leading-snug pt-1" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
+                        <div className="p-5 pb-4">
+                          <h3 className="font-bold text-base leading-snug" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
                         </div>
                         <div className="relative h-36 md:h-40 overflow-hidden flex-1">
                           <img
