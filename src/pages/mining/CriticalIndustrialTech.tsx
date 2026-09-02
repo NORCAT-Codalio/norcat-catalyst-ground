@@ -341,84 +341,144 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── CRITICAL TECHNOLOGY AREAS + KEY SECTORS (light) ───── */}
+        {/* ───── TECHNOLOGY DEVELOPMENT SITES (light) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <Eyebrow>Key Sectors</Eyebrow>
-              <h2
-                className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
-              >
-                Four sectors<br /><span style={{ color: TEAL }}>powering Ontario.</span>
-              </h2>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                CIT funds the development and commercialization of Ontario-made products and services that integrate critical technologies across four key sectors.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
-              {sectors.map((s, i) => (
-                <motion.div
-                  key={s.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl p-6 flex flex-col items-start gap-4"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
+            <div className="grid gap-10 lg:gap-14 lg:grid-cols-12 items-start">
+              {/* Left column - narrative */}
+              <div className="lg:col-span-4">
+                <Eyebrow>Technology Development Sites</Eyebrow>
+                <h2
+                  className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                    <s.icon className="w-5 h-5" style={{ color: TEAL }} />
-                  </div>
-                  <h3 className="font-bold text-sm md:text-base" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-4 mb-8 md:mb-10">
-              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,179,152,0.45))' }} />
-              <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: TEAL }}>
-                Technology Streams
-              </p>
-              <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(0,179,152,0.45), transparent)' }} />
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-              {technologies.map((tech, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl p-6 transition-colors flex flex-col"
-                  style={{ background: PAPER, border: '1px solid #d9dde5' }}
+                  Real-world places<br /><span style={{ color: TEAL }}>to put technology to work.</span>
+                </h2>
+                <p className="text-base leading-relaxed mb-4" style={{ color: '#475068' }}>
+                  Technology Development Sites (Dev Sites) are specialized facilities across Ontario where eligible SMEs can
+                  develop, test and demonstrate critical technology solutions in environments that reflect their target market.
+                </p>
+                <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
+                  Each site brings different infrastructure, expertise and sector capabilities.
+                </p>
+                <a
+                  href="https://www.oc-innovation.ca/programs/critical-industrial-technologies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+                  style={{ background: 'rgba(0,179,152,0.8)', color: 'white' }}
                 >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: 'rgba(0,179,152,0.12)' }}
-                  >
-                    <tech.icon className="w-5 h-5" style={{ color: TEAL }} />
+                  Explore all CIT Dev Sites
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+
+              {/* Right column - hierarchy diagram */}
+              <div className="lg:col-span-8">
+                <div className="rounded-3xl p-5 md:p-8" style={{ background: PAPER, border: '1px solid #d9dde5' }}>
+                  {/* Tier 1 */}
+                  <div className="rounded-2xl px-6 py-4 text-center" style={{ background: NAVY }}>
+                    <p className="text-sm font-black uppercase tracking-[0.18em] text-white">CIT Initiative</p>
+                    <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>Led by the Ontario Centre of Innovation (OCI)</p>
                   </div>
-                  <h3 className="text-sm md:text-[15px] font-bold leading-snug mb-4" style={{ fontFamily: FONT, color: NAVY }}>
-                    {tech.name}
-                  </h3>
-                  <div className="mt-auto flex flex-wrap gap-1.5">
-                    {tech.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
-                        style={{ background: 'white', color: BLUE, border: '1px solid #d9dde5' }}
+                  <div className="mx-auto w-px h-5" style={{ background: 'rgba(0,179,152,0.5)' }} />
+                  {/* Tier 2 */}
+                  <div className="rounded-2xl px-6 py-4 text-center" style={{ background: 'linear-gradient(90deg,#00806E,#00B398)' }}>
+                    <p className="text-sm font-black uppercase tracking-[0.18em] text-white">Dev Sites Across Ontario</p>
+                    <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.85)' }}>Specialized environments for testing, validation and demonstration</p>
+                  </div>
+                  <div className="mx-auto w-px h-5" style={{ background: 'rgba(0,179,152,0.5)' }} />
+
+                  {/* Tier 3 - sectors */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    {sectors.map((s, i) => (
+                      <motion.div
+                        key={s.name}
+                        initial={{ opacity: 0, y: 18 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.06 }}
+                        className="rounded-2xl p-5 flex flex-col items-center text-center gap-3"
+                        style={{ background: 'white', border: '1px solid #d9dde5' }}
                       >
-                        {tag}
-                      </span>
+                        <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
+                          <s.icon className="w-5 h-5" style={{ color: TEAL }} />
+                        </div>
+                        <h3 className="font-bold text-sm" style={{ fontFamily: FONT, color: NAVY }}>{s.name}</h3>
+                      </motion.div>
                     ))}
                   </div>
-                </motion.div>
-              ))}
+
+                  {/* Streams note */}
+                  <div className="mt-6 rounded-2xl p-5 md:p-6" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] mb-4" style={{ color: TEAL }}>Two ways to work with a Dev Site</p>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {(['dc', 'tap'] as const).map((key) => {
+                        const s = streams[key];
+                        return (
+                          <div key={key} className="flex items-start gap-3">
+                            <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,61,165,0.08)' }}>
+                              <s.icon className="w-4 h-4" style={{ color: BLUE }} />
+                            </div>
+                            <div>
+                              <p className="text-sm font-bold" style={{ color: NAVY }}>{s.code} · {s.name}</p>
+                              <p className="text-xs mt-1 leading-relaxed" style={{ color: '#6b7387' }}>{s.tagline}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Different environment note */}
+                  <div className="mt-5 flex items-start gap-4 px-1">
+                    <Network className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: BLUE }} />
+                    <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                      <strong style={{ color: NAVY }}>Need a different environment?</strong> NORCAT is one Technology Development Site
+                      within the broader CIT network. If your technology is better suited to another facility or sector, we can help
+                      point you in the right direction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Critical technologies strip */}
+            <div className="mt-14 md:mt-20">
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
+                <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,179,152,0.45))' }} />
+                <p className="text-sm font-semibold uppercase tracking-[0.18em]" style={{ color: TEAL }}>
+                  Six Critical Technologies
+                </p>
+                <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(0,179,152,0.45), transparent)' }} />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+                {technologies.map((tech, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="group rounded-2xl p-5 flex flex-col items-center text-center gap-3 transition-transform hover:-translate-y-1"
+                    style={{ background: PAPER, border: '1px solid #d9dde5' }}
+                  >
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                      style={{ background: 'rgba(0,179,152,0.12)' }}
+                    >
+                      <tech.icon className="w-5 h-5" style={{ color: TEAL }} />
+                    </div>
+                    <h3 className="text-sm font-bold leading-snug" style={{ fontFamily: FONT, color: NAVY }}>
+                      {tech.name}
+                    </h3>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
+
 
 
         {/* ───── PROGRAM STREAMS - TABS (light) ───── */}
