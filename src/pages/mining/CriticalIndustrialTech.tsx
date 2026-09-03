@@ -240,22 +240,27 @@ const CriticalIndustrialTech = () => {
                   </div>
 
                   <div className="mt-8 pt-6" style={{ borderTop: '1px solid #e8eaee' }}>
-                    <h3 className="font-black uppercase text-sm tracking-tight mb-4" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                    <h3 className="text-center font-black uppercase text-sm tracking-tight mb-5" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                       NORCAT as a Technology Development Site
                     </h3>
-                    <ul className="space-y-2.5">
+                    <div className="grid grid-cols-2 gap-3">
                       {[
-                        'Real-world underground mining environment for testing',
-                        'No-cost access for qualifying SMEs',
-                        'Expert mentorship from mining industry professionals',
-                        'Accelerated path to commercialization',
+                        { label: 'Real-world test environment', sub: 'Underground mining conditions' },
+                        { label: 'No-cost site access', sub: 'For qualifying SMEs' },
+                        { label: 'Expert mentorship', sub: 'From mining professionals' },
+                        { label: 'Faster commercialization', sub: 'Accelerated path to market' },
                       ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: TEAL }} />
-                          <span className="text-sm leading-snug" style={{ color: '#475068' }}>{item}</span>
-                        </li>
+                        <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: PAPER }}>
+                          <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(0,179,152,0.12)' }}>
+                            <Check className="w-3.5 h-3.5" style={{ color: TEAL }} />
+                          </div>
+                          <div>
+                            <p className="text-sm font-bold leading-snug" style={{ color: NAVY }}>{item.label}</p>
+                            <p className="text-xs leading-snug mt-0.5" style={{ color: '#6b7387' }}>{item.sub}</p>
+                          </div>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </div>
