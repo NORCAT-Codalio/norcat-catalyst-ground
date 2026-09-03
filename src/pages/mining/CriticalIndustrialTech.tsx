@@ -608,7 +608,7 @@ const CriticalIndustrialTech = () => {
                         <button
                           type="button"
                           onClick={() => setExpanded(null)}
-                          className="ml-auto p-2 rounded-full transition-colors hover:bg-white/10"
+                          className="relative ml-auto w-10 h-10 rounded-full transition-colors hover:bg-white/10 flex items-center justify-center shrink-0"
                           aria-label="Close"
                         >
                           <span className="block w-5 h-0.5 rotate-45 bg-white absolute" />
