@@ -260,16 +260,16 @@ const CriticalIndustrialTech = () => {
                     <div className="grid grid-cols-2 gap-3 md:gap-4 items-stretch">
                       {[
                         { label: 'Real-world testing', sub: 'Underground mining environment' },
+                        { label: '3KM of underground Drifts', sub: '' },
                         { label: 'No-cost access', sub: 'For qualifying SMEs' },
                         { label: 'Expert mentorship', sub: 'From mining professionals' },
-                        { label: 'Faster commercialization', sub: 'Accelerated path to market' },
                       ].map((item, i) => (
                         <div key={i} className="flex flex-col items-center justify-center text-center h-full p-3 md:p-4 rounded-xl" style={{ background: PAPER, border: '1px solid #e8eaee' }}>
                           <div className="w-9 h-9 rounded-full flex items-center justify-center mb-2.5" style={{ background: 'rgba(0,179,152,0.12)' }}>
                             <Check className="w-4 h-4" style={{ color: TEAL }} />
                           </div>
                           <p className="text-xs md:text-sm font-bold leading-snug" style={{ color: NAVY }}>{item.label}</p>
-                          <p className="text-[11px] md:text-xs leading-snug mt-0.5" style={{ color: '#6b7387' }}>{item.sub}</p>
+                          {item.sub && <p className="text-[11px] md:text-xs leading-snug mt-0.5" style={{ color: '#6b7387' }}>{item.sub}</p>}
                         </div>
                       ))}
                     </div>
