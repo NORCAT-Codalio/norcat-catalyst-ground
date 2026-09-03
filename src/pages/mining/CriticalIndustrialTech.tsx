@@ -225,7 +225,7 @@ const CriticalIndustrialTech = () => {
                   It brings together funding, specialized testing environments, industry partners, commercialization support and talent development to help Ontario companies move critical technologies into real-world use.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                  As part of the initiative, the NORCAT Underground Centre is a <strong>Technology Development Site (TDS)</strong> providing mining technology companies with a real-world environment to develop, test and validate their solutions.
+                  As part of the initiative, the <Link to="/mining/underground-centre" className="font-semibold underline underline-offset-2 hover:text-[#00B398]" style={{ color: NAVY }}>NORCAT Underground Centre</Link> is a <strong>Technology Development Site (TDS)</strong> providing mining technology companies with a real-world environment to develop, test and validate their solutions.
                 </p>
               </div>
 
