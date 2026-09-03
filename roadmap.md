@@ -1,9 +1,10 @@
 # Task Roadmap
 
 ## In Progress
-- [ ] CIT page: link Ontario logo to https://www.ontario.ca/page/critical-technology-initiatives
+- [ ] CIT page: revert header buttons, move stats strip under About section
 
 ## Completed
+- [x] CIT page: link Ontario logo to https://www.ontario.ca/page/critical-technology-initiatives
 - [x] CIT page: change section title to "What is CIT?"
 - [x] CIT page: revert eyebrow to "About the Initiative"
 - [x] CIT page: bold "Technology Development Site (TDS)" in About copy
