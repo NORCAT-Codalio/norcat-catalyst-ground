@@ -337,6 +337,14 @@ const CriticalIndustrialTech = () => {
                     </motion.div>
                   ))}
                 </div>
+
+                <Link
+                  to="/mining/underground-centre"
+                  className="group inline-flex items-center gap-2 mt-8 px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                >
+                  Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </Link>
               </div>
 
               <motion.div
