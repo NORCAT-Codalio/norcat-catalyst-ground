@@ -257,14 +257,14 @@ const CriticalIndustrialTech = () => {
                       </h3>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 md:gap-4">
+                    <div className="grid grid-cols-2 gap-3 md:gap-4 items-stretch">
                       {[
                         { label: 'Real-world testing', sub: 'Underground mining environment' },
                         { label: 'No-cost access', sub: 'For qualifying SMEs' },
                         { label: 'Expert mentorship', sub: 'From mining professionals' },
                         { label: 'Faster commercialization', sub: 'Accelerated path to market' },
                       ].map((item, i) => (
-                        <div key={i} className="flex flex-col items-center text-center p-3 md:p-4 rounded-xl" style={{ background: PAPER, border: '1px solid #e8eaee' }}>
+                        <div key={i} className="flex flex-col items-center justify-center text-center h-full p-3 md:p-4 rounded-xl" style={{ background: PAPER, border: '1px solid #e8eaee' }}>
                           <div className="w-9 h-9 rounded-full flex items-center justify-center mb-2.5" style={{ background: 'rgba(0,179,152,0.12)' }}>
                             <Check className="w-4 h-4" style={{ color: TEAL }} />
                           </div>
