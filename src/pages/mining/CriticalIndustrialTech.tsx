@@ -274,7 +274,9 @@ const CriticalIndustrialTech = () => {
 
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
                     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                      <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain" />
+                      <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer">
+                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain transition-transform hover:scale-[1.02]" />
+                      </a>
                       <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain" />
                     </div>
                   </div>
