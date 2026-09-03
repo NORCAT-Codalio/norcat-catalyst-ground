@@ -153,7 +153,7 @@ const CriticalIndustrialTech = () => {
       <div style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
 
         {/* ───── HERO ───── */}
-        <section className="relative overflow-hidden flex items-center py-16 md:py-24">
+        <section className="relative overflow-hidden flex items-center py-10 md:py-14">
           <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)` }} />
 
           {/* logo background */}
@@ -207,7 +207,7 @@ const CriticalIndustrialTech = () => {
 
 
         {/* ───── ABOUT + PARTNERS (light) ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-10 md:pt-14 pb-12 md:pb-16" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6">
@@ -279,7 +279,7 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── STATS STRIP ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-4 md:pt-6 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((s, i) => (
