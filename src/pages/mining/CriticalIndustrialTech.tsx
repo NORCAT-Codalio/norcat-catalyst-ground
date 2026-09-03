@@ -222,46 +222,53 @@ const CriticalIndustrialTech = () => {
               </div>
 
               <div className="lg:col-span-6">
-                <div className="rounded-2xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <div className="flex flex-col items-center text-center">
-                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer">
-                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain mb-6 transition-transform hover:scale-[1.02]" />
+                <div className="rounded-2xl overflow-hidden" style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 24px 60px -30px rgba(0,26,77,0.18)' }}>
+                  {/* Logos */}
+                  <div className="flex flex-col items-center p-6 md:p-8 pb-5">
+                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="mb-6 transition-transform hover:scale-[1.02]">
+                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain" />
                     </a>
 
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-4" style={{ color: '#6b7387' }}>Program Partners</p>
-                    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
-                      <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer">
-                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-12 object-contain transition-transform hover:scale-[1.02]" />
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: '#6b7387' }}>Program Partners</p>
+                    <div className="flex items-center justify-center gap-4 md:gap-6">
+                      <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
+                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-10 md:h-11 object-contain" />
                       </a>
-                      <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer">
-                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-10 object-contain transition-transform hover:scale-[1.02]" />
+                      <div className="w-px h-7" style={{ background: '#d9dde5' }} />
+                      <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
+                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-9 md:h-10 object-contain" />
                       </a>
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6" style={{ borderTop: '1px solid #e8eaee' }}>
-                    <h3 className="text-center font-black uppercase text-sm tracking-tight mb-5" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                      NORCAT as a Technology Development Site
-                    </h3>
-                    <div className="grid grid-cols-2 gap-3">
+                  {/* Content */}
+                  <div className="px-6 md:px-8 pb-8">
+                    <div className="text-center mb-6 md:mb-7">
+                      <h3 className="font-black uppercase text-lg md:text-xl leading-tight" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                        NORCAT as a Technology<br /><span style={{ color: TEAL }}>Development Site</span>
+                      </h3>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
                       {[
-                        { label: 'Real-world test environment', sub: 'Underground mining conditions' },
-                        { label: 'No-cost site access', sub: 'For qualifying SMEs' },
+                        { label: 'Real-world testing', sub: 'Underground mining environment' },
+                        { label: 'No-cost access', sub: 'For qualifying SMEs' },
                         { label: 'Expert mentorship', sub: 'From mining professionals' },
                         { label: 'Faster commercialization', sub: 'Accelerated path to market' },
                       ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: PAPER }}>
-                          <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(0,179,152,0.12)' }}>
-                            <Check className="w-3.5 h-3.5" style={{ color: TEAL }} />
+                        <div key={i} className="flex flex-col items-center text-center p-3 md:p-4 rounded-xl" style={{ background: PAPER, border: '1px solid #e8eaee' }}>
+                          <div className="w-9 h-9 rounded-full flex items-center justify-center mb-2.5" style={{ background: 'rgba(0,179,152,0.12)' }}>
+                            <Check className="w-4 h-4" style={{ color: TEAL }} />
                           </div>
-                          <div>
-                            <p className="text-sm font-bold leading-snug" style={{ color: NAVY }}>{item.label}</p>
-                            <p className="text-xs leading-snug mt-0.5" style={{ color: '#6b7387' }}>{item.sub}</p>
-                          </div>
+                          <p className="text-xs md:text-sm font-bold leading-snug" style={{ color: NAVY }}>{item.label}</p>
+                          <p className="text-[11px] md:text-xs leading-snug mt-0.5" style={{ color: '#6b7387' }}>{item.sub}</p>
                         </div>
                       ))}
                     </div>
                   </div>
+
+                  {/* Footer accent */}
+                  <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${TEAL}, #4DD4C1)` }} />
                 </div>
               </div>
             </div>
