@@ -183,26 +183,23 @@ const CriticalIndustrialTech = () => {
                 NORCAT delivers this initiative as a Technology Development Site through the NORCAT Underground Centre.
               </p>
 
-              <div className="mt-9">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {stats.map((s, i) => (
-                    <motion.div
-                      key={s.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="flex items-center gap-4 pl-4"
-                      style={{ borderLeft: `2px solid ${TEAL}` }}
-                    >
-                      <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
-                      <div>
-                        <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: 'white' }}>{s.value}</p>
-                        <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: 'rgba(255,255,255,0.75)' }}>{s.label}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://www.oc-innovation.ca/programs/cit/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                >
+                  Learn More at OCI <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </a>
+                <Link
+                  to="/apply"
+                  className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                  style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
+                >
+                  Apply Through NORCAT <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </Link>
               </div>
             </div>
           </div>
