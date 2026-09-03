@@ -491,163 +491,183 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── PROGRAM STREAMS - EXPANDABLE CARDS ───── */}
-        <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
+        {/* ───── PROGRAM STREAMS - CARD + POPOUT ───── */}
+        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-10 md:mb-14">
-              <Eyebrow color={TEAL}>Two Program Streams</Eyebrow>
+              <Eyebrow color={TEAL}>Choose your pathway.</Eyebrow>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                Choose your<br /><span style={{ color: TEAL }}>pathway.</span>
+                Two Ways to <span style={{ color: TEAL }}>Move Forward.</span>
               </h2>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                CIT delivers two distinct streams through NORCAT's Technology Development Site. Click a card to learn more about that pathway.
+                CIT delivers two distinct streams through NORCAT's Technology Development Site. Choose the pathway that fits your stage.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              {(['dc', 'tap'] as const).map((key) => {
+            <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+              {(['dc', 'tap'] as const).map((key, idx) => {
                 const s = streams[key];
-                const open = expanded === key;
                 const Icon = s.icon;
                 return (
                   <motion.div
                     key={key}
-                    layout
-                    className="rounded-2xl overflow-hidden transition-all duration-300"
-                    style={{
-                      background: open ? `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` : 'white',
-                      border: open ? `1px solid ${BORDER}` : '1px solid #d9dde5',
-                      boxShadow: open ? '0 24px 60px -30px rgba(0,26,77,0.35)' : '0 4px 20px -8px rgba(0,26,77,0.12)',
-                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="rounded-2xl p-6 md:p-8 flex flex-col"
+                    style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 4px 24px -8px rgba(0,26,77,0.10)' }}
                   >
+                    <div className="flex items-start gap-4 md:gap-5 mb-5">
+                      <div
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shrink-0"
+                        style={{ background: NAVY }}
+                      >
+                        <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: TEAL }} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                          {s.name}
+                        </h3>
+                        <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                          {key === 'dc'
+                            ? 'For Ontario SMEs advancing and commercializing new solutions across 6 critical technologies.'
+                            : 'For Ontario SMEs looking to access specialized facilities, equipment or expertise to advance their technology.'}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-3 mt-auto pt-5 md:pt-6 mb-5" style={{ borderTop: '1px solid #e8eaef' }}>
+                      {[
+                        { label: 'Funding', value: key === 'dc' ? 'up to $200K' : 'Up to $75K' },
+                        { label: 'Match', value: key === 'dc' ? '(Varies)' : '(Varies)' },
+                        { label: 'Duration', value: key === 'dc' ? 'Up to 18 months' : 'Up to 6 months' },
+                      ].map((m) => (
+                        <div key={m.label} className="text-left">
+                          <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: '#6b7387' }}>{m.label}</p>
+                          <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: NAVY }}>{m.value}</p>
+                        </div>
+                      ))}
+                    </div>
+
                     <button
                       type="button"
-                      onClick={() => setExpanded(open ? null : key)}
-                      className="w-full text-left p-6 md:p-8 group"
-                      aria-expanded={open}
+                      onClick={() => setExpanded(key)}
+                      className="self-start flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#00B398]"
+                      style={{ color: TEAL }}
                     >
-                      <div className="flex items-start gap-4 md:gap-5">
-                        <div
-                          className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 transition-colors"
-                          style={{ background: open ? 'rgba(255,255,255,0.12)' : 'rgba(0,179,152,0.10)' }}
-                        >
-                          <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: open ? TEAL : '#00B398' }} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
-                            <span
-                              className="inline-flex items-center justify-center w-10 h-6 rounded text-[10px] font-black uppercase tracking-wider"
-                              style={{
-                                background: open ? 'rgba(0,179,152,0.20)' : '#001A4D',
-                                color: open ? TEAL : 'white',
-                              }}
-                            >
-                              {s.code}
-                            </span>
-                            <span className="text-xs md:text-sm font-semibold uppercase tracking-wider" style={{ color: open ? 'rgba(255,255,255,0.72)' : '#6b7387' }}>
-                              Stream
-                            </span>
-                          </div>
-                          <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: open ? 'white' : NAVY, letterSpacing: '-0.01em' }}>
-                            {s.name}
-                          </h3>
-                          <p className="text-sm md:text-base leading-relaxed" style={{ color: open ? 'rgba(255,255,255,0.85)' : '#475068' }}>
-                            {s.tagline}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Quick stats */}
-                      <div className="grid grid-cols-3 gap-2 md:gap-3 mt-5 md:mt-6 pt-5 md:pt-6" style={{ borderTop: open ? '1px solid rgba(255,255,255,0.12)' : '1px solid #e8eaef' }}>
-                        {[
-                          { label: 'Funding', value: s.funding },
-                          { label: 'Match', value: s.match },
-                          { label: 'Duration', value: s.duration },
-                        ].map((m) => (
-                          <div key={m.label} className="text-left">
-                            <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: open ? TEAL : '#6b7387' }}>{m.label}</p>
-                            <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: open ? 'white' : NAVY }}>{m.value}</p>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="mt-5 md:mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider" style={{ color: open ? TEAL : '#003DA5' }}>
-                        <span>{open ? 'Show less' : 'Learn more'}</span>
-                        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                          <ArrowRight className="w-4 h-4 rotate-90" />
-                        </motion.span>
-                      </div>
+                      View Program Details <ArrowRight className="w-4 h-4" />
                     </button>
-
-                    <AnimatePresence>
-                      {open && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: 'easeInOut' }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-6 md:px-8 pb-8 md:pb-10" style={{ color: 'white' }}>
-                            <div className="pt-2 pb-6" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-                              <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] mb-3" style={{ color: TEAL }}>
-                                <span className="w-2 h-2 rounded-full" style={{ background: TEAL }} />
-                                Stream overview
-                              </span>
-                              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                                {s.overview}
-                              </p>
-                            </div>
-
-                            <div className="grid lg:grid-cols-2 gap-4 md:gap-5">
-                              <div className="rounded-2xl p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
-                                <Eyebrow className="!text-teal-300" color={TEAL}>Eligibility</Eyebrow>
-                                <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: 'white', fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                                  Who qualifies.
-                                </h4>
-                                <ul className="space-y-3">
-                                  {s.eligibility.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3">
-                                      <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.18)', border: '1px solid rgba(0,179,152,0.35)' }}>
-                                        <span className="font-black text-xs" style={{ color: TEAL }}>{i + 1}</span>
-                                      </div>
-                                      <div>
-                                        <p className="font-bold text-sm" style={{ color: 'white' }}>{item.title}</p>
-                                        <p className="text-sm leading-relaxed mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{item.desc}</p>
-                                      </div>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-
-                              <div className="rounded-2xl p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
-                                <Eyebrow className="!text-teal-300" color={TEAL}>Project Requirements</Eyebrow>
-                                <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: 'white', fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                                  What projects look like.
-                                </h4>
-                                <ul className="space-y-3">
-                                  {s.projectRules.map((req, i) => (
-                                    <li key={i} className="flex items-start gap-3">
-                                      <Check className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                                      <div>
-                                        <p className="font-bold text-sm" style={{ color: 'white' }}>{req.title}</p>
-                                        <p className="text-sm leading-relaxed mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{req.description}</p>
-                                      </div>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                   </motion.div>
                 );
               })}
             </div>
           </div>
         </section>
+
+        {/* ───── PROGRAM POPOUT MODAL ───── */}
+        <AnimatePresence>
+          {expanded && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+              style={{ background: 'rgba(0,26,77,0.72)' }}
+              onClick={() => setExpanded(null)}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: 20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl p-6 md:p-10"
+                style={{ background: NAVY, color: 'white' }}
+              >
+                {(() => {
+                  const s = streams[expanded];
+                  const Icon = s.icon;
+                  return (
+                    <>
+                      <div className="flex items-start gap-4 md:gap-6 mb-8 md:mb-10">
+                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.15)' }}>
+                          <Icon className="w-7 h-7 md:w-8 md:h-8" style={{ color: TEAL }} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                            <span className="inline-flex items-center justify-center px-2.5 h-6 rounded text-[10px] font-black uppercase tracking-wider" style={{ background: 'rgba(0,179,152,0.20)', color: TEAL }}>
+                              {s.code}
+                            </span>
+                            <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.72)' }}>Stream</span>
+                          </div>
+                          <h3 className="font-black uppercase text-2xl md:text-3xl" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                            {s.name}
+                          </h3>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setExpanded(null)}
+                          className="relative ml-auto w-10 h-10 rounded-full transition-colors hover:bg-white/10 flex items-center justify-center shrink-0"
+                          aria-label="Close"
+                        >
+                          <span className="block w-5 h-0.5 rotate-45 bg-white absolute" />
+                          <span className="block w-5 h-0.5 -rotate-45 bg-white absolute" />
+                        </button>
+                      </div>
+
+                      <div className="pt-6 pb-8" style={{ borderTop: '1px solid rgba(255,255,255,0.12)', borderBottom: '1px solid rgba(255,255,255,0.12)' }}>
+                        <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                          {s.overview}
+                        </p>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-10">
+                        <div className="rounded-2xl p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
+                          <Eyebrow className="!text-teal-300" color={TEAL}>Eligibility</Eyebrow>
+                          <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ fontFamily: FONT, color: 'white', letterSpacing: '-0.01em' }}>
+                            Who qualifies.
+                          </h4>
+                          <ul className="space-y-3">
+                            {s.eligibility.map((item, i) => (
+                              <li key={i} className="flex items-start gap-3">
+                                <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.18)', border: '1px solid rgba(0,179,152,0.35)' }}>
+                                  <span className="font-black text-xs" style={{ color: TEAL }}>{i + 1}</span>
+                                </div>
+                                <div>
+                                  <p className="font-bold text-sm" style={{ color: 'white' }}>{item.title}</p>
+                                  <p className="text-sm leading-relaxed mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{item.desc}</p>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="rounded-2xl p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
+                          <Eyebrow className="!text-teal-300" color={TEAL}>Project Requirements</Eyebrow>
+                          <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ fontFamily: FONT, color: 'white', letterSpacing: '-0.01em' }}>
+                            What projects look like.
+                          </h4>
+                          <ul className="space-y-3">
+                            {s.projectRules.map((req, i) => (
+                              <li key={i} className="flex items-start gap-3">
+                                <Check className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                                <div>
+                                  <p className="font-bold text-sm" style={{ color: 'white' }}>{req.title}</p>
+                                  <p className="text-sm leading-relaxed mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{req.description}</p>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })()}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* ───── HOW TO APPLY + VIDEO (light) ───── */}
         <section className="py-20 md:py-32 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
