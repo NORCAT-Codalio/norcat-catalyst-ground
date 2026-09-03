@@ -307,7 +307,7 @@ const CriticalIndustrialTech = () => {
                   href="https://www.oc-innovation.ca/programs/critical-industrial-technologies/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+                  className="hidden lg:inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
                   style={{ background: 'rgba(0,179,152,0.8)', color: 'white' }}
                 >
                   Explore all CIT Dev Sites
@@ -362,13 +362,25 @@ const CriticalIndustrialTech = () => {
 
 
                   {/* Different environment note */}
-                  <div className="mt-5 flex items-start gap-4 px-1">
-                    <Network className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: BLUE }} />
-                    <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
-                      <strong style={{ color: NAVY }}>Need a different environment?</strong> NORCAT is one Technology Development Site
-                      within the broader CIT network. If your technology is better suited to another facility or sector, we can help
-                      point you in the right direction.
-                    </p>
+                  <div className="mt-5 flex flex-col gap-4 px-1">
+                    <div className="flex items-start gap-4">
+                      <Network className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: BLUE }} />
+                      <p className="text-sm leading-relaxed" style={{ color: '#475068' }}>
+                        <strong style={{ color: NAVY }}>Need a different environment?</strong> NORCAT is one Technology Development Site
+                        within the broader CIT network. If your technology is better suited to another facility or sector, we can help
+                        point you in the right direction.
+                      </p>
+                    </div>
+                    <a
+                      href="https://www.oc-innovation.ca/programs/critical-industrial-technologies/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="lg:hidden inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+                      style={{ background: 'rgba(0,179,152,0.8)', color: 'white' }}
+                    >
+                      Explore all CIT Dev Sites
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
               </div>
