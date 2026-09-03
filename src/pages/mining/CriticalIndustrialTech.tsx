@@ -208,30 +208,6 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── STATS STRIP ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex items-center gap-4 pl-4"
-                  style={{ borderLeft: `2px solid ${TEAL}` }}
-                >
-                  <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
-                  <div>
-                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.value}</p>
-                    <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ───── ABOUT + PARTNERS (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
