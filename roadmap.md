@@ -1,9 +1,9 @@
 # Task Roadmap
 
 ## In Progress
-- [ ] CIT page: revert header buttons, move stats strip under About section
 
 ## Completed
+- [x] CIT page: revert header buttons, move stats strip under About section
 - [x] CIT page: link Ontario logo to https://www.ontario.ca/page/critical-technology-initiatives
 - [x] CIT page: change section title to "What is CIT?"
 - [x] CIT page: revert eyebrow to "About the Initiative"
