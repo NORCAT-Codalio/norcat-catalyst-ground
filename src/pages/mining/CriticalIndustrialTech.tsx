@@ -22,8 +22,6 @@ import {
   Briefcase,
   FlaskConical,
   Target,
-  DollarSign,
-  Users,
   Building2,
   TrendingUp,
   Lightbulb,
@@ -136,13 +134,6 @@ const streams = {
     ],
   },
 } as const;
-
-const stats = [
-  { value: '$55.8M', label: 'Total Investment', icon: DollarSign },
-  { value: '$21.7M', label: 'CIT Investment', icon: TrendingUp },
-  { value: '185', label: 'Projects Supported', icon: Building2 },
-  { value: '194+', label: 'Ontario Companies', icon: Users },
-];
 
 const CriticalIndustrialTech = () => {
   const [activeStream, setActiveStream] = useState<'dc' | 'tap'>('dc');
@@ -395,33 +386,6 @@ const CriticalIndustrialTech = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-
-
-        {/* ───── STATS STRIP ───── */}
-        <section className="pt-2 md:pt-3 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex items-center gap-4 pl-4"
-                  style={{ borderLeft: `2px solid ${TEAL}` }}
-                >
-                  <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
-                  <div>
-                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.value}</p>
-                    <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
