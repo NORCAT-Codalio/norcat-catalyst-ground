@@ -277,7 +277,9 @@ const CriticalIndustrialTech = () => {
                       <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer">
                         <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain transition-transform hover:scale-[1.02]" />
                       </a>
-                      <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain" />
+                      <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer">
+                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain transition-transform hover:scale-[1.02]" />
+                      </a>
                     </div>
                   </div>
                 </div>
