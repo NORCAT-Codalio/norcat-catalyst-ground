@@ -268,7 +268,9 @@ const CriticalIndustrialTech = () => {
               <div className="lg:col-span-6">
                 <div className="rounded-2xl p-8 md:p-12" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                   <div className="flex flex-col items-center text-center">
-                    <img src={citLogo} alt="Critical Industrial Technologies" className="h-24 md:h-32 object-contain mb-8" />
+                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer">
+                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-24 md:h-32 object-contain mb-8 transition-transform hover:scale-[1.02]" />
+                    </a>
 
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
                     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
