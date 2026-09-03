@@ -85,6 +85,7 @@ const streams = {
   dc: {
     code: 'DC',
     name: 'Development & Commercialization',
+    shortName: 'Development & Commercialization',
     icon: FlaskConical,
     tagline: 'Develop, test, validate, and showcase new Ontario-made solutions.',
     funding: '$50,000 – $200,000',
