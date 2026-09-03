@@ -492,14 +492,19 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── PROGRAM STREAMS - CARD + POPOUT ───── */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+        <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 50%, ${TEAL} 100%)`, color: 'white' }}>
+          {/* subtle radial glow */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.22), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+          }} />
+
+          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-10 md:mb-14">
-              <Eyebrow color={TEAL}>Choose your pathway.</Eyebrow>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
+              <Eyebrow color="white">Choose your pathway.</Eyebrow>
+              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl" style={{ fontFamily: FONT, color: 'white', letterSpacing: '-0.02em' }}>
                 Two Ways to <span style={{ color: TEAL }}>Move Forward.</span>
               </h2>
-              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
+              <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 CIT delivers two distinct streams through NORCAT's Technology Development Site. Choose the pathway that fits your stage.
               </p>
             </div>
@@ -516,20 +521,25 @@ const CriticalIndustrialTech = () => {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
                     className="rounded-2xl p-6 md:p-8 flex flex-col"
-                    style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 4px 24px -8px rgba(0,26,77,0.10)' }}
+                    style={{
+                      background: 'rgba(255,255,255,0.10)',
+                      border: '1px solid rgba(255,255,255,0.22)',
+                      backdropFilter: 'blur(12px)',
+                      boxShadow: '0 24px 60px -30px rgba(0,26,77,0.35)',
+                    }}
                   >
                     <div className="flex items-start gap-4 md:gap-5 mb-5">
                       <div
                         className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shrink-0"
-                        style={{ background: NAVY }}
+                        style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)' }}
                       >
-                        <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: TEAL }} />
+                        <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: 'white' }} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                        <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: 'white', letterSpacing: '-0.01em' }}>
                           {s.name}
                         </h3>
-                        <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                        <p className="text-sm md:text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                           {key === 'dc'
                             ? 'For Ontario SMEs advancing and commercializing new solutions across 6 critical technologies.'
                             : 'For Ontario SMEs looking to access specialized facilities, equipment or expertise to advance their technology.'}
@@ -537,15 +547,15 @@ const CriticalIndustrialTech = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 mt-auto pt-5 md:pt-6 mb-5" style={{ borderTop: '1px solid #e8eaef' }}>
+                    <div className="grid grid-cols-3 gap-3 mt-auto pt-5 md:pt-6 mb-5" style={{ borderTop: '1px solid rgba(255,255,255,0.18)' }}>
                       {[
                         { label: 'Funding', value: key === 'dc' ? 'up to $200K' : 'Up to $75K' },
                         { label: 'Match', value: key === 'dc' ? '(Varies)' : '(Varies)' },
                         { label: 'Duration', value: key === 'dc' ? 'Up to 18 months' : 'Up to 6 months' },
                       ].map((m) => (
                         <div key={m.label} className="text-left">
-                          <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: '#6b7387' }}>{m.label}</p>
-                          <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: NAVY }}>{m.value}</p>
+                          <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: 'rgba(255,255,255,0.65)' }}>{m.label}</p>
+                          <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: 'white' }}>{m.value}</p>
                         </div>
                       ))}
                     </div>
@@ -553,10 +563,10 @@ const CriticalIndustrialTech = () => {
                     <button
                       type="button"
                       onClick={() => setExpanded(key)}
-                      className="self-start flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#00B398]"
+                      className="self-start flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-wider transition-colors hover:text-white group"
                       style={{ color: TEAL }}
                     >
-                      View Program Details <ArrowRight className="w-4 h-4" />
+                      View Program Details <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   </motion.div>
                 );
