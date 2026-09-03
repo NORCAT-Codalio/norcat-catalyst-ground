@@ -113,6 +113,7 @@ const streams = {
   tap: {
     code: 'TAP',
     name: 'Technology Access Program',
+    shortName: 'Technology Access',
     icon: Target,
     tagline: 'No-cost access to NORCAT Underground for market validation.',
     funding: 'No-cost site access',
