@@ -235,7 +235,7 @@ const CriticalIndustrialTech = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6">
-                <Eyebrow>What is CIT?</Eyebrow>
+                <Eyebrow>About the Initiative</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
@@ -249,7 +249,7 @@ const CriticalIndustrialTech = () => {
                   It brings together funding, specialized testing environments, industry partners, commercialization support and talent development to help Ontario companies move critical technologies into real-world use.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                  As part of the initiative, the NORCAT Underground Centre is a Technology Development Site providing mining technology companies with a real-world environment to develop, test and validate their solutions.
+                  As part of the initiative, the NORCAT Underground Centre is a <strong>Technology Development Site (TDS)</strong> providing mining technology companies with a real-world environment to develop, test and validate their solutions.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
