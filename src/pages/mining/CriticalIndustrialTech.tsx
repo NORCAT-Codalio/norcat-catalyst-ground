@@ -207,7 +207,7 @@ const CriticalIndustrialTech = () => {
 
 
         {/* ───── ABOUT + PARTNERS (light) ───── */}
-        <section className="pt-10 md:pt-14 pb-12 md:pb-16" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-10 md:pt-14 pb-6 md:pb-8" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid gap-10 lg:gap-12 lg:grid-cols-12 items-start">
               <div className="lg:col-span-6">
@@ -252,7 +252,7 @@ const CriticalIndustrialTech = () => {
                   <h3 className="font-black uppercase text-lg mb-5" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     NORCAT as a Technology Development Site
                   </h3>
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3">
                     {[
                       'Real-world underground mining environment for testing',
                       'No-cost access for qualifying SMEs',
@@ -265,13 +265,6 @@ const CriticalIndustrialTech = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    to="/mining/underground-centre"
-                    className="group inline-flex items-center gap-2 px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                  >
-                    Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </Link>
                 </div>
               </div>
             </div>
@@ -279,7 +272,7 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── STATS STRIP ───── */}
-        <section className="pt-4 md:pt-6 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-2 md:pt-3 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((s, i) => (
