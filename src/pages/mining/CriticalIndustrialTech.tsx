@@ -253,13 +253,6 @@ const CriticalIndustrialTech = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/mining/underground-centre"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                  >
-                    Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </Link>
                   <a
                     href="https://www.oc-innovation.ca/programs/cit/"
                     target="_blank"
@@ -275,7 +268,9 @@ const CriticalIndustrialTech = () => {
               <div className="lg:col-span-6">
                 <div className="rounded-2xl p-8 md:p-12" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                   <div className="flex flex-col items-center text-center">
-                    <img src={citLogo} alt="Critical Industrial Technologies" className="h-24 md:h-32 object-contain mb-8" />
+                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer">
+                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-24 md:h-32 object-contain mb-8 transition-transform hover:scale-[1.02]" />
+                    </a>
 
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
                     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
@@ -289,7 +284,7 @@ const CriticalIndustrialTech = () => {
                   <h3 className="font-black uppercase text-lg mb-5" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     NORCAT as a Technology Development Site
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     {[
                       'Real-world underground mining environment for testing',
                       'No-cost access for qualifying SMEs',
@@ -302,6 +297,13 @@ const CriticalIndustrialTech = () => {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    to="/mining/underground-centre"
+                    className="group inline-flex items-center gap-2 px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  >
+                    Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </Link>
                 </div>
               </div>
             </div>
