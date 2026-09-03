@@ -461,7 +461,7 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── PROGRAM STREAMS - SELECTABLE CARDS ───── */}
+        {/* ───── PROGRAM STREAMS - EXPANDABLE CARDS ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-10 md:mb-14">
@@ -470,169 +470,152 @@ const CriticalIndustrialTech = () => {
                 Choose your<br /><span style={{ color: TEAL }}>pathway.</span>
               </h2>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                CIT delivers two distinct streams through NORCAT's Technology Development Site. Tap a card below to see the details for that pathway.
+                CIT delivers two distinct streams through NORCAT's Technology Development Site. Click a card to learn more about that pathway.
               </p>
             </div>
 
-            {/* Desktop / tablet stream selector cards */}
-            <div className="hidden md:grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               {(['dc', 'tap'] as const).map((key) => {
                 const s = streams[key];
-                const active = activeStream === key;
+                const open = expanded === key;
                 const Icon = s.icon;
                 return (
-                  <button
+                  <motion.div
                     key={key}
-                    type="button"
-                    onClick={() => setActiveStream(key)}
-                    className="group text-left rounded-2xl p-6 md:p-8 transition-all duration-300"
+                    layout
+                    className="rounded-2xl overflow-hidden transition-all duration-300"
                     style={{
-                      background: active ? `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` : 'white',
-                      border: active ? `1px solid ${BORDER}` : '1px solid #d9dde5',
-                      boxShadow: active ? '0 24px 60px -30px rgba(0,26,77,0.35)' : '0 4px 20px -8px rgba(0,26,77,0.12)',
+                      background: open ? `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` : 'white',
+                      border: open ? `1px solid ${BORDER}` : '1px solid #d9dde5',
+                      boxShadow: open ? '0 24px 60px -30px rgba(0,26,77,0.35)' : '0 4px 20px -8px rgba(0,26,77,0.12)',
                     }}
-                    aria-pressed={active}
                   >
-                    <div className="flex items-start gap-4 md:gap-5">
-                      <div
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 transition-colors"
-                        style={{ background: active ? 'rgba(255,255,255,0.12)' : 'rgba(0,179,152,0.10)' }}
-                      >
-                        <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: active ? TEAL : '#00B398' }} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
-                          <span
-                            className="inline-flex items-center justify-center w-10 h-6 rounded text-[10px] font-black uppercase tracking-wider"
-                            style={{
-                              background: active ? 'rgba(0,179,152,0.20)' : '#001A4D',
-                              color: active ? TEAL : 'white',
-                            }}
-                          >
-                            {s.code}
-                          </span>
-                          <span className="text-xs md:text-sm font-semibold uppercase tracking-wider" style={{ color: active ? 'rgba(255,255,255,0.72)' : '#6b7387' }}>
-                            Stream
-                          </span>
+                    <button
+                      type="button"
+                      onClick={() => setExpanded(open ? null : key)}
+                      className="w-full text-left p-6 md:p-8 group"
+                      aria-expanded={open}
+                    >
+                      <div className="flex items-start gap-4 md:gap-5">
+                        <div
+                          className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 transition-colors"
+                          style={{ background: open ? 'rgba(255,255,255,0.12)' : 'rgba(0,179,152,0.10)' }}
+                        >
+                          <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: open ? TEAL : '#00B398' }} />
                         </div>
-                        <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: active ? 'white' : NAVY, letterSpacing: '-0.01em' }}>
-                          {s.name}
-                        </h3>
-                        <p className="text-sm md:text-base leading-relaxed" style={{ color: active ? 'rgba(255,255,255,0.85)' : '#475068' }}>
-                          {s.tagline}
-                        </p>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
+                            <span
+                              className="inline-flex items-center justify-center w-10 h-6 rounded text-[10px] font-black uppercase tracking-wider"
+                              style={{
+                                background: open ? 'rgba(0,179,152,0.20)' : '#001A4D',
+                                color: open ? TEAL : 'white',
+                              }}
+                            >
+                              {s.code}
+                            </span>
+                            <span className="text-xs md:text-sm font-semibold uppercase tracking-wider" style={{ color: open ? 'rgba(255,255,255,0.72)' : '#6b7387' }}>
+                              Stream
+                            </span>
+                          </div>
+                          <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: open ? 'white' : NAVY, letterSpacing: '-0.01em' }}>
+                            {s.name}
+                          </h3>
+                          <p className="text-sm md:text-base leading-relaxed" style={{ color: open ? 'rgba(255,255,255,0.85)' : '#475068' }}>
+                            {s.tagline}
+                          </p>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Quick stats */}
-                    <div className="grid grid-cols-3 gap-2 md:gap-3 mt-5 md:mt-6 pt-5 md:pt-6" style={{ borderTop: active ? '1px solid rgba(255,255,255,0.12)' : '1px solid #e8eaef' }}>
-                      {[
-                        { label: 'Funding', value: s.funding },
-                        { label: 'Match', value: s.match },
-                        { label: 'Duration', value: s.duration },
-                      ].map((m) => (
-                        <div key={m.label} className="text-left">
-                          <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: active ? TEAL : '#6b7387' }}>{m.label}</p>
-                          <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: active ? 'white' : NAVY }}>{m.value}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </button>
+                      {/* Quick stats */}
+                      <div className="grid grid-cols-3 gap-2 md:gap-3 mt-5 md:mt-6 pt-5 md:pt-6" style={{ borderTop: open ? '1px solid rgba(255,255,255,0.12)' : '1px solid #e8eaef' }}>
+                        {[
+                          { label: 'Funding', value: s.funding },
+                          { label: 'Match', value: s.match },
+                          { label: 'Duration', value: s.duration },
+                        ].map((m) => (
+                          <div key={m.label} className="text-left">
+                            <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: open ? TEAL : '#6b7387' }}>{m.label}</p>
+                            <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: open ? 'white' : NAVY }}>{m.value}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-5 md:mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider" style={{ color: open ? TEAL : '#003DA5' }}>
+                        <span>{open ? 'Show less' : 'Learn more'}</span>
+                        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                          <ArrowRight className="w-4 h-4 rotate-90" />
+                        </motion.span>
+                      </div>
+                    </button>
+
+                    <AnimatePresence>
+                      {open && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-6 md:px-8 pb-8 md:pb-10" style={{ color: 'white' }}>
+                            <div className="pt-2 pb-6" style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+                              <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] mb-3" style={{ color: TEAL }}>
+                                <span className="w-2 h-2 rounded-full" style={{ background: TEAL }} />
+                                Stream overview
+                              </span>
+                              <p className="text-base md:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                                {s.overview}
+                              </p>
+                            </div>
+
+                            <div className="grid lg:grid-cols-2 gap-4 md:gap-5">
+                              <div className="rounded-2xl p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
+                                <Eyebrow className="!text-teal-300" color={TEAL}>Eligibility</Eyebrow>
+                                <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: 'white', fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                                  Who qualifies.
+                                </h4>
+                                <ul className="space-y-3">
+                                  {s.eligibility.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                      <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.18)', border: '1px solid rgba(0,179,152,0.35)' }}>
+                                        <span className="font-black text-xs" style={{ color: TEAL }}>{i + 1}</span>
+                                      </div>
+                                      <div>
+                                        <p className="font-bold text-sm" style={{ color: 'white' }}>{item.title}</p>
+                                        <p className="text-sm leading-relaxed mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{item.desc}</p>
+                                      </div>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              <div className="rounded-2xl p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
+                                <Eyebrow className="!text-teal-300" color={TEAL}>Project Requirements</Eyebrow>
+                                <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: 'white', fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                                  What projects look like.
+                                </h4>
+                                <ul className="space-y-3">
+                                  {s.projectRules.map((req, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                      <Check className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} />
+                                      <div>
+                                        <p className="font-bold text-sm" style={{ color: 'white' }}>{req.title}</p>
+                                        <p className="text-sm leading-relaxed mt-0.5" style={{ color: 'rgba(255,255,255,0.75)' }}>{req.description}</p>
+                                      </div>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
                 );
               })}
             </div>
-
-            {/* Mobile compact tab selector */}
-            <div className="md:hidden mb-6">
-              <div className="grid grid-cols-2 gap-2 p-1.5 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                {(['dc', 'tap'] as const).map((key) => {
-                  const s = streams[key];
-                  const active = activeStream === key;
-                  const Icon = s.icon;
-                  return (
-                    <button
-                      key={key}
-                      type="button"
-                      onClick={() => setActiveStream(key)}
-                      className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-3 transition-all"
-                      style={{
-                        background: active ? `linear-gradient(135deg, ${NAVY}, ${BLUE})` : 'transparent',
-                        color: active ? 'white' : '#475068',
-                      }}
-                      aria-pressed={active}
-                    >
-                      <Icon className="w-5 h-5" style={{ color: active ? TEAL : '#6b7387' }} />
-                      <div className="text-center">
-                        <p className="text-[10px] font-black uppercase tracking-wider" style={{ color: active ? 'rgba(255,255,255,0.72)' : '#6b7387' }}>{s.code}</p>
-                        <p className="text-xs font-bold leading-tight" style={{ fontFamily: FONT, color: active ? 'white' : NAVY }}>{s.shortName}</p>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStream}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
-              >
-                {/* Stream overview */}
-                <div className="rounded-2xl p-6 md:p-8 mb-5 md:mb-6" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] mb-3" style={{ color: TEAL }}>
-                    <span className="w-2 h-2 rounded-full" style={{ background: TEAL }} />
-                    Stream overview
-                  </span>
-                  <p className="text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                    {stream.overview}
-                  </p>
-                </div>
-
-                {/* Eligibility + Project Rules */}
-                <div className="grid lg:grid-cols-2 gap-4 md:gap-5">
-                  <div className="rounded-2xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                    <Eyebrow color={TEAL}>Eligibility</Eyebrow>
-                    <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                      Who qualifies.
-                    </h4>
-                    <ul className="space-y-3">
-                      {stream.eligibility.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.12)', border: `1px solid ${TEAL}33` }}>
-                            <span className="font-black text-xs" style={{ color: TEAL }}>{i + 1}</span>
-                          </div>
-                          <div>
-                            <p className="font-bold text-sm" style={{ color: NAVY }}>{item.title}</p>
-                            <p className="text-sm leading-relaxed mt-0.5" style={{ color: '#475068' }}>{item.desc}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="rounded-2xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                    <Eyebrow color={TEAL}>Project Requirements</Eyebrow>
-                    <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                      What projects look like.
-                    </h4>
-                    <ul className="space-y-3">
-                      {stream.projectRules.map((req, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} />
-                          <div>
-                            <p className="font-bold text-sm" style={{ color: NAVY }}>{req.title}</p>
-                            <p className="text-sm leading-relaxed mt-0.5" style={{ color: '#475068' }}>{req.description}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
           </div>
         </section>
 
