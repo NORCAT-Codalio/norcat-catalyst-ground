@@ -253,13 +253,6 @@ const CriticalIndustrialTech = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/mining/underground-centre"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                  >
-                    Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </Link>
                   <a
                     href="https://www.oc-innovation.ca/programs/cit/"
                     target="_blank"
@@ -289,7 +282,7 @@ const CriticalIndustrialTech = () => {
                   <h3 className="font-black uppercase text-lg mb-5" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                     NORCAT as a Technology Development Site
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     {[
                       'Real-world underground mining environment for testing',
                       'No-cost access for qualifying SMEs',
@@ -302,6 +295,13 @@ const CriticalIndustrialTech = () => {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    to="/mining/underground-centre"
+                    className="group inline-flex items-center gap-2 px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  >
+                    Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </Link>
                 </div>
               </div>
             </div>
