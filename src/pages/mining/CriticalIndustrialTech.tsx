@@ -307,7 +307,7 @@ const CriticalIndustrialTech = () => {
                   href="https://www.oc-innovation.ca/programs/critical-industrial-technologies/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
+                  className="hidden lg:inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
                   style={{ background: 'rgba(0,179,152,0.8)', color: 'white' }}
                 >
                   Explore all CIT Dev Sites
