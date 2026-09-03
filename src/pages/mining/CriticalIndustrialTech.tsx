@@ -319,9 +319,8 @@ const CriticalIndustrialTech = () => {
               <div className="lg:col-span-8">
                 <div className="rounded-3xl p-5 md:p-8" style={{ background: PAPER, border: '1px solid #d9dde5' }}>
                   {/* Tier 1 */}
-                  <div className="rounded-2xl px-6 py-4 text-center" style={{ background: NAVY }}>
-                    <p className="text-sm font-black uppercase tracking-[0.18em] text-white">CIT Initiative</p>
-                    <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>Led by the Ontario Centre of Innovation (OCI)</p>
+                  <div className="rounded-2xl px-6 py-5 text-center" style={{ background: NAVY }}>
+                    <p className="text-base md:text-lg font-black uppercase tracking-[0.18em] text-white">CIT Initiative</p>
                   </div>
                   <div className="mx-auto w-px h-5" style={{ background: 'rgba(0,179,152,0.5)' }} />
                   {/* Tier 2 */}
