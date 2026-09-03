@@ -138,8 +138,7 @@ const streams = {
 } as const;
 
 const CriticalIndustrialTech = () => {
-  const [activeStream, setActiveStream] = useState<'dc' | 'tap'>('dc');
-  const stream = streams[activeStream];
+  const [expanded, setExpanded] = useState<'dc' | 'tap' | null>(null);
 
   return (
     <Layout>
