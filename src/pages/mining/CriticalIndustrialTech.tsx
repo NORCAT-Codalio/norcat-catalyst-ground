@@ -459,38 +459,82 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── PROGRAM STREAMS - TABS (light) ───── */}
+        {/* ───── PROGRAM STREAMS - SELECTABLE CARDS ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="max-w-2xl mb-10">
+            <div className="max-w-3xl mb-10 md:mb-14">
               <Eyebrow color={TEAL}>Two Program Streams</Eyebrow>
               <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                 Choose your<br /><span style={{ color: TEAL }}>pathway.</span>
               </h2>
               <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                CIT delivers two distinct streams through NORCAT's Technology Development Site - pick the one that matches where your solution is today.
+                CIT delivers two distinct streams through NORCAT's Technology Development Site. Tap a card below to see the details for that pathway.
               </p>
             </div>
 
-            {/* Tab buttons */}
-            <div className="inline-flex p-1.5 rounded-2xl mb-10" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+            {/* Stream selector cards */}
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
               {(['dc', 'tap'] as const).map((key) => {
                 const s = streams[key];
                 const active = activeStream === key;
+                const Icon = s.icon;
                 return (
                   <button
                     key={key}
                     type="button"
                     onClick={() => setActiveStream(key)}
-                    className="flex items-center gap-3 px-5 md:px-7 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all"
+                    className="group text-left rounded-2xl p-6 md:p-8 transition-all duration-300"
                     style={{
-                      background: active ? `linear-gradient(135deg, ${NAVY}, ${BLUE})` : 'transparent',
-                      color: active ? 'white' : '#475068',
-                      fontFamily: FONT,
+                      background: active ? `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` : 'white',
+                      border: active ? `1px solid ${BORDER}` : '1px solid #d9dde5',
+                      boxShadow: active ? '0 24px 60px -30px rgba(0,26,77,0.35)' : '0 4px 20px -8px rgba(0,26,77,0.12)',
                     }}
+                    aria-pressed={active}
                   >
-                    <s.icon className="w-4 h-4" style={{ color: active ? TEAL : '#6b7387' }} />
-                    <span>{s.code} - {s.name}</span>
+                    <div className="flex items-start gap-4 md:gap-5">
+                      <div
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 transition-colors"
+                        style={{ background: active ? 'rgba(255,255,255,0.12)' : 'rgba(0,179,152,0.10)' }}
+                      >
+                        <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color: active ? TEAL : '#00B398' }} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
+                          <span
+                            className="inline-flex items-center justify-center w-10 h-6 rounded text-[10px] font-black uppercase tracking-wider"
+                            style={{
+                              background: active ? 'rgba(0,179,152,0.20)' : '#001A4D',
+                              color: active ? TEAL : 'white',
+                            }}
+                          >
+                            {s.code}
+                          </span>
+                          <span className="text-xs md:text-sm font-semibold uppercase tracking-wider" style={{ color: active ? 'rgba(255,255,255,0.72)' : '#6b7387' }}>
+                            Stream
+                          </span>
+                        </div>
+                        <h3 className="font-black uppercase text-lg md:text-xl lg:text-2xl mb-2" style={{ fontFamily: FONT, color: active ? 'white' : NAVY, letterSpacing: '-0.01em' }}>
+                          {s.name}
+                        </h3>
+                        <p className="text-sm md:text-base leading-relaxed" style={{ color: active ? 'rgba(255,255,255,0.85)' : '#475068' }}>
+                          {s.tagline}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Quick stats - visible on all sizes, compact on mobile */}
+                    <div className="grid grid-cols-3 gap-2 md:gap-3 mt-5 md:mt-6 pt-5 md:pt-6" style={{ borderTop: active ? '1px solid rgba(255,255,255,0.12)' : '1px solid #e8eaef' }}>
+                      {[
+                        { label: 'Funding', value: s.funding },
+                        { label: 'Match', value: s.match },
+                        { label: 'Duration', value: s.duration },
+                      ].map((m) => (
+                        <div key={m.label} className="text-left">
+                          <p className="text-[10px] uppercase tracking-[0.14em] font-bold mb-1" style={{ color: active ? TEAL : '#6b7387' }}>{m.label}</p>
+                          <p className="text-xs md:text-sm font-black" style={{ fontFamily: FONT, color: active ? 'white' : NAVY }}>{m.value}</p>
+                        </div>
+                      ))}
+                    </div>
                   </button>
                 );
               })}
@@ -504,43 +548,22 @@ const CriticalIndustrialTech = () => {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                {/* Header card */}
-                <div className="rounded-2xl p-8 md:p-10 mb-6" style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)`, border: `1px solid ${BORDER}` }}>
-                  <div className="grid lg:grid-cols-12 gap-8 items-center">
-                    <div className="lg:col-span-7">
-                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.16em] mb-4" style={{ background: 'rgba(0,179,152,0.18)', color: TEAL }}>
-                        Stream · {stream.code}
-                      </span>
-                      <h3 className="font-black uppercase text-2xl md:text-3xl lg:text-4xl text-white mb-4" style={{ fontFamily: FONT, letterSpacing: '-0.01em' }}>
-                        {stream.name}
-                      </h3>
-                      <p className="text-base md:text-lg leading-relaxed mb-2" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                        {stream.tagline}
-                      </p>
-                      <p className="text-sm md:text-base leading-relaxed" style={{ color: FG_MUTED }}>
-                        {stream.overview}
-                      </p>
-                    </div>
-                    <div className="lg:col-span-5 grid grid-cols-3 gap-3">
-                      {[
-                        { label: 'Funding', value: stream.funding },
-                        { label: 'Match', value: stream.match },
-                        { label: 'Duration', value: stream.duration },
-                      ].map((m) => (
-                        <div key={m.label} className="rounded-xl p-4 text-center" style={{ background: 'rgba(255,255,255,0.06)', border: `1px solid ${BORDER}` }}>
-                          <p className="text-[10px] uppercase tracking-[0.16em] font-bold mb-1.5" style={{ color: TEAL }}>{m.label}</p>
-                          <p className="text-sm md:text-base font-black text-white" style={{ fontFamily: FONT }}>{m.value}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                {/* Stream overview */}
+                <div className="rounded-2xl p-6 md:p-8 mb-5 md:mb-6" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] mb-3" style={{ color: TEAL }}>
+                    <span className="w-2 h-2 rounded-full" style={{ background: TEAL }} />
+                    Stream overview
+                  </span>
+                  <p className="text-base md:text-lg leading-relaxed" style={{ color: '#475068' }}>
+                    {stream.overview}
+                  </p>
                 </div>
 
                 {/* Eligibility + Project Rules */}
-                <div className="grid lg:grid-cols-2 gap-5">
-                  <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                <div className="grid lg:grid-cols-2 gap-4 md:gap-5">
+                  <div className="rounded-2xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                     <Eyebrow color={TEAL}>Eligibility</Eyebrow>
-                    <h4 className="font-black uppercase text-xl md:text-2xl mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                    <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
                       Who qualifies.
                     </h4>
                     <ul className="space-y-3">
@@ -558,9 +581,9 @@ const CriticalIndustrialTech = () => {
                     </ul>
                   </div>
 
-                  <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <div className="rounded-2xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                     <Eyebrow color={TEAL}>Project Requirements</Eyebrow>
-                    <h4 className="font-black uppercase text-xl md:text-2xl mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
+                    <h4 className="font-black uppercase text-xl md:text-2xl mb-5 md:mb-6" style={{ color: NAVY, fontFamily: FONT, letterSpacing: '-0.01em' }}>
                       What projects look like.
                     </h4>
                     <ul className="space-y-3">
