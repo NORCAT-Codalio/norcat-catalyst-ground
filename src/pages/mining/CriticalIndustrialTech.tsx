@@ -209,7 +209,7 @@ const CriticalIndustrialTech = () => {
         {/* ───── ABOUT + PARTNERS (light) ───── */}
         <section className="pt-10 md:pt-14 pb-12 md:pb-16" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center">
+            <div className="grid gap-10 lg:gap-12 lg:grid-cols-12 items-start">
               <div className="lg:col-span-6">
                 <Eyebrow>About the Initiative</Eyebrow>
                 <h2
@@ -230,19 +230,19 @@ const CriticalIndustrialTech = () => {
               </div>
 
               <div className="lg:col-span-6">
-                <div className="rounded-2xl p-8 md:p-12" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                <div className="rounded-2xl p-6 md:p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
                   <div className="flex flex-col items-center text-center">
                     <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer">
-                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-24 md:h-32 object-contain mb-8 transition-transform hover:scale-[1.02]" />
+                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain mb-6 transition-transform hover:scale-[1.02]" />
                     </a>
 
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
-                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-4" style={{ color: '#6b7387' }}>Program Partners</p>
+                    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
                       <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer">
-                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain transition-transform hover:scale-[1.02]" />
+                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-12 object-contain transition-transform hover:scale-[1.02]" />
                       </a>
                       <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer">
-                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain transition-transform hover:scale-[1.02]" />
+                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-10 object-contain transition-transform hover:scale-[1.02]" />
                       </a>
                     </div>
                   </div>

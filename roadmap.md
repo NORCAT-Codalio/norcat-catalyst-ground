@@ -3,6 +3,7 @@
 ## In Progress
 
 ## Completed
+- [x] CIT page: make logo partner box smaller and improve alignment
 - [x] CIT page: tighten spacing between header, About, and stats sections
 - [x] CIT page: revert header buttons, move stats strip under About section
 - [x] CIT page: link Ontario logo to https://www.ontario.ca/page/critical-technology-initiatives
