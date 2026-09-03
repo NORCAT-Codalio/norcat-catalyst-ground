@@ -243,9 +243,10 @@ const CriticalIndustrialTech = () => {
 
                   {/* Content */}
                   <div className="px-6 md:px-8 pb-8">
+                    <div className="w-full h-px mb-6 md:mb-7" style={{ background: '#d9dde5' }} />
                     <div className="text-center mb-6 md:mb-7">
                       <h3 className="font-black uppercase text-lg md:text-xl leading-tight" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                        NORCAT as a Technology<br /><span style={{ color: TEAL }}>Development Site</span>
+                        NORCAT as a Technology <span style={{ color: TEAL }}>Development Site</span>
                       </h3>
                     </div>
 
