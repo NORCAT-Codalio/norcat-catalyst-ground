@@ -238,25 +238,25 @@ const CriticalIndustrialTech = () => {
                       </a>
                     </div>
                   </div>
-                </div>
 
-                <div className="mt-5 rounded-2xl p-8" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <h3 className="font-black uppercase text-lg mb-5" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
-                    NORCAT as a Technology Development Site
-                  </h3>
-                  <ul className="space-y-3">
-                    {[
-                      'Real-world underground mining environment for testing',
-                      'No-cost access for qualifying SMEs',
-                      'Expert mentorship from mining industry professionals',
-                      'Accelerated path to commercialization',
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: TEAL }} />
-                        <span className="text-sm" style={{ color: '#475068' }}>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-8 pt-6" style={{ borderTop: '1px solid #e8eaee' }}>
+                    <h3 className="font-black uppercase text-sm tracking-tight mb-4" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      NORCAT as a Technology Development Site
+                    </h3>
+                    <ul className="space-y-2.5">
+                      {[
+                        'Real-world underground mining environment for testing',
+                        'No-cost access for qualifying SMEs',
+                        'Expert mentorship from mining industry professionals',
+                        'Accelerated path to commercialization',
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: TEAL }} />
+                          <span className="text-sm leading-snug" style={{ color: '#475068' }}>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
