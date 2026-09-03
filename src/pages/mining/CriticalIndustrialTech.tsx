@@ -240,26 +240,48 @@ const CriticalIndustrialTech = () => {
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
-                  Converging industry with<br /><span style={{ color: TEAL }}>innovation.</span>
+                  Accelerating Ontario's<br /><span style={{ color: TEAL }}>Critical Technologies.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
-                  The Critical Industrial Technologies initiative is an Ontario Centre of Innovation program that converges
-                  Ontario industry with innovative SMEs to amplify the province's critical technology capabilities across four
-                  key sectors: Mining, Advanced Manufacturing, Agri-Food, and Construction.
+                  Critical Industrial Technologies is a Government of Ontario initiative delivered by the Ontario Centre of Innovation to accelerate the development, commercialization and adoption of advanced technologies by Ontario SMEs.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
-                  As a <strong>Technology Development Site (TDS)</strong>, the NORCAT Underground Centre provides SMEs with a
-                  real-world mining environment to validate and commercialize their critical technology solutions.
+                <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
+                  It brings together funding, specialized testing environments, industry partners, commercialization support and talent development to help Ontario companies move critical technologies into real-world use.
                 </p>
+                <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
+                  As part of the initiative, the NORCAT Underground Centre is a Technology Development Site providing mining technology companies with a real-world environment to develop, test and validate their solutions.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/mining/underground-centre"
+                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  >
+                    Explore NORCAT's Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </Link>
+                  <a
+                    href="https://www.oc-innovation.ca/programs/cit/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
+                    style={{ fontFamily: FONT, color: NAVY, border: `2px solid ${TEAL}` }}
+                  >
+                    Learn More About CIT <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </a>
+                </div>
               </div>
 
               <div className="lg:col-span-6">
-                <div className="rounded-2xl p-8 md:p-10" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
-                  <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
-                    <img src={citLogo} alt="Critical Industrial Technologies" className="h-14 object-contain" />
-                  <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain" />
-                    <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain" />
+                <div className="rounded-2xl p-8 md:p-12" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                  <div className="flex flex-col items-center text-center">
+                    <img src={citLogo} alt="Critical Industrial Technologies" className="h-24 md:h-32 object-contain mb-8" />
+
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] mb-6" style={{ color: '#6b7387' }}>Program Partners</p>
+                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                      <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-14 object-contain" />
+                      <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-12 object-contain" />
+                    </div>
                   </div>
                 </div>
 
