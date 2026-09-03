@@ -279,7 +279,7 @@ const CriticalIndustrialTech = () => {
         </section>
 
         {/* ───── STATS STRIP ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+        <section className="pt-4 md:pt-6 pb-10 md:pb-12" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((s, i) => (
