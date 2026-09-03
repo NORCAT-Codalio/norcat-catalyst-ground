@@ -22,8 +22,6 @@ import {
   Briefcase,
   FlaskConical,
   Target,
-  DollarSign,
-  Users,
   Building2,
   TrendingUp,
   Lightbulb,
