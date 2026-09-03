@@ -85,6 +85,7 @@ const streams = {
   dc: {
     code: 'DC',
     name: 'Development & Commercialization',
+    shortName: 'Development & Commercialization',
     icon: FlaskConical,
     tagline: 'Develop, test, validate, and showcase new Ontario-made solutions.',
     funding: '$50,000 – $200,000',
@@ -112,6 +113,7 @@ const streams = {
   tap: {
     code: 'TAP',
     name: 'Technology Access Program',
+    shortName: 'Technology Access',
     icon: Target,
     tagline: 'No-cost access to NORCAT Underground for market validation.',
     funding: 'No-cost site access',
@@ -472,8 +474,8 @@ const CriticalIndustrialTech = () => {
               </p>
             </div>
 
-            {/* Stream selector cards */}
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
+            {/* Desktop / tablet stream selector cards */}
+            <div className="hidden md:grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
               {(['dc', 'tap'] as const).map((key) => {
                 const s = streams[key];
                 const active = activeStream === key;
@@ -522,7 +524,7 @@ const CriticalIndustrialTech = () => {
                       </div>
                     </div>
 
-                    {/* Quick stats - visible on all sizes, compact on mobile */}
+                    {/* Quick stats */}
                     <div className="grid grid-cols-3 gap-2 md:gap-3 mt-5 md:mt-6 pt-5 md:pt-6" style={{ borderTop: active ? '1px solid rgba(255,255,255,0.12)' : '1px solid #e8eaef' }}>
                       {[
                         { label: 'Funding', value: s.funding },
@@ -538,6 +540,36 @@ const CriticalIndustrialTech = () => {
                   </button>
                 );
               })}
+            </div>
+
+            {/* Mobile compact tab selector */}
+            <div className="md:hidden mb-6">
+              <div className="grid grid-cols-2 gap-2 p-1.5 rounded-2xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
+                {(['dc', 'tap'] as const).map((key) => {
+                  const s = streams[key];
+                  const active = activeStream === key;
+                  const Icon = s.icon;
+                  return (
+                    <button
+                      key={key}
+                      type="button"
+                      onClick={() => setActiveStream(key)}
+                      className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-3 transition-all"
+                      style={{
+                        background: active ? `linear-gradient(135deg, ${NAVY}, ${BLUE})` : 'transparent',
+                        color: active ? 'white' : '#475068',
+                      }}
+                      aria-pressed={active}
+                    >
+                      <Icon className="w-5 h-5" style={{ color: active ? TEAL : '#6b7387' }} />
+                      <div className="text-center">
+                        <p className="text-[10px] font-black uppercase tracking-wider" style={{ color: active ? 'rgba(255,255,255,0.72)' : '#6b7387' }}>{s.code}</p>
+                        <p className="text-xs font-bold leading-tight" style={{ fontFamily: FONT, color: active ? 'white' : NAVY }}>{s.shortName}</p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             <AnimatePresence mode="wait">
