@@ -219,6 +219,13 @@ const CriticalIndustrialTech = () => {
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
                   As part of the initiative, the <Link to="/mining/underground-centre" className="font-semibold underline underline-offset-2 hover:text-[#00B398]" style={{ color: NAVY }}>NORCAT Underground Centre</Link> is a Technology Development Site (TDS) providing mining technology companies with a real-world environment to develop, test and validate their solutions.
                 </p>
+                <Link
+                  to="/mining/underground-centre"
+                  className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                >
+                  Explore the NORCAT Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                </Link>
               </div>
 
               <div className="lg:col-span-6">
