@@ -205,30 +205,6 @@ const CriticalIndustrialTech = () => {
           </div>
         </section>
 
-        {/* ───── STATS STRIP ───── */}
-        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex items-center gap-4 pl-4"
-                  style={{ borderLeft: `2px solid ${TEAL}` }}
-                >
-                  <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
-                  <div>
-                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.value}</p>
-                    <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ───── ABOUT + PARTNERS (light) ───── */}
         <section className="py-20 md:py-32" style={{ background: PAPER, color: NAVY }}>
@@ -251,18 +227,6 @@ const CriticalIndustrialTech = () => {
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
                   As part of the initiative, the NORCAT Underground Centre is a <strong>Technology Development Site (TDS)</strong> providing mining technology companies with a real-world environment to develop, test and validate their solutions.
                 </p>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://www.oc-innovation.ca/programs/cit/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                    style={{ fontFamily: FONT, color: NAVY, border: `2px solid ${TEAL}` }}
-                  >
-                    Learn More About CIT <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </a>
-                </div>
               </div>
 
               <div className="lg:col-span-6">
@@ -313,6 +277,32 @@ const CriticalIndustrialTech = () => {
             </div>
           </div>
         </section>
+
+        {/* ───── STATS STRIP ───── */}
+        <section className="py-10 md:py-12" style={{ background: PAPER, color: NAVY }}>
+          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {stats.map((s, i) => (
+                <motion.div
+                  key={s.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="flex items-center gap-4 pl-4"
+                  style={{ borderLeft: `2px solid ${TEAL}` }}
+                >
+                  <s.icon className="w-7 h-7 shrink-0" style={{ color: TEAL }} />
+                  <div>
+                    <p className="font-black text-2xl md:text-3xl" style={{ fontFamily: FONT, color: NAVY }}>{s.value}</p>
+                    <p className="text-xs mt-1 font-bold uppercase tracking-[0.16em]" style={{ color: '#5b6478' }}>{s.label}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         {/* ───── FROM PROTOTYPE TO REAL-WORLD PROOF ───── */}
         <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
