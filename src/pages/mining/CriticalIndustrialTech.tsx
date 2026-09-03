@@ -135,13 +135,6 @@ const streams = {
   },
 } as const;
 
-const stats = [
-  { value: '$55.8M', label: 'Total Investment', icon: DollarSign },
-  { value: '$21.7M', label: 'CIT Investment', icon: TrendingUp },
-  { value: '185', label: 'Projects Supported', icon: Building2 },
-  { value: '194+', label: 'Ontario Companies', icon: Users },
-];
-
 const CriticalIndustrialTech = () => {
   const [activeStream, setActiveStream] = useState<'dc' | 'tap'>('dc');
   const stream = streams[activeStream];
