@@ -45,6 +45,7 @@ import atriumImg from '@/assets/norcat-innovation-atrium.png.asset.json';
 import officesImg from '@/assets/private-office-team.jpg.asset.json';
 import presentationShowcaseImg from '@/assets/presentation-space-showcase.png.asset.json';
 import presentationPodiumImg from '@/assets/presentation-space-podium.png.asset.json';
+import shopOfTheFutureImg from '@/assets/shop-of-the-future.png.asset.json';
 import {
   Dialog,
   DialogContent,
