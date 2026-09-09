@@ -695,12 +695,9 @@ const Labs = () => {
                       {detail.description}
                     </p>
                     {'quote' in detail && detail.quote && (
-                      <blockquote
-                        className="relative pl-5 py-1 mb-7 text-base leading-relaxed italic"
-                        style={{ color: '#2d3342', borderLeft: `3px solid ${TEAL}` }}
-                      >
-                        “{detail.quote}”
-                      </blockquote>
+                      <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
+                        {detail.quote}
+                      </p>
                     )}
                     <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                       {detail.features.map((feature) => (
