@@ -298,11 +298,11 @@ const Labs = () => {
   const detailImages = detail
     ? [
         { src: detail.image, alt: detail.imageAlt, objectPosition: undefined as string | undefined },
-        ...(detail.gallery ?? []),
+        ...('gallery' in detail && detail.gallery ? detail.gallery : []),
       ]
     : [];
 
-  const openDetail = (facility: (typeof facilities)[number]) => {
+  const openDetail = (facility: (typeof facilities)[number] | typeof shopOfTheFuture) => {
     setDetail(facility);
     setDetailIndex(0);
   };
