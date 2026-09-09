@@ -692,15 +692,15 @@ const Labs = () => {
                     >
                       {detail.name}
                     </h3>
-                    <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
+                    <p className="text-base leading-relaxed mb-5" style={{ color: '#475068' }}>
                       {detail.description}
                     </p>
                     {'quote' in detail && detail.quote && (
-                      <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
+                      <p className="text-base leading-relaxed mb-5" style={{ color: '#475068' }}>
                         {detail.quote}
                       </p>
                     )}
-                    <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+                    <div className="grid sm:grid-cols-2 gap-3">
                       {detail.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: TEAL }} />
