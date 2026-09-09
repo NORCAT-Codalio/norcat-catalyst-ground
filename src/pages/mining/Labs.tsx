@@ -292,7 +292,7 @@ const Labs = () => {
     images: { src: string; alt: string }[];
     index: number;
   } | null>(null);
-  const [detail, setDetail] = React.useState<(typeof facilities)[number] | null>(null);
+  const [detail, setDetail] = React.useState<(typeof facilities)[number] | typeof shopOfTheFuture | null>(null);
   const [detailIndex, setDetailIndex] = React.useState(0);
 
   const detailImages = detail
