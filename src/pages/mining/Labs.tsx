@@ -596,7 +596,7 @@ const Labs = () => {
                 </p>
                 <button
                   type="button"
-                  onClick={() => openDetail(shopOfTheFuture as any)}
+                  onClick={() => openDetail(shopOfTheFuture)}
                   className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold self-start"
                   style={{ color: TEAL }}
                 >
