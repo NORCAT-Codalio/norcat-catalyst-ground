@@ -252,6 +252,27 @@ const facilities = [
   gallery?: { src: string; alt: string; objectPosition?: string }[];
 }[];
 
+const shopOfTheFuture = {
+  id: 'shop-of-the-future',
+  icon: Building2,
+  name: 'Shop of the Future',
+  location: 'NORCAT Underground Centre, Onaping',
+  description:
+    'A new 6,000-square-foot building to expand capacity and better serve global technology companies that frequent the facility.',
+  quote:
+    'Featuring 3,500 square feet of state-of-the-art shop space, along with modern offices and meeting rooms, this expanded capacity underscores our commitment to accelerating the development, adoption and broader diffusion of emerging technologies that will shape the future of mining.',
+  image: shopOfTheFutureImg.url,
+  imageAlt: 'Rendering of the Shop of the Future building at the NORCAT Underground Centre',
+  features: [
+    '6,000-square-foot new construction',
+    '3,500 square feet of shop space',
+    'Modern offices and meeting rooms',
+    'Expanded capacity for global technology companies',
+    'Currently under construction',
+  ],
+  comingSoon: true,
+};
+
 const blurbs: Record<string, string> = {
   hotdesk: 'Flexible coworking and meeting space ideal for early-stage teams.',
   offices: 'Dedicated private offices for growing teams that need their own space.',
