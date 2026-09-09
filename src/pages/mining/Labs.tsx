@@ -560,6 +560,50 @@ const Labs = () => {
                 </motion.article>
               ))}
             </div>
+
+            {/* Shop of the Future — coming soon */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="group rounded-2xl overflow-hidden grid md:grid-cols-2 transition-all duration-300 hover:shadow-lg mt-5"
+              style={{ background: 'white', border: `1px solid ${TEAL}66` }}
+            >
+              <img
+                src={shopOfTheFuture.image}
+                alt={shopOfTheFuture.imageAlt}
+                loading="lazy"
+                className="w-full h-56 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="p-6 md:p-8 flex flex-col">
+                <div className="flex items-center gap-2 mb-3">
+                  <span
+                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+                    style={{ background: `${TEAL}15`, color: TEAL, border: `1px solid ${TEAL}40` }}
+                  >
+                    Coming Soon
+                  </span>
+                </div>
+                <h3 className="font-bold text-lg mb-2" style={{ fontFamily: FONT, color: NAVY }}>
+                  {shopOfTheFuture.name}
+                </h3>
+                <p className="text-sm font-bold mb-3" style={{ color: TEAL }}>
+                  {shopOfTheFuture.location}
+                </p>
+                <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: '#475068' }}>
+                  {shopOfTheFuture.description}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => openDetail(shopOfTheFuture as any)}
+                  className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold self-start"
+                  style={{ color: TEAL }}
+                >
+                  Learn More <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
+            </motion.article>
           </div>
 
 
