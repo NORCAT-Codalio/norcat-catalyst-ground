@@ -45,6 +45,7 @@ import atriumImg from '@/assets/norcat-innovation-atrium.png.asset.json';
 import officesImg from '@/assets/private-office-team.jpg.asset.json';
 import presentationShowcaseImg from '@/assets/presentation-space-showcase.png.asset.json';
 import presentationPodiumImg from '@/assets/presentation-space-podium.png.asset.json';
+import shopOfTheFutureImg from '@/assets/shop-of-the-future.png.asset.json';
 import {
   Dialog,
   DialogContent,
@@ -251,6 +252,27 @@ const facilities = [
   gallery?: { src: string; alt: string; objectPosition?: string }[];
 }[];
 
+const shopOfTheFuture = {
+  id: 'shop-of-the-future',
+  icon: Building2,
+  name: 'Shop of the Future',
+  location: 'NORCAT Underground Centre, Onaping',
+  description:
+    'A new 6,000-square-foot building to expand capacity and better serve global technology companies that frequent the facility.',
+  quote:
+    'Featuring 3,500 square feet of state-of-the-art shop space, along with modern offices and meeting rooms, this expanded capacity underscores our commitment to accelerating the development, adoption and broader diffusion of emerging technologies that will shape the future of mining.',
+  image: shopOfTheFutureImg.url,
+  imageAlt: 'Rendering of the Shop of the Future building at the NORCAT Underground Centre',
+  features: [
+    '6,000-square-foot new construction',
+    '3,500 square feet of shop space',
+    'Modern offices and meeting rooms',
+    'Expanded capacity for global technology companies',
+    'Currently under construction',
+  ],
+  comingSoon: true,
+};
+
 const blurbs: Record<string, string> = {
   hotdesk: 'Flexible coworking and meeting space ideal for early-stage teams.',
   offices: 'Dedicated private offices for growing teams that need their own space.',
@@ -270,17 +292,17 @@ const Labs = () => {
     images: { src: string; alt: string }[];
     index: number;
   } | null>(null);
-  const [detail, setDetail] = React.useState<(typeof facilities)[number] | null>(null);
+  const [detail, setDetail] = React.useState<(typeof facilities)[number] | typeof shopOfTheFuture | null>(null);
   const [detailIndex, setDetailIndex] = React.useState(0);
 
   const detailImages = detail
     ? [
         { src: detail.image, alt: detail.imageAlt, objectPosition: undefined as string | undefined },
-        ...(detail.gallery ?? []),
+        ...('gallery' in detail && detail.gallery ? detail.gallery : []),
       ]
     : [];
 
-  const openDetail = (facility: (typeof facilities)[number]) => {
+  const openDetail = (facility: (typeof facilities)[number] | typeof shopOfTheFuture) => {
     setDetail(facility);
     setDetailIndex(0);
   };
@@ -538,6 +560,50 @@ const Labs = () => {
                 </motion.article>
               ))}
             </div>
+
+            {/* Shop of the Future — coming soon */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="group rounded-2xl overflow-hidden grid md:grid-cols-2 transition-all duration-300 hover:shadow-lg mt-5"
+              style={{ background: 'white', border: `1px solid ${TEAL}66` }}
+            >
+              <img
+                src={shopOfTheFuture.image}
+                alt={shopOfTheFuture.imageAlt}
+                loading="lazy"
+                className="w-full h-56 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="p-6 md:p-8 flex flex-col">
+                <div className="flex items-center gap-2 mb-3">
+                  <span
+                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+                    style={{ background: `${TEAL}15`, color: TEAL, border: `1px solid ${TEAL}40` }}
+                  >
+                    Coming Soon
+                  </span>
+                </div>
+                <h3 className="font-bold text-lg mb-2" style={{ fontFamily: FONT, color: NAVY }}>
+                  {shopOfTheFuture.name}
+                </h3>
+                <p className="text-sm font-bold mb-3" style={{ color: TEAL }}>
+                  {shopOfTheFuture.location}
+                </p>
+                <p className="text-sm md:text-base leading-relaxed mb-5" style={{ color: '#475068' }}>
+                  {shopOfTheFuture.description}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => openDetail(shopOfTheFuture)}
+                  className="mt-auto inline-flex items-center gap-1.5 text-sm font-bold self-start"
+                  style={{ color: TEAL }}
+                >
+                  Learn More <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
+            </motion.article>
           </div>
 
 
@@ -628,6 +694,14 @@ const Labs = () => {
                     <p className="text-base leading-relaxed mb-7" style={{ color: '#475068' }}>
                       {detail.description}
                     </p>
+                    {'quote' in detail && detail.quote && (
+                      <blockquote
+                        className="relative pl-5 py-1 mb-7 text-base leading-relaxed italic"
+                        style={{ color: '#2d3342', borderLeft: `3px solid ${TEAL}` }}
+                      >
+                        “{detail.quote}”
+                      </blockquote>
+                    )}
                     <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
                       {detail.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-2.5">
