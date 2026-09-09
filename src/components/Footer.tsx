@@ -41,7 +41,7 @@ export function Footer() {
   const [email, setEmail] = useState('');
 
   return (
-    <footer className="relative overflow-hidden font-sans text-white bg-[radial-gradient(120%_90%_at_0%_100%,#0FA88C_0%,#0a5aa8_28%,#003da5_55%,#001a4d_100%)]">
+    <footer className="relative overflow-hidden font-body text-white bg-[radial-gradient(120%_90%_at_0%_100%,#0FA88C_0%,#0a5aa8_28%,#003da5_55%,#001a4d_100%)]">
       {/* Triangles decoration bottom-left (flipped to point up/right per design) */}
       <div
         aria-hidden
@@ -59,7 +59,7 @@ export function Footer() {
               Explore More of NORCAT Innovation
             </p>
 
-            <h2 className="mt-6 font-sans font-black text-4xl md:text-5xl leading-none text-white uppercase tracking-tight">
+            <h2 className="mt-6 font-body font-black text-4xl md:text-5xl leading-none text-white uppercase tracking-tight">
               <span className="block">Sudbury's Regional</span>
               <span className="mt-2 md:mt-3 block">Innovation Centre</span>
             </h2>
@@ -145,7 +145,7 @@ export function Footer() {
             { title: 'Company', links: footerLinks.company },
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="font-sans font-semibold text-white text-sm tracking-[0.15em] uppercase mb-5">
+              <h4 className="font-body font-semibold text-white text-sm tracking-[0.15em] uppercase mb-5">
                 {col.title}
               </h4>
               <ul className="space-y-2.5">
