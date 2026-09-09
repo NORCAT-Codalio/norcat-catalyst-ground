@@ -258,9 +258,9 @@ const shopOfTheFuture = {
   name: 'Shop of the Future',
   location: 'NORCAT Underground Centre, Onaping',
   description:
-    'A new 6,000-square-foot expansion giving mining-related companies a dedicated place to design, test and repair the innovative technologies that build and support mines across Ontario and around the world.',
+    'A new 6,000-square-foot expansion that will give mining-related companies a dedicated place to design, test and repair the innovative technologies that build and support mines across Ontario and around the world.',
   quote:
-    'Featuring 3,500 square feet of state-of-the-art shop space, along with modern offices, training spaces and meeting rooms, this expanded capacity helps global mining innovators move faster from concept to commercialization.',
+    'Featuring 3,500 square feet of state-of-the-art shop space, along with modern offices, training spaces and meeting rooms, this expanded capacity will help global mining innovators move faster from concept to commercialization.',
   image: shopOfTheFutureImg.url,
   imageAlt: 'Rendering of the Shop of the Future building at the NORCAT Underground Centre',
   features: [
