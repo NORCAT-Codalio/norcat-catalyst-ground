@@ -230,25 +230,13 @@ const SudburyEcosystem = () => {
         <section className="py-14 md:py-20 relative overflow-hidden" style={{ background: 'white', color: NAVY }}>
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6 md:mb-8">
+            <div className="mb-6 md:mb-8">
               <div>
                 <Eyebrow className="mb-2" style={{ color: '#6b7387' }}>Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: '#001A4D' }}>
                   Connect with <span style={{ color: TEAL }}>local</span> <span style={{ color: '#001A4D' }}>organizations</span>
                 </h2>
-              </div>
-
-              <div className="relative w-full md:w-64 lg:w-72 shrink-0">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style={{ color: '#9ca3af' }} />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search directory..."
-                  className="w-full pl-9 pr-3 py-2 text-xs border rounded-md focus:outline-none focus:ring-1 transition-all"
-                  style={{ borderColor: '#d9dde5', color: NAVY, fontFamily: FONT, background: 'white' }}
-                />
               </div>
             </div>
 
