@@ -216,20 +216,6 @@ const NorcatUnderground = () => {
                   <p>Startups, OEMs, and technology companies use the site to test solutions in active mining conditions, gather industry feedback, and demonstrate performance before bringing products to market.</p>
                 </div>
 
-                <div className="mt-8 flex flex-col gap-3">
-                  {[
-                    { icon: Mountain, label: 'ACTIVE UNDERGROUND WORKINGS' },
-                    { icon: Gauge, label: 'INDUSTRY-READY TESTING' },
-                    { icon: Users, label: 'DIRECT ACCESS TO CUSTOMERS' },
-                  ].map((b) => (
-                    <div key={b.label} className="flex items-center gap-4 px-5 py-4 rounded-xl" style={{ background: 'white', border: '1px solid #d9dde5' }}>
-                      <div className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)', border: `1px solid ${TEAL}33` }}>
-                        <b.icon className="w-5 h-5" style={{ color: TEAL }} />
-                      </div>
-                      <p className="text-sm font-bold uppercase tracking-[0.08em]" style={{ color: NAVY }}>{b.label}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               <div className="relative">
