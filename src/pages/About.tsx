@@ -419,19 +419,19 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {[
                 {
-                  quote: "NORCAT gave us the credibility, connections, and capital introductions we needed to turn a prototype into a globally deployable mining technology.",
-                  name: "PodCo Team",
-                  company: "PodCo",
+                  quote: "NORCAT gave us the credibility, connections, and capital introductions we needed to turn a prototype into a globally deployable mining technology. Every milestone we've hit started with a relationship built here.",
+                  name: "Stephen Podrucky",
+                  company: "CEO and Founder, PodCo",
                 },
                 {
-                  quote: "The mentorship was practical, not theoretical. They helped us navigate customer validation, pitch preparation, and our first institutional round.",
-                  name: "MEDATech RaisePro",
-                  company: "MEDATech RaisePro",
+                  quote: "The mentorship was practical, not theoretical. NORCAT helped us navigate customer validation, pitch preparation, and our first institutional round — and the doors they opened were ones we could never have opened alone.",
+                  name: "Taylor Davies",
+                  company: "Division Manager, Medatech",
                 },
                 {
-                  quote: "Being part of the NORCAT ecosystem opened doors to industry partners we could never have reached on our own. It changed our trajectory.",
-                  name: "Kinmetrix",
-                  company: "Kinmetrix",
+                  quote: "Being part of the NORCAT ecosystem changed our trajectory. From lab space to industry partners, they gave a young biotech company the foundation to grow in Northern Ontario and compete globally.",
+                  name: "Dr. Rafaela Andrade",
+                  company: "CEO and Co-Founder, Myomar Molecular",
                 },
               ].map((t) => (
                 <div
