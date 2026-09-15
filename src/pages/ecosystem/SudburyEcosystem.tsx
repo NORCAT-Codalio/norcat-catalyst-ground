@@ -274,32 +274,64 @@ const SudburyEcosystem = () => {
               })}
             </div>
 
-            {/* Tag filter — controlled vocabulary, grouped */}
-            <div className="rounded-xl border p-3 md:p-4 mb-6 md:mb-8" style={{ borderColor: '#e6e9f0', background: '#FAFBFC' }}>
-              <div className="flex flex-col gap-2.5">
-                {availableTags.map((group) => (
-                  <div key={group.label} className="flex flex-wrap items-center gap-1.5">
-                    <span className="w-16 shrink-0 text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: '#9aa1b1' }}>
-                      {group.label}
-                    </span>
-                    {group.tags.map((tag) => {
-                      const active = activeTag === tag;
-                      return (
-                        <button
-                          key={tag}
-                          onClick={() => setActiveTag(active ? null : tag)}
-                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all"
-                          style={active
-                            ? { background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT }
-                            : { background: 'white', color: '#4b5468', border: '1px solid #dfe3ec', fontFamily: FONT }}
-                        >
-                          {tag}
-                        </button>
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
+            {/* Tag filter — collapsed into a single dropdown */}
+            <div className="relative mb-6 md:mb-8">
+              {tagMenuOpen && (
+                <div className="fixed inset-0 z-20" onClick={() => setTagMenuOpen(false)} />
+              )}
+              <button
+                onClick={() => setTagMenuOpen((o) => !o)}
+                className="inline-flex items-center gap-2 pl-3.5 pr-3 py-2 rounded-full text-xs font-semibold transition-all"
+                style={activeTag
+                  ? { background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT }
+                  : { background: 'white', color: '#4b5468', border: '1px solid #dfe3ec', fontFamily: FONT }}
+              >
+                <SlidersHorizontal className="w-3.5 h-3.5" />
+                {activeTag ?? 'Filter by tag'}
+                {activeTag ? (
+                  <span
+                    role="button"
+                    aria-label="Clear tag filter"
+                    className="inline-flex items-center justify-center w-4 h-4 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.2)' }}
+                    onClick={(e) => { e.stopPropagation(); setActiveTag(null); setTagMenuOpen(false); }}
+                  >
+                    <X className="w-2.5 h-2.5" />
+                  </span>
+                ) : (
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${tagMenuOpen ? 'rotate-180' : ''}`} />
+                )}
+              </button>
+
+              {tagMenuOpen && (
+                <div className="absolute z-30 top-full mt-2 w-full sm:w-[640px] rounded-xl border bg-white shadow-xl p-4 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4"
+                     style={{ borderColor: '#e6e9f0', color: NAVY }}>
+                  {availableTags.map((group) => (
+                    <div key={group.label}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.16em] mb-2" style={{ color: '#9aa1b1' }}>
+                        {group.label}
+                      </p>
+                      <div className="flex flex-col items-start gap-0.5">
+                        {group.tags.map((tag) => {
+                          const active = activeTag === tag;
+                          return (
+                            <button
+                              key={tag}
+                              onClick={() => { setActiveTag(active ? null : tag); setTagMenuOpen(false); }}
+                              className="w-full text-left px-2.5 py-1.5 rounded-md text-xs font-semibold transition-all"
+                              style={active
+                                ? { background: 'rgba(0,26,77,0.08)', color: NAVY, fontFamily: FONT }
+                                : { background: 'transparent', color: '#4b5468', fontFamily: FONT }}
+                            >
+                              {tag}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Card grid */}
