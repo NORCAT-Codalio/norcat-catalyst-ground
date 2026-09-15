@@ -60,8 +60,8 @@ interface EcosystemOrg {
 const CATEGORY_COLORS: Record<Exclude<CategoryType, 'all'>, { color: string; soft: string; deep: string; label: string }> = {
   support: { color: '#2F6FD6', soft: 'rgba(47,111,214,0.10)', deep: '#12408F', label: 'Support' },
   funding: { color: '#00B398', soft: 'rgba(0,179,152,0.12)', deep: '#006A5B', label: 'Funding' },
-  education: { color: '#E4572E', soft: 'rgba(228,87,46,0.10)', deep: '#9C3113', label: 'Education' },
-  research: { color: '#6D4AFF', soft: 'rgba(109,74,255,0.10)', deep: '#3C2299', label: 'Research' },
+  education: { color: '#5B9BD5', soft: 'rgba(91,155,213,0.14)', deep: '#2C6399', label: 'Education' },
+  research: { color: '#001A4D', soft: 'rgba(0,26,77,0.08)', deep: '#001A4D', label: 'Research' },
 };
 
 const categories: { id: CategoryType; label: string; icon: React.ElementType }[] = [
