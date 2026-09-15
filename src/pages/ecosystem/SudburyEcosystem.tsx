@@ -173,7 +173,7 @@ const SudburyEcosystem = () => {
     return matchesCategory && matchesTag && matchesSearch;
   });
 
-  const clearAll = () => { setActiveCategory('all'); setSearchQuery(''); setActiveTag(null); };
+  const clearAll = () => { setActiveCategory('all'); setSearchQuery(''); setActiveTag(null); setTagMenuOpen(false); };
 
 
   return (
