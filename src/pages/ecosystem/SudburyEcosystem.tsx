@@ -259,7 +259,7 @@ const SudburyEcosystem = () => {
                 return (
                   <button
                     key={cat.id}
-                    onClick={() => { setActiveCategory(cat.id); setActiveTag(null); }}
+                    onClick={() => { setActiveCategory(cat.id); setActiveTag(null); setTagMenuOpen(false); }}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
                       background: c.color, color: 'white', border: `1px solid ${c.color}`, fontFamily: FONT,
