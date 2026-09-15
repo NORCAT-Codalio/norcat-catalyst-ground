@@ -4,6 +4,7 @@ import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, X } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
+import FinalCTA from '@/components/FinalCTA';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 
