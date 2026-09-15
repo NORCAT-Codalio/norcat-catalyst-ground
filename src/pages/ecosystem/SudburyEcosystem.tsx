@@ -399,11 +399,11 @@ const SudburyEcosystem = () => {
         <Dialog open={!!selectedOrg} onOpenChange={(open) => !open && setSelectedOrg(null)}>
           <DialogContent className="max-w-lg p-0 overflow-hidden border-0" style={{ background: PAPER, color: NAVY }}>
             <div className="p-6 md:p-8 relative">
-              <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,179,152,0.12)' }} />
+              <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: selectedOrg ? CATEGORY_COLORS[selectedOrg.category].soft : 'rgba(0,179,152,0.12)' }} />
               <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(0,61,165,0.10)' }} />
 
               <DialogHeader className="relative z-10 text-left space-y-3">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md" style={{ background: TEAL }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md" style={{ background: selectedOrg ? CATEGORY_COLORS[selectedOrg.category].color : TEAL }}>
                   {selectedOrg && <selectedOrg.icon className="w-7 h-7" style={{ color: 'white' }} />}
                 </div>
                 <DialogTitle className="text-xl font-black uppercase leading-tight"
@@ -412,10 +412,11 @@ const SudburyEcosystem = () => {
                 </DialogTitle>
                 {selectedOrg?.highlight && (
                   <span className="inline-block w-fit px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.14em]"
-                        style={{ background: 'rgba(0,179,152,0.12)', color: '#006A5B' }}>
+                        style={{ background: CATEGORY_COLORS[selectedOrg.category].soft, color: CATEGORY_COLORS[selectedOrg.category].deep }}>
                     {selectedOrg.highlight}
                   </span>
                 )}
+
                 <DialogDescription className="text-sm leading-relaxed" style={{ color: '#475068' }}>
                   {selectedOrg?.longDescription || selectedOrg?.description}
                 </DialogDescription>
