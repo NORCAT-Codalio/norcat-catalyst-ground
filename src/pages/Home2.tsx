@@ -354,10 +354,10 @@ export default function Home2() {
                     className="flex-1 sm:flex-initial px-3 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap"
                     style={{
                       fontFamily: FONT,
-                      background: active ? NAVY : 'white',
+                      background: active ? TEAL : 'white',
                       color: active ? 'white' : NAVY,
-                      border: `1px solid ${active ? NAVY : 'rgba(0,26,77,0.15)'}`,
-                      boxShadow: active ? '0 6px 20px -8px rgba(0,26,77,0.6)' : 'none',
+                      border: `1px solid ${active ? TEAL : 'rgba(0,26,77,0.15)'}`,
+                      boxShadow: active ? '0 6px 20px -8px rgba(0,179,152,0.6)' : 'none',
                     }}
                     aria-pressed={active}
                   >
@@ -424,8 +424,7 @@ export default function Home2() {
                   <Link
                     to={activeProgram.href}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base w-full sm:w-auto transition-transform hover:translate-x-0.5"
-                    style={{ background: 'rgba(0,179,152,0.8)', color: 'white', fontFamily: FONT }}
-
+                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}
                   >
                     View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
