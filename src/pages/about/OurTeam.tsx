@@ -225,7 +225,7 @@ export default function OurTeam() {
                 </p>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  PEOPLE WHO'VE <span style={{ color: NAVY }}>BEEN THERE.</span>
+                  GUIDANCE <span style={{ color: NAVY }}>TO GROW.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-4 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
                   Get practical guidance from experienced founders, operators and industry leaders with diverse backgrounds and expertise.
