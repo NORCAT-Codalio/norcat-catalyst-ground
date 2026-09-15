@@ -18,6 +18,7 @@ import fednorFullLogo from '@/assets/logos/fednor-full.png';
 import fednorLogo from '@/assets/logos/fednor.png';
 import nickelBasinLogo from '@/assets/logos/nickel-basin.png';
 import sudburyLogo from '@/assets/logos/sudbury-logo.png';
+import FinalCTA from "@/components/FinalCTA";
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';

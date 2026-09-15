@@ -47,6 +47,7 @@ import presentationShowcaseImg from '@/assets/presentation-space-showcase.png.as
 import presentationPodiumImg from '@/assets/presentation-space-podium.png.asset.json';
 import shopOfTheFutureImg from '@/assets/shop-of-the-future.png.asset.json';
 import {
+import FinalCTA from "@/components/FinalCTA";
   Dialog,
   DialogContent,
   DialogTitle,

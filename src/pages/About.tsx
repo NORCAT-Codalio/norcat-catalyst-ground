@@ -40,6 +40,7 @@ import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import rnaLogoAsset from '@/assets/logos/rna-diagnostics.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
