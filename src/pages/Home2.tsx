@@ -399,13 +399,13 @@ export default function Home2() {
               {/* Right content */}
               <div className="p-6 sm:p-8 md:p-8 lg:p-8 flex flex-col h-full min-h-[260px] sm:min-h-[320px] md:min-h-[360px] lg:overflow-hidden">
                 <div className="flex flex-col">
-                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-2" style={{ color: NAVY, fontFamily: FONT }}>
+                  <p className="text-xs font-semibold tracking-[0.18em] uppercase mb-2" style={{ color: TEAL, fontFamily: FONT }}>
                     Featured Program
                   </p>
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}>
                     {activeProgram.name}
                   </h3>
-                  <div className="h-1.5 w-10 mb-4" style={{ background: NAVY }} />
+                  <div className="h-1.5 w-10 mb-4" style={{ background: TEAL }} />
                 </div>
                 <div className="flex-1 flex flex-col">
                   <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(0,26,77,0.75)' }}>
@@ -414,7 +414,7 @@ export default function Home2() {
                   <ul className="hidden sm:block space-y-2 mb-4">
                     {activeProgram.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: NAVY }} aria-hidden="true" />
+                        <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: TEAL }} aria-hidden="true" />
                         <span className="text-sm md:text-base" style={{ color: NAVY }}>{b}</span>
                       </li>
                     ))}
@@ -424,7 +424,7 @@ export default function Home2() {
                   <Link
                     to={activeProgram.href}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base w-full sm:w-auto transition-transform hover:translate-x-0.5"
-                    style={{ background: 'rgba(0, 26, 77, 0.9)', color: 'white', fontFamily: FONT }}
+                    style={{ background: 'rgba(0,179,152,0.8)', color: 'white', fontFamily: FONT }}
 
                   >
                     View This Program <ArrowRight className="w-4 h-4" aria-hidden="true" />
