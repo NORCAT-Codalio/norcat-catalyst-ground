@@ -338,7 +338,7 @@ export default function Home2() {
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-4"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-              <span style={{ color: SKY }}>Featured </span>
+              <span style={{ color: '#003DA5' }}>Featured </span>
               <span style={{ color: TEAL }}>Programs</span>
             </h2>
             <div className="h-1.5 w-16 mb-8" style={{ background: TEAL }} />
