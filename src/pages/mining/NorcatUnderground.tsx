@@ -53,7 +53,7 @@ function UndergroundSlideshow() {
 }
 import {
   ArrowUpRight,
-  Mountain,
+  
   Pickaxe,
   Bot,
   Wind,
@@ -72,7 +72,7 @@ import {
   Lightbulb,
   Award,
   Compass,
-  Gauge,
+  
   Mail,
 } from 'lucide-react';
 import FinalCTA from "@/components/FinalCTA";
