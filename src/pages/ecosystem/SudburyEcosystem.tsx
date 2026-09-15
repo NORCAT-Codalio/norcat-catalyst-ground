@@ -247,67 +247,109 @@ const SudburyEcosystem = () => {
               </div>
             </div>
 
-            {/* Filter pills */}
-            <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
+            {/* Category filter pills — colour coded */}
+            <div className="flex flex-wrap gap-2 mb-4">
               {categories.map((cat) => {
                 const active = activeCategory === cat.id;
+                const c = cat.id === 'all' ? { color: NAVY, soft: 'rgba(0,26,77,0.06)', deep: NAVY } : CATEGORY_COLORS[cat.id];
                 return (
                   <button
                     key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
+                    onClick={() => { setActiveCategory(cat.id); setActiveTag(null); }}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-bold uppercase tracking-[0.12em] transition-all"
                     style={active ? {
-                      background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT,
+                      background: c.color, color: 'white', border: `1px solid ${c.color}`, fontFamily: FONT,
                     } : {
-                      background: 'white', color: NAVY, border: '1px solid #d9dde5', fontFamily: FONT,
+                      background: c.soft, color: c.deep, border: `1px solid ${c.soft}`, fontFamily: FONT,
                     }}
                   >
-                    <cat.icon className="w-3 h-3" />
+                    <cat.icon className="w-3.5 h-3.5" />
                     {cat.label}
                   </button>
                 );
               })}
             </div>
 
-            {/* Compact grid */}
+            {/* Tag filter — controlled vocabulary, grouped */}
+            <div className="rounded-xl border p-3 md:p-4 mb-6 md:mb-8" style={{ borderColor: '#e6e9f0', background: '#FAFBFC' }}>
+              <div className="flex flex-col gap-2.5">
+                {availableTags.map((group) => (
+                  <div key={group.label} className="flex flex-wrap items-center gap-1.5">
+                    <span className="w-16 shrink-0 text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: '#9aa1b1' }}>
+                      {group.label}
+                    </span>
+                    {group.tags.map((tag) => {
+                      const active = activeTag === tag;
+                      return (
+                        <button
+                          key={tag}
+                          onClick={() => setActiveTag(active ? null : tag)}
+                          className="px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all"
+                          style={active
+                            ? { background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT }
+                            : { background: 'white', color: '#4b5468', border: '1px solid #dfe3ec', fontFamily: FONT }}
+                        >
+                          {tag}
+                        </button>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Card grid */}
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeCategory + searchQuery}
+                key={activeCategory + searchQuery + (activeTag ?? '')}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"
+                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
               >
                 {filteredOrgs.map((org) => {
-                  const categoryLabel = categories.find((c) => c.id === org.category)?.label;
+                  const c = CATEGORY_COLORS[org.category];
                   return (
                     <motion.button
                       key={org.name}
                       layout
                       onClick={() => setSelectedOrg(org)}
-                      whileHover={{ y: -2 }}
-                      className="text-left bg-white border rounded-lg p-3 transition-all group hover:shadow-md hover:border-[#00B398]"
-                      style={{ borderColor: '#e2e8f0', color: NAVY }}
+                      whileHover={{ y: -3 }}
+                      className="relative text-left bg-white border rounded-xl p-5 pl-6 overflow-hidden transition-all hover:shadow-lg flex flex-col"
+                      style={{ borderColor: '#e6e9f0', color: NAVY }}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-teal-50 text-[#00B398] group-hover:bg-[#00B398] group-hover:text-white">
+                      <span className="absolute left-0 top-0 bottom-0 w-1.5" style={{ background: c.color }} />
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                             style={{ background: c.soft, color: c.color }}>
                           <org.icon className="w-5 h-5" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-sm leading-tight mb-0.5 truncate"
-                              style={{ fontFamily: FONT, color: NAVY }}>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.16em] mb-1" style={{ color: c.color }}>
+                            {c.label}
+                          </p>
+                          <h4 className="font-bold text-[15px] leading-snug" style={{ fontFamily: FONT, color: NAVY }}>
                             {org.name}
                           </h4>
-                          <p className="text-[11px] leading-snug line-clamp-1 mb-2" style={{ color: '#6b7280' }}>
-                            {org.description}
-                          </p>
-                          <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider"
-                                style={{ background: 'rgba(0,179,152,0.10)', color: '#006A5B' }}>
-                            {org.highlight || categoryLabel}
-                          </span>
                         </div>
                       </div>
+
+                      <p className="mt-3 text-[13px] leading-relaxed" style={{ color: '#535c70' }}>
+                        {org.description}
+                      </p>
+
+                      {org.tags && (
+                        <div className="mt-4 pt-3 border-t flex flex-wrap gap-1.5" style={{ borderColor: '#eef0f5' }}>
+                          {org.tags.map((tag) => (
+                            <span key={tag} className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.08em]"
+                                  style={{ background: c.soft, color: c.deep }}>
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </motion.button>
                   );
                 })}
@@ -316,9 +358,9 @@ const SudburyEcosystem = () => {
 
             {filteredOrgs.length === 0 && (
               <div className="text-center py-12" style={{ color: '#6b7280' }}>
-                <p className="text-sm">No organizations match your search.</p>
+                <p className="text-sm">No organizations match your filters.</p>
                 <button
-                  onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
+                  onClick={clearAll}
                   className="mt-2 text-xs font-bold underline"
                   style={{ color: TEAL }}
                 >
@@ -328,11 +370,18 @@ const SudburyEcosystem = () => {
             )}
 
             {/* Result count */}
-            <div className="mt-8 pt-5 border-t flex items-center justify-between" style={{ borderColor: '#e2e8f0' }}>
+            <div className="mt-8 pt-5 border-t flex items-center justify-between gap-4" style={{ borderColor: '#e2e8f0' }}>
               <p className="text-xs" style={{ color: '#6b7280' }}>
-                Showing {filteredOrgs.length} of {ecosystemOrgs.length} results
+                Showing {filteredOrgs.length} of {ecosystemOrgs.length} organizations
+                {activeTag && <> tagged <strong style={{ color: NAVY }}>{activeTag}</strong></>}
               </p>
+              {(activeTag || activeCategory !== 'all' || searchQuery) && (
+                <button onClick={clearAll} className="text-xs font-bold underline shrink-0" style={{ color: TEAL }}>
+                  Clear filters
+                </button>
+              )}
             </div>
+
           </div>
         </section>
 
