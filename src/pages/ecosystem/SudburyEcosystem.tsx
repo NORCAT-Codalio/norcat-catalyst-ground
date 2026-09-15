@@ -202,18 +202,22 @@ const SudburyEcosystem = () => {
 
             {/* Stats bar */}
             <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 rounded-2xl p-5 md:p-8" style={{ background: 'white', border: '1px solid rgba(255,255,255,0.15)' }}>
-              {stats.map((s) => (
-                <div key={s.label} className="flex items-center gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,179,152,0.10)' }}>
-                    <s.icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: TEAL }} />
+              {stats.map((s) => {
+                const c = CATEGORY_COLORS[s.key];
+                return (
+                  <div key={s.label} className="flex items-center gap-3 md:gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: c.soft }}>
+                      <s.icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: c.color }} />
+                    </div>
+                    <div>
+                      <p className="text-lg md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
+                      <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-lg md:text-2xl font-black" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>{s.number}</p>
-                    <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-bold" style={{ fontFamily: FONT, color: '#6b7387' }}>{s.label}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
           </div>
         </section>
 
