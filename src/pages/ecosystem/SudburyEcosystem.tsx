@@ -61,10 +61,10 @@ interface EcosystemOrg {
 
 // ── Category colour system ──
 const CATEGORY_COLORS: Record<Exclude<CategoryType, 'all'>, { color: string; soft: string; deep: string; label: string }> = {
-  support: { color: '#2F6FD6', soft: 'rgba(47,111,214,0.10)', deep: '#12408F', label: 'Support' },
+  support: { color: '#003DA6', soft: 'rgba(0,61,166,0.10)', deep: '#003DA6', label: 'Support' },
   funding: { color: '#00B398', soft: 'rgba(0,179,152,0.12)', deep: '#006A5B', label: 'Funding' },
-  education: { color: '#003DA5', soft: 'rgba(0,61,165,0.10)', deep: '#003DA5', label: 'Education' },
-  research: { color: '#001A4D', soft: 'rgba(0,26,77,0.08)', deep: '#001A4D', label: 'Research' },
+  education: { color: '#001A4D', soft: 'rgba(0,26,77,0.08)', deep: '#001A4D', label: 'Education' },
+  research: { color: '#6b7387', soft: 'rgba(107,115,135,0.10)', deep: '#4b5468', label: 'Research' },
 };
 
 const categories: { id: CategoryType; label: string; icon: React.ElementType }[] = [
@@ -186,7 +186,7 @@ const SudburyEcosystem = () => {
           <div className="absolute inset-0 pointer-events-none bg-center bg-no-repeat bg-cover"
                style={{ backgroundImage: `url(${norcatHalfLogo.url})`, opacity: 0.12 }} />
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(47,111,214,0.18), transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 10%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 80% 90%, rgba(0,61,166,0.22), transparent 50%)`,
           }} />
           <img src={signatureLines} alt="" aria-hidden="true"
                className="absolute top-0 right-0 w-auto h-1/3 object-contain object-right-top opacity-70 pointer-events-none select-none mix-blend-overlay" />
