@@ -133,28 +133,44 @@ const Display = ({ children, className = '', as: As = 'h2' as any }: any) => (
 );
 
 const stats = [
-  { number: '12', label: 'Support Organizations', icon: Users },
-  { number: '6', label: 'Funding Programs', icon: DollarSign },
-  { number: '4', label: 'Post-Secondary Institutions', icon: GraduationCap },
-  { number: '8', label: 'Research Centres', icon: FlaskConical },
+  { number: '12', label: 'Support Organizations', icon: Users, key: 'support' as const },
+  { number: '6', label: 'Funding Programs', icon: DollarSign, key: 'funding' as const },
+  { number: '4', label: 'Post-Secondary Institutions', icon: GraduationCap, key: 'education' as const },
+  { number: '8', label: 'Research Centres', icon: FlaskConical, key: 'research' as const },
 ];
 
 const SudburyEcosystem = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
   const [selectedOrg, setSelectedOrg] = useState<EcosystemOrg | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+
+  // Tags available within the current category, keeping the vocabulary controlled
+  const availableTags = TAG_GROUPS.map((group) => ({
+    label: group.label,
+    tags: group.tags.filter((tag) =>
+      ecosystemOrgs.some(
+        (o) => (activeCategory === 'all' || o.category === activeCategory) && o.tags?.includes(tag),
+      ),
+    ),
+  })).filter((g) => g.tags.length > 0);
 
   const filteredOrgs = ecosystemOrgs.filter((o) => {
     const matchesCategory = activeCategory === 'all' || o.category === activeCategory;
+    const matchesTag = !activeTag || !!o.tags?.includes(activeTag);
     const q = searchQuery.trim().toLowerCase();
     const matchesSearch =
       !q ||
       o.name.toLowerCase().includes(q) ||
       o.description.toLowerCase().includes(q) ||
+      (o.longDescription && o.longDescription.toLowerCase().includes(q)) ||
       (o.highlight && o.highlight.toLowerCase().includes(q)) ||
       (o.tags && o.tags.some((t) => t.toLowerCase().includes(q)));
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesTag && matchesSearch;
   });
+
+  const clearAll = () => { setActiveCategory('all'); setSearchQuery(''); setActiveTag(null); };
+
 
   return (
     <Layout>
