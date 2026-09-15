@@ -154,10 +154,12 @@ export default function OurTeam() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-12 md:mb-16">
               <div className="flex-1 flex flex-col justify-start text-left">
-                <Eyebrow>THE INNOVATION TEAM</Eyebrow>
+                <Eyebrow>
+                  <span style={{ color: '#6b7387' }}>THE INNOVATION TEAM</span>
+                </Eyebrow>
                 <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                  EXPERTISE TO HELP<br />YOU MOVE FORWARD
+                  <span style={{ color: BLUE }}>EXPERTISE TO HELP</span><br /><span style={{ color: TEAL }}>YOU MOVE FORWARD</span>
                 </h2>
               </div>
               <p className="flex-1 flex items-start text-base md:text-lg leading-relaxed md:pt-10"
