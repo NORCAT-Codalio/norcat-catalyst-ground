@@ -267,12 +267,13 @@ export default function OurTeam() {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="text-left mb-10 md:mb-12">
               <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-4"
-                 style={{ fontFamily: FONT, color: TEAL }}>
+                 style={{ fontFamily: FONT, color: '#6b7387' }}>
                 OUR PARTNERS
               </p>
               <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
-                SUPPORTING WHAT'S NEXT.
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+                <span style={{ color: BLUE }}>SUPPORTING WHAT'S </span>
+                <span style={{ color: TEAL }}>NEXT.</span>
               </h2>
               <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
                 Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.{" "}
