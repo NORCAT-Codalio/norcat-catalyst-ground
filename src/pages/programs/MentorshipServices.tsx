@@ -47,6 +47,7 @@ import waiveLogo from '@/assets/logos/waive.png.asset.json';
 import maestroLogo from '@/assets/logos/maestro.png';
 import perspicLogo from '@/assets/logos/perspic-logo.png.asset.json';
 import iregainedLogo from '@/assets/logos/iregained.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About) ──
 const NAVY = '#001A4D';

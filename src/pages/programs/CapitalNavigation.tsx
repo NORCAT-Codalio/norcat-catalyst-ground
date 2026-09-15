@@ -3,6 +3,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, DollarSign, ExternalLink, FileText, PieChart, TrendingUp } from 'lucide-react';
+import FinalCTA from "@/components/FinalCTA";
 
 const CapitalNavigation = () => {
   return (

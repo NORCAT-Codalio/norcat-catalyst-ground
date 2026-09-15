@@ -26,6 +26,7 @@ import lukeBegleyPhoto from '@/assets/testimonials/luke-begley.png';
 import signatureLines from '@/assets/signature-lines.png';
 import circuitiqTeam from '@/assets/circuitiq-team.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors About / Home2) ──
 const NAVY = '#001A4D';

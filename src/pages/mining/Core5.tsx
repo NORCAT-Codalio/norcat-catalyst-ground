@@ -25,6 +25,7 @@ import icampLogo from '@/assets/logos/icamp.png';
 import tedcLogo from '@/assets/logos/tedc.png';
 import ovinLogoAsset from '@/assets/logos/ovin-logo.png.asset.json';
 import ontarioLogo from '@/assets/logos/ontario-logo-wordmark.png';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About / Rogers Cybersecure) ──
 const NAVY = '#001A4D';

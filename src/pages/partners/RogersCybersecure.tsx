@@ -19,6 +19,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import torontoMetroLogo from '@/assets/logos/toronto-metropolitan-university.png';
 import rogersCatalystLogo from '@/assets/logos/rogers-cybersecure-catalyst.png';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About / NORCAT Underground) ──
 const NAVY = '#001A4D';
