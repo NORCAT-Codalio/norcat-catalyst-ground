@@ -263,14 +263,14 @@ const SudburyEcosystem = () => {
               })}
             </div>
 
-            {/* Tag filter — collapsed into a single dropdown */}
-            <div className="relative mb-6 md:mb-8">
+            {/* Tag filter + search */}
+            <div className="relative mb-6 md:mb-8 flex items-center gap-3 flex-wrap">
               {tagMenuOpen && (
                 <div className="fixed inset-0 z-20" onClick={() => setTagMenuOpen(false)} />
               )}
               <button
                 onClick={() => setTagMenuOpen((o) => !o)}
-                className="inline-flex items-center gap-2 pl-3.5 pr-3 py-2 rounded-full text-xs font-semibold transition-all"
+                className="inline-flex items-center gap-2 pl-3.5 pr-3 py-2 rounded-full text-xs font-semibold transition-all shrink-0"
                 style={activeTag
                   ? { background: NAVY, color: 'white', border: `1px solid ${NAVY}`, fontFamily: FONT }
                   : { background: 'white', color: '#4b5468', border: '1px solid #dfe3ec', fontFamily: FONT }}
@@ -291,6 +291,30 @@ const SudburyEcosystem = () => {
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${tagMenuOpen ? 'rotate-180' : ''}`} />
                 )}
               </button>
+
+              <div className="relative w-full sm:w-64 lg:w-72">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style={{ color: '#9ca3af' }} />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search directory..."
+                  className="w-full pl-9 pr-3 py-2 text-xs border rounded-full focus:outline-none focus:ring-1 transition-all"
+                  style={{ borderColor: '#dfe3ec', color: NAVY, fontFamily: FONT, background: 'white' }}
+                />
+                {searchQuery && (
+                  <span
+                    role="button"
+                    aria-label="Clear search"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-4 h-4 rounded-full cursor-pointer"
+                    style={{ background: '#e8ebf2', color: '#4b5468' }}
+                    onClick={() => setSearchQuery('')}
+                  >
+                    <X className="w-2.5 h-2.5" />
+                  </span>
+                )}
+              </div>
+
 
               {tagMenuOpen && (
                 <div className="absolute z-30 top-full mt-2 w-full sm:w-[640px] rounded-xl border bg-white shadow-xl p-4 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4"
