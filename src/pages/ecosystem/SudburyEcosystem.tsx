@@ -190,10 +190,10 @@ const SudburyEcosystem = () => {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6 md:mb-8">
               <div>
-                <Eyebrow className="mb-2">Ecosystem Directory</Eyebrow>
+                <Eyebrow className="mb-2" style={{ color: '#6b7387' }}>Ecosystem Directory</Eyebrow>
                 <h2 className="font-black leading-[0.95] tracking-tight text-2xl sm:text-3xl md:text-4xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
-                  Connect with <span style={{ color: TEAL }}>local</span> organizations
+                  Connect with <span style={{ color: '#4A7BD0' }}>local</span> <span style={{ color: TEAL }}>organizations</span>
                 </h2>
               </div>
 
