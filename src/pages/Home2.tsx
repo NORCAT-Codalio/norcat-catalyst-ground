@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, CheckCircle2, Layers, Banknote, DollarSign } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Users, Rocket, Building2, Handshake, Sparkles, Star, TrendingUp, Activity, Cpu, Leaf, Brain, Stethoscope, Cog, ChevronRight, ChevronLeft, CheckCircle2, Layers, Banknote, DollarSign } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 
 import miningUndergroundHero from '@/assets/mining-underground-hero.jpg';
@@ -367,8 +367,25 @@ export default function Home2() {
               })}
             </div>
 
-            {/* Panel */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[560px]">
+            {/* Panel with prev/next arrows */}
+            <div className="relative">
+              <button
+                onClick={() => setFeaturedProgramIndex((featuredProgramIndex - 1 + featuredPrograms.length) % featuredPrograms.length)}
+                aria-label="Previous program"
+                className="absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                style={{ background: 'white', color: NAVY, border: '1px solid rgba(0,26,77,0.15)', boxShadow: '0 8px 24px -10px rgba(0,26,77,0.4)' }}
+              >
+                <ChevronLeft className="w-5 h-5" aria-hidden="true" />
+              </button>
+              <button
+                onClick={() => setFeaturedProgramIndex((featuredProgramIndex + 1) % featuredPrograms.length)}
+                aria-label="Next program"
+                className="absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                style={{ background: 'white', color: NAVY, border: '1px solid rgba(0,26,77,0.15)', boxShadow: '0 8px 24px -10px rgba(0,26,77,0.4)' }}
+              >
+                <ChevronRight className="w-5 h-5" aria-hidden="true" />
+              </button>
+              <div className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,26,77,0.35)] bg-white lg:h-[560px]">
               {/* Left visual */}
               <div className="relative min-h-[180px] sm:min-h-[240px] md:min-h-[360px] overflow-hidden bg-white">
                 <img
@@ -450,6 +467,7 @@ export default function Home2() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </section>
