@@ -86,9 +86,9 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
   <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-     style={{ fontFamily: FONT, color: TEAL }}>
+     style={{ fontFamily: FONT, color: TEAL, ...style }}>
     {children}
   </p>
 );
@@ -204,12 +204,12 @@ const NorcatUnderground = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
-                <Eyebrow>THE NORCAT UNDERGROUND CENTRE</Eyebrow>
+                <Eyebrow style={{ color: '#6b7387' }}>THE NORCAT UNDERGROUND CENTRE</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
                 >
-                  BUILT FOR<br /><span style={{ color: TEAL }}>REAL-WORLD TESTING.</span>
+                  <span style={{ color: '#003DA6' }}>BUILT FOR</span><br /><span style={{ color: TEAL }}>REAL-WORLD TESTING.</span>
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   <p>The NORCAT Underground Centre is a fully operational mine designed for technology trials, product demonstrations, and hands-on training.</p>
