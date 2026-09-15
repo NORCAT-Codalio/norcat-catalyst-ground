@@ -25,6 +25,7 @@ import brendanScfImage from '@/assets/team/brendan-scf.png';
 // Brand assets
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About) ──
 const NAVY = '#001A4D';

@@ -23,6 +23,7 @@ import vnpBackground from '@/assets/vnp-background.png';
 import vnpLogo from '@/assets/logos/venture-north-pitch.png';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors About / Home2 / IAP / RAII) ──
 const NAVY = '#001A4D';

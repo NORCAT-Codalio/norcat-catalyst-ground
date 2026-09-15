@@ -75,6 +75,7 @@ import {
   Gauge,
   Mail,
 } from 'lucide-react';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About / OurTeam) ──
 const NAVY = '#001A4D';

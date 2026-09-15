@@ -3,6 +3,7 @@ import { Layout } from '@/components/Layout';
 import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket, DollarSign } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
