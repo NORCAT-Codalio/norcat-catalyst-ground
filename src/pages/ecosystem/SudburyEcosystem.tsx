@@ -67,7 +67,26 @@ const CATEGORY_COLORS: Record<Exclude<CategoryType, 'all'>, { color: string; sof
   research: { color: '#6b7387', soft: 'rgba(107,115,135,0.10)', deep: '#4b5468', label: 'Research' },
 };
 
+// ── Org logo lookup (favicon service, icon fallback) ──
+const LOGO_DOMAINS: Record<string, string> = {
+  'NORCAT Innovation': 'norcat.org',
+  'Core5': 'core5.tech',
+  'Rogers Cybersecure Catalyst': 'cybersecurecatalyst.ca',
+  'Sudbury Catalyst Fund': 'investsudbury.ca',
+  'Northern Ontario Angels': 'northernontarioangels.ca',
+};
+
+const getLogoUrl = (org: EcosystemOrg): string | null => {
+  let domain = LOGO_DOMAINS[org.name];
+  if (!domain && org.link) {
+    try { domain = new URL(org.link).hostname; } catch { domain = ''; }
+  }
+  if (!domain) return null;
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+};
+
 const categories: { id: CategoryType; label: string; icon: React.ElementType }[] = [
+
   { id: 'all', label: 'All Resources', icon: Globe },
   { id: 'support', label: 'Support Orgs', icon: Users },
   { id: 'funding', label: 'Funding', icon: DollarSign },
