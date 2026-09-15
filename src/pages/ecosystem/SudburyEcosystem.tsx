@@ -484,26 +484,34 @@ const SudburyEcosystem = () => {
               )}
 
               <div className="mt-6 relative z-10">
-                {selectedOrg?.internalLink ? (
-                  <Link to={selectedOrg.internalLink}
-                        onClick={() => setSelectedOrg(null)}
-                        className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}>
-                    Learn More
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                ) : selectedOrg?.link ? (
-                  <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
-                     className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                     style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}>
-                    Visit Website
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </span>
-                  </a>
-                ) : null}
+                {(() => {
+                  const c = selectedOrg ? CATEGORY_COLORS[selectedOrg.category] : { color: TEAL, deep: TEAL };
+                  return (
+                    <>
+                      {selectedOrg?.internalLink && (
+                        <Link to={selectedOrg.internalLink}
+                              onClick={() => setSelectedOrg(null)}
+                              className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
+                              style={{ background: c.color, color: 'white', fontFamily: FONT }}>
+                          Learn More
+                          <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: c.deep }}>
+                            <ArrowUpRight className="w-4 h-4" />
+                          </span>
+                        </Link>
+                      )}
+                      {selectedOrg?.link && (
+                        <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
+                           className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
+                           style={{ background: c.color, color: 'white', fontFamily: FONT }}>
+                          Visit Website
+                          <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: c.deep }}>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </span>
+                        </a>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
             </div>
           </DialogContent>
