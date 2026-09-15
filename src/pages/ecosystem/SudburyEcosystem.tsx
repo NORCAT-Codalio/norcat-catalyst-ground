@@ -67,24 +67,6 @@ const CATEGORY_COLORS: Record<Exclude<CategoryType, 'all'>, { color: string; sof
   research: { color: '#6b7387', soft: 'rgba(107,115,135,0.10)', deep: '#4b5468', label: 'Research' },
 };
 
-// ── Org logo lookup (favicon service, icon fallback) ──
-const LOGO_DOMAINS: Record<string, string> = {
-  'NORCAT Innovation': 'norcat.org',
-  'Core5': 'core5.tech',
-  'Rogers Cybersecure Catalyst': 'cybersecurecatalyst.ca',
-  'Sudbury Catalyst Fund': 'investsudbury.ca',
-  'Northern Ontario Angels': 'northernontarioangels.ca',
-};
-
-const getLogoUrl = (org: EcosystemOrg): string | null => {
-  let domain = LOGO_DOMAINS[org.name];
-  if (!domain && org.link) {
-    try { domain = new URL(org.link).hostname; } catch { domain = ''; }
-  }
-  if (!domain) return null;
-  return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-};
-
 const categories: { id: CategoryType; label: string; icon: React.ElementType }[] = [
 
   { id: 'all', label: 'All Resources', icon: Globe },
@@ -459,28 +441,12 @@ const SudburyEcosystem = () => {
               <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: selectedOrg ? CATEGORY_COLORS[selectedOrg.category].soft : 'rgba(0,179,152,0.12)' }} />
 
               <DialogHeader className="relative z-10 text-left space-y-3">
-                <div className="flex items-center gap-3">
-                  {/* org logo with icon fallback */}
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden shrink-0"
-                       style={{ background: '#FFFFFF', border: '1px solid #e3e7ee', boxShadow: '0 4px 14px rgba(0,26,77,0.06)' }}>
-                    {selectedOrg && getLogoUrl(selectedOrg) ? (
-                      <img
-                        src={getLogoUrl(selectedOrg)!}
-                        alt={`${selectedOrg.name} logo`}
-                        loading="lazy"
-                        className="w-10 h-10 object-contain"
-                        onError={(e) => {
-                          const el = e.currentTarget;
-                          el.style.display = 'none';
-                          el.parentElement?.querySelector('[data-logo-fallback]')?.classList.remove('hidden');
-                        }}
-                      />
-                    ) : null}
-                    <span data-logo-fallback className={selectedOrg && getLogoUrl(selectedOrg) ? 'hidden' : ''}>
-                      {selectedOrg && (
-                        <selectedOrg.icon className="w-7 h-7" style={{ color: CATEGORY_COLORS[selectedOrg.category].color }} />
-                      )}
-                    </span>
+                  <div className="flex items-center gap-3">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+                       style={{ background: selectedOrg ? CATEGORY_COLORS[selectedOrg.category].soft : 'rgba(0,179,152,0.12)', border: `1px solid ${selectedOrg ? CATEGORY_COLORS[selectedOrg.category].color : TEAL}33` }}>
+                    {selectedOrg && (
+                      <selectedOrg.icon className="w-7 h-7" style={{ color: CATEGORY_COLORS[selectedOrg.category].color }} />
+                    )}
                   </div>
                   <div className="min-w-0">
                     <div className="text-[10px] font-bold uppercase tracking-[0.18em] mb-1"
@@ -522,18 +488,18 @@ const SudburyEcosystem = () => {
                   <Link to={selectedOrg.internalLink}
                         onClick={() => setSelectedOrg(null)}
                         className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                        style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+                        style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}>
                     Learn More
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
                       <ArrowUpRight className="w-4 h-4" />
                     </span>
                   </Link>
                 ) : selectedOrg?.link ? (
                   <a href={selectedOrg.link} target="_blank" rel="noopener noreferrer"
                      className="group inline-flex items-center gap-2 pl-5 pr-2 py-2.5 rounded-xl text-sm font-bold transition-transform hover:scale-[1.02]"
-                     style={{ background: NAVY, color: 'white', fontFamily: FONT }}>
+                     style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}>
                     Visit Website
-                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
+                    <span className="inline-flex items-center justify-center size-7 rounded-full" style={{ background: 'white', color: TEAL }}>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </span>
                   </a>
