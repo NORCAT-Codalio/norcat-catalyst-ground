@@ -299,6 +299,18 @@ export default function OurTeam() {
           </div>
         </section>
 
+        {/* ───── CTA ───── */}
+        <FinalCTA
+          eyebrow="Get to Know Us"
+          title="Meet the People Behind"
+          titleAccent="Northern Innovation."
+          body="From first pitch to global scale-up, our team is here to help you build, validate, and grow. Reach out and let's get started."
+          ctaLabel="Become a Client"
+          ctaHref="/portal/auth"
+          secondaryLabel="Contact Us"
+          secondaryHref="/contact"
+        />
+
       </div>
 
       <TeamModal member={modalMember} onClose={() => setModalMember(null)} />
