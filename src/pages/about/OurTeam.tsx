@@ -4,7 +4,7 @@ import { Layout } from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, X } from 'lucide-react';
 import { team, type TeamMember } from '@/data/team';
-import FinalCTA from '@/components/FinalCTA';
+
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 
@@ -299,17 +299,6 @@ export default function OurTeam() {
           </div>
         </section>
 
-        {/* ───── CTA ───── */}
-        <FinalCTA
-          eyebrow="Get to Know Us"
-          title="Meet the People Behind"
-          titleAccent="Northern Innovation."
-          body="From first pitch to global scale-up, our team is here to help you build, validate, and grow. Reach out and let's get started."
-          ctaLabel="Become a Client"
-          ctaHref="/portal/auth"
-          secondaryLabel="Contact Us"
-          secondaryHref="/contact"
-        />
 
       </div>
 
