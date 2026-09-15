@@ -200,30 +200,15 @@ export default function Impact() {
           onClose={() => setSelectedStory(null)}
         />
 
-        {/* ───── CTA (light paper) ───── */}
-        <section className="py-20 md:py-28" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10 text-center">
-            <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5"
-               style={{ fontFamily: FONT, color: TEAL }}>
-              Join the Ecosystem
-            </p>
-            <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-              Be Part of Our<br /><span style={{ color: TEAL }}>Next Chapter.</span>
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: '#475068' }}>
-              Join the founders who are building the future of mining and industrial technology. Your success could be our next headline.
-            </p>
-            <Link to="/apply"
-                  className="group inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full text-sm font-bold transition-transform hover:scale-[1.02]"
-                  style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white', fontFamily: FONT }}>
-              Validate my Idea
-              <span className="inline-flex items-center justify-center size-9 rounded-full" style={{ background: NAVY, color: 'white' }}>
-                <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-          </div>
-        </section>
+        {/* ───── CTA ───── */}
+        <FinalCTA
+          eyebrow="Join the Ecosystem"
+          title="Be Part of Our"
+          titleAccent="Next Chapter."
+          body="Join the founders who are building the future of mining and industrial technology. Your success could be our next headline."
+          ctaLabel="Validate my Idea"
+          ctaHref="/apply"
+        />
 
       </div>
     </Layout>
