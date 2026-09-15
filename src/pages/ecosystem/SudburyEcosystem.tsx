@@ -19,6 +19,9 @@ import {
   Shield,
   Sparkles,
   Search,
+  SlidersHorizontal,
+  ChevronDown,
+  X,
 } from 'lucide-react';
 
 import {
@@ -144,6 +147,7 @@ const SudburyEcosystem = () => {
   const [selectedOrg, setSelectedOrg] = useState<EcosystemOrg | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [tagMenuOpen, setTagMenuOpen] = useState(false);
 
   // Tags available within the current category, keeping the vocabulary controlled
   const availableTags = TAG_GROUPS.map((group) => ({
