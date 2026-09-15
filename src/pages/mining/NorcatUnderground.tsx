@@ -86,9 +86,9 @@ const BORDER = 'rgba(255,255,255,0.10)';
 const FG_MUTED = 'rgba(255,255,255,0.72)';
 const FONT = "'Open Sans', system-ui, sans-serif";
 
-const Eyebrow = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+const Eyebrow = ({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) => (
   <p className={`inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-5 ${className}`}
-     style={{ fontFamily: FONT, color: TEAL }}>
+     style={{ fontFamily: FONT, color: TEAL, ...style }}>
     {children}
   </p>
 );
