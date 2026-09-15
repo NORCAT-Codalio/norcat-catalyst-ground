@@ -51,6 +51,7 @@ import {
   DialogContent,
   DialogTitle,
 } from '@/components/ui/dialog';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About / OurTeam) ──
 const NAVY = '#001A4D';
@@ -798,55 +799,17 @@ const Labs = () => {
           </Dialog>
         </section>
 
-        {/* ───── CTA (light) ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div
-              className="rounded-3xl p-9 md:p-14 relative overflow-hidden"
-              style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
-            >
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
-                }}
-              />
-              <div className="relative max-w-3xl">
-                <Eyebrow className="!text-white">Get Started</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl">
-                  Ready to build<br />
-                  <span style={{ color: TEAL }}>something great?</span>
-                </Display>
-                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                  Whether you need to test underground, prototype in the lab, or find your team's home
-                  base, we have the space for you.
-                </p>
-                <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/apply"
-                    className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{
-                      fontFamily: FONT,
-                      background: TEAL,
-                      color: NAVY,
-                      boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)',
-                    }}
-                  >
-                    Get Started <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
-                  >
-                    Contact Us
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ───── CTA ───── */}
+        <FinalCTA
+          eyebrow="Get Started"
+          title="Ready to build"
+          titleAccent="something great?"
+          body="Whether you need to test underground, prototype in the lab, or find your team's home base, we have the space for you."
+          ctaLabel="Get Started"
+          ctaHref="/apply"
+          secondaryLabel="Contact Us"
+          secondaryHref="/contact"
+        />
       </div>
     </Layout>
   );

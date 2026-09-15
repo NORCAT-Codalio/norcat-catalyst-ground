@@ -40,6 +40,7 @@ import kinmetrixLogo from '@/assets/logos/kinmetrix.png';
 import loopxLogo from '@/assets/logos/loopx.png';
 import circuitiqLogo from '@/assets/logos/circuitiq.webp';
 import rnaLogoAsset from '@/assets/logos/rna-diagnostics.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2) ──
 const NAVY = '#001A4D';
@@ -497,60 +498,17 @@ export default function About() {
         </section>
 
 
-        {/* ───── FINAL CTA (matches homepage glass-card branding) ───── */}
-        <section className="relative overflow-hidden py-24 md:py-36 lg:py-44" style={{ background: '#F2F3F6' }}>
-          {/* Soft teal radial glow from top */}
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 65% 55% at 50% 0%, hsla(168,100%,40%,0.12) 0%, transparent 65%)' }} />
-          {/* Faint grid lines */}
-          <div className="absolute inset-0 opacity-[0.5]" style={{
-            backgroundImage: 'linear-gradient(rgba(0,61,166,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,61,166,0.04) 1px, transparent 1px)',
-            backgroundSize: '64px 64px',
-          }} />
-
-          {/* Glass card container */}
-          <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6 md:px-10">
-            <div className="relative rounded-[2rem] md:rounded-[2.5rem] px-6 py-14 md:px-16 md:py-20 text-center overflow-hidden"
-                 style={{
-                   background: 'linear-gradient(160deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 100%)',
-                   backdropFilter: 'blur(20px)',
-                   WebkitBackdropFilter: 'blur(20px)',
-                   border: '1px solid rgba(255,255,255,0.9)',
-                   boxShadow: '0 1px 0 0 rgba(255,255,255,1), 0 24px 60px -16px rgba(0,26,77,0.18), 0 8px 24px -12px rgba(0,26,77,0.12)',
-                 }}>
-              {/* Inner teal glow */}
-              <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 100%, hsla(168,100%,45%,0.08) 0%, transparent 70%)' }} />
-
-              <div className="relative">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-7 rounded-full text-xs font-bold uppercase tracking-[0.2em]"
-                      style={{ color: '#003DA6', background: 'rgba(0,61,166,0.08)', border: '1px solid rgba(0,61,166,0.15)' }}>
-                  Join the Ecosystem
-                </span>
-                <h2 className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
-                    style={{ fontFamily: FONT, color: '#003DA6', letterSpacing: '-0.03em' }}>
-                  Ready to join<br /><span style={{ color: TEAL }}>our community?</span>
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style={{ color: '#475068' }}>
-                  Whether you're just starting out or ready to scale, we're here to help you build something extraordinary.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link to="/apply"
-                        className="group inline-flex items-center gap-2 text-base font-bold px-8 py-4 rounded-full text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
-                        style={{ fontFamily: FONT, background: 'linear-gradient(135deg, #00b398 0%, #003DA6 100%)', boxShadow: '0 8px 24px -6px hsla(168,100%,35%,0.45)' }}>
-                    Apply to NORCAT Innovation
-                    <span className="inline-flex items-center justify-center size-7 rounded-full bg-white/20">
-                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
-                  </Link>
-                  <Link to="/ecosystem/sudbury"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-colors"
-                        style={{ background: 'rgba(0,26,77,0.06)', color: NAVY, border: '1px solid rgba(0,26,77,0.12)', fontFamily: FONT }}>
-                    Explore the Ecosystem
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ───── FINAL CTA ───── */}
+        <FinalCTA
+          eyebrow="Join the Ecosystem"
+          title="Ready to join"
+          titleAccent="our community?"
+          body="Whether you're just starting out or ready to scale, we're here to help you build something extraordinary."
+          ctaLabel="Apply to NORCAT Innovation"
+          ctaHref="/apply"
+          secondaryLabel="Explore the Ecosystem"
+          secondaryHref="/ecosystem/sudbury"
+        />
 
 
       </div>

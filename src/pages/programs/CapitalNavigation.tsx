@@ -3,6 +3,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, DollarSign, ExternalLink, FileText, PieChart, TrendingUp } from 'lucide-react';
+import FinalCTA from "@/components/FinalCTA";
 
 const CapitalNavigation = () => {
   return (
@@ -160,22 +161,14 @@ const CapitalNavigation = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gray-900">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="headline-lg text-white mb-6">Ready to Raise Capital?</h2>
-            <p className="body-lg text-white/70 mb-10 max-w-2xl mx-auto">
-              Let us help you navigate your funding journey.
-            </p>
-            <Button asChild className="btn-primary-lg">
-              <Link to="/apply">
-                Apply Now
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-          </ScrollReveal>
-        </div>
-      </section>
+      <FinalCTA
+        eyebrow="Capital Navigation"
+        title="Ready to raise"
+        titleAccent="capital?"
+        body="Let us help you navigate your funding journey."
+        ctaLabel="Apply Now"
+        ctaHref="/apply"
+      />
     </Layout>
   );
 };

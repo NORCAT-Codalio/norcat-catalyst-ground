@@ -3,6 +3,7 @@ import { Layout } from '@/components/Layout';
 import { Cpu, Layers, ShieldCheck, ArrowRight, Sparkles, Brain, Banknote, Rocket, DollarSign } from 'lucide-react';
 import signatureLines from '@/assets/signature-lines.png';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
+import FinalCTA from "@/components/FinalCTA";
 
 const NAVY = '#001A4D';
 const BLUE = '#003DA5';
@@ -212,30 +213,16 @@ const Programs = () => {
         </section>
 
         {/* CTA */}
-        <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${BLUE} 0%, ${NAVY} 100%)` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle at 10% 50%, rgba(0,179,152,0.18), transparent 45%), radial-gradient(circle at 90% 50%, rgba(47,111,214,0.18), transparent 50%)`,
-          }} />
-          <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-6" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-              Not sure which path fits?
-            </h2>
-            <p className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.85)' }}>
-              Tell us what you're building and we'll map you to the right program, funding stream, and mentor network.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link to="/apply"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"
-                    style={{ background: 'rgba(0, 179, 152, 0.8)', color: 'white' }}>
-                Become a Client <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link to="/funding"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border border-white/25 text-white hover:bg-white/10">
-                Explore Funding <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          eyebrow="Find your fit"
+          title="Not sure which"
+          titleAccent="path fits?"
+          body="Tell us what you're building and we'll map you to the right program, funding stream, and mentor network."
+          ctaLabel="Become a Client"
+          ctaHref="/apply"
+          secondaryLabel="Explore Funding"
+          secondaryHref="/funding"
+        />
 
       </div>
     </Layout>

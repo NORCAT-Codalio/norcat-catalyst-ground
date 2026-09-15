@@ -19,6 +19,7 @@ import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 import signatureLines from '@/assets/signature-lines.png';
 import torontoMetroLogo from '@/assets/logos/toronto-metropolitan-university.png';
 import rogersCatalystLogo from '@/assets/logos/rogers-cybersecure-catalyst.png';
+import FinalCTA from "@/components/FinalCTA";
 
 // ── Brand tokens (mirrors Home2 / About / NORCAT Underground) ──
 const NAVY = '#001A4D';
@@ -303,54 +304,17 @@ const RogersCybersecure = () => {
           </div>
         </section>
 
-        {/* ───── CTA (light) ───── */}
-        <section className="py-16 md:py-24" style={{ background: PAPER, color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div
-              className="rounded-3xl p-9 md:p-14 relative overflow-hidden"
-              style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
-            >
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
-                }}
-              />
-              <div className="relative max-w-3xl">
-                <Eyebrow className="!text-white">
-                  Get Protected
-                </Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl">
-                  Ready to strengthen<br />
-                  <span style={{ color: TEAL }}>your cybersecurity?</span>
-                </Display>
-                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                  Get referred to the Rogers Cybersecure Catalyst mining sector program and receive
-                  mining-specific cybersecurity mentorship from the NORCAT team.
-                </p>
-                <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://cybersecurecatalyst.ca/mining-sector/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                  >
-                    Visit Cybersecure Catalyst <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <Link
-                    to="/apply"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
-                  >
-                    Get Referred by NORCAT
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ───── CTA ───── */}
+        <FinalCTA
+          eyebrow="Get Protected"
+          title="Ready to strengthen"
+          titleAccent="your cybersecurity?"
+          body="Get referred to the Rogers Cybersecure Catalyst mining sector program and receive mining-specific cybersecurity mentorship from the NORCAT team."
+          ctaLabel="Visit Cybersecure Catalyst"
+          ctaHref="https://cybersecurecatalyst.ca/mining-sector/"
+          secondaryLabel="Get Referred by NORCAT"
+          secondaryHref="/apply"
+        />
       </div>
     </Layout>
   );
