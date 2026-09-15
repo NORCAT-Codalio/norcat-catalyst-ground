@@ -387,50 +387,16 @@ const Core5 = () => {
         </section>
 
         {/* ───── 7. FINAL CTA ───── */}
-        <section className="pb-16 md:pb-24" style={{ background: 'white', color: NAVY }}>
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div
-              className="rounded-3xl p-9 md:p-14 relative overflow-hidden"
-              style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${BLUE} 55%, ${TEAL} 100%)` }}
-            >
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 15% 20%, rgba(0,179,152,0.22), transparent 40%), radial-gradient(circle at 85% 80%, rgba(47,111,214,0.18), transparent 45%)`,
-                }}
-              />
-              <div className="relative max-w-3xl">
-                <Eyebrow className="!text-white">Start the Conversation</Eyebrow>
-                <Display className="text-3xl sm:text-4xl md:text-5xl">
-                  YOU BUILD IT.<br />
-                  <span style={{ color: TEAL }}>WE'LL OPEN THE DOORS.</span>
-                </Display>
-                <p className="mt-6 text-base md:text-lg leading-relaxed" style={{ color: FG_MUTED }}>
-                  Early concept, prototype or first customer — start with NORCAT Innovation and we'll connect you with
-                  the people, programs and places that move your technology forward.
-                </p>
-                <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/contact"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                  >
-                    Get in Touch <ArrowUpRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </Link>
-                  <a
-                    href="https://core5.tech/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-colors hover:bg-white/5"
-                    style={{ fontFamily: FONT, color: 'white', border: `2px solid ${TEAL}` }}
-                  >
-                    Core5.tech <ExternalLink className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          eyebrow="Start the Conversation"
+          title="You build it."
+          titleAccent="We'll open the doors."
+          body="Early concept, prototype or first customer — start with NORCAT Innovation and we'll connect you with the people, programs and places that move your technology forward."
+          ctaLabel="Get in Touch"
+          ctaHref="/contact"
+          secondaryLabel="Core5.tech"
+          secondaryHref="https://core5.tech/"
+        />
 
         {/* ───── OVIN / ONTARIO ATTRIBUTION (bottom, centered) ───── */}
         <section className="py-10 md:py-14" style={{ background: PAPER, color: NAVY }}>
