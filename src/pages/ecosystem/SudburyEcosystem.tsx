@@ -63,7 +63,7 @@ interface EcosystemOrg {
 const CATEGORY_COLORS: Record<Exclude<CategoryType, 'all'>, { color: string; soft: string; deep: string; label: string }> = {
   support: { color: '#2F6FD6', soft: 'rgba(47,111,214,0.10)', deep: '#12408F', label: 'Support' },
   funding: { color: '#00B398', soft: 'rgba(0,179,152,0.12)', deep: '#006A5B', label: 'Funding' },
-  education: { color: '#5B9BD5', soft: 'rgba(91,155,213,0.14)', deep: '#2C6399', label: 'Education' },
+  education: { color: '#003DA5', soft: 'rgba(0,61,165,0.10)', deep: '#003DA5', label: 'Education' },
   research: { color: '#001A4D', soft: 'rgba(0,26,77,0.08)', deep: '#001A4D', label: 'Research' },
 };
 
