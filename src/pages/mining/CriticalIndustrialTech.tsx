@@ -234,10 +234,7 @@ const CriticalIndustrialTech = () => {
                   {/* Content */}
                   <div className="px-6 md:px-8 pt-8 pb-6">
                     <div className="text-center mb-6 md:mb-7">
-                      <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-[1.02]">
-                        <img src={citLogo} alt="Critical Industrial Technologies" className="h-16 md:h-20 object-contain" />
-                      </a>
-                      <h3 className="font-black uppercase text-lg md:text-xl leading-tight mt-4" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      <h3 className="font-black uppercase text-lg md:text-xl leading-tight" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                         NORCAT as a Technology <span style={{ color: TEAL }}>Development Site</span>
                       </h3>
                     </div>
@@ -263,6 +260,9 @@ const CriticalIndustrialTech = () => {
                   {/* Logos */}
                   <div className="flex flex-col items-center px-6 md:px-8 pb-8">
                     <div className="w-full h-px mb-6 md:mb-7" style={{ background: '#d9dde5' }} />
+                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="mb-5 transition-transform hover:scale-[1.02]">
+                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain" />
+                    </a>
 
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: '#6b7387' }}>Program Partners</p>
                     <div className="flex items-center justify-center gap-4 md:gap-6">
