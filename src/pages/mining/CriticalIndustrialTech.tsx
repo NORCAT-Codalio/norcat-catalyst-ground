@@ -684,12 +684,13 @@ const CriticalIndustrialTech = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6">
-                <Eyebrow>How to Apply</Eyebrow>
+                <Eyebrow color="#6b7387">How to Apply</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
-                  Start with the<br /><span style={{ color: TEAL }}>NORCAT team.</span>
+                  <span style={{ color: BLUE }}>Start with the</span><br />
+                  <span style={{ color: TEAL }}>NORCAT team.</span>
                 </h2>
                 <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: '#475068' }}>
                   CIT is <strong style={{ color: NAVY }}>open for applications on a rolling basis.</strong> Applications MUST be initiated in AccessOCI by an OCI Business Development Manager (BDM) or CIT Sector Manager.
