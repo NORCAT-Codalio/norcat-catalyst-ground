@@ -234,7 +234,10 @@ const CriticalIndustrialTech = () => {
                   {/* Content */}
                   <div className="px-6 md:px-8 pt-8 pb-6">
                     <div className="text-center mb-6 md:mb-7">
-                      <h3 className="font-black uppercase text-lg md:text-xl leading-tight" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
+                      <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:scale-[1.02]">
+                        <img src={citLogo} alt="Critical Industrial Technologies" className="h-16 md:h-20 object-contain" />
+                      </a>
+                      <h3 className="font-black uppercase text-lg md:text-xl leading-tight mt-4" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                         NORCAT as a Technology <span style={{ color: TEAL }}>Development Site</span>
                       </h3>
                     </div>
