@@ -289,7 +289,7 @@ const CriticalIndustrialTech = () => {
             <div className="grid gap-10 lg:gap-14 lg:grid-cols-12 items-start">
               {/* Left column - narrative */}
               <div className="lg:col-span-4">
-                <Eyebrow>Technology Development Sites</Eyebrow>
+                <Eyebrow color="#6b7387">Technology Development Sites</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
