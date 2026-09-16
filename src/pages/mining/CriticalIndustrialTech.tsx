@@ -201,8 +201,8 @@ const CriticalIndustrialTech = () => {
         {/* ───── ABOUT + PARTNERS (light) ───── */}
         <section className="pt-10 md:pt-14 pb-6 md:pb-8" style={{ background: PAPER, color: NAVY }}>
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-            <div className="grid gap-10 lg:gap-12 lg:grid-cols-12 items-start">
-              <div className="lg:col-span-6">
+            <div className="grid gap-10 lg:gap-12 lg:grid-cols-12 items-stretch">
+              <div className="lg:col-span-6 flex flex-col justify-center">
                 <Eyebrow color="#6b7387">About the Initiative</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
@@ -220,17 +220,19 @@ const CriticalIndustrialTech = () => {
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
                   As part of the initiative, the <Link to="/mining/underground-centre" className="font-semibold underline underline-offset-2 hover:text-[#00B398]" style={{ color: NAVY }}>NORCAT Underground Centre</Link> is a Technology Development Site (TDS) providing mining technology companies with a real-world environment to develop, test and validate their solutions.
                 </p>
-                <Link
-                  to="/mining/underground-centre"
-                  className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
-                  style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
-                >
-                  Explore the NORCAT Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                </Link>
+                <div>
+                  <Link
+                    to="/mining/underground-centre"
+                    className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
+                    style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
+                  >
+                    Explore the NORCAT Dev Site <ArrowRight className="w-4 h-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                  </Link>
+                </div>
               </div>
 
-              <div className="lg:col-span-6">
-                <div className="rounded-2xl overflow-hidden h-full" style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 24px 60px -30px rgba(0,26,77,0.18)' }}>
+              <div className="lg:col-span-6 flex flex-col gap-5 md:gap-6">
+                <div className="rounded-2xl overflow-hidden flex-grow" style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 24px 60px -30px rgba(0,26,77,0.18)' }}>
                   {/* Content */}
                   <div className="px-6 md:px-8 pt-8 pb-8">
                     <div className="text-center mb-6 md:mb-7">
@@ -260,25 +262,25 @@ const CriticalIndustrialTech = () => {
                   {/* Footer accent */}
                   <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${TEAL}, #4DD4C1)` }} />
                 </div>
-              </div>
-            </div>
 
-            {/* Logo banner */}
-            <div className="mt-10 md:mt-12 rounded-2xl px-6 md:px-10 py-7 md:py-8 flex flex-col md:flex-row items-center justify-center gap-7 md:gap-10" style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 24px 60px -30px rgba(0,26,77,0.12)' }}>
-              <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
-                <img src={citLogo} alt="Critical Industrial Technologies" className="h-16 md:h-20 object-contain" />
-              </a>
-              <div className="hidden md:block w-px h-14" style={{ background: '#d9dde5' }} />
-              <div className="flex flex-col items-center gap-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: '#6b7387' }}>Program Partners</p>
-                <div className="flex items-center justify-center gap-5 md:gap-8">
-                  <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
-                    <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-10 md:h-11 object-contain" />
+                {/* Anchored partner card */}
+                <div className="rounded-2xl px-6 md:px-8 py-6 md:py-7 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-7" style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 16px 40px -24px rgba(0,26,77,0.14)' }}>
+                  <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02] shrink-0">
+                    <img src={citLogo} alt="Critical Industrial Technologies" className="h-12 md:h-14 object-contain" />
                   </a>
-                  <div className="w-px h-7" style={{ background: '#d9dde5' }} />
-                  <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
-                    <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-9 md:h-10 object-contain" />
-                  </a>
+                  <div className="hidden sm:block w-px h-12" style={{ background: '#d9dde5' }} />
+                  <div className="flex flex-col items-center gap-2.5">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em]" style={{ color: '#6b7387' }}>Program Partners</p>
+                    <div className="flex items-center justify-center gap-4 md:gap-6">
+                      <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
+                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-8 md:h-9 object-contain" />
+                      </a>
+                      <div className="w-px h-6" style={{ background: '#d9dde5' }} />
+                      <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
+                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-7 md:h-8 object-contain" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
