@@ -206,9 +206,10 @@ const CriticalIndustrialTech = () => {
                 <Eyebrow color="#6b7387">About the Initiative</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                  style={{ fontFamily: FONT, color: '#00B398', letterSpacing: '-0.02em' }}
+                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
                 >
-                  What is CIT?
+                  <span style={{ color: '#003DA5' }}>What is </span>
+                  <span style={{ color: '#00B398' }}>CIT?</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
                   Critical Industrial Technologies is a Government of Ontario initiative delivered by the Ontario Centre of Innovation to accelerate the development, commercialization and adoption of advanced technologies by Ontario SMEs.
