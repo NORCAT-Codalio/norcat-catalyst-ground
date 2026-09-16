@@ -263,9 +263,6 @@ const CriticalIndustrialTech = () => {
                   {/* Logos */}
                   <div className="flex flex-col items-center px-6 md:px-8 pb-8">
                     <div className="w-full h-px mb-6 md:mb-7" style={{ background: '#d9dde5' }} />
-                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="mb-5 transition-transform hover:scale-[1.02]">
-                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain" />
-                    </a>
 
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: '#6b7387' }}>Program Partners</p>
                     <div className="flex items-center justify-center gap-4 md:gap-6">
