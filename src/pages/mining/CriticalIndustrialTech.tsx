@@ -428,12 +428,12 @@ const CriticalIndustrialTech = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
-                <Eyebrow>NORCAT as a Technology Development Site</Eyebrow>
+                <Eyebrow color="#6b7387">NORCAT as a Technology Development Site</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
-                  From Prototype to<br /><span style={{ color: TEAL }}>Real-World Proof.</span>
+                  <span style={{ color: BLUE }}>From Prototype to</span><br /><span style={{ color: TEAL }}>Real-World Proof.</span>
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
                   The NORCAT Underground Centre gives mining technology companies an operating environment to move beyond controlled testing and see how their solutions perform underground.
