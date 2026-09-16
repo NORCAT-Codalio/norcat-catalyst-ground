@@ -231,27 +231,8 @@ const CriticalIndustrialTech = () => {
 
               <div className="lg:col-span-6">
                 <div className="rounded-2xl overflow-hidden" style={{ background: 'white', border: '1px solid #d9dde5', boxShadow: '0 24px 60px -30px rgba(0,26,77,0.18)' }}>
-                  {/* Logos */}
-                  <div className="flex flex-col items-center p-6 md:p-8 pb-5">
-                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="mb-6 transition-transform hover:scale-[1.02]">
-                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain" />
-                    </a>
-
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: '#6b7387' }}>Program Partners</p>
-                    <div className="flex items-center justify-center gap-4 md:gap-6">
-                      <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
-                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-10 md:h-11 object-contain" />
-                      </a>
-                      <div className="w-px h-7" style={{ background: '#d9dde5' }} />
-                      <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
-                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-9 md:h-10 object-contain" />
-                      </a>
-                    </div>
-                  </div>
-
                   {/* Content */}
-                  <div className="px-6 md:px-8 pb-8">
-                    <div className="w-full h-px mb-6 md:mb-7" style={{ background: '#d9dde5' }} />
+                  <div className="px-6 md:px-8 pt-8 pb-6">
                     <div className="text-center mb-6 md:mb-7">
                       <h3 className="font-black uppercase text-lg md:text-xl leading-tight" style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.01em' }}>
                         NORCAT as a Technology <span style={{ color: TEAL }}>Development Site</span>
@@ -273,6 +254,25 @@ const CriticalIndustrialTech = () => {
                           <p className="text-[11px] md:text-xs leading-snug mt-0.5" style={{ color: '#6b7387' }}>{item.sub}</p>
                         </div>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Logos */}
+                  <div className="flex flex-col items-center px-6 md:px-8 pb-8">
+                    <div className="w-full h-px mb-6 md:mb-7" style={{ background: '#d9dde5' }} />
+                    <a href="https://www.citinnovation.ca/" target="_blank" rel="noopener noreferrer" className="mb-5 transition-transform hover:scale-[1.02]">
+                      <img src={citLogo} alt="Critical Industrial Technologies" className="h-20 md:h-24 object-contain" />
+                    </a>
+
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: '#6b7387' }}>Program Partners</p>
+                    <div className="flex items-center justify-center gap-4 md:gap-6">
+                      <a href="https://www.oc-innovation.ca/programs/cit/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
+                        <img src={ociLogo} alt="Ontario Centre of Innovation" className="h-10 md:h-11 object-contain" />
+                      </a>
+                      <div className="w-px h-7" style={{ background: '#d9dde5' }} />
+                      <a href="https://www.ontario.ca/page/critical-technology-initiatives" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-[1.02]">
+                        <img src={ontarioLogoAsset} alt="Government of Ontario" className="h-9 md:h-10 object-contain" />
+                      </a>
                     </div>
                   </div>
 
