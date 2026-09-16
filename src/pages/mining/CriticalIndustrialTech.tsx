@@ -292,7 +292,7 @@ const CriticalIndustrialTech = () => {
                 <Eyebrow color="#6b7387">Technology Development Sites</Eyebrow>
                 <h2
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                  style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
+                  style={{ fontFamily: FONT, color: BLUE, letterSpacing: '-0.02em' }}
                 >
                   Real-world places<br /><span style={{ color: TEAL }}>to put technology to work.</span>
                 </h2>
