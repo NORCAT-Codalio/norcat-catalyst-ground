@@ -96,8 +96,11 @@
     /* Portal brand roles */
     --portal-navy: 219 100% 15%;
     --portal-blue: 218 100% 32%;
+    --portal-sky: 218 66% 51%;
     --portal-grey: 222 12% 48%;
-    --portal-mist: 210 29% 97%;
+    --portal-mist: 210 40% 98%;
+    --portal-mint: 170 64% 69%;
+    --shadow-portal: 0 24px 60px -24px hsl(var(--portal-navy) / 0.24);
   }
 }
 

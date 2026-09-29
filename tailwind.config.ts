@@ -51,6 +51,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        portal: {
+          navy: "hsl(var(--portal-navy))",
+          blue: "hsl(var(--portal-blue))",
+          sky: "hsl(var(--portal-sky))",
+          grey: "hsl(var(--portal-grey))",
+          mist: "hsl(var(--portal-mist))",
+          mint: "hsl(var(--portal-mint))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
