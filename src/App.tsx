@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "@/hooks/useAuth";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { AccessibilityWidget } from "@/components/accessibility/AccessibilityWidget";
 import Index from "./pages/Index";
@@ -53,6 +52,7 @@ import InsightsReports from "./pages/insights/Reports";
 
 // Portal pages
 import Auth from "./pages/portal/Auth";
+import ResetPassword from "./pages/portal/ResetPassword";
 import PendingApproval from "./pages/portal/PendingApproval";
 import Dashboard from "./pages/portal/Dashboard";
 import Resources from "./pages/portal/Resources";
@@ -80,9 +80,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AuthProvider>
-          <ScrollToTop />
-          <Routes>
+        <ScrollToTop />
+        <Routes>
             <Route path="/" element={<Home2 />} />
             <Route path="/home-original" element={<Index />} />
             <Route path="/home-2" element={<Home2 />} />
@@ -131,6 +130,7 @@ const App = () => (
             
             {/* Portal Routes */}
             <Route path="/portal/auth" element={<Auth />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/portal/pending" element={<PendingApproval />} />
             <Route path="/portal" element={<Dashboard />} />
             <Route path="/portal/resources" element={<Resources />} />
@@ -151,9 +151,8 @@ const App = () => (
             <Route path="/mentor/notifications" element={<MentorNotifications />} />
             
             <Route path="*" element={<NotFound />} />
-          </Routes>
-          <AccessibilityWidget />
-        </AuthProvider>
+        </Routes>
+        <AccessibilityWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

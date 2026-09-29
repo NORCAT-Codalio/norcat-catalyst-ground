@@ -92,6 +92,12 @@
     --sidebar-accent-foreground: 168 100% 25%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 168 100% 35%;
+
+    /* Portal brand roles */
+    --portal-navy: 219 100% 15%;
+    --portal-blue: 218 100% 32%;
+    --portal-grey: 222 12% 48%;
+    --portal-mist: 210 29% 97%;
   }
 }
 

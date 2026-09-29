@@ -18,6 +18,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import norcatLogo from '@/assets/logos/norcat-black.png';
 
 const navItems = [
   { name: 'Dashboard', href: '/mentor', icon: Home },
@@ -57,12 +58,12 @@ export function MentorPortalSidebar() {
       {/* Logo */}
       <div className="p-4 border-b border-sidebar-border">
         <Link to="/mentor" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
-            <span className="text-accent-foreground font-bold text-lg">N</span>
+          <div className="w-10 h-10 rounded-lg bg-card border border-sidebar-border flex items-center justify-center flex-shrink-0 p-2">
+            <img src={norcatLogo} alt="" aria-hidden="true" className="w-full h-auto" />
           </div>
           {!collapsed && (
             <div className="overflow-hidden">
-              <span className="font-bold text-sidebar-foreground block">NORCAT</span>
+              <img src={norcatLogo} alt="NORCAT Innovation" className="h-4 w-auto mb-1" />
               <span className="text-xs text-muted-foreground">Mentor Portal</span>
             </div>
           )}

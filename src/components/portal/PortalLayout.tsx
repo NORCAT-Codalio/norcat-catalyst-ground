@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { PortalSidebar } from './PortalSidebar';
 import { useAuth } from '@/hooks/useAuth';
 
-// Demo mode flag - set to true to bypass authentication
-const DEMO_MODE = true;
+const DEMO_MODE = false;
 
 interface PortalLayoutProps {
   children: ReactNode;
@@ -40,7 +39,7 @@ export function PortalLayout({ children }: PortalLayoutProps) {
   }
 
   return (
-    <div className="min-h-screen flex bg-background w-full">
+    <div className="min-h-screen flex bg-[hsl(var(--portal-mist))] w-full">
       <PortalSidebar />
       <main className="flex-1 overflow-auto">
         <div className="p-6 lg:p-8">{children}</div>
