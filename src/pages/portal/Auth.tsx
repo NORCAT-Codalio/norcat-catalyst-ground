@@ -9,7 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { z } from 'zod';
-import norcatLogoWhite from '@/assets/logos/norcat-white.png';
+import norcatLogoBlack from '@/assets/logos/norcat-black.png';
 
 type View = 'sign-in' | 'invite' | 'forgot';
 
@@ -129,11 +129,12 @@ export default function Auth() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-portal-mist px-4 py-8 sm:px-6">
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-portal)]">
-        <header className="flex flex-col items-center bg-portal-navy px-8 py-8 text-center">
+        <div className="h-1.5 bg-gradient-to-r from-primary to-portal-blue" aria-hidden="true" />
+        <header className="flex flex-col items-center bg-card px-8 py-8 text-center">
           <Link to="/" aria-label="Return to NORCAT Innovation">
-            <img src={norcatLogoWhite} alt="NORCAT Innovation" className="h-7 w-auto" />
+            <img src={norcatLogoBlack} alt="NORCAT Innovation" className="h-7 w-auto" />
           </Link>
-          <p className="mt-4 text-xs font-bold uppercase text-portal-mint">Portal access</p>
+          <p className="mt-4 text-xs font-bold uppercase text-primary">Portal access</p>
         </header>
 
         <section className="p-6 sm:p-9">
@@ -143,7 +144,7 @@ export default function Auth() {
                   <CheckCircle2 className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
                 <p className="text-xs font-bold uppercase text-portal-grey">Email sent</p>
-                <h2 className="mt-2 text-3xl font-extrabold text-portal-navy">Check your inbox.</h2>
+                <h2 className="mt-2 text-3xl font-extrabold text-portal-blue">Check your inbox.</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">If an account exists for {formData.email}, you’ll receive a secure reset link shortly.</p>
                 <Button variant="outline" className="mt-7 w-full border-portal-blue text-portal-blue hover:bg-portal-blue hover:text-primary-foreground" onClick={() => setActiveView('sign-in')}>
                   <ArrowLeft aria-hidden="true" /> Back to sign in
@@ -153,7 +154,7 @@ export default function Auth() {
               <>
                 <div className="text-center">
                   <p className="text-xs font-bold uppercase text-portal-grey">{view === 'invite' ? 'Invited access' : 'Secure portal access'}</p>
-                  <h1 className="mt-2 text-3xl font-extrabold text-portal-navy">{heading}</h1>
+                  <h1 className="mt-2 text-3xl font-extrabold text-portal-blue">{heading}</h1>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
                 </div>
 
@@ -177,13 +178,8 @@ export default function Auth() {
 
                   {view !== 'forgot' && (
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between gap-4">
+                      <div>
                         <Label htmlFor="password">Password</Label>
-                        {view === 'sign-in' && (
-                          <Button type="button" variant="link" onClick={() => setActiveView('forgot')} className="h-auto p-0 text-sm font-semibold text-portal-sky hover:text-portal-blue">
-                            Forgot password?
-                          </Button>
-                        )}
                       </div>
                       <div className="relative">
                         <LockKeyhole className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
@@ -198,21 +194,31 @@ export default function Auth() {
 
                   {view === 'invite' && <input type="hidden" name="inviteCode" value={formData.inviteCode} />}
 
-                  <Button type="submit" className="h-12 w-full bg-portal-blue font-bold hover:bg-portal-navy" disabled={isSubmitting}>
-                    {isSubmitting ? (view === 'forgot' ? 'Sending reset link…' : view === 'invite' ? 'Creating account…' : 'Signing in…') : (view === 'forgot' ? 'Send reset link' : view === 'invite' ? 'Create account' : 'Sign in')}
+                  <Button type="submit" className="h-12 w-full bg-portal-blue font-bold hover:bg-portal-blue/90" disabled={isSubmitting}>
+                    {view === 'sign-in' ? (isSubmitting ? 'Signing in…' : 'Sign in') : (view === 'forgot' ? 'Send reset link' : 'Create account')}
                     {!isSubmitting && <ArrowRight aria-hidden="true" />}
                   </Button>
+
+                  {view === 'sign-in' && (
+                    <button
+                      type="button"
+                      onClick={() => setActiveView('forgot')}
+                      className="mx-auto block text-sm font-semibold text-portal-blue underline-offset-4 transition-colors hover:text-primary hover:underline"
+                    >
+                      Forgot your password?
+                    </button>
+                  )}
                 </form>
 
                 {view === 'forgot' && (
-                  <Button variant="ghost" className="mt-3 w-full text-muted-foreground hover:bg-portal-mist hover:text-portal-navy" onClick={() => setActiveView('sign-in')}>
+                  <Button variant="ghost" className="mt-3 w-full text-muted-foreground hover:bg-portal-mist hover:text-portal-blue" onClick={() => setActiveView('sign-in')}>
                     <ArrowLeft aria-hidden="true" /> Back to sign in
                   </Button>
                 )}
               </>
             )}
           <div className="mt-8 border-t border-border pt-7 text-center">
-            <p className="text-sm font-semibold text-portal-navy">Not a NORCAT client yet?</p>
+            <p className="text-sm font-semibold text-portal-blue">Not a NORCAT client yet?</p>
             <p className="mt-1 text-sm text-muted-foreground">Tell us about your venture and where you want to go next.</p>
             <Button asChild variant="outline" className="mt-4 w-full border-2 border-primary font-bold text-primary hover:bg-primary hover:text-primary-foreground">
               <Link to="/apply">Become a Client <ArrowRight aria-hidden="true" /></Link>
