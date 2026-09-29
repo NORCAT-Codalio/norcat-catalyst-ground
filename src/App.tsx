@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "@/hooks/useAuth";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { AccessibilityWidget } from "@/components/accessibility/AccessibilityWidget";
 import Index from "./pages/Index";
@@ -81,9 +80,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AuthProvider>
-          <ScrollToTop />
-          <Routes>
+        <ScrollToTop />
+        <Routes>
             <Route path="/" element={<Home2 />} />
             <Route path="/home-original" element={<Index />} />
             <Route path="/home-2" element={<Home2 />} />
@@ -153,9 +151,8 @@ const App = () => (
             <Route path="/mentor/notifications" element={<MentorNotifications />} />
             
             <Route path="*" element={<NotFound />} />
-          </Routes>
-          <AccessibilityWidget />
-        </AuthProvider>
+        </Routes>
+        <AccessibilityWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
