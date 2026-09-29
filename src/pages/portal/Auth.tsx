@@ -119,7 +119,12 @@ export default function Auth() {
     );
   }
 
-  const heading = view === 'forgot' ? 'Reset your password.' : view === 'invite' ? 'Activate your account.' : 'Welcome back.';
+  const headingParts: [string, string] =
+    view === 'forgot'
+      ? ['Reset your', 'password.']
+      : view === 'invite'
+        ? ['Activate your', 'account.']
+        : ['Welcome', 'back.'];
   const description = view === 'forgot'
     ? 'Enter the email connected to your portal account.'
     : view === 'invite'
@@ -130,21 +135,20 @@ export default function Auth() {
     <main className="flex min-h-screen items-center justify-center bg-portal-mist px-4 py-8 sm:px-6">
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-portal)]">
         <div className="h-1.5 bg-gradient-to-r from-primary to-portal-blue" aria-hidden="true" />
-        <header className="flex flex-col items-center bg-card px-8 py-8 text-center">
+        <header className="flex items-center justify-center border-b border-border bg-card px-8 py-6">
           <Link to="/" aria-label="Return to NORCAT Innovation">
             <img src={norcatLogoBlack} alt="NORCAT Innovation" className="h-7 w-auto" />
           </Link>
-          <p className="mt-4 text-xs font-bold uppercase text-primary">Portal access</p>
         </header>
 
-        <section className="p-6 sm:p-9">
+        <section className="p-6 pt-9 sm:p-9 sm:pt-10">
             {resetSent ? (
               <div className="text-center">
                 <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                   <CheckCircle2 className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
-                <p className="text-xs font-bold uppercase text-portal-grey">Email sent</p>
-                <h2 className="mt-2 text-3xl font-extrabold text-portal-blue">Check your inbox.</h2>
+                <p className="text-xs font-bold uppercase tracking-widest text-portal-grey">Email sent</p>
+                <h2 className="mt-3 text-3xl font-extrabold text-portal-blue">Check your <span className="text-primary">inbox.</span></h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">If an account exists for {formData.email}, you’ll receive a secure reset link shortly.</p>
                 <Button variant="outline" className="mt-7 w-full border-portal-blue text-portal-blue hover:bg-portal-blue hover:text-primary-foreground" onClick={() => setActiveView('sign-in')}>
                   <ArrowLeft aria-hidden="true" /> Back to sign in
@@ -153,12 +157,18 @@ export default function Auth() {
             ) : (
               <>
                 <div className="text-center">
-                  <p className="text-xs font-bold uppercase text-portal-grey">{view === 'invite' ? 'Invited access' : 'Secure portal access'}</p>
-                  <h1 className="mt-2 text-3xl font-extrabold text-portal-blue">{heading}</h1>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                  <p className="flex items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest text-portal-grey">
+                    <span className="h-px w-6 bg-border" aria-hidden="true" />
+                    {view === 'invite' ? 'Invited access' : 'Client portal'}
+                    <span className="h-px w-6 bg-border" aria-hidden="true" />
+                  </p>
+                  <h1 className="mt-4 text-3xl font-extrabold leading-tight text-portal-blue">
+                    {headingParts[0]} <span className="text-primary">{headingParts[1]}</span>
+                  </h1>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{description}</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="mt-7 space-y-5">
+                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
                   {view === 'invite' && (
                     <div className="space-y-2">
                       <Label htmlFor="fullName">Full name</Label>
