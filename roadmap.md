@@ -1,6 +1,7 @@
 # Task Roadmap
 
 ## In Progress
+- [ ] Refresh portal branding and account access flows
 
 ## Completed
 - [x] CIT page: make logo partner box smaller and improve alignment

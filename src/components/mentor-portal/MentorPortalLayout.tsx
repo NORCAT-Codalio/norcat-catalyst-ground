@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MentorPortalSidebar } from './MentorPortalSidebar';
 import { useAuth } from '@/hooks/useAuth';
 
-// Demo mode flag - set to true to bypass authentication
-const DEMO_MODE = true;
+const DEMO_MODE = false;
 
 interface MentorPortalLayoutProps {
   children: ReactNode;

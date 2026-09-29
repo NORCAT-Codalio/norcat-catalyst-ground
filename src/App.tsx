@@ -53,6 +53,7 @@ import InsightsReports from "./pages/insights/Reports";
 
 // Portal pages
 import Auth from "./pages/portal/Auth";
+import ResetPassword from "./pages/portal/ResetPassword";
 import PendingApproval from "./pages/portal/PendingApproval";
 import Dashboard from "./pages/portal/Dashboard";
 import Resources from "./pages/portal/Resources";
@@ -131,6 +132,7 @@ const App = () => (
             
             {/* Portal Routes */}
             <Route path="/portal/auth" element={<Auth />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/portal/pending" element={<PendingApproval />} />
             <Route path="/portal" element={<Dashboard />} />
             <Route path="/portal/resources" element={<Resources />} />
