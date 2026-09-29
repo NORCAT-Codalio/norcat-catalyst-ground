@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Eye, EyeOff, ArrowRight, Sparkles, Shield, Zap, Play } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Eye, EyeOff, LockKeyhole, Mail, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import { z } from 'zod';
 import norcatLogoWhite from '@/assets/logos/norcat-white.png';
 import norcatLogoBlack from '@/assets/logos/norcat-black.png';
+import norcatMark from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 
-// Demo mode flag - set to true to bypass authentication
-const DEMO_MODE = true;
+type View = 'sign-in' | 'invite' | 'forgot';
 
 const loginSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -25,110 +26,88 @@ const signupSchema = loginSchema.extend({
 });
 
 export default function Auth() {
-  const [isLogin, setIsLogin] = useState(true);
+  usePageTitle('Portal Sign In');
+  const [searchParams] = useSearchParams();
+  const inviteCode = searchParams.get('code') || '';
+  const [view, setView] = useState<View>(searchParams.get('forgot') === 'true' ? 'forgot' : inviteCode ? 'invite' : 'sign-in');
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [searchParams] = useSearchParams();
+  const [resetSent, setResetSent] = useState(false);
+  const [formData, setFormData] = useState({ email: '', password: '', fullName: '', inviteCode });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const navigate = useNavigate();
-  const { signIn, signUp, user, isApproved, isLoading, isMentor } = useAuth();
+  const { signIn, signUp, requestPasswordReset, user, isApproved, isLoading, isMentor } = useAuth();
   const { toast } = useToast();
 
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    fullName: '',
-    inviteCode: searchParams.get('code') || '',
-  });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  // Redirect based on role
   useEffect(() => {
-    if (!isLoading && user && isApproved) {
-      if (isMentor) {
-        navigate('/mentor');
-      } else {
-        navigate('/portal');
-      }
+    if (!isLoading && user) {
+      if (!isApproved) navigate('/portal/pending');
+      else navigate(isMentor ? '/mentor' : '/portal');
     }
   }, [user, isApproved, isLoading, isMentor, navigate]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: '' }));
+  const setActiveView = (nextView: View) => {
+    setView(nextView);
+    setErrors({});
+    setResetSent(false);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
+    setErrors((current) => ({ ...current, [name]: '' }));
+  };
+
+  const collectErrors = (validation: z.SafeParseReturnType<unknown, unknown>) => {
+    if (validation.success) return true;
+    const fieldErrors: Record<string, string> = {};
+    validation.error.errors.forEach((error) => {
+      const field = error.path[0];
+      if (typeof field === 'string') fieldErrors[field] = error.message;
+    });
+    setErrors(fieldErrors);
+    return false;
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     setErrors({});
 
-    try {
-      if (isLogin) {
-        const validation = loginSchema.safeParse(formData);
-        if (!validation.success) {
-          const fieldErrors: Record<string, string> = {};
-          validation.error.errors.forEach(err => {
-            fieldErrors[err.path[0]] = err.message;
-          });
-          setErrors(fieldErrors);
-          setIsSubmitting(false);
-          return;
-        }
-
-        const { error } = await signIn(formData.email, formData.password);
-        if (error) {
-          toast({
-            title: 'Sign in failed',
-            description: error.message,
-            variant: 'destructive',
-          });
-        } else {
-          toast({
-            title: 'Welcome back!',
-            description: 'You have successfully signed in.',
-          });
-          // Navigation will happen via useEffect based on role
-        }
-      } else {
-        const validation = signupSchema.safeParse(formData);
-        if (!validation.success) {
-          const fieldErrors: Record<string, string> = {};
-          validation.error.errors.forEach(err => {
-            fieldErrors[err.path[0]] = err.message;
-          });
-          setErrors(fieldErrors);
-          setIsSubmitting(false);
-          return;
-        }
-
-        const { error } = await signUp(
-          formData.email,
-          formData.password,
-          formData.fullName,
-          formData.inviteCode
-        );
-
-        if (error) {
-          toast({
-            title: 'Sign up failed',
-            description: error.message,
-            variant: 'destructive',
-          });
-        } else {
-          toast({
-            title: 'Account created!',
-            description: 'Welcome to the NORCAT Innovation Portal.',
-          });
-          // Navigation will happen via useEffect based on role
-        }
+    if (view === 'forgot') {
+      const emailValidation = z.string().email('Please enter a valid email address').safeParse(formData.email);
+      if (!emailValidation.success) {
+        setErrors({ email: emailValidation.error.errors[0]?.message || 'Please enter a valid email address' });
+        return;
       }
-    } catch (err) {
-      toast({
-        title: 'Error',
-        description: 'An unexpected error occurred. Please try again.',
-        variant: 'destructive',
-      });
+      setIsSubmitting(true);
+      const { error } = await requestPasswordReset(formData.email);
+      setIsSubmitting(false);
+      if (error) {
+        toast({ title: 'Reset link could not be sent', description: error.message, variant: 'destructive' });
+      } else {
+        setResetSent(true);
+      }
+      return;
+    }
+
+    const validation = view === 'invite' ? signupSchema.safeParse(formData) : loginSchema.safeParse(formData);
+    if (!collectErrors(validation)) return;
+
+    setIsSubmitting(true);
+    try {
+      const result = view === 'invite'
+        ? await signUp(formData.email, formData.password, formData.fullName, formData.inviteCode)
+        : await signIn(formData.email, formData.password);
+
+      if (result.error) {
+        toast({ title: view === 'invite' ? 'Account could not be created' : 'Sign in failed', description: result.error.message, variant: 'destructive' });
+      } else if (view === 'invite') {
+        toast({ title: 'Check your email', description: 'Confirm your email address to finish setting up your account.' });
+      } else {
+        toast({ title: 'Welcome back', description: 'You are signed in.' });
+      }
+    } catch {
+      toast({ title: 'Something went wrong', description: 'Please try again.', variant: 'destructive' });
     } finally {
       setIsSubmitting(false);
     }
@@ -136,243 +115,140 @@ export default function Auth() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
-      </div>
+      <main className="min-h-screen flex items-center justify-center bg-[hsl(var(--portal-mist))]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" aria-label="Loading" />
+      </main>
     );
   }
 
+  const heading = view === 'forgot' ? 'Reset your password.' : view === 'invite' ? 'Activate your account.' : 'Welcome back.';
+  const description = view === 'forgot'
+    ? 'Enter the email connected to your portal account.'
+    : view === 'invite'
+      ? 'Complete your invite-only NORCAT portal access.'
+      : 'Sign in to your NORCAT Innovation portal.';
+
   return (
-    <div className="min-h-screen flex">
-      {/* Left Panel - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-mesh opacity-30" />
-        <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute bottom-1/4 -right-20 w-60 h-60 rounded-full bg-primary/30 blur-3xl" />
-        
-        <div className="relative z-10 flex flex-col justify-between p-12 w-full">
-          <div>
-            <div className="flex items-center gap-3">
-              <img src={norcatLogoWhite} alt="NORCAT Innovation" className="h-7 w-auto" />
-            </div>
-          </div>
+    <main className="min-h-screen lg:grid lg:grid-cols-[minmax(0,1.05fr)_minmax(480px,0.95fr)] bg-[hsl(var(--portal-mist))]">
+      <section className="relative hidden lg:flex min-h-screen overflow-hidden bg-[hsl(var(--portal-navy))] p-12 xl:p-16 text-primary-foreground">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.18) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.18) 1px, transparent 1px)', backgroundSize: '56px 56px' }} />
+        <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-primary via-[hsl(var(--portal-blue))] to-primary" />
+        <img src={norcatMark.url} alt="" aria-hidden="true" className="absolute -right-24 bottom-8 w-[520px] max-w-[55vw] opacity-[0.08]" />
 
-          <div className="space-y-8">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl lg:text-5xl font-bold text-white leading-tight"
-            >
-              Your Venture's
-              <br />
-              <span className="text-gradient">Command Centre</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-white/70 text-lg max-w-md"
-            >
-              Access mentors, resources, events, and everything you need to scale your startup-all in one place.
-            </motion.p>
+        <div className="relative z-10 flex w-full flex-col justify-between">
+          <Link to="/" className="inline-flex w-fit" aria-label="Return to NORCAT Innovation">
+            <img src={norcatLogoWhite} alt="NORCAT Innovation" className="h-6 w-auto" />
+          </Link>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="grid grid-cols-3 gap-4"
-            >
-              {[
-                { icon: Sparkles, label: 'Resources' },
-                { icon: Shield, label: 'Mentors' },
-                { icon: Zap, label: 'Events' },
-              ].map((item, i) => (
-                <div
-                  key={item.label}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
-                >
-                  <item.icon className="h-6 w-6 text-primary mb-2" />
-                  <span className="text-white/80 text-sm">{item.label}</span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          <p className="text-white/40 text-sm">
-            © 2024 NORCAT Innovation. All rights reserved.
-          </p>
-        </div>
-      </div>
-
-      {/* Right Panel - Auth Form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-background">
-        <div className="w-full max-w-md">
-          {/* Mobile Logo */}
-          <div className="lg:hidden mb-8">
-            <img src={norcatLogoBlack} alt="NORCAT Innovation" className="h-6 w-auto" />
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-6"
-          >
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">
-                {isLogin ? 'Welcome back' : 'Create your account'}
-              </h2>
-              <p className="text-muted-foreground mt-1">
-                {isLogin
-                  ? 'Sign in to access your client portal'
-                  : 'Join the NORCAT Innovation ecosystem'}
-              </p>
-            </div>
-
-            {DEMO_MODE && (
-              <div className="flex flex-col sm:flex-row gap-2">
-                <Button
-                  onClick={() => navigate('/portal')}
-                  className="flex-1 bg-primary hover:bg-primary/90"
-                  size="lg"
-                >
-                  <Play className="mr-2 h-4 w-4" />
-                  Client Portal
-                </Button>
-                <Button
-                  onClick={() => navigate('/mentor')}
-                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
-                  size="lg"
-                >
-                  <Play className="mr-2 h-4 w-4" />
-                  Mentor Portal
-                </Button>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {!isLogin && (
-                <>
-                  <div className="space-y-2">
-                    <Label htmlFor="fullName">Full Name</Label>
-                    <Input
-                      id="fullName"
-                      name="fullName"
-                      type="text"
-                      placeholder="John Smith"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      className={errors.fullName ? 'border-destructive' : ''}
-                    />
-                    {errors.fullName && (
-                      <p className="text-sm text-destructive">{errors.fullName}</p>
-                    )}
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="inviteCode">Invite Code</Label>
-                    <Input
-                      id="inviteCode"
-                      name="inviteCode"
-                      type="text"
-                      placeholder="Enter your invite code"
-                      value={formData.inviteCode}
-                      onChange={handleInputChange}
-                      className={errors.inviteCode ? 'border-destructive' : ''}
-                    />
-                    {errors.inviteCode && (
-                      <p className="text-sm text-destructive">{errors.inviteCode}</p>
-                    )}
-                    <p className="text-xs text-muted-foreground">
-                      Don't have an invite code? Contact your administrator.
-                    </p>
-                  </div>
-                </>
-              )}
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@company.com"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={errors.email ? 'border-destructive' : ''}
-                />
-                {errors.email && (
-                  <p className="text-sm text-destructive">{errors.email}</p>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <div className="relative">
-                  <Input
-                    id="password"
-                    name="password"
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder="••••••••"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    className={errors.password ? 'border-destructive pr-10' : 'pr-10'}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                  >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                  </button>
-                </div>
-                {errors.password && (
-                  <p className="text-sm text-destructive">{errors.password}</p>
-                )}
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full btn-primary"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
-                    {isLogin ? 'Signing in...' : 'Creating account...'}
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    {isLogin ? 'Sign In' : 'Create Account'}
-                    <ArrowRight size={18} />
-                  </span>
-                )}
-              </Button>
-            </form>
-
-            <div className="text-center">
-              <button
-                type="button"
-                onClick={() => {
-                  setIsLogin(!isLogin);
-                  setErrors({});
-                }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {isLogin ? (
-                  <>
-                    Have an invite code?{' '}
-                    <span className="text-primary font-medium">Create account</span>
-                  </>
-                ) : (
-                  <>
-                    Already have an account?{' '}
-                    <span className="text-primary font-medium">Sign in</span>
-                  </>
-                )}
-              </button>
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="max-w-xl">
+            <p className="mb-5 text-xs font-bold uppercase text-primary">NORCAT Client Portal</p>
+            <h1 className="text-5xl xl:text-6xl font-extrabold leading-[1.03]">
+              BUILT FOR WHAT<br />COMES NEXT.
+            </h1>
+            <p className="mt-7 max-w-lg text-lg leading-relaxed text-primary-foreground/75">
+              Your private workspace for mentorship, resources, events and venture support.
+            </p>
+            <div className="mt-10 flex items-center gap-3 border-t border-primary-foreground/15 pt-6 text-sm text-primary-foreground/65">
+              <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
+              Secure, invite-only access for NORCAT clients and mentors.
             </div>
           </motion.div>
+
+          <p className="text-xs text-primary-foreground/45">© 2026 NORCAT Innovation</p>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="relative flex min-h-screen items-center justify-center px-4 py-10 sm:px-8 lg:p-12">
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-[hsl(var(--portal-blue))] to-primary lg:hidden" />
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
+          <Link to="/" className="mb-10 inline-flex lg:hidden" aria-label="Return to NORCAT Innovation">
+            <img src={norcatLogoBlack} alt="NORCAT Innovation" className="h-5 w-auto" />
+          </Link>
+
+          <div className="rounded-lg border border-border bg-card/85 p-6 shadow-xl backdrop-blur-xl sm:p-8">
+            {resetSent ? (
+              <div className="text-center">
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <CheckCircle2 className="h-6 w-6 text-primary" aria-hidden="true" />
+                </div>
+                <p className="text-xs font-bold uppercase text-[hsl(var(--portal-grey))]">Email sent</p>
+                <h2 className="mt-2 text-3xl font-extrabold text-[hsl(var(--portal-navy))]">Check your inbox.</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">If an account exists for {formData.email}, you’ll receive a secure reset link shortly.</p>
+                <Button variant="outline" className="mt-7 w-full rounded-full" onClick={() => setActiveView('sign-in')}>
+                  <ArrowLeft aria-hidden="true" /> Back to sign in
+                </Button>
+              </div>
+            ) : (
+              <>
+                <p className="text-xs font-bold uppercase text-[hsl(var(--portal-grey))]">{view === 'invite' ? 'Invited access' : 'Secure portal access'}</p>
+                <h2 className="mt-2 text-3xl font-extrabold text-[hsl(var(--portal-navy))]">{heading}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+
+                <form onSubmit={handleSubmit} className="mt-7 space-y-5">
+                  {view === 'invite' && (
+                    <div className="space-y-2">
+                      <Label htmlFor="fullName">Full name</Label>
+                      <Input id="fullName" name="fullName" value={formData.fullName} onChange={handleInputChange} autoComplete="name" className="h-12" aria-invalid={Boolean(errors.fullName)} required />
+                      {errors.fullName && <p className="text-sm text-destructive">{errors.fullName}</p>}
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email address</Label>
+                    <div className="relative">
+                      <Mail className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+                      <Input id="email" name="email" type="email" placeholder="you@company.com" value={formData.email} onChange={handleInputChange} autoComplete="email" className="h-12 pl-10" aria-invalid={Boolean(errors.email)} required />
+                    </div>
+                    {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+                  </div>
+
+                  {view !== 'forgot' && (
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between gap-4">
+                        <Label htmlFor="password">Password</Label>
+                        {view === 'sign-in' && (
+                          <button type="button" onClick={() => setActiveView('forgot')} className="text-sm font-semibold text-[hsl(var(--portal-blue))] hover:text-primary transition-colors">
+                            Forgot password?
+                          </button>
+                        )}
+                      </div>
+                      <div className="relative">
+                        <LockKeyhole className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+                        <Input id="password" name="password" type={showPassword ? 'text' : 'password'} placeholder="Enter your password" value={formData.password} onChange={handleInputChange} autoComplete={view === 'invite' ? 'new-password' : 'current-password'} className="h-12 pl-10 pr-12" aria-invalid={Boolean(errors.password)} required />
+                        <Button type="button" variant="ghost" size="icon" onClick={() => setShowPassword((visible) => !visible)} aria-label={showPassword ? 'Hide password' : 'Show password'} className="absolute right-1 top-1 h-10 w-10 text-muted-foreground">
+                          {showPassword ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
+                        </Button>
+                      </div>
+                      {errors.password && <p className="text-sm text-destructive">{errors.password}</p>}
+                    </div>
+                  )}
+
+                  {view === 'invite' && <input type="hidden" name="inviteCode" value={formData.inviteCode} />}
+
+                  <Button type="submit" className="h-12 w-full rounded-full font-bold" disabled={isSubmitting}>
+                    {isSubmitting ? (view === 'forgot' ? 'Sending reset link…' : view === 'invite' ? 'Creating account…' : 'Signing in…') : (view === 'forgot' ? 'Send reset link' : view === 'invite' ? 'Create account' : 'Sign in')}
+                    {!isSubmitting && <ArrowRight aria-hidden="true" />}
+                  </Button>
+                </form>
+
+                {view === 'forgot' && (
+                  <Button variant="ghost" className="mt-3 w-full rounded-full text-muted-foreground" onClick={() => setActiveView('sign-in')}>
+                    <ArrowLeft aria-hidden="true" /> Back to sign in
+                  </Button>
+                )}
+              </>
+            )}
+          </div>
+
+          <div className="mt-6 rounded-lg border border-border bg-card/60 p-5 text-center backdrop-blur-md">
+            <p className="text-sm font-semibold text-[hsl(var(--portal-navy))]">Not a NORCAT client yet?</p>
+            <p className="mt-1 text-sm text-muted-foreground">Tell us about your venture and where you want to go next.</p>
+            <Button asChild variant="outline" className="mt-4 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Link to="/apply">Become a Client <ArrowRight aria-hidden="true" /></Link>
+            </Button>
+          </div>
+        </motion.div>
+      </section>
+    </main>
   );
 }
