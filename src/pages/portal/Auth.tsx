@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, CheckCircle2, Eye, EyeOff, LockKeyhole, Mail, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Eye, EyeOff, LockKeyhole, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -10,8 +10,6 @@ import { useToast } from '@/hooks/use-toast';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { z } from 'zod';
 import norcatLogoWhite from '@/assets/logos/norcat-white.png';
-import norcatLogoBlack from '@/assets/logos/norcat-black.png';
-import norcatMark from '@/assets/norcat-half-logo-square-v2.png.asset.json';
 
 type View = 'sign-in' | 'invite' | 'forgot';
 
@@ -129,60 +127,35 @@ export default function Auth() {
       : 'Sign in to your NORCAT Innovation portal.';
 
   return (
-    <main className="min-h-screen lg:grid lg:grid-cols-[minmax(0,1.05fr)_minmax(480px,0.95fr)] bg-[hsl(var(--portal-mist))]">
-      <section className="relative hidden lg:flex min-h-screen overflow-hidden bg-[hsl(var(--portal-navy))] p-12 xl:p-16 text-primary-foreground">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.18) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.18) 1px, transparent 1px)', backgroundSize: '56px 56px' }} />
-        <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-primary via-[hsl(var(--portal-blue))] to-primary" />
-        <img src={norcatMark.url} alt="" aria-hidden="true" className="absolute -right-24 bottom-8 w-[520px] max-w-[55vw] opacity-[0.08]" />
-
-        <div className="relative z-10 flex w-full flex-col justify-between">
-          <Link to="/" className="inline-flex w-fit" aria-label="Return to NORCAT Innovation">
-            <img src={norcatLogoWhite} alt="NORCAT Innovation" className="h-6 w-auto" />
+    <main className="flex min-h-screen items-center justify-center bg-portal-mist px-4 py-8 sm:px-6">
+      <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-portal)]">
+        <header className="flex flex-col items-center bg-portal-navy px-8 py-8 text-center">
+          <Link to="/" aria-label="Return to NORCAT Innovation">
+            <img src={norcatLogoWhite} alt="NORCAT Innovation" className="h-7 w-auto" />
           </Link>
+          <p className="mt-4 text-xs font-bold uppercase text-portal-mint">Portal access</p>
+        </header>
 
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="max-w-xl">
-            <p className="mb-5 text-xs font-bold uppercase text-primary">NORCAT Client Portal</p>
-            <h1 className="text-5xl xl:text-6xl font-extrabold leading-[1.03]">
-              BUILT FOR WHAT<br />COMES NEXT.
-            </h1>
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-primary-foreground/75">
-              Your private workspace for mentorship, resources, events and venture support.
-            </p>
-            <div className="mt-10 flex items-center gap-3 border-t border-primary-foreground/15 pt-6 text-sm text-primary-foreground/65">
-              <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
-              Secure, invite-only access for NORCAT clients and mentors.
-            </div>
-          </motion.div>
-
-          <p className="text-xs text-primary-foreground/45">© 2026 NORCAT Innovation</p>
-        </div>
-      </section>
-
-      <section className="relative flex min-h-screen items-center justify-center px-4 py-10 sm:px-8 lg:p-12">
-        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-[hsl(var(--portal-blue))] to-primary lg:hidden" />
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
-          <Link to="/" className="mb-10 inline-flex lg:hidden" aria-label="Return to NORCAT Innovation">
-            <img src={norcatLogoBlack} alt="NORCAT Innovation" className="h-5 w-auto" />
-          </Link>
-
-          <div className="rounded-lg border border-border bg-card/85 p-6 shadow-xl backdrop-blur-xl sm:p-8">
+        <section className="p-6 sm:p-9">
             {resetSent ? (
               <div className="text-center">
                 <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                   <CheckCircle2 className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
-                <p className="text-xs font-bold uppercase text-[hsl(var(--portal-grey))]">Email sent</p>
-                <h2 className="mt-2 text-3xl font-extrabold text-[hsl(var(--portal-navy))]">Check your inbox.</h2>
+                <p className="text-xs font-bold uppercase text-portal-grey">Email sent</p>
+                <h2 className="mt-2 text-3xl font-extrabold text-portal-navy">Check your inbox.</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">If an account exists for {formData.email}, you’ll receive a secure reset link shortly.</p>
-                <Button variant="outline" className="mt-7 w-full rounded-full" onClick={() => setActiveView('sign-in')}>
+                <Button variant="outline" className="mt-7 w-full border-portal-blue text-portal-blue hover:bg-portal-blue hover:text-primary-foreground" onClick={() => setActiveView('sign-in')}>
                   <ArrowLeft aria-hidden="true" /> Back to sign in
                 </Button>
               </div>
             ) : (
               <>
-                <p className="text-xs font-bold uppercase text-[hsl(var(--portal-grey))]">{view === 'invite' ? 'Invited access' : 'Secure portal access'}</p>
-                <h2 className="mt-2 text-3xl font-extrabold text-[hsl(var(--portal-navy))]">{heading}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                <div className="text-center">
+                  <p className="text-xs font-bold uppercase text-portal-grey">{view === 'invite' ? 'Invited access' : 'Secure portal access'}</p>
+                  <h1 className="mt-2 text-3xl font-extrabold text-portal-navy">{heading}</h1>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                </div>
 
                 <form onSubmit={handleSubmit} className="mt-7 space-y-5">
                   {view === 'invite' && (
@@ -207,9 +180,9 @@ export default function Auth() {
                       <div className="flex items-center justify-between gap-4">
                         <Label htmlFor="password">Password</Label>
                         {view === 'sign-in' && (
-                          <button type="button" onClick={() => setActiveView('forgot')} className="text-sm font-semibold text-[hsl(var(--portal-blue))] hover:text-primary transition-colors">
+                          <Button type="button" variant="link" onClick={() => setActiveView('forgot')} className="h-auto p-0 text-sm font-semibold text-portal-sky hover:text-portal-blue">
                             Forgot password?
-                          </button>
+                          </Button>
                         )}
                       </div>
                       <div className="relative">
@@ -225,30 +198,32 @@ export default function Auth() {
 
                   {view === 'invite' && <input type="hidden" name="inviteCode" value={formData.inviteCode} />}
 
-                  <Button type="submit" className="h-12 w-full rounded-full font-bold" disabled={isSubmitting}>
+                  <Button type="submit" className="h-12 w-full bg-portal-blue font-bold hover:bg-portal-navy" disabled={isSubmitting}>
                     {isSubmitting ? (view === 'forgot' ? 'Sending reset link…' : view === 'invite' ? 'Creating account…' : 'Signing in…') : (view === 'forgot' ? 'Send reset link' : view === 'invite' ? 'Create account' : 'Sign in')}
                     {!isSubmitting && <ArrowRight aria-hidden="true" />}
                   </Button>
                 </form>
 
                 {view === 'forgot' && (
-                  <Button variant="ghost" className="mt-3 w-full rounded-full text-muted-foreground" onClick={() => setActiveView('sign-in')}>
+                  <Button variant="ghost" className="mt-3 w-full text-muted-foreground hover:bg-portal-mist hover:text-portal-navy" onClick={() => setActiveView('sign-in')}>
                     <ArrowLeft aria-hidden="true" /> Back to sign in
                   </Button>
                 )}
               </>
             )}
-          </div>
-
-          <div className="mt-6 rounded-lg border border-border bg-card/60 p-5 text-center backdrop-blur-md">
-            <p className="text-sm font-semibold text-[hsl(var(--portal-navy))]">Not a NORCAT client yet?</p>
+          <div className="mt-8 border-t border-border pt-7 text-center">
+            <p className="text-sm font-semibold text-portal-navy">Not a NORCAT client yet?</p>
             <p className="mt-1 text-sm text-muted-foreground">Tell us about your venture and where you want to go next.</p>
-            <Button asChild variant="outline" className="mt-4 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button asChild variant="outline" className="mt-4 w-full border-2 border-primary font-bold text-primary hover:bg-primary hover:text-primary-foreground">
               <Link to="/apply">Become a Client <ArrowRight aria-hidden="true" /></Link>
             </Button>
           </div>
-        </motion.div>
-      </section>
+        </section>
+
+        <footer className="bg-portal-mist px-8 py-4 text-center text-xs text-portal-grey">
+          © 2026 NORCAT Innovation
+        </footer>
+      </motion.div>
     </main>
   );
 }
