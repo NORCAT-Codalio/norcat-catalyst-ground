@@ -195,7 +195,7 @@ export default function Auth() {
                   {view === 'invite' && <input type="hidden" name="inviteCode" value={formData.inviteCode} />}
 
                   <Button type="submit" className="h-12 w-full bg-portal-blue font-bold hover:bg-portal-blue/90" disabled={isSubmitting}>
-                    {view === 'sign-in' ? (isSubmitting ? 'Signing in…' : 'Sign in') : (view === 'forgot' ? 'Send reset link' : 'Create account')}
+                    {isSubmitting ? (view === 'forgot' ? 'Sending reset link…' : view === 'invite' ? 'Creating account…' : 'Signing in…') : (view === 'forgot' ? 'Send reset link' : view === 'invite' ? 'Create account' : 'Sign in')}
                     {!isSubmitting && <ArrowRight aria-hidden="true" />}
                   </Button>
 
