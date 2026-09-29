@@ -1,9 +1,9 @@
 # Task Roadmap
 
 ## In Progress
-- [ ] Refresh portal branding and account access flows
 
 ## Completed
+- [x] Refresh portal branding and account access flows
 - [x] CIT page: make logo partner box smaller and improve alignment
 - [x] CIT page: tighten spacing between header, About, and stats sections
 - [x] CIT page: revert header buttons, move stats strip under About section

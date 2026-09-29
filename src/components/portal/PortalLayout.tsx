@@ -39,7 +39,7 @@ export function PortalLayout({ children }: PortalLayoutProps) {
   }
 
   return (
-    <div className="min-h-screen flex bg-background w-full">
+    <div className="min-h-screen flex bg-[hsl(var(--portal-mist))] w-full">
       <PortalSidebar />
       <main className="flex-1 overflow-auto">
         <div className="p-6 lg:p-8">{children}</div>

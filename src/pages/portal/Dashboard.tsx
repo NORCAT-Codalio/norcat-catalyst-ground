@@ -47,11 +47,11 @@ interface Post {
 }
 
 const postTypeColors: Record<string, string> = {
-  announcement: 'bg-blue-100 text-blue-700 border-blue-200',
-  startup_win: 'bg-green-100 text-green-700 border-green-200',
-  program_update: 'bg-purple-100 text-purple-700 border-purple-200',
-  event_highlight: 'bg-amber-100 text-amber-700 border-amber-200',
-  ecosystem_news: 'bg-teal-100 text-teal-700 border-teal-200',
+  announcement: 'bg-[hsl(var(--portal-blue)/0.1)] text-[hsl(var(--portal-blue))] border-[hsl(var(--portal-blue)/0.2)]',
+  startup_win: 'bg-primary/10 text-primary border-primary/20',
+  program_update: 'bg-[hsl(var(--portal-navy)/0.08)] text-[hsl(var(--portal-navy))] border-[hsl(var(--portal-navy)/0.16)]',
+  event_highlight: 'bg-muted text-[hsl(var(--portal-grey))] border-border',
+  ecosystem_news: 'bg-primary/10 text-primary border-primary/20',
 };
 
 const postTypeLabels: Record<string, string> = {
@@ -196,10 +196,10 @@ export default function Dashboard() {
   };
 
   const quickStats = [
-    { label: 'Upcoming Events', value: '3', icon: Calendar, color: 'text-blue-500' },
-    { label: 'Mentor Sessions', value: '2', icon: Users, color: 'text-purple-500' },
-    { label: 'Resources', value: '45+', icon: BookOpen, color: 'text-green-500' },
-    { label: 'Ecosystem Growth', value: '+12%', icon: TrendingUp, color: 'text-teal-500' },
+    { label: 'Upcoming Events', value: '3', icon: Calendar, color: 'text-[hsl(var(--portal-blue))]' },
+    { label: 'Mentor Sessions', value: '2', icon: Users, color: 'text-[hsl(var(--portal-navy))]' },
+    { label: 'Resources', value: '45+', icon: BookOpen, color: 'text-primary' },
+    { label: 'Ecosystem Growth', value: '+12%', icon: TrendingUp, color: 'text-[hsl(var(--portal-grey))]' },
   ];
 
   return (

@@ -42,7 +42,7 @@ export function MentorPortalLayout({ children }: MentorPortalLayoutProps) {
   }
 
   return (
-    <div className="min-h-screen flex bg-background w-full">
+    <div className="min-h-screen flex bg-[hsl(var(--portal-mist))] w-full">
       <MentorPortalSidebar />
       <main className="flex-1 overflow-auto">
         <div className="p-6 lg:p-8">{children}</div>
