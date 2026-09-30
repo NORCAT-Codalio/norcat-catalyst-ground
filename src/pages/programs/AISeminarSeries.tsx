@@ -65,7 +65,7 @@ const Eyebrow = ({ children, color = GREY }: { children: React.ReactNode; color?
 const AISeminarSeries = () => {
   const heroFacts = [
     { icon: Clock, label: '60-minute session' },
-    { icon: Users, label: '50–60 seats only' },
+    { icon: Users, label: 'Limited seats' },
     { icon: MapPin, label: 'Greater Sudbury' },
     { icon: CalendarDays, label: 'Dates announced on registration' },
   ];
