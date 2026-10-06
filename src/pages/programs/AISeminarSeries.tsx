@@ -161,11 +161,19 @@ const AISeminarSeries = () => {
                   <br />
                   <span style={{ color: TEAL }}>Modernize your business.</span>
                 </h1>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
+                  At NORCAT Innovation, we see firsthand that modern ventures are built by three
+                  distinct types of leaders: those who write the code, those who drive the business,
+                  and those who do both.
+                </p>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
+                  We also see that AI is fundamentally changing how businesses operate.
+                </p>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
-                  A 60-minute practical intensive for Sudbury business owners and operators ready to
-                  build AI into their operations, products, or services — plus a complimentary
-                  30-minute one-on-one consultation with NORCAT's AI Lead to assess your project for
-                  up to $20,000 in RAII grant funding.
+                  Together with regional software and education partners, we are demystifying
+                  what’s possible with artificial intelligence, analyzing practical Canadian use
+                  cases, and giving founders and their teams the confidence to pursue adoption and
+                  productization.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mb-10">
                   <RegisterButton />
