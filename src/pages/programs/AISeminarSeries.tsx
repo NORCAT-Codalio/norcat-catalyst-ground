@@ -194,8 +194,9 @@ const AISeminarSeries = () => {
                     <span style={{ color: TEAL }}>Up to $20,000 in Matching Funds</span>
                   </h2>
                   <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                    Adopting or productizing AI doesn't have to strain your working capital. Through
-                    the Regional Artificial Intelligence Initiative (RAII), eligible Northern Ontario
+                    Adopting or productizing AI doesn't have to strain your working capital.&nbsp;
+                    <br /><br />
+                    Through the Regional Artificial Intelligence Initiative (RAII), eligible Northern Ontario
                     businesses can access{' '}
                     <span className="font-bold" style={{ color: 'white' }}>
                       50% matching grant funding up to $20,000
@@ -203,8 +204,7 @@ const AISeminarSeries = () => {
                     to finance technical development, contractor fees, and integration.
                   </p>
                   <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                    Have a project idea or messy dataset? Connect directly with our team to audit your
-                    eligibility and scope your roadmap.
+                    {'\n'}
                   </p>
                   <div className="h-px w-full mb-6" style={{ background: 'rgba(255,255,255,0.12)' }} />
                   <RegisterButton
