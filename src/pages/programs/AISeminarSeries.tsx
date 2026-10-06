@@ -5,16 +5,12 @@ import {
   ArrowRight,
   Check,
   X,
-  Clock,
-  Users,
-  MapPin,
   DollarSign,
   Target,
   BarChart3,
   Search,
   Boxes,
   Sparkles,
-  CalendarDays,
   UserCheck,
 } from 'lucide-react';
 
@@ -63,12 +59,6 @@ const Eyebrow = ({ children, color = GREY }: { children: React.ReactNode; color?
 );
 
 const AISeminarSeries = () => {
-  const heroFacts = [
-    { icon: Clock, label: '60-minute session' },
-    { icon: Users, label: 'Limited seats' },
-    { icon: MapPin, label: 'Greater Sudbury' },
-    { icon: CalendarDays, label: 'Dates announced on registration' },
-  ];
 
   const businessValue = [
     {
@@ -184,14 +174,6 @@ const AISeminarSeries = () => {
                   >
                     About the $20,000 AI Grant
                   </a>
-                </div>
-                <div className="flex flex-wrap gap-x-7 gap-y-3">
-                  {heroFacts.map((f) => (
-                    <span key={f.label} className="inline-flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                      <f.icon className="h-4 w-4" style={{ color: TEAL }} />
-                      {f.label}
-                    </span>
-                  ))}
                 </div>
               </div>
 
