@@ -60,16 +60,16 @@ const Eyebrow = ({ children, color = GREY }: { children: React.ReactNode; color?
 
 const AISeminarSeries = () => {
 
-  const businessValue = [
+  const businessValue: { icon: LucideIcon; label?: string; title: string; body?: string }[] = [
     {
       icon: Search,
-      title: 'Why your systems miss the obvious',
-      body: 'Keyword search and legacy databases fail when the words differ but the meaning matches. See exactly why that costs you time in maintenance logs, quotes, invoices, and customer inquiries.',
+      label: 'Audience 1: Business Operators',
+      title: '“What can modern AI actually solve in my organization?”',
     },
     {
       icon: Boxes,
-      title: 'How the technology actually works',
-      body: 'Embeddings, tokenization, and vector similarity explained in plain terms, with a live build of a working search engine over real content.',
+      label: 'Audience 2: Technical Builders',
+      title: '“How do we write, optimize, and deploy production-grade code?”',
     },
     {
       icon: Sparkles,
