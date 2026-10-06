@@ -246,10 +246,17 @@ const AISeminarSeries = () => {
                   >
                     <b.icon className="h-5 w-5" style={{ color: TEAL }} />
                   </span>
+                  {b.label && (
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] mb-3" style={{ color: TEAL }}>
+                      {b.label}
+                    </p>
+                  )}
                   <h3 className="text-lg md:text-xl font-bold mb-3">{b.title}</h3>
-                  <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
-                    {b.body}
-                  </p>
+                  {b.body && (
+                    <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                      {b.body}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
