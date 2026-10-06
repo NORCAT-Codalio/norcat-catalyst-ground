@@ -179,21 +179,41 @@ const AISeminarSeries = () => {
                   }}
                 >
                   <p className="text-xs font-bold uppercase tracking-[0.18em] mb-4" style={{ color: TEAL }}>
-                    Seminar 01
+                    Regional Grant Opportunity
                   </p>
                   <h2 className="text-2xl md:text-3xl font-black uppercase leading-tight mb-4">
-                    Semantic Search: teaching computers to understand meaning
+                    De-Risk Your Build:
+                    <br />
+                    <span style={{ color: TEAL }}>Up to $20,000 in Matching Funds</span>
                   </h2>
                   <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                    Search "tasty feline treats" and you'll miss a page titled "delicious cat food."
-                    Exact-match search fails on meaning. In 60 minutes we show you what replaces it —
-                    and what that unlocks inside your company.
+                    Adopting or productizing AI doesn't have to strain your working capital. Through the
+                    Regional Artificial Intelligence Initiative (RAII), eligible Northern Ontario
+                    businesses can access 50% matching grant funding up to $20,000 to finance technical
+                    development, contractor fees, and integration.
                   </p>
                   <div className="h-px w-full mb-6" style={{ background: 'rgba(255,255,255,0.12)' }} />
                   <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                    Free to attend. Registration required — seats are limited.
+                    Have a project idea or messy dataset? Connect directly with our team to audit your
+                    eligibility and scope your roadmap.
                   </p>
-                  <RegisterButton label="Register Now" className="w-full justify-center" />
+                  <Link
+                    to="/contact"
+                    className="group inline-flex w-full items-center justify-center gap-2 text-base font-bold px-8 py-4 rounded-full text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                    style={{
+                      fontFamily: FONT,
+                      background: `linear-gradient(135deg, ${TEAL} 0%, #003DA6 100%)`,
+                      boxShadow: '0 8px 24px -6px hsla(168,100%,35%,0.45)',
+                    }}
+                  >
+                    Connect with Jie (AI Advisor)
+                    <span className="inline-flex items-center justify-center size-7 rounded-full bg-white/20">
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                  <p className="text-xs mt-4 text-center" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                    Quick 15-min fit call • Zero paperwork to start
+                  </p>
                 </div>
               </div>
             </div>
