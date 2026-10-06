@@ -12,6 +12,7 @@ import {
   Boxes,
   Sparkles,
   UserCheck,
+  type LucideIcon,
 } from 'lucide-react';
 
 const NAVY = '#001A4D';
@@ -60,16 +61,16 @@ const Eyebrow = ({ children, color = GREY }: { children: React.ReactNode; color?
 
 const AISeminarSeries = () => {
 
-  const businessValue = [
+  const businessValue: { icon: LucideIcon; label?: string; title: string; body?: string }[] = [
     {
       icon: Search,
-      title: 'Why your systems miss the obvious',
-      body: 'Keyword search and legacy databases fail when the words differ but the meaning matches. See exactly why that costs you time in maintenance logs, quotes, invoices, and customer inquiries.',
+      label: 'Audience 1: Business Operators',
+      title: '“What can modern AI actually solve in my organization?”',
     },
     {
       icon: Boxes,
-      title: 'How the technology actually works',
-      body: 'Embeddings, tokenization, and vector similarity explained in plain terms, with a live build of a working search engine over real content.',
+      label: 'Audience 2: Technical Builders',
+      title: '“How do we write, optimize, and deploy production-grade code?”',
     },
     {
       icon: Sparkles,
@@ -246,10 +247,17 @@ const AISeminarSeries = () => {
                   >
                     <b.icon className="h-5 w-5" style={{ color: TEAL }} />
                   </span>
+                  {b.label && (
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] mb-3" style={{ color: TEAL }}>
+                      {b.label}
+                    </p>
+                  )}
                   <h3 className="text-lg md:text-xl font-bold mb-3">{b.title}</h3>
-                  <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
-                    {b.body}
-                  </p>
+                  {b.body && (
+                    <p className="text-sm md:text-base leading-relaxed" style={{ color: '#475068' }}>
+                      {b.body}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
