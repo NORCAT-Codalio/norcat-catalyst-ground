@@ -167,7 +167,7 @@ const AISeminarSeries = () => {
                   and those who do both.
                 </p>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
-                  We also see that AI is fundamentally changing how businesses operate.
+                  We also see that AI is fundamentally changing how businesses operate; whether you're a technical or non-technical founder, you don't have to navigate this shift alone.
                 </p>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
                   Together with regional software and education partners, we are demystifying
