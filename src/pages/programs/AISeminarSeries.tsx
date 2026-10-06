@@ -193,7 +193,7 @@ const AISeminarSeries = () => {
                     development, contractor fees, and integration.
                   </p>
                   <div className="h-px w-full mb-6" style={{ background: 'rgba(255,255,255,0.12)' }} />
-                  <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                  <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     Have a project idea or messy dataset? Connect directly with our team to audit your
                     eligibility and scope your roadmap.
                   </p>
@@ -211,7 +211,7 @@ const AISeminarSeries = () => {
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </Link>
-                  <p className="text-xs mt-4 text-center" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                  <p className="text-xs mt-4 text-center" style={{ color: 'rgba(255,255,255,0.75)' }}>
                     Quick 15-min fit call • Zero paperwork to start
                   </p>
                 </div>
