@@ -193,19 +193,20 @@ const AISeminarSeries = () => {
                     De-Risk Your Build:{' '}
                     <span style={{ color: TEAL }}>Up to $20,000 in Matching Funds</span>
                   </h2>
-                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                  <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.72)' }}>
                     Adopting or productizing AI doesn't have to strain your working capital.&nbsp;
                     <br /><br />
-                    Through the Regional Artificial Intelligence Initiative (RAII), eligible Northern Ontario
-                    businesses can access{' '}
+                    Through the{' '}
+                    <span className="font-bold" style={{ color: 'white' }}>
+                      Regional Artificial Intelligence Initiative (RAII)
+                    </span>
+                    , eligible Northern Ontario businesses can access{' '}
                     <span className="font-bold" style={{ color: 'white' }}>
                       50% matching grant funding up to $20,000
                     </span>{' '}
-                    to finance technical development, contractor fees, and integration.
+                    for software development, technical contractors, and system integration.
                   </p>
-                  <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                    {'\n'}
-                  </p>
+
                   <div className="h-px w-full mb-6" style={{ background: 'rgba(255,255,255,0.12)' }} />
                   <RegisterButton
                     label="Connect with Jie (AI Advisor)"
