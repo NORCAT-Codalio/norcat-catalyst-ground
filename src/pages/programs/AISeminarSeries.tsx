@@ -12,6 +12,7 @@ import {
   Boxes,
   Sparkles,
   UserCheck,
+  type LucideIcon,
 } from 'lucide-react';
 
 const NAVY = '#001A4D';
