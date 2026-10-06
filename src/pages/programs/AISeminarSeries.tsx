@@ -29,7 +29,7 @@ const REGISTER_URL =
   'https://forms.monday.com/forms/96101c7226756c5823ef48ec62b2ca7f?r=use1';
 
 const RegisterButton = ({
-  label = 'Reserve My Seat',
+  label = 'Join the Community',
   className = '',
 }: {
   label?: string;
@@ -152,7 +152,7 @@ const AISeminarSeries = () => {
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10 py-20 md:py-28">
             <div className="grid gap-12 lg:grid-cols-12 items-center">
               <div className="lg:col-span-7">
-                <Eyebrow color={TEAL}>Sudbury Business AI Seminar Series</Eyebrow>
+                <Eyebrow color={TEAL}>REGIONAL WORKSHOP &amp; ADOPTION SERIES</Eyebrow>
                 <h1
                   className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                   style={{ letterSpacing: '-0.03em' }}
@@ -174,7 +174,7 @@ const AISeminarSeries = () => {
                     className="inline-flex items-center gap-2 text-base font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.03]"
                     style={{ color: 'white', border: '1.5px solid rgba(255,255,255,0.28)' }}
                   >
-                    About the $20,000 grant
+                    About the $20,000 AI Grant
                   </a>
                 </div>
                 <div className="flex flex-wrap gap-x-7 gap-y-3">
