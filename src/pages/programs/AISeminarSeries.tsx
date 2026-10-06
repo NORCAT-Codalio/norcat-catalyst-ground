@@ -157,9 +157,9 @@ const AISeminarSeries = () => {
                   className="font-black uppercase leading-[0.92] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
                   style={{ letterSpacing: '-0.03em' }}
                 >
-                  Understand the technology.
+                  GREATER SUDBURY 
                   <br />
-                  <span style={{ color: TEAL }}>Modernize your business.</span>
+                  <span style={{ color: TEAL }}>AI INNOVATION ALLIANCE.</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
                   At NORCAT Innovation, we see firsthand that modern ventures are built by three
