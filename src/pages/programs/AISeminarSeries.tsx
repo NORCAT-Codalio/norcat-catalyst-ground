@@ -205,21 +205,33 @@ const AISeminarSeries = () => {
                   }}
                 >
                   <p className="text-xs font-bold uppercase tracking-[0.18em] mb-4" style={{ color: TEAL }}>
-                    Seminar 01
+                    Regional Grant Opportunity
                   </p>
                   <h2 className="text-2xl md:text-3xl font-black uppercase leading-tight mb-4">
-                    Semantic Search: teaching computers to understand meaning
+                    De-Risk Your Build:{' '}
+                    <span style={{ color: TEAL }}>Up to $20,000 in Matching Funds</span>
                   </h2>
+                  <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                    Adopting or productizing AI doesn't have to strain your working capital. Through
+                    the Regional Artificial Intelligence Initiative (RAII), eligible Northern Ontario
+                    businesses can access{' '}
+                    <span className="font-bold" style={{ color: 'white' }}>
+                      50% matching grant funding up to $20,000
+                    </span>{' '}
+                    to finance technical development, contractor fees, and integration.
+                  </p>
                   <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                    Search "tasty feline treats" and you'll miss a page titled "delicious cat food."
-                    Exact-match search fails on meaning. In 60 minutes we show you what replaces it —
-                    and what that unlocks inside your company.
+                    Have a project idea or messy dataset? Connect directly with our team to audit your
+                    eligibility and scope your roadmap.
                   </p>
                   <div className="h-px w-full mb-6" style={{ background: 'rgba(255,255,255,0.12)' }} />
-                  <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                    Free to attend. Registration required — seats are limited.
+                  <RegisterButton
+                    label="Connect with Jie (AI Advisor)"
+                    className="w-full justify-center"
+                  />
+                  <p className="text-sm mt-4 text-center" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    Quick 15-min fit call • Zero paperwork to start
                   </p>
-                  <RegisterButton label="Register Now" className="w-full justify-center" />
                 </div>
               </div>
             </div>
