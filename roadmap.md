@@ -7,6 +7,7 @@
 - (none)
 
 ## Completed
+- [x] Remove all six AI Collective workshops and their Events page highlights mention.
 - [x] Link website addresses already present in news articles and About sections in both news views; identify missing event registration and press article URLs.
 - [x] Team page: remove Bart Streppel, add Kyle Joly placeholder, swap in high-res headshots for Brendan and Shashank
 - [x] Contact page: correct NORCAT address to 1545 Maley Drive, Sudbury, ON P3A 4R7 (text and map)
