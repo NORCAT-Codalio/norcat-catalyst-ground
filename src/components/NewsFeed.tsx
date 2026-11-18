@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Calendar, ArrowRight, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { newsItems } from '@/pages/insights/News';
+import { renderInlineMarkdown } from '@/components/NewsText';
 
 const iconContainerStyle: React.CSSProperties = {
   background: 'linear-gradient(145deg, hsla(220, 15%, 88%, 0.6) 0%, hsla(220, 15%, 82%, 0.3) 100%)',
@@ -15,35 +16,6 @@ const categories = ['All', ...Array.from(new Set(newsItems.map(item => item.cate
 const NAVY = '#001A4D';
 const TEAL = '#00B398';
 
-// Helper to render markdown-style links and bold text in news content
-const renderInlineMarkdown = (text: string): React.ReactNode[] => {
-  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (linkMatch) {
-      const [, label, url] = linkMatch;
-      return (
-        <a
-          key={i}
-          href={url}
-          className="underline hover:text-[#00B398] transition-colors"
-          style={{ color: '#003DA5' }}
-        >
-          {label}
-        </a>
-      );
-    }
-    const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
-    if (boldMatch) {
-      return (
-        <strong key={i} className="font-bold" style={{ color: 'hsl(220, 15%, 15%)' }}>
-          {boldMatch[1]}
-        </strong>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
-};
 
 
 export function NewsFeed() {
@@ -167,7 +139,7 @@ export function NewsFeed() {
                             {item.aboutSections.map((about, idx) => (
                               <div key={idx} className="mb-6 last:mb-0">
                                 <h4 className="text-lg font-bold mb-2" style={{ color: 'hsl(220, 15%, 15%)' }}>{about.title}</h4>
-                                <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)' }}>{about.text}</p>
+                                <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)' }}>{renderInlineMarkdown(about.text)}</p>
                               </div>
                             ))}
                           </>

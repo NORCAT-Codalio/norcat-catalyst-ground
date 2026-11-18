@@ -13,6 +13,7 @@ import autonomousMiningVehicle from '@/assets/autonomous-mining-vehicle.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 import signatureLines from '@/assets/signature-lines.png';
 import newsHeroBg from '@/assets/news-hero-bg.png';
+import { renderInlineMarkdown } from '@/components/NewsText';
 
 // ── Neumorphic icon container (matches homepage / VentureGrowth) ──
 const iconContainerStyle: React.CSSProperties = {
@@ -366,35 +367,6 @@ Cynthia Furlotte | NORCAT | Marketing et communications | 705-521-8324, poste 29
   },
 ];
 
-// Helper to render markdown-style links and bold text in news content
-const renderInlineMarkdown = (text: string): React.ReactNode[] => {
-  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (linkMatch) {
-      const [, label, url] = linkMatch;
-      return (
-        <a
-          key={i}
-          href={url}
-          className="underline hover:text-[#00B398] transition-colors"
-          style={{ color: '#003DA5' }}
-        >
-          {label}
-        </a>
-      );
-    }
-    const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
-    if (boldMatch) {
-      return (
-        <strong key={i} className="font-bold" style={{ color: 'hsl(220, 15%, 15%)' }}>
-          {boldMatch[1]}
-        </strong>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
-};
 
 // Activity feed
 const activityFeed = [
@@ -645,7 +617,7 @@ const News = () => {
                                         {about.title}
                                       </h4>
                                       <p className="text-base leading-relaxed" style={{ color: 'hsl(220, 15%, 25%)', fontFamily: "'Open Sans', sans-serif" }}>
-                                        {about.text}
+                                        {renderInlineMarkdown(about.text)}
                                       </p>
                                     </div>
                                   ))}
