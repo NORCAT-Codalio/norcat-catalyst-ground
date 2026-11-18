@@ -23,7 +23,7 @@ export const team: TeamMember[] = [
     name: 'SHASHANK METHA',
     role: 'INNOVATION COORDINATOR',
     image: shashankImage.url,
-    bio: 'As Core5 and Innovation Lead, Shashank Metha helps founders move from idea to market by breaking complex development barriers into clear, practical steps. He works directly with venture teams on workflow, execution and go-to-market priorities. A constant learner, he travels widely, builds knowledge across disciplines, and spends his time away from work with his family.',
+    bio: 'As Innovation Coordinator at NORCAT, Shashank Metha is passionate about helping entrepreneurs turn their ideas into reality. Working closely with startups and growing businesses through NORCAT Innovation and Core5, he helps founders navigate challenges, develop their technologies and bring new solutions to market. Outside of work, Shashank enjoys travelling, learning new things and spending quality time with his family.',
     linkedin: 'https://linkedin.com/in/',
   },
   {
