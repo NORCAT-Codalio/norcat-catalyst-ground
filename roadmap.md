@@ -3,10 +3,8 @@
 ## In Progress
 - [ ] Kyle Joly profile: needs real title, bio, LinkedIn URL and headshot to replace the placeholder
 
-## Blocked
-- [ ] Google Developers Group Workshop (Sep 15, 2026) and NOA Private Pitch – AI: still need registration URLs; buttons currently say "Coming Soon."
-
 ## Completed
+- [x] Remove the Google Developers Group Workshop and NOA Private Pitch – AI listings from the Events page for now.
 - [x] Point the five "Also Featured In" press links at NORCAT search results; swap Sudbury Star for The Globe and Mail and drop "North" from CBC.
 - [x] Remove all six AI Collective workshops and their Events page highlights mention.
 - [x] Link website addresses already present in news articles and About sections in both news views; identify missing event registration and press article URLs.

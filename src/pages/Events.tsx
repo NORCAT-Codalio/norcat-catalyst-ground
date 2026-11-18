@@ -63,19 +63,6 @@ interface Event {
 
 const upcomingEvents: Event[] = [
   {
-    id: 'gdg-workshop-2026',
-    title: 'Google Developers Group Workshop',
-    date: 'September 15, 2026',
-    time: 'TBD',
-    location: 'Sudbury, ON',
-    type: 'Workshop',
-    description: 'A hands-on workshop hosted with the Google Developers Group. Date and agenda to be confirmed.',
-    featured: false,
-    registrationOpen: false,
-    isVirtual: false,
-    host: 'NORCAT Innovation & GDG',
-  },
-  {
     id: 'venture-north-pitch-2026',
     title: 'Venture North PITCH 2026',
     date: 'October 1, 2026',
@@ -92,19 +79,6 @@ const upcomingEvents: Event[] = [
     learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
     ticketsUrl: 'https://www.eventbrite.ca/e/venture-north-pitch-2026-tickets-1976742143965',
     prizePool: '$15,000 CAD',
-  },
-  {
-    id: 'noa-ai-pitch-2027',
-    title: 'NOA Private Pitch - AI',
-    date: 'January 15, 2027',
-    time: 'TBD',
-    location: 'Sudbury, ON',
-    type: 'PITCH EVENT',
-    description: 'Private pitch event spotlighting Northern Ontario AI ventures. Date and venue to be confirmed.',
-    featured: false,
-    registrationOpen: false,
-    isVirtual: false,
-    host: 'NORCAT Innovation',
   },
 ];
 
@@ -520,8 +494,6 @@ export default function Events() {
                   <div key={setIndex} className="flex items-center gap-8 md:gap-12 px-4 md:px-6">
                     {[
                       { text: 'Venture North PITCH 2026', date: 'Oct 1, 2026' },
-                      { text: 'Google Developers Group Workshop', date: 'Sept 2026' },
-                      { text: 'NOA Private Pitch — AI', date: 'Jan 2027' },
                       { text: 'Mining Transformed', date: 'Mar 2026' },
                       { text: '$100K in Prizes', date: 'Venture North PITCH' },
                     ].map((item, i) => (
