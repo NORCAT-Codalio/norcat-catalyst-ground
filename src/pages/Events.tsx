@@ -129,7 +129,7 @@ const pastHighlights: Event[] = [
     maxAttendees: 500,
     image: pitchEventImage,
     host: 'NORCAT Innovation',
-    highlight: '40+ speakers',
+    highlight: '40+ demos',
   },
   {
     id: 'mining-transformed-2026',
@@ -147,7 +147,7 @@ const pastHighlights: Event[] = [
     maxAttendees: 600,
     image: pitchEventImage,
     host: 'NORCAT Innovation',
-    highlight: '50+ speakers',
+    highlight: '50+ demos',
   },
   {
     id: 'venture-north-pitch',
