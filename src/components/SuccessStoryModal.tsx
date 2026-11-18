@@ -317,7 +317,7 @@ export function SuccessStoryModal({ story, open, onClose }: SuccessStoryModalPro
           <section className="section-padding bg-background">
             <div className="max-w-4xl mx-auto text-center">
               <div className="text-8xl text-primary font-serif leading-none mb-8">"</div>
-              <blockquote className="headline-md italic text-foreground leading-relaxed mb-8">
+              <blockquote className="headline-md text-foreground leading-relaxed mb-8">
                 {story.founderQuote.text}
               </blockquote>
               <div>

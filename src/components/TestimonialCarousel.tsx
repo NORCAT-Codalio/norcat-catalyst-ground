@@ -81,7 +81,7 @@ export function TestimonialCarousel({ glassCardStyle, iconContainerStyle }: Test
         className="transition-opacity duration-400"
         style={{ opacity: fade ? 1 : 0, transitionDuration: '400ms' }}
       >
-        <p className="text-lg italic font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 15%, 30%)' }}>
+        <p className="text-lg font-light leading-relaxed mb-6" style={{ color: 'hsl(220, 15%, 30%)' }}>
           "{t.quote}"
         </p>
         <div className="flex items-center gap-4">

@@ -653,8 +653,8 @@ export function IdeaValidationDashboard() {
             viewport={{ once: true }}
             className="mt-12"
           >
-            <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border border-primary/20 p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl border border-primary/20 p-5 sm:p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center [&>*]:min-w-0">
                 {/* Left side - Text content */}
                 <div className="text-left">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-4">
@@ -674,7 +674,7 @@ export function IdeaValidationDashboard() {
                       <li>Access to non-dilutive funding</li>
                     </ul>
                   </div>
-                  <Button asChild size="lg" className="btn-primary px-8">
+                  <Button asChild size="lg" className="btn-primary px-8 h-auto py-3 whitespace-normal text-center w-full sm:w-auto">
                     <Link to="/apply">
                       Get the Full Report & Action Plan - It's Free!
                       <ArrowRight className="ml-2 h-5 w-5" />

@@ -713,10 +713,10 @@ export default function VentureGrowthServices() {
                    style={{ fontFamily: FONT, color: TEAL }}>
                   Why NORCAT
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                <h1 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   What makes us<br /><span style={{ color: TEAL }}>different?</span>
-                </h2>
+                </h1>
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   There are a lot of accelerators and programs out there. Here's why founders choose to build with us.
                 </p>

@@ -244,10 +244,10 @@ const MentorshipServices = () => {
                  style={{ fontFamily: FONT, color: TEAL }}>
                 Our Approach
               </p>
-              <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+              <h1 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 A different kind<br /><span style={{ color: TEAL }}>of mentoring.</span>
-              </h2>
+              </h1>
               <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: '#475068' }}>
                 Our Venture Mentoring Service is built on principles that put founders first
                 and create lasting, meaningful relationships.

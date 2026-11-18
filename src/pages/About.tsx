@@ -133,10 +133,10 @@ export default function About() {
                    style={{ fontFamily: FONT, color: '#6B7280' }}>
                   Rooted in Northern Ontario
                 </p>
-                <h2 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
+                <h1 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                     style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}>
                   <span style={{ color: BLUE }}>Where Bold Ideas</span> <span style={{ color: TEAL }}>Grow.</span>
-                </h2>
+                </h1>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   <p>NORCAT Innovation was founded to ensure Northern Ontario's brightest ideas and talent have every reason to stay, grow, and succeed here, while attracting new founders and opportunities to the region.</p>
                   <p>As a non-profit Regional Innovation Centre, we help entrepreneurs turn ideas into market-ready ventures through mentorship, capital connections, industry relationships, and access to the resources needed to build, test, and scale.</p>

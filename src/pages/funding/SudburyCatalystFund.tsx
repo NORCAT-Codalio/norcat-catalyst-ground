@@ -167,12 +167,12 @@ const SudburyCatalystFund = () => {
             {/* Heading */}
             <div className="max-w-3xl mb-14 md:mb-20">
               <Eyebrow>Fund Overview</Eyebrow>
-              <h2
+              <h1
                 className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                 style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
               >
                 Investing in scalable<br /><span style={{ color: TEAL }}>tech start-ups.</span>
-              </h2>
+              </h1>
               <p className="text-base sm:text-lg md:text-xl leading-relaxed" style={{ color: '#475068' }}>
                 Established with the goal to accelerate the growth of scalable tech start-ups, SCF brings together a variety of partners and angel investors eager to build Northern Ontario’s entrepreneurial ecosystem by investing in and supporting a diversified portfolio of high-growth companies.
               </p>

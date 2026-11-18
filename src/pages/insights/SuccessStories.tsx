@@ -410,9 +410,9 @@ const SuccessStories = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="py-4 flex flex-wrap items-center gap-6">
             {/* Sector filter */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="text-gray-600 text-sm font-medium">Sector:</span>
-              <div className="flex gap-1">
+              <div className="flex flex-wrap gap-1">
                 {sectors.map((sector) => (
                   <button
                     key={sector}
@@ -420,7 +420,7 @@ const SuccessStories = () => {
                     className={cn(
                       "px-3 py-1.5 rounded-full text-sm font-medium transition-all",
                       selectedSector === sector
-                        ? "bg-gray-900 text-white"
+                        ? "bg-[#001A4D] text-white"
                         : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                     )}
                   >
@@ -583,7 +583,7 @@ const SuccessStories = () => {
                                 border: '1px solid hsla(164, 30%, 82%, 0.3)',
                               }}>
                                 <div className="text-4xl leading-none mb-3" style={{ color: 'hsl(164, 100%, 26%)' }}>"</div>
-                                <blockquote className="text-sm italic leading-relaxed mb-4" style={{ color: 'hsl(220, 15%, 25%)' }}>
+                                <blockquote className="text-sm leading-relaxed mb-4" style={{ color: 'hsl(220, 15%, 25%)' }}>
                                   {details.founderQuote.text}
                                 </blockquote>
                                 <div>
@@ -764,7 +764,7 @@ const SuccessStories = () => {
                               <ImageIcon className="w-8 h-8 md:w-10 md:h-10" style={{ color: 'hsla(164, 100%, 32%, 0.55)' }} />
                             )}
                           </div>
-                          <div className="text-5xl md:text-6xl font-serif leading-none" style={{ color: '#00B398', opacity: 0.9 }}>&rdquo;</div>
+                          <div className="text-5xl md:text-6xl leading-none" style={{ color: '#00B398', opacity: 0.9 }}>&rdquo;</div>
                         </div>
 
                         <blockquote className="relative leading-relaxed flex-1 text-base sm:text-lg font-medium" style={{ color: 'hsl(220, 15%, 20%)' }}>

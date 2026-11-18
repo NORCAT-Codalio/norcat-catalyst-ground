@@ -205,12 +205,12 @@ const NorcatUnderground = () => {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div>
                 <Eyebrow style={{ color: '#6b7387' }}>THE NORCAT UNDERGROUND CENTRE</Eyebrow>
-                <h2
+                <h1
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}
                 >
                   <span style={{ color: '#003DA6' }}>BUILT FOR</span><br /><span style={{ color: TEAL }}>REAL-WORLD TESTING.</span>
-                </h2>
+                </h1>
                 <div className="space-y-4 text-base sm:text-lg leading-relaxed" style={{ color: '#475068' }}>
                   <p>The NORCAT Underground Centre is a fully operational mine designed for technology trials, product demonstrations, and hands-on training.</p>
                   <p>Startups, OEMs, and technology companies use the site to test solutions in active mining conditions, gather industry feedback, and demonstrate performance before bringing products to market.</p>

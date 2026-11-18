@@ -141,6 +141,7 @@ const Core5 = () => {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-4xl">
+              <h1 className="sr-only">CORE5 Mining Innovation Program</h1>
               <img
                 src={core5LogoWhite.url}
                 alt="CORE5"

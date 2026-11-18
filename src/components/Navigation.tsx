@@ -357,9 +357,7 @@ export function Navigation() {
             onMouseLeave={handleMouseLeave}
             className="absolute left-0 right-0 top-full border-t border-border/40 shadow-2xl"
             style={{
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(240,253,250,0.98) 100%)',
-              backdropFilter: 'blur(24px) saturate(200%)',
-              WebkitBackdropFilter: 'blur(24px) saturate(200%)',
+              background: 'linear-gradient(180deg, #FFFFFF 0%, #F0FDFA 100%)',
             }}
           >
             {/* Decorative glow */}
@@ -472,7 +470,7 @@ export function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border shadow-lg overflow-hidden"
+              className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg overflow-hidden"
             >
               <div className="container mx-auto px-4 py-6 space-y-2">
                 {/* Mobile accordions */}

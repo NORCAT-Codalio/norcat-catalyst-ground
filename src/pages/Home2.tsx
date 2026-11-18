@@ -336,11 +336,11 @@ export default function Home2() {
             <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: '#5b6478', fontFamily: FONT }}>
               FUNDING OPPORTUNITIES
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-4"
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight mb-4"
                 style={{ fontFamily: FONT, letterSpacing: '-0.02em', color: NAVY }}>
               <span style={{ color: NAVY }}>Featured </span>
               <span style={{ color: TEAL }}>Programs</span>
-            </h2>
+            </h1>
             <div className="h-1.5 w-16 mb-8" style={{ background: TEAL }} />
 
             {/* Tabs */}

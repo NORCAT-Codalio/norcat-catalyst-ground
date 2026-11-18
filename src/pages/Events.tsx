@@ -455,7 +455,7 @@ const FeaturedEventCard = ({ event }: { event: Event }) => {
               <ExternalLink className="w-4 h-4" />
             </a>
           ) : (
-            <a href="#"
+            <a href={event.registrationOpen ? "/contact" : undefined} aria-disabled={!event.registrationOpen}
                className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 no-underline"
                style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 100%)`, fontFamily: FONT }}>
               {event.registrationOpen ? 'Register' : 'Coming Soon'}
@@ -544,7 +544,8 @@ const EventCard = ({ event }: { event: Event }) => {
               </a>
             ) : (
               <a
-                href="#"
+                href={event.registrationOpen ? "/contact" : undefined}
+                aria-disabled={!event.registrationOpen}
                 className={cn(
                   "rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] inline-flex items-center gap-1.5 no-underline transition-all duration-300",
                   event.registrationOpen ? "text-white hover:-translate-y-0.5" : ""

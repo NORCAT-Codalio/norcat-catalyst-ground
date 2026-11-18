@@ -331,7 +331,7 @@ function StoryScene({
           >
             "
           </div>
-          <blockquote className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-slate-800 italic leading-relaxed relative z-10">
+          <blockquote className="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-slate-800 leading-relaxed relative z-10">
             {scene.quote}
           </blockquote>
           {scene.author && (

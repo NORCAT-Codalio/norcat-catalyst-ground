@@ -121,9 +121,9 @@ const Programs = () => {
           <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
             <div className="max-w-3xl mb-14">
               <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-4" style={{ color: TEAL }}>Our Programs</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight" style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                 Four pathways. One mission.
-              </h2>
+              </h1>
               <p className="mt-4 text-base md:text-lg leading-relaxed" style={{ color: 'rgba(0,26,77,0.7)' }}>
                 Specialized front doors for ventures building in critical industrial technology, battery and EV, cybersecurity - plus a dedicated funding stream to fuel the journey.
               </p>

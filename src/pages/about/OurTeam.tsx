@@ -157,10 +157,10 @@ export default function OurTeam() {
                 <Eyebrow>
                   <span style={{ color: '#6b7387' }}>THE INNOVATION TEAM</span>
                 </Eyebrow>
-                <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
+                <h1 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl"
                     style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
                   <span style={{ color: BLUE }}>EXPERTISE TO HELP</span><br /><span style={{ color: TEAL }}>YOU MOVE FORWARD</span>
-                </h2>
+                </h1>
               </div>
               <p className="flex-1 flex items-start text-base md:text-lg leading-relaxed md:pt-10"
                  style={{ color: '#5b6478' }}>

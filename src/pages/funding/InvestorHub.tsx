@@ -161,12 +161,12 @@ const InvestorHub = () => {
                   <AlertTriangle className="w-3.5 h-3.5" />
                   The Reality
                 </p>
-                <h2
+                <h1
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   2025: The worst year<br /><span style={{ color: TEAL }}>for Canadian VC since 2016.</span>
-                </h2>
+                </h1>
                 <p className="text-base sm:text-lg leading-relaxed mb-5" style={{ color: '#475068' }}>
                   Only $2.1B raised by 21 funds - the lowest since 2016. 83% of capital
                   concentrated in Canada's five largest funds. Emerging managers at record

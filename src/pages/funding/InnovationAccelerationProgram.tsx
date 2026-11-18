@@ -118,12 +118,12 @@ const InnovationAccelerationProgram = () => {
             <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-center mb-14 md:mb-20">
               <div className="lg:col-span-7">
                 <Eyebrow>About the Program</Eyebrow>
-                <h2
+                <h1
                   className="font-black uppercase leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
                   style={{ fontFamily: FONT, color: NAVY, letterSpacing: '-0.02em' }}
                 >
                   Powering up<br /><span style={{ color: TEAL }}>Sudbury founders.</span>
-                </h2>
+                </h1>
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5" style={{ color: '#475068' }}>
                   The NORCAT Innovation Acceleration Program (IAP) empowers
                   early-stage SMEs with the funding required to expand product
