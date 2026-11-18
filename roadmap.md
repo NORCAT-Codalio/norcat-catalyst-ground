@@ -4,9 +4,10 @@
 - [ ] Kyle Joly profile: needs real title, bio, LinkedIn URL and headshot to replace the placeholder
 
 ## Blocked
-- (none)
+- [ ] Google Developers Group Workshop (Sep 15, 2026) and NOA Private Pitch – AI: still need registration URLs; buttons currently say "Coming Soon."
 
 ## Completed
+- [x] Point the five "Also Featured In" press links at NORCAT search results; swap Sudbury Star for The Globe and Mail and drop "North" from CBC.
 - [x] Remove all six AI Collective workshops and their Events page highlights mention.
 - [x] Link website addresses already present in news articles and About sections in both news views; identify missing event registration and press article URLs.
 - [x] Team page: remove Bart Streppel, add Kyle Joly placeholder, swap in high-res headshots for Brendan and Shashank

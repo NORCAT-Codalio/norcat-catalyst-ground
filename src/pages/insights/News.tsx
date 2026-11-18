@@ -714,7 +714,7 @@ const News = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm" style={{ color: '#5b6478' }}>
               <span className="font-bold uppercase tracking-[0.14em] text-xs" style={{ color: NAVY }}>Also Featured In</span>
-              {([['Northern Ontario Business','https://www.northernontariobusiness.com'],['Mining.com','https://www.mining.com'],['BetaKit','https://betakit.com'],['Sudbury Star','https://www.thesudburystar.com'],['CBC North','https://www.cbc.ca/news/canada/sudbury']] as const).map(([pub, url]) => (
+              {([['Northern Ontario Business','https://www.northernontariobusiness.com/search?q=norcat'],['Mining.com','https://www.mining.com/?s=norcat'],['BetaKit','https://betakit.com/?s=norcat'],['The Globe and Mail','https://www.theglobeandmail.com/search/?q=norcat'],['CBC','https://www.cbc.ca/search?q=norcat&section=all&sortOrder=date&media=all']] as const).map(([pub, url]) => (
                 <a key={pub} href={url} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors flex items-center gap-1" style={{ color: NAVY }}>
                   {pub} <ExternalLink className="w-3 h-3" />
                 </a>
