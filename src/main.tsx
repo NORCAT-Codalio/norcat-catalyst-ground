@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { AuthProvider } from "./hooks/useAuth.tsx";
+import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
 import "./styles/aoda.css";
 
@@ -12,6 +13,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <AuthProvider>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </AuthProvider>,
 );

@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://norcat-catalyst-ground.lovable.app/sitemap.xml

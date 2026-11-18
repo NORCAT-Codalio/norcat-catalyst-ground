@@ -4,6 +4,7 @@
 - [ ] Kyle Joly profile: needs real title, bio, LinkedIn URL and headshot to replace the placeholder
 
 ## Completed
+- [x] Optimize all 30 public pages with unique search metadata, canonical links, organization/breadcrumb structured data, and a generated sitemap; verify desktop, phone, and navigation.
 - [x] Keep only Overview in the Impact dashboard; remove Investment, Growth, and Innovation tabs.
 - [x] Remove the Google Developers Group Workshop and NOA Private Pitch – AI listings from the Events page for now.
 - [x] Point the five "Also Featured In" press links at NORCAT search results; swap Sudbury Star for The Globe and Mail and drop "North" from CBC.
