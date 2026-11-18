@@ -204,9 +204,6 @@ export default function EcosystemDashboard() {
 
   const filters: { key: MetricFilter; label: string; icon: any }[] = [
     { key: 'all', label: 'Overview', icon: Sparkles },
-    { key: 'investment', label: 'Investment', icon: DollarSign },
-    { key: 'growth', label: 'Growth', icon: TrendingUp },
-    { key: 'innovation', label: 'Innovation', icon: Lightbulb },
   ];
 
   const shows = (...keys: MetricFilter[]) => activeFilter === 'all' || keys.includes(activeFilter);
