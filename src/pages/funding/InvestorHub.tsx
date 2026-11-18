@@ -381,7 +381,7 @@ const InvestorHub = () => {
               >
                 <span className="size-1.5 rounded-full bg-current animate-pulse" />
                 <Crown className="w-3.5 h-3.5" />
-                Flagship Event · Thursday, October 1, 2026 · Sudbury, ON
+                Flagship Event · Thursday, October 14, 2027 · Sudbury, ON
               </p>
 
               <h2 className="mb-6">
@@ -425,7 +425,7 @@ const InvestorHub = () => {
                   <Calendar className="size-7" style={{ color: TEAL }} />
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] font-black" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: FONT }}>Date</p>
-                    <p className="text-base md:text-lg font-semibold text-white">October 1, 2026</p>
+                    <p className="text-base md:text-lg font-semibold text-white">October 14, 2027</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

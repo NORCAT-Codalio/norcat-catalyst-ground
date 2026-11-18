@@ -60,7 +60,22 @@ interface Event {
   prizePool?: string;
 }
 
-const upcomingEvents: Event[] = [];
+const upcomingEvents: Event[] = [
+  {
+    id: 'venture-north-pitch-2027',
+    title: 'Venture North PITCH 2027',
+    date: 'October 14, 2027',
+    time: 'TBD',
+    location: 'Sudbury, ON',
+    type: 'Pitch Competition',
+    description: "Venture North PITCH is a catalyst for innovation, investment, and entrepreneurship across the North. For over a decade, NORCAT and Northern Ontario Angels have given founders a platform to pitch to Accredited Angel Investors, building companies that have grown into key contributors across mining tech, health sciences, clean tech, and beyond.\n\nNow in its fourth year as a unified event, Venture North PITCH brings together everyone who's building, backing, and believing in the future of the region, for one action packed night.",
+    featured: true,
+    registrationOpen: false,
+    isVirtual: false,
+    image: pitchEventImage,
+    host: 'NORCAT Innovation',
+  },
+];
 
 const pastHighlights: Event[] = [
   {
@@ -547,7 +562,7 @@ export default function Events() {
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={setIndex} className="flex items-center gap-8 md:gap-12 px-4 md:px-6">
                     {[
-                      { text: 'Venture North PITCH 2026', date: 'Oct 1, 2026' },
+                      { text: 'Venture North PITCH 2027', date: 'Oct 14, 2027' },
                       { text: 'Mining Transformed', date: 'Mar 2026' },
                       { text: '$100K in Prizes', date: 'Venture North PITCH' },
                     ].map((item, i) => (
