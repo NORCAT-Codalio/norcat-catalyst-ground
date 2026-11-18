@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, MapPin, Users, Clock, Video, Search, ChevronRight, Sparkles, Mic, Presentation, Globe, Coffee, GraduationCap, Radio, ExternalLink, Trophy } from 'lucide-react';
+import { Calendar, MapPin, Users, Clock, Video, Search, ChevronRight, Sparkles, Mic, Presentation, Globe, Coffee, GraduationCap, Radio, ExternalLink, Trophy } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import FinalCTA from '@/components/FinalCTA';
 import { motion, AnimatePresence } from 'framer-motion';
 import pitchEventImage from '@/assets/pitch-event.jpg';
 import ventureNorthPitch2026Image from '@/assets/venture-north-pitch-2026.jpg.asset.json';
@@ -758,65 +758,17 @@ export default function Events() {
         </div>
       </section>
 
-      {/* ── CTA: Newsletter + Host ── */}
-      <section className="py-16 md:py-24 relative overflow-hidden"
-               style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${BLUE} 60%, ${NAVY} 100%)`, color: 'white' }}>
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255,255,255,0.16), transparent 35%), radial-gradient(circle at 90% 80%, rgba(0,179,152,0.32), transparent 45%)`,
-        }} />
+      <FinalCTA
+        eyebrow="Stay in the loop"
+        title="Never miss an"
+        titleAccent="event."
+        body="Get notified about upcoming events, early registration, and exclusive invites — or partner with NORCAT Innovation to host your next event at our facilities."
+        ctaLabel="Get in Touch"
+        ctaHref="/contact"
+        secondaryLabel="Become a Client"
+        secondaryHref="/apply"
+      />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <p className="inline-flex items-center text-sm font-semibold tracking-[0.18em] uppercase mb-6"
-                 style={{ fontFamily: FONT, color: 'white' }}>
-                STAY IN THE LOOP
-              </p>
-              <h2 className="font-black uppercase leading-[0.9] tracking-tight text-3xl sm:text-4xl md:text-5xl mb-6"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                NEVER MISS AN <span style={{ color: NAVY }}>EVENT.</span>
-              </h2>
-              <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.90)' }}>
-                Get notified about upcoming events, early registration, and exclusive invites.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 h-12 px-5 rounded-full text-sm text-white placeholder:text-white/60"
-                  style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.28)' }}
-                />
-                <button className="rounded-full px-7 py-3.5 text-sm font-bold inline-flex items-center justify-center gap-2 transition-transform duration-300 hover:-translate-y-0.5 whitespace-nowrap"
-                        style={{ background: 'white', color: NAVY, fontFamily: FONT }}>
-                  Subscribe
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <div className="rounded-2xl p-8 md:p-10"
-                 style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.22)' }}>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] mb-4" style={{ color: 'white' }}>Host with us</p>
-              <h3 className="font-black uppercase leading-[0.95] tracking-tight text-2xl md:text-3xl mb-4"
-                  style={{ fontFamily: FONT, letterSpacing: '-0.02em' }}>
-                WANT TO HOST AN EVENT?
-              </h3>
-              <p className="text-sm md:text-base leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Partner with NORCAT Innovation to host your next event at our facilities or collaborate on programming.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold transition-transform duration-300 hover:-translate-y-1 no-underline"
-                style={{ background: 'white', color: NAVY, fontFamily: FONT }}
-              >
-                Get in Touch
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }
