@@ -266,7 +266,7 @@ const Core5 = () => {
                   <p>It's also where technology developers meet the mining companies looking for new solutions.</p>
                 </div>
                 <Link
-                  to="/mining/underground-centre"
+                  to="/mining/norcat-underground"
                   className="group mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                   style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,0,0,0.25)' }}
                 >
@@ -373,7 +373,7 @@ const Core5 = () => {
 
                 <div className="mt-6">
                   <a
-                    href="https://www.ontario.ca/page/ontario-vehicle-innovation-network"
+                    href="https://www.ovinhub.ca/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center gap-2 px-7 py-4 rounded-md text-sm font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"

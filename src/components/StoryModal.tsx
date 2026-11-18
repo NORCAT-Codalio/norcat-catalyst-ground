@@ -139,9 +139,20 @@ function AnimatedCounter({
 }) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  // Watch the number itself so it animates as soon as it appears, regardless of scroll position math
   useEffect(() => {
-    if (!isVisible || hasAnimated) return;
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold: 0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!(isVisible || inView) || hasAnimated) return;
     
     setHasAnimated(true);
     let startTime: number;
@@ -161,17 +172,17 @@ function AnimatedCounter({
     
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [isVisible, value, hasAnimated]);
+  }, [isVisible, inView, value, hasAnimated]);
 
   // If already animated, show final value
   useEffect(() => {
-    if (hasBeenVisible && !isVisible) {
+    if (hasBeenVisible && !isVisible && !inView) {
       setCount(value);
     }
-  }, [hasBeenVisible, isVisible, value]);
+  }, [hasBeenVisible, isVisible, inView, value]);
   
   return (
-    <span className="font-display font-black text-7xl md:text-9xl text-slate-900 tracking-tight">
+    <span ref={ref} className="font-display font-black text-7xl md:text-9xl text-slate-900 tracking-tight">
       {prefix}{count.toLocaleString()}{suffix}
     </span>
   );

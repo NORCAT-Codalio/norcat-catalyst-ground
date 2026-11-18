@@ -218,11 +218,11 @@ const CriticalIndustrialTech = () => {
                   It brings together funding, specialized testing environments, industry partners, commercialization support and talent development to help Ontario companies move critical technologies into real-world use.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#475068' }}>
-                  As part of the initiative, the <Link to="/mining/underground-centre" className="font-semibold underline underline-offset-2 hover:text-[#00B398]" style={{ color: NAVY }}>NORCAT Underground Centre</Link> is a Technology Development Site (TDS) providing mining technology companies with a real-world environment to develop, test and validate their solutions.
+                  As part of the initiative, the <Link to="/mining/norcat-underground" className="font-semibold underline underline-offset-2 hover:text-[#00B398]" style={{ color: NAVY }}>NORCAT Underground Centre</Link> is a Technology Development Site (TDS) providing mining technology companies with a real-world environment to develop, test and validate their solutions.
                 </p>
                 <div>
                   <Link
-                    to="/mining/underground-centre"
+                    to="/mining/norcat-underground"
                     className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                     style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                   >
@@ -308,7 +308,7 @@ const CriticalIndustrialTech = () => {
                   Each site brings different infrastructure, expertise and sector capabilities.
                 </p>
                 <a
-                  href="https://www.oc-innovation.ca/programs/critical-industrial-technologies/"
+                  href="https://www.oc-innovation.ca/programs/cit/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hidden lg:inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
@@ -376,7 +376,7 @@ const CriticalIndustrialTech = () => {
                       </p>
                     </div>
                     <a
-                      href="https://www.oc-innovation.ca/programs/critical-industrial-technologies/"
+                      href="https://www.oc-innovation.ca/programs/cit/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="lg:hidden inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:-translate-y-0.5"
@@ -469,7 +469,7 @@ const CriticalIndustrialTech = () => {
                 </div>
 
                 <Link
-                  to="/mining/underground-centre"
+                  to="/mining/norcat-underground"
                   className="group inline-flex items-center gap-2 mt-8 px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02]"
                   style={{ fontFamily: FONT, background: 'rgba(0, 179, 152, 0.8)', color: 'white', boxShadow: '0 18px 40px -12px rgba(0,179,152,0.55)' }}
                 >

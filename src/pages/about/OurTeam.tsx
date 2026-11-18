@@ -278,7 +278,7 @@ export default function OurTeam() {
               <p className="mt-4 text-sm md:text-base max-w-2xl" style={{ color: '#5b6478' }}>
                 Our partner network gives startups greater access to expertise, capital, connections, and new opportunities.{" "}
                 <Link
-                  to="/ecosystem/sudbury-ecosystem"
+                  to="/ecosystem/sudbury"
                   className="inline-flex items-center gap-1 font-bold underline underline-offset-4 transition-colors hover:no-underline"
                   style={{ color: TEAL, fontFamily: FONT }}
                 >
