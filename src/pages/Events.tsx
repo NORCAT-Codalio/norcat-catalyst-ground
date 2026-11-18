@@ -545,6 +545,7 @@ export default function Events() {
 
   const featuredEvents = upcomingEvents.filter(e => e.featured);
   const filteredEvents = upcomingEvents.filter(e => {
+    if (e.featured) return false; // already showcased in "The Main Stage"
     if (selectedType !== 'All' && e.type !== selectedType) return false;
     if (searchQuery && !e.title.toLowerCase().includes(searchQuery.toLowerCase())) return false;
     return true;
@@ -620,7 +621,7 @@ export default function Events() {
       )}
 
       {/* ── All Events ── */}
-      {upcomingEvents.length > 0 && (
+      {filteredEvents.length > 0 && (
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
