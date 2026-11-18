@@ -48,7 +48,7 @@ const contactTopics = [
 const locations = [
   {
     name: 'NORCAT Innovation Headquarters',
-    address: '1547 Maley Drive, Sudbury, ON P3A 4R7',
+    address: '1545 Maley Drive, Sudbury, ON P3A 4R7',
   },
 ];
 
@@ -434,7 +434,7 @@ export default function Contact() {
                     <div className="overflow-hidden rounded-2xl border border-gray-100 w-full h-[180px] md:h-[220px]">
                       <iframe
                         title="NORCAT Innovation Headquarters map"
-                        src="https://www.google.com/maps?q=1547+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
+                        src="https://www.google.com/maps?q=1545+Maley+Drive,+Sudbury,+ON+P3A+4R7&output=embed"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}

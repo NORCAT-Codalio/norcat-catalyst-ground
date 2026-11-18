@@ -1,8 +1,13 @@
 # Task Roadmap
 
 ## In Progress
+- [ ] Team headshots: replace Brendan, Shashank and Bart photos once higher-resolution files arrive (600x600 or larger)
+
+## Blocked
+- (none)
 
 ## Completed
+- [x] Contact page: correct NORCAT address to 1545 Maley Drive, Sudbury, ON P3A 4R7 (text and map)
 - [x] Refresh portal branding and account access flows
 - [x] CIT page: make logo partner box smaller and improve alignment
 - [x] CIT page: tighten spacing between header, About, and stats sections
