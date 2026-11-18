@@ -141,6 +141,7 @@ function AnimatedCounter({
   const [hasAnimated, setHasAnimated] = useState(false);
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
+  const frameRef = useRef<number>();
 
   // Watch the number itself so it animates as soon as it appears, regardless of scroll position math
   useEffect(() => {
@@ -151,36 +152,24 @@ function AnimatedCounter({
     return () => obs.disconnect();
   }, []);
 
+  const shouldStart = isVisible || inView || hasBeenVisible;
   useEffect(() => {
-    if (!(isVisible || inView) || hasAnimated) return;
-    
+    if (!shouldStart || hasAnimated) return;
     setHasAnimated(true);
-    let startTime: number;
-    let animationFrame: number;
+    let startTime: number | undefined;
     const duration = 2000;
-    
     const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
+      if (startTime === undefined) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * value));
-      
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
+      setCount(Math.floor((1 - Math.pow(1 - progress, 4)) * value));
+      if (progress < 1) frameRef.current = requestAnimationFrame(animate);
     };
-    
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isVisible, inView, value, hasAnimated]);
+    frameRef.current = requestAnimationFrame(animate);
+  }, [shouldStart, value, hasAnimated]);
 
-  // If already animated, show final value
-  useEffect(() => {
-    if (hasBeenVisible && !isVisible && !inView) {
-      setCount(value);
-    }
-  }, [hasBeenVisible, isVisible, inView, value]);
-  
+  // Only cancel when the counter unmounts, so scrolling past mid-animation can't freeze it at 0
+  useEffect(() => () => { if (frameRef.current) cancelAnimationFrame(frameRef.current); }, []);
+
   return (
     <span ref={ref} className="font-display font-black text-7xl md:text-9xl text-slate-900 tracking-tight">
       {prefix}{count.toLocaleString()}{suffix}
