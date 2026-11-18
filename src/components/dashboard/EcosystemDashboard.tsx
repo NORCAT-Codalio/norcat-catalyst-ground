@@ -199,7 +199,7 @@ const EmptyPanel = ({ title, height }: { title: string; height: string }) => (
 );
 
 export default function EcosystemDashboard() {
-  const [activeFilter, setActiveFilter] = useState<MetricFilter>('all');
+  const activeFilter: MetricFilter = 'all';
   const [hoveredSector, setHoveredSector] = useState<string | null>(null);
 
   const filters: { key: MetricFilter; label: string; icon: any }[] = [
@@ -210,27 +210,23 @@ export default function EcosystemDashboard() {
 
   return (
     <div className="space-y-8">
-      {/* Filter Tabs */}
+      {/* Section Label */}
       <ScrollReveal>
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className="flex flex-wrap gap-2 justify-start">
           {filters.map((filter) => (
-            <button
+            <span
               key={filter.key}
-              onClick={() => setActiveFilter(filter.key)}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300"
-              style={activeFilter === filter.key ? {
+              aria-label={filter.label}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium"
+              style={{
                 background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(210 90% 45%) 100%)',
                 color: 'white',
                 boxShadow: '0 4px 16px hsla(168, 100%, 30%, 0.3)',
-              } : {
-                ...glassCardStyle,
-                color: 'hsl(220, 15%, 30%)',
-                cursor: 'pointer',
               }}
             >
               <filter.icon className="h-4 w-4" />
               {filter.label}
-            </button>
+            </span>
           ))}
         </div>
       </ScrollReveal>
