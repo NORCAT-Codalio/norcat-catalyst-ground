@@ -535,7 +535,7 @@ export default function Home2() {
             <div className="relative">
               {(() => {
                 const posts = [
-                  { category: 'Events', title: 'Venture North PITCH Returns this October', image: ventureNorthPitchImg, link: '/events' },
+                  { category: 'Events', title: 'Venture North PITCH 2026: 200+ in the Room', image: ventureNorthPitchImg, link: '/events' },
                   { category: 'Success Stories', title: 'How NORCAT Innovation Helped 150+ Startups', image: norcatBuilding, link: '/insights/success-stories' },
                   { category: 'News', title: 'OVIN RTDS Renewed for Northern Ontario', image: ovinMiningInnovationImg, link: '/insights/news?article=ovin-core5-renewed-2026' },
                   { category: 'Impact', title: 'Innovation Ecosystem Snapshot', image: stateOfSudburyImpactImg, link: '/impact' },
