@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import pitchEventImage from '@/assets/pitch-event.jpg';
-import ventureNorthPitch2026Image from '@/assets/venture-north-pitch-2026.jpg.asset.json';
 import norcatHalfLogo from '@/assets/norcat-half-logo.png.asset.json';
 
 // ── Brand tokens (mirrors About / Home2) ──
@@ -61,26 +60,7 @@ interface Event {
   prizePool?: string;
 }
 
-const upcomingEvents: Event[] = [
-  {
-    id: 'venture-north-pitch-2026',
-    title: 'Venture North PITCH 2026',
-    date: 'October 1, 2026',
-    time: '5:00 PM EST',
-    location: 'College Boréal',
-    type: 'Pitch Competition',
-    description: "Venture North PITCH is a catalyst for innovation, investment, and entrepreneurship across the North. For over a decade, NORCAT and Northern Ontario Angels have given founders a platform to pitch to Accredited Angel Investors, building companies that have grown into key contributors across mining tech, health sciences, clean tech, and beyond.\n\nNow in its third year as a unified event, Venture North PITCH brings together everyone who's building, backing, and believing in the future of the region, for one action packed night.",
-    featured: true,
-    registrationOpen: false,
-    isVirtual: false,
-    image: ventureNorthPitch2026Image.url,
-    host: 'NORCAT Innovation',
-    highlight: 'Learn more',
-    learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
-    ticketsUrl: 'https://www.eventbrite.ca/e/venture-north-pitch-2026-tickets-1976742143965',
-    prizePool: '$15,000 CAD',
-  },
-];
+const upcomingEvents: Event[] = [];
 
 const pastHighlights: Event[] = [
   {
@@ -174,10 +154,40 @@ const pastHighlights: Event[] = [
     featured: true,
     registrationOpen: false,
     isVirtual: false,
-    attendees: 156,
+    attendees: 150,
     maxAttendees: 200,
     host: 'NORCAT Innovation',
     highlight: '$100K awarded',
+  },
+  {
+    id: 'venture-north-pitch-2024',
+    title: 'Venture North PITCH 2024',
+    date: 'September 2024',
+    time: 'TBD',
+    location: 'Sudbury, ON',
+    type: 'Pitch Competition',
+    description: '',
+    featured: false,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 150,
+    maxAttendees: 150,
+    host: 'NORCAT Innovation',
+  },
+  {
+    id: 'venture-north-pitch-2026',
+    title: 'Venture North PITCH 2026',
+    date: 'October 2026',
+    time: 'TBD',
+    location: 'Sudbury, ON',
+    type: 'Pitch Competition',
+    description: '',
+    featured: false,
+    registrationOpen: false,
+    isVirtual: false,
+    attendees: 200,
+    maxAttendees: 200,
+    host: 'NORCAT Innovation',
   },
   {
     id: 'ask-expert-ip-2026',
@@ -556,6 +566,7 @@ export default function Events() {
       </section>
 
       {/* ── Featured Events ── */}
+      {featuredEvents.length > 0 && (
       <section className="py-16 md:py-24" style={{ background: PAPER }}>
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
@@ -575,8 +586,10 @@ export default function Events() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ── All Events ── */}
+      {upcomingEvents.length > 0 && (
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-10">
           <ScrollReveal>
@@ -660,6 +673,7 @@ export default function Events() {
           )}
         </div>
       </section>
+      )}
 
       {/* ── Past Highlights ── */}
       <section className="py-16 md:py-24" style={{ background: PAPER }}>
