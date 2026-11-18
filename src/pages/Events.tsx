@@ -75,7 +75,6 @@ const upcomingEvents: Event[] = [
     isVirtual: false,
     image: ventureNorthPitch2026Image.url,
     host: 'NORCAT Innovation',
-    highlight: 'Learn more',
     learnMoreUrl: 'https://norcat.org/venture-north-pitch-2026/',
   },
 ];
