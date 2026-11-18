@@ -95,6 +95,7 @@ const pastHighlights: Event[] = [
     registrationOpen: false,
     isVirtual: false,
     host: 'NORCAT Innovation',
+    highlight: '25+ speakers',
   },
   {
     id: 'mining-transformed-2024',
