@@ -1,6 +1,6 @@
-import brendanImage from '@/assets/team/brendan.png';
-import shashankImage from '@/assets/team/shashank.png';
-import bartImage from '@/assets/team/bart.png';
+import brendanImage from '@/assets/team/brendan-skiffington.jpg.asset.json';
+import shashankImage from '@/assets/team/shashank-metha.jpg.asset.json';
+import kyleImage from '@/assets/team/kyle-joly-placeholder.jpg.asset.json';
 import jieImage from '@/assets/team/jie-new.png';
 
 export interface TeamMember {
@@ -15,22 +15,22 @@ export const team: TeamMember[] = [
   {
     name: 'Brendan Skiffington',
     role: 'INNOVATION MANAGER',
-    image: brendanImage,
+    image: brendanImage.url,
     bio: "Born right here in Sudbury and now leading Innovation, I am fully committed to the growth of my hometown. I focus on unlocking our capacity for innovation and am always making new network connections to sustain and expand our mission and impact. Outside of work, I am an avid hockey and sports fan, and I love keeping up with F1!",
     linkedin: 'https://linkedin.com/in/',
   },
   {
     name: 'SHASHANK METHA',
     role: 'INNOVATION COORDINATOR',
-    image: shashankImage,
+    image: shashankImage.url,
     bio: "As the Core5 and innovation lead, I specialize in breaking down complex workflow barriers with practical, step-by-step steps that help founders get their products to market. In my spare time, I am a constant learner who loves to travel, build up diverse knowledge, and spend quality time with my family.",
     linkedin: 'https://linkedin.com/in/',
   },
   {
-    name: 'Bart Streppel',
-    role: 'Content Specialist',
-    image: bartImage,
-    bio: "I help early-stage startups and academic research teams translate complex technical ideas into clear, compelling stories that drive commercialization forward. When I'm off the clock, I'm usually writing and playing music as a singer-songwriter, tackling hands-on home renovation projects, or diving deep into video game mechanics.",
+    name: 'Kyle Joly',
+    role: 'COMING SOON',
+    image: kyleImage.url,
+    bio: "Kyle's title, bio, and photo are being finalized. This placeholder will be replaced with his full profile before the page goes live.",
     linkedin: 'https://linkedin.com/in/',
   },
   {

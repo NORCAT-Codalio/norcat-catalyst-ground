@@ -1,12 +1,13 @@
 # Task Roadmap
 
 ## In Progress
-- [ ] Team headshots: replace Brendan, Shashank and Bart photos once higher-resolution files arrive (600x600 or larger)
+- [ ] Kyle Joly profile: needs real title, bio, LinkedIn URL and headshot to replace the placeholder
 
 ## Blocked
 - (none)
 
 ## Completed
+- [x] Team page: remove Bart Streppel, add Kyle Joly placeholder, swap in high-res headshots for Brendan and Shashank
 - [x] Contact page: correct NORCAT address to 1545 Maley Drive, Sudbury, ON P3A 4R7 (text and map)
 - [x] Refresh portal branding and account access flows
 - [x] CIT page: make logo partner box smaller and improve alignment
