@@ -84,6 +84,19 @@ const upcomingEvents: Event[] = [
 
 const pastHighlights: Event[] = [
   {
+    id: 'startup-summit-2026',
+    title: 'Startup Summit',
+    date: 'November 16, 2026',
+    time: 'TBD',
+    location: 'Sudbury, ON',
+    type: 'Conference',
+    description: '',
+    featured: false,
+    registrationOpen: false,
+    isVirtual: false,
+    host: 'NORCAT Innovation',
+  },
+  {
     id: 'mining-transformed-2024',
     title: 'Mining Transformed 2024',
     date: 'March 15, 2025',
