@@ -16,7 +16,7 @@ export const team: TeamMember[] = [
     name: 'Brendan Skiffington',
     role: 'INNOVATION MANAGER',
     image: brendanImage.url,
-    bio: 'Brendan Skiffington leads Innovation at NORCAT and is committed to the growth of his home region of Sudbury. His work focuses on expanding Northern Ontario’s capacity to build, test and commercialize technology, and on building the industry, education and funding partnerships that keep that work moving. Outside the office, he is an avid hockey and sports fan who follows Formula 1 closely.',
+    bio: 'Born and raised in Sudbury, Brendan Skiffington is passionate about his community and helping Northern Ontario grow. As the Manager of NORCAT Innovation, he works closely with entrepreneurs, businesses and industry partners to bring new ideas to life, support emerging technologies and create opportunities across the region. Outside of work, Brendan is an avid sports fan who enjoys cheering on his favourite hockey team and keeping up with the latest Formula 1 race.',
     linkedin: 'https://linkedin.com/in/',
   },
   {
