@@ -201,12 +201,9 @@ const EmptyPanel = ({ title, height }: { title: string; height: string }) => (
 export default function EcosystemDashboard() {
   const activeFilter: MetricFilter = 'all';
   const [hoveredSector, setHoveredSector] = useState<string | null>(null);
-  const [selectedYear, setSelectedYear] = useState<string>(timelineData[timelineData.length - 1].year);
+  const [selectedYear, setSelectedYear] = useState<string>('overview');
 
-  const filters: { key: MetricFilter; label: string; icon: any }[] = [
-    { key: 'all', label: 'Overview', icon: Sparkles },
-  ];
-
+  const isOverview = selectedYear === 'overview';
   const years = timelineData.map((d) => d.year);
   const yearData = timelineData.find((d) => d.year === selectedYear) ?? timelineData[timelineData.length - 1];
   const yearIndex = timelineData.indexOf(yearData);
@@ -214,70 +211,67 @@ export default function EcosystemDashboard() {
   const pctChange = (current: number, previous: number | null) =>
     previous ? Math.round(((current - previous) / previous) * 100) : undefined;
 
-  const companiesTrend = pctChange(yearData.companies, prevYearData?.companies ?? null);
-  const investmentTrend = pctChange(yearData.investment, prevYearData?.investment ?? null);
-  const jobsTrend = pctChange(yearData.jobs, prevYearData?.jobs ?? null);
-  const newCompanies = prevYearData ? yearData.companies - prevYearData.companies : yearData.companies;
+  const companiesTrend = isOverview ? 12 : pctChange(yearData.companies, prevYearData?.companies ?? null);
+  const investmentTrend = isOverview ? 15 : pctChange(yearData.investment, prevYearData?.investment ?? null);
+  const jobsTrend = isOverview ? 10 : pctChange(yearData.jobs, prevYearData?.jobs ?? null);
+  const revenueTrend = isOverview ? 10 : pctChange(yearData.revenue, prevYearData?.revenue ?? null);
+  const totalCompanies = isOverview ? ecosystemStats.totalCompanies : yearData.companies;
+  const newCompanies = isOverview ? ecosystemStats.newCompanies : (prevYearData ? yearData.companies - prevYearData.companies : yearData.companies);
+  const totalInvestment = isOverview ? ecosystemStats.totalInvestment : yearData.investment;
+  const totalRevenue = isOverview ? ecosystemStats.totalRevenue : yearData.revenue;
+  const totalJobs = isOverview ? 2150 : yearData.jobs;
   // Export revenue tracked at ~31% of total revenue across the dataset
-  const exportRevenue = Math.round(yearData.revenue * 0.31 * 10) / 10;
+  const exportRevenue = isOverview ? ecosystemStats.exportRevenue : Math.round(yearData.revenue * 0.31 * 10) / 10;
 
   const shows = (...keys: MetricFilter[]) => activeFilter === 'all' || keys.includes(activeFilter);
 
+  const toggleButtonStyle = (isActive: boolean): React.CSSProperties => isActive ? {
+    background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(210 90% 45%) 100%)',
+    color: 'white',
+    boxShadow: '0 4px 16px hsla(168, 100%, 30%, 0.3)',
+  } : {
+    background: 'hsla(220, 15%, 92%, 0.7)',
+    color: 'hsl(220, 15%, 35%)',
+    border: '1px solid hsla(220, 15%, 80%, 0.6)',
+  };
+
   return (
     <div className="space-y-8">
-      {/* Section Label + Year Toggle */}
+      {/* Overview / Year Toggle */}
       <ScrollReveal>
-        <div className="flex flex-wrap items-center gap-2 justify-start">
-          {filters.map((filter) => (
-            <span
-              key={filter.key}
-              aria-label={filter.label}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium"
-              style={{
-                background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(210 90% 45%) 100%)',
-                color: 'white',
-                boxShadow: '0 4px 16px hsla(168, 100%, 30%, 0.3)',
-              }}
+        <div className="flex flex-wrap items-center gap-2 justify-start" role="group" aria-label="Filter metrics by year">
+          <button
+            type="button"
+            onClick={() => setSelectedYear('overview')}
+            aria-pressed={isOverview}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer"
+            style={toggleButtonStyle(isOverview)}
+          >
+            <Sparkles className="h-4 w-4" />
+            Overview
+          </button>
+          {years.map((year) => (
+            <button
+              key={year}
+              type="button"
+              onClick={() => setSelectedYear(year)}
+              aria-pressed={year === selectedYear}
+              className="px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer"
+              style={toggleButtonStyle(year === selectedYear)}
             >
-              <filter.icon className="h-4 w-4" />
-              {filter.label}
-            </span>
+              {year}
+            </button>
           ))}
-          <div className="flex flex-wrap gap-2 ml-0 sm:ml-3" role="group" aria-label="Filter by year">
-            {years.map((year) => {
-              const isActive = year === selectedYear;
-              return (
-                <button
-                  key={year}
-                  type="button"
-                  onClick={() => setSelectedYear(year)}
-                  aria-pressed={isActive}
-                  className="px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer"
-                  style={isActive ? {
-                    background: 'linear-gradient(135deg, hsl(168 100% 35%) 0%, hsl(210 90% 45%) 100%)',
-                    color: 'white',
-                    boxShadow: '0 4px 16px hsla(168, 100%, 30%, 0.3)',
-                  } : {
-                    background: 'hsla(220, 15%, 92%, 0.7)',
-                    color: 'hsl(220, 15%, 35%)',
-                    border: '1px solid hsla(220, 15%, 80%, 0.6)',
-                  }}
-                >
-                  {year}
-                </button>
-              );
-            })}
-          </div>
         </div>
       </ScrollReveal>
 
       {/* Main Stats Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-        <StatCard key={`companies-${selectedYear}`} icon={Building2} value={yearData.companies} label="Total Companies" trend={companiesTrend} delay={0} />
-        <StatCard key={`new-${selectedYear}`} icon={Rocket} value={newCompanies} label={`New in ${selectedYear}`} trend={companiesTrend} delay={50} />
-        <StatCard key={`investment-${selectedYear}`} icon={DollarSign} value={yearData.investment} label="Total Investment" prefix="$" suffix="M" trend={investmentTrend} delay={100} />
+        <StatCard key={`companies-${selectedYear}`} icon={Building2} value={totalCompanies} label="Total Companies" trend={companiesTrend} delay={0} />
+        <StatCard key={`new-${selectedYear}`} icon={Rocket} value={newCompanies} label={isOverview ? 'New This Year' : `New in ${selectedYear}`} trend={companiesTrend} delay={50} />
+        <StatCard key={`investment-${selectedYear}`} icon={DollarSign} value={totalInvestment} label="Total Investment" prefix="$" suffix="M" trend={investmentTrend} delay={100} />
         <StatCard key={`export-${selectedYear}`} icon={Globe} value={exportRevenue} label="Export Revenue" prefix="$" suffix="M" trend={investmentTrend} delay={150} />
-        <StatCard key={`jobs-${selectedYear}`} icon={Users} value={yearData.jobs} label="Jobs Created" trend={jobsTrend} delay={200} />
+        <StatCard key={`jobs-${selectedYear}`} icon={Users} value={totalJobs} label="Jobs Created" trend={jobsTrend} delay={200} />
       </div>
 
       {/* Charts Row 1 */}
@@ -288,7 +282,7 @@ export default function EcosystemDashboard() {
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="font-bold text-lg" style={{ color: 'hsl(220, 15%, 20%)' }}>Ecosystem Growth</h3>
-                <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Investment & Revenue over time · {selectedYear} highlighted</p>
+                <p className="text-sm font-light" style={{ color: 'hsl(220, 15%, 40%)' }}>Investment & Revenue over time{isOverview ? '' : ` · ${selectedYear} highlighted`}</p>
               </div>
               <div className="flex gap-4 text-xs">
                 <div className="flex items-center gap-2">
@@ -333,22 +327,26 @@ export default function EcosystemDashboard() {
                   fill="url(#revenueGradient)" 
                   name="Revenue ($M)"
                 />
-                <ReferenceDot
-                  x={selectedYear}
-                  y={yearData.investment}
-                  r={6}
-                  fill="hsl(168, 100%, 35%)"
-                  stroke="white"
-                  strokeWidth={2}
-                />
-                <ReferenceDot
-                  x={selectedYear}
-                  y={yearData.revenue}
-                  r={6}
-                  fill="hsl(210, 90%, 45%)"
-                  stroke="white"
-                  strokeWidth={2}
-                />
+                {!isOverview && (
+                  <>
+                    <ReferenceDot
+                      x={selectedYear}
+                      y={yearData.investment}
+                      r={6}
+                      fill="hsl(168, 100%, 35%)"
+                      stroke="white"
+                      strokeWidth={2}
+                    />
+                    <ReferenceDot
+                      x={selectedYear}
+                      y={yearData.revenue}
+                      r={6}
+                      fill="hsl(210, 90%, 45%)"
+                      stroke="white"
+                      strokeWidth={2}
+                    />
+                  </>
+                )}
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -548,7 +546,7 @@ export default function EcosystemDashboard() {
       {/* Bottom Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
         <StatCard icon={Handshake} value={ecosystemStats.partnerships} label="Total Partnerships" trend={28} delay={0} />
-        <StatCard key={`revenue-${selectedYear}`} icon={DollarSign} value={yearData.revenue} label="Total Revenue" prefix="$" suffix="M" trend={pctChange(yearData.revenue, prevYearData?.revenue ?? null)} delay={50} />
+        <StatCard key={`revenue-${selectedYear}`} icon={DollarSign} value={totalRevenue} label="Total Revenue" prefix="$" suffix="M" trend={revenueTrend} delay={50} />
         <StatCard icon={Award} value={ecosystemStats.patents + ecosystemStats.trademarks} label="IP Assets" trend={15} delay={100} />
         <StatCard icon={Clock} value={ecosystemStats.mentorshipHours} label="Mentorship Hours" trend={14} delay={150} />
       </div>
