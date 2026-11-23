@@ -1,6 +1,6 @@
 import brendanImage from '@/assets/team/brendan-skiffington.jpg.asset.json';
 import shashankImage from '@/assets/team/shashank-metha.jpg.asset.json';
-import kyleImage from '@/assets/team/kyle-joly-placeholder.jpg.asset.json';
+import kyleImage from '@/assets/team/kyle-joly.jpg.asset.json';
 import jieImage from '@/assets/team/jie-new.png';
 
 export interface TeamMember {
