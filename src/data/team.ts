@@ -1,6 +1,6 @@
 import brendanImage from '@/assets/team/brendan-skiffington.jpg.asset.json';
 import shashankImage from '@/assets/team/shashank-metha.jpg.asset.json';
-import kyleImage from '@/assets/team/kyle-joly.jpg.asset.json';
+import kyleImage from '@/assets/team/kyle-joly-2.jpg.asset.json';
 import jieImage from '@/assets/team/jie-new.png';
 
 export interface TeamMember {
@@ -28,9 +28,9 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Kyle Joly',
-    role: 'COMING SOON',
+    role: 'CONTENT SPECIALIST',
     image: kyleImage.url,
-    bio: "Kyle's title, bio, and photo are being finalized. His full profile will be published here before the page goes live.",
+    bio: 'Kyle supports communications, events, and community outreach as part of the NORCAT Innovation team. He is completing his Business Administration advanced diploma at Cambrian College, with a strong interest in entrepreneurship, business development, and emerging technologies. Outside of work, he enjoys exploring new business ideas and discovering practical ways technology can help businesses grow.',
     linkedin: 'https://linkedin.com/in/',
   },
   {
